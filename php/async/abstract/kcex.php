@@ -16,6 +16,9 @@ abstract class kcex extends \ccxt\async\Exchange {
     public function public_get_market_2_spot_market_v2_web_symbol_ticker($params = array()) {
         return $this->request('market-2/spot/market/v2/web/symbol/ticker', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
+    public function futures_get_contract_ticker($params = array()) {
+        return $this->request('contract/ticker', 'futures', 'GET', $params, null, null, array("cost" => 1));
+    }
     public function publicGetMarket2SpotMarketV2WebSymbols($params = array()) {
         return $this->request('market-2/spot/market/v2/web/symbols', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
@@ -24,5 +27,8 @@ abstract class kcex extends \ccxt\async\Exchange {
     }
     public function publicGetMarket2SpotMarketV2WebSymbolTicker($params = array()) {
         return $this->request('market-2/spot/market/v2/web/symbol/ticker', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
+    public function futuresGetContractTicker($params = array()) {
+        return $this->request('contract/ticker', 'futures', 'GET', $params, null, null, array("cost" => 1));
     }
 }

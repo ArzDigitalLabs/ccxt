@@ -26,4 +26,9 @@ public partial class kcex : Exchange
         return await this.callAsync ("publicGetMarket2SpotMarketV2WebSymbolTicker",parameters);
     }
 
+    public async Task<object> futuresGetContractTicker (object parameters = null)
+    {
+        return await this.callAsync ("futuresGetContractTicker",parameters);
+    }
+
 }

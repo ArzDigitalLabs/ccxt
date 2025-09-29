@@ -88,6 +88,7 @@ class kcex(Exchange, ImplicitAPI):
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/kcex/64x64.png',
                 'api': {
                     'public': 'https://www.kcex.com/spot/api',
+                    'futures': 'https://www.kcex.com/fapi/v1',
                 },
                 'www': 'https://www.kcex.com',
                 'doc': [
@@ -110,6 +111,11 @@ class kcex(Exchange, ImplicitAPI):
                         'market-2/spot/market/v2/web/symbol/ticker': 1,
                     },
                 },
+                'futures': {
+                    'get': {
+                        'contract/ticker': 1,
+                    },
+                },
             },
             # 'fees': {
             #     'trading': {
@@ -129,17 +135,22 @@ class kcex(Exchange, ImplicitAPI):
         :returns dict[]: an array of objects representing market data
         """
         response = self.publicGetMarket2SpotMarketV2WebSymbols(params)
+        futuresResponse = self.futuresGetContractTicker(params)
         data = self.safe_dict(response, 'data')
         USDTmarketList = self.safe_list(data, 'USDT')
         USDCmarketList = self.safe_list(data, 'USDC')
+        futuresMarketList = self.safe_list(futuresResponse, 'data')
         marketList = self.array_concat(USDTmarketList, USDCmarketList)
         result = []
         for i in range(0, len(marketList)):
-            market = self.parse_market(marketList[i])
+            market = self.parse_spot_market(marketList[i])
+            result.append(market)
+        for i in range(0, len(futuresMarketList)):
+            market = self.parse_futures_market(futuresMarketList[i])
             result.append(market)
         return result
 
-    def parse_market(self, market) -> Market:
+    def parse_spot_market(self, market) -> Market:
         #         {
         # id: "e16a2713c7a44bac9d1d4ef98467e75b",
         # mcd: "20f24a571c8544c0b1362794b1804456",
@@ -217,6 +228,98 @@ class kcex(Exchange, ImplicitAPI):
             'info': market,
         }
 
+    def parse_futures_market(self, market) -> Market:
+        #         {
+        # contractId: 1,
+        # symbol: "BTC_USDT",
+        # lastPrice: 112000.2,
+        # bid1: 112000.1,
+        # ask1: 112000.2,
+        # volume24: 499700543,
+        # amount24: 5543019316.89779,
+        # holdVol: 3873397,
+        # lower24Price: 109136.5,
+        # high24Price: 112381,
+        # riseFallRate: 0.0183,
+        # riseFallValue: 2014.2,
+        # indexPrice: 112059.1,
+        # fairPrice: 112000.2,
+        # fundingRate: -0.00001,
+        # maxBidPrice: 128867.9,
+        # minAskPrice: 95250.2,
+        # timestamp: 1759139514008,
+        # riseFallRates: {
+        # zone: "UTC+8",
+        # r: 0.0183,
+        # v: 2014.2,
+        # r7: -0.005,
+        # r30: 0.032,
+        # r90: 0.05,
+        # r180: 0.3235,
+        # r365: 0.709
+        # },
+        # riseFallRatesOfTimezone: [
+        # 0.0231,
+        # -0.001,
+        # 0.0183
+        # ]
+        # }
+        id = self.safe_string(market, 'symbol')
+        symbol = id.split('_')
+        baseId = symbol[0]
+        quoteId = symbol[1]
+        base = self.safe_currency_code(baseId)
+        quote = self.safe_currency_code(quoteId)
+        return {
+            'id': id,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': None,
+            'baseId': baseId,
+            'quoteId': quoteId,
+            'settleId': None,
+            'type': 'future',
+            'spot': False,
+            'margin': False,
+            'swap': False,
+            'future': True,
+            'option': False,
+            'active': True,
+            'contract': False,
+            'linear': None,
+            'inverse': None,
+            'contractSize': None,
+            'expiry': None,
+            'expiryDatetime': None,
+            'strike': None,
+            'optionType': None,
+            'precision': {
+                'amount': None,
+                'price': None,
+            },
+            'limits': {
+                'leverage': {
+                    'min': None,
+                    'max': None,
+                },
+                'amount': {
+                    'min': None,
+                    'max': None,
+                },
+                'price': {
+                    'min': None,
+                    'max': None,
+                },
+                'cost': {
+                    'min': None,
+                    'max': None,
+                },
+            },
+            'created': None,
+            'info': market,
+        }
+
     def fetch_tickers(self, symbols: Strings = None, params={}) -> Tickers:
         """
         fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
@@ -228,10 +331,19 @@ class kcex(Exchange, ImplicitAPI):
         self.load_markets()
         if symbols is not None:
             symbols = self.market_symbols(symbols)
+        response = {}
+        result = {}
+        if params['type'] == 'future':
+            response = self.futuresGetContractTicker(params)
+            futuresTickerData = self.safe_list(response, 'data')
+            for i in range(0, len(futuresTickerData)):
+                futuresTicker = self.parse_futures_ticker(futuresTickerData[i])
+                symbol = futuresTicker['symbol']
+                result[symbol] = futuresTicker
+            return self.filter_by_array_tickers(result, 'symbol', symbols)
         response = self.publicGetMarket2SpotMarketV2WebTickers(params)
         tickers = self.safe_list(response, 'data')
         timestamp = self.safe_integer(response, 'timestamp')
-        result = {}
         idToMarket = {}
         marketList = list(self.markets.values())
         for i in range(0, len(marketList)):
@@ -261,6 +373,12 @@ class kcex(Exchange, ImplicitAPI):
         request = {
             'symbol': market['base'] + '_' + market['quote'],
         }
+        response = {}
+        if params['type'] == 'future':
+            response = self.futuresGetContractTicker(request)
+            futuresTickerData = self.safe_dict(response, 'data')
+            futuresTicker = self.parse_futures_ticker(futuresTickerData)
+            return futuresTicker
         response = self.publicGetMarket2SpotMarketV2WebSymbolTicker(request)
         tickerdata = self.safe_dict(response, 'data')
         ticker = self.parse_ticker(tickerdata, market)
@@ -310,10 +428,83 @@ class kcex(Exchange, ImplicitAPI):
             'info': ticker,
         }, market)
 
+    def parse_futures_ticker(self, ticker, market: Market = None) -> Ticker:
+        # {
+        # contractId: 1,
+        # symbol: "BTC_USDT",
+        # lastPrice: 112000.2,
+        # bid1: 112000.1,
+        # ask1: 112000.2,
+        # volume24: 499700543,
+        # amount24: 5543019316.89779,
+        # holdVol: 3873397,
+        # lower24Price: 109136.5,
+        # high24Price: 112381,
+        # riseFallRate: 0.0183,
+        # riseFallValue: 2014.2,
+        # indexPrice: 112059.1,
+        # fairPrice: 112000.2,
+        # fundingRate: -0.00001,
+        # maxBidPrice: 128867.9,
+        # minAskPrice: 95250.2,
+        # timestamp: 1759139514008,
+        # riseFallRates: {
+        # zone: "UTC+8",
+        # r: 0.0183,
+        # v: 2014.2,
+        # r7: -0.005,
+        # r30: 0.032,
+        # r90: 0.05,
+        # r180: 0.3235,
+        # r365: 0.709
+        # },
+        # riseFallRatesOfTimezone: [
+        # 0.0231,
+        # -0.001,
+        # 0.0183
+        # ]
+        # }
+        symbol = self.safe_string(ticker, 'symbol')
+        high = self.safe_float(ticker, 'high24Price', 0)
+        low = self.safe_float(ticker, 'low24Price', 0)
+        open = self.safe_float(ticker, 'open24Price', 0)
+        last = self.safe_float(ticker, 'lastPrice', 0)
+        bid = self.safe_float(ticker, 'bid1', 0)
+        ask = self.safe_float(ticker, 'ask1', 0)
+        quoteVolume = self.safe_float(ticker, 'amount24', 0)
+        baseVolume = self.safe_float(ticker, 'volume24', 0)
+        timestamp = self.safe_integer(ticker, 'timestamp', 0)
+        change = self.safe_float(ticker, 'riseFallRate', 0)
+        return self.safe_ticker({
+            'symbol': symbol,
+            'timestamp': timestamp,
+            'datetime': self.iso8601(timestamp),
+            'high': high,
+            'low': low,
+            'bid': bid,
+            'bidVolume': None,
+            'ask': ask,
+            'askVolume': None,
+            'vwap': None,
+            'open': open,
+            'close': last,
+            'last': last,
+            'previousClose': None,
+            'change': change,
+            'percentage': None,
+            'average': None,
+            'baseVolume': baseVolume,
+            'quoteVolume': quoteVolume,
+            'info': ticker,
+        }, market)
+
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):
         query = self.omit(params, self.extract_params(path))
         url = self.urls['api']['public'] + '/' + path
         if path == 'market-2/spot/market/v2/web/symbol/ticker':
+            url = url + '?' + self.urlencode(query)
+        if path == 'contract/ticker':
+            url = self.urls['api']['futures'] + '/' + path
             url = url + '?' + self.urlencode(query)
         headers = {'Content-Type': 'application/json'}
         return {'url': url, 'method': method, 'body': body, 'headers': headers}

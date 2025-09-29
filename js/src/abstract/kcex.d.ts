@@ -4,6 +4,7 @@ interface Exchange {
     publicGetMarket2SpotMarketV2WebSymbols(params?: {}): Promise<implicitReturnType>;
     publicGetMarket2SpotMarketV2WebTickers(params?: {}): Promise<implicitReturnType>;
     publicGetMarket2SpotMarketV2WebSymbolTicker(params?: {}): Promise<implicitReturnType>;
+    futuresGetContractTicker(params?: {}): Promise<implicitReturnType>;
 }
 declare abstract class Exchange extends _Exchange {
 }

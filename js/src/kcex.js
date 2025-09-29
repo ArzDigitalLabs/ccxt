@@ -90,6 +90,7 @@ export default class kcex extends Exchange {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/kcex/64x64.png',
                 'api': {
                     'public': 'https://www.kcex.com/spot/api',
+                    'futures': 'https://www.kcex.com/fapi/v1',
                 },
                 'www': 'https://www.kcex.com',
                 'doc': [
@@ -110,6 +111,11 @@ export default class kcex extends Exchange {
                         'market-2/spot/market/v2/web/symbols': 1,
                         'market-2/spot/market/v2/web/tickers': 1,
                         'market-2/spot/market/v2/web/symbol/ticker': 1,
+                    },
+                },
+                'futures': {
+                    'get': {
+                        'contract/ticker': 1,
                     },
                 },
             },
@@ -133,18 +139,24 @@ export default class kcex extends Exchange {
          * @returns {object[]} an array of objects representing market data
          */
         const response = await this.publicGetMarket2SpotMarketV2WebSymbols(params);
+        const futuresResponse = await this.futuresGetContractTicker(params);
         const data = this.safeDict(response, 'data');
         const USDTmarketList = this.safeList(data, 'USDT');
         const USDCmarketList = this.safeList(data, 'USDC');
+        const futuresMarketList = this.safeList(futuresResponse, 'data');
         const marketList = this.arrayConcat(USDTmarketList, USDCmarketList);
         const result = [];
         for (let i = 0; i < marketList.length; i++) {
-            const market = this.parseMarket(marketList[i]);
+            const market = this.parseSpotMarket(marketList[i]);
+            result.push(market);
+        }
+        for (let i = 0; i < futuresMarketList.length; i++) {
+            const market = this.parseFuturesMarket(futuresMarketList[i]);
             result.push(market);
         }
         return result;
     }
-    parseMarket(market) {
+    parseSpotMarket(market) {
         //         {
         // id: "e16a2713c7a44bac9d1d4ef98467e75b",
         // mcd: "20f24a571c8544c0b1362794b1804456",
@@ -222,6 +234,98 @@ export default class kcex extends Exchange {
             'info': market,
         };
     }
+    parseFuturesMarket(market) {
+        //         {
+        // contractId: 1,
+        // symbol: "BTC_USDT",
+        // lastPrice: 112000.2,
+        // bid1: 112000.1,
+        // ask1: 112000.2,
+        // volume24: 499700543,
+        // amount24: 5543019316.89779,
+        // holdVol: 3873397,
+        // lower24Price: 109136.5,
+        // high24Price: 112381,
+        // riseFallRate: 0.0183,
+        // riseFallValue: 2014.2,
+        // indexPrice: 112059.1,
+        // fairPrice: 112000.2,
+        // fundingRate: -0.00001,
+        // maxBidPrice: 128867.9,
+        // minAskPrice: 95250.2,
+        // timestamp: 1759139514008,
+        // riseFallRates: {
+        // zone: "UTC+8",
+        // r: 0.0183,
+        // v: 2014.2,
+        // r7: -0.005,
+        // r30: 0.032,
+        // r90: 0.05,
+        // r180: 0.3235,
+        // r365: 0.709
+        // },
+        // riseFallRatesOfTimezone: [
+        // 0.0231,
+        // -0.001,
+        // 0.0183
+        // ]
+        // }
+        const id = this.safeString(market, 'symbol');
+        const symbol = id.split('_');
+        const baseId = symbol[0];
+        const quoteId = symbol[1];
+        const base = this.safeCurrencyCode(baseId);
+        const quote = this.safeCurrencyCode(quoteId);
+        return {
+            'id': id,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': baseId,
+            'quoteId': quoteId,
+            'settleId': undefined,
+            'type': 'future',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': true,
+            'option': false,
+            'active': true,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'amount': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'price': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'cost': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+            },
+            'created': undefined,
+            'info': market,
+        };
+    }
     async fetchTickers(symbols = undefined, params = {}) {
         /**
          * @method
@@ -236,10 +340,21 @@ export default class kcex extends Exchange {
         if (symbols !== undefined) {
             symbols = this.marketSymbols(symbols);
         }
-        const response = await this.publicGetMarket2SpotMarketV2WebTickers(params);
+        let response = {};
+        const result = {};
+        if (params['type'] === 'future') {
+            response = await this.futuresGetContractTicker(params);
+            const futuresTickerData = this.safeList(response, 'data');
+            for (let i = 0; i < futuresTickerData.length; i++) {
+                const futuresTicker = this.parseFuturesTicker(futuresTickerData[i]);
+                const symbol = futuresTicker['symbol'];
+                result[symbol] = futuresTicker;
+            }
+            return this.filterByArrayTickers(result, 'symbol', symbols);
+        }
+        response = await this.publicGetMarket2SpotMarketV2WebTickers(params);
         const tickers = this.safeList(response, 'data');
         const timestamp = this.safeInteger(response, 'timestamp');
-        const result = {};
         const idToMarket = {};
         const marketList = Object.values(this.markets);
         for (let i = 0; i < marketList.length; i++) {
@@ -274,7 +389,14 @@ export default class kcex extends Exchange {
         const request = {
             'symbol': market['base'] + '_' + market['quote'],
         };
-        const response = await this.publicGetMarket2SpotMarketV2WebSymbolTicker(request);
+        let response = {};
+        if (params['type'] === 'future') {
+            response = await this.futuresGetContractTicker(request);
+            const futuresTickerData = this.safeDict(response, 'data');
+            const futuresTicker = this.parseFuturesTicker(futuresTickerData);
+            return futuresTicker;
+        }
+        response = await this.publicGetMarket2SpotMarketV2WebSymbolTicker(request);
         const tickerdata = this.safeDict(response, 'data');
         const ticker = this.parseTicker(tickerdata, market);
         return ticker;
@@ -323,10 +445,84 @@ export default class kcex extends Exchange {
             'info': ticker,
         }, market);
     }
+    parseFuturesTicker(ticker, market = undefined) {
+        // {
+        // contractId: 1,
+        // symbol: "BTC_USDT",
+        // lastPrice: 112000.2,
+        // bid1: 112000.1,
+        // ask1: 112000.2,
+        // volume24: 499700543,
+        // amount24: 5543019316.89779,
+        // holdVol: 3873397,
+        // lower24Price: 109136.5,
+        // high24Price: 112381,
+        // riseFallRate: 0.0183,
+        // riseFallValue: 2014.2,
+        // indexPrice: 112059.1,
+        // fairPrice: 112000.2,
+        // fundingRate: -0.00001,
+        // maxBidPrice: 128867.9,
+        // minAskPrice: 95250.2,
+        // timestamp: 1759139514008,
+        // riseFallRates: {
+        // zone: "UTC+8",
+        // r: 0.0183,
+        // v: 2014.2,
+        // r7: -0.005,
+        // r30: 0.032,
+        // r90: 0.05,
+        // r180: 0.3235,
+        // r365: 0.709
+        // },
+        // riseFallRatesOfTimezone: [
+        // 0.0231,
+        // -0.001,
+        // 0.0183
+        // ]
+        // }
+        const symbol = this.safeString(ticker, 'symbol');
+        const high = this.safeFloat(ticker, 'high24Price', 0);
+        const low = this.safeFloat(ticker, 'low24Price', 0);
+        const open = this.safeFloat(ticker, 'open24Price', 0);
+        const last = this.safeFloat(ticker, 'lastPrice', 0);
+        const bid = this.safeFloat(ticker, 'bid1', 0);
+        const ask = this.safeFloat(ticker, 'ask1', 0);
+        const quoteVolume = this.safeFloat(ticker, 'amount24', 0);
+        const baseVolume = this.safeFloat(ticker, 'volume24', 0);
+        const timestamp = this.safeInteger(ticker, 'timestamp', 0);
+        const change = this.safeFloat(ticker, 'riseFallRate', 0);
+        return this.safeTicker({
+            'symbol': symbol,
+            'timestamp': timestamp,
+            'datetime': this.iso8601(timestamp),
+            'high': high,
+            'low': low,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': open,
+            'close': last,
+            'last': last,
+            'previousClose': undefined,
+            'change': change,
+            'percentage': undefined,
+            'average': undefined,
+            'baseVolume': baseVolume,
+            'quoteVolume': quoteVolume,
+            'info': ticker,
+        }, market);
+    }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api']['public'] + '/' + path;
         if (path === 'market-2/spot/market/v2/web/symbol/ticker') {
+            url = url + '?' + this.urlencode(query);
+        }
+        if (path === 'contract/ticker') {
+            url = this.urls['api']['futures'] + '/' + path;
             url = url + '?' + this.urlencode(query);
         }
         headers = { 'Content-Type': 'application/json' };

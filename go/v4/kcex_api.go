@@ -18,3 +18,7 @@ func (this *kcex) PublicGetMarket2SpotMarketV2WebTickers (args ...interface{}) <
 func (this *kcex) PublicGetMarket2SpotMarketV2WebSymbolTicker (args ...interface{}) <-chan interface{} {
    return this.callEndpointAsync("publicGetMarket2SpotMarketV2WebSymbolTicker", args...)
 }
+
+func (this *kcex) FuturesGetContractTicker (args ...interface{}) <-chan interface{} {
+   return this.callEndpointAsync("futuresGetContractTicker", args...)
+}

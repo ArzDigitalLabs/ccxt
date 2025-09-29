@@ -87,6 +87,7 @@ class kcex extends Exchange {
                 'logo' => 'https://cdn.arz.digital/cr-odin/img/exchanges/kcex/64x64.png',
                 'api' => array(
                     'public' => 'https://www.kcex.com/spot/api',
+                    'futures' => 'https://www.kcex.com/fapi/v1',
                 ),
                 'www' => 'https://www.kcex.com',
                 'doc' => array(
@@ -109,6 +110,11 @@ class kcex extends Exchange {
                         'market-2/spot/market/v2/web/symbol/ticker' => 1,
                     ),
                 ),
+                'futures' => array(
+                    'get' => array(
+                        'contract/ticker' => 1,
+                    ),
+                ),
             ),
             // 'fees' => array(
             //     'trading' => array(
@@ -129,19 +135,25 @@ class kcex extends Exchange {
          * @return {array[]} an array of objects representing $market $data
          */
         $response = $this->publicGetMarket2SpotMarketV2WebSymbols ($params);
+        $futuresResponse = $this->futuresGetContractTicker ($params);
         $data = $this->safe_dict($response, 'data');
         $USDTmarketList = $this->safe_list($data, 'USDT');
         $USDCmarketList = $this->safe_list($data, 'USDC');
+        $futuresMarketList = $this->safe_list($futuresResponse, 'data');
         $marketList = $this->array_concat($USDTmarketList, $USDCmarketList);
         $result = array();
         for ($i = 0; $i < count($marketList); $i++) {
-            $market = $this->parse_market($marketList[$i]);
+            $market = $this->parse_spot_market($marketList[$i]);
+            $result[] = $market;
+        }
+        for ($i = 0; $i < count($futuresMarketList); $i++) {
+            $market = $this->parse_futures_market($futuresMarketList[$i]);
             $result[] = $market;
         }
         return $result;
     }
 
-    public function parse_market($market): array {
+    public function parse_spot_market($market): array {
         //         {
         // $id => "e16a2713c7a44bac9d1d4ef98467e75b",
         // mcd => "20f24a571c8544c0b1362794b1804456",
@@ -220,6 +232,99 @@ class kcex extends Exchange {
         );
     }
 
+    public function parse_futures_market($market): array {
+        //         {
+        // contractId => 1,
+        // $symbol => "BTC_USDT",
+        // lastPrice => 112000.2,
+        // bid1 => 112000.1,
+        // ask1 => 112000.2,
+        // volume24 => 499700543,
+        // amount24 => 5543019316.89779,
+        // holdVol => 3873397,
+        // lower24Price => 109136.5,
+        // high24Price => 112381,
+        // riseFallRate => 0.0183,
+        // riseFallValue => 2014.2,
+        // indexPrice => 112059.1,
+        // fairPrice => 112000.2,
+        // fundingRate => -0.00001,
+        // maxBidPrice => 128867.9,
+        // minAskPrice => 95250.2,
+        // timestamp => 1759139514008,
+        // riseFallRates => array(
+        // zone => "UTC+8",
+        // r => 0.0183,
+        // v => 2014.2,
+        // r7 => -0.005,
+        // r30 => 0.032,
+        // r90 => 0.05,
+        // r180 => 0.3235,
+        // r365 => 0.709
+        // ),
+        // riseFallRatesOfTimezone => array(
+        // 0.0231,
+        // -0.001,
+        // 0.0183
+        // )
+        // }
+        $id = $this->safe_string($market, 'symbol');
+        $symbol = explode('_', $id);
+        $baseId = $symbol[0];
+        $quoteId = $symbol[1];
+        $base = $this->safe_currency_code($baseId);
+        $quote = $this->safe_currency_code($quoteId);
+        return array(
+            'id' => $id,
+            'symbol' => $base . '/' . $quote,
+            'base' => $base,
+            'quote' => $quote,
+            'settle' => null,
+            'baseId' => $baseId,
+            'quoteId' => $quoteId,
+            'settleId' => null,
+            'type' => 'future',
+            'spot' => false,
+            'margin' => false,
+            'swap' => false,
+            'future' => true,
+            'option' => false,
+            'active' => true,
+            'contract' => false,
+            'linear' => null,
+            'inverse' => null,
+            'contractSize' => null,
+            'expiry' => null,
+            'expiryDatetime' => null,
+            'strike' => null,
+            'optionType' => null,
+            'precision' => array(
+                'amount' => null,
+                'price' => null,
+            ),
+            'limits' => array(
+                'leverage' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'amount' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'price' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'cost' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+            ),
+            'created' => null,
+            'info' => $market,
+        );
+    }
+
     public function fetch_tickers(?array $symbols = null, $params = array ()): array {
         /**
          * fetches price $tickers for multiple markets, statistical information calculated over the past 24 hours for each $market
@@ -232,10 +337,21 @@ class kcex extends Exchange {
         if ($symbols !== null) {
             $symbols = $this->market_symbols($symbols);
         }
+        $response = array();
+        $result = array();
+        if ($params['type'] === 'future') {
+            $response = $this->futuresGetContractTicker ($params);
+            $futuresTickerData = $this->safe_list($response, 'data');
+            for ($i = 0; $i < count($futuresTickerData); $i++) {
+                $futuresTicker = $this->parse_futures_ticker($futuresTickerData[$i]);
+                $symbol = $futuresTicker['symbol'];
+                $result[$symbol] = $futuresTicker;
+            }
+            return $this->filter_by_array_tickers($result, 'symbol', $symbols);
+        }
         $response = $this->publicGetMarket2SpotMarketV2WebTickers ($params);
         $tickers = $this->safe_list($response, 'data');
         $timestamp = $this->safe_integer($response, 'timestamp');
-        $result = array();
         $idToMarket = array();
         $marketList = is_array($this->markets) ? array_values($this->markets) : array();
         for ($i = 0; $i < count($marketList); $i++) {
@@ -269,6 +385,13 @@ class kcex extends Exchange {
         $request = array(
             'symbol' => $market['base'] . '_' . $market['quote'],
         );
+        $response = array();
+        if ($params['type'] === 'future') {
+            $response = $this->futuresGetContractTicker ($request);
+            $futuresTickerData = $this->safe_dict($response, 'data');
+            $futuresTicker = $this->parse_futures_ticker($futuresTickerData);
+            return $futuresTicker;
+        }
         $response = $this->publicGetMarket2SpotMarketV2WebSymbolTicker ($request);
         $tickerdata = $this->safe_dict($response, 'data');
         $ticker = $this->parse_ticker($tickerdata, $market);
@@ -320,10 +443,85 @@ class kcex extends Exchange {
         ), $market);
     }
 
+    public function parse_futures_ticker($ticker, ?array $market = null): array {
+        // {
+        // contractId => 1,
+        // $symbol => "BTC_USDT",
+        // lastPrice => 112000.2,
+        // bid1 => 112000.1,
+        // ask1 => 112000.2,
+        // volume24 => 499700543,
+        // amount24 => 5543019316.89779,
+        // holdVol => 3873397,
+        // lower24Price => 109136.5,
+        // high24Price => 112381,
+        // riseFallRate => 0.0183,
+        // riseFallValue => 2014.2,
+        // indexPrice => 112059.1,
+        // fairPrice => 112000.2,
+        // fundingRate => -0.00001,
+        // maxBidPrice => 128867.9,
+        // minAskPrice => 95250.2,
+        // $timestamp => 1759139514008,
+        // riseFallRates => array(
+        // zone => "UTC+8",
+        // r => 0.0183,
+        // v => 2014.2,
+        // r7 => -0.005,
+        // r30 => 0.032,
+        // r90 => 0.05,
+        // r180 => 0.3235,
+        // r365 => 0.709
+        // ),
+        // riseFallRatesOfTimezone => array(
+        // 0.0231,
+        // -0.001,
+        // 0.0183
+        // )
+        // }
+        $symbol = $this->safe_string($ticker, 'symbol');
+        $high = $this->safe_float($ticker, 'high24Price', 0);
+        $low = $this->safe_float($ticker, 'low24Price', 0);
+        $open = $this->safe_float($ticker, 'open24Price', 0);
+        $last = $this->safe_float($ticker, 'lastPrice', 0);
+        $bid = $this->safe_float($ticker, 'bid1', 0);
+        $ask = $this->safe_float($ticker, 'ask1', 0);
+        $quoteVolume = $this->safe_float($ticker, 'amount24', 0);
+        $baseVolume = $this->safe_float($ticker, 'volume24', 0);
+        $timestamp = $this->safe_integer($ticker, 'timestamp', 0);
+        $change = $this->safe_float($ticker, 'riseFallRate', 0);
+        return $this->safe_ticker(array(
+            'symbol' => $symbol,
+            'timestamp' => $timestamp,
+            'datetime' => $this->iso8601($timestamp),
+            'high' => $high,
+            'low' => $low,
+            'bid' => $bid,
+            'bidVolume' => null,
+            'ask' => $ask,
+            'askVolume' => null,
+            'vwap' => null,
+            'open' => $open,
+            'close' => $last,
+            'last' => $last,
+            'previousClose' => null,
+            'change' => $change,
+            'percentage' => null,
+            'average' => null,
+            'baseVolume' => $baseVolume,
+            'quoteVolume' => $quoteVolume,
+            'info' => $ticker,
+        ), $market);
+    }
+
     public function sign($path, $api = 'public', $method = 'GET', $params = array (), $headers = null, $body = null) {
         $query = $this->omit($params, $this->extract_params($path));
         $url = $this->urls['api']['public'] . '/' . $path;
         if ($path === 'market-2/spot/market/v2/web/symbol/ticker') {
+            $url = $url . '?' . $this->urlencode($query);
+        }
+        if ($path === 'contract/ticker') {
+            $url = $this->urls['api']['futures'] . '/' . $path;
             $url = $url . '?' . $this->urlencode($query);
         }
         $headers = array( 'Content-Type' => 'application/json' );
