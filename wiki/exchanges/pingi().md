@@ -13,7 +13,7 @@
 <a name="pingi" id="pingi"></a>
 
 ### pingi{docsify-ignore}
-Pingi OTC exchange implementation
+Pingi SPOT exchange implementation
 
 
 

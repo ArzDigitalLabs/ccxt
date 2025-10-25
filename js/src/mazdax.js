@@ -10,7 +10,7 @@ import Exchange from './abstract/mazdax.js';
 /**
  * @class mazdax
  * @augments Exchange
- * @description Mazdax OTC exchange implementation
+ * @description Mazdax SPOT exchange implementation
  */
 export default class mazdax extends Exchange {
     describe() {
@@ -24,7 +24,7 @@ export default class mazdax extends Exchange {
             'pro': false,
             'has': {
                 'CORS': undefined,
-                'spot': false,
+                'spot': true,
                 'margin': false,
                 'swap': false,
                 'future': false,
@@ -80,13 +80,12 @@ export default class mazdax extends Exchange {
                 'fetchTradingFee': false,
                 'fetchTradingFees': false,
                 'fetchWithdrawals': false,
-                'otc': true,
                 'setLeverage': false,
                 'setMarginMode': false,
                 'transfer': false,
                 'withdraw': false,
             },
-            'comment': 'Mazdax OTC Exchange',
+            'comment': 'Mazdax SPOT Exchange',
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/mazdax/64x64.png',
                 'api': {
@@ -221,7 +220,7 @@ export default class mazdax extends Exchange {
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': undefined,
-            'type': 'otc',
+            'type': 'spot',
             'spot': false,
             'margin': false,
             'swap': false,
@@ -383,7 +382,7 @@ export default class mazdax extends Exchange {
         //   "closeTime": 1760351215075,
         //   "count": 348
         // }
-        const marketType = 'otc';
+        const marketType = 'spot';
         const marketId = this.safeString(ticker, 'symbol');
         const symbol = this.safeSymbol(marketId, market, undefined, marketType);
         const timestamp = this.safeInteger(ticker, 'closeTime');

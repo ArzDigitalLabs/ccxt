@@ -3,7 +3,7 @@ import { Int, Market, OHLCV, OrderBook, Strings, Ticker, Tickers } from './base/
 /**
  * @class mazdax
  * @augments Exchange
- * @description Mazdax OTC exchange implementation
+ * @description Mazdax SPOT exchange implementation
  */
 export default class mazdax extends Exchange {
     describe(): any;
