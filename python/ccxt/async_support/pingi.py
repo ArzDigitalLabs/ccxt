@@ -78,13 +78,12 @@ class pingi(Exchange, ImplicitAPI):
                 'fetchTradingFee': False,
                 'fetchTradingFees': False,
                 'fetchWithdrawals': False,
-                'otc': True,
                 'setLeverage': False,
                 'setMarginMode': False,
                 'transfer': False,
                 'withdraw': False,
             },
-            'comment': 'Pingi OTC Exchange',
+            'comment': 'Pingi SPOT Exchange',
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/pingi/64x64.png',
                 'api': {
@@ -197,7 +196,7 @@ class pingi(Exchange, ImplicitAPI):
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': None,
-            'type': 'otc',
+            'type': 'spot',
             'spot': False,
             'margin': False,
             'swap': False,
@@ -323,7 +322,7 @@ class pingi(Exchange, ImplicitAPI):
         #   "startPrice": "12752332240.0000000000000",
         #   "marketPlatform": 0
         # }
-        marketType = 'otc'
+        marketType = 'spot'
         marketId = self.safe_string(ticker, 'market')
         symbol = self.safe_symbol(marketId, market, '_', marketType)
         last = self.safe_string(ticker, 'currentPrice')

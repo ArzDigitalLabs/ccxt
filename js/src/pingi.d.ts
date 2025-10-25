@@ -3,7 +3,7 @@ import { Int, Market, OHLCV, Strings, Ticker, Tickers } from './base/types.js';
 /**
  * @class pingi
  * @augments Exchange
- * @description Pingi OTC exchange implementation
+ * @description Pingi SPOT exchange implementation
  */
 export default class pingi extends Exchange {
     describe(): any;

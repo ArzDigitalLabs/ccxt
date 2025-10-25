@@ -77,13 +77,12 @@ class pingi extends Exchange {
                 'fetchTradingFee' => false,
                 'fetchTradingFees' => false,
                 'fetchWithdrawals' => false,
-                'otc' => true,
                 'setLeverage' => false,
                 'setMarginMode' => false,
                 'transfer' => false,
                 'withdraw' => false,
             ),
-            'comment' => 'Pingi OTC Exchange',
+            'comment' => 'Pingi SPOT Exchange',
             'urls' => array(
                 'logo' => 'https://cdn.arz.digital/cr-odin/img/exchanges/pingi/64x64.png',
                 'api' => array(
@@ -199,7 +198,7 @@ class pingi extends Exchange {
             'baseId' => $baseId,
             'quoteId' => $quoteId,
             'settleId' => null,
-            'type' => 'otc',
+            'type' => 'spot',
             'spot' => false,
             'margin' => false,
             'swap' => false,
@@ -330,7 +329,7 @@ class pingi extends Exchange {
         //   "startPrice" => "12752332240.0000000000000",
         //   "marketPlatform" => 0
         // }
-        $marketType = 'otc';
+        $marketType = 'spot';
         $marketId = $this->safe_string($ticker, 'market');
         $symbol = $this->safe_symbol($marketId, $market, '_', $marketType);
         $last = $this->safe_string($ticker, 'currentPrice');

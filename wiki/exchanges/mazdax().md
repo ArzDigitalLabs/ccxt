@@ -14,7 +14,7 @@
 <a name="mazdax" id="mazdax"></a>
 
 ### mazdax{docsify-ignore}
-Mazdax OTC exchange implementation
+Mazdax SPOT exchange implementation
 
 
 

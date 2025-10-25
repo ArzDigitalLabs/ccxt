@@ -22,7 +22,7 @@ class mazdax(Exchange, ImplicitAPI):
             'pro': False,
             'has': {
                 'CORS': None,
-                'spot': False,
+                'spot': True,
                 'margin': False,
                 'swap': False,
                 'future': False,
@@ -78,13 +78,12 @@ class mazdax(Exchange, ImplicitAPI):
                 'fetchTradingFee': False,
                 'fetchTradingFees': False,
                 'fetchWithdrawals': False,
-                'otc': True,
                 'setLeverage': False,
                 'setMarginMode': False,
                 'transfer': False,
                 'withdraw': False,
             },
-            'comment': 'Mazdax OTC Exchange',
+            'comment': 'Mazdax SPOT Exchange',
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/mazdax/64x64.png',
                 'api': {
@@ -216,7 +215,7 @@ class mazdax(Exchange, ImplicitAPI):
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': None,
-            'type': 'otc',
+            'type': 'spot',
             'spot': False,
             'margin': False,
             'swap': False,
@@ -369,7 +368,7 @@ class mazdax(Exchange, ImplicitAPI):
         #   "closeTime": 1760351215075,
         #   "count": 348
         # }
-        marketType = 'otc'
+        marketType = 'spot'
         marketId = self.safe_string(ticker, 'symbol')
         symbol = self.safe_symbol(marketId, market, None, marketType)
         timestamp = self.safe_integer(ticker, 'closeTime')

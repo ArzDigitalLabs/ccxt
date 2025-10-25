@@ -3,7 +3,7 @@
 # Create virtual environment if it doesn't exist
 if [ ! -d ".venv" ]; then
     echo "Creating virtual environment..."
-    python3 -m venv .venv
+    python33 -m venv .venv
 fi
 
 # Activate virtual environment
@@ -15,14 +15,14 @@ echo "Checking and installing required packages..."
 
 # Function to check if a package is installed
 check_package() {
-    python -c "import pkg_resources; pkg_resources.require('$1')" 2>/dev/null
+    python3 -c "import pkg_resources; pkg_resources.require('$1')" 2>/dev/null
     return $?
 }
 
 # Check and install setuptools
 if ! check_package "setuptools"; then
     echo "Installing setuptools..."
-    pip install setuptools
+    pip3 install setuptools
 else
     echo "setuptools already installed."
 fi
@@ -30,7 +30,7 @@ fi
 # Check and install wheel
 if ! check_package "wheel"; then
     echo "Installing wheel..."
-    pip install wheel
+    pip3 install wheel
 else
     echo "wheel already installed."
 fi
@@ -38,14 +38,14 @@ fi
 # Check and install twine
 if ! check_package "twine"; then
     echo "Installing twine..."
-    pip install twine
+    pip3 install twine
 else
     echo "twine already installed."
 fi
 
 # Build distribution packages
 echo "Building distribution packages..."
-python setup.py sdist bdist_wheel
+python3 setup.py sdist bdist_wheel
 
 # Get PyPI token
 if [ -z "${PYPI_TOKEN}" ]; then

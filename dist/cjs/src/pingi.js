@@ -9,7 +9,7 @@ var pingi$1 = require('./abstract/pingi.js');
 /**
  * @class pingi
  * @augments Exchange
- * @description Pingi OTC exchange implementation
+ * @description Pingi SPOT exchange implementation
  */
 class pingi extends pingi$1["default"] {
     describe() {
@@ -79,13 +79,12 @@ class pingi extends pingi$1["default"] {
                 'fetchTradingFee': false,
                 'fetchTradingFees': false,
                 'fetchWithdrawals': false,
-                'otc': true,
                 'setLeverage': false,
                 'setMarginMode': false,
                 'transfer': false,
                 'withdraw': false,
             },
-            'comment': 'Pingi OTC Exchange',
+            'comment': 'Pingi SPOT Exchange',
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/pingi/64x64.png',
                 'api': {
@@ -201,7 +200,7 @@ class pingi extends pingi$1["default"] {
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': undefined,
-            'type': 'otc',
+            'type': 'spot',
             'spot': false,
             'margin': false,
             'swap': false,
@@ -333,7 +332,7 @@ class pingi extends pingi$1["default"] {
         //   "startPrice": "12752332240.0000000000000",
         //   "marketPlatform": 0
         // }
-        const marketType = 'otc';
+        const marketType = 'spot';
         const marketId = this.safeString(ticker, 'market');
         const symbol = this.safeSymbol(marketId, market, '_', marketType);
         const last = this.safeString(ticker, 'currentPrice');

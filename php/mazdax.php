@@ -21,7 +21,7 @@ class mazdax extends Exchange {
             'pro' => false,
             'has' => array(
                 'CORS' => null,
-                'spot' => false,
+                'spot' => true,
                 'margin' => false,
                 'swap' => false,
                 'future' => false,
@@ -77,13 +77,12 @@ class mazdax extends Exchange {
                 'fetchTradingFee' => false,
                 'fetchTradingFees' => false,
                 'fetchWithdrawals' => false,
-                'otc' => true,
                 'setLeverage' => false,
                 'setMarginMode' => false,
                 'transfer' => false,
                 'withdraw' => false,
             ),
-            'comment' => 'Mazdax OTC Exchange',
+            'comment' => 'Mazdax SPOT Exchange',
             'urls' => array(
                 'logo' => 'https://cdn.arz.digital/cr-odin/img/exchanges/mazdax/64x64.png',
                 'api' => array(
@@ -218,7 +217,7 @@ class mazdax extends Exchange {
             'baseId' => $baseId,
             'quoteId' => $quoteId,
             'settleId' => null,
-            'type' => 'otc',
+            'type' => 'spot',
             'spot' => false,
             'margin' => false,
             'swap' => false,
@@ -378,7 +377,7 @@ class mazdax extends Exchange {
         //   "closeTime" => 1760351215075,
         //   "count" => 348
         // }
-        $marketType = 'otc';
+        $marketType = 'spot';
         $marketId = $this->safe_string($ticker, 'symbol');
         $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
         $timestamp = $this->safe_integer($ticker, 'closeTime');
