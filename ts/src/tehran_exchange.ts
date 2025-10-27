@@ -240,9 +240,19 @@ export default class tehran_exchange extends Exchange {
         const response = await this.publicGetOtcV1MarketPair (params);
         const data = this.safeDict (response, 'data', {});
         const pairs = this.safeList (data, 'pairs', []);
-        const result = {};
+        // filter symbols from pairs
+        const filteredPairs = [];
         for (let i = 0; i < pairs.length; i++) {
-            const pairData = pairs[i];
+            const pair = pairs[i];
+            const pairId = this.safeString (pair, 'pair');
+            const symbol = this.safeSymbol (pairId);
+            if (symbols.includes (symbol)) {
+                filteredPairs.push (pair);
+            }
+        }
+        const result = {};
+        for (let i = 0; i < filteredPairs.length; i++) {
+            const pairData = filteredPairs[i];
             const pairId = this.safeString (pairData, 'pair');
             // Fetch BUY price
             const request = {
@@ -273,7 +283,7 @@ export default class tehran_exchange extends Exchange {
          * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
         const ticker = await this.fetchTickers ([ symbol ]);
-        return ticker[symbol];
+        return ticker[this.safeSymbol (symbol)];
     }
 
     parseTicker (ticker, market: Market = undefined): Ticker {
@@ -303,7 +313,6 @@ export default class tehran_exchange extends Exchange {
             'bidVolume': undefined,
             'ask': price,
             'askVolume': undefined,
-            'vwap': undefined,
             'open': undefined,
             'close': price,
             'last': price,
@@ -321,7 +330,7 @@ export default class tehran_exchange extends Exchange {
         const query = this.omit (params, this.extractParams (path));
         let url = this.urls['api']['public'] + '/' + path;
         if (Object.keys (query).length) {
-            url = url + '?' + this.urlencode (query);
+            url += '?' + this.urlencode (query);
         }
         headers = { 'Content-Type': 'application/json' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
