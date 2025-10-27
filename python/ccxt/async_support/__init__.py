@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.9.14'
+__version__ = '4.9.15'
 
 # -----------------------------------------------------------------------------
 
@@ -190,6 +190,7 @@ from ccxt.async_support.ramzinex import ramzinex                                
 from ccxt.async_support.sarmayex import sarmayex                                # noqa: F401
 from ccxt.async_support.sarrafex import sarrafex                                # noqa: F401
 from ccxt.async_support.tabdeal import tabdeal                                  # noqa: F401
+from ccxt.async_support.tehran_exchange import tehran_exchange                  # noqa: F401
 from ccxt.async_support.tetherland import tetherland                            # noqa: F401
 from ccxt.async_support.timex import timex                                      # noqa: F401
 from ccxt.async_support.tokocrypto import tokocrypto                            # noqa: F401
@@ -336,6 +337,7 @@ exchanges = [
     'sarmayex',
     'sarrafex',
     'tabdeal',
+    'tehran_exchange',
     'tetherland',
     'timex',
     'tokocrypto',

@@ -127,6 +127,7 @@
 	- [sarmayex()](exchanges/sarmayex().md)
 	- [sarrafex()](exchanges/sarrafex().md)
 	- [tabdeal()](exchanges/tabdeal().md)
+	- [tehran_exchange()](exchanges/tehran_exchange().md)
 	- [tetherland()](exchanges/tetherland().md)
 	- [timex](exchanges/timex.md)
 	- [tokocrypto](exchanges/tokocrypto.md)
