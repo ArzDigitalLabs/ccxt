@@ -132,6 +132,7 @@ ccxt/ramzinex.py
 ccxt/sarmayex.py
 ccxt/sarrafex.py
 ccxt/tabdeal.py
+ccxt/tehran_exchange.py
 ccxt/tetherland.py
 ccxt/timex.py
 ccxt/tokocrypto.py
@@ -277,6 +278,7 @@ ccxt/abstract/ramzinex.py
 ccxt/abstract/sarmayex.py
 ccxt/abstract/sarrafex.py
 ccxt/abstract/tabdeal.py
+ccxt/abstract/tehran_exchange.py
 ccxt/abstract/tetherland.py
 ccxt/abstract/timex.py
 ccxt/abstract/tokocrypto.py
@@ -422,6 +424,7 @@ ccxt/async_support/ramzinex.py
 ccxt/async_support/sarmayex.py
 ccxt/async_support/sarrafex.py
 ccxt/async_support/tabdeal.py
+ccxt/async_support/tehran_exchange.py
 ccxt/async_support/tetherland.py
 ccxt/async_support/timex.py
 ccxt/async_support/tokocrypto.py
