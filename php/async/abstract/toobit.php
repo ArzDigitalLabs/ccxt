@@ -13,10 +13,16 @@ abstract class toobit extends \ccxt\async\Exchange {
     public function public_get_quote_v1_klines($params = array()) {
         return $this->request('quote/v1/klines', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
+    public function public_get_api_v1_exchangeinfo($params = array()) {
+        return $this->request('/api/v1/exchangeInfo', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
     public function publicGetQuoteV1Ticker24hr($params = array()) {
         return $this->request('quote/v1/ticker/24hr', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
     public function publicGetQuoteV1Klines($params = array()) {
         return $this->request('quote/v1/klines', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
+    public function publicGetApiV1ExchangeInfo($params = array()) {
+        return $this->request('/api/v1/exchangeInfo', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
 }

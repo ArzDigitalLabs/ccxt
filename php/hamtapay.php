@@ -291,7 +291,10 @@ class hamtapay extends Exchange {
 
     public function sign($path, $api = 'public', $method = 'GET', $params = array (), $headers = null, $body = null) {
         $url = $this->urls['api']['public'] . '/' . $path;
-        $headers = array( 'Content-Type' => 'application/json' );
+        $headers = array(
+            'Content-Type' => 'application/json',
+            'Origin' => 'https://hamtapay.net',
+        );
         return array( 'url' => $url, 'method' => $method, 'body' => $body, 'headers' => $headers );
     }
 }

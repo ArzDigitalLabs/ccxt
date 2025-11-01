@@ -21,4 +21,9 @@ public partial class toobit : Exchange
         return await this.callAsync ("publicGetQuoteV1Klines",parameters);
     }
 
+    public async Task<object> publicGetApiV1ExchangeInfo (object parameters = null)
+    {
+        return await this.callAsync ("publicGetApiV1ExchangeInfo",parameters);
+    }
+
 }

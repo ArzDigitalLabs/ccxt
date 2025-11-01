@@ -11,6 +11,7 @@ import { Exchange as _Exchange } from '../base/Exchange.js';
 interface Exchange {
     publicGetQuoteV1Ticker24hr (params?: {}): Promise<implicitReturnType>;
     publicGetQuoteV1Klines (params?: {}): Promise<implicitReturnType>;
+    publicGetApiV1ExchangeInfo (params?: {}): Promise<implicitReturnType>;
 }
 abstract class Exchange extends _Exchange {}
 

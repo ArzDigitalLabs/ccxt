@@ -294,7 +294,10 @@ export default class hamtapay extends Exchange {
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
         const url = this.urls['api']['public'] + '/' + path;
-        headers = { 'Content-Type': 'application/json' };
+        headers = {
+            'Content-Type': 'application/json',
+            'Origin': 'https://hamtapay.net',
+        };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
     }
 }
