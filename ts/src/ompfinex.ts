@@ -507,7 +507,10 @@ export default class ompfinex extends Exchange {
         if (path === 'v2/udf/real/history') {
             url = this.urls['api']['public'] + '/' + path + '?' + this.urlencode (query);
         }
-        headers = { 'Content-Type': 'application/json' };
+        headers = {
+            'Content-Type': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
     }
 }
