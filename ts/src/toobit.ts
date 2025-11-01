@@ -210,11 +210,11 @@ export default class toobit extends Exchange {
             if (filterType === 'PRICE_FILTER') {
                 minPrice = this.safeNumber (filter, 'minPrice');
                 maxPrice = this.safeNumber (filter, 'maxPrice');
-                tickSize = this.safeNumber (filter, 'tickSize');
+                tickSize = this.safeString (filter, 'tickSize');
             } else if (filterType === 'LOT_SIZE') {
                 minQty = this.safeNumber (filter, 'minQty');
                 maxQty = this.safeNumber (filter, 'maxQty');
-                stepSize = this.safeNumber (filter, 'stepSize');
+                stepSize = this.safeString (filter, 'stepSize');
             } else if (filterType === 'MIN_NOTIONAL') {
                 minNotional = this.safeNumber (filter, 'minNotional');
             } else if (filterType === 'TRADE_AMOUNT') {

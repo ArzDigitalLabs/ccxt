@@ -204,11 +204,11 @@ class toobit(Exchange, ImplicitAPI):
             if filterType == 'PRICE_FILTER':
                 minPrice = self.safe_number(filter, 'minPrice')
                 maxPrice = self.safe_number(filter, 'maxPrice')
-                tickSize = self.safe_number(filter, 'tickSize')
+                tickSize = self.safe_string(filter, 'tickSize')
             elif filterType == 'LOT_SIZE':
                 minQty = self.safe_number(filter, 'minQty')
                 maxQty = self.safe_number(filter, 'maxQty')
-                stepSize = self.safe_number(filter, 'stepSize')
+                stepSize = self.safe_string(filter, 'stepSize')
             elif filterType == 'MIN_NOTIONAL':
                 minNotional = self.safe_number(filter, 'minNotional')
             elif filterType == 'TRADE_AMOUNT':
