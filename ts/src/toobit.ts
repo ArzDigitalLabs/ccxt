@@ -286,7 +286,7 @@ export default class toobit extends Exchange {
          * @method
          * @name toobit#fetchTickers
          * @description fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
-         * @see https://apidocs.toobit.io/#tickers
+         * @see https://toobit-docs.github.io/apidocs/spot/v1/en/#tickers
          * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
@@ -314,7 +314,7 @@ export default class toobit extends Exchange {
          * @method
          * @name toobit#fetchTicker
          * @description fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
-         * @see https://apidocs.toobit.io/#ticker
+         * @see https://toobit-docs.github.io/apidocs/spot/v1/en/#ticker
          * @param {string} symbol unified symbol of the market to fetch the ticker for
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
@@ -387,7 +387,7 @@ export default class toobit extends Exchange {
          * @method
          * @name toobit#fetchOHLCV
          * @description fetches historical candlestick data containing the open, high, low, and close price, and the volume of a market
-         * @see https://apidocs.toobit.io/#chart
+         * @see https://toobit-docs.github.io/apidocs/spot/v1/en/#chart
          * @param {string} symbol unified symbol of the market to fetch OHLCV data for
          * @param {string} timeframe the length of time each candle represents
          * @param {int} [since] timestamp in ms of the earliest candle to fetch
