@@ -1,5 +1,34 @@
 # Changelog
 
+## v4.9.16 - 2025-11-01
+
+### Enhanced
+
+**Toobit Exchange**: Updated market data fetching and API documentation
+
+- **Market Data API Migration**: Migrated from deprecated ticker endpoint to exchangeInfo endpoint
+  - Changed `fetchMarkets` to use `publicGetApiV1ExchangeInfo()` instead of `publicGetQuoteV1Ticker24hr()`
+  - Updated API endpoint from `https://api.toobit.com/quote/v1/ticker/24hr` to `https://api.toobit.com/api/v1/exchangeInfo`
+  - Enhanced market status filtering to only include `TRADING` status symbols
+  - Fixed in ts/src/toobit.ts:143-165
+
+- **Enhanced Market Parsing**: Completely reimplemented `parseMarket` function for new API response format
+  - Added comprehensive filter parsing for price and quantity constraints (PRICE_FILTER, LOT_SIZE, MIN_NOTIONAL, MARKET_LOT_SIZE)
+  - Extracted detailed market precision from `baseAssetPrecision` and `quotePrecision` fields
+  - Added support for margin trading flag (`allowMargin`) in market data
+  - Implemented proper min/max price, quantity, and notional amount extraction from filters array
+  - Fixed in ts/src/toobit.ts:167-220
+
+- **API Documentation Updates**: Updated all JSDoc references to new documentation domain
+  - Changed documentation URLs from `https://apidocs.toobit.io/` to `https://toobit-docs.github.io/apidocs/spot/v1/en/`
+  - Updated `fetchTickers`, `fetchTicker`, and `fetchOHLCV` function documentation links
+  - Ensures consistency with current Toobit API documentation structure
+  - Fixed in ts/src/toobit.ts:222, ts/src/toobit.ts:252, ts/src/toobit.ts:385
+
+- **Abstract API Definition**: Added new exchangeInfo endpoint to abstract class
+  - Added `publicGetApiV1ExchangeInfo` method definition for type safety
+  - Fixed in ts/src/abstract/toobit.ts:15
+
 ## v4.9.12 - 2025-10-15
 
 ### Fixed
