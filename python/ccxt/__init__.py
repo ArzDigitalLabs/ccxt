@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.9.14'
+__version__ = '4.9.15'
 
 # ----------------------------------------------------------------------------
 
@@ -210,6 +210,7 @@ from ccxt.ramzinex import ramzinex                                    # noqa: F4
 from ccxt.sarmayex import sarmayex                                    # noqa: F401
 from ccxt.sarrafex import sarrafex                                    # noqa: F401
 from ccxt.tabdeal import tabdeal                                      # noqa: F401
+from ccxt.tehran_exchange import tehran_exchange                      # noqa: F401
 from ccxt.tetherland import tetherland                                # noqa: F401
 from ccxt.timex import timex                                          # noqa: F401
 from ccxt.tokocrypto import tokocrypto                                # noqa: F401
@@ -356,6 +357,7 @@ exchanges = [
     'sarmayex',
     'sarrafex',
     'tabdeal',
+    'tehran_exchange',
     'tetherland',
     'timex',
     'tokocrypto',

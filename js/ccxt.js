@@ -38,7 +38,7 @@ import * as errors from './src/base/errors.js';
 import { BaseError, ExchangeError, AuthenticationError, PermissionDenied, AccountNotEnabled, AccountSuspended, ArgumentsRequired, BadRequest, BadSymbol, OperationRejected, NoChange, MarginModeAlreadySet, MarketClosed, ManualInteractionNeeded, RestrictedLocation, InsufficientFunds, InvalidAddress, AddressPending, InvalidOrder, OrderNotFound, OrderNotCached, OrderImmediatelyFillable, OrderNotFillable, DuplicateOrderId, ContractUnavailable, NotSupported, InvalidProxySettings, ExchangeClosedByUser, OperationFailed, NetworkError, DDoSProtection, RateLimitExceeded, ExchangeNotAvailable, OnMaintenance, InvalidNonce, ChecksumError, RequestTimeout, BadResponse, NullResponse, CancelPending, UnsubscribeError } from './src/base/errors.js';
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.9.14';
+const version = '4.9.15';
 Exchange.ccxtVersion = version;
 //-----------------------------------------------------------------------------
 import abantether from './src/abantether.js';
@@ -167,6 +167,7 @@ import ramzinex from './src/ramzinex.js';
 import sarmayex from './src/sarmayex.js';
 import sarrafex from './src/sarrafex.js';
 import tabdeal from './src/tabdeal.js';
+import tehran_exchange from './src/tehran_exchange.js';
 import tetherland from './src/tetherland.js';
 import timex from './src/timex.js';
 import tokocrypto from './src/tokocrypto.js';
@@ -386,6 +387,7 @@ const exchanges = {
     'sarmayex': sarmayex,
     'sarrafex': sarrafex,
     'tabdeal': tabdeal,
+    'tehran_exchange': tehran_exchange,
     'tetherland': tetherland,
     'timex': timex,
     'tokocrypto': tokocrypto,
@@ -492,6 +494,6 @@ pro.exchanges = Object.keys(pro);
 pro['Exchange'] = Exchange; // now the same for rest and ts
 //-----------------------------------------------------------------------------
 const ccxt = Object.assign({ version, Exchange, Precise, 'exchanges': Object.keys(exchanges), 'pro': pro }, exchanges, functions, errors);
-export { version, Exchange, exchanges, pro, Precise, functions, errors, BaseError, ExchangeError, AuthenticationError, PermissionDenied, AccountNotEnabled, AccountSuspended, ArgumentsRequired, BadRequest, BadSymbol, OperationRejected, NoChange, MarginModeAlreadySet, MarketClosed, ManualInteractionNeeded, RestrictedLocation, InsufficientFunds, InvalidAddress, AddressPending, InvalidOrder, OrderNotFound, OrderNotCached, OrderImmediatelyFillable, OrderNotFillable, DuplicateOrderId, ContractUnavailable, NotSupported, InvalidProxySettings, ExchangeClosedByUser, OperationFailed, NetworkError, DDoSProtection, RateLimitExceeded, ExchangeNotAvailable, OnMaintenance, InvalidNonce, ChecksumError, RequestTimeout, BadResponse, NullResponse, CancelPending, UnsubscribeError, abantether, afratether, alpaca, apex, arzinja, arzplus, ascendex, bequant, bigone, binance, binancecoinm, binanceus, binanceusdm, bingx, bit24, bit2c, bitbank, bitbarg, bitbns, bitfinex, bitflyer, bitget, bithumb, bitimen, bitir, bitmart, bitmex, bitopro, bitpin, bitrue, bitso, bitstamp, bitteam, bittrade, bitunix, bitvavo, blockchaincom, blofin, btcalpha, btcbox, btcmarkets, btcturk, bybit, bydfi, cafearz, cex, coinbase, coinbaseadvanced, coinbaseexchange, coinbaseinternational, coincatch, coincheck, coinex, coinmate, coinmetro, coinone, coinsph, coinspot, cryptocom, cryptomus, defx, delta, deribit, derive, digifinex, ellipx, eterex, excoino, exir, exmo, exnovin, farhadexchange, fmfwio, foxbit, gate, gateio, gemini, hamtapay, hashkey, hibachi, hitbtc, hitobit, hollaex, htx, huobi, hyperliquid, independentreserve, indodax, jibitex, kcex, kifpoolme, kraken, krakenfutures, kucoin, kucoinfutures, latoken, lbank, luno, mazdax, mercado, mexc, modetrade, myokx, ndax, nobitex, novadax, oceanex, okcoin, okexchange, okx, okxus, ompfinex, onetrading, oxfun, p2b, paradex, paymium, phemex, pingi, poloniex, pooleno, probit, ramzinex, sarmayex, sarrafex, tabdeal, tetherland, timex, tokocrypto, toobit, tradeogre, twox, ubitex, upbit, vertex, wallex, wavesexchange, whitebit, woo, woofipro, xt, yobit, zaif, zonda, };
+export { version, Exchange, exchanges, pro, Precise, functions, errors, BaseError, ExchangeError, AuthenticationError, PermissionDenied, AccountNotEnabled, AccountSuspended, ArgumentsRequired, BadRequest, BadSymbol, OperationRejected, NoChange, MarginModeAlreadySet, MarketClosed, ManualInteractionNeeded, RestrictedLocation, InsufficientFunds, InvalidAddress, AddressPending, InvalidOrder, OrderNotFound, OrderNotCached, OrderImmediatelyFillable, OrderNotFillable, DuplicateOrderId, ContractUnavailable, NotSupported, InvalidProxySettings, ExchangeClosedByUser, OperationFailed, NetworkError, DDoSProtection, RateLimitExceeded, ExchangeNotAvailable, OnMaintenance, InvalidNonce, ChecksumError, RequestTimeout, BadResponse, NullResponse, CancelPending, UnsubscribeError, abantether, afratether, alpaca, apex, arzinja, arzplus, ascendex, bequant, bigone, binance, binancecoinm, binanceus, binanceusdm, bingx, bit24, bit2c, bitbank, bitbarg, bitbns, bitfinex, bitflyer, bitget, bithumb, bitimen, bitir, bitmart, bitmex, bitopro, bitpin, bitrue, bitso, bitstamp, bitteam, bittrade, bitunix, bitvavo, blockchaincom, blofin, btcalpha, btcbox, btcmarkets, btcturk, bybit, bydfi, cafearz, cex, coinbase, coinbaseadvanced, coinbaseexchange, coinbaseinternational, coincatch, coincheck, coinex, coinmate, coinmetro, coinone, coinsph, coinspot, cryptocom, cryptomus, defx, delta, deribit, derive, digifinex, ellipx, eterex, excoino, exir, exmo, exnovin, farhadexchange, fmfwio, foxbit, gate, gateio, gemini, hamtapay, hashkey, hibachi, hitbtc, hitobit, hollaex, htx, huobi, hyperliquid, independentreserve, indodax, jibitex, kcex, kifpoolme, kraken, krakenfutures, kucoin, kucoinfutures, latoken, lbank, luno, mazdax, mercado, mexc, modetrade, myokx, ndax, nobitex, novadax, oceanex, okcoin, okexchange, okx, okxus, ompfinex, onetrading, oxfun, p2b, paradex, paymium, phemex, pingi, poloniex, pooleno, probit, ramzinex, sarmayex, sarrafex, tabdeal, tehran_exchange, tetherland, timex, tokocrypto, toobit, tradeogre, twox, ubitex, upbit, vertex, wallex, wavesexchange, whitebit, woo, woofipro, xt, yobit, zaif, zonda, };
 export default ccxt;
 //-----------------------------------------------------------------------------
