@@ -30,7 +30,7 @@ retrieves data on all markets for toobit
 **Kind**: instance method of [<code>toobit</code>](#toobit)  
 **Returns**: <code>Array&lt;object&gt;</code> - an array of objects representing market data
 
-**See**: https://apidocs.toobit.io/#tickers  
+**See**: https://api.toobit.com/api/v1/exchangeInfo  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |
@@ -50,7 +50,7 @@ fetches price tickers for multiple markets, statistical information calculated o
 **Kind**: instance method of [<code>toobit</code>](#toobit)  
 **Returns**: <code>object</code> - a dictionary of [ticker structures](https://docs.ccxt.com/#/?id=ticker-structure)
 
-**See**: https://apidocs.toobit.io/#tickers  
+**See**: https://toobit-docs.github.io/apidocs/spot/v1/en/#tickers  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |
@@ -71,7 +71,7 @@ fetches a price ticker, a statistical calculation with the information calculate
 **Kind**: instance method of [<code>toobit</code>](#toobit)  
 **Returns**: <code>object</code> - a [ticker structure](https://docs.ccxt.com/#/?id=ticker-structure)
 
-**See**: https://apidocs.toobit.io/#ticker  
+**See**: https://toobit-docs.github.io/apidocs/spot/v1/en/#ticker  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |
@@ -92,7 +92,7 @@ fetches historical candlestick data containing the open, high, low, and close pr
 **Kind**: instance method of [<code>toobit</code>](#toobit)  
 **Returns**: <code>Array&lt;Array&lt;int&gt;&gt;</code> - A list of candles ordered as timestamp, open, high, low, close, volume
 
-**See**: https://apidocs.toobit.io/#chart  
+**See**: https://toobit-docs.github.io/apidocs/spot/v1/en/#chart  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |

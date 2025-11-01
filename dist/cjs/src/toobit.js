@@ -114,6 +114,7 @@ class toobit extends toobit$1["default"] {
                     'get': {
                         'quote/v1/ticker/24hr': 1,
                         'quote/v1/klines': 1,
+                        '/api/v1/exchangeInfo': 1,
                     },
                 },
             },
@@ -132,52 +133,105 @@ class toobit extends toobit$1["default"] {
          * @method
          * @name toobit#fetchMarkets
          * @description retrieves data on all markets for toobit
-         * @see https://apidocs.toobit.io/#tickers
+         * @see https://api.toobit.com/api/v1/exchangeInfo
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object[]} an array of objects representing market data
          */
-        const response = await this.publicGetQuoteV1Ticker24hr();
+        const response = await this.publicGetApiV1ExchangeInfo();
+        const symbols = this.safeValue(response, 'symbols', []);
         const result = [];
-        for (let i = 0; i < response.length; i++) {
-            const volume = this.safeFloat(response[i], 'v');
-            const symbol = this.safeValue(response[i], 's');
-            if (volume === 0 || symbol === 'TESTA1S3TESTX8Z9') {
+        for (let i = 0; i < symbols.length; i++) {
+            const symbolData = symbols[i];
+            const status = this.safeValue(symbolData, 'status');
+            const symbol = this.safeValue(symbolData, 'symbol');
+            if (status !== 'TRADING' || symbol === 'TESTA1S3TESTX8Z9') {
                 continue;
             }
-            const market = this.parseMarket(response[i]);
+            const market = this.parseMarket(symbolData);
             result.push(market);
         }
         return result;
     }
     parseMarket(market) {
         //         {
-        // t: 1757164008834,
-        // s: "BTCUSDT",
-        // c: "110895.06",
-        // h: "113310.01",
-        // l: "110219.01",
-        // o: "112951.99",
-        // v: "3893.406649",
-        // qv: "433374169.27969515",
-        // pc: "-2056.93",
-        // pcp: "-0.0182"
-        // }
-        const symbol = this.safeValue(market, 's');
-        let baseId = symbol;
-        let quoteId = undefined;
-        if (symbol.endsWith('USDT')) {
-            baseId = symbol.slice(0, -4);
-            quoteId = 'USDT';
-        }
-        else if (symbol.endsWith('USDC')) {
-            baseId = symbol.slice(0, -4);
-            quoteId = 'USDC';
+        //             "filters": [
+        //                 {
+        //                     "minPrice": "0.01",
+        //                     "maxPrice": "10000000.00000000",
+        //                     "tickSize": "0.01",
+        //                     "filterType": "PRICE_FILTER"
+        //                 },
+        //                 {
+        //                     "minQty": "0.0001",
+        //                     "maxQty": "4000",
+        //                     "stepSize": "0.0001",
+        //                     "filterType": "LOT_SIZE"
+        //                 },
+        //                 {
+        //                     "minNotional": "5",
+        //                     "filterType": "MIN_NOTIONAL"
+        //                 }
+        //             ],
+        //             "exchangeId": "301",
+        //             "symbol": "ETHUSDT",
+        //             "symbolName": "ETHUSDT",
+        //             "status": "TRADING",
+        //             "baseAsset": "ETH",
+        //             "baseAssetName": "ETH",
+        //             "baseAssetPrecision": "0.0001",
+        //             "quoteAsset": "USDT",
+        //             "quoteAssetName": "USDT",
+        //             "quotePrecision": "0.01",
+        //             "icebergAllowed": false,
+        //             "isAggregate": false,
+        //             "allowMargin": true
+        //         }
+        const symbol = this.safeValue(market, 'symbol');
+        const baseAsset = this.safeValue(market, 'baseAsset');
+        const quoteAsset = this.safeValue(market, 'quoteAsset');
+        const baseAssetPrecision = this.safeValue(market, 'baseAssetPrecision');
+        const quotePrecision = this.safeValue(market, 'quotePrecision');
+        const allowMargin = this.safeValue(market, 'allowMargin', false);
+        const filters = this.safeValue(market, 'filters', []);
+        // Parse filters to extract limits and precision
+        let minPrice = undefined;
+        let maxPrice = undefined;
+        let tickSize = undefined;
+        let minQty = undefined;
+        let maxQty = undefined;
+        let stepSize = undefined;
+        let minNotional = undefined;
+        let minAmount = undefined;
+        let maxAmount = undefined;
+        for (let i = 0; i < filters.length; i++) {
+            const filter = filters[i];
+            const filterType = this.safeValue(filter, 'filterType');
+            if (filterType === 'PRICE_FILTER') {
+                minPrice = this.safeNumber(filter, 'minPrice');
+                maxPrice = this.safeNumber(filter, 'maxPrice');
+                tickSize = this.safeNumber(filter, 'tickSize');
+            }
+            else if (filterType === 'LOT_SIZE') {
+                minQty = this.safeNumber(filter, 'minQty');
+                maxQty = this.safeNumber(filter, 'maxQty');
+                stepSize = this.safeNumber(filter, 'stepSize');
+            }
+            else if (filterType === 'MIN_NOTIONAL') {
+                minNotional = this.safeNumber(filter, 'minNotional');
+            }
+            else if (filterType === 'TRADE_AMOUNT') {
+                minAmount = this.safeNumber(filter, 'minAmount');
+                maxAmount = this.safeNumber(filter, 'maxAmount');
+            }
         }
         const id = symbol;
-        const base = this.safeCurrencyCode(baseId);
-        const quote = this.safeCurrencyCode(quoteId);
-        baseId = baseId.toLowerCase();
-        quoteId = quoteId.toLowerCase();
+        const base = this.safeCurrencyCode(baseAsset);
+        const quote = this.safeCurrencyCode(quoteAsset);
+        const baseId = baseAsset.toLowerCase();
+        const quoteId = quoteAsset.toLowerCase();
+        // Calculate precision from step sizes and precision strings
+        const amountPrecision = stepSize ? this.precisionFromString(stepSize.toString()) : this.precisionFromString(baseAssetPrecision);
+        const pricePrecision = tickSize ? this.precisionFromString(tickSize.toString()) : this.precisionFromString(quotePrecision);
         return {
             'id': id,
             'symbol': base + '/' + quote,
@@ -189,7 +243,7 @@ class toobit extends toobit$1["default"] {
             'settleId': undefined,
             'type': 'spot',
             'spot': true,
-            'margin': false,
+            'margin': allowMargin,
             'swap': false,
             'future': false,
             'option': false,
@@ -203,8 +257,8 @@ class toobit extends toobit$1["default"] {
             'strike': undefined,
             'optionType': undefined,
             'precision': {
-                'amount': undefined,
-                'price': undefined,
+                'amount': amountPrecision,
+                'price': pricePrecision,
             },
             'limits': {
                 'leverage': {
@@ -212,16 +266,16 @@ class toobit extends toobit$1["default"] {
                     'max': undefined,
                 },
                 'amount': {
-                    'min': undefined,
-                    'max': undefined,
+                    'min': minQty,
+                    'max': maxQty,
                 },
                 'price': {
-                    'min': undefined,
-                    'max': undefined,
+                    'min': minPrice,
+                    'max': maxPrice,
                 },
                 'cost': {
-                    'min': undefined,
-                    'max': undefined,
+                    'min': minNotional || minAmount,
+                    'max': maxAmount,
                 },
             },
             'created': undefined,
@@ -233,7 +287,7 @@ class toobit extends toobit$1["default"] {
          * @method
          * @name toobit#fetchTickers
          * @description fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
-         * @see https://apidocs.toobit.io/#tickers
+         * @see https://toobit-docs.github.io/apidocs/spot/v1/en/#tickers
          * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
@@ -260,7 +314,7 @@ class toobit extends toobit$1["default"] {
          * @method
          * @name toobit#fetchTicker
          * @description fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
-         * @see https://apidocs.toobit.io/#ticker
+         * @see https://toobit-docs.github.io/apidocs/spot/v1/en/#ticker
          * @param {string} symbol unified symbol of the market to fetch the ticker for
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
@@ -331,7 +385,7 @@ class toobit extends toobit$1["default"] {
          * @method
          * @name toobit#fetchOHLCV
          * @description fetches historical candlestick data containing the open, high, low, and close price, and the volume of a market
-         * @see https://apidocs.toobit.io/#chart
+         * @see https://toobit-docs.github.io/apidocs/spot/v1/en/#chart
          * @param {string} symbol unified symbol of the market to fetch OHLCV data for
          * @param {string} timeframe the length of time each candle represents
          * @param {int} [since] timestamp in ms of the earliest candle to fetch

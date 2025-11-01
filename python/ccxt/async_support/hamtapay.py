@@ -282,5 +282,8 @@ class hamtapay(Exchange, ImplicitAPI):
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):
         url = self.urls['api']['public'] + '/' + path
-        headers = {'Content-Type': 'application/json'}
+        headers = {
+            'Content-Type': 'application/json',
+            'Origin': 'https://hamtapay.net',
+        }
         return {'url': url, 'method': method, 'body': body, 'headers': headers}

@@ -113,6 +113,7 @@ class toobit(Exchange, ImplicitAPI):
                     'get': {
                         'quote/v1/ticker/24hr': 1,
                         'quote/v1/klines': 1,
+                        '/api/v1/exchangeInfo': 1,
                     },
                 },
             },
@@ -129,48 +130,98 @@ class toobit(Exchange, ImplicitAPI):
     def fetch_markets(self, params={}) -> List[Market]:
         """
         retrieves data on all markets for toobit
-        https://apidocs.toobit.io/#tickers
+        https://api.toobit.com/api/v1/exchangeInfo
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict[]: an array of objects representing market data
         """
-        response = self.publicGetQuoteV1Ticker24hr()
+        response = self.publicGetApiV1ExchangeInfo()
+        symbols = self.safe_value(response, 'symbols', [])
         result = []
-        for i in range(0, len(response)):
-            volume = self.safe_float(response[i], 'v')
-            symbol = self.safe_value(response[i], 's')
-            if volume == 0 or symbol == 'TESTA1S3TESTX8Z9':
+        for i in range(0, len(symbols)):
+            symbolData = symbols[i]
+            status = self.safe_value(symbolData, 'status')
+            symbol = self.safe_value(symbolData, 'symbol')
+            if status != 'TRADING' or symbol == 'TESTA1S3TESTX8Z9':
                 continue
-            market = self.parse_market(response[i])
+            market = self.parse_market(symbolData)
             result.append(market)
         return result
 
     def parse_market(self, market) -> Market:
         #         {
-        # t: 1757164008834,
-        # s: "BTCUSDT",
-        # c: "110895.06",
-        # h: "113310.01",
-        # l: "110219.01",
-        # o: "112951.99",
-        # v: "3893.406649",
-        # qv: "433374169.27969515",
-        # pc: "-2056.93",
-        # pcp: "-0.0182"
-        # }
-        symbol = self.safe_value(market, 's')
-        baseId = symbol
-        quoteId = None
-        if symbol.endswith('USDT'):
-            baseId = symbol[0:-4]
-            quoteId = 'USDT'
-        elif symbol.endswith('USDC'):
-            baseId = symbol[0:-4]
-            quoteId = 'USDC'
+        #             "filters": [
+        #                 {
+        #                     "minPrice": "0.01",
+        #                     "maxPrice": "10000000.00000000",
+        #                     "tickSize": "0.01",
+        #                     "filterType": "PRICE_FILTER"
+        #                 },
+        #                 {
+        #                     "minQty": "0.0001",
+        #                     "maxQty": "4000",
+        #                     "stepSize": "0.0001",
+        #                     "filterType": "LOT_SIZE"
+        #                 },
+        #                 {
+        #                     "minNotional": "5",
+        #                     "filterType": "MIN_NOTIONAL"
+        #                 }
+        #             ],
+        #             "exchangeId": "301",
+        #             "symbol": "ETHUSDT",
+        #             "symbolName": "ETHUSDT",
+        #             "status": "TRADING",
+        #             "baseAsset": "ETH",
+        #             "baseAssetName": "ETH",
+        #             "baseAssetPrecision": "0.0001",
+        #             "quoteAsset": "USDT",
+        #             "quoteAssetName": "USDT",
+        #             "quotePrecision": "0.01",
+        #             "icebergAllowed": False,
+        #             "isAggregate": False,
+        #             "allowMargin": True
+        #         }
+        symbol = self.safe_value(market, 'symbol')
+        baseAsset = self.safe_value(market, 'baseAsset')
+        quoteAsset = self.safe_value(market, 'quoteAsset')
+        baseAssetPrecision = self.safe_value(market, 'baseAssetPrecision')
+        quotePrecision = self.safe_value(market, 'quotePrecision')
+        allowMargin = self.safe_value(market, 'allowMargin', False)
+        filters = self.safe_value(market, 'filters', [])
+        # Parse filters to extract limits and precision
+        minPrice = None
+        maxPrice = None
+        tickSize = None
+        minQty = None
+        maxQty = None
+        stepSize = None
+        minNotional = None
+        minAmount = None
+        maxAmount = None
+        for i in range(0, len(filters)):
+            filter = filters[i]
+            filterType = self.safe_value(filter, 'filterType')
+            if filterType == 'PRICE_FILTER':
+                minPrice = self.safe_number(filter, 'minPrice')
+                maxPrice = self.safe_number(filter, 'maxPrice')
+                tickSize = self.safe_number(filter, 'tickSize')
+            elif filterType == 'LOT_SIZE':
+                minQty = self.safe_number(filter, 'minQty')
+                maxQty = self.safe_number(filter, 'maxQty')
+                stepSize = self.safe_number(filter, 'stepSize')
+            elif filterType == 'MIN_NOTIONAL':
+                minNotional = self.safe_number(filter, 'minNotional')
+            elif filterType == 'TRADE_AMOUNT':
+                minAmount = self.safe_number(filter, 'minAmount')
+                maxAmount = self.safe_number(filter, 'maxAmount')
         id = symbol
-        base = self.safe_currency_code(baseId)
-        quote = self.safe_currency_code(quoteId)
-        baseId = baseId.lower()
-        quoteId = quoteId.lower()
+        base = self.safe_currency_code(baseAsset)
+        quote = self.safe_currency_code(quoteAsset)
+        baseId = baseAsset.lower()
+        quoteId = quoteAsset.lower()
+        # Calculate precision from step sizes and precision strings
+        amountPrecision = str(self.precision_from_string(stepSize)) if stepSize else self.precision_from_string(baseAssetPrecision)
+        pricePrecision = str(self.precision_from_string(tickSize)) if tickSize else self.precision_from_string(quotePrecision)
         return {
             'id': id,
             'symbol': base + '/' + quote,
@@ -182,7 +233,7 @@ class toobit(Exchange, ImplicitAPI):
             'settleId': None,
             'type': 'spot',
             'spot': True,
-            'margin': False,
+            'margin': allowMargin,
             'swap': False,
             'future': False,
             'option': False,
@@ -196,8 +247,8 @@ class toobit(Exchange, ImplicitAPI):
             'strike': None,
             'optionType': None,
             'precision': {
-                'amount': None,
-                'price': None,
+                'amount': amountPrecision,
+                'price': pricePrecision,
             },
             'limits': {
                 'leverage': {
@@ -205,16 +256,16 @@ class toobit(Exchange, ImplicitAPI):
                     'max': None,
                 },
                 'amount': {
-                    'min': None,
-                    'max': None,
+                    'min': minQty,
+                    'max': maxQty,
                 },
                 'price': {
-                    'min': None,
-                    'max': None,
+                    'min': minPrice,
+                    'max': maxPrice,
                 },
                 'cost': {
-                    'min': None,
-                    'max': None,
+                    'min': minNotional or minAmount,
+                    'max': maxAmount,
                 },
             },
             'created': None,
@@ -224,7 +275,7 @@ class toobit(Exchange, ImplicitAPI):
     def fetch_tickers(self, symbols: Strings = None, params={}) -> Tickers:
         """
         fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
-        https://apidocs.toobit.io/#tickers
+        https://toobit-docs.github.io/apidocs/spot/v1/en/#tickers
         :param str[]|None symbols: unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict: a dictionary of `ticker structures <https://docs.ccxt.com/#/?id=ticker-structure>`
@@ -246,7 +297,7 @@ class toobit(Exchange, ImplicitAPI):
     def fetch_ticker(self, symbol: str, params={}) -> Ticker:
         """
         fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
-        https://apidocs.toobit.io/#ticker
+        https://toobit-docs.github.io/apidocs/spot/v1/en/#ticker
         :param str symbol: unified symbol of the market to fetch the ticker for
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict: a `ticker structure <https://docs.ccxt.com/#/?id=ticker-structure>`
@@ -315,7 +366,7 @@ class toobit(Exchange, ImplicitAPI):
     def fetch_ohlcv(self, symbol: str, timeframe='1h', since: Int = None, limit: Int = None, params={}) -> List[list]:
         """
         fetches historical candlestick data containing the open, high, low, and close price, and the volume of a market
-        https://apidocs.toobit.io/#chart
+        https://toobit-docs.github.io/apidocs/spot/v1/en/#chart
         :param str symbol: unified symbol of the market to fetch OHLCV data for
         :param str timeframe: the length of time each candle represents
         :param int [since]: timestamp in ms of the earliest candle to fetch

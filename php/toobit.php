@@ -112,6 +112,7 @@ class toobit extends Exchange {
                     'get' => array(
                         'quote/v1/ticker/24hr' => 1,
                         'quote/v1/klines' => 1,
+                        '/api/v1/exchangeInfo' => 1,
                     ),
                 ),
             ),
@@ -129,19 +130,21 @@ class toobit extends Exchange {
     public function fetch_markets($params = array ()): array {
         /**
          * retrieves data on all markets for toobit
-         * @see https://apidocs.toobit.io/#tickers
+         * @see https://api.toobit.com/api/v1/exchangeInfo
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
          * @return {array[]} an array of objects representing $market data
          */
-        $response = $this->publicGetQuoteV1Ticker24hr ();
+        $response = $this->publicGetApiV1ExchangeInfo ();
+        $symbols = $this->safe_value($response, 'symbols', array());
         $result = array();
-        for ($i = 0; $i < count($response); $i++) {
-            $volume = $this->safe_float($response[$i], 'v');
-            $symbol = $this->safe_value($response[$i], 's');
-            if ($volume === 0 || $symbol === 'TESTA1S3TESTX8Z9') {
+        for ($i = 0; $i < count($symbols); $i++) {
+            $symbolData = $symbols[$i];
+            $status = $this->safe_value($symbolData, 'status');
+            $symbol = $this->safe_value($symbolData, 'symbol');
+            if ($status !== 'TRADING' || $symbol === 'TESTA1S3TESTX8Z9') {
                 continue;
             }
-            $market = $this->parse_market($response[$i]);
+            $market = $this->parse_market($symbolData);
             $result[] = $market;
         }
         return $result;
@@ -149,32 +152,81 @@ class toobit extends Exchange {
 
     public function parse_market($market): array {
         //         {
-        // t => 1757164008834,
-        // s => "BTCUSDT",
-        // c => "110895.06",
-        // h => "113310.01",
-        // l => "110219.01",
-        // o => "112951.99",
-        // v => "3893.406649",
-        // qv => "433374169.27969515",
-        // pc => "-2056.93",
-        // pcp => "-0.0182"
-        // }
-        $symbol = $this->safe_value($market, 's');
-        $baseId = $symbol;
-        $quoteId = null;
-        if (str_ends_with($symbol, 'USDT')) {
-            $baseId = mb_substr($symbol, 0, -4 - 0);
-            $quoteId = 'USDT';
-        } elseif (str_ends_with($symbol, 'USDC')) {
-            $baseId = mb_substr($symbol, 0, -4 - 0);
-            $quoteId = 'USDC';
+        //             "filters" => array(
+        //                 array(
+        //                     "minPrice" => "0.01",
+        //                     "maxPrice" => "10000000.00000000",
+        //                     "tickSize" => "0.01",
+        //                     "filterType" => "PRICE_FILTER"
+        //                 ),
+        //                 array(
+        //                     "minQty" => "0.0001",
+        //                     "maxQty" => "4000",
+        //                     "stepSize" => "0.0001",
+        //                     "filterType" => "LOT_SIZE"
+        //                 ),
+        //                 {
+        //                     "minNotional" => "5",
+        //                     "filterType" => "MIN_NOTIONAL"
+        //                 }
+        //             ),
+        //             "exchangeId" => "301",
+        //             "symbol" => "ETHUSDT",
+        //             "symbolName" => "ETHUSDT",
+        //             "status" => "TRADING",
+        //             "baseAsset" => "ETH",
+        //             "baseAssetName" => "ETH",
+        //             "baseAssetPrecision" => "0.0001",
+        //             "quoteAsset" => "USDT",
+        //             "quoteAssetName" => "USDT",
+        //             "quotePrecision" => "0.01",
+        //             "icebergAllowed" => false,
+        //             "isAggregate" => false,
+        //             "allowMargin" => true
+        //         }
+        $symbol = $this->safe_value($market, 'symbol');
+        $baseAsset = $this->safe_value($market, 'baseAsset');
+        $quoteAsset = $this->safe_value($market, 'quoteAsset');
+        $baseAssetPrecision = $this->safe_value($market, 'baseAssetPrecision');
+        $quotePrecision = $this->safe_value($market, 'quotePrecision');
+        $allowMargin = $this->safe_value($market, 'allowMargin', false);
+        $filters = $this->safe_value($market, 'filters', array());
+        // Parse $filters to extract limits and precision
+        $minPrice = null;
+        $maxPrice = null;
+        $tickSize = null;
+        $minQty = null;
+        $maxQty = null;
+        $stepSize = null;
+        $minNotional = null;
+        $minAmount = null;
+        $maxAmount = null;
+        for ($i = 0; $i < count($filters); $i++) {
+            $filter = $filters[$i];
+            $filterType = $this->safe_value($filter, 'filterType');
+            if ($filterType === 'PRICE_FILTER') {
+                $minPrice = $this->safe_number($filter, 'minPrice');
+                $maxPrice = $this->safe_number($filter, 'maxPrice');
+                $tickSize = $this->safe_number($filter, 'tickSize');
+            } elseif ($filterType === 'LOT_SIZE') {
+                $minQty = $this->safe_number($filter, 'minQty');
+                $maxQty = $this->safe_number($filter, 'maxQty');
+                $stepSize = $this->safe_number($filter, 'stepSize');
+            } elseif ($filterType === 'MIN_NOTIONAL') {
+                $minNotional = $this->safe_number($filter, 'minNotional');
+            } elseif ($filterType === 'TRADE_AMOUNT') {
+                $minAmount = $this->safe_number($filter, 'minAmount');
+                $maxAmount = $this->safe_number($filter, 'maxAmount');
+            }
         }
         $id = $symbol;
-        $base = $this->safe_currency_code($baseId);
-        $quote = $this->safe_currency_code($quoteId);
-        $baseId = strtolower($baseId);
-        $quoteId = strtolower($quoteId);
+        $base = $this->safe_currency_code($baseAsset);
+        $quote = $this->safe_currency_code($quoteAsset);
+        $baseId = strtolower($baseAsset);
+        $quoteId = strtolower($quoteAsset);
+        // Calculate precision from step sizes and precision strings
+        $amountPrecision = $stepSize ? (string) $this->precision_from_string($stepSize) : $this->precision_from_string($baseAssetPrecision);
+        $pricePrecision = $tickSize ? (string) $this->precision_from_string($tickSize) : $this->precision_from_string($quotePrecision);
         return array(
             'id' => $id,
             'symbol' => $base . '/' . $quote,
@@ -186,7 +238,7 @@ class toobit extends Exchange {
             'settleId' => null,
             'type' => 'spot',
             'spot' => true,
-            'margin' => false,
+            'margin' => $allowMargin,
             'swap' => false,
             'future' => false,
             'option' => false,
@@ -200,8 +252,8 @@ class toobit extends Exchange {
             'strike' => null,
             'optionType' => null,
             'precision' => array(
-                'amount' => null,
-                'price' => null,
+                'amount' => $amountPrecision,
+                'price' => $pricePrecision,
             ),
             'limits' => array(
                 'leverage' => array(
@@ -209,16 +261,16 @@ class toobit extends Exchange {
                     'max' => null,
                 ),
                 'amount' => array(
-                    'min' => null,
-                    'max' => null,
+                    'min' => $minQty,
+                    'max' => $maxQty,
                 ),
                 'price' => array(
-                    'min' => null,
-                    'max' => null,
+                    'min' => $minPrice,
+                    'max' => $maxPrice,
                 ),
                 'cost' => array(
-                    'min' => null,
-                    'max' => null,
+                    'min' => $minNotional || $minAmount,
+                    'max' => $maxAmount,
                 ),
             ),
             'created' => null,
@@ -229,7 +281,7 @@ class toobit extends Exchange {
     public function fetch_tickers(?array $symbols = null, $params = array ()): array {
         /**
          * fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
-         * @see https://apidocs.toobit.io/#tickers
+         * @see https://toobit-docs.github.io/apidocs/spot/v1/en/#tickers
          * @param {string[]|null} $symbols unified $symbols of the markets to fetch the $ticker for, all market tickers are returned if not assigned
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
          * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structures~
@@ -255,7 +307,7 @@ class toobit extends Exchange {
     public function fetch_ticker(string $symbol, $params = array ()): array {
         /**
          * fetches a price $ticker, a statistical calculation with the information calculated over the past 24 hours for a specific $market
-         * @see https://apidocs.toobit.io/#$ticker
+         * @see https://toobit-docs.github.io/apidocs/spot/v1/en/#$ticker
          * @param {string} $symbol unified $symbol of the $market to fetch the $ticker for
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
          * @return {array} a ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structure~
@@ -326,7 +378,7 @@ class toobit extends Exchange {
     public function fetch_ohlcv(string $symbol, $timeframe = '1h', ?int $since = null, ?int $limit = null, $params = array ()): array {
         /**
          * fetches historical candlestick data containing the $open, $high, $low, and $close price, and the $volume of a $market
-         * @see https://apidocs.toobit.io/#chart
+         * @see https://toobit-docs.github.io/apidocs/spot/v1/en/#chart
          * @param {string} $symbol unified $symbol of the $market to fetch OHLCV data for
          * @param {string} $timeframe the length of time each $candle represents
          * @param {int} [$since] timestamp in ms of the earliest $candle to fetch

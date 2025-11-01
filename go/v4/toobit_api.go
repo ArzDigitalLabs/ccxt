@@ -14,3 +14,7 @@ func (this *toobit) PublicGetQuoteV1Ticker24hr (args ...interface{}) <-chan inte
 func (this *toobit) PublicGetQuoteV1Klines (args ...interface{}) <-chan interface{} {
    return this.callEndpointAsync("publicGetQuoteV1Klines", args...)
 }
+
+func (this *toobit) PublicGetApiV1ExchangeInfo (args ...interface{}) <-chan interface{} {
+   return this.callEndpointAsync("publicGetApiV1ExchangeInfo", args...)
+}
