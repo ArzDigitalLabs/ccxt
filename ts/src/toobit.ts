@@ -113,6 +113,7 @@ export default class toobit extends Exchange {
                     'get': {
                         'quote/v1/ticker/24hr': 1,
                         'quote/v1/klines': 1,
+                        '/api/v1/exchangeInfo': 1,
                     },
                 },
             },
