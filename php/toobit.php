@@ -207,11 +207,11 @@ class toobit extends Exchange {
             if ($filterType === 'PRICE_FILTER') {
                 $minPrice = $this->safe_number($filter, 'minPrice');
                 $maxPrice = $this->safe_number($filter, 'maxPrice');
-                $tickSize = $this->safe_number($filter, 'tickSize');
+                $tickSize = $this->safe_string($filter, 'tickSize');
             } elseif ($filterType === 'LOT_SIZE') {
                 $minQty = $this->safe_number($filter, 'minQty');
                 $maxQty = $this->safe_number($filter, 'maxQty');
-                $stepSize = $this->safe_number($filter, 'stepSize');
+                $stepSize = $this->safe_string($filter, 'stepSize');
             } elseif ($filterType === 'MIN_NOTIONAL') {
                 $minNotional = $this->safe_number($filter, 'minNotional');
             } elseif ($filterType === 'TRADE_AMOUNT') {
