@@ -164,7 +164,6 @@ class kcex extends kcex$1["default"] {
         // qs: 2,
         // cdm: 1
         // }
-        const id = this.safeString(market, 'id');
         let baseId = this.safeString(market, 'vn');
         let quoteId = this.safeString(market, 'mnm');
         const base = this.safeCurrencyCode(baseId);
@@ -172,7 +171,7 @@ class kcex extends kcex$1["default"] {
         baseId = baseId.toLowerCase();
         quoteId = quoteId.toLowerCase();
         return {
-            'id': id,
+            'id': base + '/' + quote,
             'symbol': base + '/' + quote,
             'base': base,
             'quote': quote,

@@ -167,7 +167,6 @@ export default class kcex extends Exchange {
         // }
         let baseId = this.safeString(market, 'vn');
         let quoteId = this.safeString(market, 'mnm');
-        const id = baseId + '/' + quoteId;
         const base = this.safeCurrencyCode(baseId);
         const quote = this.safeCurrencyCode(quoteId);
         baseId = baseId.toLowerCase();
