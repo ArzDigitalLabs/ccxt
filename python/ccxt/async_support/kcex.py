@@ -168,14 +168,14 @@ class kcex(Exchange, ImplicitAPI):
         baseId = baseId.lower()
         quoteId = quoteId.lower()
         return {
-            'id': id,
+            'id': base + '/' + quote,
             'symbol': base + '/' + quote,
             'base': base,
             'quote': quote,
             'settle': None,
             'baseId': baseId,
             'quoteId': quoteId,
-            'settleId': None,
+            'settleId': id,
             'type': 'spot',
             'spot': True,
             'margin': False,
@@ -236,11 +236,11 @@ class kcex(Exchange, ImplicitAPI):
         marketList = list(self.markets.values())
         for i in range(0, len(marketList)):
             market = marketList[i]
-            idToMarket[market['id']] = market
+            idToMarket[market['settleId']] = market
         for i in range(0, len(tickers)):
             ticker = tickers[i]
             id = self.safe_string(ticker, 'id')
-            market = idToMarket[id]
+            market = self.safe_value(idToMarket, id)
             ticker['timestamp'] = timestamp
             if market is not None:
                 parsedTicker = self.parse_ticker(ticker, market)

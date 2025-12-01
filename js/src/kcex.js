@@ -173,14 +173,14 @@ export default class kcex extends Exchange {
         baseId = baseId.toLowerCase();
         quoteId = quoteId.toLowerCase();
         return {
-            'id': id,
+            'id': base + '/' + quote,
             'symbol': base + '/' + quote,
             'base': base,
             'quote': quote,
             'settle': undefined,
             'baseId': baseId,
             'quoteId': quoteId,
-            'settleId': undefined,
+            'settleId': id,
             'type': 'spot',
             'spot': true,
             'margin': false,
@@ -244,12 +244,12 @@ export default class kcex extends Exchange {
         const marketList = Object.values(this.markets);
         for (let i = 0; i < marketList.length; i++) {
             const market = marketList[i];
-            idToMarket[market['id']] = market;
+            idToMarket[market['settleId']] = market;
         }
         for (let i = 0; i < tickers.length; i++) {
             const ticker = tickers[i];
             const id = this.safeString(ticker, 'id');
-            const market = idToMarket[id];
+            const market = this.safeValue(idToMarket, id);
             ticker['timestamp'] = timestamp;
             if (market !== undefined) {
                 const parsedTicker = this.parseTicker(ticker, market);

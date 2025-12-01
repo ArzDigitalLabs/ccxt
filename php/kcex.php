@@ -170,14 +170,14 @@ class kcex extends Exchange {
         $baseId = strtolower($baseId);
         $quoteId = strtolower($quoteId);
         return array(
-            'id' => $id,
+            'id' => $base . '/' . $quote,
             'symbol' => $base . '/' . $quote,
             'base' => $base,
             'quote' => $quote,
             'settle' => null,
             'baseId' => $baseId,
             'quoteId' => $quoteId,
-            'settleId' => null,
+            'settleId' => $id,
             'type' => 'spot',
             'spot' => true,
             'margin' => false,
@@ -240,12 +240,12 @@ class kcex extends Exchange {
         $marketList = is_array($this->markets) ? array_values($this->markets) : array();
         for ($i = 0; $i < count($marketList); $i++) {
             $market = $marketList[$i];
-            $idToMarket[$market['id']] = $market;
+            $idToMarket[$market['settleId']] = $market;
         }
         for ($i = 0; $i < count($tickers); $i++) {
             $ticker = $tickers[$i];
             $id = $this->safe_string($ticker, 'id');
-            $market = $idToMarket[$id];
+            $market = $this->safe_value($idToMarket, $id);
             $ticker['timestamp'] = $timestamp;
             if ($market !== null) {
                 $parsedTicker = $this->parse_ticker($ticker, $market);
