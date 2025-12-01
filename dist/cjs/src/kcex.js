@@ -164,6 +164,7 @@ class kcex extends kcex$1["default"] {
         // qs: 2,
         // cdm: 1
         // }
+        const id = this.safeString(market, 'id');
         let baseId = this.safeString(market, 'vn');
         let quoteId = this.safeString(market, 'mnm');
         const base = this.safeCurrencyCode(baseId);
@@ -178,7 +179,7 @@ class kcex extends kcex$1["default"] {
             'settle': undefined,
             'baseId': baseId,
             'quoteId': quoteId,
-            'settleId': undefined,
+            'settleId': id,
             'type': 'spot',
             'spot': true,
             'margin': false,
@@ -242,12 +243,12 @@ class kcex extends kcex$1["default"] {
         const marketList = Object.values(this.markets);
         for (let i = 0; i < marketList.length; i++) {
             const market = marketList[i];
-            idToMarket[market['id']] = market;
+            idToMarket[market['settleId']] = market;
         }
         for (let i = 0; i < tickers.length; i++) {
             const ticker = tickers[i];
             const id = this.safeString(ticker, 'id');
-            const market = idToMarket[id];
+            const market = this.safeValue(idToMarket, id);
             ticker['timestamp'] = timestamp;
             if (market !== undefined) {
                 const parsedTicker = this.parseTicker(ticker, market);
