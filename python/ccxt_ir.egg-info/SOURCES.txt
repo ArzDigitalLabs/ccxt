@@ -94,6 +94,7 @@ ccxt/huobi.py
 ccxt/hyperliquid.py
 ccxt/independentreserve.py
 ccxt/indodax.py
+ccxt/iranexchange.py
 ccxt/jibitex.py
 ccxt/kcex.py
 ccxt/kifpoolme.py
@@ -240,6 +241,7 @@ ccxt/abstract/huobi.py
 ccxt/abstract/hyperliquid.py
 ccxt/abstract/independentreserve.py
 ccxt/abstract/indodax.py
+ccxt/abstract/iranexchange.py
 ccxt/abstract/jibitex.py
 ccxt/abstract/kcex.py
 ccxt/abstract/kifpoolme.py
@@ -386,6 +388,7 @@ ccxt/async_support/huobi.py
 ccxt/async_support/hyperliquid.py
 ccxt/async_support/independentreserve.py
 ccxt/async_support/indodax.py
+ccxt/async_support/iranexchange.py
 ccxt/async_support/jibitex.py
 ccxt/async_support/kcex.py
 ccxt/async_support/kifpoolme.py
