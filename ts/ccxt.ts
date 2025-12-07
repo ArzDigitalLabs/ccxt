@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.9.22';
+const version = '4.9.23';
 
 (Exchange as any).ccxtVersion = version
 
@@ -134,6 +134,7 @@ import huobi from  './src/huobi.js'
 import hyperliquid from  './src/hyperliquid.js'
 import independentreserve from  './src/independentreserve.js'
 import indodax from  './src/indodax.js'
+import iranexchange from  './src/iranexchange.js'
 import jibitex from  './src/jibitex.js'
 import kcex from  './src/kcex.js'
 import kifpoolme from  './src/kifpoolme.js'
@@ -356,6 +357,7 @@ const exchanges = {
     'hyperliquid':            hyperliquid,
     'independentreserve':     independentreserve,
     'indodax':                indodax,
+    'iranexchange':           iranexchange,
     'jibitex':                jibitex,
     'kcex':                   kcex,
     'kifpoolme':              kifpoolme,
@@ -721,6 +723,7 @@ export {
     hyperliquid,
     independentreserve,
     indodax,
+    iranexchange,
     jibitex,
     kcex,
     kifpoolme,

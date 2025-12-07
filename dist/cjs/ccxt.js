@@ -100,6 +100,7 @@ var huobi = require('./src/huobi.js');
 var hyperliquid = require('./src/hyperliquid.js');
 var independentreserve = require('./src/independentreserve.js');
 var indodax = require('./src/indodax.js');
+var iranexchange = require('./src/iranexchange.js');
 var jibitex = require('./src/jibitex.js');
 var kcex = require('./src/kcex.js');
 var kifpoolme = require('./src/kifpoolme.js');
@@ -233,7 +234,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.9.22';
+const version = '4.9.23';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -324,6 +325,7 @@ const exchanges = {
     'hyperliquid': hyperliquid["default"],
     'independentreserve': independentreserve["default"],
     'indodax': indodax["default"],
+    'iranexchange': iranexchange["default"],
     'jibitex': jibitex["default"],
     'kcex': kcex["default"],
     'kifpoolme': kifpoolme["default"],
@@ -596,6 +598,7 @@ exports.huobi = huobi["default"];
 exports.hyperliquid = hyperliquid["default"];
 exports.independentreserve = independentreserve["default"];
 exports.indodax = indodax["default"];
+exports.iranexchange = iranexchange["default"];
 exports.jibitex = jibitex["default"];
 exports.kcex = kcex["default"];
 exports.kifpoolme = kifpoolme["default"];

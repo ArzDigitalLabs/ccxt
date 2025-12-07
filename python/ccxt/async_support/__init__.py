@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.9.22'
+__version__ = '4.9.23'
 
 # -----------------------------------------------------------------------------
 
@@ -152,6 +152,7 @@ from ccxt.async_support.huobi import huobi                                      
 from ccxt.async_support.hyperliquid import hyperliquid                          # noqa: F401
 from ccxt.async_support.independentreserve import independentreserve            # noqa: F401
 from ccxt.async_support.indodax import indodax                                  # noqa: F401
+from ccxt.async_support.iranexchange import iranexchange                        # noqa: F401
 from ccxt.async_support.jibitex import jibitex                                  # noqa: F401
 from ccxt.async_support.kcex import kcex                                        # noqa: F401
 from ccxt.async_support.kifpoolme import kifpoolme                              # noqa: F401
@@ -299,6 +300,7 @@ exchanges = [
     'hyperliquid',
     'independentreserve',
     'indodax',
+    'iranexchange',
     'jibitex',
     'kcex',
     'kifpoolme',
