@@ -300,7 +300,7 @@ class iranexchange extends Exchange {
         // is_fast_sell_to_customer_active => 1,
         // is_buy_from_customer_active => 1,
         // logo => "https://iranexchange.com/strapi/media/BTC_78d99b9d12.png",
-        // dollar_price => 89240.18,
+        // $dollar_price => 89240.18,
         // sell_to_iranicard_currency_price => 1234526,
         // buy_from_iranicard_currency_price => 1239474,
         // fast_sell_to_iranicard_currency_price => 1234526,
@@ -352,11 +352,12 @@ class iranexchange extends Exchange {
         $marketId = $this->safe_string($ticker, 'symbol') . '_' . 'IRT';
         $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
         $quotation = $this->safe_value($ticker, 'quotation', array());
-        $high = $this->safe_float($quotation, 'maxPrice', 0);
-        $low = $this->safe_float($quotation, 'minPrice', 0);
-        $bid = $this->safe_float($ticker, 'sell_to_iranicard_currency_price', 0);
-        $ask = $this->safe_float($ticker, 'buy_from_iranicard_currency_price', 0);
-        $last = $this->safe_float($ticker, 'sell_to_iranicard_currency_price', 0);
+        $dollar_price = $this->safe_float($ticker, 'dollar_price', 0);
+        $high = $this->safe_float($quotation, 'maxPrice', 0) * $dollar_price;
+        $low = $this->safe_float($quotation, 'minPrice', 0) * $dollar_price;
+        $bid = $this->safe_float($ticker, 'sell_to_iranicard_currency_price', 0) * $dollar_price;
+        $ask = $this->safe_float($ticker, 'buy_from_iranicard_currency_price', 0) * $dollar_price;
+        $last = $this->safe_float($ticker, 'sell_to_iranicard_currency_price', 0) * $dollar_price;
         $change = $this->safe_float($quotation, 'dailyChangePercent', 0);
         return $this->safe_ticker(array(
             'symbol' => $symbol,
