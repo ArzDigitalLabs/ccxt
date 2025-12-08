@@ -387,8 +387,9 @@ class iranexchange extends iranexchange$1["default"] {
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api']['public'] + '/' + path + '?' + this.urlencode(query);
-        if (params['id'] !== undefined) {
-            url = this.urls['api']['public'] + '/' + path + '/' + params['id'];
+        const pair_id = this.safeString(params, 'id');
+        if (pair_id !== undefined) {
+            url = this.urls['api']['public'] + '/' + path + '/' + pair_id;
         }
         headers = { 'Content-Type': 'application/json' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
