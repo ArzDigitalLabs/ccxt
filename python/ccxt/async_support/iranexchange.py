@@ -377,7 +377,8 @@ class iranexchange(Exchange, ImplicitAPI):
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):
         query = self.omit(params, self.extract_params(path))
         url = self.urls['api']['public'] + '/' + path + '?' + self.urlencode(query)
-        if params['id'] is not None:
-            url = self.urls['api']['public'] + '/' + path + '/' + params['id']
+        pair_id = self.safe_string(params, 'id')
+        if pair_id is not None:
+            url = self.urls['api']['public'] + '/' + path + '/' + pair_id
         headers = {'Content-Type': 'application/json'}
         return {'url': url, 'method': method, 'body': body, 'headers': headers}

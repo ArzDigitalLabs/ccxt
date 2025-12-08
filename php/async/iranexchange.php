@@ -393,8 +393,9 @@ class iranexchange extends Exchange {
     public function sign($path, $api = 'public', $method = 'GET', $params = array (), $headers = null, $body = null) {
         $query = $this->omit($params, $this->extract_params($path));
         $url = $this->urls['api']['public'] . '/' . $path . '?' . $this->urlencode($query);
-        if ($params['id'] !== null) {
-            $url = $this->urls['api']['public'] . '/' . $path . '/' . $params['id'];
+        $pair_id = $this->safe_string($params, 'id');
+        if ($pair_id !== null) {
+            $url = $this->urls['api']['public'] . '/' . $path . '/' . $pair_id;
         }
         $headers = array( 'Content-Type' => 'application/json' );
         return array( 'url' => $url, 'method' => $method, 'body' => $body, 'headers' => $headers );
