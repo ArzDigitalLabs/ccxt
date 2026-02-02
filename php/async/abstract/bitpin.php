@@ -16,6 +16,9 @@ abstract class bitpin extends \ccxt\async\Exchange {
     public function public_get_v1_mkt_tv_get_bars($params = array()) {
         return $this->request('v1/mkt/tv/get_bars/', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
+    public function public_get_v4_mth_orderbook($params = array()) {
+        return $this->request('v4/mth/orderbook/', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
     public function publicGetV1MktMarkets($params = array()) {
         return $this->request('v1/mkt/markets/', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
@@ -24,5 +27,8 @@ abstract class bitpin extends \ccxt\async\Exchange {
     }
     public function publicGetV1MktTvGetBars($params = array()) {
         return $this->request('v1/mkt/tv/get_bars/', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
+    public function publicGetV4MthOrderbook($params = array()) {
+        return $this->request('v4/mth/orderbook/', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
 }

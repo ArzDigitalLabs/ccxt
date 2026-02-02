@@ -26,4 +26,9 @@ public partial class bitpin : Exchange
         return await this.callAsync ("publicGetV1MktTvGetBars",parameters);
     }
 
+    public async Task<object> publicGetV4MthOrderbook (object parameters = null)
+    {
+        return await this.callAsync ("publicGetV4MthOrderbook",parameters);
+    }
+
 }

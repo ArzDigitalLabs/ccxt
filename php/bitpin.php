@@ -112,6 +112,7 @@ class bitpin extends Exchange {
                         'v1/mkt/markets/' => 1,
                         'v2/mth/actives/' => 1,
                         'v1/mkt/tv/get_bars/' => 1,
+                        'v4/mth/orderbook/' => 1,
                     ),
                 ),
             ),
@@ -435,7 +436,7 @@ class bitpin extends Exchange {
 
     public function fetch_order_book(string $symbol, ?int $limit = null, $params = array ()): array {
         /**
-         * fetches information on open orders with bid (buy) and ask (sell) prices, volumes and other data for multiple markets
+         * fetches information on open orders with $bid (buy) and $ask (sell) prices, volumes and other data for multiple markets
          * @see https://api-docs.bitpin.ir/#be8d9c51a2
          * @param {string[]|null} symbols list of unified $market symbols, all symbols fetched if null, default is null
          * @param {int} [$limit] max number of entries per orderbook to return, default is null
@@ -446,14 +447,22 @@ class bitpin extends Exchange {
         $market = $this->market($symbol);
         $request = array(
             'symbol' => $market['id'],
-            'type' => 'buy',
+            'limit' => $limit || 100,
         );
-        $Buyresponse = $this->publicGetV2MthActives ($request);
-        $request['type'] = 'sell';
-        $Sellresponse = $this->publicGetV2MthActives ($request);
-        $BuyorderBook = $this->safe_dict($Buyresponse, 'orders', array());
-        $SellorderBook = $this->safe_dict($Sellresponse, 'orders', array());
-        $orderBook = array( 'bid' => $BuyorderBook, 'ask' => $SellorderBook );
+        $orderBookRequest = $this->publicGetV4MthOrderbook ($this->extend($request, $params));
+        $bids = $this->safe_list($orderBookRequest, 'bids', array());
+        $asks = $this->safe_list($orderBookRequest, 'asks', array());
+        $bidlist = array();
+        $askslist = array();
+        for ($i = 0; $i < count($bids); $i++) {
+            $bid = $bids[$i];
+            $bidlist[] = array( 'price' => $this->safe_float($bid, 0), 'amount' => $this->safe_float($bid, 1) );
+        }
+        for ($j = 0; $j < count($asks); $j++) {
+            $ask = $asks[$j];
+            $askslist[] = array( 'price' => $this->safe_float($ask, 0), 'amount' => $this->safe_float($ask, 1) );
+        }
+        $orderBook = array( 'bid' => $bidlist, 'ask' => $askslist );
         $timestamp = Date.now ();
         return $this->parse_order_book($orderBook, $symbol, $timestamp, 'bid', 'ask', 'price', 'amount');
     }
@@ -464,8 +473,8 @@ class bitpin extends Exchange {
         if ($path === 'v1/mkt/tv/get_bars/') {
             $url = $this->urls['api']['OHLCV'] . '/' . $path . '?' . $this->urlencode($query);
         }
-        if ($path === 'v2/mth/actives/') {
-            $url = $url . $params['symbol'] . '/?type=' . $params['type'];
+        if ($path === 'v4/mth/orderbook/') {
+            $url = $url . $params['symbol'] . '/?limit=' . $params['limit'];
         }
         $headers = array( 'Content-Type' => 'application/json' );
         return array( 'url' => $url, 'method' => $method, 'body' => $body, 'headers' => $headers );

@@ -113,6 +113,7 @@ class bitpin(Exchange, ImplicitAPI):
                         'v1/mkt/markets/': 1,
                         'v2/mth/actives/': 1,
                         'v1/mkt/tv/get_bars/': 1,
+                        'v4/mth/orderbook/': 1,
                     },
                 },
             },
@@ -433,14 +434,20 @@ class bitpin(Exchange, ImplicitAPI):
         market = self.market(symbol)
         request = {
             'symbol': market['id'],
-            'type': 'buy',
+            'limit': limit or 100,
         }
-        Buyresponse = await self.publicGetV2MthActives(request)
-        request['type'] = 'sell'
-        Sellresponse = await self.publicGetV2MthActives(request)
-        BuyorderBook = self.safe_dict(Buyresponse, 'orders', {})
-        SellorderBook = self.safe_dict(Sellresponse, 'orders', {})
-        orderBook = {'bid': BuyorderBook, 'ask': SellorderBook}
+        orderBookRequest = await self.publicGetV4MthOrderbook(self.extend(request, params))
+        bids = self.safe_list(orderBookRequest, 'bids', [])
+        asks = self.safe_list(orderBookRequest, 'asks', [])
+        bidlist = []
+        askslist = []
+        for i in range(0, len(bids)):
+            bid = bids[i]
+            bidlist.append({'price': self.safe_float(bid, 0), 'amount': self.safe_float(bid, 1)})
+        for j in range(0, len(asks)):
+            ask = asks[j]
+            askslist.append({'price': self.safe_float(ask, 0), 'amount': self.safe_float(ask, 1)})
+        orderBook = {'bid': bidlist, 'ask': askslist}
         timestamp = Date.now()
         return self.parse_order_book(orderBook, symbol, timestamp, 'bid', 'ask', 'price', 'amount')
 
@@ -449,7 +456,7 @@ class bitpin(Exchange, ImplicitAPI):
         url = self.urls['api'][api] + '/' + path
         if path == 'v1/mkt/tv/get_bars/':
             url = self.urls['api']['OHLCV'] + '/' + path + '?' + self.urlencode(query)
-        if path == 'v2/mth/actives/':
-            url = url + params['symbol'] + '/?type=' + params['type']
+        if path == 'v4/mth/orderbook/':
+            url = url + params['symbol'] + '/?limit=' + params['limit']
         headers = {'Content-Type': 'application/json'}
         return {'url': url, 'method': method, 'body': body, 'headers': headers}

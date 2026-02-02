@@ -18,3 +18,7 @@ func (this *bitpin) PublicGetV2MthActives (args ...interface{}) <-chan interface
 func (this *bitpin) PublicGetV1MktTvGetBars (args ...interface{}) <-chan interface{} {
    return this.callEndpointAsync("publicGetV1MktTvGetBars", args...)
 }
+
+func (this *bitpin) PublicGetV4MthOrderbook (args ...interface{}) <-chan interface{} {
+   return this.callEndpointAsync("publicGetV4MthOrderbook", args...)
+}
