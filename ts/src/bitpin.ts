@@ -114,6 +114,7 @@ export default class bitpin extends Exchange {
                         'v1/mkt/markets/': 1,
                         'v2/mth/actives/': 1,
                         'v1/mkt/tv/get_bars/': 1,
+                        'v4/mth/orderbook/': 1,
                     },
                 },
             },
@@ -458,14 +459,22 @@ export default class bitpin extends Exchange {
         const market = this.market (symbol);
         const request = {
             'symbol': market['id'],
-            'type': 'buy',
+            'limit': limit || 100,
         };
-        const Buyresponse = await this.publicGetV2MthActives (request);
-        request['type'] = 'sell';
-        const Sellresponse = await this.publicGetV2MthActives (request);
-        const BuyorderBook = this.safeDict (Buyresponse, 'orders', {});
-        const SellorderBook = this.safeDict (Sellresponse, 'orders', {});
-        const orderBook = { 'bid': BuyorderBook, 'ask': SellorderBook };
+        const orderBookRequest = await this.publicGetV4MthOrderbook (this.extend (request, params));
+        const bids = this.safeList (orderBookRequest, 'bids', []);
+        const asks = this.safeList (orderBookRequest, 'asks', []);
+        const bidlist = [];
+        const askslist = [];
+        for (let i = 0; i < bids.length; i++) {
+            const bid = bids[i];
+            bidlist.push ({ 'price': this.safeFloat (bid, 0), 'amount': this.safeFloat (bid, 1) });
+        }
+        for (let j = 0; j < asks.length; j++) {
+            const ask = asks[j];
+            askslist.push ({ 'price': this.safeFloat (ask, 0), 'amount': this.safeFloat (ask, 1) });
+        }
+        const orderBook = { 'bid': bidlist, 'ask': askslist };
         const timestamp = Date.now ();
         return this.parseOrderBook (orderBook, symbol, timestamp, 'bid', 'ask', 'price', 'amount');
     }
@@ -476,8 +485,8 @@ export default class bitpin extends Exchange {
         if (path === 'v1/mkt/tv/get_bars/') {
             url = this.urls['api']['OHLCV'] + '/' + path + '?' + this.urlencode (query);
         }
-        if (path === 'v2/mth/actives/') {
-            url = url + params['symbol'] + '/?type=' + params['type'];
+        if (path === 'v4/mth/orderbook/') {
+            url = url + params['symbol'] + '/?limit=' + params['limit'];
         }
         headers = { 'Content-Type': 'application/json' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };

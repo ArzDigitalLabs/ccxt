@@ -12,6 +12,7 @@ interface Exchange {
     publicGetV1MktMarkets (params?: {}): Promise<implicitReturnType>;
     publicGetV2MthActives (params?: {}): Promise<implicitReturnType>;
     publicGetV1MktTvGetBars (params?: {}): Promise<implicitReturnType>;
+    publicGetV4MthOrderbook (params?: {}): Promise<implicitReturnType>;
 }
 abstract class Exchange extends _Exchange {}
 
