@@ -91,6 +91,7 @@
 	- [hyperliquid](exchanges/hyperliquid.md)
 	- [independentreserve](exchanges/independentreserve.md)
 	- [indodax](exchanges/indodax.md)
+	- [iranexchange()](exchanges/iranexchange().md)
 	- [jibitex()](exchanges/jibitex().md)
 	- [kcex()](exchanges/kcex().md)
 	- [kifpoolme()](exchanges/kifpoolme().md)
