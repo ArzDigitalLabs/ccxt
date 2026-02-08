@@ -153,8 +153,8 @@ export default class kifpoolme extends Exchange {
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': undefined,
-            'type': 'spot',
-            'spot': true,
+            'type': 'otc',
+            'spot': false,
             'margin': false,
             'swap': false,
             'future': false,
@@ -301,7 +301,7 @@ export default class kifpoolme extends Exchange {
         //     "slug": "bitcoin-BTC",
         //     "quoteId": "USDT" or "IRT"
         // }
-        const marketType = 'spot';
+        const marketType = 'otc';
         const marketId = this.safeString(ticker, 'marketId');
         const symbol = this.safeSymbol(marketId, market, undefined, marketType);
         const quoteId = this.safeString(ticker, 'quoteId', 'USDT');

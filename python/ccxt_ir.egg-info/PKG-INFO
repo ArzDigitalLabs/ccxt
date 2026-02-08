@@ -1,6 +1,10 @@
 Metadata-Version: 2.4
 Name: ccxt-ir
+<<<<<<< HEAD
 Version: 4.9.27
+=======
+Version: 4.9.26
+>>>>>>> 4fc41e5f7b (feat: bump version to v4.9.28)
 Summary: A JavaScript / TypeScript / Python / C# / PHP cryptocurrency trading library with support for 100+ exchanges
 Home-page: https://ccxt.com
 Author: Igor Kroitor
@@ -304,13 +308,22 @@ console.log(version, Object.keys(exchanges));
 
 All-in-one browser bundle (dependencies included), served from a CDN of your choice:
 
+<<<<<<< HEAD
 - jsDelivr: https://cdn.jsdelivr.net/npm/ccxt@4.9.27/dist/ccxt.browser.min.js
 - unpkg: https://unpkg.com/ccxt@4.9.27/dist/ccxt.browser.min.js
+=======
+- jsDelivr: https://cdn.jsdelivr.net/npm/ccxt@4.9.26/dist/ccxt.browser.min.js
+- unpkg: https://unpkg.com/ccxt@4.9.26/dist/ccxt.browser.min.js
+>>>>>>> 4fc41e5f7b (feat: bump version to v4.9.28)
 
 CDNs are not updated in real-time and may have delays. Defaulting to the most recent version without specifying the version number is not recommended. Please, keep in mind that we are not responsible for the correct operation of those CDN servers.
 
 ```HTML
+<<<<<<< HEAD
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ccxt@4.9.27/dist/ccxt.browser.min.js"></script>
+=======
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ccxt@4.9.26/dist/ccxt.browser.min.js"></script>
+>>>>>>> 4fc41e5f7b (feat: bump version to v4.9.28)
 console.log (ccxt.exchanges) // print all available exchanges
 ```
 

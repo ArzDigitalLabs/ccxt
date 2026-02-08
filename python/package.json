@@ -1,6 +1,10 @@
 {
   "name": "ccxt-ir",
+<<<<<<< HEAD
   "version": "4.9.27",
+=======
+  "version": "4.9.28",
+>>>>>>> 4fc41e5f7b (feat: bump version to v4.9.28)
   "description": "A JavaScript / TypeScript / Python / C# / PHP cryptocurrency trading library with support for 100+ exchanges",
   "unpkg": "dist/ccxt.browser.min.js",
   "type": "module",
