@@ -23,7 +23,7 @@ class kifpoolme extends Exchange {
             'pro' => false,
             'has' => array(
                 'CORS' => null,
-                'spot' => true,
+                'spot' => false,
                 'margin' => false,
                 'swap' => false,
                 'future' => false,
@@ -153,8 +153,8 @@ class kifpoolme extends Exchange {
             'baseId' => $baseId,
             'quoteId' => $quoteId,
             'settleId' => null,
-            'type' => 'spot',
-            'spot' => true,
+            'type' => 'otc',
+            'spot' => false,
             'margin' => false,
             'swap' => false,
             'future' => false,
@@ -305,7 +305,7 @@ class kifpoolme extends Exchange {
         //     "slug" => "bitcoin-BTC",
         //     "quoteId" => "USDT" or "IRT"
         // }
-        $marketType = 'spot';
+        $marketType = 'otc';
         $marketId = $this->safe_string($ticker, 'marketId');
         $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
         $quoteId = $this->safe_string($ticker, 'quoteId', 'USDT');

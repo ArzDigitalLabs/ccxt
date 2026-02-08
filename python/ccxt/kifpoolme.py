@@ -23,7 +23,7 @@ class kifpoolme(Exchange, ImplicitAPI):
             'pro': False,
             'has': {
                 'CORS': None,
-                'spot': True,
+                'spot': False,
                 'margin': False,
                 'swap': False,
                 'future': False,
@@ -152,8 +152,8 @@ class kifpoolme(Exchange, ImplicitAPI):
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': None,
-            'type': 'spot',
-            'spot': True,
+            'type': 'otc',
+            'spot': False,
             'margin': False,
             'swap': False,
             'future': False,
@@ -285,7 +285,7 @@ class kifpoolme(Exchange, ImplicitAPI):
         #     "slug": "bitcoin-BTC",
         #     "quoteId": "USDT" or "IRT"
         # }
-        marketType = 'spot'
+        marketType = 'otc'
         marketId = self.safe_string(ticker, 'marketId')
         symbol = self.safe_symbol(marketId, market, None, marketType)
         quoteId = self.safe_string(ticker, 'quoteId', 'USDT')
