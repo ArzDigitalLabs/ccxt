@@ -43,7 +43,11 @@ use BN\BN;
 use Sop\ASN1\Type\UnspecifiedType;
 use Exception;
 
+<<<<<<< HEAD
 $version = '4.9.27';
+=======
+$version = '4.9.28';
+>>>>>>> 4fc41e5f7b (feat: bump version to v4.9.28)
 
 // rounding mode
 const TRUNCATE = 0;
@@ -62,7 +66,11 @@ const PAD_WITH_ZERO = 6;
 
 class Exchange {
 
+<<<<<<< HEAD
     const VERSION = '4.9.27';
+=======
+    const VERSION = '4.9.28';
+>>>>>>> 4fc41e5f7b (feat: bump version to v4.9.28)
 
     private static $base58_alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
     private static $base58_encoder = null;
