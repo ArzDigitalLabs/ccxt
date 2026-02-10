@@ -135,6 +135,7 @@ var pingi = require('./src/pingi.js');
 var poloniex = require('./src/poloniex.js');
 var pooleno = require('./src/pooleno.js');
 var probit = require('./src/probit.js');
+var raastin = require('./src/raastin.js');
 var ramzinex = require('./src/ramzinex.js');
 var sarmayex = require('./src/sarmayex.js');
 var sarrafex = require('./src/sarrafex.js');
@@ -234,7 +235,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.9.28';
+const version = '4.9.29';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -360,6 +361,7 @@ const exchanges = {
     'poloniex': poloniex["default"],
     'pooleno': pooleno["default"],
     'probit': probit["default"],
+    'raastin': raastin["default"],
     'ramzinex': ramzinex["default"],
     'sarmayex': sarmayex["default"],
     'sarrafex': sarrafex["default"],
@@ -633,6 +635,7 @@ exports.pingi = pingi["default"];
 exports.poloniex = poloniex["default"];
 exports.pooleno = pooleno["default"];
 exports.probit = probit["default"];
+exports.raastin = raastin["default"];
 exports.ramzinex = ramzinex["default"];
 exports.sarmayex = sarmayex["default"];
 exports.sarrafex = sarrafex["default"];

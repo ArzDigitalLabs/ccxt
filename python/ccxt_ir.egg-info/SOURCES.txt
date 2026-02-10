@@ -129,6 +129,7 @@ ccxt/pingi.py
 ccxt/poloniex.py
 ccxt/pooleno.py
 ccxt/probit.py
+ccxt/raastin.py
 ccxt/ramzinex.py
 ccxt/sarmayex.py
 ccxt/sarrafex.py
@@ -276,6 +277,7 @@ ccxt/abstract/pingi.py
 ccxt/abstract/poloniex.py
 ccxt/abstract/pooleno.py
 ccxt/abstract/probit.py
+ccxt/abstract/raastin.py
 ccxt/abstract/ramzinex.py
 ccxt/abstract/sarmayex.py
 ccxt/abstract/sarrafex.py
@@ -423,6 +425,7 @@ ccxt/async_support/pingi.py
 ccxt/async_support/poloniex.py
 ccxt/async_support/pooleno.py
 ccxt/async_support/probit.py
+ccxt/async_support/raastin.py
 ccxt/async_support/ramzinex.py
 ccxt/async_support/sarmayex.py
 ccxt/async_support/sarrafex.py
