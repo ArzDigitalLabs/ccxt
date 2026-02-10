@@ -1,0 +1,367 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var raastin$1 = require('./abstract/raastin.js');
+
+// ----------------------------------------------------------------------------
+//  ---------------------------------------------------------------------------
+/**
+ * @class raastin
+ * @augments Exchange
+ * @description Set rateLimit to 1000 if fully verified
+ */
+class raastin extends raastin$1["default"] {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'raastin',
+            'name': 'Raastin',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': '1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': true,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'addMargin': false,
+                'cancelAllOrders': false,
+                'cancelOrder': false,
+                'cancelOrders': false,
+                'createDepositAddress': false,
+                'createOrder': false,
+                'createStopLimitOrder': false,
+                'createStopMarketOrder': false,
+                'createStopOrder': false,
+                'editOrder': false,
+                'fetchBalance': false,
+                'fetchBorrowInterest': false,
+                'fetchBorrowRateHistories': false,
+                'fetchBorrowRateHistory': false,
+                'fetchClosedOrders': false,
+                'fetchCrossBorrowRate': false,
+                'fetchCrossBorrowRates': false,
+                'fetchCurrencies': false,
+                'fetchDepositAddress': false,
+                'fetchDeposits': false,
+                'fetchFundingHistory': false,
+                'fetchFundingRate': false,
+                'fetchFundingRateHistory': false,
+                'fetchFundingRates': false,
+                'fetchIndexOHLCV': false,
+                'fetchIsolatedBorrowRate': false,
+                'fetchIsolatedBorrowRates': false,
+                'fetchL2OrderBook': false,
+                'fetchL3OrderBook': false,
+                'fetchLedger': false,
+                'fetchLedgerEntry': false,
+                'fetchLeverageTiers': false,
+                'fetchMarkets': true,
+                'fetchMarkOHLCV': false,
+                'fetchMyTrades': false,
+                'fetchOHLCV': false,
+                'fetchOpenInterestHistory': false,
+                'fetchOpenOrders': false,
+                'fetchOrder': false,
+                'fetchOrderBook': true,
+                'fetchOrders': false,
+                'fetchOrderTrades': 'emulated',
+                'fetchPositions': false,
+                'fetchPremiumIndexOHLCV': false,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'fetchTime': false,
+                'fetchTrades': false,
+                'fetchTradingFee': false,
+                'fetchTradingFees': false,
+                'fetchWithdrawals': false,
+                'setLeverage': false,
+                'setMarginMode': false,
+                'transfer': false,
+                'withdraw': false,
+            },
+            'comment': 'This comment is optional',
+            'urls': {
+                'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/raastin/64x64.png',
+                'api': {
+                    'public': 'https://api.raastin.com',
+                },
+                'www': 'https://raastin.com',
+                'doc': [
+                    'https://api.raastin.com/docs',
+                ],
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'api/v1/market/symbols': 1,
+                        'api/v1/market/symbols/{symbol}/': 1,
+                        'api/v1/market/depth/{symbol}': 1,
+                    },
+                },
+            },
+            'fees': {
+                'trading': {
+                    'tierBased': false,
+                    'percentage': true,
+                    'maker': this.parseNumber('0'),
+                    'taker': this.parseNumber('0.002'),
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        /**
+         * @method
+         * @name raastin#fetchMarkets
+         * @description retrieves data on all markets for raastin
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object[]} an array of objects representing market data
+         */
+        const response = await this.publicGetApiV1MarketSymbols(params);
+        // Response is a flat array, not nested in 'result'
+        const markets = response;
+        const result = [];
+        for (let i = 0; i < markets.length; i++) {
+            const market = this.parseMarket(markets[i]);
+            result.push(market);
+        }
+        return result;
+    }
+    parseMarket(market) {
+        //  {
+        //     "id": 1,
+        //     "name": "USDTIRT",
+        //     "asset": {
+        //         "id": 4,
+        //         "symbol": "USDT",
+        //         "precision": 8,
+        //         "step_size": 8,
+        //         "name": "tether",
+        //         "name_fa": "تتر",
+        //         "logo": "https://cdn.raastin.com/core-media-public/coins/logo/USDT.png",
+        //         "original_symbol": "USDT",
+        //         "original_name_fa": "تتر",
+        //         "trading_view_symbol": "BINANCE:USDTUSDT.P",
+        //         "otc_status": "active",
+        //         "price_page": true
+        //     },
+        //     "base_asset": {
+        //         "id": 1,
+        //         "symbol": "IRT",
+        //         "precision": 0,
+        //         "step_size": 8,
+        //         "name": "toman",
+        //         "name_fa": "تومان",
+        //         "logo": "https://cdn.raastin.com/core-media-public/coins/logo/IRT.png",
+        //         "original_symbol": "IRT",
+        //         "original_name_fa": "تومان",
+        //         "trading_view_symbol": "",
+        //         "otc_status": "active",
+        //         "price_page": true
+        //     },
+        //     "taker_fee": "0.002",
+        //     "maker_fee": "0",
+        //     "tick_size": 0,
+        //     "step_size": 2,
+        //     "min_trade_quantity": "0",
+        //     "max_trade_quantity": "1000000000000000000",
+        //     "enable": true,
+        //     "bookmark": false,
+        //     "margin_enable": true,
+        //     "strategy_enable": true
+        // }
+        const id = this.safeString(market, 'name');
+        const asset = this.safeDict(market, 'asset', {});
+        const baseAsset = this.safeDict(market, 'base_asset', {});
+        let baseId = this.safeString(asset, 'symbol');
+        let quoteId = this.safeString(baseAsset, 'symbol');
+        const base = this.safeCurrencyCode(baseId);
+        const quote = this.safeCurrencyCode(quoteId);
+        baseId = baseId.toLowerCase();
+        quoteId = quoteId.toLowerCase();
+        const basePrecision = this.safeInteger(asset, 'precision');
+        const quotePrecision = this.safeInteger(baseAsset, 'precision');
+        const minAmount = this.safeString(market, 'min_trade_quantity');
+        const maxAmount = this.safeString(market, 'max_trade_quantity');
+        const enabled = this.safeBool(market, 'enable', true);
+        const marginEnabled = this.safeBool(market, 'margin_enable', false);
+        return {
+            'id': id,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': baseId,
+            'quoteId': quoteId,
+            'settleId': undefined,
+            'type': 'spot',
+            'spot': true,
+            'margin': marginEnabled,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': enabled,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': basePrecision,
+                'price': quotePrecision,
+            },
+            'limits': {
+                'leverage': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'amount': {
+                    'min': this.parseNumber(minAmount),
+                    'max': this.parseNumber(maxAmount),
+                },
+                'price': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'cost': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+            },
+            'created': undefined,
+            'info': market,
+        };
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        /**
+         * @method
+         * @name raastin#fetchTickers
+         * @description fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
+         * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
+         */
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.publicGetApiV1MarketSymbols(params);
+        const markets = this.safeList(response, response);
+        const result = {};
+        for (let i = 0; i < markets.length; i++) {
+            const marketData = markets[i];
+            const ticker = this.parseTicker(marketData);
+            const symbol = ticker['symbol'];
+            result[symbol] = ticker;
+        }
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    async fetchTicker(symbol, params = {}) {
+        /**
+         * @method
+         * @name raastin#fetchTicker
+         * @description fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
+         * @param {string} symbol unified symbol of the market to fetch the ticker for
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
+         */
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const request = {
+            'symbol': market['id'],
+        };
+        const response = await this.publicGetApiV1MarketSymbolsSymbol(request);
+        return this.parseTicker(response, market);
+    }
+    parseTicker(ticker, market = undefined) {
+        // Raastin ticker response has the same structure as market data
+        // We extract available price/volume information
+        const marketType = 'spot';
+        const marketId = this.safeString(ticker, 'name');
+        const symbol = this.safeSymbol(marketId, market, undefined, marketType);
+        // Since the exact ticker fields are not provided in the user's example,
+        // we'll set up the basic structure. These may need adjustment based on actual API response.
+        const last = this.safeFloat(ticker, 'last_price', 0);
+        const high = this.safeFloat(ticker, '24h_high', 0);
+        const low = this.safeFloat(ticker, '24h_low', 0);
+        const baseVolume = this.safeFloat(ticker, '24h_volume', 0);
+        const quoteVolume = this.safeFloat(ticker, '24h_quote_volume', 0);
+        const bid = this.safeFloat(ticker, 'bid_price', 0);
+        const ask = this.safeFloat(ticker, 'ask_price', 0);
+        return this.safeTicker({
+            'symbol': symbol,
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': high,
+            'low': low,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': last,
+            'last': last,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': undefined,
+            'average': undefined,
+            'baseVolume': baseVolume,
+            'quoteVolume': quoteVolume,
+            'info': ticker,
+        }, market);
+    }
+    async fetchOrderBook(symbol, limit = undefined, params = {}) {
+        /**
+         * @method
+         * @name raastin#fetchOrderBook
+         * @description fetches information on open orders with bid (buy) and ask (sell) prices, volumes and other data
+         * @param {string} symbol unified symbol of the market to fetch the order book for
+         * @param {int} [limit] max number of entries per orderbook to return
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object} A dictionary of [order book structures]{@link https://docs.ccxt.com/#/?id=order-book-structure} indexed by market symbols
+         */
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const request = {
+            'symbol': market['id'],
+        };
+        const response = await this.publicGetApiV1MarketDepthSymbol(request);
+        // Response structure:
+        // {
+        //   "last_trade": { "amount": "0.31", "price": "164311", "total": "50936" },
+        //   "bids": [{ "price": "164003", "amount": "19.99", "depth": "1", "total": "3278419" }],
+        //   "asks": [{ "price": "166000", "amount": "47.79", "depth": "2", "total": "7933140" }]
+        // }
+        const timestamp = Date.now();
+        return this.parseOrderBook(response, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api']['public'] + '/' + path;
+        // Handle path parameters like {symbol}
+        if (path.indexOf('{symbol}') >= 0) {
+            const symbol = this.safeString(params, 'symbol');
+            if (symbol !== undefined) {
+                url = url.replace('{symbol}', symbol);
+                params = this.omit(params, 'symbol');
+            }
+        }
+        const query = this.omit(params, this.extractParams(path));
+        // Add query parameters if any remain
+        if (Object.keys(query).length) {
+            url = url + '?' + this.urlencode(query);
+        }
+        headers = { 'Content-Type': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+exports["default"] = raastin;

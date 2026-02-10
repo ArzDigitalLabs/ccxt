@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.9.28';
+const version = '4.9.29';
 
 (Exchange as any).ccxtVersion = version
 
@@ -169,6 +169,7 @@ import pingi from  './src/pingi.js'
 import poloniex from  './src/poloniex.js'
 import pooleno from  './src/pooleno.js'
 import probit from  './src/probit.js'
+import raastin from  './src/raastin.js'
 import ramzinex from  './src/ramzinex.js'
 import sarmayex from  './src/sarmayex.js'
 import sarrafex from  './src/sarrafex.js'
@@ -392,6 +393,7 @@ const exchanges = {
     'poloniex':               poloniex,
     'pooleno':                pooleno,
     'probit':                 probit,
+    'raastin':                raastin,
     'ramzinex':               ramzinex,
     'sarmayex':               sarmayex,
     'sarrafex':               sarrafex,
@@ -758,6 +760,7 @@ export {
     poloniex,
     pooleno,
     probit,
+    raastin,
     ramzinex,
     sarmayex,
     sarrafex,

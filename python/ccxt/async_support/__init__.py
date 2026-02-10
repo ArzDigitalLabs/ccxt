@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.9.28'
+__version__ = '4.9.29'
 
 # -----------------------------------------------------------------------------
 
@@ -187,6 +187,7 @@ from ccxt.async_support.pingi import pingi                                      
 from ccxt.async_support.poloniex import poloniex                                # noqa: F401
 from ccxt.async_support.pooleno import pooleno                                  # noqa: F401
 from ccxt.async_support.probit import probit                                    # noqa: F401
+from ccxt.async_support.raastin import raastin                                  # noqa: F401
 from ccxt.async_support.ramzinex import ramzinex                                # noqa: F401
 from ccxt.async_support.sarmayex import sarmayex                                # noqa: F401
 from ccxt.async_support.sarrafex import sarrafex                                # noqa: F401
@@ -335,6 +336,7 @@ exchanges = [
     'poloniex',
     'pooleno',
     'probit',
+    'raastin',
     'ramzinex',
     'sarmayex',
     'sarrafex',

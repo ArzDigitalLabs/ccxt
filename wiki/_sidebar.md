@@ -124,6 +124,7 @@
 	- [poloniex](exchanges/poloniex.md)
 	- [pooleno()](exchanges/pooleno().md)
 	- [probit](exchanges/probit.md)
+	- [raastin()](exchanges/raastin().md)
 	- [ramzinex()](exchanges/ramzinex().md)
 	- [sarmayex()](exchanges/sarmayex().md)
 	- [sarrafex()](exchanges/sarrafex().md)
