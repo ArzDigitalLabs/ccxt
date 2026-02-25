@@ -3045,6 +3045,7 @@ export default class binance extends Exchange {
      */
     async fetchMarkets (params = {}): Promise<Market[]> {
         const promisesRaw = [];
+        params = this.omit (params, [ 'type' ]);
         let rawFetchMarkets = undefined;
         const defaultTypes = [ 'spot', 'linear', 'inverse' ];
         const fetchMarketsOptions = this.safeDict (this.options, 'fetchMarkets');

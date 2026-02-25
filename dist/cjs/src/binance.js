@@ -3046,6 +3046,7 @@ class binance extends binance$1["default"] {
      */
     async fetchMarkets(params = {}) {
         const promisesRaw = [];
+        params = this.omit(params, ['type']);
         let rawFetchMarkets = undefined;
         const defaultTypes = ['spot', 'linear', 'inverse'];
         const fetchMarketsOptions = this.safeDict(this.options, 'fetchMarkets');
