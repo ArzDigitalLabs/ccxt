@@ -3055,6 +3055,7 @@ class binance extends Exchange {
              * @return {array[]} an array of objects representing market data
              */
             $promisesRaw = array();
+            $params = $this->omit($params, array( 'type' ));
             $rawFetchMarkets = null;
             $defaultTypes = array( 'spot', 'linear', 'inverse' );
             $fetchMarketsOptions = $this->safe_dict($this->options, 'fetchMarkets');

@@ -3027,6 +3027,7 @@ class binance(Exchange, ImplicitAPI):
         :returns dict[]: an array of objects representing market data
         """
         promisesRaw = []
+        params = self.omit(params, ['type'])
         rawFetchMarkets = None
         defaultTypes = ['spot', 'linear', 'inverse']
         fetchMarketsOptions = self.safe_dict(self.options, 'fetchMarkets')
