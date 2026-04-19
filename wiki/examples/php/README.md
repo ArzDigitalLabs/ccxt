@@ -2,14 +2,6 @@
 
 # [<-](Examples?id=php)
 
-# CCXT PHP Examples
-
-To run PHP examples from any folder type in console:
-
-```shell
-php -f path/to/example.php # substitute for actual filename here
-```
-
 - [Arbitrage Pairs](./examples/php/arbitrage-pairs.md)
 
 - [Async Await Fetch Multiple](./examples/php/async-await-fetch-multiple.md)
@@ -128,6 +120,14 @@ php -f path/to/example.php # substitute for actual filename here
 
 - [React Eventloop With Rate Limiting](./examples/php/react-eventloop-with-rate-limiting.md)
 
+# CCXT PHP Examples
+
+To run PHP examples from any folder type in console:
+
+```shell
+php -f path/to/example.php # substitute for actual filename here
+```
+
 - [Sample Local Proxy Server With Cors](./examples/php/sample-local-proxy-server-with-cors.md)
 
 - [Shared Markets](./examples/php/shared-markets.md)
@@ -142,9 +142,9 @@ php -f path/to/example.php # substitute for actual filename here
 
 - [Watch Orderbook For Symbols](./examples/php/watch-OrderBook-For-Symbols.md)
 
-- [Watch Trades For Symbols](./examples/php/watch-Trades-For-Symbols.md)
-
 - [Watch Tickers](./examples/php/watch-tickers.md)
+
+- [Watch Trades For Symbols](./examples/php/watch-Trades-For-Symbols.md)
 
 - [Watchohlcvforsymbols](./examples/php/watchOHLCVForSymbols.md)
 

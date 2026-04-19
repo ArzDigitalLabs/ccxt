@@ -88,7 +88,7 @@ class bit24(Exchange, ImplicitAPI):
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/bit24/64x64.png',
                 'api': {
-                    'public': 'https://bit24.cash/api/',
+                    'public': 'https://rest.bit24.cash',
                 },
                 'www': 'https://bit24.cash/',
                 'doc': [
@@ -98,7 +98,7 @@ class bit24(Exchange, ImplicitAPI):
             'api': {
                 'public': {
                     'get': {
-                        'pro/v3/markets': 1,
+                        'pro/capi/v1/markets': 1,
                     },
                 },
             },
@@ -117,7 +117,7 @@ class bit24(Exchange, ImplicitAPI):
         page = 1
         limit = 100  # check Bit24 docs for max allowed per page
         while(True):
-            response = self.publicGetProV3Markets(self.extend(params, {
+            response = self.publicGetProCapiV1Markets(self.extend(params, {
                 'page': page,
                 'per_page': limit,
             }))
@@ -179,10 +179,8 @@ class bit24(Exchange, ImplicitAPI):
         # last_price: "83669"
         # }
         # }
-        base_coin = self.safe_dict(market, 'base_coin')
-        baseId = self.safe_string(base_coin, 'symbol')
-        quote_coin = self.safe_dict(market, 'quote_coin')
-        quoteId = self.safe_string(quote_coin, 'symbol')
+        baseId = self.safe_string(market, 'base_coin_symbol')
+        quoteId = self.safe_string(market, 'quote_coin_symbol')
         base = self.safe_currency_code(baseId)
         quote = self.safe_currency_code(quoteId)
         baseId = baseId.lower()
@@ -253,7 +251,7 @@ class bit24(Exchange, ImplicitAPI):
         limit = 100  # adjust if Bit24 docs show a different default
         result = {}
         while(True):
-            response = self.publicGetProV3Markets(self.extend(params, {
+            response = self.publicGetProCapiV1Markets(self.extend(params, {
                 'page': page,
                 'per_page': limit,
             }))
@@ -327,21 +325,18 @@ class bit24(Exchange, ImplicitAPI):
         # }
         # },
         marketType = 'spot'
-        base_coin = self.safe_dict(ticker, 'base_coin', {})
-        base_symbol = self.safe_string(base_coin, 'symbol')
+        base_symbol = self.safe_string(ticker, 'base_coin_symbol')
         base_symbol = base_symbol.lower()
-        quote_coin = self.safe_dict(ticker, 'quote_coin', {})
-        quote_symbol = self.safe_string(quote_coin, 'symbol')
+        quote_symbol = self.safe_string(ticker, 'quote_coin_symbol')
         quote_symbol = quote_symbol.lower()
         marketId = base_symbol + '-' + quote_symbol
         symbol = self.safe_symbol(marketId, market, None, marketType)
         last = self.safe_float(ticker, 'each_price', 0)
-        markerInfo = self.safe_dict(ticker, 'market_24h_information', {})
-        change = self.safe_float(markerInfo, 'change_percent', 0)
-        minPrice = self.safe_float(markerInfo, 'min_price', 0)
-        maxPrice = self.safe_float(markerInfo, 'max_price', 0)
-        baseVolume = self.safe_float(markerInfo, 'base_volume', 0)
-        quoteVolume = self.safe_float(markerInfo, 'quote_volume', 0)
+        change = self.safe_float(ticker, '24h_change', 0)
+        minPrice = self.safe_float(ticker, 'min_price', 0)
+        maxPrice = self.safe_float(ticker, 'max_price', 0)
+        baseVolume = self.safe_float(ticker, 'base_coin_volume', 0)
+        quoteVolume = self.safe_float(ticker, 'quote_coin_volume', 0)
         return self.safe_ticker({
             'symbol': symbol,
             'timestamp': None,
@@ -369,5 +364,5 @@ class bit24(Exchange, ImplicitAPI):
         query = self.omit(params, self.extract_params(path))
         url = self.urls['api'][api] + '/' + self.implode_params(path, params)
         url = url + '?' + self.urlencode(query)
-        headers = {'Content-Type': 'application/json'}
+        headers = {'Content-Type': 'application/json', 'X-BIT24-APIKEY': 'bdfa2c8c971445d5a4a95c95a5a2a4c2'}
         return {'url': url, 'method': method, 'body': body, 'headers': headers}

@@ -7,10 +7,10 @@ namespace ccxt\abstract;
 
 
 abstract class bit24 extends \ccxt\Exchange {
-    public function public_get_pro_v3_markets($params = array()) {
-        return $this->request('pro/v3/markets', 'public', 'GET', $params, null, null, array("cost" => 1));
+    public function public_get_pro_capi_v1_markets($params = array()) {
+        return $this->request('pro/capi/v1/markets', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
-    public function publicGetProV3Markets($params = array()) {
-        return $this->request('pro/v3/markets', 'public', 'GET', $params, null, null, array("cost" => 1));
+    public function publicGetProCapiV1Markets($params = array()) {
+        return $this->request('pro/capi/v1/markets', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
 }
