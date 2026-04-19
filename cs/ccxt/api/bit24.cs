@@ -11,9 +11,9 @@ public partial class bit24 : Exchange
 {
     public bit24 (object args = null): base(args) {}
 
-    public async Task<object> publicGetProV3Markets (object parameters = null)
+    public async Task<object> publicGetProCapiV1Markets (object parameters = null)
     {
-        return await this.callAsync ("publicGetProV3Markets",parameters);
+        return await this.callAsync ("publicGetProCapiV1Markets",parameters);
     }
 
 }

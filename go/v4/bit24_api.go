@@ -7,6 +7,6 @@
 
 package ccxt
 
-func (this *bit24) PublicGetProV3Markets (args ...interface{}) <-chan interface{} {
-   return this.callEndpointAsync("publicGetProV3Markets", args...)
+func (this *bit24) PublicGetProCapiV1Markets (args ...interface{}) <-chan interface{} {
+   return this.callEndpointAsync("publicGetProCapiV1Markets", args...)
 }

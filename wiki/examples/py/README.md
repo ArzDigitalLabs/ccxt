@@ -2,23 +2,6 @@
 
 # [<-](Examples?id=python)
 
-# CCXT Python Examples
-
-To run Python examples from any folder, type in console:
-
-```shell
-python path/to/example.py # substitute for actual filename here
-```
-
-Example files starting with `async-` require Python 3.6 with `async`/`await` and async generators support.
-
-![basic-chart](https://user-images.githubusercontent.com/1294454/29979754-6d62354c-8f4f-11e7-9e0a-22e87b4a093b.jpg)
-
-## See Also
-
-[co3k-crypto-currency-note](https://github.com/co3k/co3k-crypto-currency-note/blob/master/Untitled.ipynb) – an example of using ccxt to fetch OHLCV candles from Kraken and charting them with matplotlib in a Jupyter Notebook, made by [co3k](https://github.com/co3k).
-
-
 - [Aiohttp Custom Session Connector](./examples/py/aiohttp-custom-session-connector.md)
 
 - [All Exchanges](./examples/py/all-exchanges.md)
@@ -57,9 +40,9 @@ Example files starting with `async-` require Python 3.6 with `async`/`await` and
 
 - [Async Binance Fetch Margin Balance With Params](./examples/py/async-binance-fetch-margin-balance-with-params.md)
 
-- [Async Binance Fetch Option Ohlcv](./examples/py/async-binance-fetch-option-OHLCV.md)
-
 - [Async Binance Fetch Option Details](./examples/py/async-binance-fetch-option-details.md)
+
+- [Async Binance Fetch Option Ohlcv](./examples/py/async-binance-fetch-option-OHLCV.md)
 
 - [Async Binance Fetch Option Order](./examples/py/async-binance-fetch-option-order.md)
 
@@ -243,8 +226,6 @@ Example files starting with `async-` require Python 3.6 with `async`/`await` and
 
 - [Builtin Rate Limiting Long Poller](./examples/py/builtin-rate-limiting-long-poller.md)
 
-- [Bybit Usdc Create Option Order](./examples/py/bybit-USDC-create-option-order.md)
-
 - [Bybit Conditional Orders](./examples/py/bybit-conditional-orders.md)
 
 - [Bybit Positions](./examples/py/bybit-positions.md)
@@ -252,6 +233,8 @@ Example files starting with `async-` require Python 3.6 with `async`/`await` and
 - [Bybit Trailling](./examples/py/bybit-trailling.md)
 
 - [Bybit Updated](./examples/py/bybit-updated.md)
+
+- [Bybit Usdc Create Option Order](./examples/py/bybit-USDC-create-option-order.md)
 
 - [Cli](./examples/py/cli.md)
 
@@ -439,6 +422,23 @@ Example files starting with `async-` require Python 3.6 with `async`/`await` and
 
 - [Proxy Usage](./examples/py/proxy-usage.md)
 
+# CCXT Python Examples
+
+To run Python examples from any folder, type in console:
+
+```shell
+python path/to/example.py # substitute for actual filename here
+```
+
+Example files starting with `async-` require Python 3.6 with `async`/`await` and async generators support.
+
+![basic-chart](https://user-images.githubusercontent.com/1294454/29979754-6d62354c-8f4f-11e7-9e0a-22e87b4a093b.jpg)
+
+## See Also
+
+[co3k-crypto-currency-note](https://github.com/co3k/co3k-crypto-currency-note/blob/master/Untitled.ipynb) – an example of using ccxt to fetch OHLCV candles from Kraken and charting them with matplotlib in a Jupyter Notebook, made by [co3k](https://github.com/co3k).
+
+
 - [Rsi](./examples/py/rsi.md)
 
 - [Rtt](./examples/py/rtt.md)
@@ -465,9 +465,9 @@ Example files starting with `async-` require Python 3.6 with `async`/`await` and
 
 - [Watch Orderbook For Symbols](./examples/py/watch-OrderBook-For-Symbols.md)
 
-- [Watch Trades For Symbols](./examples/py/watch-Trades-For-Symbols.md)
-
 - [Watch Tickers](./examples/py/watch-tickers.md)
+
+- [Watch Trades For Symbols](./examples/py/watch-Trades-For-Symbols.md)
 
 - [Watchohlcvforsymbols](./examples/py/watchOHLCVForSymbols.md)
 

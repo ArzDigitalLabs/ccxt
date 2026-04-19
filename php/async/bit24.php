@@ -89,7 +89,7 @@ class bit24 extends Exchange {
             'urls' => array(
                 'logo' => 'https://cdn.arz.digital/cr-odin/img/exchanges/bit24/64x64.png',
                 'api' => array(
-                    'public' => 'https://bit24.cash/api/',
+                    'public' => 'https://rest.bit24.cash',
                 ),
                 'www' => 'https://bit24.cash/',
                 'doc' => array(
@@ -99,7 +99,7 @@ class bit24 extends Exchange {
             'api' => array(
                 'public' => array(
                     'get' => array(
-                        'pro/v3/markets' => 1,
+                        'pro/capi/v1/markets' => 1,
                     ),
                 ),
             ),
@@ -120,7 +120,7 @@ class bit24 extends Exchange {
             $page = 1;
             $limit = 100; // check Bit24 docs for max allowed per $page
             while (true) {
-                $response = Async\await($this->publicGetProV3Markets ($this->extend($params, array(
+                $response = Async\await($this->publicGetProCapiV1Markets ($this->extend($params, array(
                     'page' => $page,
                     'per_page' => $limit,
                 ))));
@@ -154,14 +154,14 @@ class bit24 extends Exchange {
         // margin_order_expire_days => null,
         // max_long_margin_leverage => null,
         // max_short_margin_leverage => null,
-        // $base_coin => array(
+        // base_coin => array(
         // symbol => "FTT",
         // name => "FTX Token",
         // fa_name => "اف تی ایکس توکن",
         // logo => "https://exchange-storage.bit24.cash/exchange/icons/ftt.png",
         // coin_type => 0
         // ),
-        // $quote_coin => array(
+        // quote_coin => array(
         // symbol => "IRT",
         // name => "Toman",
         // fa_name => "تومان",
@@ -187,10 +187,8 @@ class bit24 extends Exchange {
         // last_price => "83669"
         // }
         // }
-        $base_coin = $this->safe_dict($market, 'base_coin');
-        $baseId = $this->safe_string($base_coin, 'symbol');
-        $quote_coin = $this->safe_dict($market, 'quote_coin');
-        $quoteId = $this->safe_string($quote_coin, 'symbol');
+        $baseId = $this->safe_string($market, 'base_coin_symbol');
+        $quoteId = $this->safe_string($market, 'quote_coin_symbol');
         $base = $this->safe_currency_code($baseId);
         $quote = $this->safe_currency_code($quoteId);
         $baseId = strtolower($baseId);
@@ -264,7 +262,7 @@ class bit24 extends Exchange {
             $limit = 100; // adjust if Bit24 docs show a different default
             $result = array();
             while (true) {
-                $response = Async\await($this->publicGetProV3Markets ($this->extend($params, array(
+                $response = Async\await($this->publicGetProCapiV1Markets ($this->extend($params, array(
                     'page' => $page,
                     'per_page' => $limit,
                 ))));
@@ -312,14 +310,14 @@ class bit24 extends Exchange {
         // margin_order_expire_days => null,
         // max_long_margin_leverage => null,
         // max_short_margin_leverage => null,
-        // $base_coin => array(
+        // base_coin => array(
         // $symbol => "FTT",
         // name => "FTX Token",
         // fa_name => "اف تی ایکس توکن",
         // logo => "https://exchange-storage.bit24.cash/exchange/icons/ftt.png",
         // coin_type => 0
         // ),
-        // $quote_coin => array(
+        // quote_coin => array(
         // $symbol => "IRT",
         // name => "Toman",
         // fa_name => "تومان",
@@ -346,21 +344,18 @@ class bit24 extends Exchange {
         // }
         // ),
         $marketType = 'spot';
-        $base_coin = $this->safe_dict($ticker, 'base_coin', array());
-        $base_symbol = $this->safe_string($base_coin, 'symbol');
+        $base_symbol = $this->safe_string($ticker, 'base_coin_symbol');
         $base_symbol = strtolower($base_symbol);
-        $quote_coin = $this->safe_dict($ticker, 'quote_coin', array());
-        $quote_symbol = $this->safe_string($quote_coin, 'symbol');
+        $quote_symbol = $this->safe_string($ticker, 'quote_coin_symbol');
         $quote_symbol = strtolower($quote_symbol);
         $marketId = $base_symbol . '-' . $quote_symbol;
         $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
         $last = $this->safe_float($ticker, 'each_price', 0);
-        $markerInfo = $this->safe_dict($ticker, 'market_24h_information', array());
-        $change = $this->safe_float($markerInfo, 'change_percent', 0);
-        $minPrice = $this->safe_float($markerInfo, 'min_price', 0);
-        $maxPrice = $this->safe_float($markerInfo, 'max_price', 0);
-        $baseVolume = $this->safe_float($markerInfo, 'base_volume', 0);
-        $quoteVolume = $this->safe_float($markerInfo, 'quote_volume', 0);
+        $change = $this->safe_float($ticker, '24h_change', 0);
+        $minPrice = $this->safe_float($ticker, 'min_price', 0);
+        $maxPrice = $this->safe_float($ticker, 'max_price', 0);
+        $baseVolume = $this->safe_float($ticker, 'base_coin_volume', 0);
+        $quoteVolume = $this->safe_float($ticker, 'quote_coin_volume', 0);
         return $this->safe_ticker(array(
             'symbol' => $symbol,
             'timestamp' => null,
@@ -389,7 +384,7 @@ class bit24 extends Exchange {
         $query = $this->omit($params, $this->extract_params($path));
         $url = $this->urls['api'][$api] . '/' . $this->implode_params($path, $params);
         $url = $url . '?' . $this->urlencode($query);
-        $headers = array( 'Content-Type' => 'application/json' );
+        $headers = array( 'Content-Type' => 'application/json', 'X-BIT24-APIKEY' => 'bdfa2c8c971445d5a4a95c95a5a2a4c2' );
         return array( 'url' => $url, 'method' => $method, 'body' => $body, 'headers' => $headers );
     }
 }

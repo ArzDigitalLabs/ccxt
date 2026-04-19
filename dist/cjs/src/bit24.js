@@ -89,7 +89,7 @@ class bit24 extends bit24$1["default"] {
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/bit24/64x64.png',
                 'api': {
-                    'public': 'https://bit24.cash/api/',
+                    'public': 'https://rest.bit24.cash',
                 },
                 'www': 'https://bit24.cash/',
                 'doc': [
@@ -99,7 +99,7 @@ class bit24 extends bit24$1["default"] {
             'api': {
                 'public': {
                     'get': {
-                        'pro/v3/markets': 1,
+                        'pro/capi/v1/markets': 1,
                     },
                 },
             },
@@ -119,7 +119,7 @@ class bit24 extends bit24$1["default"] {
         let page = 1;
         const limit = 100; // check Bit24 docs for max allowed per page
         while (true) {
-            const response = await this.publicGetProV3Markets(this.extend(params, {
+            const response = await this.publicGetProCapiV1Markets(this.extend(params, {
                 'page': page,
                 'per_page': limit,
             }));
@@ -184,10 +184,8 @@ class bit24 extends bit24$1["default"] {
         // last_price: "83669"
         // }
         // }
-        const base_coin = this.safeDict(market, 'base_coin');
-        let baseId = this.safeString(base_coin, 'symbol');
-        const quote_coin = this.safeDict(market, 'quote_coin');
-        let quoteId = this.safeString(quote_coin, 'symbol');
+        let baseId = this.safeString(market, 'base_coin_symbol');
+        let quoteId = this.safeString(market, 'quote_coin_symbol');
         const base = this.safeCurrencyCode(baseId);
         const quote = this.safeCurrencyCode(quoteId);
         baseId = baseId.toLowerCase();
@@ -261,7 +259,7 @@ class bit24 extends bit24$1["default"] {
         const limit = 100; // adjust if Bit24 docs show a different default
         const result = {};
         while (true) {
-            const response = await this.publicGetProV3Markets(this.extend(params, {
+            const response = await this.publicGetProCapiV1Markets(this.extend(params, {
                 'page': page,
                 'per_page': limit,
             }));
@@ -340,21 +338,18 @@ class bit24 extends bit24$1["default"] {
         // }
         // },
         const marketType = 'spot';
-        const base_coin = this.safeDict(ticker, 'base_coin', {});
-        let base_symbol = this.safeString(base_coin, 'symbol');
+        let base_symbol = this.safeString(ticker, 'base_coin_symbol');
         base_symbol = base_symbol.toLowerCase();
-        const quote_coin = this.safeDict(ticker, 'quote_coin', {});
-        let quote_symbol = this.safeString(quote_coin, 'symbol');
+        let quote_symbol = this.safeString(ticker, 'quote_coin_symbol');
         quote_symbol = quote_symbol.toLowerCase();
         const marketId = base_symbol + '-' + quote_symbol;
         const symbol = this.safeSymbol(marketId, market, undefined, marketType);
         const last = this.safeFloat(ticker, 'each_price', 0);
-        const markerInfo = this.safeDict(ticker, 'market_24h_information', {});
-        const change = this.safeFloat(markerInfo, 'change_percent', 0);
-        const minPrice = this.safeFloat(markerInfo, 'min_price', 0);
-        const maxPrice = this.safeFloat(markerInfo, 'max_price', 0);
-        const baseVolume = this.safeFloat(markerInfo, 'base_volume', 0);
-        const quoteVolume = this.safeFloat(markerInfo, 'quote_volume', 0);
+        const change = this.safeFloat(ticker, '24h_change', 0);
+        const minPrice = this.safeFloat(ticker, 'min_price', 0);
+        const maxPrice = this.safeFloat(ticker, 'max_price', 0);
+        const baseVolume = this.safeFloat(ticker, 'base_coin_volume', 0);
+        const quoteVolume = this.safeFloat(ticker, 'quote_coin_volume', 0);
         return this.safeTicker({
             'symbol': symbol,
             'timestamp': undefined,
@@ -382,7 +377,7 @@ class bit24 extends bit24$1["default"] {
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
         url = url + '?' + this.urlencode(query);
-        headers = { 'Content-Type': 'application/json' };
+        headers = { 'Content-Type': 'application/json', 'X-BIT24-APIKEY': 'bdfa2c8c971445d5a4a95c95a5a2a4c2' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
     }
 }
