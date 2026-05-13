@@ -91,6 +91,7 @@ export default class bit24 extends Exchange {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/bit24/64x64.png',
                 'api': {
                     'public': 'https://rest.bit24.cash',
+                    'otc': 'https://otc-api.bit24.cash',
                 },
                 'www': 'https://bit24.cash/',
                 'doc': [
@@ -101,6 +102,7 @@ export default class bit24 extends Exchange {
                 'public': {
                     'get': {
                         'pro/capi/v1/markets': 1,
+                        'api/v1/coins/simple-list': 1,
                     },
                 },
             },
@@ -117,6 +119,14 @@ export default class bit24 extends Exchange {
          * @returns {object[]} an array of objects representing market data
          */
         const result = [];
+        const OTCresponse = await this.publicGetApiV1CoinsSimpleList();
+        const OTCmarkets = this.safeDict(OTCresponse, 'data');
+        const OTCmarketList = this.safeList(OTCmarkets, 'results', []);
+        for (let i = 0; i < OTCmarketList.length; i++) {
+            const marketdata = OTCmarketList[i];
+            const market = this.parseOtcMarket(marketdata);
+            result.push(market);
+        }
         let page = 1;
         const limit = 100; // check Bit24 docs for max allowed per page
         while (true) {
@@ -137,7 +147,7 @@ export default class bit24 extends Exchange {
             }
             page += 1;
         }
-        return result;
+        return this.removeDuplicateValues(result);
     }
     parseMarket(market) {
         // {
@@ -242,6 +252,68 @@ export default class bit24 extends Exchange {
             'info': market,
         };
     }
+    parseOtcMarket(market) {
+        //         {
+        // symbol: "0G",
+        // name: "0G"
+        // },
+        let baseId = this.safeString(market, 'symbol');
+        let quoteId = 'IRT'; // assuming quote currency is always IRT for OTC markets
+        const base = this.safeCurrencyCode(baseId);
+        const quote = this.safeCurrencyCode(quoteId);
+        baseId = baseId.toLowerCase();
+        quoteId = quoteId.toLowerCase();
+        const id = baseId + '-' + quoteId;
+        return {
+            'id': id,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': baseId,
+            'quoteId': quoteId,
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': true,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'amount': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'price': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'cost': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+            },
+            'created': undefined,
+            'info': market,
+        };
+    }
     async fetchTickers(symbols = undefined, params = {}) {
         /**
          * @method
@@ -256,9 +328,18 @@ export default class bit24 extends Exchange {
         if (symbols !== undefined) {
             symbols = this.marketSymbols(symbols);
         }
+        const result = {};
+        const Otcresponse = await this.publicGetApiV1CoinsSimpleList(params);
+        const Otcdata = this.safeDict(Otcresponse, 'data', {});
+        const OtctickerList = this.safeList(Otcdata, 'results', []);
+        for (let i = 0; i < OtctickerList.length; i++) {
+            const tickerData = OtctickerList[i];
+            const ticker = this.parseOtcTicker(tickerData);
+            const symbol = ticker['symbol'];
+            result[symbol] = ticker;
+        }
         let page = 1;
         const limit = 100; // adjust if Bit24 docs show a different default
-        const result = {};
         while (true) {
             const response = await this.publicGetProCapiV1Markets(this.extend(params, {
                 'page': page,
@@ -374,11 +455,65 @@ export default class bit24 extends Exchange {
             'info': ticker,
         }, market);
     }
+    parseOtcTicker(ticker, market = undefined) {
+        // {
+        // symbol: "0G",
+        // name: "0G"
+        // },
+        const marketType = 'otc';
+        let base_symbol = this.safeString(ticker, 'symbol');
+        base_symbol = base_symbol.toLowerCase();
+        const quote_symbol = 'irt'; // assuming quote currency is always IRT for OTC markets
+        const marketId = base_symbol + '-' + quote_symbol;
+        const symbol = this.safeSymbol(marketId, market, undefined, marketType);
+        return this.safeTicker({
+            'symbol': symbol,
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': undefined,
+            'bidVolume': undefined,
+            'ask': undefined,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': undefined,
+            'last': undefined,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': undefined,
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': ticker,
+        }, market);
+    }
+    async removeDuplicateValues(markets) {
+        const uniqueMarkets = [];
+        const seenIds = new Set();
+        for (let i = 0; i < markets.length; i++) {
+            const market = markets[i];
+            if (!seenIds.has(market['id'])) {
+                seenIds.add(market['id']);
+                uniqueMarkets.push(market);
+            }
+        }
+        return uniqueMarkets;
+    }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        if (path === 'api/v1/coins/simple-list') {
+            api = 'otc';
+        }
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
         url = url + '?' + this.urlencode(query);
-        headers = { 'Content-Type': 'application/json', 'X-BIT24-APIKEY': 'bdfa2c8c971445d5a4a95c95a5a2a4c2' };
+        if (api === 'otc') {
+            headers = { 'Content-Type': 'application/json' };
+        }
+        else {
+            headers = { 'Content-Type': 'application/json', 'X-BIT24-APIKEY': 'bdfa2c8c971445d5a4a95c95a5a2a4c2' };
+        }
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
     }
 }

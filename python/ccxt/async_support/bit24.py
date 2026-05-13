@@ -89,6 +89,7 @@ class bit24(Exchange, ImplicitAPI):
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/bit24/64x64.png',
                 'api': {
                     'public': 'https://rest.bit24.cash',
+                    'otc': 'https://otc-api.bit24.cash',
                 },
                 'www': 'https://bit24.cash/',
                 'doc': [
@@ -99,6 +100,7 @@ class bit24(Exchange, ImplicitAPI):
                 'public': {
                     'get': {
                         'pro/capi/v1/markets': 1,
+                        'api/v1/coins/simple-list': 1,
                     },
                 },
             },
@@ -114,6 +116,13 @@ class bit24(Exchange, ImplicitAPI):
         :returns dict[]: an array of objects representing market data
         """
         result = []
+        OTCresponse = await self.publicGetApiV1CoinsSimpleList()
+        OTCmarkets = self.safe_dict(OTCresponse, 'data')
+        OTCmarketList = self.safe_list(OTCmarkets, 'results', [])
+        for i in range(0, len(OTCmarketList)):
+            marketdata = OTCmarketList[i]
+            market = self.parse_otc_market(marketdata)
+            result.append(market)
         page = 1
         limit = 100  # check Bit24 docs for max allowed per page
         while(True):
@@ -131,7 +140,7 @@ class bit24(Exchange, ImplicitAPI):
             if len(marketList) < limit:
                 break
             page += 1
-        return result
+        return self.remove_duplicate_values(result)
 
     def parse_market(self, market) -> Market:
         # {
@@ -236,6 +245,68 @@ class bit24(Exchange, ImplicitAPI):
             'info': market,
         }
 
+    def parse_otc_market(self, market) -> Market:
+        #         {
+        # symbol: "0G",
+        # name: "0G"
+        # },
+        baseId = self.safe_string(market, 'symbol')
+        quoteId = 'IRT'  # assuming quote currency is always IRT for OTC markets
+        base = self.safe_currency_code(baseId)
+        quote = self.safe_currency_code(quoteId)
+        baseId = baseId.lower()
+        quoteId = quoteId.lower()
+        id = baseId + '-' + quoteId
+        return {
+            'id': id,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': None,
+            'baseId': baseId,
+            'quoteId': quoteId,
+            'settleId': None,
+            'type': 'otc',
+            'spot': False,
+            'margin': False,
+            'swap': False,
+            'future': False,
+            'option': False,
+            'active': True,
+            'contract': False,
+            'linear': None,
+            'inverse': None,
+            'contractSize': None,
+            'expiry': None,
+            'expiryDatetime': None,
+            'strike': None,
+            'optionType': None,
+            'precision': {
+                'amount': None,
+                'price': None,
+            },
+            'limits': {
+                'leverage': {
+                    'min': None,
+                    'max': None,
+                },
+                'amount': {
+                    'min': None,
+                    'max': None,
+                },
+                'price': {
+                    'min': None,
+                    'max': None,
+                },
+                'cost': {
+                    'min': None,
+                    'max': None,
+                },
+            },
+            'created': None,
+            'info': market,
+        }
+
     async def fetch_tickers(self, symbols: Strings = None, params={}) -> Tickers:
         """
         fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
@@ -247,9 +318,17 @@ class bit24(Exchange, ImplicitAPI):
         await self.load_markets()
         if symbols is not None:
             symbols = self.market_symbols(symbols)
+        result = {}
+        Otcresponse = await self.publicGetApiV1CoinsSimpleList(params)
+        Otcdata = self.safe_dict(Otcresponse, 'data', {})
+        OtctickerList = self.safe_list(Otcdata, 'results', [])
+        for i in range(0, len(OtctickerList)):
+            tickerData = OtctickerList[i]
+            ticker = self.parse_otc_ticker(tickerData)
+            symbol = ticker['symbol']
+            result[symbol] = ticker
         page = 1
         limit = 100  # adjust if Bit24 docs show a different default
-        result = {}
         while(True):
             response = await self.publicGetProCapiV1Markets(self.extend(params, {
                 'page': page,
@@ -360,9 +439,58 @@ class bit24(Exchange, ImplicitAPI):
             'info': ticker,
         }, market)
 
+    def parse_otc_ticker(self, ticker, market: Market = None) -> Ticker:
+        # {
+        # symbol: "0G",
+        # name: "0G"
+        # },
+        marketType = 'otc'
+        base_symbol = self.safe_string(ticker, 'symbol')
+        base_symbol = base_symbol.lower()
+        quote_symbol = 'irt'  # assuming quote currency is always IRT for OTC markets
+        marketId = base_symbol + '-' + quote_symbol
+        symbol = self.safe_symbol(marketId, market, None, marketType)
+        return self.safe_ticker({
+            'symbol': symbol,
+            'timestamp': None,
+            'datetime': None,
+            'high': None,
+            'low': None,
+            'bid': None,
+            'bidVolume': None,
+            'ask': None,
+            'askVolume': None,
+            'vwap': None,
+            'open': None,
+            'close': None,
+            'last': None,
+            'previousClose': None,
+            'change': None,
+            'percentage': None,
+            'average': None,
+            'baseVolume': None,
+            'quoteVolume': None,
+            'info': ticker,
+        }, market)
+
+    async def remove_duplicate_values(self, markets: List[Market]) -> List[Market]:
+        uniqueMarkets = []
+        seenIds = Set()
+        for i in range(0, len(markets)):
+            market = markets[i]
+            if not seenIds.has(market['id']):
+                seenIds.add(market['id'])
+                uniqueMarkets.append(market)
+        return uniqueMarkets
+
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):
+        if path == 'api/v1/coins/simple-list':
+            api = 'otc'
         query = self.omit(params, self.extract_params(path))
         url = self.urls['api'][api] + '/' + self.implode_params(path, params)
         url = url + '?' + self.urlencode(query)
-        headers = {'Content-Type': 'application/json', 'X-BIT24-APIKEY': 'bdfa2c8c971445d5a4a95c95a5a2a4c2'}
+        if api == 'otc':
+            headers = {'Content-Type': 'application/json'}
+        else:
+            headers = {'Content-Type': 'application/json', 'X-BIT24-APIKEY': 'bdfa2c8c971445d5a4a95c95a5a2a4c2'}
         return {'url': url, 'method': method, 'body': body, 'headers': headers}

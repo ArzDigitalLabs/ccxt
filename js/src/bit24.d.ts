@@ -9,9 +9,12 @@ export default class bit24 extends Exchange {
     describe(): any;
     fetchMarkets(params?: {}): Promise<Market[]>;
     parseMarket(market: any): Market;
+    parseOtcMarket(market: any): Market;
     fetchTickers(symbols?: Strings, params?: {}): Promise<Tickers>;
     fetchTicker(symbol: string, params?: {}): Promise<Ticker>;
     parseTicker(ticker: any, market?: Market): Ticker;
+    parseOtcTicker(ticker: any, market?: Market): Ticker;
+    removeDuplicateValues(markets: Market[]): Promise<Market[]>;
     sign(path: any, api?: string, method?: string, params?: {}, headers?: any, body?: any): {
         url: string;
         method: string;

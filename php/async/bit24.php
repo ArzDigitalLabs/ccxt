@@ -90,6 +90,7 @@ class bit24 extends Exchange {
                 'logo' => 'https://cdn.arz.digital/cr-odin/img/exchanges/bit24/64x64.png',
                 'api' => array(
                     'public' => 'https://rest.bit24.cash',
+                    'otc' => 'https://otc-api.bit24.cash',
                 ),
                 'www' => 'https://bit24.cash/',
                 'doc' => array(
@@ -100,6 +101,7 @@ class bit24 extends Exchange {
                 'public' => array(
                     'get' => array(
                         'pro/capi/v1/markets' => 1,
+                        'api/v1/coins/simple-list' => 1,
                     ),
                 ),
             ),
@@ -117,6 +119,14 @@ class bit24 extends Exchange {
              * @return {array[]} an array of objects representing $market data
              */
             $result = array();
+            $OTCresponse = Async\await($this->publicGetApiV1CoinsSimpleList ());
+            $OTCmarkets = $this->safe_dict($OTCresponse, 'data');
+            $OTCmarketList = $this->safe_list($OTCmarkets, 'results', array());
+            for ($i = 0; $i < count($OTCmarketList); $i++) {
+                $marketdata = $OTCmarketList[$i];
+                $market = $this->parse_otc_market($marketdata);
+                $result[] = $market;
+            }
             $page = 1;
             $limit = 100; // check Bit24 docs for max allowed per $page
             while (true) {
@@ -137,7 +147,7 @@ class bit24 extends Exchange {
                 }
                 $page += 1;
             }
-            return $result;
+            return $this->remove_duplicate_values($result);
         }) ();
     }
 
@@ -245,6 +255,69 @@ class bit24 extends Exchange {
         );
     }
 
+    public function parse_otc_market($market): array {
+        //         array(
+        // symbol => "0G",
+        // name => "0G"
+        // ),
+        $baseId = $this->safe_string($market, 'symbol');
+        $quoteId = 'IRT'; // assuming $quote currency is always IRT for OTC markets
+        $base = $this->safe_currency_code($baseId);
+        $quote = $this->safe_currency_code($quoteId);
+        $baseId = strtolower($baseId);
+        $quoteId = strtolower($quoteId);
+        $id = $baseId . '-' . $quoteId;
+        return array(
+            'id' => $id,
+            'symbol' => $base . '/' . $quote,
+            'base' => $base,
+            'quote' => $quote,
+            'settle' => null,
+            'baseId' => $baseId,
+            'quoteId' => $quoteId,
+            'settleId' => null,
+            'type' => 'otc',
+            'spot' => false,
+            'margin' => false,
+            'swap' => false,
+            'future' => false,
+            'option' => false,
+            'active' => true,
+            'contract' => false,
+            'linear' => null,
+            'inverse' => null,
+            'contractSize' => null,
+            'expiry' => null,
+            'expiryDatetime' => null,
+            'strike' => null,
+            'optionType' => null,
+            'precision' => array(
+                'amount' => null,
+                'price' => null,
+            ),
+            'limits' => array(
+                'leverage' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'amount' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'price' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'cost' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+            ),
+            'created' => null,
+            'info' => $market,
+        );
+    }
+
     public function fetch_tickers(?array $symbols = null, $params = array ()): PromiseInterface {
         return Async\async(function () use ($symbols, $params) {
             /**
@@ -258,9 +331,18 @@ class bit24 extends Exchange {
             if ($symbols !== null) {
                 $symbols = $this->market_symbols($symbols);
             }
+            $result = array();
+            $Otcresponse = Async\await($this->publicGetApiV1CoinsSimpleList ($params));
+            $Otcdata = $this->safe_dict($Otcresponse, 'data', array());
+            $OtctickerList = $this->safe_list($Otcdata, 'results', array());
+            for ($i = 0; $i < count($OtctickerList); $i++) {
+                $tickerData = $OtctickerList[$i];
+                $ticker = $this->parse_otc_ticker($tickerData);
+                $symbol = $ticker['symbol'];
+                $result[$symbol] = $ticker;
+            }
             $page = 1;
             $limit = 100; // adjust if Bit24 docs show a different default
-            $result = array();
             while (true) {
                 $response = Async\await($this->publicGetProCapiV1Markets ($this->extend($params, array(
                     'page' => $page,
@@ -380,11 +462,66 @@ class bit24 extends Exchange {
         ), $market);
     }
 
+    public function parse_otc_ticker($ticker, ?array $market = null): array {
+        // array(
+        // $symbol => "0G",
+        // name => "0G"
+        // ),
+        $marketType = 'otc';
+        $base_symbol = $this->safe_string($ticker, 'symbol');
+        $base_symbol = strtolower($base_symbol);
+        $quote_symbol = 'irt'; // assuming quote currency is always IRT for OTC markets
+        $marketId = $base_symbol . '-' . $quote_symbol;
+        $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
+        return $this->safe_ticker(array(
+            'symbol' => $symbol,
+            'timestamp' => null,
+            'datetime' => null,
+            'high' => null,
+            'low' => null,
+            'bid' => null,
+            'bidVolume' => null,
+            'ask' => null,
+            'askVolume' => null,
+            'vwap' => null,
+            'open' => null,
+            'close' => null,
+            'last' => null,
+            'previousClose' => null,
+            'change' => null,
+            'percentage' => null,
+            'average' => null,
+            'baseVolume' => null,
+            'quoteVolume' => null,
+            'info' => $ticker,
+        ), $market);
+    }
+
+    public function remove_duplicate_values(array $markets): PromiseInterface {
+        $uniqueMarkets = array();
+        $seenIds = new Set ();
+        for ($i = 0; $i < count($markets); $i++) {
+            $market = $markets[$i];
+            if (!$seenIds->has ($market['id'])) {
+                $seenIds->add ($market['id']);
+                $uniqueMarkets[] = $market;
+            }
+        }
+        return $uniqueMarkets;
+    }
+
     public function sign($path, $api = 'public', $method = 'GET', $params = array (), $headers = null, $body = null) {
+        if ($path === 'api/v1/coins/simple-list') {
+            $api = 'otc';
+        }
         $query = $this->omit($params, $this->extract_params($path));
         $url = $this->urls['api'][$api] . '/' . $this->implode_params($path, $params);
         $url = $url . '?' . $this->urlencode($query);
-        $headers = array( 'Content-Type' => 'application/json', 'X-BIT24-APIKEY' => 'bdfa2c8c971445d5a4a95c95a5a2a4c2' );
+        if ($api === 'otc') {
+            $headers = array( 'Content-Type' => 'application/json' );
+        } else {
+            $headers = array( 'Content-Type' => 'application/json', 'X-BIT24-APIKEY' => 'bdfa2c8c971445d5a4a95c95a5a2a4c2' );
+        }
         return array( 'url' => $url, 'method' => $method, 'body' => $body, 'headers' => $headers );
     }
 }
