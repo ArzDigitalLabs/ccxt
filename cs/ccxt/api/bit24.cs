@@ -16,4 +16,9 @@ public partial class bit24 : Exchange
         return await this.callAsync ("publicGetProCapiV1Markets",parameters);
     }
 
+    public async Task<object> publicGetApiV1CoinsSimpleList (object parameters = null)
+    {
+        return await this.callAsync ("publicGetApiV1CoinsSimpleList",parameters);
+    }
+
 }

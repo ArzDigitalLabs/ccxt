@@ -2,6 +2,7 @@ import { implicitReturnType } from '../base/types.js';
 import { Exchange as _Exchange } from '../base/Exchange.js';
 interface Exchange {
     publicGetProCapiV1Markets(params?: {}): Promise<implicitReturnType>;
+    publicGetApiV1CoinsSimpleList(params?: {}): Promise<implicitReturnType>;
 }
 declare abstract class Exchange extends _Exchange {
 }

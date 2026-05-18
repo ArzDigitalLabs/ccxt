@@ -10,3 +10,7 @@ package ccxt
 func (this *bit24) PublicGetProCapiV1Markets (args ...interface{}) <-chan interface{} {
    return this.callEndpointAsync("publicGetProCapiV1Markets", args...)
 }
+
+func (this *bit24) PublicGetApiV1CoinsSimpleList (args ...interface{}) <-chan interface{} {
+   return this.callEndpointAsync("publicGetApiV1CoinsSimpleList", args...)
+}

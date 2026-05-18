@@ -10,7 +10,13 @@ abstract class bit24 extends \ccxt\Exchange {
     public function public_get_pro_capi_v1_markets($params = array()) {
         return $this->request('pro/capi/v1/markets', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
+    public function public_get_api_v1_coins_simple_list($params = array()) {
+        return $this->request('api/v1/coins/simple-list', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
     public function publicGetProCapiV1Markets($params = array()) {
         return $this->request('pro/capi/v1/markets', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
+    public function publicGetApiV1CoinsSimpleList($params = array()) {
+        return $this->request('api/v1/coins/simple-list', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
 }

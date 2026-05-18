@@ -10,6 +10,7 @@ import { Exchange as _Exchange } from '../base/Exchange.js';
 
 interface Exchange {
     publicGetProCapiV1Markets (params?: {}): Promise<implicitReturnType>;
+    publicGetApiV1CoinsSimpleList (params?: {}): Promise<implicitReturnType>;
 }
 abstract class Exchange extends _Exchange {}
 
