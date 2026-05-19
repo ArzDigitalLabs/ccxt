@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.9.33'
+__version__ = '4.10.0'
 
 # -----------------------------------------------------------------------------
 
@@ -71,6 +71,7 @@ from ccxt.async_support.apex import apex                                        
 from ccxt.async_support.arzinja import arzinja                                  # noqa: F401
 from ccxt.async_support.arzplus import arzplus                                  # noqa: F401
 from ccxt.async_support.ascendex import ascendex                                # noqa: F401
+from ccxt.async_support.asretether import asretether                            # noqa: F401
 from ccxt.async_support.bequant import bequant                                  # noqa: F401
 from ccxt.async_support.bigone import bigone                                    # noqa: F401
 from ccxt.async_support.binance import binance                                  # noqa: F401
@@ -220,6 +221,7 @@ exchanges = [
     'arzinja',
     'arzplus',
     'ascendex',
+    'asretether',
     'bequant',
     'bigone',
     'binance',
