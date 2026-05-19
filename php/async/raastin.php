@@ -79,6 +79,7 @@ class raastin extends Exchange {
                 'fetchTradingFee' => false,
                 'fetchTradingFees' => false,
                 'fetchWithdrawals' => false,
+                'otc' => true,
                 'setLeverage' => false,
                 'setMarginMode' => false,
                 'transfer' => false,
@@ -101,6 +102,7 @@ class raastin extends Exchange {
                         'api/v1/market/symbols' => 1,
                         'api/v1/market/symbols/{symbol}/' => 1,
                         'api/v1/market/depth/{symbol}' => 1,
+                        'api/v1/market' => 1,
                     ),
                 ),
             ),
@@ -122,10 +124,24 @@ class raastin extends Exchange {
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
              * @return {array[]} an array of objects representing $market data
              */
+            $result = array();
+            $marketType = $this->safe_string($params, 'type', 'spot');
+            if ($marketType === 'otc') {
+                $qoutes = array( 'irt', 'usdt' );
+                for ($i = 0; $i < count($qoutes); $i++) {
+                    $quote = $qoutes[$i];
+                    $OTCmarkets = Async\await($this->publicGetApiV1Market ($this->extend($params, array( 'quote' => $quote ))));
+                    for ($j = 0; $j < count($OTCmarkets); $j++) {
+                        $OTCmarkets[$j]['quote'] = $quote;
+                        $market = $this->parse_otc_market($OTCmarkets[$j]);
+                        $result[] = $market;
+                    }
+                }
+                return $result;
+            }
             $response = Async\await($this->publicGetApiV1MarketSymbols ($params));
             // Response is a flat array, not nested in 'result'
             $markets = $response;
-            $result = array();
             for ($i = 0; $i < count($markets); $i++) {
                 $market = $this->parse_market($markets[$i]);
                 $result[] = $market;
@@ -243,6 +259,69 @@ class raastin extends Exchange {
         );
     }
 
+    public function parse_otc_market($market): array {
+        // array(
+        // symbol => "USDT",
+        // ask => "1",
+        // bid => "1",
+        // name => "tether"
+        // ),
+        $baseSymbol = $this->safe_string($market, 'symbol');
+        $base = $this->safe_currency_code(strtoupper($baseSymbol));
+        $quote = $this->safe_currency_code(strtoupper($market['quote']));
+        $id = strtoupper($base) . strtoupper($quote);
+        $enabled = true;
+        return array(
+            'id' => $id,
+            'symbol' => $base . '/' . $quote,
+            'base' => $base,
+            'quote' => $quote,
+            'settle' => null,
+            'baseId' => $base,
+            'quoteId' => $quote,
+            'settleId' => null,
+            'type' => 'otc',
+            'spot' => false,
+            'margin' => false,
+            'swap' => false,
+            'future' => false,
+            'option' => false,
+            'active' => $enabled,
+            'contract' => false,
+            'linear' => null,
+            'inverse' => null,
+            'contractSize' => null,
+            'expiry' => null,
+            'expiryDatetime' => null,
+            'strike' => null,
+            'optionType' => null,
+            'precision' => array(
+                'amount' => null,
+                'price' => null,
+            ),
+            'limits' => array(
+                'leverage' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'amount' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'price' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'cost' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+            ),
+            'created' => null,
+            'info' => $market,
+        );
+    }
+
     public function fetch_tickers(?array $symbols = null, $params = array ()): PromiseInterface {
         return Async\async(function () use ($symbols, $params) {
             /**
@@ -251,13 +330,27 @@ class raastin extends Exchange {
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
              * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structures~
              */
-            Async\await($this->load_markets());
+            $marketType = $this->safe_string($params, 'type', 'spot');
+            Async\await($this->load_markets(false, array( 'type' => $marketType )));
             if ($symbols !== null) {
                 $symbols = $this->market_symbols($symbols);
             }
-            $response = Async\await($this->publicGetApiV1MarketSymbols ($params));
-            $markets = $this->safe_list($response, $response);
             $result = array();
+            if ($marketType === 'otc') {
+                $qoutes = array( 'irt', 'usdt' );
+                for ($i = 0; $i < count($qoutes); $i++) {
+                    $quote = $qoutes[$i];
+                    $OTCmarkets = Async\await($this->publicGetApiV1Market ($this->extend($params, array( 'quote' => $quote ))));
+                    for ($j = 0; $j < count($OTCmarkets); $j++) {
+                        $OTCmarkets[$j]['quote'] = strtoupper($quote);
+                        $ticker = Async\await($this->parse_otc_ticker($OTCmarkets[$j]));
+                        $symbol = $ticker['symbol'];
+                        $result[$symbol] = $ticker;
+                    }
+                }
+                return $this->filter_by_array_tickers($result, 'symbol', $symbols);
+            }
+            $markets = Async\await($this->publicGetApiV1MarketSymbols ($params));
             for ($i = 0; $i < count($markets); $i++) {
                 $marketData = $markets[$i];
                 $ticker = $this->parse_ticker($marketData);
@@ -276,7 +369,12 @@ class raastin extends Exchange {
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
              * @return {array} a ~@link https://docs.ccxt.com/#/?id=ticker-structure ticker structure~
              */
-            Async\await($this->load_markets());
+            $marketType = $this->safe_string($params, 'type', 'spot');
+            Async\await($this->load_markets(false, array( 'type' => $marketType )));
+            if ($marketType === 'otc') {
+                $tickers = Async\await($this->fetch_tickers(array( $symbol ), array( 'type' => 'otc' )));
+                return $tickers[$symbol];
+            }
             $market = $this->market($symbol);
             $request = array(
                 'symbol' => $market['id'],
@@ -294,33 +392,59 @@ class raastin extends Exchange {
         $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
         // Since the exact $ticker fields are not provided in the user's example,
         // we'll set up the basic structure. These may need adjustment based on actual API response.
-        $last = $this->safe_float($ticker, 'last_price', 0);
-        $high = $this->safe_float($ticker, '24h_high', 0);
-        $low = $this->safe_float($ticker, '24h_low', 0);
-        $baseVolume = $this->safe_float($ticker, '24h_volume', 0);
-        $quoteVolume = $this->safe_float($ticker, '24h_quote_volume', 0);
-        $bid = $this->safe_float($ticker, 'bid_price', 0);
-        $ask = $this->safe_float($ticker, 'ask_price', 0);
+        $last = $this->safe_float($ticker, 'price', 0);
+        $high = $this->safe_float($ticker, 'high', 0);
+        $low = $this->safe_float($ticker, 'low', 0);
+        $baseVolume = $this->safe_float($ticker, 'base_volume', 0);
+        $quoteVolume = $this->safe_float($ticker, 'volume', 0);
+        $changePercentage = $this->safe_float($ticker, 'change_percentage', 0);
         return $this->safe_ticker(array(
             'symbol' => $symbol,
             'timestamp' => null,
             'datetime' => null,
             'high' => $high,
             'low' => $low,
-            'bid' => $bid,
+            'bid' => null,
             'bidVolume' => null,
-            'ask' => $ask,
+            'ask' => null,
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
             'close' => $last,
             'last' => $last,
             'previousClose' => null,
-            'change' => null,
-            'percentage' => null,
+            'change' => $changePercentage,
+            'percentage' => $changePercentage,
             'average' => null,
             'baseVolume' => $baseVolume,
             'quoteVolume' => $quoteVolume,
+            'info' => $ticker,
+        ), $market);
+    }
+
+    public function parse_otc_ticker($ticker, ?array $market = null): array {
+        $symbol = $this->safe_string($ticker, 'symbol') . '/' . $this->safe_string($ticker, 'quote');
+        $bid = $this->safe_float($ticker, 'bid');
+        $ask = $this->safe_float($ticker, 'ask');
+        return $this->safe_ticker(array(
+            'symbol' => $symbol,
+            'timestamp' => null,
+            'datetime' => null,
+            'high' => null,
+            'low' => null,
+            'bid' => $bid,
+            'bidVolume' => null,
+            'ask' => $ask,
+            'askVolume' => null,
+            'vwap' => null,
+            'open' => null,
+            'close' => null,
+            'previousClose' => null,
+            'change' => null,
+            'percentage' => null,
+            'average' => null,
+            'baseVolume' => null,
+            'quoteVolume' => null,
             'info' => $ticker,
         ), $market);
     }
@@ -365,6 +489,12 @@ class raastin extends Exchange {
         // Add $query parameters if any remain
         if ($query) {
             $url = $url . '?' . $this->urlencode($query);
+        }
+        if ($path === 'api/v1/market') {
+            $quote = $this->safe_string($params, 'quote');
+            if ($quote !== null) {
+                $url = $this->urls['api']['public'] . '/' . $path . '/' . $quote . '/info';
+            }
         }
         $headers = array( 'Content-Type' => 'application/json' );
         return array( 'url' => $url, 'method' => $method, 'body' => $body, 'headers' => $headers );

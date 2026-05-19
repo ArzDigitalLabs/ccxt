@@ -78,6 +78,7 @@ class raastin(Exchange, ImplicitAPI):
                 'fetchTradingFee': False,
                 'fetchTradingFees': False,
                 'fetchWithdrawals': False,
+                'otc': True,
                 'setLeverage': False,
                 'setMarginMode': False,
                 'transfer': False,
@@ -100,6 +101,7 @@ class raastin(Exchange, ImplicitAPI):
                         'api/v1/market/symbols': 1,
                         'api/v1/market/symbols/{symbol}/': 1,
                         'api/v1/market/depth/{symbol}': 1,
+                        'api/v1/market': 1,
                     },
                 },
             },
@@ -119,10 +121,21 @@ class raastin(Exchange, ImplicitAPI):
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict[]: an array of objects representing market data
         """
+        result = []
+        marketType = self.safe_string(params, 'type', 'spot')
+        if marketType == 'otc':
+            qoutes = ['irt', 'usdt']
+            for i in range(0, len(qoutes)):
+                quote = qoutes[i]
+                OTCmarkets = await self.publicGetApiV1Market(self.extend(params, {'quote': quote}))
+                for j in range(0, len(OTCmarkets)):
+                    OTCmarkets[j]['quote'] = quote
+                    market = self.parse_otc_market(OTCmarkets[j])
+                    result.append(market)
+            return result
         response = await self.publicGetApiV1MarketSymbols(params)
         # Response is a flat array, not nested in 'result'
         markets = response
-        result = []
         for i in range(0, len(markets)):
             market = self.parse_market(markets[i])
             result.append(market)
@@ -236,6 +249,68 @@ class raastin(Exchange, ImplicitAPI):
             'info': market,
         }
 
+    def parse_otc_market(self, market) -> Market:
+        # {
+        # symbol: "USDT",
+        # ask: "1",
+        # bid: "1",
+        # name: "tether"
+        # },
+        baseSymbol = self.safe_string(market, 'symbol')
+        base = self.safe_currency_code(baseSymbol.upper())
+        quote = self.safe_currency_code(market['quote'].upper())
+        id = base.upper() + quote.upper()
+        enabled = True
+        return {
+            'id': id,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': None,
+            'baseId': base,
+            'quoteId': quote,
+            'settleId': None,
+            'type': 'otc',
+            'spot': False,
+            'margin': False,
+            'swap': False,
+            'future': False,
+            'option': False,
+            'active': enabled,
+            'contract': False,
+            'linear': None,
+            'inverse': None,
+            'contractSize': None,
+            'expiry': None,
+            'expiryDatetime': None,
+            'strike': None,
+            'optionType': None,
+            'precision': {
+                'amount': None,
+                'price': None,
+            },
+            'limits': {
+                'leverage': {
+                    'min': None,
+                    'max': None,
+                },
+                'amount': {
+                    'min': None,
+                    'max': None,
+                },
+                'price': {
+                    'min': None,
+                    'max': None,
+                },
+                'cost': {
+                    'min': None,
+                    'max': None,
+                },
+            },
+            'created': None,
+            'info': market,
+        }
+
     async def fetch_tickers(self, symbols: Strings = None, params={}) -> Tickers:
         """
         fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
@@ -243,12 +318,23 @@ class raastin(Exchange, ImplicitAPI):
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict: a dictionary of `ticker structures <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
-        await self.load_markets()
+        marketType = self.safe_string(params, 'type', 'spot')
+        await self.load_markets(False, {'type': marketType})
         if symbols is not None:
             symbols = self.market_symbols(symbols)
-        response = await self.publicGetApiV1MarketSymbols(params)
-        markets = self.safe_list(response, response)
         result = {}
+        if marketType == 'otc':
+            qoutes = ['irt', 'usdt']
+            for i in range(0, len(qoutes)):
+                quote = qoutes[i]
+                OTCmarkets = await self.publicGetApiV1Market(self.extend(params, {'quote': quote}))
+                for j in range(0, len(OTCmarkets)):
+                    OTCmarkets[j]['quote'] = quote.upper()
+                    ticker = await self.parse_otc_ticker(OTCmarkets[j])
+                    symbol = ticker['symbol']
+                    result[symbol] = ticker
+            return self.filter_by_array_tickers(result, 'symbol', symbols)
+        markets = await self.publicGetApiV1MarketSymbols(params)
         for i in range(0, len(markets)):
             marketData = markets[i]
             ticker = self.parse_ticker(marketData)
@@ -263,7 +349,11 @@ class raastin(Exchange, ImplicitAPI):
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict: a `ticker structure <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
-        await self.load_markets()
+        marketType = self.safe_string(params, 'type', 'spot')
+        await self.load_markets(False, {'type': marketType})
+        if marketType == 'otc':
+            tickers = await self.fetch_tickers([symbol], {'type': 'otc'})
+            return tickers[symbol]
         market = self.market(symbol)
         request = {
             'symbol': market['id'],
@@ -279,33 +369,58 @@ class raastin(Exchange, ImplicitAPI):
         symbol = self.safe_symbol(marketId, market, None, marketType)
         # Since the exact ticker fields are not provided in the user's example,
         # we'll set up the basic structure. These may need adjustment based on actual API response.
-        last = self.safe_float(ticker, 'last_price', 0)
-        high = self.safe_float(ticker, '24h_high', 0)
-        low = self.safe_float(ticker, '24h_low', 0)
-        baseVolume = self.safe_float(ticker, '24h_volume', 0)
-        quoteVolume = self.safe_float(ticker, '24h_quote_volume', 0)
-        bid = self.safe_float(ticker, 'bid_price', 0)
-        ask = self.safe_float(ticker, 'ask_price', 0)
+        last = self.safe_float(ticker, 'price', 0)
+        high = self.safe_float(ticker, 'high', 0)
+        low = self.safe_float(ticker, 'low', 0)
+        baseVolume = self.safe_float(ticker, 'base_volume', 0)
+        quoteVolume = self.safe_float(ticker, 'volume', 0)
+        changePercentage = self.safe_float(ticker, 'change_percentage', 0)
         return self.safe_ticker({
             'symbol': symbol,
             'timestamp': None,
             'datetime': None,
             'high': high,
             'low': low,
-            'bid': bid,
+            'bid': None,
             'bidVolume': None,
-            'ask': ask,
+            'ask': None,
             'askVolume': None,
             'vwap': None,
             'open': None,
             'close': last,
             'last': last,
             'previousClose': None,
-            'change': None,
-            'percentage': None,
+            'change': changePercentage,
+            'percentage': changePercentage,
             'average': None,
             'baseVolume': baseVolume,
             'quoteVolume': quoteVolume,
+            'info': ticker,
+        }, market)
+
+    def parse_otc_ticker(self, ticker, market: Market = None) -> Ticker:
+        symbol = self.safe_string(ticker, 'symbol') + '/' + self.safe_string(ticker, 'quote')
+        bid = self.safe_float(ticker, 'bid')
+        ask = self.safe_float(ticker, 'ask')
+        return self.safe_ticker({
+            'symbol': symbol,
+            'timestamp': None,
+            'datetime': None,
+            'high': None,
+            'low': None,
+            'bid': bid,
+            'bidVolume': None,
+            'ask': ask,
+            'askVolume': None,
+            'vwap': None,
+            'open': None,
+            'close': None,
+            'previousClose': None,
+            'change': None,
+            'percentage': None,
+            'average': None,
+            'baseVolume': None,
+            'quoteVolume': None,
             'info': ticker,
         }, market)
 
@@ -344,5 +459,9 @@ class raastin(Exchange, ImplicitAPI):
         # Add query parameters if any remain
         if query:
             url = url + '?' + self.urlencode(query)
+        if path == 'api/v1/market':
+            quote = self.safe_string(params, 'quote')
+            if quote is not None:
+                url = self.urls['api']['public'] + '/' + path + '/' + quote + '/info'
         headers = {'Content-Type': 'application/json'}
         return {'url': url, 'method': method, 'body': body, 'headers': headers}

@@ -26,4 +26,9 @@ public partial class raastin : Exchange
         return await this.callAsync ("publicGetApiV1MarketDepthSymbol",parameters);
     }
 
+    public async Task<object> publicGetApiV1Market (object parameters = null)
+    {
+        return await this.callAsync ("publicGetApiV1Market",parameters);
+    }
+
 }
