@@ -16,6 +16,9 @@ abstract class raastin extends \ccxt\async\Exchange {
     public function public_get_api_v1_market_depth_symbol($params = array()) {
         return $this->request('api/v1/market/depth/{symbol}', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
+    public function public_get_api_v1_market($params = array()) {
+        return $this->request('api/v1/market', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
     public function publicGetApiV1MarketSymbols($params = array()) {
         return $this->request('api/v1/market/symbols', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
@@ -24,5 +27,8 @@ abstract class raastin extends \ccxt\async\Exchange {
     }
     public function publicGetApiV1MarketDepthSymbol($params = array()) {
         return $this->request('api/v1/market/depth/{symbol}', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
+    public function publicGetApiV1Market($params = array()) {
+        return $this->request('api/v1/market', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
 }

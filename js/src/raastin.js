@@ -80,6 +80,7 @@ export default class raastin extends Exchange {
                 'fetchTradingFee': false,
                 'fetchTradingFees': false,
                 'fetchWithdrawals': false,
+                'otc': true,
                 'setLeverage': false,
                 'setMarginMode': false,
                 'transfer': false,
@@ -102,6 +103,7 @@ export default class raastin extends Exchange {
                         'api/v1/market/symbols': 1,
                         'api/v1/market/symbols/{symbol}/': 1,
                         'api/v1/market/depth/{symbol}': 1,
+                        'api/v1/market': 1,
                     },
                 },
             },
@@ -123,10 +125,24 @@ export default class raastin extends Exchange {
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object[]} an array of objects representing market data
          */
+        const result = [];
+        const marketType = this.safeString(params, 'type', 'spot');
+        if (marketType === 'otc') {
+            const qoutes = ['irt', 'usdt'];
+            for (let i = 0; i < qoutes.length; i++) {
+                const quote = qoutes[i];
+                const OTCmarkets = await this.publicGetApiV1Market(this.extend(params, { 'quote': quote }));
+                for (let j = 0; j < OTCmarkets.length; j++) {
+                    OTCmarkets[j]['quote'] = quote;
+                    const market = this.parseOtcMarket(OTCmarkets[j]);
+                    result.push(market);
+                }
+            }
+            return result;
+        }
         const response = await this.publicGetApiV1MarketSymbols(params);
         // Response is a flat array, not nested in 'result'
         const markets = response;
-        const result = [];
         for (let i = 0; i < markets.length; i++) {
             const market = this.parseMarket(markets[i]);
             result.push(market);
@@ -241,6 +257,68 @@ export default class raastin extends Exchange {
             'info': market,
         };
     }
+    parseOtcMarket(market) {
+        // {
+        // symbol: "USDT",
+        // ask: "1",
+        // bid: "1",
+        // name: "tether"
+        // },
+        const baseSymbol = this.safeString(market, 'symbol');
+        const base = this.safeCurrencyCode(baseSymbol.toUpperCase());
+        const quote = this.safeCurrencyCode(market['quote'].toUpperCase());
+        const id = base.toUpperCase() + quote.toUpperCase();
+        const enabled = true;
+        return {
+            'id': id,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': base,
+            'quoteId': quote,
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': enabled,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'amount': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'price': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'cost': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+            },
+            'created': undefined,
+            'info': market,
+        };
+    }
     async fetchTickers(symbols = undefined, params = {}) {
         /**
          * @method
@@ -250,13 +328,27 @@ export default class raastin extends Exchange {
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
-        await this.loadMarkets();
+        const marketType = this.safeString(params, 'type', 'spot');
+        await this.loadMarkets(false, { 'type': marketType });
         if (symbols !== undefined) {
             symbols = this.marketSymbols(symbols);
         }
-        const response = await this.publicGetApiV1MarketSymbols(params);
-        const markets = this.safeList(response, response);
         const result = {};
+        if (marketType === 'otc') {
+            const qoutes = ['irt', 'usdt'];
+            for (let i = 0; i < qoutes.length; i++) {
+                const quote = qoutes[i];
+                const OTCmarkets = await this.publicGetApiV1Market(this.extend(params, { 'quote': quote }));
+                for (let j = 0; j < OTCmarkets.length; j++) {
+                    OTCmarkets[j]['quote'] = quote.toUpperCase();
+                    const ticker = await this.parseOTCTicker(OTCmarkets[j]);
+                    const symbol = ticker['symbol'];
+                    result[symbol] = ticker;
+                }
+            }
+            return this.filterByArrayTickers(result, 'symbol', symbols);
+        }
+        const markets = await this.publicGetApiV1MarketSymbols(params);
         for (let i = 0; i < markets.length; i++) {
             const marketData = markets[i];
             const ticker = this.parseTicker(marketData);
@@ -274,7 +366,12 @@ export default class raastin extends Exchange {
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
-        await this.loadMarkets();
+        const marketType = this.safeString(params, 'type', 'spot');
+        await this.loadMarkets(false, { 'type': marketType });
+        if (marketType === 'otc') {
+            const tickers = await this.fetchTickers([symbol], { 'type': 'otc' });
+            return tickers[symbol];
+        }
         const market = this.market(symbol);
         const request = {
             'symbol': market['id'],
@@ -290,33 +387,58 @@ export default class raastin extends Exchange {
         const symbol = this.safeSymbol(marketId, market, undefined, marketType);
         // Since the exact ticker fields are not provided in the user's example,
         // we'll set up the basic structure. These may need adjustment based on actual API response.
-        const last = this.safeFloat(ticker, 'last_price', 0);
-        const high = this.safeFloat(ticker, '24h_high', 0);
-        const low = this.safeFloat(ticker, '24h_low', 0);
-        const baseVolume = this.safeFloat(ticker, '24h_volume', 0);
-        const quoteVolume = this.safeFloat(ticker, '24h_quote_volume', 0);
-        const bid = this.safeFloat(ticker, 'bid_price', 0);
-        const ask = this.safeFloat(ticker, 'ask_price', 0);
+        const last = this.safeFloat(ticker, 'price', 0);
+        const high = this.safeFloat(ticker, 'high', 0);
+        const low = this.safeFloat(ticker, 'low', 0);
+        const baseVolume = this.safeFloat(ticker, 'base_volume', 0);
+        const quoteVolume = this.safeFloat(ticker, 'volume', 0);
+        const changePercentage = this.safeFloat(ticker, 'change_percentage', 0);
         return this.safeTicker({
             'symbol': symbol,
             'timestamp': undefined,
             'datetime': undefined,
             'high': high,
             'low': low,
-            'bid': bid,
+            'bid': undefined,
             'bidVolume': undefined,
-            'ask': ask,
+            'ask': undefined,
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
             'close': last,
             'last': last,
             'previousClose': undefined,
-            'change': undefined,
-            'percentage': undefined,
+            'change': changePercentage,
+            'percentage': changePercentage,
             'average': undefined,
             'baseVolume': baseVolume,
             'quoteVolume': quoteVolume,
+            'info': ticker,
+        }, market);
+    }
+    parseOTCTicker(ticker, market = undefined) {
+        const symbol = this.safeString(ticker, 'symbol') + '/' + this.safeString(ticker, 'quote');
+        const bid = this.safeFloat(ticker, 'bid');
+        const ask = this.safeFloat(ticker, 'ask');
+        return this.safeTicker({
+            'symbol': symbol,
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': undefined,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': undefined,
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
             'info': ticker,
         }, market);
     }
@@ -359,6 +481,12 @@ export default class raastin extends Exchange {
         // Add query parameters if any remain
         if (Object.keys(query).length) {
             url = url + '?' + this.urlencode(query);
+        }
+        if (path === 'api/v1/market') {
+            const quote = this.safeString(params, 'quote');
+            if (quote !== undefined) {
+                url = this.urls['api']['public'] + '/' + path + '/' + quote + '/info';
+            }
         }
         headers = { 'Content-Type': 'application/json' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };

@@ -18,3 +18,7 @@ func (this *raastin) PublicGetApiV1MarketSymbolsSymbol (args ...interface{}) <-c
 func (this *raastin) PublicGetApiV1MarketDepthSymbol (args ...interface{}) <-chan interface{} {
    return this.callEndpointAsync("publicGetApiV1MarketDepthSymbol", args...)
 }
+
+func (this *raastin) PublicGetApiV1Market (args ...interface{}) <-chan interface{} {
+   return this.callEndpointAsync("publicGetApiV1Market", args...)
+}
