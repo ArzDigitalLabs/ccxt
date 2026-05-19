@@ -12,6 +12,7 @@ interface Exchange {
     publicGetApiV1MarketSymbols (params?: {}): Promise<implicitReturnType>;
     publicGetApiV1MarketSymbolsSymbol (params?: {}): Promise<implicitReturnType>;
     publicGetApiV1MarketDepthSymbol (params?: {}): Promise<implicitReturnType>;
+    publicGetApiV1Market (params?: {}): Promise<implicitReturnType>;
 }
 abstract class Exchange extends _Exchange {}
 
