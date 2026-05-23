@@ -129,6 +129,36 @@ class asretether extends Exchange {
     }
 
     public function parse_market($market): array {
+        //         {
+        // $id => 2,
+        // symbol => "USDT-IRT",
+        // $status => "ACTIVE",
+        // high_24h => "181978",
+        // low_24h => "172874",
+        // irt_high_24h => 0,
+        // irt_low_24h => 0,
+        // change_24h => 0,
+        // volume_24h => 100000,
+        // price => array(
+        // price_buy => "178410",
+        // price_sell => "176402",
+        // price_in_tether => "1.0000"
+        // ),
+        // base_currency => array(
+        // slug => "USDT",
+        // decimals => 6,
+        // full_name => "Tether",
+        // persian_name => "تتر",
+        // icon_url => "https://box.asretether.com/currency-icons/usdt.png"
+        // ),
+        // quote_currency => array(
+        // slug => "IRT",
+        // decimals => 0,
+        // full_name => "IR Toman",
+        // persian_name => "تومان",
+        // icon_url => "https://box.asretether.com/currency-icons/irt.png"
+        // }
+        // ),
         $id = $this->safe_string($market, 'symbol');
         $baseCurrency = $this->safe_dict($market, 'base_currency', array());
         $quoteCurrency = $this->safe_dict($market, 'quote_currency', array());
@@ -279,7 +309,7 @@ class asretether extends Exchange {
     public function sign($path, $api = 'public', $method = 'GET', $params = array (), $headers = null, $body = null) {
         $url = $this->urls['api']['public'] . '/' . $path;
         $query = $this->omit($params, $this->extract_params($path));
-        $query[] = 'limit', 100; // default limit for market data endpoints
+        $query['limit'] = $this->safe_string($query, 'limit', '1000');
         // Add $query parameters if any remain
         if ($query) {
             $url = $url . '?' . $this->urlencode($query);

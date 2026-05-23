@@ -131,6 +131,36 @@ class asretether extends asretether$1["default"] {
         return result;
     }
     parseMarket(market) {
+        //         {
+        // id: 2,
+        // symbol: "USDT-IRT",
+        // status: "ACTIVE",
+        // high_24h: "181978",
+        // low_24h: "172874",
+        // irt_high_24h: 0,
+        // irt_low_24h: 0,
+        // change_24h: 0,
+        // volume_24h: 100000,
+        // price: {
+        // price_buy: "178410",
+        // price_sell: "176402",
+        // price_in_tether: "1.0000"
+        // },
+        // base_currency: {
+        // slug: "USDT",
+        // decimals: 6,
+        // full_name: "Tether",
+        // persian_name: "تتر",
+        // icon_url: "https://box.asretether.com/currency-icons/usdt.png"
+        // },
+        // quote_currency: {
+        // slug: "IRT",
+        // decimals: 0,
+        // full_name: "IR Toman",
+        // persian_name: "تومان",
+        // icon_url: "https://box.asretether.com/currency-icons/irt.png"
+        // }
+        // },
         const id = this.safeString(market, 'symbol');
         const baseCurrency = this.safeDict(market, 'base_currency', {});
         const quoteCurrency = this.safeDict(market, 'quote_currency', {});
@@ -282,7 +312,7 @@ class asretether extends asretether$1["default"] {
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
         let url = this.urls['api']['public'] + '/' + path;
         const query = this.omit(params, this.extractParams(path));
-        query.push('limit', 100); // default limit for market data endpoints
+        query['limit'] = this.safeString(query, 'limit', '1000');
         // Add query parameters if any remain
         if (Object.keys(query).length) {
             url = url + '?' + this.urlencode(query);
