@@ -4,26 +4,26 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import ccxt from './ccxt.js';
-async function testBit24() {
-    const exchange = new ccxt.bit24();
+import ccxt from './ccxt';
+async function testAsretether() {
+    const exchange = new ccxt.asretether({
+        enableRateLimit: true,
+        timeout: 20000,
+    });
     try {
-        // Load markets first
+        console.log('Loading markets...');
         await exchange.loadMarkets();
-        console.log('Markets loaded successfully.');
-        // Test fetchMarkets
+        console.log('Markets loaded:', Object.keys(exchange.markets).length);
         console.log('Testing fetchMarkets...');
         const markets = await exchange.fetchMarkets();
-        console.log('fetchMarkets result:', markets);
-        console.log('Number of markets:', Object.keys(markets).length);
-        // Test fetchTickers
+        console.log('fetchMarkets returned', markets.length, 'markets');
+        console.log('Sample market:', markets.length ? markets[0] : 'none');
         console.log('Testing fetchTickers...');
         const tickers = await exchange.fetchTickers();
-        console.log('fetchTickers result:', tickers);
-        console.log('Number of tickers:', Object.keys(tickers).length);
-        // Test fetchTicker for a specific symbol
-        if (Object.keys(markets).length > 0) {
-            const firstSymbol = Object.keys(markets)[0];
+        console.log('fetchTickers returned', Object.keys(tickers).length, 'tickers');
+        console.log('Sample ticker:', Object.values(tickers).length ? Object.values(tickers)[0] : 'none');
+        if (markets.length > 0) {
+            const firstSymbol = markets[20].symbol;
             console.log('Testing fetchTicker for symbol:', firstSymbol);
             const ticker = await exchange.fetchTicker(firstSymbol);
             console.log('fetchTicker result:', ticker);
@@ -33,7 +33,7 @@ async function testBit24() {
         }
     }
     catch (error) {
-        console.error('Error during testing:', error);
+        console.error('Error during testing asretether:', error);
     }
 }
-testBit24();
+testAsretether();
