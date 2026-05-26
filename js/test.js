@@ -6,7 +6,7 @@
 
 import ccxt from './ccxt';
 async function testAsretether() {
-    const exchange = new ccxt.asretether({
+    const exchange = new ccxt.kifpoolme({
         enableRateLimit: true,
         timeout: 20000,
     });

@@ -490,11 +490,12 @@ class bit24 extends bit24$1["default"] {
     }
     async removeDuplicateValues(markets) {
         const uniqueMarkets = [];
-        const seenIds = new Set();
+        const seenIds = {};
         for (let i = 0; i < markets.length; i++) {
             const market = markets[i];
-            if (!seenIds.has(market['id'])) {
-                seenIds.add(market['id']);
+            const id = market['id'];
+            if (!(id in seenIds)) {
+                seenIds[id] = true;
                 uniqueMarkets.push(market);
             }
         }

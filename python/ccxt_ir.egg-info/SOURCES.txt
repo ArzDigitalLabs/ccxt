@@ -13,6 +13,7 @@ ccxt/apex.py
 ccxt/arzinja.py
 ccxt/arzplus.py
 ccxt/ascendex.py
+ccxt/asretether.py
 ccxt/bequant.py
 ccxt/bigone.py
 ccxt/binance.py
@@ -161,6 +162,7 @@ ccxt/abstract/apex.py
 ccxt/abstract/arzinja.py
 ccxt/abstract/arzplus.py
 ccxt/abstract/ascendex.py
+ccxt/abstract/asretether.py
 ccxt/abstract/bequant.py
 ccxt/abstract/bigone.py
 ccxt/abstract/binance.py
@@ -309,6 +311,7 @@ ccxt/async_support/apex.py
 ccxt/async_support/arzinja.py
 ccxt/async_support/arzplus.py
 ccxt/async_support/ascendex.py
+ccxt/async_support/asretether.py
 ccxt/async_support/bequant.py
 ccxt/async_support/bigone.py
 ccxt/async_support/binance.py
