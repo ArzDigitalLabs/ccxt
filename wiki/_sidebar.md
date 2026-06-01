@@ -19,6 +19,7 @@
 	- [arzplus()](exchanges/arzplus().md)
 	- [ascendex](exchanges/ascendex.md)
 	- [asretether()](exchanges/asretether().md)
+	- [bidarz()](exchanges/bidarz().md)
 	- [bigone](exchanges/bigone.md)
 	- [binance](exchanges/binance.md)
 	- [bingx](exchanges/bingx.md)

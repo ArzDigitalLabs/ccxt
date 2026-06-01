@@ -6,25 +6,25 @@
 
 import ccxt from './ccxt';
 async function testAsretether() {
-    const exchange = new ccxt.bit24({
+    const exchange = new ccxt.bidarz({
         enableRateLimit: true,
         timeout: 20000,
     });
     try {
-        // console.log ('Loading markets...');
-        // await exchange.loadMarkets ();
-        // console.log ('Markets loaded:', Object.keys (exchange.markets).length);
-        // console.log ('Testing fetchMarkets...');
-        // const markets = await exchange.fetchMarkets ();
-        // console.log ('fetchMarkets returned', markets.length, 'markets');
-        // console.log ('Sample market:', markets.length ? markets[0] : 'none');
+        console.log('Loading markets...');
+        await exchange.loadMarkets();
+        console.log('Markets loaded:', Object.keys(exchange.markets).length);
+        console.log('Testing fetchMarkets...');
+        const markets = await exchange.fetchMarkets();
+        console.log('fetchMarkets returned', markets.length, 'markets');
+        console.log('Sample market:', markets.length ? markets[0] : 'none');
         console.log('Testing fetchTickers...');
         const tickers = await exchange.fetchTickers();
         console.log('fetchTickers returned', Object.keys(tickers).length, 'tickers');
         console.log('Sample ticker:', Object.values(tickers).length ? Object.values(tickers)[0] : 'none');
         if (tickers) {
-            // const firstSymbol = markets[20].symbol;
-            // console.log ('Testing fetchTicker for symbol:', firstSymbol);
+            const firstSymbol = markets[20].symbol;
+            console.log('Testing fetchTicker for symbol:', firstSymbol);
             const ticker = await exchange.fetchTicker('BTC/IRT');
             console.log('fetchTicker result:', ticker);
         }
