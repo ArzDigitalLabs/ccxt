@@ -475,11 +475,12 @@ class bit24(Exchange, ImplicitAPI):
 
     async def remove_duplicate_values(self, markets: List[Market]) -> List[Market]:
         uniqueMarkets = []
-        seenIds = Set()
+        seenIds = {}
         for i in range(0, len(markets)):
             market = markets[i]
-            if not seenIds.has(market['id']):
-                seenIds.add(market['id'])
+            id = market['id']
+            if not (id in seenIds):
+                seenIds[id] = True
                 uniqueMarkets.append(market)
         return uniqueMarkets
 

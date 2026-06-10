@@ -499,11 +499,12 @@ class bit24 extends Exchange {
 
     public function remove_duplicate_values(array $markets): PromiseInterface {
         $uniqueMarkets = array();
-        $seenIds = new Set ();
+        $seenIds = array();
         for ($i = 0; $i < count($markets); $i++) {
             $market = $markets[$i];
-            if (!$seenIds->has ($market['id'])) {
-                $seenIds->add ($market['id']);
+            $id = $market['id'];
+            if (!(is_array($seenIds) && array_key_exists($id, $seenIds))) {
+                $seenIds[$id] = true;
                 $uniqueMarkets[] = $market;
             }
         }

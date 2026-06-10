@@ -21,6 +21,7 @@ var arzplus = require('./src/arzplus.js');
 var ascendex = require('./src/ascendex.js');
 var asretether = require('./src/asretether.js');
 var bequant = require('./src/bequant.js');
+var bidarz = require('./src/bidarz.js');
 var bigone = require('./src/bigone.js');
 var binance = require('./src/binance.js');
 var binancecoinm = require('./src/binancecoinm.js');
@@ -236,7 +237,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.10.0';
+const version = '4.11.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -248,6 +249,7 @@ const exchanges = {
     'ascendex': ascendex["default"],
     'asretether': asretether["default"],
     'bequant': bequant["default"],
+    'bidarz': bidarz["default"],
     'bigone': bigone["default"],
     'binance': binance["default"],
     'binancecoinm': binancecoinm["default"],
@@ -523,6 +525,7 @@ exports.arzplus = arzplus["default"];
 exports.ascendex = ascendex["default"];
 exports.asretether = asretether["default"];
 exports.bequant = bequant["default"];
+exports.bidarz = bidarz["default"];
 exports.bigone = bigone["default"];
 exports.binance = binance["default"];
 exports.binancecoinm = binancecoinm["default"];

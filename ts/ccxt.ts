@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.10.0';
+const version = '4.11.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -55,6 +55,7 @@ import arzplus from  './src/arzplus.js'
 import ascendex from  './src/ascendex.js'
 import asretether from  './src/asretether.js'
 import bequant from  './src/bequant.js'
+import bidarz from  './src/bidarz.js'
 import bigone from  './src/bigone.js'
 import binance from  './src/binance.js'
 import binancecoinm from  './src/binancecoinm.js'
@@ -280,6 +281,7 @@ const exchanges = {
     'ascendex':               ascendex,
     'asretether':             asretether,
     'bequant':                bequant,
+    'bidarz':                 bidarz,
     'bigone':                 bigone,
     'binance':                binance,
     'binancecoinm':           binancecoinm,
@@ -648,6 +650,7 @@ export {
     ascendex,
     asretether,
     bequant,
+    bidarz,
     bigone,
     binance,
     binancecoinm,

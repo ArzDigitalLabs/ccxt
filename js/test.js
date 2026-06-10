@@ -6,7 +6,7 @@
 
 import ccxt from './ccxt';
 async function testAsretether() {
-    const exchange = new ccxt.asretether({
+    const exchange = new ccxt.bidarz({
         enableRateLimit: true,
         timeout: 20000,
     });
@@ -22,10 +22,10 @@ async function testAsretether() {
         const tickers = await exchange.fetchTickers();
         console.log('fetchTickers returned', Object.keys(tickers).length, 'tickers');
         console.log('Sample ticker:', Object.values(tickers).length ? Object.values(tickers)[0] : 'none');
-        if (markets.length > 0) {
+        if (tickers) {
             const firstSymbol = markets[20].symbol;
             console.log('Testing fetchTicker for symbol:', firstSymbol);
-            const ticker = await exchange.fetchTicker(firstSymbol);
+            const ticker = await exchange.fetchTicker('BTC/IRT');
             console.log('fetchTicker result:', ticker);
         }
         else {

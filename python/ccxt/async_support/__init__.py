@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.10.0'
+__version__ = '4.11.0'
 
 # -----------------------------------------------------------------------------
 
@@ -73,6 +73,7 @@ from ccxt.async_support.arzplus import arzplus                                  
 from ccxt.async_support.ascendex import ascendex                                # noqa: F401
 from ccxt.async_support.asretether import asretether                            # noqa: F401
 from ccxt.async_support.bequant import bequant                                  # noqa: F401
+from ccxt.async_support.bidarz import bidarz                                    # noqa: F401
 from ccxt.async_support.bigone import bigone                                    # noqa: F401
 from ccxt.async_support.binance import binance                                  # noqa: F401
 from ccxt.async_support.binancecoinm import binancecoinm                        # noqa: F401
@@ -223,6 +224,7 @@ exchanges = [
     'ascendex',
     'asretether',
     'bequant',
+    'bidarz',
     'bigone',
     'binance',
     'binancecoinm',
