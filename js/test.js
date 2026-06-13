@@ -4,28 +4,24 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import ccxt from './ccxt';
-async function testChangefa() {
-    const exchange = new ccxt.changefa({
+import { ourbit } from './ccxt.js';
+async function main() {
+    const exchange = new ourbit({
         enableRateLimit: true,
-        timeout: 20000,
     });
     try {
-        console.log('Loading markets...');
-        const markets = await exchange.fetchMarkets();
-        console.log('fetchMarkets returned', markets.length, 'markets');
-        console.log('Testing fetchTickers...');
-        const tickers = await exchange.fetchTickers();
-        console.log('fetchTickers returned', Object.keys(tickers).length, 'markets');
-        const firstMarket = markets.length > 0 ? markets[0] : undefined;
-        if (firstMarket !== undefined) {
-            console.log('Testing fetchTicker for symbol:', firstMarket['symbol']);
-            const ticker = await exchange.fetchTicker(firstMarket['symbol']);
-            console.log('fetchTicker result:', ticker);
-        }
+        const markets = await exchange.fetchMarkets({ type: 'spot' });
+        const firstSpotMarket = markets[0];
+        console.log('Exchange:', exchange.id);
+        console.log('Spot markets count:', markets.length);
+        console.log('First spot market:', firstSpotMarket);
     }
     catch (error) {
-        console.error('Error during testing changefa:', error);
+        console.error('Test failed:', error);
+        process.exitCode = 1;
+    }
+    finally {
+        await exchange.close();
     }
 }
-testChangefa();
+void main();

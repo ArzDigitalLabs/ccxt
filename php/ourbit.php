@@ -142,7 +142,7 @@ class ourbit extends Exchange {
             'swap' => false,
             'future' => false,
             'option' => false,
-            'active' => $this->safe_integer($market, 'sts') === 1,
+            'active' => true,
             'contract' => false,
             'linear' => null,
             'inverse' => null,

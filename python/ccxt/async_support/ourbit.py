@@ -135,7 +135,7 @@ class ourbit(Exchange, ImplicitAPI):
             'swap': False,
             'future': False,
             'option': False,
-            'active': self.safe_integer(market, 'sts') == 1,
+            'active': True,
             'contract': False,
             'linear': None,
             'inverse': None,
