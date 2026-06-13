@@ -117,6 +117,7 @@
 	- [okx](exchanges/okx.md)
 	- [ompfinex()](exchanges/ompfinex().md)
 	- [onetrading](exchanges/onetrading.md)
+	- [ourbit](exchanges/ourbit.md)
 	- [oxfun](exchanges/oxfun.md)
 	- [p2b](exchanges/p2b.md)
 	- [paradex()](exchanges/paradex().md)

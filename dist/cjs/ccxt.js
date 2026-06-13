@@ -128,6 +128,7 @@ var okx = require('./src/okx.js');
 var okxus = require('./src/okxus.js');
 var ompfinex = require('./src/ompfinex.js');
 var onetrading = require('./src/onetrading.js');
+var ourbit = require('./src/ourbit.js');
 var oxfun = require('./src/oxfun.js');
 var p2b = require('./src/p2b.js');
 var paradex = require('./src/paradex.js');
@@ -237,7 +238,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.11.0';
+const version = '4.12.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -356,6 +357,7 @@ const exchanges = {
     'okxus': okxus["default"],
     'ompfinex': ompfinex["default"],
     'onetrading': onetrading["default"],
+    'ourbit': ourbit["default"],
     'oxfun': oxfun["default"],
     'p2b': p2b["default"],
     'paradex': paradex["default"],
@@ -632,6 +634,7 @@ exports.okx = okx["default"];
 exports.okxus = okxus["default"];
 exports.ompfinex = ompfinex["default"];
 exports.onetrading = onetrading["default"];
+exports.ourbit = ourbit["default"];
 exports.oxfun = oxfun["default"];
 exports.p2b = p2b["default"];
 exports.paradex = paradex["default"];

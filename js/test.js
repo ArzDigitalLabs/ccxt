@@ -5,35 +5,51 @@
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
 import ccxt from './ccxt';
-async function testAsretether() {
-    const exchange = new ccxt.bidarz({
+async function testOurbit() {
+    const exchange = new ccxt.ourbit({
         enableRateLimit: true,
         timeout: 20000,
     });
     try {
-        console.log('Loading markets...');
-        await exchange.loadMarkets();
-        console.log('Markets loaded:', Object.keys(exchange.markets).length);
-        console.log('Testing fetchMarkets...');
-        const markets = await exchange.fetchMarkets();
-        console.log('fetchMarkets returned', markets.length, 'markets');
-        console.log('Sample market:', markets.length ? markets[0] : 'none');
-        console.log('Testing fetchTickers...');
-        const tickers = await exchange.fetchTickers();
-        console.log('fetchTickers returned', Object.keys(tickers).length, 'tickers');
-        console.log('Sample ticker:', Object.values(tickers).length ? Object.values(tickers)[0] : 'none');
-        if (tickers) {
-            const firstSymbol = markets[20].symbol;
-            console.log('Testing fetchTicker for symbol:', firstSymbol);
-            const ticker = await exchange.fetchTicker('BTC/IRT');
-            console.log('fetchTicker result:', ticker);
+        let spotMarkets = [];
+        try {
+            console.log('Loading spot markets...');
+            spotMarkets = await exchange.fetchMarkets({ 'type': 'spot' });
+            console.log('spot fetchMarkets returned', spotMarkets.length, 'markets');
+            console.log('Testing spot tickers...');
+            const spotTickers = await exchange.fetchTickers(undefined, { 'type': 'spot' });
+            console.log('spot tickers returned', Object.keys(spotTickers).length, 'markets');
         }
-        else {
-            console.log('No markets available to test fetchTicker.');
+        catch (error) {
+            console.error('Spot test failed:', error);
+        }
+        let futureMarkets = [];
+        try {
+            console.log('Loading future markets...');
+            futureMarkets = await exchange.fetchMarkets({ 'type': 'future' });
+            console.log('future fetchMarkets returned', futureMarkets.length, 'markets');
+            console.log('Testing future tickers...');
+            const futureTickers = await exchange.fetchTickers(undefined, { 'type': 'future' });
+            console.log('future tickers returned', Object.keys(futureTickers).length, 'markets');
+        }
+        catch (error) {
+            console.error('Future test failed:', error);
+        }
+        const spotMarket = spotMarkets.length > 0 ? spotMarkets[0] : undefined;
+        const futureMarket = futureMarkets.length > 0 ? futureMarkets[0] : undefined;
+        if (spotMarket !== undefined) {
+            console.log('Testing spot fetchTicker for symbol:', spotMarket['symbol']);
+            const spotTicker = await exchange.fetchTicker(spotMarket['symbol'], { 'type': 'spot' });
+            console.log('spot fetchTicker result:', spotTicker);
+        }
+        if (futureMarket !== undefined) {
+            console.log('Testing future fetchTicker for symbol:', futureMarket['symbol']);
+            const futureTicker = await exchange.fetchTicker(futureMarket['symbol'], { 'type': 'future' });
+            console.log('future fetchTicker result:', futureTicker);
         }
     }
     catch (error) {
-        console.error('Error during testing asretether:', error);
+        console.error('Error during testing ourbit:', error);
     }
 }
-testAsretether();
+testOurbit();

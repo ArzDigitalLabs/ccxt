@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.11.0'
+__version__ = '4.12.0'
 
 # ----------------------------------------------------------------------------
 
@@ -200,6 +200,7 @@ from ccxt.okx import okx                                              # noqa: F4
 from ccxt.okxus import okxus                                          # noqa: F401
 from ccxt.ompfinex import ompfinex                                    # noqa: F401
 from ccxt.onetrading import onetrading                                # noqa: F401
+from ccxt.ourbit import ourbit                                        # noqa: F401
 from ccxt.oxfun import oxfun                                          # noqa: F401
 from ccxt.p2b import p2b                                              # noqa: F401
 from ccxt.paradex import paradex                                      # noqa: F401
@@ -351,6 +352,7 @@ exchanges = [
     'okxus',
     'ompfinex',
     'onetrading',
+    'ourbit',
     'oxfun',
     'p2b',
     'paradex',

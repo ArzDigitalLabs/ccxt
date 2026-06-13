@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.11.0'
+__version__ = '4.12.0'
 
 # -----------------------------------------------------------------------------
 
@@ -180,6 +180,7 @@ from ccxt.async_support.okx import okx                                          
 from ccxt.async_support.okxus import okxus                                      # noqa: F401
 from ccxt.async_support.ompfinex import ompfinex                                # noqa: F401
 from ccxt.async_support.onetrading import onetrading                            # noqa: F401
+from ccxt.async_support.ourbit import ourbit                                    # noqa: F401
 from ccxt.async_support.oxfun import oxfun                                      # noqa: F401
 from ccxt.async_support.p2b import p2b                                          # noqa: F401
 from ccxt.async_support.paradex import paradex                                  # noqa: F401
@@ -331,6 +332,7 @@ exchanges = [
     'okxus',
     'ompfinex',
     'onetrading',
+    'ourbit',
     'oxfun',
     'p2b',
     'paradex',

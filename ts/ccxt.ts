@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.11.0';
+const version = '4.12.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -162,6 +162,7 @@ import okx from  './src/okx.js'
 import okxus from  './src/okxus.js'
 import ompfinex from  './src/ompfinex.js'
 import onetrading from  './src/onetrading.js'
+import ourbit from  './src/ourbit.js'
 import oxfun from  './src/oxfun.js'
 import p2b from  './src/p2b.js'
 import paradex from  './src/paradex.js'
@@ -388,6 +389,7 @@ const exchanges = {
     'okxus':                  okxus,
     'ompfinex':               ompfinex,
     'onetrading':             onetrading,
+    'ourbit':                 ourbit,
     'oxfun':                  oxfun,
     'p2b':                    p2b,
     'paradex':                paradex,
@@ -757,6 +759,7 @@ export {
     okxus,
     ompfinex,
     onetrading,
+    ourbit,
     oxfun,
     p2b,
     paradex,
