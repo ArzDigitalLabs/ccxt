@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.12.0'
+__version__ = '4.13.0'
 
 # ----------------------------------------------------------------------------
 
@@ -132,6 +132,7 @@ from ccxt.bybit import bybit                                          # noqa: F4
 from ccxt.bydfi import bydfi                                          # noqa: F401
 from ccxt.cafearz import cafearz                                      # noqa: F401
 from ccxt.cex import cex                                              # noqa: F401
+from ccxt.changefa import changefa                                    # noqa: F401
 from ccxt.coinbase import coinbase                                    # noqa: F401
 from ccxt.coinbaseadvanced import coinbaseadvanced                    # noqa: F401
 from ccxt.coinbaseexchange import coinbaseexchange                    # noqa: F401
@@ -284,6 +285,7 @@ exchanges = [
     'bydfi',
     'cafearz',
     'cex',
+    'changefa',
     'coinbase',
     'coinbaseadvanced',
     'coinbaseexchange',

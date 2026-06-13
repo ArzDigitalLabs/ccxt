@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.12.0'
+__version__ = '4.13.0'
 
 # -----------------------------------------------------------------------------
 
@@ -112,6 +112,7 @@ from ccxt.async_support.bybit import bybit                                      
 from ccxt.async_support.bydfi import bydfi                                      # noqa: F401
 from ccxt.async_support.cafearz import cafearz                                  # noqa: F401
 from ccxt.async_support.cex import cex                                          # noqa: F401
+from ccxt.async_support.changefa import changefa                                # noqa: F401
 from ccxt.async_support.coinbase import coinbase                                # noqa: F401
 from ccxt.async_support.coinbaseadvanced import coinbaseadvanced                # noqa: F401
 from ccxt.async_support.coinbaseexchange import coinbaseexchange                # noqa: F401
@@ -264,6 +265,7 @@ exchanges = [
     'bydfi',
     'cafearz',
     'cex',
+    'changefa',
     'coinbase',
     'coinbaseadvanced',
     'coinbaseexchange',

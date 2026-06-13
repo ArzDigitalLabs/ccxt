@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.12.0';
+const version = '4.13.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -94,6 +94,7 @@ import bybit from  './src/bybit.js'
 import bydfi from  './src/bydfi.js'
 import cafearz from  './src/cafearz.js'
 import cex from  './src/cex.js'
+import changefa from  './src/changefa.js'
 import coinbase from  './src/coinbase.js'
 import coinbaseadvanced from  './src/coinbaseadvanced.js'
 import coinbaseexchange from  './src/coinbaseexchange.js'
@@ -321,6 +322,7 @@ const exchanges = {
     'bydfi':                  bydfi,
     'cafearz':                cafearz,
     'cex':                    cex,
+    'changefa':               changefa,
     'coinbase':               coinbase,
     'coinbaseadvanced':       coinbaseadvanced,
     'coinbaseexchange':       coinbaseexchange,
@@ -691,6 +693,7 @@ export {
     bydfi,
     cafearz,
     cex,
+    changefa,
     coinbase,
     coinbaseadvanced,
     coinbaseexchange,

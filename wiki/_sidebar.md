@@ -55,6 +55,7 @@
 	- [bydfi()](exchanges/bydfi().md)
 	- [cafearz()](exchanges/cafearz().md)
 	- [cex](exchanges/cex.md)
+	- [changefa](exchanges/changefa.md)
 	- [coinbase](exchanges/coinbase.md)
 	- [coinbaseexchange](exchanges/coinbaseexchange.md)
 	- [coinbaseinternational](exchanges/coinbaseinternational.md)

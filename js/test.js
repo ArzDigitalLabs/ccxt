@@ -5,51 +5,27 @@
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
 import ccxt from './ccxt';
-async function testOurbit() {
-    const exchange = new ccxt.ourbit({
+async function testChangefa() {
+    const exchange = new ccxt.changefa({
         enableRateLimit: true,
         timeout: 20000,
     });
     try {
-        let spotMarkets = [];
-        try {
-            console.log('Loading spot markets...');
-            spotMarkets = await exchange.fetchMarkets({ 'type': 'spot' });
-            console.log('spot fetchMarkets returned', spotMarkets.length, 'markets');
-            console.log('Testing spot tickers...');
-            const spotTickers = await exchange.fetchTickers(undefined, { 'type': 'spot' });
-            console.log('spot tickers returned', Object.keys(spotTickers).length, 'markets');
-        }
-        catch (error) {
-            console.error('Spot test failed:', error);
-        }
-        let futureMarkets = [];
-        try {
-            console.log('Loading future markets...');
-            futureMarkets = await exchange.fetchMarkets({ 'type': 'future' });
-            console.log('future fetchMarkets returned', futureMarkets.length, 'markets');
-            console.log('Testing future tickers...');
-            const futureTickers = await exchange.fetchTickers(undefined, { 'type': 'future' });
-            console.log('future tickers returned', Object.keys(futureTickers).length, 'markets');
-        }
-        catch (error) {
-            console.error('Future test failed:', error);
-        }
-        const spotMarket = spotMarkets.length > 0 ? spotMarkets[0] : undefined;
-        const futureMarket = futureMarkets.length > 0 ? futureMarkets[0] : undefined;
-        if (spotMarket !== undefined) {
-            console.log('Testing spot fetchTicker for symbol:', spotMarket['symbol']);
-            const spotTicker = await exchange.fetchTicker(spotMarket['symbol'], { 'type': 'spot' });
-            console.log('spot fetchTicker result:', spotTicker);
-        }
-        if (futureMarket !== undefined) {
-            console.log('Testing future fetchTicker for symbol:', futureMarket['symbol']);
-            const futureTicker = await exchange.fetchTicker(futureMarket['symbol'], { 'type': 'future' });
-            console.log('future fetchTicker result:', futureTicker);
+        console.log('Loading markets...');
+        const markets = await exchange.fetchMarkets();
+        console.log('fetchMarkets returned', markets.length, 'markets');
+        console.log('Testing fetchTickers...');
+        const tickers = await exchange.fetchTickers();
+        console.log('fetchTickers returned', Object.keys(tickers).length, 'markets');
+        const firstMarket = markets.length > 0 ? markets[0] : undefined;
+        if (firstMarket !== undefined) {
+            console.log('Testing fetchTicker for symbol:', firstMarket['symbol']);
+            const ticker = await exchange.fetchTicker(firstMarket['symbol']);
+            console.log('fetchTicker result:', ticker);
         }
     }
     catch (error) {
-        console.error('Error during testing ourbit:', error);
+        console.error('Error during testing changefa:', error);
     }
 }
-testOurbit();
+testChangefa();

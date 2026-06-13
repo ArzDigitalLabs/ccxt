@@ -60,6 +60,7 @@ var bybit = require('./src/bybit.js');
 var bydfi = require('./src/bydfi.js');
 var cafearz = require('./src/cafearz.js');
 var cex = require('./src/cex.js');
+var changefa = require('./src/changefa.js');
 var coinbase = require('./src/coinbase.js');
 var coinbaseadvanced = require('./src/coinbaseadvanced.js');
 var coinbaseexchange = require('./src/coinbaseexchange.js');
@@ -238,7 +239,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.12.0';
+const version = '4.13.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -289,6 +290,7 @@ const exchanges = {
     'bydfi': bydfi["default"],
     'cafearz': cafearz["default"],
     'cex': cex["default"],
+    'changefa': changefa["default"],
     'coinbase': coinbase["default"],
     'coinbaseadvanced': coinbaseadvanced["default"],
     'coinbaseexchange': coinbaseexchange["default"],
@@ -566,6 +568,7 @@ exports.bybit = bybit["default"];
 exports.bydfi = bydfi["default"];
 exports.cafearz = cafearz["default"];
 exports.cex = cex["default"];
+exports.changefa = changefa["default"];
 exports.coinbase = coinbase["default"];
 exports.coinbaseadvanced = coinbaseadvanced["default"];
 exports.coinbaseexchange = coinbaseexchange["default"];
