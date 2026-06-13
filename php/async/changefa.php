@@ -227,6 +227,7 @@ class changefa extends Exchange {
         $quoteId = 'IRT';
         $base = $this->safe_currency_code($baseId);
         $quote = $this->safe_currency_code($quoteId);
+        $marketType = 'otc';
         $last = $this->safe_number($ticker, 'inDollarPrice');
         $buyPrice = $this->safe_number($ticker, 'buyPrice');
         $sellPrice = $this->safe_number($ticker, 'sellPrice');
@@ -256,6 +257,57 @@ class changefa extends Exchange {
         $symbol = $base . '/' . $quote;
         if ($market !== null) {
             $symbol = $market['symbol'];
+        }
+        if ($market === null) {
+            $market = $this->safe_market_structure(array(
+                'id' => $baseId,
+                'symbol' => $symbol,
+                'base' => $base,
+                'quote' => $quote,
+                'settle' => null,
+                'baseId' => $baseId,
+                'quoteId' => $quoteId,
+                'settleId' => null,
+                'type' => $marketType,
+                'spot' => false,
+                'margin' => false,
+                'swap' => false,
+                'future' => false,
+                'option' => false,
+                'active' => true,
+                'contract' => false,
+                'linear' => null,
+                'inverse' => null,
+                'contractSize' => null,
+                'expiry' => null,
+                'expiryDatetime' => null,
+                'strike' => null,
+                'optionType' => null,
+                'precision' => array(
+                    'amount' => null,
+                    'price' => null,
+                ),
+                'limits' => array(
+                    'leverage' => array(
+                        'min' => null,
+                        'max' => null,
+                    ),
+                    'amount' => array(
+                        'min' => null,
+                        'max' => null,
+                    ),
+                    'price' => array(
+                        'min' => null,
+                        'max' => null,
+                    ),
+                    'cost' => array(
+                        'min' => null,
+                        'max' => null,
+                    ),
+                ),
+                'created' => null,
+                'info' => $ticker,
+            ));
         }
         return $this->safe_ticker(array(
             'symbol' => $symbol,

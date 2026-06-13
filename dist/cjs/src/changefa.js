@@ -221,6 +221,7 @@ class changefa extends Exchange["default"] {
         const quoteId = 'IRT';
         const base = this.safeCurrencyCode(baseId);
         const quote = this.safeCurrencyCode(quoteId);
+        const marketType = 'otc';
         let last = this.safeNumber(ticker, 'inDollarPrice');
         const buyPrice = this.safeNumber(ticker, 'buyPrice');
         const sellPrice = this.safeNumber(ticker, 'sellPrice');
@@ -250,6 +251,57 @@ class changefa extends Exchange["default"] {
         let symbol = base + '/' + quote;
         if (market !== undefined) {
             symbol = market['symbol'];
+        }
+        if (market === undefined) {
+            market = this.safeMarketStructure({
+                'id': baseId,
+                'symbol': symbol,
+                'base': base,
+                'quote': quote,
+                'settle': undefined,
+                'baseId': baseId,
+                'quoteId': quoteId,
+                'settleId': undefined,
+                'type': marketType,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'active': true,
+                'contract': false,
+                'linear': undefined,
+                'inverse': undefined,
+                'contractSize': undefined,
+                'expiry': undefined,
+                'expiryDatetime': undefined,
+                'strike': undefined,
+                'optionType': undefined,
+                'precision': {
+                    'amount': undefined,
+                    'price': undefined,
+                },
+                'limits': {
+                    'leverage': {
+                        'min': undefined,
+                        'max': undefined,
+                    },
+                    'amount': {
+                        'min': undefined,
+                        'max': undefined,
+                    },
+                    'price': {
+                        'min': undefined,
+                        'max': undefined,
+                    },
+                    'cost': {
+                        'min': undefined,
+                        'max': undefined,
+                    },
+                },
+                'created': undefined,
+                'info': ticker,
+            });
         }
         return this.safeTicker({
             'symbol': symbol,

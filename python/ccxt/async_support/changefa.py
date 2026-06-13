@@ -212,6 +212,7 @@ class changefa(Exchange, ImplicitAPI):
         quoteId = 'IRT'
         base = self.safe_currency_code(baseId)
         quote = self.safe_currency_code(quoteId)
+        marketType = 'otc'
         last = self.safe_number(ticker, 'inDollarPrice')
         buyPrice = self.safe_number(ticker, 'buyPrice')
         sellPrice = self.safe_number(ticker, 'sellPrice')
@@ -236,6 +237,56 @@ class changefa(Exchange, ImplicitAPI):
         symbol = base + '/' + quote
         if market is not None:
             symbol = market['symbol']
+        if market is None:
+            market = self.safe_market_structure({
+                'id': baseId,
+                'symbol': symbol,
+                'base': base,
+                'quote': quote,
+                'settle': None,
+                'baseId': baseId,
+                'quoteId': quoteId,
+                'settleId': None,
+                'type': marketType,
+                'spot': False,
+                'margin': False,
+                'swap': False,
+                'future': False,
+                'option': False,
+                'active': True,
+                'contract': False,
+                'linear': None,
+                'inverse': None,
+                'contractSize': None,
+                'expiry': None,
+                'expiryDatetime': None,
+                'strike': None,
+                'optionType': None,
+                'precision': {
+                    'amount': None,
+                    'price': None,
+                },
+                'limits': {
+                    'leverage': {
+                        'min': None,
+                        'max': None,
+                    },
+                    'amount': {
+                        'min': None,
+                        'max': None,
+                    },
+                    'price': {
+                        'min': None,
+                        'max': None,
+                    },
+                    'cost': {
+                        'min': None,
+                        'max': None,
+                    },
+                },
+                'created': None,
+                'info': ticker,
+            })
         return self.safe_ticker({
             'symbol': symbol,
             'timestamp': None,
