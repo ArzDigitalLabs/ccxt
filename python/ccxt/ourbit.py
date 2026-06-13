@@ -17,6 +17,8 @@ class ourbit(Exchange, ImplicitAPI):
             'name': 'Ourbit',
             'countries': ['VG'],
             'rateLimit': 100,
+            'pro': False,
+            'certified': False,
             'has': {
                 'CORS': None,
                 'spot': True,
@@ -24,17 +26,42 @@ class ourbit(Exchange, ImplicitAPI):
                 'swap': False,
                 'future': True,
                 'option': False,
+                'cancelAllOrders': False,
+                'cancelOrder': False,
+                'createOrder': False,
+                'fetchBalance': False,
+                'fetchBidsAsks': False,
+                'fetchBorrowRateHistory': False,
+                'fetchClosedOrders': False,
+                'fetchCurrencies': False,
+                'fetchDepositAddress': False,
+                'fetchDeposits': False,
                 'fetchMarkets': True,
+                'fetchMyTrades': False,
+                'fetchOHLCV': False,
+                'fetchOpenOrders': False,
+                'fetchOrder': False,
+                'fetchOrderBook': False,
+                'fetchOrders': False,
                 'fetchTicker': True,
                 'fetchTickers': True,
+                'fetchTime': False,
+                'fetchTrades': False,
+                'fetchWithdrawals': False,
+                'transfer': False,
+                'withdraw': False,
             },
             'urls': {
+                'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/ourbit/64x64.png',
                 'api': {
                     'spot': 'https://www.ourbit.com',
                     'futures': 'https://futures.ourbit.com',
                 },
                 'www': 'https://www.ourbit.com',
                 'doc': 'https://www.ourbit.com',
+            },
+            'options': {
+                'defaultType': 'spot',
             },
             'api': {
                 'spot': {
@@ -47,6 +74,14 @@ class ourbit(Exchange, ImplicitAPI):
                     'get': [
                         'api/v1/contract/ticker',
                     ],
+                },
+            },
+            'fees': {
+                'trading': {
+                    'tierBased': False,
+                    'percentage': True,
+                    'maker': self.parse_number('0.001'),
+                    'taker': self.parse_number('0.001'),
                 },
             },
         })

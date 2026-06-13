@@ -18,6 +18,8 @@ export default class ourbit extends Exchange {
             'name': 'Ourbit',
             'countries': ['VG'],
             'rateLimit': 100,
+            'pro': false,
+            'certified': false,
             'has': {
                 'CORS': undefined,
                 'spot': true,
@@ -25,17 +27,42 @@ export default class ourbit extends Exchange {
                 'swap': false,
                 'future': true,
                 'option': false,
+                'fetchBalance': false,
+                'fetchBidsAsks': false,
+                'fetchBorrowRateHistory': false,
+                'fetchClosedOrders': false,
+                'fetchCurrencies': false,
+                'fetchDepositAddress': false,
+                'fetchDeposits': false,
                 'fetchMarkets': true,
+                'fetchOHLCV': false,
+                'fetchOpenOrders': false,
+                'fetchOrder': false,
+                'fetchOrderBook': false,
+                'fetchOrders': false,
+                'fetchMyTrades': false,
                 'fetchTicker': true,
                 'fetchTickers': true,
+                'fetchTime': false,
+                'fetchTrades': false,
+                'fetchWithdrawals': false,
+                'createOrder': false,
+                'cancelOrder': false,
+                'cancelAllOrders': false,
+                'transfer': false,
+                'withdraw': false,
             },
             'urls': {
+                'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/ourbit/64x64.png',
                 'api': {
                     'spot': 'https://www.ourbit.com',
                     'futures': 'https://futures.ourbit.com',
                 },
                 'www': 'https://www.ourbit.com',
                 'doc': 'https://www.ourbit.com',
+            },
+            'options': {
+                'defaultType': 'spot',
             },
             'api': {
                 'spot': {
@@ -48,6 +75,14 @@ export default class ourbit extends Exchange {
                     'get': [
                         'api/v1/contract/ticker',
                     ],
+                },
+            },
+            'fees': {
+                'trading': {
+                    'tierBased': false,
+                    'percentage': true,
+                    'maker': this.parseNumber('0.001'),
+                    'taker': this.parseNumber('0.001'),
                 },
             },
         });

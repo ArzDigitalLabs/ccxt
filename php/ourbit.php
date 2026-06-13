@@ -16,6 +16,8 @@ class ourbit extends Exchange {
             'name' => 'Ourbit',
             'countries' => array( 'VG' ),
             'rateLimit' => 100,
+            'pro' => false,
+            'certified' => false,
             'has' => array(
                 'CORS' => null,
                 'spot' => true,
@@ -23,17 +25,42 @@ class ourbit extends Exchange {
                 'swap' => false,
                 'future' => true,
                 'option' => false,
+                'cancelAllOrders' => false,
+                'cancelOrder' => false,
+                'createOrder' => false,
+                'fetchBalance' => false,
+                'fetchBidsAsks' => false,
+                'fetchBorrowRateHistory' => false,
+                'fetchClosedOrders' => false,
+                'fetchCurrencies' => false,
+                'fetchDepositAddress' => false,
+                'fetchDeposits' => false,
                 'fetchMarkets' => true,
+                'fetchMyTrades' => false,
+                'fetchOHLCV' => false,
+                'fetchOpenOrders' => false,
+                'fetchOrder' => false,
+                'fetchOrderBook' => false,
+                'fetchOrders' => false,
                 'fetchTicker' => true,
                 'fetchTickers' => true,
+                'fetchTime' => false,
+                'fetchTrades' => false,
+                'fetchWithdrawals' => false,
+                'transfer' => false,
+                'withdraw' => false,
             ),
             'urls' => array(
+                'logo' => 'https://cdn.arz.digital/cr-odin/img/exchanges/ourbit/64x64.png',
                 'api' => array(
                     'spot' => 'https://www.ourbit.com',
                     'futures' => 'https://futures.ourbit.com',
                 ),
                 'www' => 'https://www.ourbit.com',
                 'doc' => 'https://www.ourbit.com',
+            ),
+            'options' => array(
+                'defaultType' => 'spot',
             ),
             'api' => array(
                 'spot' => array(
@@ -46,6 +73,14 @@ class ourbit extends Exchange {
                     'get' => array(
                         'api/v1/contract/ticker',
                     ),
+                ),
+            ),
+            'fees' => array(
+                'trading' => array(
+                    'tierBased' => false,
+                    'percentage' => true,
+                    'maker' => $this->parse_number('0.001'),
+                    'taker' => $this->parse_number('0.001'),
                 ),
             ),
         ));
