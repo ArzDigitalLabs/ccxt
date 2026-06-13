@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.11.0';
+const version = '4.12.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -94,6 +94,7 @@ import bybit from  './src/bybit.js'
 import bydfi from  './src/bydfi.js'
 import cafearz from  './src/cafearz.js'
 import cex from  './src/cex.js'
+import changefa from  './src/changefa.js'
 import coinbase from  './src/coinbase.js'
 import coinbaseadvanced from  './src/coinbaseadvanced.js'
 import coinbaseexchange from  './src/coinbaseexchange.js'
@@ -162,6 +163,7 @@ import okx from  './src/okx.js'
 import okxus from  './src/okxus.js'
 import ompfinex from  './src/ompfinex.js'
 import onetrading from  './src/onetrading.js'
+import ourbit from  './src/ourbit.js'
 import oxfun from  './src/oxfun.js'
 import p2b from  './src/p2b.js'
 import paradex from  './src/paradex.js'
@@ -320,6 +322,7 @@ const exchanges = {
     'bydfi':                  bydfi,
     'cafearz':                cafearz,
     'cex':                    cex,
+    'changefa':               changefa,
     'coinbase':               coinbase,
     'coinbaseadvanced':       coinbaseadvanced,
     'coinbaseexchange':       coinbaseexchange,
@@ -388,6 +391,7 @@ const exchanges = {
     'okxus':                  okxus,
     'ompfinex':               ompfinex,
     'onetrading':             onetrading,
+    'ourbit':                 ourbit,
     'oxfun':                  oxfun,
     'p2b':                    p2b,
     'paradex':                paradex,
@@ -689,6 +693,7 @@ export {
     bydfi,
     cafearz,
     cex,
+    changefa,
     coinbase,
     coinbaseadvanced,
     coinbaseexchange,
@@ -757,6 +762,7 @@ export {
     okxus,
     ompfinex,
     onetrading,
+    ourbit,
     oxfun,
     p2b,
     paradex,

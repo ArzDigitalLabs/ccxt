@@ -38,7 +38,7 @@ import * as errors from './src/base/errors.js';
 import { BaseError, ExchangeError, AuthenticationError, PermissionDenied, AccountNotEnabled, AccountSuspended, ArgumentsRequired, BadRequest, BadSymbol, OperationRejected, NoChange, MarginModeAlreadySet, MarketClosed, ManualInteractionNeeded, RestrictedLocation, InsufficientFunds, InvalidAddress, AddressPending, InvalidOrder, OrderNotFound, OrderNotCached, OrderImmediatelyFillable, OrderNotFillable, DuplicateOrderId, ContractUnavailable, NotSupported, InvalidProxySettings, ExchangeClosedByUser, OperationFailed, NetworkError, DDoSProtection, RateLimitExceeded, ExchangeNotAvailable, OnMaintenance, InvalidNonce, ChecksumError, RequestTimeout, BadResponse, NullResponse, CancelPending, UnsubscribeError } from './src/base/errors.js';
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.11.0';
+const version = '4.12.0';
 Exchange.ccxtVersion = version;
 //-----------------------------------------------------------------------------
 import abantether from './src/abantether.js';
@@ -89,6 +89,7 @@ import bybit from './src/bybit.js';
 import bydfi from './src/bydfi.js';
 import cafearz from './src/cafearz.js';
 import cex from './src/cex.js';
+import changefa from './src/changefa.js';
 import coinbase from './src/coinbase.js';
 import coinbaseadvanced from './src/coinbaseadvanced.js';
 import coinbaseexchange from './src/coinbaseexchange.js';
@@ -157,6 +158,7 @@ import okx from './src/okx.js';
 import okxus from './src/okxus.js';
 import ompfinex from './src/ompfinex.js';
 import onetrading from './src/onetrading.js';
+import ourbit from './src/ourbit.js';
 import oxfun from './src/oxfun.js';
 import p2b from './src/p2b.js';
 import paradex from './src/paradex.js';
@@ -313,6 +315,7 @@ const exchanges = {
     'bydfi': bydfi,
     'cafearz': cafearz,
     'cex': cex,
+    'changefa': changefa,
     'coinbase': coinbase,
     'coinbaseadvanced': coinbaseadvanced,
     'coinbaseexchange': coinbaseexchange,
@@ -381,6 +384,7 @@ const exchanges = {
     'okxus': okxus,
     'ompfinex': ompfinex,
     'onetrading': onetrading,
+    'ourbit': ourbit,
     'oxfun': oxfun,
     'p2b': p2b,
     'paradex': paradex,
@@ -502,6 +506,6 @@ pro.exchanges = Object.keys(pro);
 pro['Exchange'] = Exchange; // now the same for rest and ts
 //-----------------------------------------------------------------------------
 const ccxt = Object.assign({ version, Exchange, Precise, 'exchanges': Object.keys(exchanges), 'pro': pro }, exchanges, functions, errors);
-export { version, Exchange, exchanges, pro, Precise, functions, errors, BaseError, ExchangeError, AuthenticationError, PermissionDenied, AccountNotEnabled, AccountSuspended, ArgumentsRequired, BadRequest, BadSymbol, OperationRejected, NoChange, MarginModeAlreadySet, MarketClosed, ManualInteractionNeeded, RestrictedLocation, InsufficientFunds, InvalidAddress, AddressPending, InvalidOrder, OrderNotFound, OrderNotCached, OrderImmediatelyFillable, OrderNotFillable, DuplicateOrderId, ContractUnavailable, NotSupported, InvalidProxySettings, ExchangeClosedByUser, OperationFailed, NetworkError, DDoSProtection, RateLimitExceeded, ExchangeNotAvailable, OnMaintenance, InvalidNonce, ChecksumError, RequestTimeout, BadResponse, NullResponse, CancelPending, UnsubscribeError, abantether, afratether, alpaca, apex, arzinja, arzplus, ascendex, asretether, bequant, bidarz, bigone, binance, binancecoinm, binanceus, binanceusdm, bingx, bit24, bit2c, bitbank, bitbarg, bitbns, bitfinex, bitflyer, bitget, bithumb, bitimen, bitir, bitmart, bitmex, bitopro, bitpin, bitrue, bitso, bitstamp, bitteam, bittrade, bitunix, bitvavo, blockchaincom, blofin, btcalpha, btcbox, btcmarkets, btcturk, bybit, bydfi, cafearz, cex, coinbase, coinbaseadvanced, coinbaseexchange, coinbaseinternational, coincatch, coincheck, coinex, coinmate, coinmetro, coinone, coinsph, coinspot, cryptocom, cryptomus, defx, delta, deribit, derive, digifinex, ellipx, eterex, excoino, exir, exmo, exnovin, farhadexchange, fmfwio, foxbit, gate, gateio, gemini, hamtapay, hashkey, hibachi, hitbtc, hitobit, hollaex, htx, huobi, hyperliquid, independentreserve, indodax, iranexchange, jibitex, kcex, kifpoolme, kraken, krakenfutures, kucoin, kucoinfutures, latoken, lbank, luno, mazdax, mercado, mexc, modetrade, myokx, ndax, nobitex, novadax, oceanex, okcoin, okexchange, okx, okxus, ompfinex, onetrading, oxfun, p2b, paradex, paymium, phemex, pingi, poloniex, pooleno, probit, raastin, ramzinex, sarmayex, sarrafex, tabdeal, tehran_exchange, tetherland, timex, tokocrypto, toobit, tradeogre, twox, ubitex, upbit, vertex, wallex, wavesexchange, whitebit, woo, woofipro, xt, yobit, zaif, zonda, };
+export { version, Exchange, exchanges, pro, Precise, functions, errors, BaseError, ExchangeError, AuthenticationError, PermissionDenied, AccountNotEnabled, AccountSuspended, ArgumentsRequired, BadRequest, BadSymbol, OperationRejected, NoChange, MarginModeAlreadySet, MarketClosed, ManualInteractionNeeded, RestrictedLocation, InsufficientFunds, InvalidAddress, AddressPending, InvalidOrder, OrderNotFound, OrderNotCached, OrderImmediatelyFillable, OrderNotFillable, DuplicateOrderId, ContractUnavailable, NotSupported, InvalidProxySettings, ExchangeClosedByUser, OperationFailed, NetworkError, DDoSProtection, RateLimitExceeded, ExchangeNotAvailable, OnMaintenance, InvalidNonce, ChecksumError, RequestTimeout, BadResponse, NullResponse, CancelPending, UnsubscribeError, abantether, afratether, alpaca, apex, arzinja, arzplus, ascendex, asretether, bequant, bidarz, bigone, binance, binancecoinm, binanceus, binanceusdm, bingx, bit24, bit2c, bitbank, bitbarg, bitbns, bitfinex, bitflyer, bitget, bithumb, bitimen, bitir, bitmart, bitmex, bitopro, bitpin, bitrue, bitso, bitstamp, bitteam, bittrade, bitunix, bitvavo, blockchaincom, blofin, btcalpha, btcbox, btcmarkets, btcturk, bybit, bydfi, cafearz, cex, changefa, coinbase, coinbaseadvanced, coinbaseexchange, coinbaseinternational, coincatch, coincheck, coinex, coinmate, coinmetro, coinone, coinsph, coinspot, cryptocom, cryptomus, defx, delta, deribit, derive, digifinex, ellipx, eterex, excoino, exir, exmo, exnovin, farhadexchange, fmfwio, foxbit, gate, gateio, gemini, hamtapay, hashkey, hibachi, hitbtc, hitobit, hollaex, htx, huobi, hyperliquid, independentreserve, indodax, iranexchange, jibitex, kcex, kifpoolme, kraken, krakenfutures, kucoin, kucoinfutures, latoken, lbank, luno, mazdax, mercado, mexc, modetrade, myokx, ndax, nobitex, novadax, oceanex, okcoin, okexchange, okx, okxus, ompfinex, onetrading, ourbit, oxfun, p2b, paradex, paymium, phemex, pingi, poloniex, pooleno, probit, raastin, ramzinex, sarmayex, sarrafex, tabdeal, tehran_exchange, tetherland, timex, tokocrypto, toobit, tradeogre, twox, ubitex, upbit, vertex, wallex, wavesexchange, whitebit, woo, woofipro, xt, yobit, zaif, zonda, };
 export default ccxt;
 //-----------------------------------------------------------------------------

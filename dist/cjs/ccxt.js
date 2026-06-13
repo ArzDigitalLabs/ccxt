@@ -60,6 +60,7 @@ var bybit = require('./src/bybit.js');
 var bydfi = require('./src/bydfi.js');
 var cafearz = require('./src/cafearz.js');
 var cex = require('./src/cex.js');
+var changefa = require('./src/changefa.js');
 var coinbase = require('./src/coinbase.js');
 var coinbaseadvanced = require('./src/coinbaseadvanced.js');
 var coinbaseexchange = require('./src/coinbaseexchange.js');
@@ -128,6 +129,7 @@ var okx = require('./src/okx.js');
 var okxus = require('./src/okxus.js');
 var ompfinex = require('./src/ompfinex.js');
 var onetrading = require('./src/onetrading.js');
+var ourbit = require('./src/ourbit.js');
 var oxfun = require('./src/oxfun.js');
 var p2b = require('./src/p2b.js');
 var paradex = require('./src/paradex.js');
@@ -237,7 +239,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.11.0';
+const version = '4.12.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -288,6 +290,7 @@ const exchanges = {
     'bydfi': bydfi["default"],
     'cafearz': cafearz["default"],
     'cex': cex["default"],
+    'changefa': changefa["default"],
     'coinbase': coinbase["default"],
     'coinbaseadvanced': coinbaseadvanced["default"],
     'coinbaseexchange': coinbaseexchange["default"],
@@ -356,6 +359,7 @@ const exchanges = {
     'okxus': okxus["default"],
     'ompfinex': ompfinex["default"],
     'onetrading': onetrading["default"],
+    'ourbit': ourbit["default"],
     'oxfun': oxfun["default"],
     'p2b': p2b["default"],
     'paradex': paradex["default"],
@@ -564,6 +568,7 @@ exports.bybit = bybit["default"];
 exports.bydfi = bydfi["default"];
 exports.cafearz = cafearz["default"];
 exports.cex = cex["default"];
+exports.changefa = changefa["default"];
 exports.coinbase = coinbase["default"];
 exports.coinbaseadvanced = coinbaseadvanced["default"];
 exports.coinbaseexchange = coinbaseexchange["default"];
@@ -632,6 +637,7 @@ exports.okx = okx["default"];
 exports.okxus = okxus["default"];
 exports.ompfinex = ompfinex["default"];
 exports.onetrading = onetrading["default"];
+exports.ourbit = ourbit["default"];
 exports.oxfun = oxfun["default"];
 exports.p2b = p2b["default"];
 exports.paradex = paradex["default"];

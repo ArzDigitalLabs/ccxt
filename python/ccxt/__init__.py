@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.11.0'
+__version__ = '4.12.0'
 
 # ----------------------------------------------------------------------------
 
@@ -132,6 +132,7 @@ from ccxt.bybit import bybit                                          # noqa: F4
 from ccxt.bydfi import bydfi                                          # noqa: F401
 from ccxt.cafearz import cafearz                                      # noqa: F401
 from ccxt.cex import cex                                              # noqa: F401
+from ccxt.changefa import changefa                                    # noqa: F401
 from ccxt.coinbase import coinbase                                    # noqa: F401
 from ccxt.coinbaseadvanced import coinbaseadvanced                    # noqa: F401
 from ccxt.coinbaseexchange import coinbaseexchange                    # noqa: F401
@@ -200,6 +201,7 @@ from ccxt.okx import okx                                              # noqa: F4
 from ccxt.okxus import okxus                                          # noqa: F401
 from ccxt.ompfinex import ompfinex                                    # noqa: F401
 from ccxt.onetrading import onetrading                                # noqa: F401
+from ccxt.ourbit import ourbit                                        # noqa: F401
 from ccxt.oxfun import oxfun                                          # noqa: F401
 from ccxt.p2b import p2b                                              # noqa: F401
 from ccxt.paradex import paradex                                      # noqa: F401
@@ -283,6 +285,7 @@ exchanges = [
     'bydfi',
     'cafearz',
     'cex',
+    'changefa',
     'coinbase',
     'coinbaseadvanced',
     'coinbaseexchange',
@@ -351,6 +354,7 @@ exchanges = [
     'okxus',
     'ompfinex',
     'onetrading',
+    'ourbit',
     'oxfun',
     'p2b',
     'paradex',

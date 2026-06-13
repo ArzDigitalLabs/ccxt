@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.11.0'
+__version__ = '4.12.0'
 
 # -----------------------------------------------------------------------------
 
@@ -112,6 +112,7 @@ from ccxt.async_support.bybit import bybit                                      
 from ccxt.async_support.bydfi import bydfi                                      # noqa: F401
 from ccxt.async_support.cafearz import cafearz                                  # noqa: F401
 from ccxt.async_support.cex import cex                                          # noqa: F401
+from ccxt.async_support.changefa import changefa                                # noqa: F401
 from ccxt.async_support.coinbase import coinbase                                # noqa: F401
 from ccxt.async_support.coinbaseadvanced import coinbaseadvanced                # noqa: F401
 from ccxt.async_support.coinbaseexchange import coinbaseexchange                # noqa: F401
@@ -180,6 +181,7 @@ from ccxt.async_support.okx import okx                                          
 from ccxt.async_support.okxus import okxus                                      # noqa: F401
 from ccxt.async_support.ompfinex import ompfinex                                # noqa: F401
 from ccxt.async_support.onetrading import onetrading                            # noqa: F401
+from ccxt.async_support.ourbit import ourbit                                    # noqa: F401
 from ccxt.async_support.oxfun import oxfun                                      # noqa: F401
 from ccxt.async_support.p2b import p2b                                          # noqa: F401
 from ccxt.async_support.paradex import paradex                                  # noqa: F401
@@ -263,6 +265,7 @@ exchanges = [
     'bydfi',
     'cafearz',
     'cex',
+    'changefa',
     'coinbase',
     'coinbaseadvanced',
     'coinbaseexchange',
@@ -331,6 +334,7 @@ exchanges = [
     'okxus',
     'ompfinex',
     'onetrading',
+    'ourbit',
     'oxfun',
     'p2b',
     'paradex',

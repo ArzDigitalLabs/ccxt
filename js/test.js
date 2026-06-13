@@ -5,35 +5,27 @@
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
 import ccxt from './ccxt';
-async function testAsretether() {
-    const exchange = new ccxt.bidarz({
+async function testChangefa() {
+    const exchange = new ccxt.changefa({
         enableRateLimit: true,
         timeout: 20000,
     });
     try {
         console.log('Loading markets...');
-        await exchange.loadMarkets();
-        console.log('Markets loaded:', Object.keys(exchange.markets).length);
-        console.log('Testing fetchMarkets...');
         const markets = await exchange.fetchMarkets();
         console.log('fetchMarkets returned', markets.length, 'markets');
-        console.log('Sample market:', markets.length ? markets[0] : 'none');
         console.log('Testing fetchTickers...');
         const tickers = await exchange.fetchTickers();
-        console.log('fetchTickers returned', Object.keys(tickers).length, 'tickers');
-        console.log('Sample ticker:', Object.values(tickers).length ? Object.values(tickers)[0] : 'none');
-        if (tickers) {
-            const firstSymbol = markets[20].symbol;
-            console.log('Testing fetchTicker for symbol:', firstSymbol);
-            const ticker = await exchange.fetchTicker('BTC/IRT');
+        console.log('fetchTickers returned', Object.keys(tickers).length, 'markets');
+        const firstMarket = markets.length > 0 ? markets[0] : undefined;
+        if (firstMarket !== undefined) {
+            console.log('Testing fetchTicker for symbol:', firstMarket['symbol']);
+            const ticker = await exchange.fetchTicker(firstMarket['symbol']);
             console.log('fetchTicker result:', ticker);
-        }
-        else {
-            console.log('No markets available to test fetchTicker.');
         }
     }
     catch (error) {
-        console.error('Error during testing asretether:', error);
+        console.error('Error during testing changefa:', error);
     }
 }
-testAsretether();
+testChangefa();
