@@ -143,7 +143,7 @@ class ourbit extends Exchange["default"] {
             'swap': false,
             'future': false,
             'option': false,
-            'active': this.safeInteger(market, 'sts') === 1,
+            'active': true,
             'contract': false,
             'linear': undefined,
             'inverse': undefined,
