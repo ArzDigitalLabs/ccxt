@@ -4,24 +4,38 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import { ourbit } from './ccxt.js';
-async function main() {
-    const exchange = new ourbit({
+import ccxt from './ccxt';
+async function testHamtapay() {
+    const exchange = new ccxt.hamtapay({
         enableRateLimit: true,
+        timeout: 20000,
     });
     try {
-        const markets = await exchange.fetchMarkets({ type: 'spot' });
-        const firstSpotMarket = markets[0];
-        console.log('Exchange:', exchange.id);
-        console.log('Spot markets count:', markets.length);
-        console.log('First spot market:', firstSpotMarket);
+        const markets = await exchange.fetchMarkets();
+        console.log('markets count:', markets.length);
+        console.log('first markets:', markets.slice(0, 10).map((market) => ({
+            symbol: market.symbol,
+            id: market.id,
+            type: market.type,
+            active: market.active,
+            amountPrecision: market.precision && market.precision.amount,
+            pricePrecision: market.precision && market.precision.price,
+        })));
+        const tickers = await exchange.fetchTickers();
+        console.log('tickers count:', Object.keys(tickers).length);
+        const symbol = 'USDT/IRT';
+        const ticker = await exchange.fetchTicker(symbol);
+        console.log('single ticker:', {
+            symbol: ticker.symbol,
+            last: ticker.last,
+            percentage: ticker.percentage,
+            baseVolume: ticker.baseVolume,
+            quoteVolume: ticker.quoteVolume,
+            info: ticker.info,
+        });
     }
     catch (error) {
-        console.error('Test failed:', error);
-        process.exitCode = 1;
-    }
-    finally {
-        await exchange.close();
+        console.error('Error during testing hamtapay:', error);
     }
 }
-void main();
+testHamtapay();

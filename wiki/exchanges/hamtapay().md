@@ -29,7 +29,7 @@ retrieves data on all markets for hamtapay
 **Kind**: instance method of [<code>hamtapay</code>](#hamtapay)  
 **Returns**: <code>Array&lt;object&gt;</code> - an array of objects representing market data
 
-**See**: https://api.hamtapay.org/financial/api/market  
+**See**: https://oapi.hamtapay.org/financial/api/market  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@ fetches price tickers for multiple markets, statistical information calculated o
 **Kind**: instance method of [<code>hamtapay</code>](#hamtapay)  
 **Returns**: <code>object</code> - a dictionary of [ticker structures](https://docs.ccxt.com/#/?id=ticker-structure)
 
-**See**: https://api.hamtapay.org/financial/api/vitrin/prices  
+**See**: https://oapi.hamtapay.org/financial/api/market  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |
@@ -70,7 +70,7 @@ fetches a price ticker, a statistical calculation with the information calculate
 **Kind**: instance method of [<code>hamtapay</code>](#hamtapay)  
 **Returns**: <code>object</code> - a [ticker structure](https://docs.ccxt.com/#/?id=ticker-structure)
 
-**See**: https://hamtapay.com/management/all-coins/?format=json  
+**See**: https://oapi.hamtapay.org/financial/api/market/{symbol}  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |
