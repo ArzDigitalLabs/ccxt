@@ -79,7 +79,6 @@ class hamtapay extends hamtapay$1["default"] {
                 'fetchTradingFee': false,
                 'fetchTradingFees': false,
                 'fetchWithdrawals': false,
-                'otc': true,
                 'setLeverage': false,
                 'setMarginMode': false,
                 'transfer': false,
@@ -100,7 +99,6 @@ class hamtapay extends hamtapay$1["default"] {
                 'public': {
                     'get': {
                         '/financial/api/market': 1,
-                        '/financial/api/market/{symbol}': 1,
                     },
                 },
             },
@@ -156,8 +154,8 @@ class hamtapay extends hamtapay$1["default"] {
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': undefined,
-            'type': 'otc',
-            'spot': false,
+            'type': 'spot',
+            'spot': true,
             'margin': false,
             'swap': false,
             'future': false,
@@ -225,22 +223,16 @@ class hamtapay extends hamtapay$1["default"] {
          * @method
          * @name hamtapay#fetchTicker
          * @description fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
-         * @see https://oapi.hamtapay.org/financial/api/market/{symbol}
+         * @see https://oapi.hamtapay.org/financial/api/market
          * @param {string} symbol unified symbol of the market to fetch the ticker for
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
-        await this.loadMarkets();
-        const market = this.market(symbol);
-        const request = {
-            'symbol': market['id'],
-        };
-        const response = await this.publicGetFinancialApiMarketSymbol(this.extend(request, params));
-        const ticker = this.safeDict(response, 'data', response);
-        return this.parseTicker(ticker, market);
+        const tickers = await this.fetchTickers([symbol], params);
+        return tickers[symbol];
     }
     parseTicker(ticker, market = undefined) {
-        const marketType = 'otc';
+        const marketType = 'spot';
         const marketId = this.safeString2(ticker, 'id', 'symbol');
         const baseId = this.safeString(ticker, 'base');
         const quoteId = this.safeString(ticker, 'quote');
@@ -251,7 +243,12 @@ class hamtapay extends hamtapay$1["default"] {
             symbol = base + '/' + quote;
         }
         const last = this.safeFloat(ticker, 'last_price');
+        const baseVolume = this.safeFloat(ticker, 'volume_24h');
         const percentage = this.safeFloat(ticker, 'percent_change_24h');
+        let quoteVolume = undefined;
+        if ((baseVolume !== undefined) && (last !== undefined)) {
+            quoteVolume = baseVolume * last;
+        }
         return this.safeTicker({
             'symbol': symbol,
             'timestamp': undefined,
@@ -270,8 +267,8 @@ class hamtapay extends hamtapay$1["default"] {
             'change': undefined,
             'percentage': percentage,
             'average': undefined,
-            'baseVolume': undefined,
-            'quoteVolume': undefined,
+            'baseVolume': baseVolume,
+            'quoteVolume': quoteVolume,
             'info': ticker,
         }, market);
     }

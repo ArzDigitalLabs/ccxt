@@ -70,7 +70,7 @@ fetches a price ticker, a statistical calculation with the information calculate
 **Kind**: instance method of [<code>hamtapay</code>](#hamtapay)  
 **Returns**: <code>object</code> - a [ticker structure](https://docs.ccxt.com/#/?id=ticker-structure)
 
-**See**: https://oapi.hamtapay.org/financial/api/market/{symbol}  
+**See**: https://oapi.hamtapay.org/financial/api/market  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |

@@ -10,7 +10,3 @@ package ccxt
 func (this *hamtapay) PublicGetFinancialApiMarket (args ...interface{}) <-chan interface{} {
    return this.callEndpointAsync("publicGetFinancialApiMarket", args...)
 }
-
-func (this *hamtapay) PublicGetFinancialApiMarketSymbol (args ...interface{}) <-chan interface{} {
-   return this.callEndpointAsync("publicGetFinancialApiMarketSymbol", args...)
-}

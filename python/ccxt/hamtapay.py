@@ -78,7 +78,6 @@ class hamtapay(Exchange, ImplicitAPI):
                 'fetchTradingFee': False,
                 'fetchTradingFees': False,
                 'fetchWithdrawals': False,
-                'otc': True,
                 'setLeverage': False,
                 'setMarginMode': False,
                 'transfer': False,
@@ -99,7 +98,6 @@ class hamtapay(Exchange, ImplicitAPI):
                 'public': {
                     'get': {
                         '/financial/api/market': 1,
-                        '/financial/api/market/{symbol}': 1,
                     },
                 },
             },
@@ -152,8 +150,8 @@ class hamtapay(Exchange, ImplicitAPI):
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': None,
-            'type': 'otc',
-            'spot': False,
+            'type': 'spot',
+            'spot': True,
             'margin': False,
             'swap': False,
             'future': False,
@@ -215,22 +213,16 @@ class hamtapay(Exchange, ImplicitAPI):
     def fetch_ticker(self, symbol: str, params={}) -> Ticker:
         """
         fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
-        https://oapi.hamtapay.org/financial/api/market/{symbol}
+        https://oapi.hamtapay.org/financial/api/market
         :param str symbol: unified symbol of the market to fetch the ticker for
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict: a `ticker structure <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
-        self.load_markets()
-        market = self.market(symbol)
-        request = {
-            'symbol': market['id'],
-        }
-        response = self.publicGetFinancialApiMarketSymbol(self.extend(request, params))
-        ticker = self.safe_dict(response, 'data', response)
-        return self.parse_ticker(ticker, market)
+        tickers = self.fetch_tickers([symbol], params)
+        return tickers[symbol]
 
     def parse_ticker(self, ticker, market: Market = None) -> Ticker:
-        marketType = 'otc'
+        marketType = 'spot'
         marketId = self.safe_string_2(ticker, 'id', 'symbol')
         baseId = self.safe_string(ticker, 'base')
         quoteId = self.safe_string(ticker, 'quote')
@@ -240,7 +232,11 @@ class hamtapay(Exchange, ImplicitAPI):
         if (baseId is not None) and (quoteId is not None):
             symbol = base + '/' + quote
         last = self.safe_float(ticker, 'last_price')
+        baseVolume = self.safe_float(ticker, 'volume_24h')
         percentage = self.safe_float(ticker, 'percent_change_24h')
+        quoteVolume = None
+        if (baseVolume is not None) and (last is not None):
+            quoteVolume = baseVolume * last
         return self.safe_ticker({
             'symbol': symbol,
             'timestamp': None,
@@ -259,8 +255,8 @@ class hamtapay(Exchange, ImplicitAPI):
             'change': None,
             'percentage': percentage,
             'average': None,
-            'baseVolume': None,
-            'quoteVolume': None,
+            'baseVolume': baseVolume,
+            'quoteVolume': quoteVolume,
             'info': ticker,
         }, market)
 

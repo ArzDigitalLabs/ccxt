@@ -77,7 +77,6 @@ class hamtapay extends Exchange {
                 'fetchTradingFee' => false,
                 'fetchTradingFees' => false,
                 'fetchWithdrawals' => false,
-                'otc' => true,
                 'setLeverage' => false,
                 'setMarginMode' => false,
                 'transfer' => false,
@@ -98,7 +97,6 @@ class hamtapay extends Exchange {
                 'public' => array(
                     'get' => array(
                         '/financial/api/market' => 1,
-                        '/financial/api/market/{symbol}' => 1,
                     ),
                 ),
             ),
@@ -154,8 +152,8 @@ class hamtapay extends Exchange {
             'baseId' => $baseId,
             'quoteId' => $quoteId,
             'settleId' => null,
-            'type' => 'otc',
-            'spot' => false,
+            'type' => 'spot',
+            'spot' => true,
             'margin' => false,
             'swap' => false,
             'future' => false,
@@ -220,24 +218,18 @@ class hamtapay extends Exchange {
 
     public function fetch_ticker(string $symbol, $params = array ()): array {
         /**
-         * fetches a price $ticker, a statistical calculation with the information calculated over the past 24 hours for a specific $market
-         * @see https://oapi.hamtapay.org/financial/api/market/{$symbol}
-         * @param {string} $symbol unified $symbol of the $market to fetch the $ticker for
+         * fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
+         * @see https://oapi.hamtapay.org/financial/api/market
+         * @param {string} $symbol unified $symbol of the market to fetch the ticker for
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
-         * @return {array} a ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structure~
+         * @return {array} a ~@link https://docs.ccxt.com/#/?id=ticker-structure ticker structure~
          */
-        $this->load_markets();
-        $market = $this->market($symbol);
-        $request = array(
-            'symbol' => $market['id'],
-        );
-        $response = $this->publicGetFinancialApiMarketSymbol ($this->extend($request, $params));
-        $ticker = $this->safe_dict($response, 'data', $response);
-        return $this->parse_ticker($ticker, $market);
+        $tickers = $this->fetch_tickers(array( $symbol ), $params);
+        return $tickers[$symbol];
     }
 
     public function parse_ticker($ticker, ?array $market = null): array {
-        $marketType = 'otc';
+        $marketType = 'spot';
         $marketId = $this->safe_string_2($ticker, 'id', 'symbol');
         $baseId = $this->safe_string($ticker, 'base');
         $quoteId = $this->safe_string($ticker, 'quote');
@@ -248,7 +240,12 @@ class hamtapay extends Exchange {
             $symbol = $base . '/' . $quote;
         }
         $last = $this->safe_float($ticker, 'last_price');
+        $baseVolume = $this->safe_float($ticker, 'volume_24h');
         $percentage = $this->safe_float($ticker, 'percent_change_24h');
+        $quoteVolume = null;
+        if (($baseVolume !== null) && ($last !== null)) {
+            $quoteVolume = $baseVolume * $last;
+        }
         return $this->safe_ticker(array(
             'symbol' => $symbol,
             'timestamp' => null,
@@ -267,8 +264,8 @@ class hamtapay extends Exchange {
             'change' => null,
             'percentage' => $percentage,
             'average' => null,
-            'baseVolume' => null,
-            'quoteVolume' => null,
+            'baseVolume' => $baseVolume,
+            'quoteVolume' => $quoteVolume,
             'info' => $ticker,
         ), $market);
     }

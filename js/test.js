@@ -23,7 +23,7 @@ async function testHamtapay() {
         })));
         const tickers = await exchange.fetchTickers();
         console.log('tickers count:', Object.keys(tickers).length);
-        const symbol = 'USDT/IRT';
+        const symbol = 'BTC/USDT';
         const ticker = await exchange.fetchTicker(symbol);
         console.log('single ticker:', {
             symbol: ticker.symbol,
