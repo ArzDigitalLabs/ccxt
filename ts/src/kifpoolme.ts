@@ -313,8 +313,8 @@ export default class kifpoolme extends Exchange {
         let ask = undefined;
         if (quoteId === 'IRT') {
             // For IRT: priceSellIRT is the sell price (bid), priceBuyIRT is the buy price (ask)
-            bid = this.safeNumber (ticker, 'priceSellIRT');
-            ask = this.safeNumber (ticker, 'priceBuyIRT');
+            ask = this.safeNumber (ticker, 'priceSellIRT');
+            bid = this.safeNumber (ticker, 'priceBuyIRT');
             last = ask;
         } else {
             // For USDT: price is in USDT

@@ -217,7 +217,7 @@ class changefa(Exchange, ImplicitAPI):
         buyPrice = self.safe_number(ticker, 'buyPrice')
         sellPrice = self.safe_number(ticker, 'sellPrice')
         if (buyPrice is not None) and (sellPrice is not None):
-            last = (buyPrice + sellPrice) / 2
+            last = sellPrice
         weeklyPriceLog = self.safe_list(ticker, 'weeklyPriceLog', [])
         high = None
         low = None

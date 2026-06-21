@@ -5,8 +5,8 @@
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
 import ccxt from './ccxt';
-async function testHamtapay() {
-    const exchange = new ccxt.hamtapay({
+async function testchangefa() {
+    const exchange = new ccxt.changefa({
         enableRateLimit: true,
         timeout: 20000,
     });
@@ -23,19 +23,12 @@ async function testHamtapay() {
         })));
         const tickers = await exchange.fetchTickers();
         console.log('tickers count:', Object.keys(tickers).length);
-        const symbol = 'BTC/USDT';
+        const symbol = 'USDT/IRT';
         const ticker = await exchange.fetchTicker(symbol);
-        console.log('single ticker:', {
-            symbol: ticker.symbol,
-            last: ticker.last,
-            percentage: ticker.percentage,
-            baseVolume: ticker.baseVolume,
-            quoteVolume: ticker.quoteVolume,
-            info: ticker.info,
-        });
+        console.log('single ticker:', ticker);
     }
     catch (error) {
-        console.error('Error during testing hamtapay:', error);
+        console.error('Error during testing changefa:', error);
     }
 }
-testHamtapay();
+testchangefa();

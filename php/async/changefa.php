@@ -232,7 +232,7 @@ class changefa extends Exchange {
         $buyPrice = $this->safe_number($ticker, 'buyPrice');
         $sellPrice = $this->safe_number($ticker, 'sellPrice');
         if (($buyPrice !== null) && ($sellPrice !== null)) {
-            $last = ($buyPrice . $sellPrice) / 2;
+            $last = $sellPrice;
         }
         $weeklyPriceLog = $this->safe_list($ticker, 'weeklyPriceLog', array());
         $high = null;

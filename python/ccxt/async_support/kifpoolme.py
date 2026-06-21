@@ -294,8 +294,8 @@ class kifpoolme(Exchange, ImplicitAPI):
         ask = None
         if quoteId == 'IRT':
             # For IRT: priceSellIRT is the sell price(bid), priceBuyIRT is the buy price(ask)
-            bid = self.safe_number(ticker, 'priceSellIRT')
-            ask = self.safe_number(ticker, 'priceBuyIRT')
+            ask = self.safe_number(ticker, 'priceSellIRT')
+            bid = self.safe_number(ticker, 'priceBuyIRT')
             last = ask
         else:
             # For USDT: price is in USDT
