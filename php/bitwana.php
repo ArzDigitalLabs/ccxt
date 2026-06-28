@@ -89,7 +89,7 @@ class bitwana extends Exchange {
             ),
             'comment' => 'This comment is optional',
             'urls' => array(
-                'logo' => 'https://bitwana.com/favicon.ico',
+                'logo' => 'https://cdn.arz.digital/cr-odin/img/exchanges/bitwana/64x64.png',
                 'api' => array(
                     'public' => 'https://bitwana.com',
                 ),

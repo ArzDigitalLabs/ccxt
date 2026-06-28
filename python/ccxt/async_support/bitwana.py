@@ -89,7 +89,7 @@ class bitwana(Exchange, ImplicitAPI):
             },
             'comment': 'This comment is optional',
             'urls': {
-                'logo': 'https://bitwana.com/favicon.ico',
+                'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/bitwana/64x64.png',
                 'api': {
                     'public': 'https://bitwana.com',
                 },
