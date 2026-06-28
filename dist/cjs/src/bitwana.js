@@ -1,0 +1,420 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var bitwana$1 = require('./abstract/bitwana.js');
+
+// ----------------------------------------------------------------------------
+//  ---------------------------------------------------------------------------
+/**
+ * @class bitwana
+ * @augments Exchange
+ * @description Set rateLimit to 1000 if fully verified
+ */
+class bitwana extends bitwana$1["default"] {
+    marketTypeToSymbol(base, quote, marketType = 'spot') {
+        return base + '/' + quote;
+    }
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'bitwana',
+            'name': 'Bitwana',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': '1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': true,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'addMargin': false,
+                'cancelAllOrders': false,
+                'cancelOrder': false,
+                'cancelOrders': false,
+                'createDepositAddress': false,
+                'createOrder': false,
+                'createStopLimitOrder': false,
+                'createStopMarketOrder': false,
+                'createStopOrder': false,
+                'editOrder': false,
+                'fetchBalance': false,
+                'fetchBorrowInterest': false,
+                'fetchBorrowRateHistories': false,
+                'fetchBorrowRateHistory': false,
+                'fetchClosedOrders': false,
+                'fetchCrossBorrowRate': false,
+                'fetchCrossBorrowRates': false,
+                'fetchCurrencies': false,
+                'fetchDepositAddress': false,
+                'fetchDeposits': false,
+                'fetchFundingHistory': false,
+                'fetchFundingRate': false,
+                'fetchFundingRateHistory': false,
+                'fetchFundingRates': false,
+                'fetchIndexOHLCV': false,
+                'fetchIsolatedBorrowRate': false,
+                'fetchIsolatedBorrowRates': false,
+                'fetchL2OrderBook': false,
+                'fetchL3OrderBook': false,
+                'fetchLedger': false,
+                'fetchLedgerEntry': false,
+                'fetchLeverageTiers': false,
+                'fetchMarkets': true,
+                'fetchMarkOHLCV': false,
+                'fetchMyTrades': false,
+                'fetchOHLCV': false,
+                'fetchOpenInterestHistory': false,
+                'fetchOpenOrders': false,
+                'fetchOrder': false,
+                'fetchOrderBook': false,
+                'fetchOrders': false,
+                'fetchOrderTrades': 'emulated',
+                'fetchPositions': false,
+                'fetchPremiumIndexOHLCV': false,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'fetchTime': false,
+                'fetchTrades': false,
+                'fetchTradingFee': false,
+                'fetchTradingFees': false,
+                'fetchWithdrawals': false,
+                'otc': true,
+                'setLeverage': false,
+                'setMarginMode': false,
+                'transfer': false,
+                'withdraw': false,
+            },
+            'comment': 'This comment is optional',
+            'urls': {
+                'logo': 'https://bitwana.com/favicon.ico',
+                'api': {
+                    'public': 'https://bitwana.com',
+                },
+                'www': 'https://bitwana.com/',
+                'doc': [
+                    'https://bitwana.com/',
+                ],
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'api/1/markets': 1,
+                        'api/1/markets/{id}': 1,
+                    },
+                },
+            },
+            'fees': {},
+        });
+    }
+    parseSpotMarket(market) {
+        // {
+        //     "id": "BTC_IRT",
+        //     "symbol": "بیت‌کوین-تومان",
+        //     "base": "BTC",
+        //     "quote": "IRT",
+        //     "buyPrice": "10222846365",
+        //     "sellPrice": "10233403625",
+        //     "userOrderPricePrecision": 0,
+        //     "quantityPrecision": 6,
+        //     "minimumOrder": 100000,
+        //     "maximumOrder": 300000000,
+        //     "lastTradedPrice": "10249911984",
+        //     "lowestPrice": "10063564406",
+        //     "highestPrice": "10320391247",
+        //     "sourceVolume": "0.036557",
+        //     "destinationVolume": "371770611.78",
+        //     "tradingEnabled": true,
+        //     "otcEnabled": false,
+        // }
+        const id = this.safeString(market, 'id');
+        const baseId = this.safeString(market, 'base');
+        const quoteId = this.safeString(market, 'quote');
+        const base = this.safeCurrencyCode(baseId);
+        const quote = this.safeCurrencyCode(quoteId);
+        return {
+            'id': id,
+            'symbol': this.marketTypeToSymbol(base, quote, 'spot'),
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': baseId,
+            'quoteId': quoteId,
+            'settleId': undefined,
+            'type': 'spot',
+            'spot': true,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': true,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': this.safeInteger(market, 'quantityPrecision'),
+                'price': this.safeInteger(market, 'userOrderPricePrecision'),
+            },
+            'limits': {
+                'leverage': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'amount': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'price': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'cost': {
+                    'min': this.safeNumber(market, 'minimumOrder'),
+                    'max': this.safeNumber(market, 'maximumOrder'),
+                },
+            },
+            'created': undefined,
+            'info': market,
+        };
+    }
+    parseOtcMarket(market) {
+        const rawId = this.safeString(market, 'id');
+        const baseId = this.safeString(market, 'base');
+        const quoteId = this.safeString(market, 'quote');
+        const base = this.safeCurrencyCode(baseId);
+        const quote = this.safeCurrencyCode(quoteId);
+        return {
+            'id': rawId + '_OTC',
+            'symbol': this.marketTypeToSymbol(base, quote, 'otc'),
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': baseId,
+            'quoteId': quoteId,
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': true,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': this.safeInteger(market, 'quantityPrecision'),
+                'price': this.safeInteger(market, 'userOrderPricePrecision'),
+            },
+            'limits': {
+                'leverage': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'amount': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'price': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'cost': {
+                    'min': this.safeNumber(market, 'minimumOrder'),
+                    'max': this.safeNumber(market, 'maximumOrder'),
+                },
+            },
+            'created': undefined,
+            'info': market,
+        };
+    }
+    async fetchMarkets(params = {}) {
+        /**
+         * @method
+         * @name bitwana#fetchMarkets
+         * @description retrieves data on all markets for bitwana
+         * @see https://bitwana.com/api/1/markets?with_price=true
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object[]} an array of objects representing market data
+         */
+        const marketType = this.safeString(params, 'type', 'spot');
+        const request = {
+            'with_price': true,
+        };
+        const response = await this.publicGetApi1Markets(this.extend(request, params));
+        const markets = this.safeList(response, 'content', []);
+        const result = [];
+        for (let i = 0; i < markets.length; i++) {
+            const market = markets[i];
+            if (marketType === 'otc') {
+                result.push(this.parseOtcMarket(market));
+            }
+            else {
+                result.push(this.parseSpotMarket(market));
+            }
+        }
+        return result;
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        /**
+         * @method
+         * @name bitwana#fetchTickers
+         * @description fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
+         * @see https://bitwana.com/api/1/markets?with_price=true
+         * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
+         */
+        const marketType = this.safeString(params, 'type', 'spot');
+        await this.loadMarkets(false, { 'type': marketType });
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const request = {
+            'with_price': true,
+        };
+        const response = await this.publicGetApi1Markets(this.extend(request, params));
+        const markets = this.safeList(response, 'content', []);
+        const result = {};
+        for (let i = 0; i < markets.length; i++) {
+            const market = markets[i];
+            if (marketType === 'otc') {
+                const otcTicker = this.parseOtcTicker(market);
+                result[otcTicker['symbol']] = otcTicker;
+            }
+            else {
+                const spotTicker = this.parseSpotTicker(market);
+                result[spotTicker['symbol']] = spotTicker;
+            }
+        }
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    async fetchTicker(symbol, params = {}) {
+        /**
+         * @method
+         * @name bitwana#fetchTicker
+         * @description fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
+         * @see https://bitwana.com/api/1/markets/BTC_IRT?with_price=true
+         * @param {string} symbol unified symbol of the market to fetch the ticker for
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
+         */
+        const marketType = this.safeString(params, 'type', 'spot');
+        await this.loadMarkets(false, { 'type': marketType });
+        const market = this.market(symbol);
+        const request = {
+            'id': this.safeString(market['info'], 'id'),
+            'with_price': true,
+        };
+        const response = await this.publicGetApi1MarketsId(this.extend(request, params));
+        const ticker = this.safeDict(response, 'content');
+        if (marketType === 'otc') {
+            return this.parseOtcTicker(ticker, market);
+        }
+        return this.parseSpotTicker(ticker, market);
+    }
+    parseSpotTicker(ticker, market = undefined) {
+        const baseId = this.safeString(ticker, 'base');
+        const quoteId = this.safeString(ticker, 'quote');
+        const base = this.safeCurrencyCode(baseId);
+        const quote = this.safeCurrencyCode(quoteId);
+        let symbol = this.marketTypeToSymbol(base, quote, 'spot');
+        if (market !== undefined) {
+            symbol = market['symbol'];
+        }
+        const high = this.safeNumber(ticker, 'highestPrice');
+        const low = this.safeNumber(ticker, 'lowestPrice');
+        const bid = this.safeNumber(ticker, 'buyPrice');
+        const ask = this.safeNumber(ticker, 'sellPrice');
+        const last = this.safeNumber(ticker, 'lastTradedPrice');
+        const change = this.safeNumber(ticker, 'changePrice');
+        const percentage = this.safeNumber(ticker, 'changeRate');
+        const baseVolume = this.safeNumber(ticker, 'sourceVolume');
+        const quoteVolume = this.safeNumber(ticker, 'destinationVolume');
+        return this.safeTicker({
+            'symbol': symbol,
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': high,
+            'low': low,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': last,
+            'last': last,
+            'previousClose': undefined,
+            'change': change,
+            'percentage': percentage,
+            'average': undefined,
+            'baseVolume': baseVolume,
+            'quoteVolume': quoteVolume,
+            'info': ticker,
+        }, market);
+    }
+    parseOtcTicker(ticker, market = undefined) {
+        const baseId = this.safeString(ticker, 'base');
+        const quoteId = this.safeString(ticker, 'quote');
+        const base = this.safeCurrencyCode(baseId);
+        const quote = this.safeCurrencyCode(quoteId);
+        let symbol = this.marketTypeToSymbol(base, quote, 'otc');
+        if (market !== undefined) {
+            symbol = market['symbol'];
+        }
+        const high = this.safeNumber(ticker, 'highestPrice');
+        const low = this.safeNumber(ticker, 'lowestPrice');
+        const bid = this.safeNumber(ticker, 'buyPrice');
+        const ask = this.safeNumber(ticker, 'sellPrice');
+        const last = this.safeNumber(ticker, 'lastTradedPrice');
+        const change = this.safeNumber(ticker, 'changePrice');
+        const percentage = this.safeNumber(ticker, 'changeRate');
+        return this.safeTicker({
+            'symbol': symbol,
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': high,
+            'low': low,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': last,
+            'last': last,
+            'previousClose': undefined,
+            'change': change,
+            'percentage': percentage,
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': ticker,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        const query = this.omit(params, this.extractParams(path));
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Content-Type': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+exports["default"] = bitwana;

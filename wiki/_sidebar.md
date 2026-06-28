@@ -45,6 +45,7 @@
 	- [bittrade](exchanges/bittrade.md)
 	- [bitunix()](exchanges/bitunix().md)
 	- [bitvavo](exchanges/bitvavo.md)
+	- [bitwana()](exchanges/bitwana().md)
 	- [blockchaincom](exchanges/blockchaincom.md)
 	- [blofin](exchanges/blofin.md)
 	- [btcalpha](exchanges/btcalpha.md)

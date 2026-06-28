@@ -4,24 +4,90 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import { ourbit } from './ccxt.js';
-async function main() {
-    const exchange = new ourbit({
+import ccxt from './ccxt';
+async function testBitwana() {
+    const exchange = new ccxt.bitwana({
         enableRateLimit: true,
+        timeout: 20000,
     });
     try {
-        const markets = await exchange.fetchMarkets({ type: 'spot' });
-        const firstSpotMarket = markets[0];
-        console.log('Exchange:', exchange.id);
-        console.log('Spot markets count:', markets.length);
-        console.log('First spot market:', firstSpotMarket);
+        const types = ['spot', 'otc'];
+        for (let i = 0; i < types.length; i++) {
+            const marketType = types[i];
+            const params = { 'type': marketType };
+            const markets = await exchange.fetchMarkets(params);
+            console.log(marketType + ' markets count:', markets.length);
+            console.log(marketType + ' first markets:', markets.slice(0, 10).map((market) => ({
+                symbol: market.symbol,
+                id: market.id,
+                type: market.type,
+                active: market.active,
+                amountPrecision: market.precision && market.precision.amount,
+                pricePrecision: market.precision && market.precision.price,
+            })));
+            const tickers = await exchange.fetchTickers(undefined, params);
+            const tickerSymbols = Object.keys(tickers);
+            console.log(marketType + ' tickers count:', tickerSymbols.length);
+            const missingFromFetchTickers = [];
+            const fetchTickerFailures = [];
+            const sampleTickers = [];
+            for (let j = 0; j < markets.length; j++) {
+                const market = markets[j];
+                const symbol = market.symbol;
+                const tickerFromBulk = tickers[symbol];
+                if (tickerFromBulk === undefined) {
+                    missingFromFetchTickers.push(symbol);
+                    continue;
+                }
+                if (sampleTickers.length < 10) {
+                    sampleTickers.push({
+                        symbol: tickerFromBulk.symbol,
+                        type: market.type,
+                        last: tickerFromBulk.last,
+                        bid: tickerFromBulk.bid,
+                        ask: tickerFromBulk.ask,
+                        high: tickerFromBulk.high,
+                        low: tickerFromBulk.low,
+                        baseVolume: tickerFromBulk.baseVolume,
+                        quoteVolume: tickerFromBulk.quoteVolume,
+                    });
+                }
+                try {
+                    const singleTicker = await exchange.fetchTicker(symbol, params);
+                    console.log('checked ' + marketType + ' ticker:', {
+                        symbol: singleTicker.symbol,
+                        type: market.type,
+                        last: singleTicker.last,
+                        bid: singleTicker.bid,
+                        ask: singleTicker.ask,
+                    });
+                }
+                catch (error) {
+                    fetchTickerFailures.push({
+                        symbol,
+                        type: market.type,
+                        message: error instanceof Error ? error.message : String(error),
+                    });
+                }
+            }
+            console.log(marketType + ' sample bulk tickers:', sampleTickers);
+            console.log(marketType + ' missing from fetchTickers:', missingFromFetchTickers);
+            console.log(marketType + ' fetchTicker failures:', fetchTickerFailures);
+            console.log(marketType + ' summary:', {
+                marketsCount: markets.length,
+                tickersCount: tickerSymbols.length,
+                missingFromFetchTickersCount: missingFromFetchTickers.length,
+                fetchTickerFailuresCount: fetchTickerFailures.length,
+            });
+        }
     }
     catch (error) {
-        console.error('Test failed:', error);
-        process.exitCode = 1;
+        console.error('Error during testing bitwana:', error);
     }
     finally {
-        await exchange.close();
+        if (exchange.close) {
+            await exchange.close();
+        }
     }
 }
-void main();
+testBitwana();
