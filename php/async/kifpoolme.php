@@ -314,8 +314,8 @@ class kifpoolme extends Exchange {
         $ask = null;
         if ($quoteId === 'IRT') {
             // For IRT => priceSellIRT is the sell $price ($bid), priceBuyIRT is the buy $price ($ask)
-            $bid = $this->safe_number($ticker, 'priceSellIRT');
-            $ask = $this->safe_number($ticker, 'priceBuyIRT');
+            $ask = $this->safe_number($ticker, 'priceSellIRT');
+            $bid = $this->safe_number($ticker, 'priceBuyIRT');
             $last = $ask;
         } else {
             // For USDT => $price is in USDT

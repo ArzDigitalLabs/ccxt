@@ -226,7 +226,7 @@ class changefa extends Exchange["default"] {
         const buyPrice = this.safeNumber(ticker, 'buyPrice');
         const sellPrice = this.safeNumber(ticker, 'sellPrice');
         if ((buyPrice !== undefined) && (sellPrice !== undefined)) {
-            last = (buyPrice + sellPrice) / 2;
+            last = sellPrice;
         }
         const weeklyPriceLog = this.safeList(ticker, 'weeklyPriceLog', []);
         let high = undefined;

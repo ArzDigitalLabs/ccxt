@@ -87,7 +87,7 @@ class hamtapay(Exchange, ImplicitAPI):
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/hamtapay/64x64.png',
                 'api': {
-                    'public': 'https://api.hamtapay.org',
+                    'public': 'https://oapi.hamtapay.org',
                 },
                 'www': 'https://hamtapay.net/',
                 'doc': [
@@ -98,7 +98,6 @@ class hamtapay(Exchange, ImplicitAPI):
                 'public': {
                     'get': {
                         '/financial/api/market': 1,
-                        '/financial/api/vitrin/prices': 1,
                     },
                 },
             },
@@ -115,7 +114,7 @@ class hamtapay(Exchange, ImplicitAPI):
     async def fetch_markets(self, params={}) -> List[Market]:
         """
         retrieves data on all markets for hamtapay
-        https://api.hamtapay.org/financial/api/market
+        https://oapi.hamtapay.org/financial/api/market
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict[]: an array of objects representing market data
         """
@@ -151,8 +150,8 @@ class hamtapay(Exchange, ImplicitAPI):
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': None,
-            'type': 'otc',
-            'spot': False,
+            'type': 'spot',
+            'spot': True,
             'margin': False,
             'swap': False,
             'future': False,
@@ -167,8 +166,8 @@ class hamtapay(Exchange, ImplicitAPI):
             'strike': None,
             'optionType': None,
             'precision': {
-                'amount': None,
-                'price': None,
+                'amount': self.safe_integer(market, 'amount_decimals'),
+                'price': self.safe_integer(market, 'price_decimals'),
             },
             'limits': {
                 'leverage': {
@@ -195,7 +194,7 @@ class hamtapay(Exchange, ImplicitAPI):
     async def fetch_tickers(self, symbols: Strings = None, params={}) -> Tickers:
         """
         fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
-        https://api.hamtapay.org/financial/api/vitrin/prices
+        https://oapi.hamtapay.org/financial/api/market
         :param str[]|None symbols: unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict: a dictionary of `ticker structures <https://docs.ccxt.com/#/?id=ticker-structure>`
@@ -203,69 +202,50 @@ class hamtapay(Exchange, ImplicitAPI):
         await self.load_markets()
         if symbols is not None:
             symbols = self.market_symbols(symbols)
-        response = await self.publicGetFinancialApiVitrinPrices(params)
-        data = self.safe_dict(response, 'data', {})
+        response = await self.publicGetFinancialApiMarket(params)
+        data = self.safe_list(response, 'data', [])
         result = {}
-        quotes = ['IRT', 'USDT']
-        for i in range(0, len(quotes)):
-            current_qoute = quotes[i]
-            corresponding_data = self.safe_dict(data, current_qoute, {})
-            baseSymbols = list(corresponding_data.keys())
-            for j in range(0, len(baseSymbols)):
-                current_base = baseSymbols[j]
-                current_ticker = corresponding_data[current_base]
-                current_ticker['base'] = current_base
-                current_ticker['quote'] = current_qoute
-                current_ticker['symbol'] = current_base + '/' + current_qoute
-                current_ticker['id'] = current_base + '-' + current_qoute
-                result[current_ticker['symbol']] = self.parse_ticker(current_ticker)
+        for i in range(0, len(data)):
+            ticker = self.parse_ticker(data[i])
+            result[ticker['symbol']] = ticker
         return self.filter_by_array_tickers(result, 'symbol', symbols)
 
     async def fetch_ticker(self, symbol: str, params={}) -> Ticker:
         """
         fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
-        https://hamtapay.com/management/all-coins/?format=json
+        https://oapi.hamtapay.org/financial/api/market
         :param str symbol: unified symbol of the market to fetch the ticker for
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict: a `ticker structure <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
-        ticker = await self.fetch_tickers([symbol])
-        return ticker[symbol]
+        tickers = await self.fetch_tickers([symbol], params)
+        return tickers[symbol]
 
     def parse_ticker(self, ticker, market: Market = None) -> Ticker:
-        # {
-        #     "id": "USDT-IRT",
-        #     "symbol": "USDT/IRT",
-        #     "base": "USDT",
-        #     "quote": "IRT",
-        #     "min_price_24h": "111702",
-        #     "max_price_24h": "115872",
-        #     "market_price": "115942",
-        #     "buy_price": "117101",
-        #     "sell_price": "114782",
-        #     "change_rate_24h": 3.29,
-        #     "amount_decimals": 0,
-        #     "price_decimals": 0,
-        #     "status": "ACTIVE"
-        # }
-        marketType = 'otc'
-        marketId = self.safe_string(ticker, 'id')
+        marketType = 'spot'
+        marketId = self.safe_string_2(ticker, 'id', 'symbol')
+        baseId = self.safe_string(ticker, 'base')
+        quoteId = self.safe_string(ticker, 'quote')
+        base = self.safe_currency_code(baseId)
+        quote = self.safe_currency_code(quoteId)
         symbol = self.safe_symbol(marketId, market, None, marketType)
-        last = self.safe_float(ticker, 'buy_price', 0)
-        change = self.safe_float(ticker, 'change_rate_24h', 0)
-        ask = self.safe_float(ticker, 'buy_price', 0)
-        bid = self.safe_float(ticker, 'sell_price', 0)
-        high = self.safe_float(ticker, 'max_price_24h', 0)
-        low = self.safe_float(ticker, 'min_price_24h', 0)
+        if (baseId is not None) and (quoteId is not None):
+            symbol = base + '/' + quote
+        last = self.safe_float(ticker, 'last_price')
+        baseVolume = self.safe_float(ticker, 'volume_24h')
+        percentage = self.safe_float(ticker, 'percent_change_24h')
+        quoteVolume = None
+        if (baseVolume is not None) and (last is not None):
+            quoteVolume = baseVolume * last
         return self.safe_ticker({
             'symbol': symbol,
             'timestamp': None,
             'datetime': None,
-            'high': high,
-            'low': low,
-            'bid': bid,
+            'high': None,
+            'low': None,
+            'bid': None,
             'bidVolume': None,
-            'ask': ask,
+            'ask': None,
             'askVolume': None,
             'vwap': None,
             'open': None,
@@ -273,15 +253,21 @@ class hamtapay(Exchange, ImplicitAPI):
             'last': last,
             'previousClose': None,
             'change': None,
-            'percentage': change,
+            'percentage': percentage,
             'average': None,
-            'baseVolume': None,
-            'quoteVolume': None,
+            'baseVolume': baseVolume,
+            'quoteVolume': quoteVolume,
             'info': ticker,
         }, market)
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):
-        url = self.urls['api']['public'] + '/' + path
+        query = self.omit(params, self.extract_params(path))
+        normalizedPath = path
+        while(len(normalizedPath) and normalizedPath[0] == '/'):
+            normalizedPath = normalizedPath[1:]
+        url = self.urls['api']['public'] + '/' + self.implode_params(normalizedPath, params)
+        if query:
+            url += '?' + self.urlencode(query)
         headers = {
             'Content-Type': 'application/json',
             'Origin': 'https://hamtapay.net',
