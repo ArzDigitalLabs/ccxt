@@ -5,8 +5,8 @@
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
 import ccxt from './ccxt';
-async function testBitwana() {
-    const exchange = new ccxt.bitwana({
+async function testhamtapay() {
+    const exchange = new ccxt.hamtapay({
         enableRateLimit: true,
         timeout: 20000,
     });
@@ -82,7 +82,7 @@ async function testBitwana() {
         }
     }
     catch (error) {
-        console.error('Error during testing bitwana:', error);
+        console.error('Error during testing hamtapay:', error);
     }
     finally {
         if (exchange.close) {
@@ -90,4 +90,4 @@ async function testBitwana() {
         }
     }
 }
-testBitwana();
+testhamtapay();
