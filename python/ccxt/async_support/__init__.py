@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.12.2'
+__version__ = '4.13.1'
 
 # -----------------------------------------------------------------------------
 
@@ -102,6 +102,7 @@ from ccxt.async_support.bitteam import bitteam                                  
 from ccxt.async_support.bittrade import bittrade                                # noqa: F401
 from ccxt.async_support.bitunix import bitunix                                  # noqa: F401
 from ccxt.async_support.bitvavo import bitvavo                                  # noqa: F401
+from ccxt.async_support.bitwana import bitwana                                  # noqa: F401
 from ccxt.async_support.blockchaincom import blockchaincom                      # noqa: F401
 from ccxt.async_support.blofin import blofin                                    # noqa: F401
 from ccxt.async_support.btcalpha import btcalpha                                # noqa: F401
@@ -255,6 +256,7 @@ exchanges = [
     'bittrade',
     'bitunix',
     'bitvavo',
+    'bitwana',
     'blockchaincom',
     'blofin',
     'btcalpha',

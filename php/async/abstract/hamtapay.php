@@ -10,13 +10,7 @@ abstract class hamtapay extends \ccxt\async\Exchange {
     public function public_get_financial_api_market($params = array()) {
         return $this->request('/financial/api/market', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
-    public function public_get_financial_api_vitrin_prices($params = array()) {
-        return $this->request('/financial/api/vitrin/prices', 'public', 'GET', $params, null, null, array("cost" => 1));
-    }
     public function publicGetFinancialApiMarket($params = array()) {
         return $this->request('/financial/api/market', 'public', 'GET', $params, null, null, array("cost" => 1));
-    }
-    public function publicGetFinancialApiVitrinPrices($params = array()) {
-        return $this->request('/financial/api/vitrin/prices', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
 }

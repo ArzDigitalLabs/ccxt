@@ -16,9 +16,4 @@ public partial class hamtapay : Exchange
         return await this.callAsync ("publicGetFinancialApiMarket",parameters);
     }
 
-    public async Task<object> publicGetFinancialApiVitrinPrices (object parameters = null)
-    {
-        return await this.callAsync ("publicGetFinancialApiVitrinPrices",parameters);
-    }
-
 }

@@ -50,6 +50,7 @@ var bitteam = require('./src/bitteam.js');
 var bittrade = require('./src/bittrade.js');
 var bitunix = require('./src/bitunix.js');
 var bitvavo = require('./src/bitvavo.js');
+var bitwana = require('./src/bitwana.js');
 var blockchaincom = require('./src/blockchaincom.js');
 var blofin = require('./src/blofin.js');
 var btcalpha = require('./src/btcalpha.js');
@@ -239,7 +240,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.12.2';
+const version = '4.13.1';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -280,6 +281,7 @@ const exchanges = {
     'bittrade': bittrade["default"],
     'bitunix': bitunix["default"],
     'bitvavo': bitvavo["default"],
+    'bitwana': bitwana["default"],
     'blockchaincom': blockchaincom["default"],
     'blofin': blofin["default"],
     'btcalpha': btcalpha["default"],
@@ -558,6 +560,7 @@ exports.bitteam = bitteam["default"];
 exports.bittrade = bittrade["default"];
 exports.bitunix = bitunix["default"];
 exports.bitvavo = bitvavo["default"];
+exports.bitwana = bitwana["default"];
 exports.blockchaincom = blockchaincom["default"];
 exports.blofin = blofin["default"];
 exports.btcalpha = btcalpha["default"];

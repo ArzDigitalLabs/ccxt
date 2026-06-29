@@ -86,7 +86,7 @@ class hamtapay extends Exchange {
             'urls' => array(
                 'logo' => 'https://cdn.arz.digital/cr-odin/img/exchanges/hamtapay/64x64.png',
                 'api' => array(
-                    'public' => 'https://api.hamtapay.org',
+                    'public' => 'https://oapi.hamtapay.org',
                 ),
                 'www' => 'https://hamtapay.net/',
                 'doc' => array(
@@ -97,7 +97,6 @@ class hamtapay extends Exchange {
                 'public' => array(
                     'get' => array(
                         '/financial/api/market' => 1,
-                        '/financial/api/vitrin/prices' => 1,
                     ),
                 ),
             ),
@@ -115,7 +114,7 @@ class hamtapay extends Exchange {
     public function fetch_markets($params = array ()): array {
         /**
          * retrieves data on all markets for hamtapay
-         * @see https://api.hamtapay.org/financial/api/market
+         * @see https://oapi.hamtapay.org/financial/api/market
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
          * @return {array[]} an array of objects representing $market data
          */
@@ -153,8 +152,8 @@ class hamtapay extends Exchange {
             'baseId' => $baseId,
             'quoteId' => $quoteId,
             'settleId' => null,
-            'type' => 'otc',
-            'spot' => false,
+            'type' => 'spot',
+            'spot' => true,
             'margin' => false,
             'swap' => false,
             'future' => false,
@@ -169,8 +168,8 @@ class hamtapay extends Exchange {
             'strike' => null,
             'optionType' => null,
             'precision' => array(
-                'amount' => null,
-                'price' => null,
+                'amount' => $this->safe_integer($market, 'amount_decimals'),
+                'price' => $this->safe_integer($market, 'price_decimals'),
             ),
             'limits' => array(
                 'leverage' => array(
@@ -198,82 +197,64 @@ class hamtapay extends Exchange {
     public function fetch_tickers(?array $symbols = null, $params = array ()): array {
         /**
          * fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
-         * @see https://api.hamtapay.org/financial/api/vitrin/prices
-         * @param {string[]|null} $symbols unified $symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
+         * @see https://oapi.hamtapay.org/financial/api/market
+         * @param {string[]|null} $symbols unified $symbols of the markets to fetch the $ticker for, all market tickers are returned if not assigned
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
-         * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=ticker-structure ticker structures~
+         * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structures~
          */
         $this->load_markets();
         if ($symbols !== null) {
             $symbols = $this->market_symbols($symbols);
         }
-        $response = $this->publicGetFinancialApiVitrinPrices ($params);
-        $data = $this->safe_dict($response, 'data', array());
+        $response = $this->publicGetFinancialApiMarket ($params);
+        $data = $this->safe_list($response, 'data', array());
         $result = array();
-        $quotes = array( 'IRT', 'USDT' );
-        for ($i = 0; $i < count($quotes); $i++) {
-            $current_qoute = $quotes[$i];
-            $corresponding_data = $this->safe_dict($data, $current_qoute, array());
-            $baseSymbols = is_array($corresponding_data) ? array_keys($corresponding_data) : array();
-            for ($j = 0; $j < count($baseSymbols); $j++) {
-                $current_base = $baseSymbols[$j];
-                $current_ticker = $corresponding_data[$current_base];
-                $current_ticker['base'] = $current_base;
-                $current_ticker['quote'] = $current_qoute;
-                $current_ticker['symbol'] = $current_base . '/' . $current_qoute;
-                $current_ticker['id'] = $current_base . '-' . $current_qoute;
-                $result[$current_ticker['symbol']] = $this->parse_ticker($current_ticker);
-            }
+        for ($i = 0; $i < count($data); $i++) {
+            $ticker = $this->parse_ticker($data[$i]);
+            $result[$ticker['symbol']] = $ticker;
         }
         return $this->filter_by_array_tickers($result, 'symbol', $symbols);
     }
 
     public function fetch_ticker(string $symbol, $params = array ()): array {
         /**
-         * fetches a price $ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
-         * @see https://hamtapay.com/management/all-coins/?format=json
-         * @param {string} $symbol unified $symbol of the market to fetch the $ticker for
+         * fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
+         * @see https://oapi.hamtapay.org/financial/api/market
+         * @param {string} $symbol unified $symbol of the market to fetch the ticker for
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
-         * @return {array} a ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structure~
+         * @return {array} a ~@link https://docs.ccxt.com/#/?id=ticker-structure ticker structure~
          */
-        $ticker = $this->fetch_tickers(array( $symbol ));
-        return $ticker[$symbol];
+        $tickers = $this->fetch_tickers(array( $symbol ), $params);
+        return $tickers[$symbol];
     }
 
     public function parse_ticker($ticker, ?array $market = null): array {
-        // {
-        //     "id" => "USDT-IRT",
-        //     "symbol" => "USDT/IRT",
-        //     "base" => "USDT",
-        //     "quote" => "IRT",
-        //     "min_price_24h" => "111702",
-        //     "max_price_24h" => "115872",
-        //     "market_price" => "115942",
-        //     "buy_price" => "117101",
-        //     "sell_price" => "114782",
-        //     "change_rate_24h" => 3.29,
-        //     "amount_decimals" => 0,
-        //     "price_decimals" => 0,
-        //     "status" => "ACTIVE"
-        // }
-        $marketType = 'otc';
-        $marketId = $this->safe_string($ticker, 'id');
+        $marketType = 'spot';
+        $marketId = $this->safe_string_2($ticker, 'id', 'symbol');
+        $baseId = $this->safe_string($ticker, 'base');
+        $quoteId = $this->safe_string($ticker, 'quote');
+        $base = $this->safe_currency_code($baseId);
+        $quote = $this->safe_currency_code($quoteId);
         $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
-        $last = $this->safe_float($ticker, 'buy_price', 0);
-        $change = $this->safe_float($ticker, 'change_rate_24h', 0);
-        $ask = $this->safe_float($ticker, 'buy_price', 0);
-        $bid = $this->safe_float($ticker, 'sell_price', 0);
-        $high = $this->safe_float($ticker, 'max_price_24h', 0);
-        $low = $this->safe_float($ticker, 'min_price_24h', 0);
+        if (($baseId !== null) && ($quoteId !== null)) {
+            $symbol = $base . '/' . $quote;
+        }
+        $last = $this->safe_float($ticker, 'last_price');
+        $baseVolume = $this->safe_float($ticker, 'volume_24h');
+        $percentage = $this->safe_float($ticker, 'percent_change_24h');
+        $quoteVolume = null;
+        if (($baseVolume !== null) && ($last !== null)) {
+            $quoteVolume = $baseVolume * $last;
+        }
         return $this->safe_ticker(array(
             'symbol' => $symbol,
             'timestamp' => null,
             'datetime' => null,
-            'high' => $high,
-            'low' => $low,
-            'bid' => $bid,
+            'high' => null,
+            'low' => null,
+            'bid' => null,
             'bidVolume' => null,
-            'ask' => $ask,
+            'ask' => null,
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
@@ -281,16 +262,24 @@ class hamtapay extends Exchange {
             'last' => $last,
             'previousClose' => null,
             'change' => null,
-            'percentage' => $change,
+            'percentage' => $percentage,
             'average' => null,
-            'baseVolume' => null,
-            'quoteVolume' => null,
+            'baseVolume' => $baseVolume,
+            'quoteVolume' => $quoteVolume,
             'info' => $ticker,
         ), $market);
     }
 
     public function sign($path, $api = 'public', $method = 'GET', $params = array (), $headers = null, $body = null) {
-        $url = $this->urls['api']['public'] . '/' . $path;
+        $query = $this->omit($params, $this->extract_params($path));
+        $normalizedPath = $path;
+        while (strlen($normalizedPath) && $normalizedPath[0] === '/') {
+            $normalizedPath = mb_substr($normalizedPath, 1);
+        }
+        $url = $this->urls['api']['public'] . '/' . $this->implode_params($normalizedPath, $params);
+        if ($query) {
+            $url .= '?' . $this->urlencode($query);
+        }
         $headers = array(
             'Content-Type' => 'application/json',
             'Origin' => 'https://hamtapay.net',

@@ -87,7 +87,7 @@ export default class hamtapay extends Exchange {
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/hamtapay/64x64.png',
                 'api': {
-                    'public': 'https://api.hamtapay.org',
+                    'public': 'https://oapi.hamtapay.org',
                 },
                 'www': 'https://hamtapay.net/',
                 'doc': [
@@ -98,7 +98,6 @@ export default class hamtapay extends Exchange {
                 'public': {
                     'get': {
                         '/financial/api/market': 1,
-                        '/financial/api/vitrin/prices': 1,
                     },
                 },
             },
@@ -118,7 +117,7 @@ export default class hamtapay extends Exchange {
          * @method
          * @name hamtapay#fetchMarkets
          * @description retrieves data on all markets for hamtapay
-         * @see https://api.hamtapay.org/financial/api/market
+         * @see https://oapi.hamtapay.org/financial/api/market
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object[]} an array of objects representing market data
          */
@@ -156,8 +155,8 @@ export default class hamtapay extends Exchange {
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': undefined,
-            'type': 'otc',
-            'spot': false,
+            'type': 'spot',
+            'spot': true,
             'margin': false,
             'swap': false,
             'future': false,
@@ -172,8 +171,8 @@ export default class hamtapay extends Exchange {
             'strike': undefined,
             'optionType': undefined,
             'precision': {
-                'amount': undefined,
-                'price': undefined,
+                'amount': this.safeInteger (market, 'amount_decimals'),
+                'price': this.safeInteger (market, 'price_decimals'),
             },
             'limits': {
                 'leverage': {
@@ -203,7 +202,7 @@ export default class hamtapay extends Exchange {
          * @method
          * @name hamtapay#fetchTickers
          * @description fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each market
-         * @see https://api.hamtapay.org/financial/api/vitrin/prices
+         * @see https://oapi.hamtapay.org/financial/api/market
          * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
@@ -212,23 +211,12 @@ export default class hamtapay extends Exchange {
         if (symbols !== undefined) {
             symbols = this.marketSymbols (symbols);
         }
-        const response = await this.publicGetFinancialApiVitrinPrices (params);
-        const data = this.safeDict (response, 'data', {});
+        const response = await this.publicGetFinancialApiMarket (params);
+        const data = this.safeList (response, 'data', []);
         const result = {};
-        const quotes = [ 'IRT', 'USDT' ];
-        for (let i = 0; i < quotes.length; i++) {
-            const current_qoute = quotes[i];
-            const corresponding_data = this.safeDict (data, current_qoute, {});
-            const baseSymbols = Object.keys (corresponding_data);
-            for (let j = 0; j < baseSymbols.length; j++) {
-                const current_base = baseSymbols[j];
-                const current_ticker = corresponding_data[current_base];
-                current_ticker['base'] = current_base;
-                current_ticker['quote'] = current_qoute;
-                current_ticker['symbol'] = current_base + '/' + current_qoute;
-                current_ticker['id'] = current_base + '-' + current_qoute;
-                result[current_ticker['symbol']] = this.parseTicker (current_ticker);
-            }
+        for (let i = 0; i < data.length; i++) {
+            const ticker = this.parseTicker (data[i]);
+            result[ticker['symbol']] = ticker;
         }
         return this.filterByArrayTickers (result, 'symbol', symbols);
     }
@@ -238,49 +226,42 @@ export default class hamtapay extends Exchange {
          * @method
          * @name hamtapay#fetchTicker
          * @description fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
-         * @see https://hamtapay.com/management/all-coins/?format=json
+         * @see https://oapi.hamtapay.org/financial/api/market
          * @param {string} symbol unified symbol of the market to fetch the ticker for
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
-        const ticker = await this.fetchTickers ([ symbol ]);
-        return ticker[symbol];
+        const tickers = await this.fetchTickers ([ symbol ], params);
+        return tickers[symbol];
     }
 
     parseTicker (ticker, market: Market = undefined): Ticker {
-        // {
-        //     "id": "USDT-IRT",
-        //     "symbol": "USDT/IRT",
-        //     "base": "USDT",
-        //     "quote": "IRT",
-        //     "min_price_24h": "111702",
-        //     "max_price_24h": "115872",
-        //     "market_price": "115942",
-        //     "buy_price": "117101",
-        //     "sell_price": "114782",
-        //     "change_rate_24h": 3.29,
-        //     "amount_decimals": 0,
-        //     "price_decimals": 0,
-        //     "status": "ACTIVE"
-        // }
-        const marketType = 'otc';
-        const marketId = this.safeString (ticker, 'id');
-        const symbol = this.safeSymbol (marketId, market, undefined, marketType);
-        const last = this.safeFloat (ticker, 'buy_price', 0);
-        const change = this.safeFloat (ticker, 'change_rate_24h', 0);
-        const ask = this.safeFloat (ticker, 'buy_price', 0);
-        const bid = this.safeFloat (ticker, 'sell_price', 0);
-        const high = this.safeFloat (ticker, 'max_price_24h', 0);
-        const low = this.safeFloat (ticker, 'min_price_24h', 0);
+        const marketType = 'spot';
+        const marketId = this.safeString2 (ticker, 'id', 'symbol');
+        const baseId = this.safeString (ticker, 'base');
+        const quoteId = this.safeString (ticker, 'quote');
+        const base = this.safeCurrencyCode (baseId);
+        const quote = this.safeCurrencyCode (quoteId);
+        let symbol = this.safeSymbol (marketId, market, undefined, marketType);
+        if ((baseId !== undefined) && (quoteId !== undefined)) {
+            symbol = base + '/' + quote;
+        }
+        const last = this.safeFloat (ticker, 'last_price');
+        const baseVolume = this.safeFloat (ticker, 'volume_24h');
+        const percentage = this.safeFloat (ticker, 'percent_change_24h');
+        let quoteVolume = undefined;
+        if ((baseVolume !== undefined) && (last !== undefined)) {
+            quoteVolume = baseVolume * last;
+        }
         return this.safeTicker ({
             'symbol': symbol,
             'timestamp': undefined,
             'datetime': undefined,
-            'high': high,
-            'low': low,
-            'bid': bid,
+            'high': undefined,
+            'low': undefined,
+            'bid': undefined,
             'bidVolume': undefined,
-            'ask': ask,
+            'ask': undefined,
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
@@ -288,16 +269,24 @@ export default class hamtapay extends Exchange {
             'last': last,
             'previousClose': undefined,
             'change': undefined,
-            'percentage': change,
+            'percentage': percentage,
             'average': undefined,
-            'baseVolume': undefined,
-            'quoteVolume': undefined,
+            'baseVolume': baseVolume,
+            'quoteVolume': quoteVolume,
             'info': ticker,
         }, market);
     }
 
     sign (path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
-        const url = this.urls['api']['public'] + '/' + path;
+        const query = this.omit (params, this.extractParams (path));
+        let normalizedPath = path;
+        while (normalizedPath.length && normalizedPath[0] === '/') {
+            normalizedPath = normalizedPath.slice (1);
+        }
+        let url = this.urls['api']['public'] + '/' + this.implodeParams (normalizedPath, params);
+        if (Object.keys (query).length) {
+            url += '?' + this.urlencode (query);
+        }
         headers = {
             'Content-Type': 'application/json',
             'Origin': 'https://hamtapay.net',

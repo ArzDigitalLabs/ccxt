@@ -15,6 +15,7 @@ ccxt/arzplus.py
 ccxt/ascendex.py
 ccxt/asretether.py
 ccxt/bequant.py
+ccxt/bidarz.py
 ccxt/bigone.py
 ccxt/binance.py
 ccxt/binancecoinm.py
@@ -53,6 +54,7 @@ ccxt/bybit.py
 ccxt/bydfi.py
 ccxt/cafearz.py
 ccxt/cex.py
+ccxt/changefa.py
 ccxt/coinbase.py
 ccxt/coinbaseadvanced.py
 ccxt/coinbaseexchange.py
@@ -121,6 +123,7 @@ ccxt/okx.py
 ccxt/okxus.py
 ccxt/ompfinex.py
 ccxt/onetrading.py
+ccxt/ourbit.py
 ccxt/oxfun.py
 ccxt/p2b.py
 ccxt/paradex.py
@@ -164,6 +167,7 @@ ccxt/abstract/arzplus.py
 ccxt/abstract/ascendex.py
 ccxt/abstract/asretether.py
 ccxt/abstract/bequant.py
+ccxt/abstract/bidarz.py
 ccxt/abstract/bigone.py
 ccxt/abstract/binance.py
 ccxt/abstract/binancecoinm.py
@@ -202,6 +206,7 @@ ccxt/abstract/bybit.py
 ccxt/abstract/bydfi.py
 ccxt/abstract/cafearz.py
 ccxt/abstract/cex.py
+ccxt/abstract/changefa.py
 ccxt/abstract/coinbase.py
 ccxt/abstract/coinbaseadvanced.py
 ccxt/abstract/coinbaseexchange.py
@@ -270,6 +275,7 @@ ccxt/abstract/okx.py
 ccxt/abstract/okxus.py
 ccxt/abstract/ompfinex.py
 ccxt/abstract/onetrading.py
+ccxt/abstract/ourbit.py
 ccxt/abstract/oxfun.py
 ccxt/abstract/p2b.py
 ccxt/abstract/paradex.py
@@ -313,6 +319,7 @@ ccxt/async_support/arzplus.py
 ccxt/async_support/ascendex.py
 ccxt/async_support/asretether.py
 ccxt/async_support/bequant.py
+ccxt/async_support/bidarz.py
 ccxt/async_support/bigone.py
 ccxt/async_support/binance.py
 ccxt/async_support/binancecoinm.py
@@ -351,6 +358,7 @@ ccxt/async_support/bybit.py
 ccxt/async_support/bydfi.py
 ccxt/async_support/cafearz.py
 ccxt/async_support/cex.py
+ccxt/async_support/changefa.py
 ccxt/async_support/coinbase.py
 ccxt/async_support/coinbaseadvanced.py
 ccxt/async_support/coinbaseexchange.py
@@ -419,6 +427,7 @@ ccxt/async_support/okx.py
 ccxt/async_support/okxus.py
 ccxt/async_support/ompfinex.py
 ccxt/async_support/onetrading.py
+ccxt/async_support/ourbit.py
 ccxt/async_support/oxfun.py
 ccxt/async_support/p2b.py
 ccxt/async_support/paradex.py
