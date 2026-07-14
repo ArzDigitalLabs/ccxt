@@ -1,0 +1,313 @@
+//  ---------------------------------------------------------------------------
+
+import Exchange from './base/Exchange.js';
+import { Market, Strings, Ticker, Tickers } from './base/types.js';
+
+//  ---------------------------------------------------------------------------
+
+/**
+ * @class saraf
+ * @augments Exchange
+ * @description Set rateLimit to 1000 if fully verified
+ */
+export default class saraf extends Exchange {
+    describe (): any {
+        return this.deepExtend (super.describe (), {
+            'id': 'saraf',
+            'name': 'Saraf',
+            'countries': [ 'IR' ],
+            'rateLimit': 1000,
+            'version': '3',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'addMargin': false,
+                'cancelAllOrders': false,
+                'cancelOrder': false,
+                'cancelOrders': false,
+                'createDepositAddress': false,
+                'createOrder': false,
+                'createStopLimitOrder': false,
+                'createStopMarketOrder': false,
+                'createStopOrder': false,
+                'editOrder': false,
+                'fetchBalance': false,
+                'fetchBorrowInterest': false,
+                'fetchBorrowRateHistories': false,
+                'fetchBorrowRateHistory': false,
+                'fetchClosedOrders': false,
+                'fetchCrossBorrowRate': false,
+                'fetchCrossBorrowRates': false,
+                'fetchCurrencies': false,
+                'fetchDepositAddress': false,
+                'fetchDeposits': false,
+                'fetchFundingHistory': false,
+                'fetchFundingRate': false,
+                'fetchFundingRateHistory': false,
+                'fetchFundingRates': false,
+                'fetchIndexOHLCV': false,
+                'fetchIsolatedBorrowRate': false,
+                'fetchIsolatedBorrowRates': false,
+                'fetchL2OrderBook': false,
+                'fetchL3OrderBook': false,
+                'fetchLedger': false,
+                'fetchLedgerEntry': false,
+                'fetchLeverageTiers': false,
+                'fetchMarkets': true,
+                'fetchMarkOHLCV': false,
+                'fetchMyTrades': false,
+                'fetchOHLCV': false,
+                'fetchOpenInterestHistory': false,
+                'fetchOpenOrders': false,
+                'fetchOrder': false,
+                'fetchOrderBook': false,
+                'fetchOrders': false,
+                'fetchOrderTrades': 'emulated',
+                'fetchPositions': false,
+                'fetchPremiumIndexOHLCV': false,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'fetchTime': false,
+                'fetchTrades': false,
+                'fetchTradingFee': false,
+                'fetchTradingFees': false,
+                'fetchWithdrawals': false,
+                'otc': true,
+                'setLeverage': false,
+                'setMarginMode': false,
+                'transfer': false,
+                'withdraw': false,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/saraf/64x64.png',
+                'api': {
+                    'public': 'https://api.saraf.app',
+                },
+                'www': 'https://saraf.app',
+                'doc': [
+                    'https://saraf.app',
+                ],
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'v3/prices/crypto': 1,
+                    },
+                },
+            },
+            'fees': {
+                'trading': {
+                    'tierBased': false,
+                    'percentage': true,
+                    'maker': this.parseNumber ('0'),
+                    'taker': this.parseNumber ('0'),
+                },
+            },
+        });
+    }
+
+    parseMarket (market): Market {
+        const baseId = this.safeString (market, 's');
+        const quoteId = 'IRT';
+        const base = this.safeCurrencyCode (baseId);
+        const quote = this.safeCurrencyCode (quoteId);
+        return {
+            'id': baseId,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': baseId,
+            'quoteId': quoteId,
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': this.safeBool (market, 'ct', true),
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': this.safeInteger (market, 'r'),
+            },
+            'limits': {
+                'leverage': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'amount': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'price': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'cost': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+            },
+            'created': undefined,
+            'info': market,
+        };
+    }
+
+    async fetchMarkets (params = {}): Promise<Market[]> {
+        /**
+         * @method
+         * @name saraf#fetchMarkets
+         * @description retrieves data on all markets for saraf
+         * @see https://api.saraf.app/v3/prices/crypto
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object[]} an array of objects representing market data
+         */
+        const response = await (this as any).publicGetV3PricesCrypto (params);
+        const price = this.safeDict (response, 'price', {});
+        const items = this.safeDict (price, 'Items', {});
+        const lastUpdateTime = this.safeInteger (price, 'lastUpdateTime');
+        const itemKeys = Object.keys (items);
+        const result = [];
+        for (let i = 0; i < itemKeys.length; i++) {
+            const item = this.safeDict (items, itemKeys[i], {});
+            item['lastUpdateTime'] = lastUpdateTime;
+            const baseId = this.safeString (item, 's');
+            if ((baseId === undefined) || (baseId === 'IRT')) {
+                continue;
+            }
+            result.push (this.parseMarket (item));
+        }
+        return result;
+    }
+
+    async fetchTickers (symbols: Strings = undefined, params = {}): Promise<Tickers> {
+        /**
+         * @method
+         * @name saraf#fetchTickers
+         * @description fetches price tickers for multiple markets
+         * @see https://api.saraf.app/v3/prices/crypto
+         * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
+         */
+        await this.loadMarkets ();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols (symbols);
+        }
+        const response = await (this as any).publicGetV3PricesCrypto (params);
+        const price = this.safeDict (response, 'price', {});
+        const items = this.safeDict (price, 'Items', {});
+        const lastUpdateTime = this.safeInteger (price, 'lastUpdateTime');
+        const itemKeys = Object.keys (items);
+        const result = {};
+        for (let i = 0; i < itemKeys.length; i++) {
+            const item = this.safeDict (items, itemKeys[i], {});
+            item['lastUpdateTime'] = lastUpdateTime;
+            const baseId = this.safeString (item, 's');
+            if ((baseId === undefined) || (baseId === 'IRT') || (baseId === 'FIXED')) {
+                continue;
+            }
+            const ticker = this.parseTicker (item);
+            result[ticker['symbol']] = ticker;
+        }
+        return this.filterByArrayTickers (result, 'symbol', symbols);
+    }
+
+    async fetchTicker (symbol: string, params = {}): Promise<Ticker> {
+        /**
+         * @method
+         * @name saraf#fetchTicker
+         * @description fetches a price ticker, a statistical calculation for a specific market
+         * @see https://api.saraf.app/v3/prices/crypto
+         * @param {string} symbol unified symbol of the market to fetch the ticker for
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
+         */
+        const tickers = await this.fetchTickers ([ symbol ], params);
+        return tickers[symbol];
+    }
+
+    parseTicker (ticker, market: Market = undefined): Ticker {
+        const baseId = this.safeString (ticker, 's');
+        const quoteId = 'IRT';
+        const base = this.safeCurrencyCode (baseId);
+        const quote = this.safeCurrencyCode (quoteId);
+        const symbol = base + '/' + quote;
+        const history = this.safeList (ticker, 'h', []);
+        let high = undefined;
+        let low = undefined;
+        let open = undefined;
+        if (history.length > 0) {
+            high = this.safeNumber (history, 0);
+            low = this.safeNumber (history, 0);
+            open = this.safeNumber (history, history.length - 1);
+            for (let i = 1; i < history.length; i++) {
+                const price = this.safeNumber (history, i);
+                high = Math.max (high, price);
+                low = Math.min (low, price);
+            }
+        }
+        const last = this.safeNumber (ticker, 'p');
+        const percentage = this.safeNumber (ticker, 'c');
+        const timestamp = this.safeInteger2 (ticker, 'ut', 'lastUpdateTime');
+        let change = undefined;
+        if ((last !== undefined) && (open !== undefined)) {
+            change = last - open;
+        }
+        if (market === undefined) {
+            market = this.safeMarketStructure (this.parseMarket (ticker));
+        }
+        return this.safeTicker ({
+            'symbol': symbol,
+            'timestamp': timestamp,
+            'datetime': this.iso8601 (timestamp),
+            'high': high,
+            'low': low,
+            'bid': undefined,
+            'bidVolume': undefined,
+            'ask': undefined,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': open,
+            'close': last,
+            'last': last,
+            'previousClose': undefined,
+            'change': change,
+            'percentage': percentage,
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': ticker,
+        }, market);
+    }
+
+    sign (path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        const query = this.omit (params, this.extractParams (path));
+        let url = this.urls['api'][api] + '/' + this.implodeParams (path, params);
+        if (Object.keys (query).length) {
+            url += '?' + this.urlencode (query);
+        }
+        headers = {
+            'Content-Type': 'application/json',
+        };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}

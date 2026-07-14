@@ -5,84 +5,80 @@
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
 import ccxt from './ccxt';
-async function testhamtapay() {
-    const exchange = new ccxt.hamtapay({
+async function testsaraf() {
+    const exchange = new ccxt.saraf({
         enableRateLimit: true,
         timeout: 20000,
     });
     try {
-        const types = ['spot', 'otc'];
-        for (let i = 0; i < types.length; i++) {
-            const marketType = types[i];
-            const params = { 'type': marketType };
-            const markets = await exchange.fetchMarkets(params);
-            console.log(marketType + ' markets count:', markets.length);
-            console.log(marketType + ' first markets:', markets.slice(0, 10).map((market) => ({
-                symbol: market.symbol,
-                id: market.id,
-                type: market.type,
-                active: market.active,
-                amountPrecision: market.precision && market.precision.amount,
-                pricePrecision: market.precision && market.precision.price,
-            })));
-            const tickers = await exchange.fetchTickers(undefined, params);
-            const tickerSymbols = Object.keys(tickers);
-            console.log(marketType + ' tickers count:', tickerSymbols.length);
-            const missingFromFetchTickers = [];
-            const fetchTickerFailures = [];
-            const sampleTickers = [];
-            for (let j = 0; j < markets.length; j++) {
-                const market = markets[j];
-                const symbol = market.symbol;
-                const tickerFromBulk = tickers[symbol];
-                if (tickerFromBulk === undefined) {
-                    missingFromFetchTickers.push(symbol);
-                    continue;
-                }
-                if (sampleTickers.length < 10) {
-                    sampleTickers.push({
-                        symbol: tickerFromBulk.symbol,
-                        type: market.type,
-                        last: tickerFromBulk.last,
-                        bid: tickerFromBulk.bid,
-                        ask: tickerFromBulk.ask,
-                        high: tickerFromBulk.high,
-                        low: tickerFromBulk.low,
-                        baseVolume: tickerFromBulk.baseVolume,
-                        quoteVolume: tickerFromBulk.quoteVolume,
-                    });
-                }
-                try {
-                    const singleTicker = await exchange.fetchTicker(symbol, params);
-                    console.log('checked ' + marketType + ' ticker:', {
-                        symbol: singleTicker.symbol,
-                        type: market.type,
-                        last: singleTicker.last,
-                        bid: singleTicker.bid,
-                        ask: singleTicker.ask,
-                    });
-                }
-                catch (error) {
-                    fetchTickerFailures.push({
-                        symbol,
-                        type: market.type,
-                        message: error instanceof Error ? error.message : String(error),
-                    });
-                }
+        const params = { 'type': 'otc' };
+        const markets = await exchange.fetchMarkets(params);
+        console.log('saraf markets count:', markets.length);
+        console.log('saraf first markets:', markets.slice(0, 10).map((market) => ({
+            symbol: market.symbol,
+            id: market.id,
+            type: market.type,
+            active: market.active,
+            amountPrecision: market.precision && market.precision.amount,
+            pricePrecision: market.precision && market.precision.price,
+        })));
+        const tickers = await exchange.fetchTickers(undefined, params);
+        const tickerSymbols = Object.keys(tickers);
+        console.log('saraf tickers count:', tickerSymbols.length);
+        const missingFromFetchTickers = [];
+        const fetchTickerFailures = [];
+        const sampleTickers = [];
+        for (let j = 0; j < markets.length; j++) {
+            const market = markets[j];
+            const symbol = market.symbol;
+            const tickerFromBulk = tickers[symbol];
+            if (tickerFromBulk === undefined) {
+                missingFromFetchTickers.push(symbol);
+                continue;
             }
-            console.log(marketType + ' sample bulk tickers:', sampleTickers);
-            console.log(marketType + ' missing from fetchTickers:', missingFromFetchTickers);
-            console.log(marketType + ' fetchTicker failures:', fetchTickerFailures);
-            console.log(marketType + ' summary:', {
-                marketsCount: markets.length,
-                tickersCount: tickerSymbols.length,
-                missingFromFetchTickersCount: missingFromFetchTickers.length,
-                fetchTickerFailuresCount: fetchTickerFailures.length,
-            });
+            if (sampleTickers.length < 10) {
+                sampleTickers.push({
+                    symbol: tickerFromBulk.symbol,
+                    type: market.type,
+                    last: tickerFromBulk.last,
+                    bid: tickerFromBulk.bid,
+                    ask: tickerFromBulk.ask,
+                    high: tickerFromBulk.high,
+                    low: tickerFromBulk.low,
+                    baseVolume: tickerFromBulk.baseVolume,
+                    quoteVolume: tickerFromBulk.quoteVolume,
+                });
+            }
+            try {
+                const singleTicker = await exchange.fetchTicker(symbol, params);
+                console.log('checked saraf ticker:', {
+                    symbol: singleTicker.symbol,
+                    type: market.type,
+                    last: singleTicker.last,
+                    bid: singleTicker.bid,
+                    ask: singleTicker.ask,
+                });
+            }
+            catch (error) {
+                fetchTickerFailures.push({
+                    symbol,
+                    type: market.type,
+                    message: error instanceof Error ? error.message : String(error),
+                });
+            }
         }
+        console.log('saraf sample bulk tickers:', sampleTickers);
+        console.log('saraf missing from fetchTickers:', missingFromFetchTickers);
+        console.log('saraf fetchTicker failures:', fetchTickerFailures);
+        console.log('saraf summary:', {
+            marketsCount: markets.length,
+            tickersCount: tickerSymbols.length,
+            missingFromFetchTickersCount: missingFromFetchTickers.length,
+            fetchTickerFailuresCount: fetchTickerFailures.length,
+        });
     }
     catch (error) {
-        console.error('Error during testing hamtapay:', error);
+        console.error('Error during testing saraf:', error);
     }
     finally {
         if (exchange.close) {
@@ -90,4 +86,4 @@ async function testhamtapay() {
         }
     }
 }
-testhamtapay();
+testsaraf();

@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.13.1'
+__version__ = '4.14.0'
 
 # ----------------------------------------------------------------------------
 
@@ -214,6 +214,7 @@ from ccxt.pooleno import pooleno                                      # noqa: F4
 from ccxt.probit import probit                                        # noqa: F401
 from ccxt.raastin import raastin                                      # noqa: F401
 from ccxt.ramzinex import ramzinex                                    # noqa: F401
+from ccxt.saraf import saraf                                          # noqa: F401
 from ccxt.sarmayex import sarmayex                                    # noqa: F401
 from ccxt.sarrafex import sarrafex                                    # noqa: F401
 from ccxt.tabdeal import tabdeal                                      # noqa: F401
@@ -368,6 +369,7 @@ exchanges = [
     'probit',
     'raastin',
     'ramzinex',
+    'saraf',
     'sarmayex',
     'sarrafex',
     'tabdeal',

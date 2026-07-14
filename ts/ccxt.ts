@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.13.1';
+const version = '4.14.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -176,6 +176,7 @@ import pooleno from  './src/pooleno.js'
 import probit from  './src/probit.js'
 import raastin from  './src/raastin.js'
 import ramzinex from  './src/ramzinex.js'
+import saraf from  './src/saraf.js'
 import sarmayex from  './src/sarmayex.js'
 import sarrafex from  './src/sarrafex.js'
 import tabdeal from  './src/tabdeal.js'
@@ -405,6 +406,7 @@ const exchanges = {
     'probit':                 probit,
     'raastin':                raastin,
     'ramzinex':               ramzinex,
+    'saraf':                  saraf,
     'sarmayex':               sarmayex,
     'sarrafex':               sarrafex,
     'tabdeal':                tabdeal,
@@ -777,6 +779,7 @@ export {
     probit,
     raastin,
     ramzinex,
+    saraf,
     sarmayex,
     sarrafex,
     tabdeal,

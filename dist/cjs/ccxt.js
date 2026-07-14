@@ -142,6 +142,7 @@ var pooleno = require('./src/pooleno.js');
 var probit = require('./src/probit.js');
 var raastin = require('./src/raastin.js');
 var ramzinex = require('./src/ramzinex.js');
+var saraf = require('./src/saraf.js');
 var sarmayex = require('./src/sarmayex.js');
 var sarrafex = require('./src/sarrafex.js');
 var tabdeal = require('./src/tabdeal.js');
@@ -240,7 +241,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.13.1';
+const version = '4.14.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -373,6 +374,7 @@ const exchanges = {
     'probit': probit["default"],
     'raastin': raastin["default"],
     'ramzinex': ramzinex["default"],
+    'saraf': saraf["default"],
     'sarmayex': sarmayex["default"],
     'sarrafex': sarrafex["default"],
     'tabdeal': tabdeal["default"],
@@ -652,6 +654,7 @@ exports.pooleno = pooleno["default"];
 exports.probit = probit["default"];
 exports.raastin = raastin["default"];
 exports.ramzinex = ramzinex["default"];
+exports.saraf = saraf["default"];
 exports.sarmayex = sarmayex["default"];
 exports.sarrafex = sarrafex["default"];
 exports.tabdeal = tabdeal["default"];

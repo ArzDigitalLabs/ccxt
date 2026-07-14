@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.13.1'
+__version__ = '4.14.0'
 
 # -----------------------------------------------------------------------------
 
@@ -194,6 +194,7 @@ from ccxt.async_support.pooleno import pooleno                                  
 from ccxt.async_support.probit import probit                                    # noqa: F401
 from ccxt.async_support.raastin import raastin                                  # noqa: F401
 from ccxt.async_support.ramzinex import ramzinex                                # noqa: F401
+from ccxt.async_support.saraf import saraf                                      # noqa: F401
 from ccxt.async_support.sarmayex import sarmayex                                # noqa: F401
 from ccxt.async_support.sarrafex import sarrafex                                # noqa: F401
 from ccxt.async_support.tabdeal import tabdeal                                  # noqa: F401
@@ -348,6 +349,7 @@ exchanges = [
     'probit',
     'raastin',
     'ramzinex',
+    'saraf',
     'sarmayex',
     'sarrafex',
     'tabdeal',
