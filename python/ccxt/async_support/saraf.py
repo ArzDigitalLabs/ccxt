@@ -100,7 +100,7 @@ class saraf(Exchange, ImplicitAPI):
             'api': {
                 'public': {
                     'get': {
-                        'v3/prices/crypto': 1,
+                        'v1/prices/listed': 1,
                     },
                 },
             },
@@ -176,7 +176,7 @@ class saraf(Exchange, ImplicitAPI):
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict[]: an array of objects representing market data
         """
-        response = await self.publicGetV3PricesCrypto(params)
+        response = await self.publicGetV1PricesListed(params)
         price = self.safe_dict(response, 'price', {})
         items = self.safe_dict(price, 'Items', {})
         lastUpdateTime = self.safe_integer(price, 'lastUpdateTime')
@@ -202,7 +202,7 @@ class saraf(Exchange, ImplicitAPI):
         await self.load_markets()
         if symbols is not None:
             symbols = self.market_symbols(symbols)
-        response = await self.publicGetV3PricesCrypto(params)
+        response = await self.publicGetV1PricesListed(params)
         price = self.safe_dict(response, 'price', {})
         items = self.safe_dict(price, 'Items', {})
         lastUpdateTime = self.safe_integer(price, 'lastUpdateTime')

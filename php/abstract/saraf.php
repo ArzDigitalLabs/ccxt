@@ -7,10 +7,10 @@ namespace ccxt\abstract;
 
 
 abstract class saraf extends \ccxt\Exchange {
-    public function public_get_v3_prices_crypto($params = array()) {
-        return $this->request('v3/prices/crypto', 'public', 'GET', $params, null, null, array("cost" => 1));
+    public function public_get_v1_prices_listed($params = array()) {
+        return $this->request('v1/prices/listed', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
-    public function publicGetV3PricesCrypto($params = array()) {
-        return $this->request('v3/prices/crypto', 'public', 'GET', $params, null, null, array("cost" => 1));
+    public function publicGetV1PricesListed($params = array()) {
+        return $this->request('v1/prices/listed', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
 }

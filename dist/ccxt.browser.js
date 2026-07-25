@@ -366790,7 +366790,7 @@ class saraf extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
             'api': {
                 'public': {
                     'get': {
-                        'v3/prices/crypto': 1,
+                        'v1/prices/listed': 1,
                     },
                 },
             },
@@ -366868,7 +366868,7 @@ class saraf extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object[]} an array of objects representing market data
          */
-        const response = await this.publicGetV3PricesCrypto(params);
+        const response = await this.publicGetV1PricesListed(params);
         const price = this.safeDict(response, 'price', {});
         const items = this.safeDict(price, 'Items', {});
         const lastUpdateTime = this.safeInteger(price, 'lastUpdateTime');
@@ -366899,7 +366899,7 @@ class saraf extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
         if (symbols !== undefined) {
             symbols = this.marketSymbols(symbols);
         }
-        const response = await this.publicGetV3PricesCrypto(params);
+        const response = await this.publicGetV1PricesListed(params);
         const price = this.safeDict(response, 'price', {});
         const items = this.safeDict(price, 'Items', {});
         const lastUpdateTime = this.safeInteger(price, 'lastUpdateTime');
@@ -433953,7 +433953,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.14.0';
+const ccxt_version = '4.14.1';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 

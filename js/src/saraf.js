@@ -102,7 +102,7 @@ export default class saraf extends Exchange {
             'api': {
                 'public': {
                     'get': {
-                        'v3/prices/crypto': 1,
+                        'v1/prices/listed': 1,
                     },
                 },
             },
@@ -180,7 +180,7 @@ export default class saraf extends Exchange {
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object[]} an array of objects representing market data
          */
-        const response = await this.publicGetV3PricesCrypto(params);
+        const response = await this.publicGetV1PricesListed(params);
         const price = this.safeDict(response, 'price', {});
         const items = this.safeDict(price, 'Items', {});
         const lastUpdateTime = this.safeInteger(price, 'lastUpdateTime');
@@ -211,7 +211,7 @@ export default class saraf extends Exchange {
         if (symbols !== undefined) {
             symbols = this.marketSymbols(symbols);
         }
-        const response = await this.publicGetV3PricesCrypto(params);
+        const response = await this.publicGetV1PricesListed(params);
         const price = this.safeDict(response, 'price', {});
         const items = this.safeDict(price, 'Items', {});
         const lastUpdateTime = this.safeInteger(price, 'lastUpdateTime');

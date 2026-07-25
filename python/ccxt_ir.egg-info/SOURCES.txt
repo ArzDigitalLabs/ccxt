@@ -44,6 +44,7 @@ ccxt/bitteam.py
 ccxt/bittrade.py
 ccxt/bitunix.py
 ccxt/bitvavo.py
+ccxt/bitwana.py
 ccxt/blockchaincom.py
 ccxt/blofin.py
 ccxt/btcalpha.py
@@ -135,6 +136,7 @@ ccxt/pooleno.py
 ccxt/probit.py
 ccxt/raastin.py
 ccxt/ramzinex.py
+ccxt/saraf.py
 ccxt/sarmayex.py
 ccxt/sarrafex.py
 ccxt/tabdeal.py
@@ -196,6 +198,7 @@ ccxt/abstract/bitteam.py
 ccxt/abstract/bittrade.py
 ccxt/abstract/bitunix.py
 ccxt/abstract/bitvavo.py
+ccxt/abstract/bitwana.py
 ccxt/abstract/blockchaincom.py
 ccxt/abstract/blofin.py
 ccxt/abstract/btcalpha.py
@@ -287,6 +290,7 @@ ccxt/abstract/pooleno.py
 ccxt/abstract/probit.py
 ccxt/abstract/raastin.py
 ccxt/abstract/ramzinex.py
+ccxt/abstract/saraf.py
 ccxt/abstract/sarmayex.py
 ccxt/abstract/sarrafex.py
 ccxt/abstract/tabdeal.py
@@ -348,6 +352,7 @@ ccxt/async_support/bitteam.py
 ccxt/async_support/bittrade.py
 ccxt/async_support/bitunix.py
 ccxt/async_support/bitvavo.py
+ccxt/async_support/bitwana.py
 ccxt/async_support/blockchaincom.py
 ccxt/async_support/blofin.py
 ccxt/async_support/btcalpha.py
@@ -439,6 +444,7 @@ ccxt/async_support/pooleno.py
 ccxt/async_support/probit.py
 ccxt/async_support/raastin.py
 ccxt/async_support/ramzinex.py
+ccxt/async_support/saraf.py
 ccxt/async_support/sarmayex.py
 ccxt/async_support/sarrafex.py
 ccxt/async_support/tabdeal.py

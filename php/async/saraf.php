@@ -101,7 +101,7 @@ class saraf extends Exchange {
             'api' => array(
                 'public' => array(
                     'get' => array(
-                        'v3/prices/crypto' => 1,
+                        'v1/prices/listed' => 1,
                     ),
                 ),
             ),
@@ -180,7 +180,7 @@ class saraf extends Exchange {
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
              * @return {array[]} an array of objects representing market data
              */
-            $response = Async\await($this->publicGetV3PricesCrypto ($params));
+            $response = Async\await($this->publicGetV1PricesListed ($params));
             $price = $this->safe_dict($response, 'price', array());
             $items = $this->safe_dict($price, 'Items', array());
             $lastUpdateTime = $this->safe_integer($price, 'lastUpdateTime');
@@ -212,7 +212,7 @@ class saraf extends Exchange {
             if ($symbols !== null) {
                 $symbols = $this->market_symbols($symbols);
             }
-            $response = Async\await($this->publicGetV3PricesCrypto ($params));
+            $response = Async\await($this->publicGetV1PricesListed ($params));
             $price = $this->safe_dict($response, 'price', array());
             $items = $this->safe_dict($price, 'Items', array());
             $lastUpdateTime = $this->safe_integer($price, 'lastUpdateTime');

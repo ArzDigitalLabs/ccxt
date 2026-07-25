@@ -11,9 +11,9 @@ public partial class saraf : Exchange
 {
     public saraf (object args = null): base(args) {}
 
-    public async Task<object> publicGetV3PricesCrypto (object parameters = null)
+    public async Task<object> publicGetV1PricesListed (object parameters = null)
     {
-        return await this.callAsync ("publicGetV3PricesCrypto",parameters);
+        return await this.callAsync ("publicGetV1PricesListed",parameters);
     }
 
 }
