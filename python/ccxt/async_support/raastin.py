@@ -415,6 +415,7 @@ class raastin(Exchange, ImplicitAPI):
             'vwap': None,
             'open': None,
             'close': None,
+            'last': bid,
             'previousClose': None,
             'change': None,
             'percentage': None,

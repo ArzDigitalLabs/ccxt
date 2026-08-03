@@ -5,16 +5,16 @@
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
 import ccxt from './ccxt';
-async function testsaraf() {
-    const exchange = new ccxt.saraf({
+async function testRaastinTickers(type) {
+    const exchange = new ccxt.raastin({
         enableRateLimit: true,
         timeout: 20000,
     });
     try {
-        const params = { 'type': 'otc' };
+        const params = { type };
         const markets = await exchange.fetchMarkets(params);
-        console.log('saraf markets count:', markets.length);
-        console.log('saraf first markets:', markets.slice(0, 10).map((market) => ({
+        console.log(`raastin ${type} markets count:`, markets.length);
+        console.log(`raastin ${type} first markets:`, markets.slice(0, 10).map((market) => ({
             symbol: market.symbol,
             id: market.id,
             type: market.type,
@@ -24,7 +24,7 @@ async function testsaraf() {
         })));
         const tickers = await exchange.fetchTickers(undefined, params);
         const tickerSymbols = Object.keys(tickers);
-        console.log('saraf tickers count:', tickerSymbols.length);
+        console.log(`raastin ${type} tickers count:`, tickerSymbols.length);
         const missingFromFetchTickers = [];
         const fetchTickerFailures = [];
         const sampleTickers = [];
@@ -51,7 +51,7 @@ async function testsaraf() {
             }
             try {
                 const singleTicker = await exchange.fetchTicker(symbol, params);
-                console.log('checked saraf ticker:', {
+                console.log(`checked raastin ${type} ticker:`, {
                     symbol: singleTicker.symbol,
                     type: market.type,
                     last: singleTicker.last,
@@ -67,10 +67,10 @@ async function testsaraf() {
                 });
             }
         }
-        console.log('saraf sample bulk tickers:', sampleTickers);
-        console.log('saraf missing from fetchTickers:', missingFromFetchTickers);
-        console.log('saraf fetchTicker failures:', fetchTickerFailures);
-        console.log('saraf summary:', {
+        console.log(`raastin ${type} sample bulk tickers:`, sampleTickers);
+        console.log(`raastin ${type} missing from fetchTickers:`, missingFromFetchTickers);
+        console.log(`raastin ${type} fetchTicker failures:`, fetchTickerFailures);
+        console.log(`raastin ${type} summary:`, {
             marketsCount: markets.length,
             tickersCount: tickerSymbols.length,
             missingFromFetchTickersCount: missingFromFetchTickers.length,
@@ -78,7 +78,7 @@ async function testsaraf() {
         });
     }
     catch (error) {
-        console.error('Error during testing saraf:', error);
+        console.error(`Error during testing raastin ${type}:`, error);
     }
     finally {
         if (exchange.close) {
@@ -86,4 +86,8 @@ async function testsaraf() {
         }
     }
 }
-testsaraf();
+async function main() {
+    await testRaastinTickers('spot');
+    await testRaastinTickers('otc');
+}
+main();

@@ -439,6 +439,7 @@ export default class raastin extends Exchange {
             'vwap': undefined,
             'open': undefined,
             'close': undefined,
+            'last': bid,
             'previousClose': undefined,
             'change': undefined,
             'percentage': undefined,

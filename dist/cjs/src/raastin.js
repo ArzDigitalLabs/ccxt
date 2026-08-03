@@ -432,6 +432,7 @@ class raastin extends raastin$1["default"] {
             'vwap': undefined,
             'open': undefined,
             'close': undefined,
+            'last': bid,
             'previousClose': undefined,
             'change': undefined,
             'percentage': undefined,

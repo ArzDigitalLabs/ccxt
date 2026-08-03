@@ -431,6 +431,7 @@ class raastin extends Exchange {
             'vwap' => null,
             'open' => null,
             'close' => null,
+            'last' => $bid,
             'previousClose' => null,
             'change' => null,
             'percentage' => null,

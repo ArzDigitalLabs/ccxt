@@ -366107,6 +366107,7 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             'vwap': undefined,
             'open': undefined,
             'close': undefined,
+            'last': bid,
             'previousClose': undefined,
             'change': undefined,
             'percentage': undefined,
@@ -433953,7 +433954,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.14.1';
+const ccxt_version = '4.14.2';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 
