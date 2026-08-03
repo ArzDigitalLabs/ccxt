@@ -131,6 +131,7 @@
 	- [probit](exchanges/probit.md)
 	- [raastin()](exchanges/raastin().md)
 	- [ramzinex()](exchanges/ramzinex().md)
+	- [saraf()](exchanges/saraf().md)
 	- [sarmayex()](exchanges/sarmayex().md)
 	- [sarrafex()](exchanges/sarrafex().md)
 	- [tabdeal()](exchanges/tabdeal().md)
