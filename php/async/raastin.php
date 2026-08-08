@@ -126,11 +126,12 @@ class raastin extends Exchange {
              */
             $result = array();
             $marketType = $this->safe_string($params, 'type', 'spot');
+            $query = $this->omit($params, 'type');
             if ($marketType === 'otc') {
                 $qoutes = array( 'irt', 'usdt' );
                 for ($i = 0; $i < count($qoutes); $i++) {
                     $quote = $qoutes[$i];
-                    $OTCmarkets = Async\await($this->publicGetApiV1Market ($this->extend($params, array( 'quote' => $quote ))));
+                    $OTCmarkets = Async\await($this->publicGetApiV1Market ($this->extend($query, array( 'quote' => $quote ))));
                     for ($j = 0; $j < count($OTCmarkets); $j++) {
                         $OTCmarkets[$j]['quote'] = $quote;
                         $market = $this->parse_otc_market($OTCmarkets[$j]);
@@ -139,7 +140,7 @@ class raastin extends Exchange {
                 }
                 return $result;
             }
-            $response = Async\await($this->publicGetApiV1MarketSymbols ($params));
+            $response = Async\await($this->publicGetApiV1MarketSymbols ($query));
             // Response is a flat array, not nested in 'result'
             $markets = $response;
             for ($i = 0; $i < count($markets); $i++) {
@@ -194,16 +195,32 @@ class raastin extends Exchange {
         //     "strategy_enable" => true
         // }
         $id = $this->safe_string($market, 'name');
-        $asset = $this->safe_dict($market, 'asset', array());
-        $baseAsset = $this->safe_dict($market, 'base_asset', array());
-        $baseId = $this->safe_string($asset, 'symbol');
-        $quoteId = $this->safe_string($baseAsset, 'symbol');
+        $asset = $this->safe_value($market, 'asset', array());
+        $baseAsset = $this->safe_value($market, 'base_asset', array());
+        $baseId = null;
+        $quoteId = null;
+        if (gettype($asset) === 'string') {
+            $baseId = $asset;
+        } else {
+            $baseId = $this->safe_string($asset, 'symbol');
+        }
+        if (gettype($baseAsset) === 'string') {
+            $quoteId = $baseAsset;
+        } else {
+            $quoteId = $this->safe_string($baseAsset, 'symbol');
+        }
         $base = $this->safe_currency_code($baseId);
         $quote = $this->safe_currency_code($quoteId);
         $baseId = strtolower($baseId);
         $quoteId = strtolower($quoteId);
-        $basePrecision = $this->safe_integer($asset, 'precision');
-        $quotePrecision = $this->safe_integer($baseAsset, 'precision');
+        $basePrecision = null;
+        if (gettype($asset) !== 'string') {
+            $basePrecision = $this->safe_integer($asset, 'precision');
+        }
+        $quotePrecision = null;
+        if (gettype($baseAsset) !== 'string') {
+            $quotePrecision = $this->safe_integer($baseAsset, 'precision');
+        }
         $minAmount = $this->safe_string($market, 'min_trade_quantity');
         $maxAmount = $this->safe_string($market, 'max_trade_quantity');
         $enabled = $this->safe_bool($market, 'enable', true);
@@ -325,8 +342,8 @@ class raastin extends Exchange {
     public function fetch_tickers(?array $symbols = null, $params = array ()): PromiseInterface {
         return Async\async(function () use ($symbols, $params) {
             /**
-             * fetches price tickers for multiple $markets, statistical information calculated over the past 24 hours for each market
-             * @param {string[]|null} $symbols unified $symbols of the $markets to fetch the $ticker for, all market tickers are returned if not assigned
+             * fetches price tickers for multiple markets, statistical information calculated over the past 24 hours for each $market
+             * @param {string[]|null} $symbols unified $symbols of the markets to fetch the $ticker for, all $market tickers are returned if not assigned
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
              * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structures~
              */
@@ -336,11 +353,12 @@ class raastin extends Exchange {
                 $symbols = $this->market_symbols($symbols);
             }
             $result = array();
+            $query = $this->omit($params, 'type');
             if ($marketType === 'otc') {
                 $qoutes = array( 'irt', 'usdt' );
                 for ($i = 0; $i < count($qoutes); $i++) {
                     $quote = $qoutes[$i];
-                    $OTCmarkets = Async\await($this->publicGetApiV1Market ($this->extend($params, array( 'quote' => $quote ))));
+                    $OTCmarkets = Async\await($this->publicGetApiV1Market ($this->extend($query, array( 'quote' => $quote ))));
                     for ($j = 0; $j < count($OTCmarkets); $j++) {
                         $OTCmarkets[$j]['quote'] = strtoupper($quote);
                         $ticker = Async\await($this->parse_otc_ticker($OTCmarkets[$j]));
@@ -350,12 +368,23 @@ class raastin extends Exchange {
                 }
                 return $this->filter_by_array_tickers($result, 'symbol', $symbols);
             }
-            $markets = Async\await($this->publicGetApiV1MarketSymbols ($params));
-            for ($i = 0; $i < count($markets); $i++) {
-                $marketData = $markets[$i];
-                $ticker = $this->parse_ticker($marketData);
-                $symbol = $ticker['symbol'];
-                $result[$symbol] = $ticker;
+            $tickerSymbols = $symbols;
+            if ($tickerSymbols === null) {
+                $tickerSymbols = is_array($this->markets) ? array_keys($this->markets) : array();
+            }
+            for ($i = 0; $i < count($tickerSymbols); $i++) {
+                $symbol = $tickerSymbols[$i];
+                $market = $this->market($symbol);
+                if ($market['type'] !== $marketType) {
+                    continue;
+                }
+                $request = array(
+                    'symbol' => $market['id'],
+                );
+                $marketData = Async\await($this->publicGetApiV1MarketSymbolsSymbol ($this->extend($request, $query)));
+                $ticker = $this->parse_ticker($marketData, $market);
+                $tickerSymbol = $ticker['symbol'];
+                $result[$tickerSymbol] = $ticker;
             }
             return $this->filter_by_array_tickers($result, 'symbol', $symbols);
         }) ();
@@ -379,7 +408,8 @@ class raastin extends Exchange {
             $request = array(
                 'symbol' => $market['id'],
             );
-            $response = Async\await($this->publicGetApiV1MarketSymbolsSymbol ($request));
+            $query = $this->omit($params, 'type');
+            $response = Async\await($this->publicGetApiV1MarketSymbolsSymbol ($this->extend($request, $query)));
             return $this->parse_ticker($response, $market);
         }) ();
     }
@@ -397,7 +427,8 @@ class raastin extends Exchange {
         $low = $this->safe_float($ticker, 'low', 0);
         $baseVolume = $this->safe_float($ticker, 'base_volume', 0);
         $quoteVolume = $this->safe_float($ticker, 'volume', 0);
-        $changePercentage = $this->safe_float($ticker, 'change_percentage', 0);
+        $change = $this->safe_float($ticker, 'change', 0);
+        $changePercentage = $this->safe_float_2($ticker, 'change_percent', 'change_percentage', 0);
         return $this->safe_ticker(array(
             'symbol' => $symbol,
             'timestamp' => null,
@@ -413,7 +444,7 @@ class raastin extends Exchange {
             'close' => $last,
             'last' => $last,
             'previousClose' => null,
-            'change' => $changePercentage,
+            'change' => $change,
             'percentage' => $changePercentage,
             'average' => null,
             'baseVolume' => $baseVolume,
