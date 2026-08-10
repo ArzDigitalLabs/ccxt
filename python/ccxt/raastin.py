@@ -123,17 +123,18 @@ class raastin(Exchange, ImplicitAPI):
         """
         result = []
         marketType = self.safe_string(params, 'type', 'spot')
+        query = self.omit(params, 'type')
         if marketType == 'otc':
             qoutes = ['irt', 'usdt']
             for i in range(0, len(qoutes)):
                 quote = qoutes[i]
-                OTCmarkets = self.publicGetApiV1Market(self.extend(params, {'quote': quote}))
+                OTCmarkets = self.publicGetApiV1Market(self.extend(query, {'quote': quote}))
                 for j in range(0, len(OTCmarkets)):
                     OTCmarkets[j]['quote'] = quote
                     market = self.parse_otc_market(OTCmarkets[j])
                     result.append(market)
             return result
-        response = self.publicGetApiV1MarketSymbols(params)
+        response = self.publicGetApiV1MarketSymbols(query)
         # Response is a flat array, not nested in 'result'
         markets = response
         for i in range(0, len(markets)):
@@ -185,16 +186,28 @@ class raastin(Exchange, ImplicitAPI):
         #     "strategy_enable": True
         # }
         id = self.safe_string(market, 'name')
-        asset = self.safe_dict(market, 'asset', {})
-        baseAsset = self.safe_dict(market, 'base_asset', {})
-        baseId = self.safe_string(asset, 'symbol')
-        quoteId = self.safe_string(baseAsset, 'symbol')
+        asset = self.safe_value(market, 'asset', {})
+        baseAsset = self.safe_value(market, 'base_asset', {})
+        baseId = None
+        quoteId = None
+        if isinstance(asset, str):
+            baseId = asset
+        else:
+            baseId = self.safe_string(asset, 'symbol')
+        if isinstance(baseAsset, str):
+            quoteId = baseAsset
+        else:
+            quoteId = self.safe_string(baseAsset, 'symbol')
         base = self.safe_currency_code(baseId)
         quote = self.safe_currency_code(quoteId)
         baseId = baseId.lower()
         quoteId = quoteId.lower()
-        basePrecision = self.safe_integer(asset, 'precision')
-        quotePrecision = self.safe_integer(baseAsset, 'precision')
+        basePrecision = None
+        if not isinstance(asset, str):
+            basePrecision = self.safe_integer(asset, 'precision')
+        quotePrecision = None
+        if not isinstance(baseAsset, str):
+            quotePrecision = self.safe_integer(baseAsset, 'precision')
         minAmount = self.safe_string(market, 'min_trade_quantity')
         maxAmount = self.safe_string(market, 'max_trade_quantity')
         enabled = self.safe_bool(market, 'enable', True)
@@ -323,23 +336,33 @@ class raastin(Exchange, ImplicitAPI):
         if symbols is not None:
             symbols = self.market_symbols(symbols)
         result = {}
+        query = self.omit(params, 'type')
         if marketType == 'otc':
             qoutes = ['irt', 'usdt']
             for i in range(0, len(qoutes)):
                 quote = qoutes[i]
-                OTCmarkets = self.publicGetApiV1Market(self.extend(params, {'quote': quote}))
+                OTCmarkets = self.publicGetApiV1Market(self.extend(query, {'quote': quote}))
                 for j in range(0, len(OTCmarkets)):
                     OTCmarkets[j]['quote'] = quote.upper()
                     ticker = self.parse_otc_ticker(OTCmarkets[j])
                     symbol = ticker['symbol']
                     result[symbol] = ticker
             return self.filter_by_array_tickers(result, 'symbol', symbols)
-        markets = self.publicGetApiV1MarketSymbols(params)
-        for i in range(0, len(markets)):
-            marketData = markets[i]
-            ticker = self.parse_ticker(marketData)
-            symbol = ticker['symbol']
-            result[symbol] = ticker
+        tickerSymbols = symbols
+        if tickerSymbols is None:
+            tickerSymbols = list(self.markets.keys())
+        for i in range(0, len(tickerSymbols)):
+            symbol = tickerSymbols[i]
+            market = self.market(symbol)
+            if market['type'] != marketType:
+                continue
+            request = {
+                'symbol': market['id'],
+            }
+            marketData = self.publicGetApiV1MarketSymbolsSymbol(self.extend(request, query))
+            ticker = self.parse_ticker(marketData, market)
+            tickerSymbol = ticker['symbol']
+            result[tickerSymbol] = ticker
         return self.filter_by_array_tickers(result, 'symbol', symbols)
 
     def fetch_ticker(self, symbol: str, params={}) -> Ticker:
@@ -358,7 +381,8 @@ class raastin(Exchange, ImplicitAPI):
         request = {
             'symbol': market['id'],
         }
-        response = self.publicGetApiV1MarketSymbolsSymbol(request)
+        query = self.omit(params, 'type')
+        response = self.publicGetApiV1MarketSymbolsSymbol(self.extend(request, query))
         return self.parse_ticker(response, market)
 
     def parse_ticker(self, ticker, market: Market = None) -> Ticker:
@@ -374,7 +398,8 @@ class raastin(Exchange, ImplicitAPI):
         low = self.safe_float(ticker, 'low', 0)
         baseVolume = self.safe_float(ticker, 'base_volume', 0)
         quoteVolume = self.safe_float(ticker, 'volume', 0)
-        changePercentage = self.safe_float(ticker, 'change_percentage', 0)
+        change = self.safe_float(ticker, 'change', 0)
+        changePercentage = self.safe_float_2(ticker, 'change_percent', 'change_percentage', 0)
         return self.safe_ticker({
             'symbol': symbol,
             'timestamp': None,
@@ -390,7 +415,7 @@ class raastin(Exchange, ImplicitAPI):
             'close': last,
             'last': last,
             'previousClose': None,
-            'change': changePercentage,
+            'change': change,
             'percentage': changePercentage,
             'average': None,
             'baseVolume': baseVolume,
@@ -415,6 +440,7 @@ class raastin(Exchange, ImplicitAPI):
             'vwap': None,
             'open': None,
             'close': None,
+            'last': bid,
             'previousClose': None,
             'change': None,
             'percentage': None,

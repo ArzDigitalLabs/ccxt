@@ -365801,11 +365801,12 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
          */
         const result = [];
         const marketType = this.safeString(params, 'type', 'spot');
+        const query = this.omit(params, 'type');
         if (marketType === 'otc') {
             const qoutes = ['irt', 'usdt'];
             for (let i = 0; i < qoutes.length; i++) {
                 const quote = qoutes[i];
-                const OTCmarkets = await this.publicGetApiV1Market(this.extend(params, { 'quote': quote }));
+                const OTCmarkets = await this.publicGetApiV1Market(this.extend(query, { 'quote': quote }));
                 for (let j = 0; j < OTCmarkets.length; j++) {
                     OTCmarkets[j]['quote'] = quote;
                     const market = this.parseOtcMarket(OTCmarkets[j]);
@@ -365814,7 +365815,7 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             }
             return result;
         }
-        const response = await this.publicGetApiV1MarketSymbols(params);
+        const response = await this.publicGetApiV1MarketSymbols(query);
         // Response is a flat array, not nested in 'result'
         const markets = response;
         for (let i = 0; i < markets.length; i++) {
@@ -365867,16 +365868,34 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
         //     "strategy_enable": true
         // }
         const id = this.safeString(market, 'name');
-        const asset = this.safeDict(market, 'asset', {});
-        const baseAsset = this.safeDict(market, 'base_asset', {});
-        let baseId = this.safeString(asset, 'symbol');
-        let quoteId = this.safeString(baseAsset, 'symbol');
+        const asset = this.safeValue(market, 'asset', {});
+        const baseAsset = this.safeValue(market, 'base_asset', {});
+        let baseId = undefined;
+        let quoteId = undefined;
+        if (typeof asset === 'string') {
+            baseId = asset;
+        }
+        else {
+            baseId = this.safeString(asset, 'symbol');
+        }
+        if (typeof baseAsset === 'string') {
+            quoteId = baseAsset;
+        }
+        else {
+            quoteId = this.safeString(baseAsset, 'symbol');
+        }
         const base = this.safeCurrencyCode(baseId);
         const quote = this.safeCurrencyCode(quoteId);
         baseId = baseId.toLowerCase();
         quoteId = quoteId.toLowerCase();
-        const basePrecision = this.safeInteger(asset, 'precision');
-        const quotePrecision = this.safeInteger(baseAsset, 'precision');
+        let basePrecision = undefined;
+        if (typeof asset !== 'string') {
+            basePrecision = this.safeInteger(asset, 'precision');
+        }
+        let quotePrecision = undefined;
+        if (typeof baseAsset !== 'string') {
+            quotePrecision = this.safeInteger(baseAsset, 'precision');
+        }
         const minAmount = this.safeString(market, 'min_trade_quantity');
         const maxAmount = this.safeString(market, 'max_trade_quantity');
         const enabled = this.safeBool(market, 'enable', true);
@@ -366008,11 +366027,12 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             symbols = this.marketSymbols(symbols);
         }
         const result = {};
+        const query = this.omit(params, 'type');
         if (marketType === 'otc') {
             const qoutes = ['irt', 'usdt'];
             for (let i = 0; i < qoutes.length; i++) {
                 const quote = qoutes[i];
-                const OTCmarkets = await this.publicGetApiV1Market(this.extend(params, { 'quote': quote }));
+                const OTCmarkets = await this.publicGetApiV1Market(this.extend(query, { 'quote': quote }));
                 for (let j = 0; j < OTCmarkets.length; j++) {
                     OTCmarkets[j]['quote'] = quote.toUpperCase();
                     const ticker = await this.parseOTCTicker(OTCmarkets[j]);
@@ -366022,12 +366042,23 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             }
             return this.filterByArrayTickers(result, 'symbol', symbols);
         }
-        const markets = await this.publicGetApiV1MarketSymbols(params);
-        for (let i = 0; i < markets.length; i++) {
-            const marketData = markets[i];
-            const ticker = this.parseTicker(marketData);
-            const symbol = ticker['symbol'];
-            result[symbol] = ticker;
+        let tickerSymbols = symbols;
+        if (tickerSymbols === undefined) {
+            tickerSymbols = Object.keys(this.markets);
+        }
+        for (let i = 0; i < tickerSymbols.length; i++) {
+            const symbol = tickerSymbols[i];
+            const market = this.market(symbol);
+            if (market['type'] !== marketType) {
+                continue;
+            }
+            const request = {
+                'symbol': market['id'],
+            };
+            const marketData = await this.publicGetApiV1MarketSymbolsSymbol(this.extend(request, query));
+            const ticker = this.parseTicker(marketData, market);
+            const tickerSymbol = ticker['symbol'];
+            result[tickerSymbol] = ticker;
         }
         return this.filterByArrayTickers(result, 'symbol', symbols);
     }
@@ -366050,7 +366081,8 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
         const request = {
             'symbol': market['id'],
         };
-        const response = await this.publicGetApiV1MarketSymbolsSymbol(request);
+        const query = this.omit(params, 'type');
+        const response = await this.publicGetApiV1MarketSymbolsSymbol(this.extend(request, query));
         return this.parseTicker(response, market);
     }
     parseTicker(ticker, market = undefined) {
@@ -366066,7 +366098,8 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
         const low = this.safeFloat(ticker, 'low', 0);
         const baseVolume = this.safeFloat(ticker, 'base_volume', 0);
         const quoteVolume = this.safeFloat(ticker, 'volume', 0);
-        const changePercentage = this.safeFloat(ticker, 'change_percentage', 0);
+        const change = this.safeFloat(ticker, 'change', 0);
+        const changePercentage = this.safeFloat2(ticker, 'change_percent', 'change_percentage', 0);
         return this.safeTicker({
             'symbol': symbol,
             'timestamp': undefined,
@@ -366082,7 +366115,7 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             'close': last,
             'last': last,
             'previousClose': undefined,
-            'change': changePercentage,
+            'change': change,
             'percentage': changePercentage,
             'average': undefined,
             'baseVolume': baseVolume,
@@ -366107,6 +366140,7 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             'vwap': undefined,
             'open': undefined,
             'close': undefined,
+            'last': bid,
             'previousClose': undefined,
             'change': undefined,
             'percentage': undefined,
@@ -433953,7 +433987,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.14.1';
+const ccxt_version = '4.14.3';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 
