@@ -1,78 +1,36 @@
-import raastin from './src/raastin.js';
-async function main() {
-    const exchange = new raastin({
+import ccxt from './ccxt';
+async function testSaraf() {
+    const exchange = new ccxt.saraf({
         enableRateLimit: true,
-        timeout: 30000,
+        timeout: 20000,
     });
     try {
-        const spotMarkets = await exchange.loadMarkets(true, { 'type': 'spot' });
-        const spotSymbols = [];
-        const preferredSymbols = ['USDT/IRT', 'BTC/IRT', 'ETH/IRT'];
-        for (let i = 0; i < preferredSymbols.length; i++) {
-            const symbol = preferredSymbols[i];
-            if (symbol in spotMarkets) {
-                spotSymbols.push(symbol);
-            }
+        const markets = await exchange.fetchMarkets();
+        if (markets.length === 0) {
+            throw new Error('Saraf returned no markets');
         }
-        if (spotSymbols.length === 0) {
-            const marketSymbols = Object.keys(spotMarkets);
-            for (let i = 0; i < marketSymbols.length; i++) {
-                const symbol = marketSymbols[i];
-                const market = spotMarkets[symbol];
-                if (market['type'] === 'spot') {
-                    spotSymbols.push(symbol);
-                }
-                if (spotSymbols.length >= 3) {
-                    break;
-                }
-            }
+        const tickers = await exchange.fetchTickers();
+        const btcTicker = tickers['BTC/IRT'];
+        if (btcTicker === undefined) {
+            throw new Error('Saraf did not return a BTC/IRT ticker');
         }
-        console.log('spot symbols:', spotSymbols);
-        const spotTickers = await exchange.fetchTickers(spotSymbols);
-        console.log('spot tickers:');
-        for (let i = 0; i < spotSymbols.length; i++) {
-            const symbol = spotSymbols[i];
-            const ticker = spotTickers[symbol];
-            console.log({
-                symbol: ticker['symbol'],
-                last: ticker['last'],
-                high: ticker['high'],
-                low: ticker['low'],
-                change: ticker['change'],
-                percentage: ticker['percentage'],
-                baseVolume: ticker['baseVolume'],
-                quoteVolume: ticker['quoteVolume'],
-            });
-        }
-        const singleSpotSymbol = spotSymbols[0];
-        if (singleSpotSymbol !== undefined) {
-            const singleSpotTicker = await exchange.fetchTicker(singleSpotSymbol);
-            console.log('single spot ticker:', {
-                symbol: singleSpotTicker['symbol'],
-                last: singleSpotTicker['last'],
-                change: singleSpotTicker['change'],
-                percentage: singleSpotTicker['percentage'],
-            });
-        }
-        const otcMarkets = await exchange.loadMarkets(true, { 'type': 'otc' });
-        const otcSymbols = Object.keys(otcMarkets);
-        const otcSymbol = otcSymbols[0];
-        if (otcSymbol !== undefined) {
-            const otcTicker = await exchange.fetchTicker(otcSymbol, { 'type': 'otc' });
-            console.log('single otc ticker:', {
-                symbol: otcTicker['symbol'],
-                last: otcTicker['last'],
-                bid: otcTicker['bid'],
-                ask: otcTicker['ask'],
-            });
-        }
-    }
-    catch (error) {
-        console.error('Raastin ticker test failed:', error);
-        process.exitCode = 1;
+        console.log('Saraf test passed:', {
+            endpoint: 'https://api.saraf.app/v1/prices/arzdigital',
+            markets: markets.length,
+            tickers: Object.keys(tickers).length,
+            btc: {
+                last: btcTicker.last,
+                high: btcTicker.high,
+                low: btcTicker.low,
+                timestamp: btcTicker.timestamp,
+            },
+        });
     }
     finally {
         await exchange.close();
     }
 }
-void main();
+testSaraf().catch((error) => {
+    console.error('Saraf test failed:', error);
+    process.exitCode = 1;
+});

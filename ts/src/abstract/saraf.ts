@@ -9,7 +9,7 @@ import { implicitReturnType } from '../base/types.js';
 import { Exchange as _Exchange } from '../base/Exchange.js';
 
 interface Exchange {
-    publicGetV1PricesListed (params?: {}): Promise<implicitReturnType>;
+    publicGetV1PricesArzdigital (params?: {}): Promise<implicitReturnType>;
 }
 abstract class Exchange extends _Exchange {}
 

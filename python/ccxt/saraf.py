@@ -100,7 +100,7 @@ class saraf(Exchange, ImplicitAPI):
             'api': {
                 'public': {
                     'get': {
-                        'v1/prices/listed': 1,
+                        'v1/prices/arzdigital': 1,
                     },
                 },
             },
@@ -172,11 +172,11 @@ class saraf(Exchange, ImplicitAPI):
     def fetch_markets(self, params={}) -> List[Market]:
         """
         retrieves data on all markets for saraf
-        https://api.saraf.app/v3/prices/crypto
+        https://api.saraf.app/v1/prices/arzdigital
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict[]: an array of objects representing market data
         """
-        response = self.publicGetV1PricesListed(params)
+        response = self.publicGetV1PricesArzdigital(params)
         price = self.safe_dict(response, 'price', {})
         items = self.safe_dict(price, 'Items', {})
         lastUpdateTime = self.safe_integer(price, 'lastUpdateTime')
@@ -194,7 +194,7 @@ class saraf(Exchange, ImplicitAPI):
     def fetch_tickers(self, symbols: Strings = None, params={}) -> Tickers:
         """
         fetches price tickers for multiple markets
-        https://api.saraf.app/v3/prices/crypto
+        https://api.saraf.app/v1/prices/arzdigital
         :param str[]|None symbols: unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict: a dictionary of `ticker structures <https://docs.ccxt.com/#/?id=ticker-structure>`
@@ -202,7 +202,7 @@ class saraf(Exchange, ImplicitAPI):
         self.load_markets()
         if symbols is not None:
             symbols = self.market_symbols(symbols)
-        response = self.publicGetV1PricesListed(params)
+        response = self.publicGetV1PricesArzdigital(params)
         price = self.safe_dict(response, 'price', {})
         items = self.safe_dict(price, 'Items', {})
         lastUpdateTime = self.safe_integer(price, 'lastUpdateTime')
@@ -221,7 +221,7 @@ class saraf(Exchange, ImplicitAPI):
     def fetch_ticker(self, symbol: str, params={}) -> Ticker:
         """
         fetches a price ticker, a statistical calculation for a specific market
-        https://api.saraf.app/v3/prices/crypto
+        https://api.saraf.app/v1/prices/arzdigital
         :param str symbol: unified symbol of the market to fetch the ticker for
         :param dict [params]: extra parameters specific to the exchange API endpoint
         :returns dict: a `ticker structure <https://docs.ccxt.com/#/?id=ticker-structure>`

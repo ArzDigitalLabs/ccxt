@@ -7,6 +7,6 @@
 
 package ccxt
 
-func (this *saraf) PublicGetV1PricesListed (args ...interface{}) <-chan interface{} {
-   return this.callEndpointAsync("publicGetV1PricesListed", args...)
+func (this *saraf) PublicGetV1PricesArzdigital (args ...interface{}) <-chan interface{} {
+   return this.callEndpointAsync("publicGetV1PricesArzdigital", args...)
 }

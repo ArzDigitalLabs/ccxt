@@ -7,10 +7,10 @@ namespace ccxt\async\abstract;
 
 
 abstract class saraf extends \ccxt\async\Exchange {
-    public function public_get_v1_prices_listed($params = array()) {
-        return $this->request('v1/prices/listed', 'public', 'GET', $params, null, null, array("cost" => 1));
+    public function public_get_v1_prices_arzdigital($params = array()) {
+        return $this->request('v1/prices/arzdigital', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
-    public function publicGetV1PricesListed($params = array()) {
-        return $this->request('v1/prices/listed', 'public', 'GET', $params, null, null, array("cost" => 1));
+    public function publicGetV1PricesArzdigital($params = array()) {
+        return $this->request('v1/prices/arzdigital', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
 }

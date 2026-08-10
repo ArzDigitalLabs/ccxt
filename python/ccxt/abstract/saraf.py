@@ -2,4 +2,4 @@ from ccxt.base.types import Entry
 
 
 class ImplicitAPI:
-    public_get_v1_prices_listed = publicGetV1PricesListed = Entry('v1/prices/listed', 'public', 'GET', {'cost': 1})
+    public_get_v1_prices_arzdigital = publicGetV1PricesArzdigital = Entry('v1/prices/arzdigital', 'public', 'GET', {'cost': 1})
