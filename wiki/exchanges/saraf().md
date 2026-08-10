@@ -29,7 +29,7 @@ retrieves data on all markets for saraf
 **Kind**: instance method of [<code>saraf</code>](#saraf)  
 **Returns**: <code>Array&lt;object&gt;</code> - an array of objects representing market data
 
-**See**: https://api.saraf.app/v3/prices/crypto  
+**See**: https://api.saraf.app/v1/prices/arzdigital  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@ fetches price tickers for multiple markets
 **Kind**: instance method of [<code>saraf</code>](#saraf)  
 **Returns**: <code>object</code> - a dictionary of [ticker structures](https://docs.ccxt.com/#/?id=ticker-structure)
 
-**See**: https://api.saraf.app/v3/prices/crypto  
+**See**: https://api.saraf.app/v1/prices/arzdigital  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |
@@ -70,7 +70,7 @@ fetches a price ticker, a statistical calculation for a specific market
 **Kind**: instance method of [<code>saraf</code>](#saraf)  
 **Returns**: <code>object</code> - a [ticker structure](https://docs.ccxt.com/#/?id=ticker-structure)
 
-**See**: https://api.saraf.app/v3/prices/crypto  
+**See**: https://api.saraf.app/v1/prices/arzdigital  
 
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |

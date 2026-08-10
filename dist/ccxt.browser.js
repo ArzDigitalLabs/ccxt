@@ -366824,7 +366824,7 @@ class saraf extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
             'api': {
                 'public': {
                     'get': {
-                        'v1/prices/listed': 1,
+                        'v1/prices/arzdigital': 1,
                     },
                 },
             },
@@ -366898,11 +366898,11 @@ class saraf extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
          * @method
          * @name saraf#fetchMarkets
          * @description retrieves data on all markets for saraf
-         * @see https://api.saraf.app/v3/prices/crypto
+         * @see https://api.saraf.app/v1/prices/arzdigital
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object[]} an array of objects representing market data
          */
-        const response = await this.publicGetV1PricesListed(params);
+        const response = await this.publicGetV1PricesArzdigital(params);
         const price = this.safeDict(response, 'price', {});
         const items = this.safeDict(price, 'Items', {});
         const lastUpdateTime = this.safeInteger(price, 'lastUpdateTime');
@@ -366924,7 +366924,7 @@ class saraf extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
          * @method
          * @name saraf#fetchTickers
          * @description fetches price tickers for multiple markets
-         * @see https://api.saraf.app/v3/prices/crypto
+         * @see https://api.saraf.app/v1/prices/arzdigital
          * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
@@ -366933,7 +366933,7 @@ class saraf extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
         if (symbols !== undefined) {
             symbols = this.marketSymbols(symbols);
         }
-        const response = await this.publicGetV1PricesListed(params);
+        const response = await this.publicGetV1PricesArzdigital(params);
         const price = this.safeDict(response, 'price', {});
         const items = this.safeDict(price, 'Items', {});
         const lastUpdateTime = this.safeInteger(price, 'lastUpdateTime');
@@ -366956,7 +366956,7 @@ class saraf extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
          * @method
          * @name saraf#fetchTicker
          * @description fetches a price ticker, a statistical calculation for a specific market
-         * @see https://api.saraf.app/v3/prices/crypto
+         * @see https://api.saraf.app/v1/prices/arzdigital
          * @param {string} symbol unified symbol of the market to fetch the ticker for
          * @param {object} [params] extra parameters specific to the exchange API endpoint
          * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
@@ -433987,7 +433987,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.14.3';
+const ccxt_version = '4.14.4';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 

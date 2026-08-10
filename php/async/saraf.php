@@ -101,7 +101,7 @@ class saraf extends Exchange {
             'api' => array(
                 'public' => array(
                     'get' => array(
-                        'v1/prices/listed' => 1,
+                        'v1/prices/arzdigital' => 1,
                     ),
                 ),
             ),
@@ -176,11 +176,11 @@ class saraf extends Exchange {
         return Async\async(function () use ($params) {
             /**
              * retrieves data on all markets for saraf
-             * @see https://api.saraf.app/v3/prices/crypto
+             * @see https://api.saraf.app/v1/prices/arzdigital
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
              * @return {array[]} an array of objects representing market data
              */
-            $response = Async\await($this->publicGetV1PricesListed ($params));
+            $response = Async\await($this->publicGetV1PricesArzdigital ($params));
             $price = $this->safe_dict($response, 'price', array());
             $items = $this->safe_dict($price, 'Items', array());
             $lastUpdateTime = $this->safe_integer($price, 'lastUpdateTime');
@@ -203,7 +203,7 @@ class saraf extends Exchange {
         return Async\async(function () use ($symbols, $params) {
             /**
              * fetches $price tickers for multiple markets
-             * @see https://api.saraf.app/v3/prices/crypto
+             * @see https://api.saraf.app/v1/prices/arzdigital
              * @param {string[]|null} $symbols unified $symbols of the markets to fetch the $ticker for, all market tickers are returned if not assigned
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
              * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structures~
@@ -212,7 +212,7 @@ class saraf extends Exchange {
             if ($symbols !== null) {
                 $symbols = $this->market_symbols($symbols);
             }
-            $response = Async\await($this->publicGetV1PricesListed ($params));
+            $response = Async\await($this->publicGetV1PricesArzdigital ($params));
             $price = $this->safe_dict($response, 'price', array());
             $items = $this->safe_dict($price, 'Items', array());
             $lastUpdateTime = $this->safe_integer($price, 'lastUpdateTime');
@@ -236,7 +236,7 @@ class saraf extends Exchange {
         return Async\async(function () use ($symbol, $params) {
             /**
              * fetches a price ticker, a statistical calculation for a specific market
-             * @see https://api.saraf.app/v3/prices/crypto
+             * @see https://api.saraf.app/v1/prices/arzdigital
              * @param {string} $symbol unified $symbol of the market to fetch the ticker for
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
              * @return {array} a ~@link https://docs.ccxt.com/#/?id=ticker-structure ticker structure~
