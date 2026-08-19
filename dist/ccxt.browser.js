@@ -388336,6 +388336,270 @@ class tabdeal extends _abstract_tabdeal_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
+/***/ 6210:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ talasea)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class talasea
+ * @augments Exchange
+ */
+class talasea extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'talasea',
+            'name': 'Talasea',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': 'api',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'addMargin': false,
+                'cancelAllOrders': false,
+                'cancelOrder': false,
+                'cancelOrders': false,
+                'createDepositAddress': false,
+                'createOrder': false,
+                'createStopLimitOrder': false,
+                'createStopMarketOrder': false,
+                'createStopOrder': false,
+                'editOrder': false,
+                'fetchBalance': false,
+                'fetchBorrowInterest': false,
+                'fetchBorrowRateHistories': false,
+                'fetchBorrowRateHistory': false,
+                'fetchClosedOrders': false,
+                'fetchCrossBorrowRate': false,
+                'fetchCrossBorrowRates': false,
+                'fetchCurrencies': false,
+                'fetchDepositAddress': false,
+                'fetchDeposits': false,
+                'fetchFundingHistory': false,
+                'fetchFundingRate': false,
+                'fetchFundingRateHistory': false,
+                'fetchFundingRates': false,
+                'fetchIndexOHLCV': false,
+                'fetchIsolatedBorrowRate': false,
+                'fetchIsolatedBorrowRates': false,
+                'fetchL2OrderBook': false,
+                'fetchL3OrderBook': false,
+                'fetchLedger': false,
+                'fetchLedgerEntry': false,
+                'fetchLeverageTiers': false,
+                'fetchMarkets': true,
+                'fetchMarkOHLCV': false,
+                'fetchMyTrades': false,
+                'fetchOHLCV': false,
+                'fetchOpenInterestHistory': false,
+                'fetchOpenOrders': false,
+                'fetchOrder': false,
+                'fetchOrderBook': false,
+                'fetchOrders': false,
+                'fetchOrderTrades': 'emulated',
+                'fetchPositions': false,
+                'fetchPremiumIndexOHLCV': false,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'fetchTime': false,
+                'fetchTrades': false,
+                'fetchTradingFee': false,
+                'fetchTradingFees': false,
+                'fetchWithdrawals': false,
+                'otc': true,
+                'setLeverage': false,
+                'setMarginMode': false,
+                'transfer': false,
+                'withdraw': false,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://api.talasea.ir/api',
+                },
+                'www': 'https://talasea.ir',
+                'doc': 'https://talasea.ir',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'market/getGoldPrice': 1,
+                    },
+                },
+            },
+            'fees': {
+                'trading': {
+                    'tierBased': false,
+                    'percentage': true,
+                    'maker': this.parseNumber('0.01'),
+                    'taker': this.parseNumber('0.01'),
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        /**
+         * @method
+         * @name talasea#fetchMarkets
+         * @description retrieves the available market from talasea
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object[]} an array of objects representing market data
+         */
+        const response = await this.publicGetMarketGetGoldPrice(params);
+        const market = this.parseMarket(response);
+        const result = [market];
+        return result;
+    }
+    parseMarket(market) {
+        const disableBuy = this.safeBool(market, 'disableBuy', false);
+        const disableSell = this.safeBool(market, 'disableSell', false);
+        let active = true;
+        if (disableBuy || disableSell) {
+            active = false;
+        }
+        const result = {
+            'id': 'XAU18IRT',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'XAU18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': active,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'amount': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'price': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'cost': {
+                    'min': this.safeNumber(market, 'minOrderValue'),
+                    'max': this.safeNumber(market, 'maxOrderValue'),
+                },
+            },
+            'created': undefined,
+            'info': market,
+        };
+        return result;
+    }
+    async fetchTicker(symbol, params = {}) {
+        /**
+         * @method
+         * @name talasea#fetchTicker
+         * @description fetches a price ticker, a statistical calculation for a specific market
+         * @see https://api.talasea.ir/api/market/getGoldPrice
+         * @param {string} symbol unified symbol of the market to fetch the ticker for
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
+         */
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.publicGetMarketGetGoldPrice(params);
+        const ticker = this.parseTicker(response, market);
+        return ticker;
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        /**
+         * @method
+         * @name talasea#fetchTickers
+         * @description fetches price tickers for all markets
+         * @see https://api.talasea.ir/api/market/getGoldPrice
+         * @param {string[]|undefined} symbols unified symbols of the markets to fetch the tickers for, all market tickers are returned if not assigned
+         * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
+         */
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.publicGetMarketGetGoldPrice(params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(response, market);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(ticker, market = undefined) {
+        const result = this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': undefined,
+            'bidVolume': undefined,
+            'ask': undefined,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': this.safeNumber(ticker, 'price') * 1000,
+            'last': this.safeNumber(ticker, 'price') * 1000,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': this.safeNumber(ticker, 'change24h'),
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': ticker,
+        }, market);
+        return result;
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        const query = this.omit(params, this.extractParams(path));
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = {
+            'Content-Type': 'application/json',
+        };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
 /***/ 7496:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -433520,49 +433784,49 @@ async function __wbg_init(input) {
 var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AccountNotEnabled: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.AccountNotEnabled),
-/* harmony export */   AccountSuspended: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.AccountSuspended),
-/* harmony export */   AddressPending: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.AddressPending),
-/* harmony export */   ArgumentsRequired: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.ArgumentsRequired),
-/* harmony export */   AuthenticationError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.AuthenticationError),
-/* harmony export */   BadRequest: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.BadRequest),
-/* harmony export */   BadResponse: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.BadResponse),
-/* harmony export */   BadSymbol: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.BadSymbol),
-/* harmony export */   BaseError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.BaseError),
-/* harmony export */   CancelPending: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.CancelPending),
-/* harmony export */   ChecksumError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.ChecksumError),
-/* harmony export */   ContractUnavailable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.ContractUnavailable),
-/* harmony export */   DDoSProtection: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.DDoSProtection),
-/* harmony export */   DuplicateOrderId: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.DuplicateOrderId),
+/* harmony export */   AccountNotEnabled: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.AccountNotEnabled),
+/* harmony export */   AccountSuspended: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.AccountSuspended),
+/* harmony export */   AddressPending: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.AddressPending),
+/* harmony export */   ArgumentsRequired: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.ArgumentsRequired),
+/* harmony export */   AuthenticationError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.AuthenticationError),
+/* harmony export */   BadRequest: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.BadRequest),
+/* harmony export */   BadResponse: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.BadResponse),
+/* harmony export */   BadSymbol: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.BadSymbol),
+/* harmony export */   BaseError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.BaseError),
+/* harmony export */   CancelPending: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.CancelPending),
+/* harmony export */   ChecksumError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.ChecksumError),
+/* harmony export */   ContractUnavailable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.ContractUnavailable),
+/* harmony export */   DDoSProtection: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.DDoSProtection),
+/* harmony export */   DuplicateOrderId: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.DuplicateOrderId),
 /* harmony export */   Exchange: () => (/* reexport safe */ ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_.k),
-/* harmony export */   ExchangeClosedByUser: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.ExchangeClosedByUser),
-/* harmony export */   ExchangeError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.ExchangeError),
-/* harmony export */   ExchangeNotAvailable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.ExchangeNotAvailable),
-/* harmony export */   InsufficientFunds: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.InsufficientFunds),
-/* harmony export */   InvalidAddress: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.InvalidAddress),
-/* harmony export */   InvalidNonce: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.InvalidNonce),
-/* harmony export */   InvalidOrder: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.InvalidOrder),
-/* harmony export */   InvalidProxySettings: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.InvalidProxySettings),
-/* harmony export */   ManualInteractionNeeded: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.ManualInteractionNeeded),
-/* harmony export */   MarginModeAlreadySet: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.MarginModeAlreadySet),
-/* harmony export */   MarketClosed: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.MarketClosed),
-/* harmony export */   NetworkError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.NetworkError),
-/* harmony export */   NoChange: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.NoChange),
-/* harmony export */   NotSupported: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.NotSupported),
-/* harmony export */   NullResponse: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.NullResponse),
-/* harmony export */   OnMaintenance: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.OnMaintenance),
-/* harmony export */   OperationFailed: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.OperationFailed),
-/* harmony export */   OperationRejected: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.OperationRejected),
-/* harmony export */   OrderImmediatelyFillable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.OrderImmediatelyFillable),
-/* harmony export */   OrderNotCached: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.OrderNotCached),
-/* harmony export */   OrderNotFillable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.OrderNotFillable),
-/* harmony export */   OrderNotFound: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.OrderNotFound),
-/* harmony export */   PermissionDenied: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.PermissionDenied),
-/* harmony export */   Precise: () => (/* reexport safe */ ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_227_.Y),
-/* harmony export */   RateLimitExceeded: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.RateLimitExceeded),
-/* harmony export */   RequestTimeout: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.RequestTimeout),
-/* harmony export */   RestrictedLocation: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.RestrictedLocation),
-/* harmony export */   UnsubscribeError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_.UnsubscribeError),
+/* harmony export */   ExchangeClosedByUser: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.ExchangeClosedByUser),
+/* harmony export */   ExchangeError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.ExchangeError),
+/* harmony export */   ExchangeNotAvailable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.ExchangeNotAvailable),
+/* harmony export */   InsufficientFunds: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.InsufficientFunds),
+/* harmony export */   InvalidAddress: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.InvalidAddress),
+/* harmony export */   InvalidNonce: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.InvalidNonce),
+/* harmony export */   InvalidOrder: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.InvalidOrder),
+/* harmony export */   InvalidProxySettings: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.InvalidProxySettings),
+/* harmony export */   ManualInteractionNeeded: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.ManualInteractionNeeded),
+/* harmony export */   MarginModeAlreadySet: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.MarginModeAlreadySet),
+/* harmony export */   MarketClosed: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.MarketClosed),
+/* harmony export */   NetworkError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.NetworkError),
+/* harmony export */   NoChange: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.NoChange),
+/* harmony export */   NotSupported: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.NotSupported),
+/* harmony export */   NullResponse: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.NullResponse),
+/* harmony export */   OnMaintenance: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.OnMaintenance),
+/* harmony export */   OperationFailed: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.OperationFailed),
+/* harmony export */   OperationRejected: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.OperationRejected),
+/* harmony export */   OrderImmediatelyFillable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.OrderImmediatelyFillable),
+/* harmony export */   OrderNotCached: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.OrderNotCached),
+/* harmony export */   OrderNotFillable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.OrderNotFillable),
+/* harmony export */   OrderNotFound: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.OrderNotFound),
+/* harmony export */   PermissionDenied: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.PermissionDenied),
+/* harmony export */   Precise: () => (/* reexport safe */ ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_228_.Y),
+/* harmony export */   RateLimitExceeded: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.RateLimitExceeded),
+/* harmony export */   RequestTimeout: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.RequestTimeout),
+/* harmony export */   RestrictedLocation: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.RestrictedLocation),
+/* harmony export */   UnsubscribeError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_.UnsubscribeError),
 /* harmony export */   abantether: () => (/* reexport safe */ ccxt_src_abantether_js_WEBPACK_IMPORTED_MODULE_1_.A),
 /* harmony export */   afratether: () => (/* reexport safe */ ccxt_src_afratether_js_WEBPACK_IMPORTED_MODULE_2_.A),
 /* harmony export */   alpaca: () => (/* reexport safe */ ccxt_src_alpaca_js_WEBPACK_IMPORTED_MODULE_3_.A),
@@ -433634,7 +433898,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   derive: () => (/* reexport safe */ ccxt_src_derive_js_WEBPACK_IMPORTED_MODULE_68_.A),
 /* harmony export */   digifinex: () => (/* reexport safe */ ccxt_src_digifinex_js_WEBPACK_IMPORTED_MODULE_69_.A),
 /* harmony export */   ellipx: () => (/* reexport safe */ ccxt_src_ellipx_js_WEBPACK_IMPORTED_MODULE_70_.A),
-/* harmony export */   errors: () => (/* reexport module object */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_),
+/* harmony export */   errors: () => (/* reexport module object */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_),
 /* harmony export */   eterex: () => (/* reexport safe */ ccxt_src_eterex_js_WEBPACK_IMPORTED_MODULE_71_.A),
 /* harmony export */   exchanges: () => (/* binding */ ccxt_exchanges),
 /* harmony export */   excoino: () => (/* reexport safe */ ccxt_src_excoino_js_WEBPACK_IMPORTED_MODULE_72_.A),
@@ -433644,7 +433908,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   farhadexchange: () => (/* reexport safe */ ccxt_src_farhadexchange_js_WEBPACK_IMPORTED_MODULE_76_.A),
 /* harmony export */   fmfwio: () => (/* reexport safe */ ccxt_src_fmfwio_js_WEBPACK_IMPORTED_MODULE_77_.A),
 /* harmony export */   foxbit: () => (/* reexport safe */ ccxt_src_foxbit_js_WEBPACK_IMPORTED_MODULE_78_.A),
-/* harmony export */   functions: () => (/* reexport module object */ ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_228_),
+/* harmony export */   functions: () => (/* reexport module object */ ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_229_),
 /* harmony export */   gate: () => (/* reexport safe */ ccxt_src_gate_js_WEBPACK_IMPORTED_MODULE_79_.A),
 /* harmony export */   gateio: () => (/* reexport safe */ ccxt_src_gateio_js_WEBPACK_IMPORTED_MODULE_80_.A),
 /* harmony export */   gemini: () => (/* reexport safe */ ccxt_src_gemini_js_WEBPACK_IMPORTED_MODULE_81_.A),
@@ -433702,31 +433966,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   sarmayex: () => (/* reexport safe */ ccxt_src_sarmayex_js_WEBPACK_IMPORTED_MODULE_132_.A),
 /* harmony export */   sarrafex: () => (/* reexport safe */ ccxt_src_sarrafex_js_WEBPACK_IMPORTED_MODULE_133_.A),
 /* harmony export */   tabdeal: () => (/* reexport safe */ ccxt_src_tabdeal_js_WEBPACK_IMPORTED_MODULE_134_.A),
-/* harmony export */   tehran_exchange: () => (/* reexport safe */ ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_135_.A),
-/* harmony export */   tetherland: () => (/* reexport safe */ ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_136_.A),
-/* harmony export */   timex: () => (/* reexport safe */ ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_137_.A),
-/* harmony export */   tokocrypto: () => (/* reexport safe */ ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_138_.A),
-/* harmony export */   toobit: () => (/* reexport safe */ ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_139_.A),
-/* harmony export */   tradeogre: () => (/* reexport safe */ ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_140_.A),
-/* harmony export */   twox: () => (/* reexport safe */ ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_141_.A),
-/* harmony export */   ubitex: () => (/* reexport safe */ ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_142_.A),
-/* harmony export */   upbit: () => (/* reexport safe */ ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_143_.A),
+/* harmony export */   talasea: () => (/* reexport safe */ ccxt_src_talasea_js_WEBPACK_IMPORTED_MODULE_135_.A),
+/* harmony export */   tehran_exchange: () => (/* reexport safe */ ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_136_.A),
+/* harmony export */   tetherland: () => (/* reexport safe */ ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_137_.A),
+/* harmony export */   timex: () => (/* reexport safe */ ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_138_.A),
+/* harmony export */   tokocrypto: () => (/* reexport safe */ ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_139_.A),
+/* harmony export */   toobit: () => (/* reexport safe */ ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_140_.A),
+/* harmony export */   tradeogre: () => (/* reexport safe */ ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_141_.A),
+/* harmony export */   twox: () => (/* reexport safe */ ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_142_.A),
+/* harmony export */   ubitex: () => (/* reexport safe */ ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_143_.A),
+/* harmony export */   upbit: () => (/* reexport safe */ ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_144_.A),
 /* harmony export */   version: () => (/* binding */ ccxt_version),
-/* harmony export */   vertex: () => (/* reexport safe */ ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_144_.A),
-/* harmony export */   wallex: () => (/* reexport safe */ ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_145_.A),
-/* harmony export */   wavesexchange: () => (/* reexport safe */ ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_146_.A),
-/* harmony export */   whitebit: () => (/* reexport safe */ ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_147_.A),
-/* harmony export */   woo: () => (/* reexport safe */ ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_148_.A),
-/* harmony export */   woofipro: () => (/* reexport safe */ ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_149_.A),
-/* harmony export */   xt: () => (/* reexport safe */ ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_150_.A),
-/* harmony export */   yobit: () => (/* reexport safe */ ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_151_.A),
-/* harmony export */   zaif: () => (/* reexport safe */ ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_152_.A),
-/* harmony export */   zonda: () => (/* reexport safe */ ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_153_.A)
+/* harmony export */   vertex: () => (/* reexport safe */ ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_145_.A),
+/* harmony export */   wallex: () => (/* reexport safe */ ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_146_.A),
+/* harmony export */   wavesexchange: () => (/* reexport safe */ ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_147_.A),
+/* harmony export */   whitebit: () => (/* reexport safe */ ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_148_.A),
+/* harmony export */   woo: () => (/* reexport safe */ ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_149_.A),
+/* harmony export */   woofipro: () => (/* reexport safe */ ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_150_.A),
+/* harmony export */   xt: () => (/* reexport safe */ ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_151_.A),
+/* harmony export */   yobit: () => (/* reexport safe */ ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_152_.A),
+/* harmony export */   zaif: () => (/* reexport safe */ ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_153_.A),
+/* harmony export */   zonda: () => (/* reexport safe */ ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_154_.A)
 /* harmony export */ });
 /* harmony import */ var ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_ = __webpack_require__(2961);
-/* harmony import */ var ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_227_ = __webpack_require__(5147);
-/* harmony import */ var ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_228_ = __webpack_require__(5095);
-/* harmony import */ var ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_ = __webpack_require__(2079);
+/* harmony import */ var ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_228_ = __webpack_require__(5147);
+/* harmony import */ var ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_229_ = __webpack_require__(5095);
+/* harmony import */ var ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_ = __webpack_require__(2079);
 /* harmony import */ var ccxt_src_abantether_js_WEBPACK_IMPORTED_MODULE_1_ = __webpack_require__(1656);
 /* harmony import */ var ccxt_src_afratether_js_WEBPACK_IMPORTED_MODULE_2_ = __webpack_require__(5566);
 /* harmony import */ var ccxt_src_alpaca_js_WEBPACK_IMPORTED_MODULE_3_ = __webpack_require__(7930);
@@ -433861,98 +434126,99 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ccxt_src_sarmayex_js_WEBPACK_IMPORTED_MODULE_132_ = __webpack_require__(5822);
 /* harmony import */ var ccxt_src_sarrafex_js_WEBPACK_IMPORTED_MODULE_133_ = __webpack_require__(9702);
 /* harmony import */ var ccxt_src_tabdeal_js_WEBPACK_IMPORTED_MODULE_134_ = __webpack_require__(5619);
-/* harmony import */ var ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_135_ = __webpack_require__(7496);
-/* harmony import */ var ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_136_ = __webpack_require__(7497);
-/* harmony import */ var ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_137_ = __webpack_require__(6213);
-/* harmony import */ var ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_138_ = __webpack_require__(2490);
-/* harmony import */ var ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_139_ = __webpack_require__(237);
-/* harmony import */ var ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_140_ = __webpack_require__(5887);
-/* harmony import */ var ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_141_ = __webpack_require__(8586);
-/* harmony import */ var ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_142_ = __webpack_require__(3551);
-/* harmony import */ var ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_143_ = __webpack_require__(930);
-/* harmony import */ var ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_144_ = __webpack_require__(4910);
-/* harmony import */ var ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_145_ = __webpack_require__(8633);
-/* harmony import */ var ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_146_ = __webpack_require__(7073);
-/* harmony import */ var ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_147_ = __webpack_require__(5336);
-/* harmony import */ var ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_148_ = __webpack_require__(669);
-/* harmony import */ var ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_149_ = __webpack_require__(9641);
-/* harmony import */ var ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_150_ = __webpack_require__(5344);
-/* harmony import */ var ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_151_ = __webpack_require__(7469);
-/* harmony import */ var ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_152_ = __webpack_require__(1530);
-/* harmony import */ var ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_153_ = __webpack_require__(6022);
-/* harmony import */ var ccxt_src_pro_alpaca_js_WEBPACK_IMPORTED_MODULE_154_ = __webpack_require__(6810);
-/* harmony import */ var ccxt_src_pro_apex_js_WEBPACK_IMPORTED_MODULE_155_ = __webpack_require__(136);
-/* harmony import */ var ccxt_src_pro_ascendex_js_WEBPACK_IMPORTED_MODULE_156_ = __webpack_require__(1657);
-/* harmony import */ var ccxt_src_pro_bequant_js_WEBPACK_IMPORTED_MODULE_157_ = __webpack_require__(9338);
-/* harmony import */ var ccxt_src_pro_binance_js_WEBPACK_IMPORTED_MODULE_158_ = __webpack_require__(9544);
-/* harmony import */ var ccxt_src_pro_binancecoinm_js_WEBPACK_IMPORTED_MODULE_159_ = __webpack_require__(902);
-/* harmony import */ var ccxt_src_pro_binanceus_js_WEBPACK_IMPORTED_MODULE_160_ = __webpack_require__(8788);
-/* harmony import */ var ccxt_src_pro_binanceusdm_js_WEBPACK_IMPORTED_MODULE_161_ = __webpack_require__(8251);
-/* harmony import */ var ccxt_src_pro_bingx_js_WEBPACK_IMPORTED_MODULE_162_ = __webpack_require__(9456);
-/* harmony import */ var ccxt_src_pro_bitfinex_js_WEBPACK_IMPORTED_MODULE_163_ = __webpack_require__(1038);
-/* harmony import */ var ccxt_src_pro_bitget_js_WEBPACK_IMPORTED_MODULE_164_ = __webpack_require__(205);
-/* harmony import */ var ccxt_src_pro_bithumb_js_WEBPACK_IMPORTED_MODULE_165_ = __webpack_require__(6181);
-/* harmony import */ var ccxt_src_pro_bitmart_js_WEBPACK_IMPORTED_MODULE_166_ = __webpack_require__(3069);
-/* harmony import */ var ccxt_src_pro_bitmex_js_WEBPACK_IMPORTED_MODULE_167_ = __webpack_require__(3731);
-/* harmony import */ var ccxt_src_pro_bitopro_js_WEBPACK_IMPORTED_MODULE_168_ = __webpack_require__(4401);
-/* harmony import */ var ccxt_src_pro_bitrue_js_WEBPACK_IMPORTED_MODULE_169_ = __webpack_require__(3333);
-/* harmony import */ var ccxt_src_pro_bitstamp_js_WEBPACK_IMPORTED_MODULE_170_ = __webpack_require__(3326);
-/* harmony import */ var ccxt_src_pro_bittrade_js_WEBPACK_IMPORTED_MODULE_171_ = __webpack_require__(2391);
-/* harmony import */ var ccxt_src_pro_bitvavo_js_WEBPACK_IMPORTED_MODULE_172_ = __webpack_require__(1327);
-/* harmony import */ var ccxt_src_pro_blockchaincom_js_WEBPACK_IMPORTED_MODULE_173_ = __webpack_require__(8693);
-/* harmony import */ var ccxt_src_pro_blofin_js_WEBPACK_IMPORTED_MODULE_174_ = __webpack_require__(1672);
-/* harmony import */ var ccxt_src_pro_bybit_js_WEBPACK_IMPORTED_MODULE_175_ = __webpack_require__(8518);
-/* harmony import */ var ccxt_src_pro_cex_js_WEBPACK_IMPORTED_MODULE_176_ = __webpack_require__(3774);
-/* harmony import */ var ccxt_src_pro_coinbase_js_WEBPACK_IMPORTED_MODULE_177_ = __webpack_require__(8160);
-/* harmony import */ var ccxt_src_pro_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_178_ = __webpack_require__(5918);
-/* harmony import */ var ccxt_src_pro_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_179_ = __webpack_require__(1925);
-/* harmony import */ var ccxt_src_pro_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_180_ = __webpack_require__(998);
-/* harmony import */ var ccxt_src_pro_coincatch_js_WEBPACK_IMPORTED_MODULE_181_ = __webpack_require__(3242);
-/* harmony import */ var ccxt_src_pro_coincheck_js_WEBPACK_IMPORTED_MODULE_182_ = __webpack_require__(5317);
-/* harmony import */ var ccxt_src_pro_coinex_js_WEBPACK_IMPORTED_MODULE_183_ = __webpack_require__(9088);
-/* harmony import */ var ccxt_src_pro_coinone_js_WEBPACK_IMPORTED_MODULE_184_ = __webpack_require__(8673);
-/* harmony import */ var ccxt_src_pro_cryptocom_js_WEBPACK_IMPORTED_MODULE_185_ = __webpack_require__(6292);
-/* harmony import */ var ccxt_src_pro_defx_js_WEBPACK_IMPORTED_MODULE_186_ = __webpack_require__(8717);
-/* harmony import */ var ccxt_src_pro_deribit_js_WEBPACK_IMPORTED_MODULE_187_ = __webpack_require__(7791);
-/* harmony import */ var ccxt_src_pro_derive_js_WEBPACK_IMPORTED_MODULE_188_ = __webpack_require__(2127);
-/* harmony import */ var ccxt_src_pro_exmo_js_WEBPACK_IMPORTED_MODULE_189_ = __webpack_require__(5233);
-/* harmony import */ var ccxt_src_pro_gate_js_WEBPACK_IMPORTED_MODULE_190_ = __webpack_require__(9195);
-/* harmony import */ var ccxt_src_pro_gateio_js_WEBPACK_IMPORTED_MODULE_191_ = __webpack_require__(5843);
-/* harmony import */ var ccxt_src_pro_gemini_js_WEBPACK_IMPORTED_MODULE_192_ = __webpack_require__(375);
-/* harmony import */ var ccxt_src_pro_hashkey_js_WEBPACK_IMPORTED_MODULE_193_ = __webpack_require__(1481);
-/* harmony import */ var ccxt_src_pro_hitbtc_js_WEBPACK_IMPORTED_MODULE_194_ = __webpack_require__(4524);
-/* harmony import */ var ccxt_src_pro_hollaex_js_WEBPACK_IMPORTED_MODULE_195_ = __webpack_require__(8247);
-/* harmony import */ var ccxt_src_pro_htx_js_WEBPACK_IMPORTED_MODULE_196_ = __webpack_require__(3898);
-/* harmony import */ var ccxt_src_pro_huobi_js_WEBPACK_IMPORTED_MODULE_197_ = __webpack_require__(6335);
-/* harmony import */ var ccxt_src_pro_hyperliquid_js_WEBPACK_IMPORTED_MODULE_198_ = __webpack_require__(3984);
-/* harmony import */ var ccxt_src_pro_independentreserve_js_WEBPACK_IMPORTED_MODULE_199_ = __webpack_require__(98);
-/* harmony import */ var ccxt_src_pro_kraken_js_WEBPACK_IMPORTED_MODULE_200_ = __webpack_require__(9050);
-/* harmony import */ var ccxt_src_pro_krakenfutures_js_WEBPACK_IMPORTED_MODULE_201_ = __webpack_require__(6396);
-/* harmony import */ var ccxt_src_pro_kucoin_js_WEBPACK_IMPORTED_MODULE_202_ = __webpack_require__(4965);
-/* harmony import */ var ccxt_src_pro_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_203_ = __webpack_require__(905);
-/* harmony import */ var ccxt_src_pro_lbank_js_WEBPACK_IMPORTED_MODULE_204_ = __webpack_require__(1736);
-/* harmony import */ var ccxt_src_pro_luno_js_WEBPACK_IMPORTED_MODULE_205_ = __webpack_require__(9827);
-/* harmony import */ var ccxt_src_pro_mexc_js_WEBPACK_IMPORTED_MODULE_206_ = __webpack_require__(9219);
-/* harmony import */ var ccxt_src_pro_modetrade_js_WEBPACK_IMPORTED_MODULE_207_ = __webpack_require__(49);
-/* harmony import */ var ccxt_src_pro_myokx_js_WEBPACK_IMPORTED_MODULE_208_ = __webpack_require__(3062);
-/* harmony import */ var ccxt_src_pro_ndax_js_WEBPACK_IMPORTED_MODULE_209_ = __webpack_require__(3887);
-/* harmony import */ var ccxt_src_pro_okcoin_js_WEBPACK_IMPORTED_MODULE_210_ = __webpack_require__(6187);
-/* harmony import */ var ccxt_src_pro_okx_js_WEBPACK_IMPORTED_MODULE_211_ = __webpack_require__(8588);
-/* harmony import */ var ccxt_src_pro_okxus_js_WEBPACK_IMPORTED_MODULE_212_ = __webpack_require__(3296);
-/* harmony import */ var ccxt_src_pro_onetrading_js_WEBPACK_IMPORTED_MODULE_213_ = __webpack_require__(4357);
-/* harmony import */ var ccxt_src_pro_oxfun_js_WEBPACK_IMPORTED_MODULE_214_ = __webpack_require__(550);
-/* harmony import */ var ccxt_src_pro_p2b_js_WEBPACK_IMPORTED_MODULE_215_ = __webpack_require__(4934);
-/* harmony import */ var ccxt_src_pro_paradex_js_WEBPACK_IMPORTED_MODULE_216_ = __webpack_require__(1057);
-/* harmony import */ var ccxt_src_pro_phemex_js_WEBPACK_IMPORTED_MODULE_217_ = __webpack_require__(1619);
-/* harmony import */ var ccxt_src_pro_poloniex_js_WEBPACK_IMPORTED_MODULE_218_ = __webpack_require__(3456);
-/* harmony import */ var ccxt_src_pro_probit_js_WEBPACK_IMPORTED_MODULE_219_ = __webpack_require__(5738);
-/* harmony import */ var ccxt_src_pro_tradeogre_js_WEBPACK_IMPORTED_MODULE_220_ = __webpack_require__(8719);
-/* harmony import */ var ccxt_src_pro_upbit_js_WEBPACK_IMPORTED_MODULE_221_ = __webpack_require__(5794);
-/* harmony import */ var ccxt_src_pro_vertex_js_WEBPACK_IMPORTED_MODULE_222_ = __webpack_require__(910);
-/* harmony import */ var ccxt_src_pro_whitebit_js_WEBPACK_IMPORTED_MODULE_223_ = __webpack_require__(4712);
-/* harmony import */ var ccxt_src_pro_woo_js_WEBPACK_IMPORTED_MODULE_224_ = __webpack_require__(5869);
-/* harmony import */ var ccxt_src_pro_woofipro_js_WEBPACK_IMPORTED_MODULE_225_ = __webpack_require__(8713);
-/* harmony import */ var ccxt_src_pro_xt_js_WEBPACK_IMPORTED_MODULE_226_ = __webpack_require__(2368);
+/* harmony import */ var ccxt_src_talasea_js_WEBPACK_IMPORTED_MODULE_135_ = __webpack_require__(6210);
+/* harmony import */ var ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_136_ = __webpack_require__(7496);
+/* harmony import */ var ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_137_ = __webpack_require__(7497);
+/* harmony import */ var ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_138_ = __webpack_require__(6213);
+/* harmony import */ var ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_139_ = __webpack_require__(2490);
+/* harmony import */ var ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_140_ = __webpack_require__(237);
+/* harmony import */ var ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_141_ = __webpack_require__(5887);
+/* harmony import */ var ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_142_ = __webpack_require__(8586);
+/* harmony import */ var ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_143_ = __webpack_require__(3551);
+/* harmony import */ var ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_144_ = __webpack_require__(930);
+/* harmony import */ var ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_145_ = __webpack_require__(4910);
+/* harmony import */ var ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_146_ = __webpack_require__(8633);
+/* harmony import */ var ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_147_ = __webpack_require__(7073);
+/* harmony import */ var ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_148_ = __webpack_require__(5336);
+/* harmony import */ var ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_149_ = __webpack_require__(669);
+/* harmony import */ var ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_150_ = __webpack_require__(9641);
+/* harmony import */ var ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_151_ = __webpack_require__(5344);
+/* harmony import */ var ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_152_ = __webpack_require__(7469);
+/* harmony import */ var ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_153_ = __webpack_require__(1530);
+/* harmony import */ var ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_154_ = __webpack_require__(6022);
+/* harmony import */ var ccxt_src_pro_alpaca_js_WEBPACK_IMPORTED_MODULE_155_ = __webpack_require__(6810);
+/* harmony import */ var ccxt_src_pro_apex_js_WEBPACK_IMPORTED_MODULE_156_ = __webpack_require__(136);
+/* harmony import */ var ccxt_src_pro_ascendex_js_WEBPACK_IMPORTED_MODULE_157_ = __webpack_require__(1657);
+/* harmony import */ var ccxt_src_pro_bequant_js_WEBPACK_IMPORTED_MODULE_158_ = __webpack_require__(9338);
+/* harmony import */ var ccxt_src_pro_binance_js_WEBPACK_IMPORTED_MODULE_159_ = __webpack_require__(9544);
+/* harmony import */ var ccxt_src_pro_binancecoinm_js_WEBPACK_IMPORTED_MODULE_160_ = __webpack_require__(902);
+/* harmony import */ var ccxt_src_pro_binanceus_js_WEBPACK_IMPORTED_MODULE_161_ = __webpack_require__(8788);
+/* harmony import */ var ccxt_src_pro_binanceusdm_js_WEBPACK_IMPORTED_MODULE_162_ = __webpack_require__(8251);
+/* harmony import */ var ccxt_src_pro_bingx_js_WEBPACK_IMPORTED_MODULE_163_ = __webpack_require__(9456);
+/* harmony import */ var ccxt_src_pro_bitfinex_js_WEBPACK_IMPORTED_MODULE_164_ = __webpack_require__(1038);
+/* harmony import */ var ccxt_src_pro_bitget_js_WEBPACK_IMPORTED_MODULE_165_ = __webpack_require__(205);
+/* harmony import */ var ccxt_src_pro_bithumb_js_WEBPACK_IMPORTED_MODULE_166_ = __webpack_require__(6181);
+/* harmony import */ var ccxt_src_pro_bitmart_js_WEBPACK_IMPORTED_MODULE_167_ = __webpack_require__(3069);
+/* harmony import */ var ccxt_src_pro_bitmex_js_WEBPACK_IMPORTED_MODULE_168_ = __webpack_require__(3731);
+/* harmony import */ var ccxt_src_pro_bitopro_js_WEBPACK_IMPORTED_MODULE_169_ = __webpack_require__(4401);
+/* harmony import */ var ccxt_src_pro_bitrue_js_WEBPACK_IMPORTED_MODULE_170_ = __webpack_require__(3333);
+/* harmony import */ var ccxt_src_pro_bitstamp_js_WEBPACK_IMPORTED_MODULE_171_ = __webpack_require__(3326);
+/* harmony import */ var ccxt_src_pro_bittrade_js_WEBPACK_IMPORTED_MODULE_172_ = __webpack_require__(2391);
+/* harmony import */ var ccxt_src_pro_bitvavo_js_WEBPACK_IMPORTED_MODULE_173_ = __webpack_require__(1327);
+/* harmony import */ var ccxt_src_pro_blockchaincom_js_WEBPACK_IMPORTED_MODULE_174_ = __webpack_require__(8693);
+/* harmony import */ var ccxt_src_pro_blofin_js_WEBPACK_IMPORTED_MODULE_175_ = __webpack_require__(1672);
+/* harmony import */ var ccxt_src_pro_bybit_js_WEBPACK_IMPORTED_MODULE_176_ = __webpack_require__(8518);
+/* harmony import */ var ccxt_src_pro_cex_js_WEBPACK_IMPORTED_MODULE_177_ = __webpack_require__(3774);
+/* harmony import */ var ccxt_src_pro_coinbase_js_WEBPACK_IMPORTED_MODULE_178_ = __webpack_require__(8160);
+/* harmony import */ var ccxt_src_pro_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_179_ = __webpack_require__(5918);
+/* harmony import */ var ccxt_src_pro_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_180_ = __webpack_require__(1925);
+/* harmony import */ var ccxt_src_pro_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_181_ = __webpack_require__(998);
+/* harmony import */ var ccxt_src_pro_coincatch_js_WEBPACK_IMPORTED_MODULE_182_ = __webpack_require__(3242);
+/* harmony import */ var ccxt_src_pro_coincheck_js_WEBPACK_IMPORTED_MODULE_183_ = __webpack_require__(5317);
+/* harmony import */ var ccxt_src_pro_coinex_js_WEBPACK_IMPORTED_MODULE_184_ = __webpack_require__(9088);
+/* harmony import */ var ccxt_src_pro_coinone_js_WEBPACK_IMPORTED_MODULE_185_ = __webpack_require__(8673);
+/* harmony import */ var ccxt_src_pro_cryptocom_js_WEBPACK_IMPORTED_MODULE_186_ = __webpack_require__(6292);
+/* harmony import */ var ccxt_src_pro_defx_js_WEBPACK_IMPORTED_MODULE_187_ = __webpack_require__(8717);
+/* harmony import */ var ccxt_src_pro_deribit_js_WEBPACK_IMPORTED_MODULE_188_ = __webpack_require__(7791);
+/* harmony import */ var ccxt_src_pro_derive_js_WEBPACK_IMPORTED_MODULE_189_ = __webpack_require__(2127);
+/* harmony import */ var ccxt_src_pro_exmo_js_WEBPACK_IMPORTED_MODULE_190_ = __webpack_require__(5233);
+/* harmony import */ var ccxt_src_pro_gate_js_WEBPACK_IMPORTED_MODULE_191_ = __webpack_require__(9195);
+/* harmony import */ var ccxt_src_pro_gateio_js_WEBPACK_IMPORTED_MODULE_192_ = __webpack_require__(5843);
+/* harmony import */ var ccxt_src_pro_gemini_js_WEBPACK_IMPORTED_MODULE_193_ = __webpack_require__(375);
+/* harmony import */ var ccxt_src_pro_hashkey_js_WEBPACK_IMPORTED_MODULE_194_ = __webpack_require__(1481);
+/* harmony import */ var ccxt_src_pro_hitbtc_js_WEBPACK_IMPORTED_MODULE_195_ = __webpack_require__(4524);
+/* harmony import */ var ccxt_src_pro_hollaex_js_WEBPACK_IMPORTED_MODULE_196_ = __webpack_require__(8247);
+/* harmony import */ var ccxt_src_pro_htx_js_WEBPACK_IMPORTED_MODULE_197_ = __webpack_require__(3898);
+/* harmony import */ var ccxt_src_pro_huobi_js_WEBPACK_IMPORTED_MODULE_198_ = __webpack_require__(6335);
+/* harmony import */ var ccxt_src_pro_hyperliquid_js_WEBPACK_IMPORTED_MODULE_199_ = __webpack_require__(3984);
+/* harmony import */ var ccxt_src_pro_independentreserve_js_WEBPACK_IMPORTED_MODULE_200_ = __webpack_require__(98);
+/* harmony import */ var ccxt_src_pro_kraken_js_WEBPACK_IMPORTED_MODULE_201_ = __webpack_require__(9050);
+/* harmony import */ var ccxt_src_pro_krakenfutures_js_WEBPACK_IMPORTED_MODULE_202_ = __webpack_require__(6396);
+/* harmony import */ var ccxt_src_pro_kucoin_js_WEBPACK_IMPORTED_MODULE_203_ = __webpack_require__(4965);
+/* harmony import */ var ccxt_src_pro_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_204_ = __webpack_require__(905);
+/* harmony import */ var ccxt_src_pro_lbank_js_WEBPACK_IMPORTED_MODULE_205_ = __webpack_require__(1736);
+/* harmony import */ var ccxt_src_pro_luno_js_WEBPACK_IMPORTED_MODULE_206_ = __webpack_require__(9827);
+/* harmony import */ var ccxt_src_pro_mexc_js_WEBPACK_IMPORTED_MODULE_207_ = __webpack_require__(9219);
+/* harmony import */ var ccxt_src_pro_modetrade_js_WEBPACK_IMPORTED_MODULE_208_ = __webpack_require__(49);
+/* harmony import */ var ccxt_src_pro_myokx_js_WEBPACK_IMPORTED_MODULE_209_ = __webpack_require__(3062);
+/* harmony import */ var ccxt_src_pro_ndax_js_WEBPACK_IMPORTED_MODULE_210_ = __webpack_require__(3887);
+/* harmony import */ var ccxt_src_pro_okcoin_js_WEBPACK_IMPORTED_MODULE_211_ = __webpack_require__(6187);
+/* harmony import */ var ccxt_src_pro_okx_js_WEBPACK_IMPORTED_MODULE_212_ = __webpack_require__(8588);
+/* harmony import */ var ccxt_src_pro_okxus_js_WEBPACK_IMPORTED_MODULE_213_ = __webpack_require__(3296);
+/* harmony import */ var ccxt_src_pro_onetrading_js_WEBPACK_IMPORTED_MODULE_214_ = __webpack_require__(4357);
+/* harmony import */ var ccxt_src_pro_oxfun_js_WEBPACK_IMPORTED_MODULE_215_ = __webpack_require__(550);
+/* harmony import */ var ccxt_src_pro_p2b_js_WEBPACK_IMPORTED_MODULE_216_ = __webpack_require__(4934);
+/* harmony import */ var ccxt_src_pro_paradex_js_WEBPACK_IMPORTED_MODULE_217_ = __webpack_require__(1057);
+/* harmony import */ var ccxt_src_pro_phemex_js_WEBPACK_IMPORTED_MODULE_218_ = __webpack_require__(1619);
+/* harmony import */ var ccxt_src_pro_poloniex_js_WEBPACK_IMPORTED_MODULE_219_ = __webpack_require__(3456);
+/* harmony import */ var ccxt_src_pro_probit_js_WEBPACK_IMPORTED_MODULE_220_ = __webpack_require__(5738);
+/* harmony import */ var ccxt_src_pro_tradeogre_js_WEBPACK_IMPORTED_MODULE_221_ = __webpack_require__(8719);
+/* harmony import */ var ccxt_src_pro_upbit_js_WEBPACK_IMPORTED_MODULE_222_ = __webpack_require__(5794);
+/* harmony import */ var ccxt_src_pro_vertex_js_WEBPACK_IMPORTED_MODULE_223_ = __webpack_require__(910);
+/* harmony import */ var ccxt_src_pro_whitebit_js_WEBPACK_IMPORTED_MODULE_224_ = __webpack_require__(4712);
+/* harmony import */ var ccxt_src_pro_woo_js_WEBPACK_IMPORTED_MODULE_225_ = __webpack_require__(5869);
+/* harmony import */ var ccxt_src_pro_woofipro_js_WEBPACK_IMPORTED_MODULE_226_ = __webpack_require__(8713);
+/* harmony import */ var ccxt_src_pro_xt_js_WEBPACK_IMPORTED_MODULE_227_ = __webpack_require__(2368);
 /*
 
 MIT License
@@ -433987,9 +434253,10 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.14.4';
+const ccxt_version = '4.15.0';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
+
 
 
 
@@ -434352,100 +434619,101 @@ const ccxt_exchanges = {
     'sarmayex': ccxt_src_sarmayex_js_WEBPACK_IMPORTED_MODULE_132_/* ["default"] */ .A,
     'sarrafex': ccxt_src_sarrafex_js_WEBPACK_IMPORTED_MODULE_133_/* ["default"] */ .A,
     'tabdeal': ccxt_src_tabdeal_js_WEBPACK_IMPORTED_MODULE_134_/* ["default"] */ .A,
-    'tehran_exchange': ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_135_/* ["default"] */ .A,
-    'tetherland': ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_136_/* ["default"] */ .A,
-    'timex': ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_137_/* ["default"] */ .A,
-    'tokocrypto': ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_138_/* ["default"] */ .A,
-    'toobit': ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_139_/* ["default"] */ .A,
-    'tradeogre': ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_140_/* ["default"] */ .A,
-    'twox': ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_141_/* ["default"] */ .A,
-    'ubitex': ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_142_/* ["default"] */ .A,
-    'upbit': ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_143_/* ["default"] */ .A,
-    'vertex': ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_144_/* ["default"] */ .A,
-    'wallex': ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_145_/* ["default"] */ .A,
-    'wavesexchange': ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_146_/* ["default"] */ .A,
-    'whitebit': ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_147_/* ["default"] */ .A,
-    'woo': ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_148_/* ["default"] */ .A,
-    'woofipro': ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_149_/* ["default"] */ .A,
-    'xt': ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_150_/* ["default"] */ .A,
-    'yobit': ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_151_/* ["default"] */ .A,
-    'zaif': ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_152_/* ["default"] */ .A,
-    'zonda': ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_153_/* ["default"] */ .A,
+    'talasea': ccxt_src_talasea_js_WEBPACK_IMPORTED_MODULE_135_/* ["default"] */ .A,
+    'tehran_exchange': ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_136_/* ["default"] */ .A,
+    'tetherland': ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_137_/* ["default"] */ .A,
+    'timex': ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_138_/* ["default"] */ .A,
+    'tokocrypto': ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_139_/* ["default"] */ .A,
+    'toobit': ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_140_/* ["default"] */ .A,
+    'tradeogre': ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_141_/* ["default"] */ .A,
+    'twox': ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_142_/* ["default"] */ .A,
+    'ubitex': ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_143_/* ["default"] */ .A,
+    'upbit': ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_144_/* ["default"] */ .A,
+    'vertex': ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_145_/* ["default"] */ .A,
+    'wallex': ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_146_/* ["default"] */ .A,
+    'wavesexchange': ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_147_/* ["default"] */ .A,
+    'whitebit': ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_148_/* ["default"] */ .A,
+    'woo': ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_149_/* ["default"] */ .A,
+    'woofipro': ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_150_/* ["default"] */ .A,
+    'xt': ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_151_/* ["default"] */ .A,
+    'yobit': ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_152_/* ["default"] */ .A,
+    'zaif': ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_153_/* ["default"] */ .A,
+    'zonda': ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_154_/* ["default"] */ .A,
 };
 const ccxt_pro = {
-    'alpaca': ccxt_src_pro_alpaca_js_WEBPACK_IMPORTED_MODULE_154_/* ["default"] */ .A,
-    'apex': ccxt_src_pro_apex_js_WEBPACK_IMPORTED_MODULE_155_/* ["default"] */ .A,
-    'ascendex': ccxt_src_pro_ascendex_js_WEBPACK_IMPORTED_MODULE_156_/* ["default"] */ .A,
-    'bequant': ccxt_src_pro_bequant_js_WEBPACK_IMPORTED_MODULE_157_/* ["default"] */ .A,
-    'binance': ccxt_src_pro_binance_js_WEBPACK_IMPORTED_MODULE_158_/* ["default"] */ .A,
-    'binancecoinm': ccxt_src_pro_binancecoinm_js_WEBPACK_IMPORTED_MODULE_159_/* ["default"] */ .A,
-    'binanceus': ccxt_src_pro_binanceus_js_WEBPACK_IMPORTED_MODULE_160_/* ["default"] */ .A,
-    'binanceusdm': ccxt_src_pro_binanceusdm_js_WEBPACK_IMPORTED_MODULE_161_/* ["default"] */ .A,
-    'bingx': ccxt_src_pro_bingx_js_WEBPACK_IMPORTED_MODULE_162_/* ["default"] */ .A,
-    'bitfinex': ccxt_src_pro_bitfinex_js_WEBPACK_IMPORTED_MODULE_163_/* ["default"] */ .A,
-    'bitget': ccxt_src_pro_bitget_js_WEBPACK_IMPORTED_MODULE_164_/* ["default"] */ .A,
-    'bithumb': ccxt_src_pro_bithumb_js_WEBPACK_IMPORTED_MODULE_165_/* ["default"] */ .A,
-    'bitmart': ccxt_src_pro_bitmart_js_WEBPACK_IMPORTED_MODULE_166_/* ["default"] */ .A,
-    'bitmex': ccxt_src_pro_bitmex_js_WEBPACK_IMPORTED_MODULE_167_/* ["default"] */ .A,
-    'bitopro': ccxt_src_pro_bitopro_js_WEBPACK_IMPORTED_MODULE_168_/* ["default"] */ .A,
-    'bitrue': ccxt_src_pro_bitrue_js_WEBPACK_IMPORTED_MODULE_169_/* ["default"] */ .A,
-    'bitstamp': ccxt_src_pro_bitstamp_js_WEBPACK_IMPORTED_MODULE_170_/* ["default"] */ .A,
-    'bittrade': ccxt_src_pro_bittrade_js_WEBPACK_IMPORTED_MODULE_171_/* ["default"] */ .A,
-    'bitvavo': ccxt_src_pro_bitvavo_js_WEBPACK_IMPORTED_MODULE_172_/* ["default"] */ .A,
-    'blockchaincom': ccxt_src_pro_blockchaincom_js_WEBPACK_IMPORTED_MODULE_173_/* ["default"] */ .A,
-    'blofin': ccxt_src_pro_blofin_js_WEBPACK_IMPORTED_MODULE_174_/* ["default"] */ .A,
-    'bybit': ccxt_src_pro_bybit_js_WEBPACK_IMPORTED_MODULE_175_/* ["default"] */ .A,
-    'cex': ccxt_src_pro_cex_js_WEBPACK_IMPORTED_MODULE_176_/* ["default"] */ .A,
-    'coinbase': ccxt_src_pro_coinbase_js_WEBPACK_IMPORTED_MODULE_177_/* ["default"] */ .A,
-    'coinbaseadvanced': ccxt_src_pro_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_178_/* ["default"] */ .A,
-    'coinbaseexchange': ccxt_src_pro_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_179_/* ["default"] */ .A,
-    'coinbaseinternational': ccxt_src_pro_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_180_/* ["default"] */ .A,
-    'coincatch': ccxt_src_pro_coincatch_js_WEBPACK_IMPORTED_MODULE_181_/* ["default"] */ .A,
-    'coincheck': ccxt_src_pro_coincheck_js_WEBPACK_IMPORTED_MODULE_182_/* ["default"] */ .A,
-    'coinex': ccxt_src_pro_coinex_js_WEBPACK_IMPORTED_MODULE_183_/* ["default"] */ .A,
-    'coinone': ccxt_src_pro_coinone_js_WEBPACK_IMPORTED_MODULE_184_/* ["default"] */ .A,
-    'cryptocom': ccxt_src_pro_cryptocom_js_WEBPACK_IMPORTED_MODULE_185_/* ["default"] */ .A,
-    'defx': ccxt_src_pro_defx_js_WEBPACK_IMPORTED_MODULE_186_/* ["default"] */ .A,
-    'deribit': ccxt_src_pro_deribit_js_WEBPACK_IMPORTED_MODULE_187_/* ["default"] */ .A,
-    'derive': ccxt_src_pro_derive_js_WEBPACK_IMPORTED_MODULE_188_/* ["default"] */ .A,
-    'exmo': ccxt_src_pro_exmo_js_WEBPACK_IMPORTED_MODULE_189_/* ["default"] */ .A,
-    'gate': ccxt_src_pro_gate_js_WEBPACK_IMPORTED_MODULE_190_/* ["default"] */ .A,
-    'gateio': ccxt_src_pro_gateio_js_WEBPACK_IMPORTED_MODULE_191_/* ["default"] */ .A,
-    'gemini': ccxt_src_pro_gemini_js_WEBPACK_IMPORTED_MODULE_192_/* ["default"] */ .A,
-    'hashkey': ccxt_src_pro_hashkey_js_WEBPACK_IMPORTED_MODULE_193_/* ["default"] */ .A,
-    'hitbtc': ccxt_src_pro_hitbtc_js_WEBPACK_IMPORTED_MODULE_194_/* ["default"] */ .A,
-    'hollaex': ccxt_src_pro_hollaex_js_WEBPACK_IMPORTED_MODULE_195_/* ["default"] */ .A,
-    'htx': ccxt_src_pro_htx_js_WEBPACK_IMPORTED_MODULE_196_/* ["default"] */ .A,
-    'huobi': ccxt_src_pro_huobi_js_WEBPACK_IMPORTED_MODULE_197_/* ["default"] */ .A,
-    'hyperliquid': ccxt_src_pro_hyperliquid_js_WEBPACK_IMPORTED_MODULE_198_/* ["default"] */ .A,
-    'independentreserve': ccxt_src_pro_independentreserve_js_WEBPACK_IMPORTED_MODULE_199_/* ["default"] */ .A,
-    'kraken': ccxt_src_pro_kraken_js_WEBPACK_IMPORTED_MODULE_200_/* ["default"] */ .A,
-    'krakenfutures': ccxt_src_pro_krakenfutures_js_WEBPACK_IMPORTED_MODULE_201_/* ["default"] */ .A,
-    'kucoin': ccxt_src_pro_kucoin_js_WEBPACK_IMPORTED_MODULE_202_/* ["default"] */ .A,
-    'kucoinfutures': ccxt_src_pro_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_203_/* ["default"] */ .A,
-    'lbank': ccxt_src_pro_lbank_js_WEBPACK_IMPORTED_MODULE_204_/* ["default"] */ .A,
-    'luno': ccxt_src_pro_luno_js_WEBPACK_IMPORTED_MODULE_205_/* ["default"] */ .A,
-    'mexc': ccxt_src_pro_mexc_js_WEBPACK_IMPORTED_MODULE_206_/* ["default"] */ .A,
-    'modetrade': ccxt_src_pro_modetrade_js_WEBPACK_IMPORTED_MODULE_207_/* ["default"] */ .A,
-    'myokx': ccxt_src_pro_myokx_js_WEBPACK_IMPORTED_MODULE_208_/* ["default"] */ .A,
-    'ndax': ccxt_src_pro_ndax_js_WEBPACK_IMPORTED_MODULE_209_/* ["default"] */ .A,
-    'okcoin': ccxt_src_pro_okcoin_js_WEBPACK_IMPORTED_MODULE_210_/* ["default"] */ .A,
-    'okx': ccxt_src_pro_okx_js_WEBPACK_IMPORTED_MODULE_211_/* ["default"] */ .A,
-    'okxus': ccxt_src_pro_okxus_js_WEBPACK_IMPORTED_MODULE_212_/* ["default"] */ .A,
-    'onetrading': ccxt_src_pro_onetrading_js_WEBPACK_IMPORTED_MODULE_213_/* ["default"] */ .A,
-    'oxfun': ccxt_src_pro_oxfun_js_WEBPACK_IMPORTED_MODULE_214_/* ["default"] */ .A,
-    'p2b': ccxt_src_pro_p2b_js_WEBPACK_IMPORTED_MODULE_215_/* ["default"] */ .A,
-    'paradex': ccxt_src_pro_paradex_js_WEBPACK_IMPORTED_MODULE_216_/* ["default"] */ .A,
-    'phemex': ccxt_src_pro_phemex_js_WEBPACK_IMPORTED_MODULE_217_/* ["default"] */ .A,
-    'poloniex': ccxt_src_pro_poloniex_js_WEBPACK_IMPORTED_MODULE_218_/* ["default"] */ .A,
-    'probit': ccxt_src_pro_probit_js_WEBPACK_IMPORTED_MODULE_219_/* ["default"] */ .A,
-    'tradeogre': ccxt_src_pro_tradeogre_js_WEBPACK_IMPORTED_MODULE_220_/* ["default"] */ .A,
-    'upbit': ccxt_src_pro_upbit_js_WEBPACK_IMPORTED_MODULE_221_/* ["default"] */ .A,
-    'vertex': ccxt_src_pro_vertex_js_WEBPACK_IMPORTED_MODULE_222_/* ["default"] */ .A,
-    'whitebit': ccxt_src_pro_whitebit_js_WEBPACK_IMPORTED_MODULE_223_/* ["default"] */ .A,
-    'woo': ccxt_src_pro_woo_js_WEBPACK_IMPORTED_MODULE_224_/* ["default"] */ .A,
-    'woofipro': ccxt_src_pro_woofipro_js_WEBPACK_IMPORTED_MODULE_225_/* ["default"] */ .A,
-    'xt': ccxt_src_pro_xt_js_WEBPACK_IMPORTED_MODULE_226_/* ["default"] */ .A,
+    'alpaca': ccxt_src_pro_alpaca_js_WEBPACK_IMPORTED_MODULE_155_/* ["default"] */ .A,
+    'apex': ccxt_src_pro_apex_js_WEBPACK_IMPORTED_MODULE_156_/* ["default"] */ .A,
+    'ascendex': ccxt_src_pro_ascendex_js_WEBPACK_IMPORTED_MODULE_157_/* ["default"] */ .A,
+    'bequant': ccxt_src_pro_bequant_js_WEBPACK_IMPORTED_MODULE_158_/* ["default"] */ .A,
+    'binance': ccxt_src_pro_binance_js_WEBPACK_IMPORTED_MODULE_159_/* ["default"] */ .A,
+    'binancecoinm': ccxt_src_pro_binancecoinm_js_WEBPACK_IMPORTED_MODULE_160_/* ["default"] */ .A,
+    'binanceus': ccxt_src_pro_binanceus_js_WEBPACK_IMPORTED_MODULE_161_/* ["default"] */ .A,
+    'binanceusdm': ccxt_src_pro_binanceusdm_js_WEBPACK_IMPORTED_MODULE_162_/* ["default"] */ .A,
+    'bingx': ccxt_src_pro_bingx_js_WEBPACK_IMPORTED_MODULE_163_/* ["default"] */ .A,
+    'bitfinex': ccxt_src_pro_bitfinex_js_WEBPACK_IMPORTED_MODULE_164_/* ["default"] */ .A,
+    'bitget': ccxt_src_pro_bitget_js_WEBPACK_IMPORTED_MODULE_165_/* ["default"] */ .A,
+    'bithumb': ccxt_src_pro_bithumb_js_WEBPACK_IMPORTED_MODULE_166_/* ["default"] */ .A,
+    'bitmart': ccxt_src_pro_bitmart_js_WEBPACK_IMPORTED_MODULE_167_/* ["default"] */ .A,
+    'bitmex': ccxt_src_pro_bitmex_js_WEBPACK_IMPORTED_MODULE_168_/* ["default"] */ .A,
+    'bitopro': ccxt_src_pro_bitopro_js_WEBPACK_IMPORTED_MODULE_169_/* ["default"] */ .A,
+    'bitrue': ccxt_src_pro_bitrue_js_WEBPACK_IMPORTED_MODULE_170_/* ["default"] */ .A,
+    'bitstamp': ccxt_src_pro_bitstamp_js_WEBPACK_IMPORTED_MODULE_171_/* ["default"] */ .A,
+    'bittrade': ccxt_src_pro_bittrade_js_WEBPACK_IMPORTED_MODULE_172_/* ["default"] */ .A,
+    'bitvavo': ccxt_src_pro_bitvavo_js_WEBPACK_IMPORTED_MODULE_173_/* ["default"] */ .A,
+    'blockchaincom': ccxt_src_pro_blockchaincom_js_WEBPACK_IMPORTED_MODULE_174_/* ["default"] */ .A,
+    'blofin': ccxt_src_pro_blofin_js_WEBPACK_IMPORTED_MODULE_175_/* ["default"] */ .A,
+    'bybit': ccxt_src_pro_bybit_js_WEBPACK_IMPORTED_MODULE_176_/* ["default"] */ .A,
+    'cex': ccxt_src_pro_cex_js_WEBPACK_IMPORTED_MODULE_177_/* ["default"] */ .A,
+    'coinbase': ccxt_src_pro_coinbase_js_WEBPACK_IMPORTED_MODULE_178_/* ["default"] */ .A,
+    'coinbaseadvanced': ccxt_src_pro_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_179_/* ["default"] */ .A,
+    'coinbaseexchange': ccxt_src_pro_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_180_/* ["default"] */ .A,
+    'coinbaseinternational': ccxt_src_pro_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_181_/* ["default"] */ .A,
+    'coincatch': ccxt_src_pro_coincatch_js_WEBPACK_IMPORTED_MODULE_182_/* ["default"] */ .A,
+    'coincheck': ccxt_src_pro_coincheck_js_WEBPACK_IMPORTED_MODULE_183_/* ["default"] */ .A,
+    'coinex': ccxt_src_pro_coinex_js_WEBPACK_IMPORTED_MODULE_184_/* ["default"] */ .A,
+    'coinone': ccxt_src_pro_coinone_js_WEBPACK_IMPORTED_MODULE_185_/* ["default"] */ .A,
+    'cryptocom': ccxt_src_pro_cryptocom_js_WEBPACK_IMPORTED_MODULE_186_/* ["default"] */ .A,
+    'defx': ccxt_src_pro_defx_js_WEBPACK_IMPORTED_MODULE_187_/* ["default"] */ .A,
+    'deribit': ccxt_src_pro_deribit_js_WEBPACK_IMPORTED_MODULE_188_/* ["default"] */ .A,
+    'derive': ccxt_src_pro_derive_js_WEBPACK_IMPORTED_MODULE_189_/* ["default"] */ .A,
+    'exmo': ccxt_src_pro_exmo_js_WEBPACK_IMPORTED_MODULE_190_/* ["default"] */ .A,
+    'gate': ccxt_src_pro_gate_js_WEBPACK_IMPORTED_MODULE_191_/* ["default"] */ .A,
+    'gateio': ccxt_src_pro_gateio_js_WEBPACK_IMPORTED_MODULE_192_/* ["default"] */ .A,
+    'gemini': ccxt_src_pro_gemini_js_WEBPACK_IMPORTED_MODULE_193_/* ["default"] */ .A,
+    'hashkey': ccxt_src_pro_hashkey_js_WEBPACK_IMPORTED_MODULE_194_/* ["default"] */ .A,
+    'hitbtc': ccxt_src_pro_hitbtc_js_WEBPACK_IMPORTED_MODULE_195_/* ["default"] */ .A,
+    'hollaex': ccxt_src_pro_hollaex_js_WEBPACK_IMPORTED_MODULE_196_/* ["default"] */ .A,
+    'htx': ccxt_src_pro_htx_js_WEBPACK_IMPORTED_MODULE_197_/* ["default"] */ .A,
+    'huobi': ccxt_src_pro_huobi_js_WEBPACK_IMPORTED_MODULE_198_/* ["default"] */ .A,
+    'hyperliquid': ccxt_src_pro_hyperliquid_js_WEBPACK_IMPORTED_MODULE_199_/* ["default"] */ .A,
+    'independentreserve': ccxt_src_pro_independentreserve_js_WEBPACK_IMPORTED_MODULE_200_/* ["default"] */ .A,
+    'kraken': ccxt_src_pro_kraken_js_WEBPACK_IMPORTED_MODULE_201_/* ["default"] */ .A,
+    'krakenfutures': ccxt_src_pro_krakenfutures_js_WEBPACK_IMPORTED_MODULE_202_/* ["default"] */ .A,
+    'kucoin': ccxt_src_pro_kucoin_js_WEBPACK_IMPORTED_MODULE_203_/* ["default"] */ .A,
+    'kucoinfutures': ccxt_src_pro_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_204_/* ["default"] */ .A,
+    'lbank': ccxt_src_pro_lbank_js_WEBPACK_IMPORTED_MODULE_205_/* ["default"] */ .A,
+    'luno': ccxt_src_pro_luno_js_WEBPACK_IMPORTED_MODULE_206_/* ["default"] */ .A,
+    'mexc': ccxt_src_pro_mexc_js_WEBPACK_IMPORTED_MODULE_207_/* ["default"] */ .A,
+    'modetrade': ccxt_src_pro_modetrade_js_WEBPACK_IMPORTED_MODULE_208_/* ["default"] */ .A,
+    'myokx': ccxt_src_pro_myokx_js_WEBPACK_IMPORTED_MODULE_209_/* ["default"] */ .A,
+    'ndax': ccxt_src_pro_ndax_js_WEBPACK_IMPORTED_MODULE_210_/* ["default"] */ .A,
+    'okcoin': ccxt_src_pro_okcoin_js_WEBPACK_IMPORTED_MODULE_211_/* ["default"] */ .A,
+    'okx': ccxt_src_pro_okx_js_WEBPACK_IMPORTED_MODULE_212_/* ["default"] */ .A,
+    'okxus': ccxt_src_pro_okxus_js_WEBPACK_IMPORTED_MODULE_213_/* ["default"] */ .A,
+    'onetrading': ccxt_src_pro_onetrading_js_WEBPACK_IMPORTED_MODULE_214_/* ["default"] */ .A,
+    'oxfun': ccxt_src_pro_oxfun_js_WEBPACK_IMPORTED_MODULE_215_/* ["default"] */ .A,
+    'p2b': ccxt_src_pro_p2b_js_WEBPACK_IMPORTED_MODULE_216_/* ["default"] */ .A,
+    'paradex': ccxt_src_pro_paradex_js_WEBPACK_IMPORTED_MODULE_217_/* ["default"] */ .A,
+    'phemex': ccxt_src_pro_phemex_js_WEBPACK_IMPORTED_MODULE_218_/* ["default"] */ .A,
+    'poloniex': ccxt_src_pro_poloniex_js_WEBPACK_IMPORTED_MODULE_219_/* ["default"] */ .A,
+    'probit': ccxt_src_pro_probit_js_WEBPACK_IMPORTED_MODULE_220_/* ["default"] */ .A,
+    'tradeogre': ccxt_src_pro_tradeogre_js_WEBPACK_IMPORTED_MODULE_221_/* ["default"] */ .A,
+    'upbit': ccxt_src_pro_upbit_js_WEBPACK_IMPORTED_MODULE_222_/* ["default"] */ .A,
+    'vertex': ccxt_src_pro_vertex_js_WEBPACK_IMPORTED_MODULE_223_/* ["default"] */ .A,
+    'whitebit': ccxt_src_pro_whitebit_js_WEBPACK_IMPORTED_MODULE_224_/* ["default"] */ .A,
+    'woo': ccxt_src_pro_woo_js_WEBPACK_IMPORTED_MODULE_225_/* ["default"] */ .A,
+    'woofipro': ccxt_src_pro_woofipro_js_WEBPACK_IMPORTED_MODULE_226_/* ["default"] */ .A,
+    'xt': ccxt_src_pro_xt_js_WEBPACK_IMPORTED_MODULE_227_/* ["default"] */ .A,
 };
 for (const exchange in ccxt_pro) {
     // const ccxtExchange = exchanges[exchange]
@@ -434458,7 +434726,7 @@ for (const exchange in ccxt_pro) {
 ccxt_pro.exchanges = Object.keys(ccxt_pro);
 ccxt_pro['Exchange'] = ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k; // now the same for rest and ts
 //-----------------------------------------------------------------------------
-const ccxt_ccxt = Object.assign({ version: ccxt_version, Exchange: ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k, Precise: ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_227_/* .Precise */ .Y, 'exchanges': Object.keys(ccxt_exchanges), 'pro': ccxt_pro }, ccxt_exchanges, ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_228_, ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_229_);
+const ccxt_ccxt = Object.assign({ version: ccxt_version, Exchange: ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k, Precise: ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_228_/* .Precise */ .Y, 'exchanges': Object.keys(ccxt_exchanges), 'pro': ccxt_pro }, ccxt_exchanges, ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_229_, ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_230_);
 
 /* harmony default export */ const ts_ccxt = (ccxt_ccxt);
 //-----------------------------------------------------------------------------

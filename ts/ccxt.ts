@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.14.4';
+const version = '4.15.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -180,6 +180,7 @@ import saraf from  './src/saraf.js'
 import sarmayex from  './src/sarmayex.js'
 import sarrafex from  './src/sarrafex.js'
 import tabdeal from  './src/tabdeal.js'
+import talasea from  './src/talasea.js'
 import tehran_exchange from  './src/tehran_exchange.js'
 import tetherland from  './src/tetherland.js'
 import timex from  './src/timex.js'
@@ -410,6 +411,7 @@ const exchanges = {
     'sarmayex':               sarmayex,
     'sarrafex':               sarrafex,
     'tabdeal':                tabdeal,
+    'talasea':                talasea,
     'tehran_exchange':        tehran_exchange,
     'tetherland':             tetherland,
     'timex':                  timex,
@@ -783,6 +785,7 @@ export {
     sarmayex,
     sarrafex,
     tabdeal,
+    talasea,
     tehran_exchange,
     tetherland,
     timex,

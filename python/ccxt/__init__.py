@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.14.4'
+__version__ = '4.15.0'
 
 # ----------------------------------------------------------------------------
 
@@ -218,6 +218,7 @@ from ccxt.saraf import saraf                                          # noqa: F4
 from ccxt.sarmayex import sarmayex                                    # noqa: F401
 from ccxt.sarrafex import sarrafex                                    # noqa: F401
 from ccxt.tabdeal import tabdeal                                      # noqa: F401
+from ccxt.talasea import talasea                                      # noqa: F401
 from ccxt.tehran_exchange import tehran_exchange                      # noqa: F401
 from ccxt.tetherland import tetherland                                # noqa: F401
 from ccxt.timex import timex                                          # noqa: F401
@@ -373,6 +374,7 @@ exchanges = [
     'sarmayex',
     'sarrafex',
     'tabdeal',
+    'talasea',
     'tehran_exchange',
     'tetherland',
     'timex',
