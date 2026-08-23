@@ -146,6 +146,7 @@ var saraf = require('./src/saraf.js');
 var sarmayex = require('./src/sarmayex.js');
 var sarrafex = require('./src/sarrafex.js');
 var tabdeal = require('./src/tabdeal.js');
+var talasea = require('./src/talasea.js');
 var tehran_exchange = require('./src/tehran_exchange.js');
 var tetherland = require('./src/tetherland.js');
 var timex = require('./src/timex.js');
@@ -241,7 +242,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.14.4';
+const version = '4.15.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -378,6 +379,7 @@ const exchanges = {
     'sarmayex': sarmayex["default"],
     'sarrafex': sarrafex["default"],
     'tabdeal': tabdeal["default"],
+    'talasea': talasea["default"],
     'tehran_exchange': tehran_exchange["default"],
     'tetherland': tetherland["default"],
     'timex': timex["default"],
@@ -658,6 +660,7 @@ exports.saraf = saraf["default"];
 exports.sarmayex = sarmayex["default"];
 exports.sarrafex = sarrafex["default"];
 exports.tabdeal = tabdeal["default"];
+exports.talasea = talasea["default"];
 exports.tehran_exchange = tehran_exchange["default"];
 exports.tetherland = tetherland["default"];
 exports.timex = timex["default"];

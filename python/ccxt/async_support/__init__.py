@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.14.4'
+__version__ = '4.15.0'
 
 # -----------------------------------------------------------------------------
 
@@ -198,6 +198,7 @@ from ccxt.async_support.saraf import saraf                                      
 from ccxt.async_support.sarmayex import sarmayex                                # noqa: F401
 from ccxt.async_support.sarrafex import sarrafex                                # noqa: F401
 from ccxt.async_support.tabdeal import tabdeal                                  # noqa: F401
+from ccxt.async_support.talasea import talasea                                  # noqa: F401
 from ccxt.async_support.tehran_exchange import tehran_exchange                  # noqa: F401
 from ccxt.async_support.tetherland import tetherland                            # noqa: F401
 from ccxt.async_support.timex import timex                                      # noqa: F401
@@ -353,6 +354,7 @@ exchanges = [
     'sarmayex',
     'sarrafex',
     'tabdeal',
+    'talasea',
     'tehran_exchange',
     'tetherland',
     'timex',
