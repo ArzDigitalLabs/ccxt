@@ -4,94 +4,82 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import asacoine from './src/asacoine.js';
-async function testAsacoine() {
-    const exchange = new asacoine({
+import raastin from './src/raastin.js';
+async function main() {
+    const exchange = new raastin({
         enableRateLimit: true,
-        timeout: 20000,
+        timeout: 30000,
     });
     try {
-        const markets = await exchange.fetchMarkets();
-        if (markets.length === 0) {
-            throw new Error('Asacoine returned no markets');
+        const spotMarkets = await exchange.loadMarkets(true, { 'type': 'spot' });
+        const spotSymbols = [];
+        const preferredSymbols = ['USDT/IRT', 'BTC/IRT', 'ETH/IRT'];
+        for (let i = 0; i < preferredSymbols.length; i++) {
+            const symbol = preferredSymbols[i];
+            if (symbol in spotMarkets) {
+                spotSymbols.push(symbol);
+            }
         }
-        const btcUsdtMarket = markets.find((market) => market['symbol'] === 'BTC/USDT');
-        if (btcUsdtMarket === undefined) {
-            throw new Error('Asacoine did not return the BTC/USDT market');
+        if (spotSymbols.length === 0) {
+            const marketSymbols = Object.keys(spotMarkets);
+            for (let i = 0; i < marketSymbols.length; i++) {
+                const symbol = marketSymbols[i];
+                const market = spotMarkets[symbol];
+                if (market['type'] === 'spot') {
+                    spotSymbols.push(symbol);
+                }
+                if (spotSymbols.length >= 3) {
+                    break;
+                }
+            }
         }
-        if (markets.some((market) => market['type'] !== 'spot')) {
-            throw new Error('Asacoine default market filtering failed');
+        console.log('spot symbols:', spotSymbols);
+        const spotTickers = await exchange.fetchTickers(spotSymbols);
+        console.log('spot tickers:');
+        for (let i = 0; i < spotSymbols.length; i++) {
+            const symbol = spotSymbols[i];
+            const ticker = spotTickers[symbol];
+            console.log({
+                symbol: ticker['symbol'],
+                last: ticker['last'],
+                high: ticker['high'],
+                low: ticker['low'],
+                change: ticker['change'],
+                percentage: ticker['percentage'],
+                baseVolume: ticker['baseVolume'],
+                quoteVolume: ticker['quoteVolume'],
+            });
         }
-        const spotMarkets = await exchange.fetchMarkets({ 'type': 'spot' });
-        if (spotMarkets.length === 0 || spotMarkets.some((market) => market['type'] !== 'spot')) {
-            throw new Error('Asacoine spot market filtering failed');
+        const singleSpotSymbol = spotSymbols[0];
+        if (singleSpotSymbol !== undefined) {
+            const singleSpotTicker = await exchange.fetchTicker(singleSpotSymbol);
+            console.log('single spot ticker:', {
+                symbol: singleSpotTicker['symbol'],
+                last: singleSpotTicker['last'],
+                change: singleSpotTicker['change'],
+                percentage: singleSpotTicker['percentage'],
+            });
         }
-        const tickers = await exchange.fetchTickers();
-        const btcUsdtTicker = tickers['BTC/USDT'];
-        if (btcUsdtTicker === undefined) {
-            throw new Error('Asacoine did not return a BTC/USDT ticker');
+        const otcMarkets = await exchange.loadMarkets(true, { 'type': 'otc' });
+        console.log('otc markets:', otcMarkets);
+        const otcSymbols = Object.keys(otcMarkets);
+        const otcSymbol = otcSymbols[0];
+        if (otcSymbol !== undefined) {
+            const otcTicker = await exchange.fetchTicker(otcSymbol, { 'type': 'otc' });
+            console.log('single otc ticker:', {
+                symbol: otcTicker['symbol'],
+                last: otcTicker['last'],
+                bid: otcTicker['bid'],
+                ask: otcTicker['ask'],
+            });
         }
-        const spotTicker = await exchange.fetchTicker('BTC/USDT');
-        if (spotTicker['bid'] === undefined || spotTicker['ask'] === undefined) {
-            throw new Error('Asacoine spot fetchTicker did not return bid/ask');
-        }
-        const otcMarkets = await exchange.fetchMarkets({ 'type': 'otc' });
-        if (otcMarkets.length === 0) {
-            throw new Error('Asacoine returned no OTC markets');
-        }
-        if (otcMarkets.some((market) => market['type'] !== 'otc' || market['symbol'].includes(':OTC'))) {
-            throw new Error('Asacoine OTC market typing or symbol format failed');
-        }
-        const otcTickers = await exchange.fetchTickers(undefined, { 'type': 'otc' });
-        if (Object.keys(otcTickers).length === 0) {
-            throw new Error('Asacoine returned no OTC tickers');
-        }
-        if (Object.keys(otcTickers).some((symbol) => otcMarkets.every((market) => market['symbol'] !== symbol))) {
-            throw new Error('Asacoine OTC ticker filtering failed');
-        }
-        const otcMarket = otcMarkets[0];
-        const spotSymbols = new Set(markets.map((market) => market['symbol']));
-        if (Object.keys(tickers).some((symbol) => !spotSymbols.has(symbol))) {
-            throw new Error('Asacoine default tickers unexpectedly included non-spot data');
-        }
-        const otcTicker = otcTickers[otcMarket['symbol']];
-        if (otcTicker === undefined) {
-            throw new Error('Asacoine did not return the first OTC market ticker');
-        }
-        const singleOtcTicker = await exchange.fetchTicker(otcMarket['symbol'], { 'type': 'otc' });
-        if (singleOtcTicker['symbol'] !== otcMarket['symbol'] || singleOtcTicker['bid'] === undefined || singleOtcTicker['ask'] === undefined) {
-            throw new Error('Asacoine OTC fetchTicker did not return the selected market');
-        }
-        console.log('Asacoine test passed:', {
-            endpoints: {
-                pricing: 'https://api.asacoine.com/api/v1/market/pairs/pricing',
-                cumulative: 'https://api.asacoine.com/api/v1/market/pairs/cumulative',
-            },
-            markets: markets.length,
-            tickers: Object.keys(tickers).length,
-            otcMarkets: otcMarkets.length,
-            otcTickers: Object.keys(otcTickers).length,
-            btcUsdt: {
-                symbol: btcUsdtTicker.symbol,
-                bid: btcUsdtTicker.bid,
-                ask: btcUsdtTicker.ask,
-                last: btcUsdtTicker.last,
-                bidVolume: btcUsdtTicker.bidVolume,
-                askVolume: btcUsdtTicker.askVolume,
-            },
-            otc: {
-                symbol: otcTicker.symbol,
-                bid: otcTicker.bid,
-                ask: otcTicker.ask,
-                last: otcTicker.last,
-            },
-        });
+    }
+    catch (error) {
+        console.error('Raastin ticker test failed:', error);
+        process.exitCode = 1;
     }
     finally {
         await exchange.close();
     }
 }
-testAsacoine().catch((error) => {
-    console.error('Asacoine test failed:', error);
-    process.exitCode = 1;
-});
+void main();

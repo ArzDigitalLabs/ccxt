@@ -7,8 +7,9 @@ import { Market, Strings, Ticker, Tickers } from './base/types.js';
 export default class asacoine extends Exchange {
     describe(): any;
     parseMarket(market: any): Market;
+    parseOtcMarket(market: any): Market;
     parseMarkets(response: any): Market[];
-    parseCumulativeMarkets(response: any, type?: string): Market[];
+    parseCumulativeMarkets(response: any): Market[];
     fetchMarkets(params?: {}): Promise<import("./base/types.js").MarketInterface[]>;
     parseTicker(ticker: any, market?: Market): Ticker;
     fetchTickers(symbols?: Strings, params?: {}): Promise<Tickers>;

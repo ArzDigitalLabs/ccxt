@@ -53,7 +53,7 @@ const cumulativeResponse = {
         ],
     },
 };
-const otcMarkets = exchange.parseCumulativeMarkets(cumulativeResponse, 'otc');
+const otcMarkets = exchange.parseCumulativeMarkets(cumulativeResponse);
 assert.strictEqual(otcMarkets.length, 2, 'parses cumulative OTC markets');
 assert.strictEqual(otcMarkets[0]['symbol'], 'USDT/IRT', 'normalizes TMN and marks OTC symbols');
 const otcTicker = exchange.parseTicker(cumulativeResponse['data']['values'][1][3], otcMarkets[1]);
