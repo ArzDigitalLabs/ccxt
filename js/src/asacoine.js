@@ -68,23 +68,72 @@ export default class asacoine extends Exchange {
         const quoteId = this.safeString(market, 'quoteId');
         const base = this.safeCurrencyCode(baseId);
         const quote = this.safeCurrencyCode(quoteId);
-        const isOtc = this.safeString(market, 'type', 'spot') === 'otc';
-        let marketType = 'spot';
-        if (isOtc) {
-            marketType = 'otc';
-        }
-        const suffix = '';
         return {
-            'id': baseId + '/' + quoteId + suffix,
-            'symbol': base + '/' + quote + suffix,
+            'id': baseId + '/' + quoteId,
+            'symbol': base + '/' + quote,
             'base': base,
             'quote': quote,
             'settle': undefined,
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': undefined,
-            'type': marketType,
-            'spot': !isOtc,
+            'type': 'spot',
+            'spot': true,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': true,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'amount': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'price': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+                'cost': {
+                    'min': undefined,
+                    'max': undefined,
+                },
+            },
+            'created': undefined,
+            'info': this.safeValue(market, 'info', market),
+        };
+    }
+    parseOtcMarket(market) {
+        const baseId = this.safeString(market, 'baseId');
+        const quoteId = this.safeString(market, 'quoteId');
+        const base = this.safeCurrencyCode(baseId);
+        const quote = this.safeCurrencyCode(quoteId);
+        return {
+            'id': baseId + '/' + quoteId,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': baseId,
+            'quoteId': quoteId,
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
             'margin': false,
             'swap': false,
             'future': false,
@@ -135,12 +184,12 @@ export default class asacoine extends Exchange {
             for (let j = 0; j < quoteIds.length; j++) {
                 const quoteId = quoteIds[j];
                 const ticker = this.safeDict(quotes, quoteId, {});
-                result.push(this.parseMarket({ 'baseId': baseId, 'quoteId': quoteId, 'info': ticker, 'type': 'spot' }));
+                result.push(this.parseMarket({ 'baseId': baseId, 'quoteId': quoteId, 'info': ticker }));
             }
         }
         return result;
     }
-    parseCumulativeMarkets(response, type = 'otc') {
+    parseCumulativeMarkets(response) {
         const data = this.safeDict(response, 'data', {});
         const keys = this.safeList(data, 'keys', []);
         const values = this.safeList(data, 'values', []);
@@ -152,15 +201,14 @@ export default class asacoine extends Exchange {
                 market[keys[j]] = row[j];
             }
             const marketTypes = this.safeList(market, 'marketTypes', []);
-            if (!this.inArray(type, marketTypes)) {
+            if (!this.inArray('otc', marketTypes)) {
                 continue;
             }
             const name = this.safeString(market, 'name');
             const [baseId, quoteId] = name.split('-');
             market['baseId'] = baseId;
             market['quoteId'] = quoteId;
-            market['type'] = type;
-            result.push(this.parseMarket(market));
+            result.push(this.parseOtcMarket(market));
         }
         return result;
     }
@@ -177,7 +225,7 @@ export default class asacoine extends Exchange {
         const request = this.omit(params, ['type']);
         if (type === 'otc') {
             const cumulativeResponse = await this.publicGetV1MarketPairsCumulative(request);
-            return this.parseCumulativeMarkets(cumulativeResponse, type);
+            return this.parseCumulativeMarkets(cumulativeResponse);
         }
         const response = await this.publicGetV1MarketPairsPricing(request);
         return this.parseMarkets(response);

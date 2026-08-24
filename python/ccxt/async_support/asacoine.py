@@ -67,22 +67,72 @@ class asacoine(Exchange, ImplicitAPI):
         quoteId = self.safe_string(market, 'quoteId')
         base = self.safe_currency_code(baseId)
         quote = self.safe_currency_code(quoteId)
-        isOtc = self.safe_string(market, 'type', 'spot') == 'otc'
-        marketType = 'spot'['type']
-        if isOtc:
-            marketType = 'otc'
-        suffix = ''
         return {
-            'id': baseId + '/' + quoteId + suffix,
-            'symbol': base + '/' + quote + suffix,
+            'id': baseId + '/' + quoteId,
+            'symbol': base + '/' + quote,
             'base': base,
             'quote': quote,
             'settle': None,
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': None,
-            'type': marketType,
-            'spot': not isOtc,
+            'type': 'spot',
+            'spot': True,
+            'margin': False,
+            'swap': False,
+            'future': False,
+            'option': False,
+            'active': True,
+            'contract': False,
+            'linear': None,
+            'inverse': None,
+            'contractSize': None,
+            'expiry': None,
+            'expiryDatetime': None,
+            'strike': None,
+            'optionType': None,
+            'precision': {
+                'amount': None,
+                'price': None,
+            },
+            'limits': {
+                'leverage': {
+                    'min': None,
+                    'max': None,
+                },
+                'amount': {
+                    'min': None,
+                    'max': None,
+                },
+                'price': {
+                    'min': None,
+                    'max': None,
+                },
+                'cost': {
+                    'min': None,
+                    'max': None,
+                },
+            },
+            'created': None,
+            'info': self.safe_value(market, 'info', market),
+        }
+
+    def parse_otc_market(self, market) -> Market:
+        baseId = self.safe_string(market, 'baseId')
+        quoteId = self.safe_string(market, 'quoteId')
+        base = self.safe_currency_code(baseId)
+        quote = self.safe_currency_code(quoteId)
+        return {
+            'id': baseId + '/' + quoteId,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': None,
+            'baseId': baseId,
+            'quoteId': quoteId,
+            'settleId': None,
+            'type': 'otc',
+            'spot': False,
             'margin': False,
             'swap': False,
             'future': False,
@@ -133,10 +183,10 @@ class asacoine(Exchange, ImplicitAPI):
             for j in range(0, len(quoteIds)):
                 quoteId = quoteIds[j]
                 ticker = self.safe_dict(quotes, quoteId, {})
-                result.append(self.parse_market({'baseId': baseId, 'quoteId': quoteId, 'info': ticker, 'type': 'spot'}))
+                result.append(self.parse_market({'baseId': baseId, 'quoteId': quoteId, 'info': ticker}))
         return result
 
-    def parse_cumulative_markets(self, response, type='otc') -> List[Market]:
+    def parse_cumulative_markets(self, response) -> List[Market]:
         data = self.safe_dict(response, 'data', {})
         keys = self.safe_list(data, 'keys', [])
         values = self.safe_list(data, 'values', [])
@@ -147,14 +197,13 @@ class asacoine(Exchange, ImplicitAPI):
             for j in range(0, len(keys)):
                 market[keys[j]] = row[j]
             marketTypes = self.safe_list(market, 'marketTypes', [])
-            if not self.in_array(type, marketTypes):
+            if not self.in_array('otc', marketTypes):
                 continue
             name = self.safe_string(market, 'name')
             baseId, quoteId = name.split('-')
             market['baseId'] = baseId
             market['quoteId'] = quoteId
-            market['type'] = type
-            result.append(self.parse_market(market))
+            result.append(self.parse_otc_market(market))
         return result
 
     async def fetch_markets(self, params={}):
@@ -168,7 +217,7 @@ class asacoine(Exchange, ImplicitAPI):
         request = self.omit(params, ['type'])
         if type == 'otc':
             cumulativeResponse = await self.publicGetV1MarketPairsCumulative(request)
-            return self.parse_cumulative_markets(cumulativeResponse, type)
+            return self.parse_cumulative_markets(cumulativeResponse)
         response = await self.publicGetV1MarketPairsPricing(request)
         return self.parse_markets(response)
 

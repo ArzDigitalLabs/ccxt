@@ -66,23 +66,73 @@ class asacoine extends Exchange {
         $quoteId = $this->safe_string($market, 'quoteId');
         $base = $this->safe_currency_code($baseId);
         $quote = $this->safe_currency_code($quoteId);
-        $isOtc = $this->safe_string($market, 'type', 'spot') === 'otc';
-        $marketType = 'spot'['type'];
-        if ($isOtc) {
-            $marketType = 'otc';
-        }
-        $suffix = '';
         return array(
-            'id' => $baseId . '/' . $quoteId . $suffix,
-            'symbol' => $base . '/' . $quote . $suffix,
+            'id' => $baseId . '/' . $quoteId,
+            'symbol' => $base . '/' . $quote,
             'base' => $base,
             'quote' => $quote,
             'settle' => null,
             'baseId' => $baseId,
             'quoteId' => $quoteId,
             'settleId' => null,
-            'type' => $marketType,
-            'spot' => !$isOtc,
+            'type' => 'spot',
+            'spot' => true,
+            'margin' => false,
+            'swap' => false,
+            'future' => false,
+            'option' => false,
+            'active' => true,
+            'contract' => false,
+            'linear' => null,
+            'inverse' => null,
+            'contractSize' => null,
+            'expiry' => null,
+            'expiryDatetime' => null,
+            'strike' => null,
+            'optionType' => null,
+            'precision' => array(
+                'amount' => null,
+                'price' => null,
+            ),
+            'limits' => array(
+                'leverage' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'amount' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'price' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+                'cost' => array(
+                    'min' => null,
+                    'max' => null,
+                ),
+            ),
+            'created' => null,
+            'info' => $this->safe_value($market, 'info', $market),
+        );
+    }
+
+    public function parse_otc_market($market): array {
+        $baseId = $this->safe_string($market, 'baseId');
+        $quoteId = $this->safe_string($market, 'quoteId');
+        $base = $this->safe_currency_code($baseId);
+        $quote = $this->safe_currency_code($quoteId);
+        return array(
+            'id' => $baseId . '/' . $quoteId,
+            'symbol' => $base . '/' . $quote,
+            'base' => $base,
+            'quote' => $quote,
+            'settle' => null,
+            'baseId' => $baseId,
+            'quoteId' => $quoteId,
+            'settleId' => null,
+            'type' => 'otc',
+            'spot' => false,
             'margin' => false,
             'swap' => false,
             'future' => false,
@@ -134,13 +184,13 @@ class asacoine extends Exchange {
             for ($j = 0; $j < count($quoteIds); $j++) {
                 $quoteId = $quoteIds[$j];
                 $ticker = $this->safe_dict($quotes, $quoteId, array());
-                $result[] = $this->parse_market(array( 'baseId' => $baseId, 'quoteId' => $quoteId, 'info' => $ticker, 'type' => 'spot' ));
+                $result[] = $this->parse_market(array( 'baseId' => $baseId, 'quoteId' => $quoteId, 'info' => $ticker ));
             }
         }
         return $result;
     }
 
-    public function parse_cumulative_markets($response, $type = 'otc'): array {
+    public function parse_cumulative_markets($response): array {
         $data = $this->safe_dict($response, 'data', array());
         $keys = $this->safe_list($data, 'keys', array());
         $values = $this->safe_list($data, 'values', array());
@@ -152,15 +202,14 @@ class asacoine extends Exchange {
                 $market[$keys[$j]] = $row[$j];
             }
             $marketTypes = $this->safe_list($market, 'marketTypes', array());
-            if (!$this->in_array($type, $marketTypes)) {
+            if (!$this->in_array('otc', $marketTypes)) {
                 continue;
             }
             $name = $this->safe_string($market, 'name');
             list($baseId, $quoteId) = explode('-', $name);
             $market['baseId'] = $baseId;
             $market['quoteId'] = $quoteId;
-            $market['type'] = $type;
-            $result[] = $this->parse_market($market);
+            $result[] = $this->parse_otc_market($market);
         }
         return $result;
     }
@@ -176,7 +225,7 @@ class asacoine extends Exchange {
         $request = $this->omit($params, array( 'type' ));
         if ($type === 'otc') {
             $cumulativeResponse = $this->publicGetV1MarketPairsCumulative ($request);
-            return $this->parse_cumulative_markets($cumulativeResponse, $type);
+            return $this->parse_cumulative_markets($cumulativeResponse);
         }
         $response = $this->publicGetV1MarketPairsPricing ($request);
         return $this->parse_markets($response);
