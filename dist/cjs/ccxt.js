@@ -18,6 +18,7 @@ var alpaca = require('./src/alpaca.js');
 var apex = require('./src/apex.js');
 var arzinja = require('./src/arzinja.js');
 var arzplus = require('./src/arzplus.js');
+var asacoine = require('./src/asacoine.js');
 var ascendex = require('./src/ascendex.js');
 var asretether = require('./src/asretether.js');
 var bequant = require('./src/bequant.js');
@@ -242,7 +243,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.15.0';
+const version = '4.16.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -251,6 +252,7 @@ const exchanges = {
     'apex': apex["default"],
     'arzinja': arzinja["default"],
     'arzplus': arzplus["default"],
+    'asacoine': asacoine["default"],
     'ascendex': ascendex["default"],
     'asretether': asretether["default"],
     'bequant': bequant["default"],
@@ -532,6 +534,7 @@ exports.alpaca = alpaca["default"];
 exports.apex = apex["default"];
 exports.arzinja = arzinja["default"];
 exports.arzplus = arzplus["default"];
+exports.asacoine = asacoine["default"];
 exports.ascendex = ascendex["default"];
 exports.asretether = asretether["default"];
 exports.bequant = bequant["default"];

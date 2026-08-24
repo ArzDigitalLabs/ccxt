@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.15.0';
+const version = '4.16.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -52,6 +52,7 @@ import alpaca from  './src/alpaca.js'
 import apex from  './src/apex.js'
 import arzinja from  './src/arzinja.js'
 import arzplus from  './src/arzplus.js'
+import asacoine from  './src/asacoine.js'
 import ascendex from  './src/ascendex.js'
 import asretether from  './src/asretether.js'
 import bequant from  './src/bequant.js'
@@ -283,6 +284,7 @@ const exchanges = {
     'apex':                   apex,
     'arzinja':                arzinja,
     'arzplus':                arzplus,
+    'asacoine':               asacoine,
     'ascendex':               ascendex,
     'asretether':             asretether,
     'bequant':                bequant,
@@ -657,6 +659,7 @@ export {
     apex,
     arzinja,
     arzplus,
+    asacoine,
     ascendex,
     asretether,
     bequant,

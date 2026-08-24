@@ -4,41 +4,86 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import ccxt from './ccxt';
-async function testTalasea() {
-    const exchange = new ccxt.talasea({
+import asacoine from './src/asacoine.js';
+async function testAsacoine() {
+    const exchange = new asacoine({
         enableRateLimit: true,
         timeout: 20000,
     });
     try {
         const markets = await exchange.fetchMarkets();
         if (markets.length === 0) {
-            throw new Error('Talasea returned no markets');
+            throw new Error('Asacoine returned no markets');
         }
-        const market = markets[0];
-        if (market['symbol'] !== 'XAU18/IRT') {
-            throw new Error('Talasea did not return the XAU18/IRT market');
+        const btcUsdtMarket = markets.find((market) => market['symbol'] === 'BTC/USDT');
+        if (btcUsdtMarket === undefined) {
+            throw new Error('Asacoine did not return the BTC/USDT market');
+        }
+        if (markets.some((market) => market['type'] !== 'spot')) {
+            throw new Error('Asacoine default market filtering failed');
+        }
+        const spotMarkets = await exchange.fetchMarkets({ 'type': 'spot' });
+        if (spotMarkets.length === 0 || spotMarkets.some((market) => market['type'] !== 'spot')) {
+            throw new Error('Asacoine spot market filtering failed');
         }
         const tickers = await exchange.fetchTickers();
-        const goldTicker = tickers['XAU18/IRT'];
-        if (goldTicker === undefined) {
-            throw new Error('Talasea did not return an XAU18/IRT ticker');
+        const btcUsdtTicker = tickers['BTC/USDT'];
+        if (btcUsdtTicker === undefined) {
+            throw new Error('Asacoine did not return a BTC/USDT ticker');
         }
-        const ticker = await exchange.fetchTicker('XAU18/IRT');
-        if (ticker['last'] === undefined) {
-            throw new Error('Talasea did not return a gold price');
+        const spotTicker = await exchange.fetchTicker('BTC/USDT');
+        if (spotTicker['bid'] === undefined || spotTicker['ask'] === undefined) {
+            throw new Error('Asacoine spot fetchTicker did not return bid/ask');
         }
-        console.log('Talasea test passed:', {
-            endpoint: 'https://api.talasea.ir/api/market/getGoldPrice',
+        const otcMarkets = await exchange.fetchMarkets({ 'type': 'otc' });
+        if (otcMarkets.length === 0) {
+            throw new Error('Asacoine returned no OTC markets');
+        }
+        if (otcMarkets.some((market) => market['type'] !== 'otc' || market['symbol'].includes(':OTC'))) {
+            throw new Error('Asacoine OTC market typing or symbol format failed');
+        }
+        const otcTickers = await exchange.fetchTickers(undefined, { 'type': 'otc' });
+        if (Object.keys(otcTickers).length === 0) {
+            throw new Error('Asacoine returned no OTC tickers');
+        }
+        if (Object.keys(otcTickers).some((symbol) => otcMarkets.every((market) => market['symbol'] !== symbol))) {
+            throw new Error('Asacoine OTC ticker filtering failed');
+        }
+        const otcMarket = otcMarkets[0];
+        const spotSymbols = new Set(markets.map((market) => market['symbol']));
+        if (Object.keys(tickers).some((symbol) => !spotSymbols.has(symbol))) {
+            throw new Error('Asacoine default tickers unexpectedly included non-spot data');
+        }
+        const otcTicker = otcTickers[otcMarket['symbol']];
+        if (otcTicker === undefined) {
+            throw new Error('Asacoine did not return the first OTC market ticker');
+        }
+        const singleOtcTicker = await exchange.fetchTicker(otcMarket['symbol'], { 'type': 'otc' });
+        if (singleOtcTicker['symbol'] !== otcMarket['symbol'] || singleOtcTicker['bid'] === undefined || singleOtcTicker['ask'] === undefined) {
+            throw new Error('Asacoine OTC fetchTicker did not return the selected market');
+        }
+        console.log('Asacoine test passed:', {
+            endpoints: {
+                pricing: 'https://api.asacoine.com/api/v1/market/pairs/pricing',
+                cumulative: 'https://api.asacoine.com/api/v1/market/pairs/cumulative',
+            },
             markets: markets.length,
             tickers: Object.keys(tickers).length,
-            gold: {
-                symbol: ticker.symbol,
-                last: ticker.last,
-                percentage: ticker.percentage,
-                minOrderValue: market.limits.cost.min,
-                maxOrderValue: market.limits.cost.max,
-                active: market.active,
+            otcMarkets: otcMarkets.length,
+            otcTickers: Object.keys(otcTickers).length,
+            btcUsdt: {
+                symbol: btcUsdtTicker.symbol,
+                bid: btcUsdtTicker.bid,
+                ask: btcUsdtTicker.ask,
+                last: btcUsdtTicker.last,
+                bidVolume: btcUsdtTicker.bidVolume,
+                askVolume: btcUsdtTicker.askVolume,
+            },
+            otc: {
+                symbol: otcTicker.symbol,
+                bid: otcTicker.bid,
+                ask: otcTicker.ask,
+                last: otcTicker.last,
             },
         });
     }
@@ -46,7 +91,7 @@ async function testTalasea() {
         await exchange.close();
     }
 }
-testTalasea().catch((error) => {
-    console.error('Talasea test failed:', error);
+testAsacoine().catch((error) => {
+    console.error('Asacoine test failed:', error);
     process.exitCode = 1;
 });
