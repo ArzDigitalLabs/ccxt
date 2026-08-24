@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.15.0'
+__version__ = '4.16.0'
 
 # ----------------------------------------------------------------------------
 
@@ -90,6 +90,7 @@ from ccxt.alpaca import alpaca                                        # noqa: F4
 from ccxt.apex import apex                                            # noqa: F401
 from ccxt.arzinja import arzinja                                      # noqa: F401
 from ccxt.arzplus import arzplus                                      # noqa: F401
+from ccxt.asacoine import asacoine                                    # noqa: F401
 from ccxt.ascendex import ascendex                                    # noqa: F401
 from ccxt.asretether import asretether                                # noqa: F401
 from ccxt.bequant import bequant                                      # noqa: F401
@@ -246,6 +247,7 @@ exchanges = [
     'apex',
     'arzinja',
     'arzplus',
+    'asacoine',
     'ascendex',
     'asretether',
     'bequant',

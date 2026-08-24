@@ -17,6 +17,7 @@
 	- [apex](exchanges/apex.md)
 	- [arzinja()](exchanges/arzinja().md)
 	- [arzplus()](exchanges/arzplus().md)
+	- [asacoine](exchanges/asacoine.md)
 	- [ascendex](exchanges/ascendex.md)
 	- [asretether()](exchanges/asretether().md)
 	- [bidarz()](exchanges/bidarz().md)
