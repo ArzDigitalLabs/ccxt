@@ -4,82 +4,27 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import raastin from './src/raastin.js';
-async function main() {
-    const exchange = new raastin({
+import { asacoine } from './ccxt.js';
+async function testAsacoine() {
+    const exchange = new asacoine({
         enableRateLimit: true,
-        timeout: 30000,
+        timeout: 20000,
     });
     try {
-        const spotMarkets = await exchange.loadMarkets(true, { 'type': 'spot' });
-        const spotSymbols = [];
-        const preferredSymbols = ['USDT/IRT', 'BTC/IRT', 'ETH/IRT'];
-        for (let i = 0; i < preferredSymbols.length; i++) {
-            const symbol = preferredSymbols[i];
-            if (symbol in spotMarkets) {
-                spotSymbols.push(symbol);
-            }
-        }
-        if (spotSymbols.length === 0) {
-            const marketSymbols = Object.keys(spotMarkets);
-            for (let i = 0; i < marketSymbols.length; i++) {
-                const symbol = marketSymbols[i];
-                const market = spotMarkets[symbol];
-                if (market['type'] === 'spot') {
-                    spotSymbols.push(symbol);
-                }
-                if (spotSymbols.length >= 3) {
-                    break;
-                }
-            }
-        }
-        console.log('spot symbols:', spotSymbols);
-        const spotTickers = await exchange.fetchTickers(spotSymbols);
-        console.log('spot tickers:');
-        for (let i = 0; i < spotSymbols.length; i++) {
-            const symbol = spotSymbols[i];
-            const ticker = spotTickers[symbol];
-            console.log({
-                symbol: ticker['symbol'],
-                last: ticker['last'],
-                high: ticker['high'],
-                low: ticker['low'],
-                change: ticker['change'],
-                percentage: ticker['percentage'],
-                baseVolume: ticker['baseVolume'],
-                quoteVolume: ticker['quoteVolume'],
-            });
-        }
-        const singleSpotSymbol = spotSymbols[0];
-        if (singleSpotSymbol !== undefined) {
-            const singleSpotTicker = await exchange.fetchTicker(singleSpotSymbol);
-            console.log('single spot ticker:', {
-                symbol: singleSpotTicker['symbol'],
-                last: singleSpotTicker['last'],
-                change: singleSpotTicker['change'],
-                percentage: singleSpotTicker['percentage'],
-            });
-        }
-        const otcMarkets = await exchange.loadMarkets(true, { 'type': 'otc' });
-        console.log('otc markets:', otcMarkets);
-        const otcSymbols = Object.keys(otcMarkets);
-        const otcSymbol = otcSymbols[0];
-        if (otcSymbol !== undefined) {
-            const otcTicker = await exchange.fetchTicker(otcSymbol, { 'type': 'otc' });
-            console.log('single otc ticker:', {
-                symbol: otcTicker['symbol'],
-                last: otcTicker['last'],
-                bid: otcTicker['bid'],
-                ask: otcTicker['ask'],
-            });
-        }
-    }
-    catch (error) {
-        console.error('Raastin ticker test failed:', error);
-        process.exitCode = 1;
+        // const spotMarkets = await exchange.fetchMarkets ({ 'type': 'spot' });
+        // const spotTickers = await exchange.fetchTickers (undefined, { 'type': 'spot' });
+        // console.log ('Spot markets:', spotMarkets);
+        // console.log ('Spot tickers:', spotTickers);
+        const otcMarkets = await exchange.fetchMarkets({ 'type': 'otc' });
+        // const otcTickers = await exchange.fetchTickers (undefined, { 'type': 'otc' });
+        console.log('OTC markets:', otcMarkets);
+        // console.log ('OTC tickers:', otcTickers);
     }
     finally {
         await exchange.close();
     }
 }
-void main();
+testAsacoine().catch((error) => {
+    console.error('Asacoine test failed:', error);
+    process.exitCode = 1;
+});

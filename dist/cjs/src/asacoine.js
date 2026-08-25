@@ -233,14 +233,26 @@ class asacoine extends Exchange["default"] {
         const bid = this.safeList(ticker, 'bid', []);
         const ask = this.safeList(ticker, 'ask', []);
         const nestedOrderBook = this.safeDict(ticker, 'orderBook');
-        const cumulativeOrderBook = nestedOrderBook === undefined && this.safeString(ticker, 'bestBid') !== undefined ? ticker : nestedOrderBook;
-        const orderBook = cumulativeOrderBook === undefined ? {} : cumulativeOrderBook;
-        const bidPriceString = cumulativeOrderBook === undefined ? this.safeString(bid, 0) : this.safeString(orderBook, 'bestBid');
-        const askPriceString = cumulativeOrderBook === undefined ? this.safeString(ask, 0) : this.safeString(orderBook, 'bestAsk');
+        let cumulativeOrderBook = nestedOrderBook;
+        if ((nestedOrderBook === undefined) && (this.safeString(ticker, 'bestBid') !== undefined)) {
+            cumulativeOrderBook = ticker;
+        }
+        let orderBook = cumulativeOrderBook;
+        if (orderBook === undefined) {
+            orderBook = {};
+        }
+        let bidPriceString = this.safeString(orderBook, 'bestBid');
+        let askPriceString = this.safeString(orderBook, 'bestAsk');
+        let bidVolume = this.safeNumber(orderBook, 'bidSize');
+        let askVolume = this.safeNumber(orderBook, 'askSize');
+        if (cumulativeOrderBook === undefined) {
+            bidPriceString = this.safeString(bid, 0);
+            askPriceString = this.safeString(ask, 0);
+            bidVolume = this.safeNumber(bid, 1);
+            askVolume = this.safeNumber(ask, 1);
+        }
         const bidPrice = this.parseNumber(bidPriceString);
         const askPrice = this.parseNumber(askPriceString);
-        const bidVolume = cumulativeOrderBook === undefined ? this.safeNumber(bid, 1) : this.safeNumber(orderBook, 'bidSize');
-        const askVolume = cumulativeOrderBook === undefined ? this.safeNumber(ask, 1) : this.safeNumber(orderBook, 'askSize');
         let last = undefined;
         if ((bidPriceString !== undefined) && (askPriceString !== undefined)) {
             last = this.parseNumber(Precise["default"].stringDiv(Precise["default"].stringAdd(bidPriceString, askPriceString), '2'));
@@ -284,7 +296,7 @@ class asacoine extends Exchange["default"] {
         if (symbols !== undefined) {
             symbols = this.marketSymbols(symbols);
         }
-        let response;
+        let response = {};
         if (type === 'otc') {
             response = await this.publicGetV1MarketPairsCumulative(request);
         }
