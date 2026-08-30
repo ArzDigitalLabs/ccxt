@@ -225,14 +225,23 @@ class asacoine(Exchange, ImplicitAPI):
         bid = self.safe_list(ticker, 'bid', [])
         ask = self.safe_list(ticker, 'ask', [])
         nestedOrderBook = self.safe_dict(ticker, 'orderBook')
-        cumulativeOrderBook = nestedOrderBook is None and self.safe_string(ticker, 'bestBid') is not ticker if None else nestedOrderBook
-        orderBook = cumulativeOrderBook is {} if None else cumulativeOrderBook
-        bidPriceString = cumulativeOrderBook is self.safe_string(bid, 0) if None else self.safe_string(orderBook, 'bestBid')
-        askPriceString = cumulativeOrderBook is self.safe_string(ask, 0) if None else self.safe_string(orderBook, 'bestAsk')
+        cumulativeOrderBook = nestedOrderBook
+        if (nestedOrderBook is None) and (self.safe_string(ticker, 'bestBid') is not None):
+            cumulativeOrderBook = ticker
+        orderBook = cumulativeOrderBook
+        if orderBook is None:
+            orderBook = {}
+        bidPriceString = self.safe_string(orderBook, 'bestBid')
+        askPriceString = self.safe_string(orderBook, 'bestAsk')
+        bidVolume = self.safe_number(orderBook, 'bidSize')
+        askVolume = self.safe_number(orderBook, 'askSize')
+        if cumulativeOrderBook is None:
+            bidPriceString = self.safe_string(bid, 0)
+            askPriceString = self.safe_string(ask, 0)
+            bidVolume = self.safe_number(bid, 1)
+            askVolume = self.safe_number(ask, 1)
         bidPrice = self.parse_number(bidPriceString)
         askPrice = self.parse_number(askPriceString)
-        bidVolume = cumulativeOrderBook is self.safe_number(bid, 1) if None else self.safe_number(orderBook, 'bidSize')
-        askVolume = cumulativeOrderBook is self.safe_number(ask, 1) if None else self.safe_number(orderBook, 'askSize')
         last = None
         if (bidPriceString is not None) and (askPriceString is not None):
             last = self.parse_number(Precise.string_div(Precise.string_add(bidPriceString, askPriceString), '2'))
@@ -272,7 +281,7 @@ class asacoine(Exchange, ImplicitAPI):
         await self.load_markets(False, {'type': type})
         if symbols is not None:
             symbols = self.market_symbols(symbols)
-        response
+        response = {}
         if type == 'otc':
             response = await self.publicGetV1MarketPairsCumulative(request)
         else:

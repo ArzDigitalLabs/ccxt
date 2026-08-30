@@ -235,14 +235,26 @@ class asacoine extends Exchange {
         $bid = $this->safe_list($ticker, 'bid', array());
         $ask = $this->safe_list($ticker, 'ask', array());
         $nestedOrderBook = $this->safe_dict($ticker, 'orderBook');
-        $cumulativeOrderBook = $nestedOrderBook === null && $this->safe_string($ticker, 'bestBid') !== null ? $ticker : $nestedOrderBook;
-        $orderBook = $cumulativeOrderBook === null ? array() : $cumulativeOrderBook;
-        $bidPriceString = $cumulativeOrderBook === null ? $this->safe_string($bid, 0) : $this->safe_string($orderBook, 'bestBid');
-        $askPriceString = $cumulativeOrderBook === null ? $this->safe_string($ask, 0) : $this->safe_string($orderBook, 'bestAsk');
+        $cumulativeOrderBook = $nestedOrderBook;
+        if (($nestedOrderBook === null) && ($this->safe_string($ticker, 'bestBid') !== null)) {
+            $cumulativeOrderBook = $ticker;
+        }
+        $orderBook = $cumulativeOrderBook;
+        if ($orderBook === null) {
+            $orderBook = array();
+        }
+        $bidPriceString = $this->safe_string($orderBook, 'bestBid');
+        $askPriceString = $this->safe_string($orderBook, 'bestAsk');
+        $bidVolume = $this->safe_number($orderBook, 'bidSize');
+        $askVolume = $this->safe_number($orderBook, 'askSize');
+        if ($cumulativeOrderBook === null) {
+            $bidPriceString = $this->safe_string($bid, 0);
+            $askPriceString = $this->safe_string($ask, 0);
+            $bidVolume = $this->safe_number($bid, 1);
+            $askVolume = $this->safe_number($ask, 1);
+        }
         $bidPrice = $this->parse_number($bidPriceString);
         $askPrice = $this->parse_number($askPriceString);
-        $bidVolume = $cumulativeOrderBook === null ? $this->safe_number($bid, 1) : $this->safe_number($orderBook, 'bidSize');
-        $askVolume = $cumulativeOrderBook === null ? $this->safe_number($ask, 1) : $this->safe_number($orderBook, 'askSize');
         $last = null;
         if (($bidPriceString !== null) && ($askPriceString !== null)) {
             $last = $this->parse_number(Precise::string_div(Precise::string_add($bidPriceString, $askPriceString), '2'));
@@ -285,7 +297,7 @@ class asacoine extends Exchange {
         if ($symbols !== null) {
             $symbols = $this->market_symbols($symbols);
         }
-        $response;
+        $response = array();
         if ($type === 'otc') {
             $response = $this->publicGetV1MarketPairsCumulative ($request);
         } else {

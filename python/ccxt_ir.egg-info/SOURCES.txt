@@ -12,6 +12,7 @@ ccxt/alpaca.py
 ccxt/apex.py
 ccxt/arzinja.py
 ccxt/arzplus.py
+ccxt/asacoine.py
 ccxt/ascendex.py
 ccxt/asretether.py
 ccxt/bequant.py
@@ -140,6 +141,7 @@ ccxt/saraf.py
 ccxt/sarmayex.py
 ccxt/sarrafex.py
 ccxt/tabdeal.py
+ccxt/talasea.py
 ccxt/tehran_exchange.py
 ccxt/tetherland.py
 ccxt/timex.py
@@ -166,6 +168,7 @@ ccxt/abstract/alpaca.py
 ccxt/abstract/apex.py
 ccxt/abstract/arzinja.py
 ccxt/abstract/arzplus.py
+ccxt/abstract/asacoine.py
 ccxt/abstract/ascendex.py
 ccxt/abstract/asretether.py
 ccxt/abstract/bequant.py
@@ -294,6 +297,7 @@ ccxt/abstract/saraf.py
 ccxt/abstract/sarmayex.py
 ccxt/abstract/sarrafex.py
 ccxt/abstract/tabdeal.py
+ccxt/abstract/talasea.py
 ccxt/abstract/tehran_exchange.py
 ccxt/abstract/tetherland.py
 ccxt/abstract/timex.py
@@ -320,6 +324,7 @@ ccxt/async_support/alpaca.py
 ccxt/async_support/apex.py
 ccxt/async_support/arzinja.py
 ccxt/async_support/arzplus.py
+ccxt/async_support/asacoine.py
 ccxt/async_support/ascendex.py
 ccxt/async_support/asretether.py
 ccxt/async_support/bequant.py
@@ -448,6 +453,7 @@ ccxt/async_support/saraf.py
 ccxt/async_support/sarmayex.py
 ccxt/async_support/sarrafex.py
 ccxt/async_support/tabdeal.py
+ccxt/async_support/talasea.py
 ccxt/async_support/tehran_exchange.py
 ccxt/async_support/tetherland.py
 ccxt/async_support/timex.py
