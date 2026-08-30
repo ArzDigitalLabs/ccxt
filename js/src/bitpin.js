@@ -89,7 +89,7 @@ export default class bitpin extends Exchange {
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/bitpin/64x64.png',
                 'api': {
-                    'public': 'https://api.bitpin.ir',
+                    'public': 'https://api.bitpin.org',
                     'OHLCV': 'https://api.bitpin.org',
                 },
                 'www': 'https://bitpin.ir',
