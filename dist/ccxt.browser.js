@@ -80679,7 +80679,7 @@ class bitpin extends _abstract_bitpin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/bitpin/64x64.png',
                 'api': {
-                    'public': 'https://api.bitpin.ir',
+                    'public': 'https://api.bitpin.org',
                     'OHLCV': 'https://api.bitpin.org',
                 },
                 'www': 'https://bitpin.ir',
@@ -434630,7 +434630,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.16.2';
+const ccxt_version = '4.16.3';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 
