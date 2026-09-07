@@ -7,6 +7,7 @@ namespace ccxt\async;
 
 use Exception; // a common import
 use ccxt\async\abstract\melligold as Exchange;
+use ccxt\ExchangeError;
 use \React\Async;
 use \React\Promise\PromiseInterface;
 
@@ -35,7 +36,7 @@ class melligold extends Exchange {
             ),
             'options' => array(
                 'defaultType' => 'otc',
-                'melligoldCookie' => '__arcscoc=arcookie-1788797140-383667a29094e04aa24dad8d82bc9a7b; __arcsco=04c5ea50d6d25aca86f87dc8eae62af2',
+                'melligoldCookie' => null,
                 'manualRedirect' => true,
             ),
             'urls' => array(
@@ -72,25 +73,37 @@ class melligold extends Exchange {
 
     public function request_with_cookie($params = array ()) {
         return Async\async(function () use ($params) {
+            $response = null;
+            $error = null;
             try {
-                return Async\await($this->publicGetApiV1ExchangeBuySellPrice ($params));
-            } catch (Exception $error) {
-                $responseHeaders = $this->last_response_headers || array();
-                $setCookie = $this->safe_string($responseHeaders, 'Set-Cookie');
-                if ($setCookie !== null) {
-                    $cookies = explode(', ', $setCookie);
-                    $values = array();
-                    for ($i = 0; $i < count($cookies); $i++) {
-                        $values[] = explode(';', $cookies[$i])[0];
-                    }
-                    $cookie = implode('; ', $values);
-                    if ($cookie !== '' && $cookie !== $this->options['melligoldCookie']) {
-                        $this->options['melligoldCookie'] = $cookie;
-                        return Async\await($this->publicGetApiV1ExchangeBuySellPrice ($params));
+                $response = Async\await($this->publicGetApiV1ExchangeBuySellPrice ($params));
+            } catch (Exception $e) {
+                $error = $e;
+            }
+            if ($this->safe_value($response, 'data') !== null) {
+                return $response;
+            }
+            $responseHeaders = $this->last_response_headers || array();
+            $setCookie = $this->safe_string($responseHeaders, 'Set-Cookie');
+            if ($setCookie !== null) {
+                $cookies = explode(', ', $setCookie);
+                $values = array();
+                for ($i = 0; $i < count($cookies); $i++) {
+                    $values[] = explode(';', $cookies[$i])[0];
+                }
+                $cookie = implode('; ', $values);
+                if ($cookie !== '' && $cookie !== $this->options['melligoldCookie']) {
+                    $this->options['melligoldCookie'] = $cookie;
+                    $response = Async\await($this->publicGetApiV1ExchangeBuySellPrice ($params));
+                    if ($this->safe_value($response, 'data') !== null) {
+                        return $response;
                     }
                 }
+            }
+            if ($error !== null) {
                 throw $error;
             }
+            throw new ExchangeError($this->id . ' returned an invalid response');
         }) ();
     }
 

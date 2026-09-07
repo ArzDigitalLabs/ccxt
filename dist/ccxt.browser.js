@@ -240212,7 +240212,9 @@ class mazdax extends _abstract_mazdax_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 /* harmony export */   A: () => (/* binding */ melligold)
 /* harmony export */ });
 /* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
 //  ---------------------------------------------------------------------------
+
 
 //  ---------------------------------------------------------------------------
 /**
@@ -240243,7 +240245,7 @@ class melligold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defau
             },
             'options': {
                 'defaultType': 'otc',
-                'melligoldCookie': '__arcscoc=arcookie-1788797140-383667a29094e04aa24dad8d82bc9a7b; __arcsco=04c5ea50d6d25aca86f87dc8eae62af2',
+                'melligoldCookie': undefined,
                 'manualRedirect': true,
             },
             'urls': {
@@ -240275,26 +240277,38 @@ class melligold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defau
         return result;
     }
     async requestWithCookie(params = {}) {
+        let response = undefined;
+        let error = undefined;
         try {
-            return await this.publicGetApiV1ExchangeBuySellPrice(params);
+            response = await this.publicGetApiV1ExchangeBuySellPrice(params);
         }
-        catch (error) {
-            const responseHeaders = this.last_response_headers || {};
-            const setCookie = this.safeString(responseHeaders, 'Set-Cookie');
-            if (setCookie !== undefined) {
-                const cookies = setCookie.split(', ');
-                const values = [];
-                for (let i = 0; i < cookies.length; i++) {
-                    values.push(cookies[i].split(';')[0]);
-                }
-                const cookie = values.join('; ');
-                if (cookie !== '' && cookie !== this.options['melligoldCookie']) {
-                    this.options['melligoldCookie'] = cookie;
-                    return await this.publicGetApiV1ExchangeBuySellPrice(params);
+        catch (e) {
+            error = e;
+        }
+        if (this.safeValue(response, 'data') !== undefined) {
+            return response;
+        }
+        const responseHeaders = this.last_response_headers || {};
+        const setCookie = this.safeString(responseHeaders, 'Set-Cookie');
+        if (setCookie !== undefined) {
+            const cookies = setCookie.split(', ');
+            const values = [];
+            for (let i = 0; i < cookies.length; i++) {
+                values.push(cookies[i].split(';')[0]);
+            }
+            const cookie = values.join('; ');
+            if (cookie !== '' && cookie !== this.options['melligoldCookie']) {
+                this.options['melligoldCookie'] = cookie;
+                response = await this.publicGetApiV1ExchangeBuySellPrice(params);
+                if (this.safeValue(response, 'data') !== undefined) {
+                    return response;
                 }
             }
+        }
+        if (error !== undefined) {
             throw error;
         }
+        throw new _base_errors_js__WEBPACK_IMPORTED_MODULE_1__.ExchangeError(this.id + ' returned an invalid response');
     }
     parseMarket(response, baseId = undefined) {
         const data = this.safeDict(response, 'data', {});

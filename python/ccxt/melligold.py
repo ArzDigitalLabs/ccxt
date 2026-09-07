@@ -7,6 +7,7 @@ from ccxt.base.exchange import Exchange
 from ccxt.abstract.melligold import ImplicitAPI
 from ccxt.base.types import Any, Market, Strings, Ticker, Tickers
 from typing import List
+from ccxt.base.errors import ExchangeError
 
 
 class melligold(Exchange, ImplicitAPI):
@@ -34,7 +35,7 @@ class melligold(Exchange, ImplicitAPI):
             },
             'options': {
                 'defaultType': 'otc',
-                'melligoldCookie': '__arcscoc=arcookie-1788797140-383667a29094e04aa24dad8d82bc9a7b; __arcsco=04c5ea50d6d25aca86f87dc8eae62af2',
+                'melligoldCookie': None,
                 'manualRedirect': True,
             },
             'urls': {
@@ -65,21 +66,30 @@ class melligold(Exchange, ImplicitAPI):
         return result
 
     def request_with_cookie(self, params={}):
+        response = None
+        error = None
         try:
-            return self.publicGetApiV1ExchangeBuySellPrice(params)
-        except Exception as error:
-            responseHeaders = self.last_response_headers or {}
-            setCookie = self.safe_string(responseHeaders, 'Set-Cookie')
-            if setCookie is not None:
-                cookies = setCookie.split(', ')
-                values = []
-                for i in range(0, len(cookies)):
-                    values.append(cookies[i].split(';')[0])
-                cookie = '; '.join(values)
-                if cookie != '' and cookie != self.options['melligoldCookie']:
-                    self.options['melligoldCookie'] = cookie
-                    return self.publicGetApiV1ExchangeBuySellPrice(params)
+            response = self.publicGetApiV1ExchangeBuySellPrice(params)
+        except Exception as e:
+            error = e
+        if self.safe_value(response, 'data') is not None:
+            return response
+        responseHeaders = self.last_response_headers or {}
+        setCookie = self.safe_string(responseHeaders, 'Set-Cookie')
+        if setCookie is not None:
+            cookies = setCookie.split(', ')
+            values = []
+            for i in range(0, len(cookies)):
+                values.append(cookies[i].split(';')[0])
+            cookie = '; '.join(values)
+            if cookie != '' and cookie != self.options['melligoldCookie']:
+                self.options['melligoldCookie'] = cookie
+                response = self.publicGetApiV1ExchangeBuySellPrice(params)
+                if self.safe_value(response, 'data') is not None:
+                    return response
+        if error is not None:
             raise error
+        raise ExchangeError(self.id + ' returned an invalid response')
 
     def parse_market(self, response, baseId: str = None) -> Market:
         data = self.safe_dict(response, 'data', {})
