@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.16.3'
+__version__ = '4.17.0'
 
 # ----------------------------------------------------------------------------
 
@@ -189,8 +189,10 @@ from ccxt.latoken import latoken                                      # noqa: F4
 from ccxt.lbank import lbank                                          # noqa: F401
 from ccxt.luno import luno                                            # noqa: F401
 from ccxt.mazdax import mazdax                                        # noqa: F401
+from ccxt.melligold import melligold                                  # noqa: F401
 from ccxt.mercado import mercado                                      # noqa: F401
 from ccxt.mexc import mexc                                            # noqa: F401
+from ccxt.milligold import milligold                                  # noqa: F401
 from ccxt.modetrade import modetrade                                  # noqa: F401
 from ccxt.myokx import myokx                                          # noqa: F401
 from ccxt.ndax import ndax                                            # noqa: F401
@@ -220,6 +222,7 @@ from ccxt.sarmayex import sarmayex                                    # noqa: F4
 from ccxt.sarrafex import sarrafex                                    # noqa: F401
 from ccxt.tabdeal import tabdeal                                      # noqa: F401
 from ccxt.talasea import talasea                                      # noqa: F401
+from ccxt.technogold import technogold                                # noqa: F401
 from ccxt.tehran_exchange import tehran_exchange                      # noqa: F401
 from ccxt.tetherland import tetherland                                # noqa: F401
 from ccxt.timex import timex                                          # noqa: F401
@@ -231,6 +234,7 @@ from ccxt.ubitex import ubitex                                        # noqa: F4
 from ccxt.upbit import upbit                                          # noqa: F401
 from ccxt.vertex import vertex                                        # noqa: F401
 from ccxt.wallex import wallex                                        # noqa: F401
+from ccxt.wallgold import wallgold                                    # noqa: F401
 from ccxt.wavesexchange import wavesexchange                          # noqa: F401
 from ccxt.whitebit import whitebit                                    # noqa: F401
 from ccxt.woo import woo                                              # noqa: F401
@@ -346,8 +350,10 @@ exchanges = [
     'lbank',
     'luno',
     'mazdax',
+    'melligold',
     'mercado',
     'mexc',
+    'milligold',
     'modetrade',
     'myokx',
     'ndax',
@@ -377,6 +383,7 @@ exchanges = [
     'sarrafex',
     'tabdeal',
     'talasea',
+    'technogold',
     'tehran_exchange',
     'tetherland',
     'timex',
@@ -388,6 +395,7 @@ exchanges = [
     'upbit',
     'vertex',
     'wallex',
+    'wallgold',
     'wavesexchange',
     'whitebit',
     'woo',

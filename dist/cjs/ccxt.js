@@ -117,8 +117,10 @@ var latoken = require('./src/latoken.js');
 var lbank = require('./src/lbank.js');
 var luno = require('./src/luno.js');
 var mazdax = require('./src/mazdax.js');
+var melligold = require('./src/melligold.js');
 var mercado = require('./src/mercado.js');
 var mexc = require('./src/mexc.js');
+var milligold = require('./src/milligold.js');
 var modetrade = require('./src/modetrade.js');
 var myokx = require('./src/myokx.js');
 var ndax = require('./src/ndax.js');
@@ -148,6 +150,7 @@ var sarmayex = require('./src/sarmayex.js');
 var sarrafex = require('./src/sarrafex.js');
 var tabdeal = require('./src/tabdeal.js');
 var talasea = require('./src/talasea.js');
+var technogold = require('./src/technogold.js');
 var tehran_exchange = require('./src/tehran_exchange.js');
 var tetherland = require('./src/tetherland.js');
 var timex = require('./src/timex.js');
@@ -159,6 +162,7 @@ var ubitex = require('./src/ubitex.js');
 var upbit = require('./src/upbit.js');
 var vertex = require('./src/vertex.js');
 var wallex = require('./src/wallex.js');
+var wallgold = require('./src/wallgold.js');
 var wavesexchange = require('./src/wavesexchange.js');
 var whitebit = require('./src/whitebit.js');
 var woo = require('./src/woo.js');
@@ -243,7 +247,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.16.3';
+const version = '4.17.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -351,8 +355,10 @@ const exchanges = {
     'lbank': lbank["default"],
     'luno': luno["default"],
     'mazdax': mazdax["default"],
+    'melligold': melligold["default"],
     'mercado': mercado["default"],
     'mexc': mexc["default"],
+    'milligold': milligold["default"],
     'modetrade': modetrade["default"],
     'myokx': myokx["default"],
     'ndax': ndax["default"],
@@ -382,6 +388,7 @@ const exchanges = {
     'sarrafex': sarrafex["default"],
     'tabdeal': tabdeal["default"],
     'talasea': talasea["default"],
+    'technogold': technogold["default"],
     'tehran_exchange': tehran_exchange["default"],
     'tetherland': tetherland["default"],
     'timex': timex["default"],
@@ -393,6 +400,7 @@ const exchanges = {
     'upbit': upbit["default"],
     'vertex': vertex["default"],
     'wallex': wallex["default"],
+    'wallgold': wallgold["default"],
     'wavesexchange': wavesexchange["default"],
     'whitebit': whitebit["default"],
     'woo': woo["default"],
@@ -633,8 +641,10 @@ exports.latoken = latoken["default"];
 exports.lbank = lbank["default"];
 exports.luno = luno["default"];
 exports.mazdax = mazdax["default"];
+exports.melligold = melligold["default"];
 exports.mercado = mercado["default"];
 exports.mexc = mexc["default"];
+exports.milligold = milligold["default"];
 exports.modetrade = modetrade["default"];
 exports.myokx = myokx["default"];
 exports.ndax = ndax["default"];
@@ -664,6 +674,7 @@ exports.sarmayex = sarmayex["default"];
 exports.sarrafex = sarrafex["default"];
 exports.tabdeal = tabdeal["default"];
 exports.talasea = talasea["default"];
+exports.technogold = technogold["default"];
 exports.tehran_exchange = tehran_exchange["default"];
 exports.tetherland = tetherland["default"];
 exports.timex = timex["default"];
@@ -675,6 +686,7 @@ exports.ubitex = ubitex["default"];
 exports.upbit = upbit["default"];
 exports.vertex = vertex["default"];
 exports.wallex = wallex["default"];
+exports.wallgold = wallgold["default"];
 exports.wavesexchange = wavesexchange["default"];
 exports.whitebit = whitebit["default"];
 exports.woo = woo["default"];
