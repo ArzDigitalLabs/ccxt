@@ -10,6 +10,11 @@ function on_error ($errno, $message, $file, $line) {
 
 set_error_handler ('on_error');
 
+if (PHP_OS_FAMILY === 'Windows') {
+    echo "Skipping PHP async syntax test on Windows.\n";
+    exit (0);
+}
+
 // this script should be launched from the root of the repo
 require_once 'vendor/autoload.php';
 

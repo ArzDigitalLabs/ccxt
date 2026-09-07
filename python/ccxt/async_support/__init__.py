@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.16.3'
+__version__ = '4.17.0'
 
 # -----------------------------------------------------------------------------
 
@@ -169,8 +169,10 @@ from ccxt.async_support.latoken import latoken                                  
 from ccxt.async_support.lbank import lbank                                      # noqa: F401
 from ccxt.async_support.luno import luno                                        # noqa: F401
 from ccxt.async_support.mazdax import mazdax                                    # noqa: F401
+from ccxt.async_support.melligold import melligold                              # noqa: F401
 from ccxt.async_support.mercado import mercado                                  # noqa: F401
 from ccxt.async_support.mexc import mexc                                        # noqa: F401
+from ccxt.async_support.milligold import milligold                              # noqa: F401
 from ccxt.async_support.modetrade import modetrade                              # noqa: F401
 from ccxt.async_support.myokx import myokx                                      # noqa: F401
 from ccxt.async_support.ndax import ndax                                        # noqa: F401
@@ -200,6 +202,7 @@ from ccxt.async_support.sarmayex import sarmayex                                
 from ccxt.async_support.sarrafex import sarrafex                                # noqa: F401
 from ccxt.async_support.tabdeal import tabdeal                                  # noqa: F401
 from ccxt.async_support.talasea import talasea                                  # noqa: F401
+from ccxt.async_support.technogold import technogold                            # noqa: F401
 from ccxt.async_support.tehran_exchange import tehran_exchange                  # noqa: F401
 from ccxt.async_support.tetherland import tetherland                            # noqa: F401
 from ccxt.async_support.timex import timex                                      # noqa: F401
@@ -211,6 +214,7 @@ from ccxt.async_support.ubitex import ubitex                                    
 from ccxt.async_support.upbit import upbit                                      # noqa: F401
 from ccxt.async_support.vertex import vertex                                    # noqa: F401
 from ccxt.async_support.wallex import wallex                                    # noqa: F401
+from ccxt.async_support.wallgold import wallgold                                # noqa: F401
 from ccxt.async_support.wavesexchange import wavesexchange                      # noqa: F401
 from ccxt.async_support.whitebit import whitebit                                # noqa: F401
 from ccxt.async_support.woo import woo                                          # noqa: F401
@@ -326,8 +330,10 @@ exchanges = [
     'lbank',
     'luno',
     'mazdax',
+    'melligold',
     'mercado',
     'mexc',
+    'milligold',
     'modetrade',
     'myokx',
     'ndax',
@@ -357,6 +363,7 @@ exchanges = [
     'sarrafex',
     'tabdeal',
     'talasea',
+    'technogold',
     'tehran_exchange',
     'tetherland',
     'timex',
@@ -368,6 +375,7 @@ exchanges = [
     'upbit',
     'vertex',
     'wallex',
+    'wallgold',
     'wavesexchange',
     'whitebit',
     'woo',

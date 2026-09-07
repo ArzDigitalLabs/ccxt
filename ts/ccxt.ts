@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.16.3';
+const version = '4.17.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -151,8 +151,10 @@ import latoken from  './src/latoken.js'
 import lbank from  './src/lbank.js'
 import luno from  './src/luno.js'
 import mazdax from  './src/mazdax.js'
+import melligold from  './src/melligold.js'
 import mercado from  './src/mercado.js'
 import mexc from  './src/mexc.js'
+import milligold from  './src/milligold.js'
 import modetrade from  './src/modetrade.js'
 import myokx from  './src/myokx.js'
 import ndax from  './src/ndax.js'
@@ -182,6 +184,7 @@ import sarmayex from  './src/sarmayex.js'
 import sarrafex from  './src/sarrafex.js'
 import tabdeal from  './src/tabdeal.js'
 import talasea from  './src/talasea.js'
+import technogold from  './src/technogold.js'
 import tehran_exchange from  './src/tehran_exchange.js'
 import tetherland from  './src/tetherland.js'
 import timex from  './src/timex.js'
@@ -193,6 +196,7 @@ import ubitex from  './src/ubitex.js'
 import upbit from  './src/upbit.js'
 import vertex from  './src/vertex.js'
 import wallex from  './src/wallex.js'
+import wallgold from  './src/wallgold.js'
 import wavesexchange from  './src/wavesexchange.js'
 import whitebit from  './src/whitebit.js'
 import woo from  './src/woo.js'
@@ -383,8 +387,10 @@ const exchanges = {
     'lbank':                  lbank,
     'luno':                   luno,
     'mazdax':                 mazdax,
+    'melligold':              melligold,
     'mercado':                mercado,
     'mexc':                   mexc,
+    'milligold':              milligold,
     'modetrade':              modetrade,
     'myokx':                  myokx,
     'ndax':                   ndax,
@@ -414,6 +420,7 @@ const exchanges = {
     'sarrafex':               sarrafex,
     'tabdeal':                tabdeal,
     'talasea':                talasea,
+    'technogold':             technogold,
     'tehran_exchange':        tehran_exchange,
     'tetherland':             tetherland,
     'timex':                  timex,
@@ -425,6 +432,7 @@ const exchanges = {
     'upbit':                  upbit,
     'vertex':                 vertex,
     'wallex':                 wallex,
+    'wallgold':               wallgold,
     'wavesexchange':          wavesexchange,
     'whitebit':               whitebit,
     'woo':                    woo,
@@ -758,8 +766,10 @@ export {
     lbank,
     luno,
     mazdax,
+    melligold,
     mercado,
     mexc,
+    milligold,
     modetrade,
     myokx,
     ndax,
@@ -789,6 +799,7 @@ export {
     sarrafex,
     tabdeal,
     talasea,
+    technogold,
     tehran_exchange,
     tetherland,
     timex,
@@ -800,6 +811,7 @@ export {
     upbit,
     vertex,
     wallex,
+    wallgold,
     wavesexchange,
     whitebit,
     woo,

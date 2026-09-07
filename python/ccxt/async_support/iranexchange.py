@@ -346,11 +346,11 @@ class iranexchange(Exchange, ImplicitAPI):
         symbol = self.safe_symbol(marketId, market, None, marketType)
         quotation = self.safe_value(ticker, 'quotation', {})
         dollar_price = self.safe_float(ticker, 'dollar_price', 0)
-        high = self.safe_float(quotation, 'maxPrice', 0) * dollar_price
-        low = self.safe_float(quotation, 'minPrice', 0) * dollar_price
-        bid = self.safe_float(ticker, 'sell_to_iranicard_currency_price', 0) * dollar_price
-        ask = self.safe_float(ticker, 'buy_from_iranicard_currency_price', 0) * dollar_price
-        last = self.safe_float(ticker, 'sell_to_iranicard_currency_price', 0) * dollar_price
+        high = self.safe_float(quotation, 'maxPrice', 0) * dollar_price / 10
+        low = self.safe_float(quotation, 'minPrice', 0) * dollar_price / 10
+        bid = self.safe_float(ticker, 'sell_to_iranicard_currency_price', 0) * dollar_price / 10
+        ask = self.safe_float(ticker, 'buy_from_iranicard_currency_price', 0) * dollar_price / 10
+        last = self.safe_float(ticker, 'sell_to_iranicard_currency_price', 0) * dollar_price / 10
         change = self.safe_float(quotation, 'dailyChangePercent', 0)
         return self.safe_ticker({
             'symbol': symbol,

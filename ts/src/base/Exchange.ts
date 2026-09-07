@@ -955,6 +955,10 @@ export default class Exchange {
         // TypeError Failed to execute 'fetch' on 'Window': Illegal invocation
         const fetchImplementation = this.fetchImplementation;
         const params = { method, headers, body, timeout: this.timeout };
+        if (this.options['manualRedirect']) {
+            params['redirect'] = 'manual';
+            params['allow_redirects'] = false;
+        }
         if (this.agent) {
             params['agent'] = this.agent;
         }

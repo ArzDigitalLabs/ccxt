@@ -357,11 +357,11 @@ export default class iranexchange extends Exchange {
         const symbol = this.safeSymbol(marketId, market, undefined, marketType);
         const quotation = this.safeValue(ticker, 'quotation', {});
         const dollar_price = this.safeFloat(ticker, 'dollar_price', 0);
-        const high = this.safeFloat(quotation, 'maxPrice', 0) * dollar_price;
-        const low = this.safeFloat(quotation, 'minPrice', 0) * dollar_price;
-        const bid = this.safeFloat(ticker, 'sell_to_iranicard_currency_price', 0) * dollar_price;
-        const ask = this.safeFloat(ticker, 'buy_from_iranicard_currency_price', 0) * dollar_price;
-        const last = this.safeFloat(ticker, 'sell_to_iranicard_currency_price', 0) * dollar_price;
+        const high = this.safeFloat(quotation, 'maxPrice', 0) * dollar_price / 10;
+        const low = this.safeFloat(quotation, 'minPrice', 0) * dollar_price / 10;
+        const bid = this.safeFloat(ticker, 'sell_to_iranicard_currency_price', 0) * dollar_price / 10;
+        const ask = this.safeFloat(ticker, 'buy_from_iranicard_currency_price', 0) * dollar_price / 10;
+        const last = this.safeFloat(ticker, 'sell_to_iranicard_currency_price', 0) * dollar_price / 10;
         const change = this.safeFloat(quotation, 'dailyChangePercent', 0);
         return this.safeTicker({
             'symbol': symbol,

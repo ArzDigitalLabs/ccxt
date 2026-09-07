@@ -4,82 +4,64 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import raastin from './src/raastin.js';
-async function main() {
-    const exchange = new raastin({
-        enableRateLimit: true,
-        timeout: 30000,
-    });
+import talasea from './src/talasea.js';
+import melligold from './src/melligold.js';
+import technogold from './src/technogold.js';
+import wallgold from './src/wallgold.js';
+import milligold from './src/milligold.js';
+const exchanges = [
+    { id: 'talasea', create: () => new talasea({ enableRateLimit: true, timeout: 30000 }) },
+    { id: 'melligold', create: () => new melligold({ enableRateLimit: true, timeout: 30000 }) },
+    { id: 'technogold', create: () => new technogold({ enableRateLimit: true, timeout: 30000 }) },
+    { id: 'wallgold', create: () => new wallgold({ enableRateLimit: true, timeout: 30000 }) },
+    { id: 'milligold', create: () => new milligold({ enableRateLimit: true, timeout: 30000 }) },
+];
+async function testExchange(id, create) {
+    const exchange = create();
     try {
-        const spotMarkets = await exchange.loadMarkets(true, { 'type': 'spot' });
-        const spotSymbols = [];
-        const preferredSymbols = ['USDT/IRT', 'BTC/IRT', 'ETH/IRT'];
-        for (let i = 0; i < preferredSymbols.length; i++) {
-            const symbol = preferredSymbols[i];
-            if (symbol in spotMarkets) {
-                spotSymbols.push(symbol);
-            }
+        const markets = await exchange.loadMarkets();
+        const symbols = Object.keys(markets);
+        if (symbols.length === 0) {
+            throw new Error('No OTC markets returned');
         }
-        if (spotSymbols.length === 0) {
-            const marketSymbols = Object.keys(spotMarkets);
-            for (let i = 0; i < marketSymbols.length; i++) {
-                const symbol = marketSymbols[i];
-                const market = spotMarkets[symbol];
-                if (market['type'] === 'spot') {
-                    spotSymbols.push(symbol);
-                }
-                if (spotSymbols.length >= 3) {
-                    break;
-                }
-            }
+        const symbol = symbols[0];
+        const ticker = await exchange.fetchTicker(symbol, { 'type': 'otc' });
+        const tickers = await exchange.fetchTickers(symbols, { 'type': 'otc' });
+        if (ticker['symbol'] !== symbol) {
+            throw new Error(`fetchTicker returned ${ticker['symbol']} instead of ${symbol}`);
         }
-        console.log('spot symbols:', spotSymbols);
-        const spotTickers = await exchange.fetchTickers(spotSymbols);
-        console.log('spot tickers:');
-        for (let i = 0; i < spotSymbols.length; i++) {
-            const symbol = spotSymbols[i];
-            const ticker = spotTickers[symbol];
-            console.log({
+        if (!(symbol in tickers)) {
+            throw new Error(`fetchTickers did not return ${symbol}`);
+        }
+        console.log(id, {
+            markets: symbols,
+            ticker: {
                 symbol: ticker['symbol'],
+                bid: ticker['bid'],
+                ask: ticker['ask'],
                 last: ticker['last'],
-                high: ticker['high'],
-                low: ticker['low'],
-                change: ticker['change'],
-                percentage: ticker['percentage'],
-                baseVolume: ticker['baseVolume'],
-                quoteVolume: ticker['quoteVolume'],
-            });
-        }
-        const singleSpotSymbol = spotSymbols[0];
-        if (singleSpotSymbol !== undefined) {
-            const singleSpotTicker = await exchange.fetchTicker(singleSpotSymbol);
-            console.log('single spot ticker:', {
-                symbol: singleSpotTicker['symbol'],
-                last: singleSpotTicker['last'],
-                change: singleSpotTicker['change'],
-                percentage: singleSpotTicker['percentage'],
-            });
-        }
-        const otcMarkets = await exchange.loadMarkets(true, { 'type': 'otc' });
-        console.log('otc markets:', otcMarkets);
-        const otcSymbols = Object.keys(otcMarkets);
-        const otcSymbol = otcSymbols[0];
-        if (otcSymbol !== undefined) {
-            const otcTicker = await exchange.fetchTicker(otcSymbol, { 'type': 'otc' });
-            console.log('single otc ticker:', {
-                symbol: otcTicker['symbol'],
-                last: otcTicker['last'],
-                bid: otcTicker['bid'],
-                ask: otcTicker['ask'],
-            });
-        }
-    }
-    catch (error) {
-        console.error('Raastin ticker test failed:', error);
-        process.exitCode = 1;
+                timestamp: ticker['timestamp'],
+            },
+        });
     }
     finally {
         await exchange.close();
+    }
+}
+async function main() {
+    let failed = false;
+    for (let i = 0; i < exchanges.length; i++) {
+        const exchange = exchanges[i];
+        try {
+            await testExchange(exchange.id, exchange.create);
+        }
+        catch (error) {
+            failed = true;
+            console.error(`${exchange.id} test failed:`, error);
+        }
+    }
+    if (failed) {
+        process.exitCode = 1;
     }
 }
 void main();
