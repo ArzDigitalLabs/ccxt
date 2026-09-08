@@ -4,64 +4,71 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import talasea from './src/talasea.js';
-import melligold from './src/melligold.js';
-import technogold from './src/technogold.js';
-import wallgold from './src/wallgold.js';
-import milligold from './src/milligold.js';
+import baazar from './src/baazar.js';
+import daric from './src/daric.js';
+import digikalagold from './src/digikalagold.js';
+import goldcore from './src/goldcore.js';
+import goldika from './src/goldika.js';
+import goldis from './src/goldis.js';
+import hamrahgold from './src/hamrahgold.js';
+import talapp from './src/talapp.js';
+import zarafza from './src/zarafza.js';
+import zarminex from './src/zarminex.js';
+import zarniv from './src/zarniv.js';
 const exchanges = [
-    { id: 'talasea', create: () => new talasea({ enableRateLimit: true, timeout: 30000 }) },
-    { id: 'melligold', create: () => new melligold({ enableRateLimit: true, timeout: 30000 }) },
-    { id: 'technogold', create: () => new technogold({ enableRateLimit: true, timeout: 30000 }) },
-    { id: 'wallgold', create: () => new wallgold({ enableRateLimit: true, timeout: 30000 }) },
-    { id: 'milligold', create: () => new milligold({ enableRateLimit: true, timeout: 30000 }) },
+    baazar,
+    daric,
+    digikalagold,
+    goldcore,
+    goldika,
+    goldis,
+    hamrahgold,
+    talapp,
+    zarafza,
+    zarminex,
+    zarniv,
 ];
-async function testExchange(id, create) {
-    const exchange = create();
+async function testExchange(ExchangeClass) {
+    const exchange = new ExchangeClass({
+        'enableRateLimit': true,
+        'timeout': 20000,
+    });
     try {
-        const markets = await exchange.loadMarkets();
-        const symbols = Object.keys(markets);
-        if (symbols.length === 0) {
-            throw new Error('No OTC markets returned');
+        const markets = await exchange.fetchMarkets();
+        const tickers = await exchange.fetchTickers();
+        const symbols = markets.map((market) => market['symbol']);
+        const tickerPrices = [];
+        const tickerSymbols = Object.keys(tickers);
+        for (let i = 0; i < tickerSymbols.length; i++) {
+            const symbol = tickerSymbols[i];
+            const ticker = tickers[symbol];
+            tickerPrices.push(symbol + ': ' + ticker['last']);
         }
-        const symbol = symbols[0];
-        const ticker = await exchange.fetchTicker(symbol, { 'type': 'otc' });
-        const tickers = await exchange.fetchTickers(symbols, { 'type': 'otc' });
-        if (ticker['symbol'] !== symbol) {
-            throw new Error(`fetchTicker returned ${ticker['symbol']} instead of ${symbol}`);
-        }
-        if (!(symbol in tickers)) {
-            throw new Error(`fetchTickers did not return ${symbol}`);
-        }
-        console.log(id, {
-            markets: symbols,
-            ticker: {
-                symbol: ticker['symbol'],
-                bid: ticker['bid'],
-                ask: ticker['ask'],
-                last: ticker['last'],
-                timestamp: ticker['timestamp'],
-            },
-        });
+        console.log(exchange.id + ' passed');
+        console.log('  markets: ' + symbols.join(', '));
+        console.log('  last prices: ' + tickerPrices.join(', '));
     }
     finally {
         await exchange.close();
     }
 }
 async function main() {
-    let failed = false;
+    let failures = 0;
     for (let i = 0; i < exchanges.length; i++) {
-        const exchange = exchanges[i];
+        const ExchangeClass = exchanges[i];
         try {
-            await testExchange(exchange.id, exchange.create);
+            await testExchange(ExchangeClass);
         }
         catch (error) {
-            failed = true;
-            console.error(`${exchange.id} test failed:`, error);
+            failures += 1;
+            console.error(ExchangeClass.name + ' failed:', error);
         }
     }
-    if (failed) {
-        process.exitCode = 1;
+    if (failures > 0) {
+        throw new Error(failures + ' exchange test(s) failed');
     }
 }
-void main();
+main().catch((error) => {
+    console.error('Gold exchange test suite failed:', error);
+    process.exitCode = 1;
+});

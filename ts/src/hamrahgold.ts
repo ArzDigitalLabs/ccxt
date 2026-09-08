@@ -1,0 +1,175 @@
+//  ---------------------------------------------------------------------------
+
+import Exchange from './base/Exchange.js';
+import { Market, Strings, Ticker, Tickers } from './base/types.js';
+
+//  ---------------------------------------------------------------------------
+
+/**
+ * @class hamrahgold
+ * @augments Exchange
+ */
+export default class hamrahgold extends Exchange {
+    describe (): any {
+        return this.deepExtend (super.describe (), {
+            'id': 'hamrahgold',
+            'name': 'HamrahGold',
+            'countries': [ 'IR' ],
+            'rateLimit': 1000,
+            'version': 'v1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://pwa.hamrahgold.com',
+                },
+                'www': 'https://hamrahgold.com',
+                'doc': 'https://pwa.hamrahgold.com/api/v1/market/price/xau/changes?type=sell',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'api/v1/market/price/xau/changes': 1,
+                    },
+                },
+            },
+        });
+    }
+
+    fetchPrice (type: string, params = {}) {
+        return (this as any).publicGetApiV1MarketPriceXauChanges (this.extend ({ 'type': type }, params));
+    }
+
+    async fetchMarkets (params = {}): Promise<Market[]> {
+        const response = await this.fetchPrice ('sell', params);
+        return [ this.parseMarket (response) ];
+    }
+
+    parseMarket (response): Market {
+        return {
+            'id': 'XAU18IRT',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'XAU18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': this.safeBool (response, 'success', false),
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': response,
+        };
+    }
+
+    async fetchTicker (symbol: string, params = {}): Promise<Ticker> {
+        await this.loadMarkets ();
+        const market = this.market (symbol);
+        const buyResponse = await this.fetchPrice ('buy', params);
+        const sellResponse = await this.fetchPrice ('sell', params);
+        return this.parseTicker (buyResponse, market, sellResponse);
+    }
+
+    async fetchTickers (symbols: Strings = undefined, params = {}): Promise<Tickers> {
+        await this.loadMarkets ();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols (symbols);
+        }
+        const buyResponse = await this.fetchPrice ('buy', params);
+        const sellResponse = await this.fetchPrice ('sell', params);
+        const market = this.market ('XAU18/IRT');
+        const ticker = this.parseTicker (buyResponse, market, sellResponse);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers (result, 'symbol', symbols);
+    }
+
+    parseTicker (buyResponse, market: Market = undefined, sellResponse = undefined): Ticker {
+        const buy = this.safeDict (buyResponse, 'data', {});
+        const sell = this.safeDict (sellResponse, 'data', {});
+        const changes = this.safeDict (sell, 'changes', {});
+        const dailyChange = this.safeDict (changes, '1d', {});
+        let bid = this.safeNumber (buy, 'current');
+        let ask = this.safeNumber (sell, 'current');
+        let previousClose = this.safeNumber (dailyChange, 'price');
+        if (bid !== undefined) {
+            bid = bid / 10;
+        }
+        if (ask !== undefined) {
+            ask = ask / 10;
+        }
+        if (previousClose !== undefined) {
+            previousClose = previousClose / 10;
+        }
+        return this.safeTicker ({
+            'symbol': market['symbol'],
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': ask,
+            'last': ask,
+            'previousClose': previousClose,
+            'change': undefined,
+            'percentage': this.safeNumber (dailyChange, 'percent'),
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': { 'buy': buyResponse, 'sell': sellResponse },
+        }, market);
+    }
+
+    sign (path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams (path, params);
+        const query = this.omit (params, this.extractParams (path));
+        if (Object.keys (query).length) {
+            url += '?' + this.urlencode (query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}

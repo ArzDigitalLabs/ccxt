@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.17.0';
+const version = '4.18.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -55,6 +55,7 @@ import arzplus from  './src/arzplus.js'
 import asacoine from  './src/asacoine.js'
 import ascendex from  './src/ascendex.js'
 import asretether from  './src/asretether.js'
+import baazar from  './src/baazar.js'
 import bequant from  './src/bequant.js'
 import bidarz from  './src/bidarz.js'
 import bigone from  './src/bigone.js'
@@ -111,11 +112,13 @@ import coinsph from  './src/coinsph.js'
 import coinspot from  './src/coinspot.js'
 import cryptocom from  './src/cryptocom.js'
 import cryptomus from  './src/cryptomus.js'
+import daric from  './src/daric.js'
 import defx from  './src/defx.js'
 import delta from  './src/delta.js'
 import deribit from  './src/deribit.js'
 import derive from  './src/derive.js'
 import digifinex from  './src/digifinex.js'
+import digikalagold from  './src/digikalagold.js'
 import ellipx from  './src/ellipx.js'
 import eterex from  './src/eterex.js'
 import excoino from  './src/excoino.js'
@@ -128,6 +131,10 @@ import foxbit from  './src/foxbit.js'
 import gate from  './src/gate.js'
 import gateio from  './src/gateio.js'
 import gemini from  './src/gemini.js'
+import goldcore from  './src/goldcore.js'
+import goldika from  './src/goldika.js'
+import goldis from  './src/goldis.js'
+import hamrahgold from  './src/hamrahgold.js'
 import hamtapay from  './src/hamtapay.js'
 import hashkey from  './src/hashkey.js'
 import hibachi from  './src/hibachi.js'
@@ -183,6 +190,7 @@ import saraf from  './src/saraf.js'
 import sarmayex from  './src/sarmayex.js'
 import sarrafex from  './src/sarrafex.js'
 import tabdeal from  './src/tabdeal.js'
+import talapp from  './src/talapp.js'
 import talasea from  './src/talasea.js'
 import technogold from  './src/technogold.js'
 import tehran_exchange from  './src/tehran_exchange.js'
@@ -204,6 +212,9 @@ import woofipro from  './src/woofipro.js'
 import xt from  './src/xt.js'
 import yobit from  './src/yobit.js'
 import zaif from  './src/zaif.js'
+import zarafza from  './src/zarafza.js'
+import zarminex from  './src/zarminex.js'
+import zarniv from  './src/zarniv.js'
 import zonda from  './src/zonda.js'
 
 // pro exchanges
@@ -291,6 +302,7 @@ const exchanges = {
     'asacoine':               asacoine,
     'ascendex':               ascendex,
     'asretether':             asretether,
+    'baazar':                 baazar,
     'bequant':                bequant,
     'bidarz':                 bidarz,
     'bigone':                 bigone,
@@ -347,11 +359,13 @@ const exchanges = {
     'coinspot':               coinspot,
     'cryptocom':              cryptocom,
     'cryptomus':              cryptomus,
+    'daric':                  daric,
     'defx':                   defx,
     'delta':                  delta,
     'deribit':                deribit,
     'derive':                 derive,
     'digifinex':              digifinex,
+    'digikalagold':           digikalagold,
     'ellipx':                 ellipx,
     'eterex':                 eterex,
     'excoino':                excoino,
@@ -364,6 +378,10 @@ const exchanges = {
     'gate':                   gate,
     'gateio':                 gateio,
     'gemini':                 gemini,
+    'goldcore':               goldcore,
+    'goldika':                goldika,
+    'goldis':                 goldis,
+    'hamrahgold':             hamrahgold,
     'hamtapay':               hamtapay,
     'hashkey':                hashkey,
     'hibachi':                hibachi,
@@ -419,6 +437,7 @@ const exchanges = {
     'sarmayex':               sarmayex,
     'sarrafex':               sarrafex,
     'tabdeal':                tabdeal,
+    'talapp':                 talapp,
     'talasea':                talasea,
     'technogold':             technogold,
     'tehran_exchange':        tehran_exchange,
@@ -440,6 +459,9 @@ const exchanges = {
     'xt':                     xt,
     'yobit':                  yobit,
     'zaif':                   zaif,
+    'zarafza':                zarafza,
+    'zarminex':               zarminex,
+    'zarniv':                 zarniv,
     'zonda':                  zonda,
 }
 
@@ -670,6 +692,7 @@ export {
     asacoine,
     ascendex,
     asretether,
+    baazar,
     bequant,
     bidarz,
     bigone,
@@ -726,11 +749,13 @@ export {
     coinspot,
     cryptocom,
     cryptomus,
+    daric,
     defx,
     delta,
     deribit,
     derive,
     digifinex,
+    digikalagold,
     ellipx,
     eterex,
     excoino,
@@ -743,6 +768,10 @@ export {
     gate,
     gateio,
     gemini,
+    goldcore,
+    goldika,
+    goldis,
+    hamrahgold,
     hamtapay,
     hashkey,
     hibachi,
@@ -798,6 +827,7 @@ export {
     sarmayex,
     sarrafex,
     tabdeal,
+    talapp,
     talasea,
     technogold,
     tehran_exchange,
@@ -819,6 +849,9 @@ export {
     xt,
     yobit,
     zaif,
+    zarafza,
+    zarminex,
+    zarniv,
     zonda,    
 }
 

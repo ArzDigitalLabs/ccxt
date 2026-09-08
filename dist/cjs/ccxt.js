@@ -21,6 +21,7 @@ var arzplus = require('./src/arzplus.js');
 var asacoine = require('./src/asacoine.js');
 var ascendex = require('./src/ascendex.js');
 var asretether = require('./src/asretether.js');
+var baazar = require('./src/baazar.js');
 var bequant = require('./src/bequant.js');
 var bidarz = require('./src/bidarz.js');
 var bigone = require('./src/bigone.js');
@@ -77,11 +78,13 @@ var coinsph = require('./src/coinsph.js');
 var coinspot = require('./src/coinspot.js');
 var cryptocom = require('./src/cryptocom.js');
 var cryptomus = require('./src/cryptomus.js');
+var daric = require('./src/daric.js');
 var defx = require('./src/defx.js');
 var delta = require('./src/delta.js');
 var deribit = require('./src/deribit.js');
 var derive = require('./src/derive.js');
 var digifinex = require('./src/digifinex.js');
+var digikalagold = require('./src/digikalagold.js');
 var ellipx = require('./src/ellipx.js');
 var eterex = require('./src/eterex.js');
 var excoino = require('./src/excoino.js');
@@ -94,6 +97,10 @@ var foxbit = require('./src/foxbit.js');
 var gate = require('./src/gate.js');
 var gateio = require('./src/gateio.js');
 var gemini = require('./src/gemini.js');
+var goldcore = require('./src/goldcore.js');
+var goldika = require('./src/goldika.js');
+var goldis = require('./src/goldis.js');
+var hamrahgold = require('./src/hamrahgold.js');
 var hamtapay = require('./src/hamtapay.js');
 var hashkey = require('./src/hashkey.js');
 var hibachi = require('./src/hibachi.js');
@@ -149,6 +156,7 @@ var saraf = require('./src/saraf.js');
 var sarmayex = require('./src/sarmayex.js');
 var sarrafex = require('./src/sarrafex.js');
 var tabdeal = require('./src/tabdeal.js');
+var talapp = require('./src/talapp.js');
 var talasea = require('./src/talasea.js');
 var technogold = require('./src/technogold.js');
 var tehran_exchange = require('./src/tehran_exchange.js');
@@ -170,6 +178,9 @@ var woofipro = require('./src/woofipro.js');
 var xt = require('./src/xt.js');
 var yobit = require('./src/yobit.js');
 var zaif = require('./src/zaif.js');
+var zarafza = require('./src/zarafza.js');
+var zarminex = require('./src/zarminex.js');
+var zarniv = require('./src/zarniv.js');
 var zonda = require('./src/zonda.js');
 var alpaca$1 = require('./src/pro/alpaca.js');
 var apex$1 = require('./src/pro/apex.js');
@@ -247,7 +258,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.17.0';
+const version = '4.18.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -259,6 +270,7 @@ const exchanges = {
     'asacoine': asacoine["default"],
     'ascendex': ascendex["default"],
     'asretether': asretether["default"],
+    'baazar': baazar["default"],
     'bequant': bequant["default"],
     'bidarz': bidarz["default"],
     'bigone': bigone["default"],
@@ -315,11 +327,13 @@ const exchanges = {
     'coinspot': coinspot["default"],
     'cryptocom': cryptocom["default"],
     'cryptomus': cryptomus["default"],
+    'daric': daric["default"],
     'defx': defx["default"],
     'delta': delta["default"],
     'deribit': deribit["default"],
     'derive': derive["default"],
     'digifinex': digifinex["default"],
+    'digikalagold': digikalagold["default"],
     'ellipx': ellipx["default"],
     'eterex': eterex["default"],
     'excoino': excoino["default"],
@@ -332,6 +346,10 @@ const exchanges = {
     'gate': gate["default"],
     'gateio': gateio["default"],
     'gemini': gemini["default"],
+    'goldcore': goldcore["default"],
+    'goldika': goldika["default"],
+    'goldis': goldis["default"],
+    'hamrahgold': hamrahgold["default"],
     'hamtapay': hamtapay["default"],
     'hashkey': hashkey["default"],
     'hibachi': hibachi["default"],
@@ -387,6 +405,7 @@ const exchanges = {
     'sarmayex': sarmayex["default"],
     'sarrafex': sarrafex["default"],
     'tabdeal': tabdeal["default"],
+    'talapp': talapp["default"],
     'talasea': talasea["default"],
     'technogold': technogold["default"],
     'tehran_exchange': tehran_exchange["default"],
@@ -408,6 +427,9 @@ const exchanges = {
     'xt': xt["default"],
     'yobit': yobit["default"],
     'zaif': zaif["default"],
+    'zarafza': zarafza["default"],
+    'zarminex': zarminex["default"],
+    'zarniv': zarniv["default"],
     'zonda': zonda["default"],
 };
 const pro = {
@@ -545,6 +567,7 @@ exports.arzplus = arzplus["default"];
 exports.asacoine = asacoine["default"];
 exports.ascendex = ascendex["default"];
 exports.asretether = asretether["default"];
+exports.baazar = baazar["default"];
 exports.bequant = bequant["default"];
 exports.bidarz = bidarz["default"];
 exports.bigone = bigone["default"];
@@ -601,11 +624,13 @@ exports.coinsph = coinsph["default"];
 exports.coinspot = coinspot["default"];
 exports.cryptocom = cryptocom["default"];
 exports.cryptomus = cryptomus["default"];
+exports.daric = daric["default"];
 exports.defx = defx["default"];
 exports.delta = delta["default"];
 exports.deribit = deribit["default"];
 exports.derive = derive["default"];
 exports.digifinex = digifinex["default"];
+exports.digikalagold = digikalagold["default"];
 exports.ellipx = ellipx["default"];
 exports.eterex = eterex["default"];
 exports.excoino = excoino["default"];
@@ -618,6 +643,10 @@ exports.foxbit = foxbit["default"];
 exports.gate = gate["default"];
 exports.gateio = gateio["default"];
 exports.gemini = gemini["default"];
+exports.goldcore = goldcore["default"];
+exports.goldika = goldika["default"];
+exports.goldis = goldis["default"];
+exports.hamrahgold = hamrahgold["default"];
 exports.hamtapay = hamtapay["default"];
 exports.hashkey = hashkey["default"];
 exports.hibachi = hibachi["default"];
@@ -673,6 +702,7 @@ exports.saraf = saraf["default"];
 exports.sarmayex = sarmayex["default"];
 exports.sarrafex = sarrafex["default"];
 exports.tabdeal = tabdeal["default"];
+exports.talapp = talapp["default"];
 exports.talasea = talasea["default"];
 exports.technogold = technogold["default"];
 exports.tehran_exchange = tehran_exchange["default"];
@@ -694,6 +724,9 @@ exports.woofipro = woofipro["default"];
 exports.xt = xt["default"];
 exports.yobit = yobit["default"];
 exports.zaif = zaif["default"];
+exports.zarafza = zarafza["default"];
+exports.zarminex = zarminex["default"];
+exports.zarniv = zarniv["default"];
 exports.zonda = zonda["default"];
 exports["default"] = ccxt;
 exports.exchanges = exchanges;

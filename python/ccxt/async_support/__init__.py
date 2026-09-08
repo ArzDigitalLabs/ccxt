@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.17.0'
+__version__ = '4.18.0'
 
 # -----------------------------------------------------------------------------
 
@@ -73,6 +73,7 @@ from ccxt.async_support.arzplus import arzplus                                  
 from ccxt.async_support.asacoine import asacoine                                # noqa: F401
 from ccxt.async_support.ascendex import ascendex                                # noqa: F401
 from ccxt.async_support.asretether import asretether                            # noqa: F401
+from ccxt.async_support.baazar import baazar                                    # noqa: F401
 from ccxt.async_support.bequant import bequant                                  # noqa: F401
 from ccxt.async_support.bidarz import bidarz                                    # noqa: F401
 from ccxt.async_support.bigone import bigone                                    # noqa: F401
@@ -129,11 +130,13 @@ from ccxt.async_support.coinsph import coinsph                                  
 from ccxt.async_support.coinspot import coinspot                                # noqa: F401
 from ccxt.async_support.cryptocom import cryptocom                              # noqa: F401
 from ccxt.async_support.cryptomus import cryptomus                              # noqa: F401
+from ccxt.async_support.daric import daric                                      # noqa: F401
 from ccxt.async_support.defx import defx                                        # noqa: F401
 from ccxt.async_support.delta import delta                                      # noqa: F401
 from ccxt.async_support.deribit import deribit                                  # noqa: F401
 from ccxt.async_support.derive import derive                                    # noqa: F401
 from ccxt.async_support.digifinex import digifinex                              # noqa: F401
+from ccxt.async_support.digikalagold import digikalagold                        # noqa: F401
 from ccxt.async_support.ellipx import ellipx                                    # noqa: F401
 from ccxt.async_support.eterex import eterex                                    # noqa: F401
 from ccxt.async_support.excoino import excoino                                  # noqa: F401
@@ -146,6 +149,10 @@ from ccxt.async_support.foxbit import foxbit                                    
 from ccxt.async_support.gate import gate                                        # noqa: F401
 from ccxt.async_support.gateio import gateio                                    # noqa: F401
 from ccxt.async_support.gemini import gemini                                    # noqa: F401
+from ccxt.async_support.goldcore import goldcore                                # noqa: F401
+from ccxt.async_support.goldika import goldika                                  # noqa: F401
+from ccxt.async_support.goldis import goldis                                    # noqa: F401
+from ccxt.async_support.hamrahgold import hamrahgold                            # noqa: F401
 from ccxt.async_support.hamtapay import hamtapay                                # noqa: F401
 from ccxt.async_support.hashkey import hashkey                                  # noqa: F401
 from ccxt.async_support.hibachi import hibachi                                  # noqa: F401
@@ -201,6 +208,7 @@ from ccxt.async_support.saraf import saraf                                      
 from ccxt.async_support.sarmayex import sarmayex                                # noqa: F401
 from ccxt.async_support.sarrafex import sarrafex                                # noqa: F401
 from ccxt.async_support.tabdeal import tabdeal                                  # noqa: F401
+from ccxt.async_support.talapp import talapp                                    # noqa: F401
 from ccxt.async_support.talasea import talasea                                  # noqa: F401
 from ccxt.async_support.technogold import technogold                            # noqa: F401
 from ccxt.async_support.tehran_exchange import tehran_exchange                  # noqa: F401
@@ -222,6 +230,9 @@ from ccxt.async_support.woofipro import woofipro                                
 from ccxt.async_support.xt import xt                                            # noqa: F401
 from ccxt.async_support.yobit import yobit                                      # noqa: F401
 from ccxt.async_support.zaif import zaif                                        # noqa: F401
+from ccxt.async_support.zarafza import zarafza                                  # noqa: F401
+from ccxt.async_support.zarminex import zarminex                                # noqa: F401
+from ccxt.async_support.zarniv import zarniv                                    # noqa: F401
 from ccxt.async_support.zonda import zonda                                      # noqa: F401
 
 exchanges = [
@@ -234,6 +245,7 @@ exchanges = [
     'asacoine',
     'ascendex',
     'asretether',
+    'baazar',
     'bequant',
     'bidarz',
     'bigone',
@@ -290,11 +302,13 @@ exchanges = [
     'coinspot',
     'cryptocom',
     'cryptomus',
+    'daric',
     'defx',
     'delta',
     'deribit',
     'derive',
     'digifinex',
+    'digikalagold',
     'ellipx',
     'eterex',
     'excoino',
@@ -307,6 +321,10 @@ exchanges = [
     'gate',
     'gateio',
     'gemini',
+    'goldcore',
+    'goldika',
+    'goldis',
+    'hamrahgold',
     'hamtapay',
     'hashkey',
     'hibachi',
@@ -362,6 +380,7 @@ exchanges = [
     'sarmayex',
     'sarrafex',
     'tabdeal',
+    'talapp',
     'talasea',
     'technogold',
     'tehran_exchange',
@@ -383,6 +402,9 @@ exchanges = [
     'xt',
     'yobit',
     'zaif',
+    'zarafza',
+    'zarminex',
+    'zarniv',
     'zonda',
 ]
 
