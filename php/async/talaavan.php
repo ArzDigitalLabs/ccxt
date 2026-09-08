@@ -6,16 +6,16 @@ namespace ccxt\async;
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 
 use Exception; // a common import
-use ccxt\async\abstract\goldcore as Exchange;
+use ccxt\async\abstract\talaavan as Exchange;
 use \React\Async;
 use \React\Promise\PromiseInterface;
 
-class goldcore extends Exchange {
+class talaavan extends Exchange {
 
     public function describe(): mixed {
         return $this->deep_extend(parent::describe(), array(
-            'id' => 'goldcore',
-            'name' => 'Goldcore',
+            'id' => 'talaavan',
+            'name' => 'Talaavan',
             'countries' => array( 'IR' ),
             'rateLimit' => 1000,
             'version' => 'v1',

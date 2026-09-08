@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.18.0'
+__version__ = '4.18.1'
 
 # ----------------------------------------------------------------------------
 
@@ -169,7 +169,6 @@ from ccxt.foxbit import foxbit                                        # noqa: F4
 from ccxt.gate import gate                                            # noqa: F401
 from ccxt.gateio import gateio                                        # noqa: F401
 from ccxt.gemini import gemini                                        # noqa: F401
-from ccxt.goldcore import goldcore                                    # noqa: F401
 from ccxt.goldika import goldika                                      # noqa: F401
 from ccxt.goldis import goldis                                        # noqa: F401
 from ccxt.hamrahgold import hamrahgold                                # noqa: F401
@@ -228,6 +227,7 @@ from ccxt.saraf import saraf                                          # noqa: F4
 from ccxt.sarmayex import sarmayex                                    # noqa: F401
 from ccxt.sarrafex import sarrafex                                    # noqa: F401
 from ccxt.tabdeal import tabdeal                                      # noqa: F401
+from ccxt.talaavan import talaavan                                    # noqa: F401
 from ccxt.talapp import talapp                                        # noqa: F401
 from ccxt.talasea import talasea                                      # noqa: F401
 from ccxt.technogold import technogold                                # noqa: F401
@@ -341,7 +341,6 @@ exchanges = [
     'gate',
     'gateio',
     'gemini',
-    'goldcore',
     'goldika',
     'goldis',
     'hamrahgold',
@@ -400,6 +399,7 @@ exchanges = [
     'sarmayex',
     'sarrafex',
     'tabdeal',
+    'talaavan',
     'talapp',
     'talasea',
     'technogold',

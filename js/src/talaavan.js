@@ -8,14 +8,14 @@
 import Exchange from './base/Exchange.js';
 //  ---------------------------------------------------------------------------
 /**
- * @class goldcore
+ * @class talaavan
  * @augments Exchange
  */
-export default class goldcore extends Exchange {
+export default class talaavan extends Exchange {
     describe() {
         return this.deepExtend(super.describe(), {
-            'id': 'goldcore',
-            'name': 'Goldcore',
+            'id': 'talaavan',
+            'name': 'Talaavan',
             'countries': ['IR'],
             'rateLimit': 1000,
             'version': 'v1',

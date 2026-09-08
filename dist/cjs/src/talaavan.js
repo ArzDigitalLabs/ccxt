@@ -1,20 +1,21 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var Exchange = require('./base/Exchange.js');
+
+// ----------------------------------------------------------------------------
 //  ---------------------------------------------------------------------------
-
-import Exchange from './base/Exchange.js';
-import { Market, Strings, Ticker, Tickers } from './base/types.js';
-
-//  ---------------------------------------------------------------------------
-
 /**
- * @class goldcore
+ * @class talaavan
  * @augments Exchange
  */
-export default class goldcore extends Exchange {
-    describe (): any {
-        return this.deepExtend (super.describe (), {
-            'id': 'goldcore',
-            'name': 'Goldcore',
-            'countries': [ 'IR' ],
+class talaavan extends Exchange["default"] {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'talaavan',
+            'name': 'Talaavan',
+            'countries': ['IR'],
             'rateLimit': 1000,
             'version': 'v1',
             'certified': false,
@@ -50,13 +51,11 @@ export default class goldcore extends Exchange {
             },
         });
     }
-
-    async fetchMarkets (params = {}): Promise<Market[]> {
-        const response = await (this as any).publicGetV1Price (params);
-        return [ this.parseMarket (response) ];
+    async fetchMarkets(params = {}) {
+        const response = await this.publicGetV1Price(params);
+        return [this.parseMarket(response)];
     }
-
-    parseMarket (response): Market {
+    parseMarket(response) {
         return {
             'id': 'XAU18IRT',
             'symbol': 'XAU18/IRT',
@@ -72,7 +71,7 @@ export default class goldcore extends Exchange {
             'swap': false,
             'future': false,
             'option': false,
-            'active': this.safeBool (response, 'status', false),
+            'active': this.safeBool(response, 'status', false),
             'contract': false,
             'linear': undefined,
             'inverse': undefined,
@@ -95,36 +94,33 @@ export default class goldcore extends Exchange {
             'info': response,
         };
     }
-
-    async fetchTicker (symbol: string, params = {}): Promise<Ticker> {
-        await this.loadMarkets ();
-        const market = this.market (symbol);
-        const response = await (this as any).publicGetV1Price (params);
-        return this.parseTicker (response, market);
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.publicGetV1Price(params);
+        return this.parseTicker(response, market);
     }
-
-    async fetchTickers (symbols: Strings = undefined, params = {}): Promise<Tickers> {
-        await this.loadMarkets ();
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
         if (symbols !== undefined) {
-            symbols = this.marketSymbols (symbols);
+            symbols = this.marketSymbols(symbols);
         }
-        const response = await (this as any).publicGetV1Price (params);
-        const market = this.market ('XAU18/IRT');
-        const ticker = this.parseTicker (response, market);
+        const response = await this.publicGetV1Price(params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(response, market);
         const result = {};
         result[ticker['symbol']] = ticker;
-        return this.filterByArrayTickers (result, 'symbol', symbols);
+        return this.filterByArrayTickers(result, 'symbol', symbols);
     }
-
-    parseTicker (response, market: Market = undefined): Ticker {
-        const data = this.safeDict (response, 'data', {});
-        let price = this.safeNumber (data, 'rate');
+    parseTicker(response, market = undefined) {
+        const data = this.safeDict(response, 'data', {});
+        let price = this.safeNumber(data, 'rate');
         if (price !== undefined) {
             price = price / 10;
         }
-        return this.safeTicker ({
+        return this.safeTicker({
             'symbol': market['symbol'],
-            'timestamp': this.parse8601 (this.safeString (data, 'date')),
+            'timestamp': this.parse8601(this.safeString(data, 'date')),
             'datetime': undefined,
             'high': undefined,
             'low': undefined,
@@ -145,14 +141,15 @@ export default class goldcore extends Exchange {
             'info': data,
         }, market);
     }
-
-    sign (path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
-        let url = this.urls['api'][api] + '/' + this.implodeParams (path, params);
-        const query = this.omit (params, this.extractParams (path));
-        if (Object.keys (query).length) {
-            url += '?' + this.urlencode (query);
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
         }
         headers = { 'Accept': 'application/json' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
     }
 }
+
+exports["default"] = talaavan;

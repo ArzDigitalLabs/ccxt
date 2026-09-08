@@ -97,7 +97,6 @@ var foxbit = require('./src/foxbit.js');
 var gate = require('./src/gate.js');
 var gateio = require('./src/gateio.js');
 var gemini = require('./src/gemini.js');
-var goldcore = require('./src/goldcore.js');
 var goldika = require('./src/goldika.js');
 var goldis = require('./src/goldis.js');
 var hamrahgold = require('./src/hamrahgold.js');
@@ -156,6 +155,7 @@ var saraf = require('./src/saraf.js');
 var sarmayex = require('./src/sarmayex.js');
 var sarrafex = require('./src/sarrafex.js');
 var tabdeal = require('./src/tabdeal.js');
+var talaavan = require('./src/talaavan.js');
 var talapp = require('./src/talapp.js');
 var talasea = require('./src/talasea.js');
 var technogold = require('./src/technogold.js');
@@ -258,7 +258,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.18.0';
+const version = '4.18.1';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -346,7 +346,6 @@ const exchanges = {
     'gate': gate["default"],
     'gateio': gateio["default"],
     'gemini': gemini["default"],
-    'goldcore': goldcore["default"],
     'goldika': goldika["default"],
     'goldis': goldis["default"],
     'hamrahgold': hamrahgold["default"],
@@ -405,6 +404,7 @@ const exchanges = {
     'sarmayex': sarmayex["default"],
     'sarrafex': sarrafex["default"],
     'tabdeal': tabdeal["default"],
+    'talaavan': talaavan["default"],
     'talapp': talapp["default"],
     'talasea': talasea["default"],
     'technogold': technogold["default"],
@@ -643,7 +643,6 @@ exports.foxbit = foxbit["default"];
 exports.gate = gate["default"];
 exports.gateio = gateio["default"];
 exports.gemini = gemini["default"];
-exports.goldcore = goldcore["default"];
 exports.goldika = goldika["default"];
 exports.goldis = goldis["default"];
 exports.hamrahgold = hamrahgold["default"];
@@ -702,6 +701,7 @@ exports.saraf = saraf["default"];
 exports.sarmayex = sarmayex["default"];
 exports.sarrafex = sarrafex["default"];
 exports.tabdeal = tabdeal["default"];
+exports.talaavan = talaavan["default"];
 exports.talapp = talapp["default"];
 exports.talasea = talasea["default"];
 exports.technogold = technogold["default"];

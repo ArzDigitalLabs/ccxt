@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.18.0'
+__version__ = '4.18.1'
 
 # -----------------------------------------------------------------------------
 
@@ -149,7 +149,6 @@ from ccxt.async_support.foxbit import foxbit                                    
 from ccxt.async_support.gate import gate                                        # noqa: F401
 from ccxt.async_support.gateio import gateio                                    # noqa: F401
 from ccxt.async_support.gemini import gemini                                    # noqa: F401
-from ccxt.async_support.goldcore import goldcore                                # noqa: F401
 from ccxt.async_support.goldika import goldika                                  # noqa: F401
 from ccxt.async_support.goldis import goldis                                    # noqa: F401
 from ccxt.async_support.hamrahgold import hamrahgold                            # noqa: F401
@@ -208,6 +207,7 @@ from ccxt.async_support.saraf import saraf                                      
 from ccxt.async_support.sarmayex import sarmayex                                # noqa: F401
 from ccxt.async_support.sarrafex import sarrafex                                # noqa: F401
 from ccxt.async_support.tabdeal import tabdeal                                  # noqa: F401
+from ccxt.async_support.talaavan import talaavan                                # noqa: F401
 from ccxt.async_support.talapp import talapp                                    # noqa: F401
 from ccxt.async_support.talasea import talasea                                  # noqa: F401
 from ccxt.async_support.technogold import technogold                            # noqa: F401
@@ -321,7 +321,6 @@ exchanges = [
     'gate',
     'gateio',
     'gemini',
-    'goldcore',
     'goldika',
     'goldis',
     'hamrahgold',
@@ -380,6 +379,7 @@ exchanges = [
     'sarmayex',
     'sarrafex',
     'tabdeal',
+    'talaavan',
     'talapp',
     'talasea',
     'technogold',

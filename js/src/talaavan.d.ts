@@ -1,10 +1,10 @@
 import Exchange from './base/Exchange.js';
 import { Market, Strings, Ticker, Tickers } from './base/types.js';
 /**
- * @class goldcore
+ * @class talaavan
  * @augments Exchange
  */
-export default class goldcore extends Exchange {
+export default class talaavan extends Exchange {
     describe(): any;
     fetchMarkets(params?: {}): Promise<Market[]>;
     parseMarket(response: any): Market;

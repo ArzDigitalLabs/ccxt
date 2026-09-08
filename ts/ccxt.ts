@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.18.0';
+const version = '4.18.1';
 
 (Exchange as any).ccxtVersion = version
 
@@ -131,7 +131,6 @@ import foxbit from  './src/foxbit.js'
 import gate from  './src/gate.js'
 import gateio from  './src/gateio.js'
 import gemini from  './src/gemini.js'
-import goldcore from  './src/goldcore.js'
 import goldika from  './src/goldika.js'
 import goldis from  './src/goldis.js'
 import hamrahgold from  './src/hamrahgold.js'
@@ -190,6 +189,7 @@ import saraf from  './src/saraf.js'
 import sarmayex from  './src/sarmayex.js'
 import sarrafex from  './src/sarrafex.js'
 import tabdeal from  './src/tabdeal.js'
+import talaavan from  './src/talaavan.js'
 import talapp from  './src/talapp.js'
 import talasea from  './src/talasea.js'
 import technogold from  './src/technogold.js'
@@ -378,7 +378,6 @@ const exchanges = {
     'gate':                   gate,
     'gateio':                 gateio,
     'gemini':                 gemini,
-    'goldcore':               goldcore,
     'goldika':                goldika,
     'goldis':                 goldis,
     'hamrahgold':             hamrahgold,
@@ -437,6 +436,7 @@ const exchanges = {
     'sarmayex':               sarmayex,
     'sarrafex':               sarrafex,
     'tabdeal':                tabdeal,
+    'talaavan':               talaavan,
     'talapp':                 talapp,
     'talasea':                talasea,
     'technogold':             technogold,
@@ -768,7 +768,6 @@ export {
     gate,
     gateio,
     gemini,
-    goldcore,
     goldika,
     goldis,
     hamrahgold,
@@ -827,6 +826,7 @@ export {
     sarmayex,
     sarrafex,
     tabdeal,
+    talaavan,
     talapp,
     talasea,
     technogold,
