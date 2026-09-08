@@ -43,7 +43,7 @@ use BN\BN;
 use Sop\ASN1\Type\UnspecifiedType;
 use Exception;
 
-$version = '4.17.0';
+$version = '4.18.1';
 
 // rounding mode
 const TRUNCATE = 0;
@@ -62,7 +62,7 @@ const PAD_WITH_ZERO = 6;
 
 class Exchange {
 
-    const VERSION = '4.17.0';
+    const VERSION = '4.18.1';
 
     private static $base58_alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
     private static $base58_encoder = null;
@@ -347,6 +347,7 @@ class Exchange {
         'asacoine',
         'ascendex',
         'asretether',
+        'baazar',
         'bequant',
         'bidarz',
         'bigone',
@@ -403,11 +404,13 @@ class Exchange {
         'coinspot',
         'cryptocom',
         'cryptomus',
+        'daric',
         'defx',
         'delta',
         'deribit',
         'derive',
         'digifinex',
+        'digikalagold',
         'ellipx',
         'eterex',
         'excoino',
@@ -420,6 +423,9 @@ class Exchange {
         'gate',
         'gateio',
         'gemini',
+        'goldika',
+        'goldis',
+        'hamrahgold',
         'hamtapay',
         'hashkey',
         'hibachi',
@@ -475,6 +481,8 @@ class Exchange {
         'sarmayex',
         'sarrafex',
         'tabdeal',
+        'talaavan',
+        'talapp',
         'talasea',
         'technogold',
         'tehran_exchange',
@@ -496,6 +504,9 @@ class Exchange {
         'xt',
         'yobit',
         'zaif',
+        'zarafza',
+        'zarminex',
+        'zarniv',
         'zonda',
     );
 

@@ -15,6 +15,7 @@ ccxt/arzplus.py
 ccxt/asacoine.py
 ccxt/ascendex.py
 ccxt/asretether.py
+ccxt/baazar.py
 ccxt/bequant.py
 ccxt/bidarz.py
 ccxt/bigone.py
@@ -71,11 +72,13 @@ ccxt/coinsph.py
 ccxt/coinspot.py
 ccxt/cryptocom.py
 ccxt/cryptomus.py
+ccxt/daric.py
 ccxt/defx.py
 ccxt/delta.py
 ccxt/deribit.py
 ccxt/derive.py
 ccxt/digifinex.py
+ccxt/digikalagold.py
 ccxt/ellipx.py
 ccxt/eterex.py
 ccxt/excoino.py
@@ -88,6 +91,10 @@ ccxt/foxbit.py
 ccxt/gate.py
 ccxt/gateio.py
 ccxt/gemini.py
+ccxt/goldcore.py
+ccxt/goldika.py
+ccxt/goldis.py
+ccxt/hamrahgold.py
 ccxt/hamtapay.py
 ccxt/hashkey.py
 ccxt/hibachi.py
@@ -111,8 +118,10 @@ ccxt/latoken.py
 ccxt/lbank.py
 ccxt/luno.py
 ccxt/mazdax.py
+ccxt/melligold.py
 ccxt/mercado.py
 ccxt/mexc.py
+ccxt/milligold.py
 ccxt/modetrade.py
 ccxt/myokx.py
 ccxt/ndax.py
@@ -141,7 +150,9 @@ ccxt/saraf.py
 ccxt/sarmayex.py
 ccxt/sarrafex.py
 ccxt/tabdeal.py
+ccxt/talapp.py
 ccxt/talasea.py
+ccxt/technogold.py
 ccxt/tehran_exchange.py
 ccxt/tetherland.py
 ccxt/timex.py
@@ -153,6 +164,7 @@ ccxt/ubitex.py
 ccxt/upbit.py
 ccxt/vertex.py
 ccxt/wallex.py
+ccxt/wallgold.py
 ccxt/wavesexchange.py
 ccxt/whitebit.py
 ccxt/woo.py
@@ -160,6 +172,9 @@ ccxt/woofipro.py
 ccxt/xt.py
 ccxt/yobit.py
 ccxt/zaif.py
+ccxt/zarafza.py
+ccxt/zarminex.py
+ccxt/zarniv.py
 ccxt/zonda.py
 ccxt/abstract/__init__.py
 ccxt/abstract/abantether.py
@@ -171,6 +186,7 @@ ccxt/abstract/arzplus.py
 ccxt/abstract/asacoine.py
 ccxt/abstract/ascendex.py
 ccxt/abstract/asretether.py
+ccxt/abstract/baazar.py
 ccxt/abstract/bequant.py
 ccxt/abstract/bidarz.py
 ccxt/abstract/bigone.py
@@ -227,11 +243,13 @@ ccxt/abstract/coinsph.py
 ccxt/abstract/coinspot.py
 ccxt/abstract/cryptocom.py
 ccxt/abstract/cryptomus.py
+ccxt/abstract/daric.py
 ccxt/abstract/defx.py
 ccxt/abstract/delta.py
 ccxt/abstract/deribit.py
 ccxt/abstract/derive.py
 ccxt/abstract/digifinex.py
+ccxt/abstract/digikalagold.py
 ccxt/abstract/ellipx.py
 ccxt/abstract/eterex.py
 ccxt/abstract/excoino.py
@@ -244,6 +262,10 @@ ccxt/abstract/foxbit.py
 ccxt/abstract/gate.py
 ccxt/abstract/gateio.py
 ccxt/abstract/gemini.py
+ccxt/abstract/goldcore.py
+ccxt/abstract/goldika.py
+ccxt/abstract/goldis.py
+ccxt/abstract/hamrahgold.py
 ccxt/abstract/hamtapay.py
 ccxt/abstract/hashkey.py
 ccxt/abstract/hibachi.py
@@ -267,8 +289,10 @@ ccxt/abstract/latoken.py
 ccxt/abstract/lbank.py
 ccxt/abstract/luno.py
 ccxt/abstract/mazdax.py
+ccxt/abstract/melligold.py
 ccxt/abstract/mercado.py
 ccxt/abstract/mexc.py
+ccxt/abstract/milligold.py
 ccxt/abstract/modetrade.py
 ccxt/abstract/myokx.py
 ccxt/abstract/ndax.py
@@ -297,7 +321,9 @@ ccxt/abstract/saraf.py
 ccxt/abstract/sarmayex.py
 ccxt/abstract/sarrafex.py
 ccxt/abstract/tabdeal.py
+ccxt/abstract/talapp.py
 ccxt/abstract/talasea.py
+ccxt/abstract/technogold.py
 ccxt/abstract/tehran_exchange.py
 ccxt/abstract/tetherland.py
 ccxt/abstract/timex.py
@@ -309,6 +335,7 @@ ccxt/abstract/ubitex.py
 ccxt/abstract/upbit.py
 ccxt/abstract/vertex.py
 ccxt/abstract/wallex.py
+ccxt/abstract/wallgold.py
 ccxt/abstract/wavesexchange.py
 ccxt/abstract/whitebit.py
 ccxt/abstract/woo.py
@@ -316,6 +343,9 @@ ccxt/abstract/woofipro.py
 ccxt/abstract/xt.py
 ccxt/abstract/yobit.py
 ccxt/abstract/zaif.py
+ccxt/abstract/zarafza.py
+ccxt/abstract/zarminex.py
+ccxt/abstract/zarniv.py
 ccxt/abstract/zonda.py
 ccxt/async_support/__init__.py
 ccxt/async_support/abantether.py
@@ -327,6 +357,7 @@ ccxt/async_support/arzplus.py
 ccxt/async_support/asacoine.py
 ccxt/async_support/ascendex.py
 ccxt/async_support/asretether.py
+ccxt/async_support/baazar.py
 ccxt/async_support/bequant.py
 ccxt/async_support/bidarz.py
 ccxt/async_support/bigone.py
@@ -383,11 +414,13 @@ ccxt/async_support/coinsph.py
 ccxt/async_support/coinspot.py
 ccxt/async_support/cryptocom.py
 ccxt/async_support/cryptomus.py
+ccxt/async_support/daric.py
 ccxt/async_support/defx.py
 ccxt/async_support/delta.py
 ccxt/async_support/deribit.py
 ccxt/async_support/derive.py
 ccxt/async_support/digifinex.py
+ccxt/async_support/digikalagold.py
 ccxt/async_support/ellipx.py
 ccxt/async_support/eterex.py
 ccxt/async_support/excoino.py
@@ -400,6 +433,10 @@ ccxt/async_support/foxbit.py
 ccxt/async_support/gate.py
 ccxt/async_support/gateio.py
 ccxt/async_support/gemini.py
+ccxt/async_support/goldcore.py
+ccxt/async_support/goldika.py
+ccxt/async_support/goldis.py
+ccxt/async_support/hamrahgold.py
 ccxt/async_support/hamtapay.py
 ccxt/async_support/hashkey.py
 ccxt/async_support/hibachi.py
@@ -423,8 +460,10 @@ ccxt/async_support/latoken.py
 ccxt/async_support/lbank.py
 ccxt/async_support/luno.py
 ccxt/async_support/mazdax.py
+ccxt/async_support/melligold.py
 ccxt/async_support/mercado.py
 ccxt/async_support/mexc.py
+ccxt/async_support/milligold.py
 ccxt/async_support/modetrade.py
 ccxt/async_support/myokx.py
 ccxt/async_support/ndax.py
@@ -453,7 +492,9 @@ ccxt/async_support/saraf.py
 ccxt/async_support/sarmayex.py
 ccxt/async_support/sarrafex.py
 ccxt/async_support/tabdeal.py
+ccxt/async_support/talapp.py
 ccxt/async_support/talasea.py
+ccxt/async_support/technogold.py
 ccxt/async_support/tehran_exchange.py
 ccxt/async_support/tetherland.py
 ccxt/async_support/timex.py
@@ -465,6 +506,7 @@ ccxt/async_support/ubitex.py
 ccxt/async_support/upbit.py
 ccxt/async_support/vertex.py
 ccxt/async_support/wallex.py
+ccxt/async_support/wallgold.py
 ccxt/async_support/wavesexchange.py
 ccxt/async_support/whitebit.py
 ccxt/async_support/woo.py
@@ -472,6 +514,9 @@ ccxt/async_support/woofipro.py
 ccxt/async_support/xt.py
 ccxt/async_support/yobit.py
 ccxt/async_support/zaif.py
+ccxt/async_support/zarafza.py
+ccxt/async_support/zarminex.py
+ccxt/async_support/zarniv.py
 ccxt/async_support/zonda.py
 ccxt/async_support/base/__init__.py
 ccxt/async_support/base/exchange.py

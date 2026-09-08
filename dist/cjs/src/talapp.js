@@ -1,0 +1,156 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var Exchange = require('./base/Exchange.js');
+
+// ----------------------------------------------------------------------------
+//  ---------------------------------------------------------------------------
+/**
+ * @class talapp
+ * @augments Exchange
+ */
+class talapp extends Exchange["default"] {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'talapp',
+            'name': 'Talapp',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': 'v1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://talapp.ir',
+                },
+                'www': 'https://talapp.ir',
+                'doc': 'https://talapp.ir/wp-json/talapp/v1/gold-prices',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'wp-json/talapp/v1/gold-prices': 1,
+                    },
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.publicGetWpJsonTalappV1GoldPrices(params);
+        return [this.parseMarket(response)];
+    }
+    parseMarket(response) {
+        const stale = this.safeBool(response, 'stale', false);
+        return {
+            'id': 'XAU18IRT',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'XAU18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': !stale,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': response,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.publicGetWpJsonTalappV1GoldPrices(params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.publicGetWpJsonTalappV1GoldPrices(params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(response, market);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        const fetchedAt = this.safeString(response, 'fetched_at');
+        let timestamp = undefined;
+        if (fetchedAt !== undefined) {
+            timestamp = this.parse8601(fetchedAt.replace(' ', 'T') + '+03:30');
+        }
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': timestamp,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': this.safeNumber(response, 'buy_gold'),
+            'bidVolume': undefined,
+            'ask': this.safeNumber(response, 'sell_gold'),
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': this.safeNumber(response, 'sell_gold'),
+            'last': this.safeNumber(response, 'sell_gold'),
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': this.safeNumber(response, 'sell_diff'),
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': response,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+exports["default"] = talapp;

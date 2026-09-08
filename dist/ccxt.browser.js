@@ -2,13 +2,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1656:
+/***/ 51656:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ abantether)
 /* harmony export */ });
-/* harmony import */ var _abstract_abantether_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9273);
+/* harmony import */ var _abstract_abantether_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(79273);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -360,13 +360,13 @@ class abantether extends _abstract_abantether_js__WEBPACK_IMPORTED_MODULE_0__/* 
 
 /***/ }),
 
-/***/ 9273:
+/***/ 79273:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -376,13 +376,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 4911:
+/***/ 44911:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -392,13 +392,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 4523:
+/***/ 24523:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -408,13 +408,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 1185:
+/***/ 91185:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -424,13 +424,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9312:
+/***/ 79312:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -440,13 +440,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5042:
+/***/ 55042:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -456,13 +456,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 566:
+/***/ 90566:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -472,13 +472,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 192:
+/***/ 90192:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -488,13 +488,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 4159:
+/***/ 24159:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -504,13 +504,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3971:
+/***/ 43971:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -526,7 +526,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -536,13 +536,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 4619:
+/***/ 44619:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -552,13 +552,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5408:
+/***/ 85408:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -568,13 +568,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3885:
+/***/ 33885:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -590,7 +590,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -600,13 +600,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 108:
+/***/ 40108:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -616,13 +616,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5625:
+/***/ 15625:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -632,13 +632,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9332:
+/***/ 69332:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -654,7 +654,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -664,13 +664,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9152:
+/***/ 69152:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -680,13 +680,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3974:
+/***/ 23974:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -696,13 +696,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 6555:
+/***/ 16555:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -712,13 +712,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5537:
+/***/ 25537:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -728,13 +728,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 1466:
+/***/ 81466:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -744,13 +744,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8186:
+/***/ 68186:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -760,13 +760,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7202:
+/***/ 87202:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -776,13 +776,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 6607:
+/***/ 76607:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -792,13 +792,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8800:
+/***/ 28800:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -808,13 +808,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9656:
+/***/ 59656:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -824,13 +824,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5223:
+/***/ 85223:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -840,13 +840,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8535:
+/***/ 48535:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -856,13 +856,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7754:
+/***/ 87754:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -872,13 +872,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7584:
+/***/ 87584:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -888,13 +888,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8716:
+/***/ 98716:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -904,13 +904,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8291:
+/***/ 38291:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -920,13 +920,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5254:
+/***/ 45254:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -936,13 +936,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 1769:
+/***/ 81769:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -952,13 +952,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9644:
+/***/ 99644:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -968,13 +968,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3829:
+/***/ 73829:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -990,7 +990,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1000,13 +1000,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8430:
+/***/ 38430:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1016,13 +1016,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 1293:
+/***/ 61293:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1032,13 +1032,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5439:
+/***/ 25439:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1048,13 +1048,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5925:
+/***/ 85925:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1064,13 +1064,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5465:
+/***/ 65465:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1080,13 +1080,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5661:
+/***/ 65661:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1096,13 +1096,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 1552:
+/***/ 11552:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1112,13 +1112,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 2609:
+/***/ 92609:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1128,13 +1128,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5769:
+/***/ 45769:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1144,13 +1144,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 2938:
+/***/ 52938:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1160,13 +1160,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5277:
+/***/ 15277:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1176,13 +1176,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8109:
+/***/ 88109:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1192,13 +1192,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 1671:
+/***/ 71671:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1208,13 +1208,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 6658:
+/***/ 86658:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1224,13 +1224,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 4935:
+/***/ 14935:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1240,13 +1240,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9360:
+/***/ 99360:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1256,13 +1256,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 4295:
+/***/ 74295:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1272,13 +1272,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3037:
+/***/ 13037:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1294,7 +1294,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1304,13 +1304,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7227:
+/***/ 27227:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1320,13 +1320,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 4012:
+/***/ 14012:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1336,13 +1336,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 970:
+/***/ 90970:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1358,7 +1358,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1368,13 +1368,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 6351:
+/***/ 96351:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1384,13 +1384,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 6042:
+/***/ 56042:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1400,13 +1400,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9884:
+/***/ 69884:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1416,13 +1416,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5079:
+/***/ 45079:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1432,13 +1432,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 1352:
+/***/ 81352:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1448,13 +1448,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 2278:
+/***/ 32278:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1470,7 +1470,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1480,13 +1480,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 2597:
+/***/ 32597:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1496,13 +1496,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7418:
+/***/ 17418:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1512,13 +1512,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3434:
+/***/ 53434:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1528,13 +1528,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7648:
+/***/ 27648:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1544,13 +1544,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9722:
+/***/ 79722:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1560,13 +1560,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5825:
+/***/ 95825:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1576,13 +1576,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 706:
+/***/ 8325:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1598,7 +1598,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1608,13 +1608,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 1180:
+/***/ 31180:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1624,13 +1624,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8617:
+/***/ 88617:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1640,13 +1640,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9023:
+/***/ 19023:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1656,13 +1656,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 359:
+/***/ 30359:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1672,13 +1672,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 4558:
+/***/ 74558:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1688,13 +1688,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 6320:
+/***/ 66320:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1710,7 +1710,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1720,13 +1720,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7478:
+/***/ 67478:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1736,13 +1736,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8931:
+/***/ 48931:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1752,13 +1752,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 2459:
+/***/ 72459:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1774,7 +1774,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1784,13 +1784,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3548:
+/***/ 93548:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1800,13 +1800,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3942:
+/***/ 33942:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _kucoin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1397);
+/* harmony import */ var _kucoin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41397);
 // -------------------------------------------------------------------------------
 
 class kucoin extends _kucoin_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
@@ -1816,13 +1816,13 @@ class kucoin extends _kucoin_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 121:
+/***/ 50121:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1832,13 +1832,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 575:
+/***/ 40575:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1854,7 +1854,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1864,13 +1864,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 2208:
+/***/ 52208:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1880,13 +1880,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 6928:
+/***/ 16928:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1896,13 +1896,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9174:
+/***/ 89174:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1912,13 +1912,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5362:
+/***/ 75362:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1928,13 +1928,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3414:
+/***/ 13414:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1944,13 +1944,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 2994:
+/***/ 92994:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1960,13 +1960,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 1426:
+/***/ 71426:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1976,13 +1976,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7774:
+/***/ 27774:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -1992,13 +1992,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9886:
+/***/ 29886:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2008,13 +2008,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3142:
+/***/ 33142:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2024,13 +2024,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5531:
+/***/ 75531:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2040,13 +2040,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9341:
+/***/ 79341:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2056,13 +2056,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3800:
+/***/ 43800:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2072,13 +2072,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9401:
+/***/ 59401:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2094,7 +2094,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2104,13 +2104,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 2134:
+/***/ 32134:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2126,7 +2126,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2136,13 +2136,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 4158:
+/***/ 84158:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2152,13 +2152,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8310:
+/***/ 68310:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2168,13 +2168,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7733:
+/***/ 87733:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2190,7 +2190,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2200,13 +2200,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 995:
+/***/ 10995:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2216,13 +2216,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5893:
+/***/ 75893:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2232,13 +2232,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9089:
+/***/ 39089:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2248,13 +2248,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 907:
+/***/ 70907:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2264,13 +2264,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7539:
+/***/ 57539:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2286,7 +2286,7 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2296,13 +2296,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3835:
+/***/ 73835:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2312,13 +2312,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 9012:
+/***/ 29012:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2328,13 +2328,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 334:
+/***/ 90334:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2344,13 +2344,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7999:
+/***/ 47999:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2360,13 +2360,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3016:
+/***/ 53016:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2376,13 +2376,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 4352:
+/***/ 94352:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2392,13 +2392,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 1419:
+/***/ 51419:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2408,13 +2408,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 786:
+/***/ 70786:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2424,13 +2424,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 6405:
+/***/ 76405:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2440,13 +2440,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 8139:
+/***/ 38139:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2456,13 +2456,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 6140:
+/***/ 16140:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2472,13 +2472,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7698:
+/***/ 47698:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2488,13 +2488,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3965:
+/***/ 33965:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2504,13 +2504,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 7246:
+/***/ 17246:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2520,13 +2520,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5308:
+/***/ 55308:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2536,13 +2536,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3521:
+/***/ 43521:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2552,13 +2552,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 3578:
+/***/ 13578:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2568,13 +2568,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 672:
+/***/ 58291:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2584,13 +2584,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5517:
+/***/ 65517:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 // -------------------------------------------------------------------------------
 
 class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchange */ .k {
@@ -2600,13 +2600,13 @@ class Exchange extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* .Exchang
 
 /***/ }),
 
-/***/ 5566:
+/***/ 95566:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ afratether)
 /* harmony export */ });
-/* harmony import */ var _abstract_afratether_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4911);
+/* harmony import */ var _abstract_afratether_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44911);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -2961,16 +2961,16 @@ class afratether extends _abstract_afratether_js__WEBPACK_IMPORTED_MODULE_0__/* 
 
 /***/ }),
 
-/***/ 7930:
+/***/ 77930:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ alpaca)
 /* harmony export */ });
-/* harmony import */ var _abstract_alpaca_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4523);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
+/* harmony import */ var _abstract_alpaca_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24523);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
 //  ---------------------------------------------------------------------------
 
 
@@ -4877,17 +4877,17 @@ class alpaca extends _abstract_alpaca_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 4920:
+/***/ 64920:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ apex)
 /* harmony export */ });
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _abstract_apex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1185);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _abstract_apex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(91185);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
 //  ---------------------------------------------------------------------------
 
 
@@ -6828,13 +6828,13 @@ class apex extends _abstract_apex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 6371:
+/***/ 16371:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ arzinja)
 /* harmony export */ });
-/* harmony import */ var _abstract_arzinja_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9312);
+/* harmony import */ var _abstract_arzinja_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(79312);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -7137,7 +7137,7 @@ class arzinja extends _abstract_arzinja_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ arzplus)
 /* harmony export */ });
-/* harmony import */ var _abstract_arzplus_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5042);
+/* harmony import */ var _abstract_arzplus_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(55042);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -7717,14 +7717,14 @@ class arzplus extends _abstract_arzplus_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 1421:
+/***/ 41421:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ asacoine)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5147);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -8092,17 +8092,17 @@ class asacoine extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 1411:
+/***/ 71411:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ ascendex)
 /* harmony export */ });
-/* harmony import */ var _abstract_ascendex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(566);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_ascendex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90566);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -11800,13 +11800,13 @@ class ascendex extends _abstract_ascendex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 6077:
+/***/ 56077:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ asretether)
 /* harmony export */ });
-/* harmony import */ var _abstract_asretether_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(192);
+/* harmony import */ var _abstract_asretether_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90192);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -12129,33 +12129,197 @@ class asretether extends _abstract_asretether_js__WEBPACK_IMPORTED_MODULE_0__/* 
 
 /***/ }),
 
-/***/ 2961:
+/***/ 28929:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ baazar)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class baazar
+ * @augments Exchange
+ */
+class baazar extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'baazar',
+            'name': 'Baazar',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': 'v1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://api.baazar.ir',
+                },
+                'www': 'https://baazar.ir',
+                'doc': 'https://api.baazar.ir/landing/v1/price/DAILY/30',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'landing/v1/price/DAILY/30': 1,
+                    },
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.publicGetLandingV1PriceDAILY30(params);
+        return [this.parseMarket(response)];
+    }
+    parseMarket(response) {
+        const data = this.safeDict(response, 'data', {});
+        return {
+            'id': 'XAU18IRT',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'XAU18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': this.safeNumber(data, 'currentTime') !== undefined,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': data,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.publicGetLandingV1PriceDAILY30(params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.publicGetLandingV1PriceDAILY30(params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(response, market);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        const data = this.safeDict(response, 'data', {});
+        let bid = this.safeNumber(data, 'sellPrice');
+        let ask = this.safeNumber(data, 'buyPrice');
+        if (bid !== undefined) {
+            bid = bid / 10;
+        }
+        if (ask !== undefined) {
+            ask = ask / 10;
+        }
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': this.safeInteger(data, 'currentTime'),
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': ask,
+            'last': ask,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': undefined,
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': data,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
+/***/ 72961:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ Exchange),
 /* harmony export */   k: () => (/* binding */ Exchange)
 /* harmony export */ });
-/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5095);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15095);
 /* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7437);
-/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6238);
-/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2079);
-/* harmony import */ var _Precise_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(5147);
-/* harmony import */ var _ws_WsClient_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7288);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(36238);
+/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(62079);
+/* harmony import */ var _Precise_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(85147);
+/* harmony import */ var _ws_WsClient_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(27288);
 /* harmony import */ var _ws_Future_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3206);
-/* harmony import */ var _ws_OrderBook_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3828);
-/* harmony import */ var _functions_crypto_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(8283);
-/* harmony import */ var _functions_totp_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(8995);
-/* harmony import */ var _static_dependencies_ethers_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(5897);
-/* harmony import */ var _static_dependencies_ethers_hash_index_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4380);
-/* harmony import */ var _static_dependencies_jsencrypt_lib_jsbn_rng_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(447);
-/* harmony import */ var _static_dependencies_scure_starknet_index_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3187);
-/* harmony import */ var _static_dependencies_zklink_zklink_sdk_web_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7661);
-/* harmony import */ var _static_dependencies_starknet_index_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(6907);
-/* harmony import */ var _static_dependencies_starknet_index_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9793);
-/* harmony import */ var _static_dependencies_starknet_index_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(9491);
-/* harmony import */ var _static_dependencies_starknet_index_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(1878);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(4852);
+/* harmony import */ var _ws_OrderBook_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(73828);
+/* harmony import */ var _functions_crypto_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(88283);
+/* harmony import */ var _functions_totp_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(68995);
+/* harmony import */ var _static_dependencies_ethers_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(25897);
+/* harmony import */ var _static_dependencies_ethers_hash_index_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(81999);
+/* harmony import */ var _static_dependencies_jsencrypt_lib_jsbn_rng_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(80447);
+/* harmony import */ var _static_dependencies_scure_starknet_index_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(33187);
+/* harmony import */ var _static_dependencies_zklink_zklink_sdk_web_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(47661);
+/* harmony import */ var _static_dependencies_starknet_index_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(46907);
+/* harmony import */ var _static_dependencies_starknet_index_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(69793);
+/* harmony import */ var _static_dependencies_starknet_index_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(69491);
+/* harmony import */ var _static_dependencies_starknet_index_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(21878);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(54852);
 // ----------------------------------------------------------------------------
 /* eslint-disable */
 
@@ -12183,7 +12347,7 @@ const { isNode, selfIsDefined, deepExtend, extend, clone, flatten, unique, index
 let protobufMexc = undefined;
 (async () => {
     try {
-        protobufMexc = await __webpack_require__.e(/* import() */ 373).then(__webpack_require__.t.bind(__webpack_require__, 2373, 23));
+        protobufMexc = await __webpack_require__.e(/* import() */ 373).then(__webpack_require__.t.bind(__webpack_require__, 42373, 23));
     }
     catch { }
 })();
@@ -19556,7 +19720,7 @@ class Exchange {
 
 /***/ }),
 
-/***/ 5147:
+/***/ 85147:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -19836,7 +20000,7 @@ class Precise {
 
 /***/ }),
 
-/***/ 2079:
+/***/ 62079:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20137,7 +20301,7 @@ class UnsubscribeError extends BaseError {
 
 /***/ }),
 
-/***/ 5095:
+/***/ 15095:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20286,16 +20450,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   yymmdd: () => (/* reexport safe */ _functions_time_js__WEBPACK_IMPORTED_MODULE_7__.x_),
 /* harmony export */   yyyymmdd: () => (/* reexport safe */ _functions_time_js__WEBPACK_IMPORTED_MODULE_7__.Rn)
 /* harmony export */ });
-/* harmony import */ var _functions_platform_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7597);
+/* harmony import */ var _functions_platform_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(97597);
 /* harmony import */ var _functions_generic_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7437);
-/* harmony import */ var _functions_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3503);
-/* harmony import */ var _functions_type_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6834);
-/* harmony import */ var _functions_number_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1579);
+/* harmony import */ var _functions_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(83503);
+/* harmony import */ var _functions_type_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(36834);
+/* harmony import */ var _functions_number_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(51579);
 /* harmony import */ var _functions_encode_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9560);
-/* harmony import */ var _functions_crypto_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8283);
-/* harmony import */ var _functions_time_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8403);
-/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7618);
-/* harmony import */ var _functions_misc_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(6238);
+/* harmony import */ var _functions_crypto_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(88283);
+/* harmony import */ var _functions_time_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(98403);
+/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(67618);
+/* harmony import */ var _functions_misc_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(36238);
 /*  ------------------------------------------------------------------------ */
 
 
@@ -20312,7 +20476,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8283:
+/***/ 88283:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -20323,13 +20487,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   tW: () => (/* binding */ hash),
 /* harmony export */   w8: () => (/* binding */ hmac)
 /* harmony export */ });
-/* harmony import */ var _static_dependencies_noble_hashes_hmac_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(712);
+/* harmony import */ var _static_dependencies_noble_hashes_hmac_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(30712);
 /* harmony import */ var _static_dependencies_scure_base_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4710);
-/* harmony import */ var _static_dependencies_jsencrypt_lib_asn1js_base64_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5268);
+/* harmony import */ var _static_dependencies_jsencrypt_lib_asn1js_base64_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(45268);
 /* harmony import */ var _static_dependencies_jsencrypt_lib_asn1js_asn1_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(890);
-/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(987);
-/* harmony import */ var _static_dependencies_noble_curves_p256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8342);
-/* harmony import */ var _static_dependencies_noble_curves_abstract_utils_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(191);
+/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(40987);
+/* harmony import */ var _static_dependencies_noble_curves_p256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(68342);
+/* harmony import */ var _static_dependencies_noble_curves_abstract_utils_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(30191);
 /*  ------------------------------------------------------------------------ */
 
 
@@ -20489,9 +20653,9 @@ function crc32(str, signed = false) {
 /* harmony export */   wN: () => (/* binding */ stringToBinary)
 /* harmony export */ });
 /* harmony import */ var _static_dependencies_scure_base_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4710);
-/* harmony import */ var _static_dependencies_noble_curves_abstract_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(191);
-/* harmony import */ var _static_dependencies_messagepack_msgpack_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(917);
-/* harmony import */ var _static_dependencies_qs_index_cjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4580);
+/* harmony import */ var _static_dependencies_noble_curves_abstract_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(30191);
+/* harmony import */ var _static_dependencies_messagepack_msgpack_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40917);
+/* harmony import */ var _static_dependencies_qs_index_cjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(64580);
 /* harmony import */ var _static_dependencies_qs_index_cjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_static_dependencies_qs_index_cjs__WEBPACK_IMPORTED_MODULE_0__);
 /* eslint-disable */
 /*  ------------------------------------------------------------------------ */
@@ -20550,7 +20714,7 @@ function packb(req) {
 /* harmony export */   zu: () => (/* binding */ values),
 /* harmony export */   zw: () => (/* binding */ deepExtend)
 /* harmony export */ });
-/* harmony import */ var _type_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6834);
+/* harmony import */ var _type_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36834);
 // ----------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------
@@ -20725,7 +20889,7 @@ const merge = (target, ...args) => {
 
 /***/ }),
 
-/***/ 6238:
+/***/ 36238:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -20737,9 +20901,9 @@ const merge = (target, ...args) => {
 /* harmony export */   ru: () => (/* binding */ vwap),
 /* harmony export */   um: () => (/* binding */ extractParams)
 /* harmony export */ });
-/* harmony import */ var _number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _type_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6834);
-/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
+/* harmony import */ var _number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _type_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36834);
+/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
 
 
 
@@ -20839,7 +21003,7 @@ function selfIsDefined() {
 
 /***/ }),
 
-/***/ 1579:
+/***/ 51579:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -21171,7 +21335,7 @@ function omitZero(stringNumber) {
 
 /***/ }),
 
-/***/ 7597:
+/***/ 97597:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -21207,18 +21371,18 @@ const isNode = !(isBrowser || isWebWorker || isDeno);
 
 /***/ }),
 
-/***/ 5354:
+/***/ 75354:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   a: () => (/* binding */ jwt),
 /* harmony export */   n: () => (/* binding */ rsa)
 /* harmony export */ });
-/* harmony import */ var _static_dependencies_jsencrypt_JSEncrypt_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5944);
+/* harmony import */ var _static_dependencies_jsencrypt_JSEncrypt_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(85944);
 /* harmony import */ var _static_dependencies_scure_base_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4710);
 /* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9560);
-/* harmony import */ var _crypto_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8283);
-/* harmony import */ var _static_dependencies_noble_curves_p256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8342);
+/* harmony import */ var _crypto_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(88283);
+/* harmony import */ var _static_dependencies_noble_curves_p256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(68342);
 
 
 
@@ -21266,7 +21430,7 @@ function jwt(request, secret, hash, isRSA = false, opts = {}) {
 
 /***/ }),
 
-/***/ 3503:
+/***/ 83503:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -21319,13 +21483,13 @@ const uuid22 = (a) => {
 
 /***/ }),
 
-/***/ 7618:
+/***/ 67618:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   x: () => (/* binding */ Throttler)
 /* harmony export */ });
-/* harmony import */ var _time_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8403);
+/* harmony import */ var _time_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(98403);
 //@ts-nocheck
 /*  ------------------------------------------------------------------------ */
 
@@ -21391,7 +21555,7 @@ class Throttler {
 
 /***/ }),
 
-/***/ 8403:
+/***/ 98403:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -21583,7 +21747,7 @@ const timeout = async (ms, promise) => {
 
 /***/ }),
 
-/***/ 8995:
+/***/ 68995:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -21591,8 +21755,8 @@ const timeout = async (ms, promise) => {
 /* harmony export */   O: () => (/* binding */ totp)
 /* harmony export */ });
 /* harmony import */ var _static_dependencies_scure_base_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4710);
-/* harmony import */ var _static_dependencies_noble_hashes_sha1_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3466);
-/* harmony import */ var _crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8283);
+/* harmony import */ var _static_dependencies_noble_hashes_sha1_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(43466);
+/* harmony import */ var _crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(88283);
 
 
 
@@ -21616,7 +21780,7 @@ function totp(secret) {
 
 /***/ }),
 
-/***/ 6834:
+/***/ 36834:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -21828,7 +21992,7 @@ const safeStringUpperN = (o, k, $default) => {
 
 /***/ }),
 
-/***/ 2931:
+/***/ 52931:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -22095,18 +22259,18 @@ class ArrayCacheBySymbolBySide extends ArrayCache {
 
 /***/ }),
 
-/***/ 934:
+/***/ 20934:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ Client)
 /* harmony export */ });
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
-/* harmony import */ var _static_dependencies_fflake_browser_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4350);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
+/* harmony import */ var _static_dependencies_fflake_browser_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(64350);
 /* harmony import */ var _Future_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3206);
 /* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7437);
-/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8403);
-/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7597);
+/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(98403);
+/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(97597);
 /* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9560);
 /* harmony import */ var _static_dependencies_scure_base_index_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4710);
 
@@ -22420,7 +22584,7 @@ class Client {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   K: () => (/* binding */ Future)
 /* harmony export */ });
-/* harmony import */ var _static_dependencies_watchable_src_unpromise_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2634);
+/* harmony import */ var _static_dependencies_watchable_src_unpromise_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22634);
 // @ts-nocheck
 
 function Future() {
@@ -22454,7 +22618,7 @@ Future.race = (futures) => wrapFuture(_static_dependencies_watchable_src_unpromi
 
 /***/ }),
 
-/***/ 3828:
+/***/ 73828:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -22462,9 +22626,9 @@ Future.race = (futures) => wrapFuture(_static_dependencies_watchable_src_unpromi
 /* harmony export */   "if": () => (/* binding */ CountedOrderBook),
 /* harmony export */   nS: () => (/* binding */ IndexedOrderBook)
 /* harmony export */ });
-/* harmony import */ var _base_functions_time_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8403);
+/* harmony import */ var _base_functions_time_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(98403);
 /* harmony import */ var _base_functions_generic_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7437);
-/* harmony import */ var _OrderBookSide_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(975);
+/* harmony import */ var _OrderBookSide_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(30975);
 /* eslint-disable max-classes-per-file */
 // @ts-nocheck
 
@@ -22590,7 +22754,7 @@ class IndexedOrderBook extends OrderBook {
 
 /***/ }),
 
-/***/ 975:
+/***/ 30975:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -22880,18 +23044,18 @@ class IndexedBids extends IndexedOrderBookSide {
 
 /***/ }),
 
-/***/ 7288:
+/***/ 27288:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ WsClient)
 /* harmony export */ });
-/* harmony import */ var ws__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1591);
+/* harmony import */ var ws__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(51591);
 /* harmony import */ var ws__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ws__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Client_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(934);
-/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7597);
-/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6238);
-/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8403);
+/* harmony import */ var _Client_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20934);
+/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(97597);
+/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36238);
+/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(98403);
 /* harmony import */ var _Future_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3206);
 // eslint-disable-next-line no-shadow
 
@@ -22960,13 +23124,13 @@ class WsClient extends _Client_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 9002:
+/***/ 49002:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bequant)
 /* harmony export */ });
-/* harmony import */ var _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7996);
+/* harmony import */ var _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37996);
 // ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
@@ -23000,13 +23164,13 @@ class bequant extends _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .
 
 /***/ }),
 
-/***/ 6882:
+/***/ 56882:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bidarz)
 /* harmony export */ });
-/* harmony import */ var _abstract_bidarz_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4159);
+/* harmony import */ var _abstract_bidarz_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24159);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -23341,18 +23505,18 @@ class bidarz extends _abstract_bidarz_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 8698:
+/***/ 58698:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bigone)
 /* harmony export */ });
-/* harmony import */ var _abstract_bigone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3971);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5354);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4852);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
+/* harmony import */ var _abstract_bigone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43971);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(75354);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54852);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -25691,19 +25855,19 @@ class bigone extends _abstract_bigone_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 3192:
+/***/ 13192:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ binance)
 /* harmony export */ });
 /* harmony import */ var _abstract_binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(335);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5354);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8283);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(75354);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(88283);
 /* harmony import */ var _static_dependencies_noble_curves_ed25519_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6414);
 //  ---------------------------------------------------------------------------
 
@@ -40103,13 +40267,13 @@ class binance extends _abstract_binance_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 1510:
+/***/ 51510:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ binancecoinm)
 /* harmony export */ });
-/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3192);
+/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13192);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -40159,13 +40323,13 @@ class binancecoinm extends _binance_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 8228:
+/***/ 68228:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ binanceus)
 /* harmony export */ });
-/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3192);
+/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13192);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -40389,14 +40553,14 @@ class binanceus extends _binance_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 
 /***/ }),
 
-/***/ 2171:
+/***/ 72171:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ binanceusdm)
 /* harmony export */ });
-/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3192);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
+/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13192);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
 //  ---------------------------------------------------------------------------
 
 
@@ -40458,17 +40622,17 @@ class binanceusdm extends _binance_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
 
 /***/ }),
 
-/***/ 2480:
+/***/ 72480:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bingx)
 /* harmony export */ });
-/* harmony import */ var _abstract_bingx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4619);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
+/* harmony import */ var _abstract_bingx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44619);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
 //  ---------------------------------------------------------------------------
 
 
@@ -47172,13 +47336,13 @@ class bingx extends _abstract_bingx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 1183:
+/***/ 61183:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bit24)
 /* harmony export */ });
-/* harmony import */ var _abstract_bit24_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5408);
+/* harmony import */ var _abstract_bit24_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(85408);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -47697,17 +47861,17 @@ class bit24 extends _abstract_bit24_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 2342:
+/***/ 72342:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bit2c)
 /* harmony export */ });
-/* harmony import */ var _abstract_bit2c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3885);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_bit2c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33885);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -48735,16 +48899,16 @@ class bit2c extends _abstract_bit2c_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 7399:
+/***/ 17399:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitbank)
 /* harmony export */ });
 /* harmony import */ var _abstract_bitbank_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2308);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -49889,13 +50053,13 @@ class bitbank extends _abstract_bitbank_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 2799:
+/***/ 82799:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitbarg)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitbarg_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(108);
+/* harmony import */ var _abstract_bitbarg_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40108);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -50206,17 +50370,17 @@ class bitbarg extends _abstract_bitbarg_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 6328:
+/***/ 26328:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitbns)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitbns_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5625);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_bitbns_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15625);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -51503,17 +51667,17 @@ class bitbns extends _abstract_bitbns_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 8657:
+/***/ 88657:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitfinex)
 /* harmony export */ });
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _abstract_bitfinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9332);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _abstract_bitfinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(69332);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 // ---------------------------------------------------------------------------
 
 
@@ -55463,17 +55627,17 @@ class bitfinex extends _abstract_bitfinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 1787:
+/***/ 41787:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitflyer)
 /* harmony export */ });
 /* harmony import */ var _abstract_bitflyer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1578);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -56681,17 +56845,17 @@ class bitflyer extends _abstract_bitflyer_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 7757:
+/***/ 67757:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitget)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitget_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9152);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_bitget_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(69152);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -67723,17 +67887,17 @@ class bitget extends _abstract_bitget_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 357:
+/***/ 60357:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bithumb)
 /* harmony export */ });
-/* harmony import */ var _abstract_bithumb_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3974);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_bithumb_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(23974);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -68989,13 +69153,13 @@ class bithumb extends _abstract_bithumb_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 4456:
+/***/ 84456:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitimen)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitimen_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6555);
+/* harmony import */ var _abstract_bitimen_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16555);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -69418,13 +69582,13 @@ class bitimen extends _abstract_bitimen_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 9314:
+/***/ 39314:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitir)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitir_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5537);
+/* harmony import */ var _abstract_bitir_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25537);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -69944,17 +70108,17 @@ class bitir extends _abstract_bitir_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 1837:
+/***/ 31837:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitmart)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitmart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1466);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_bitmart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81466);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -75592,18 +75756,18 @@ class bitmart extends _abstract_bitmart_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 9523:
+/***/ 99523:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitmex)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitmex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8186);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_totp_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8995);
+/* harmony import */ var _abstract_bitmex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(68186);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_totp_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(68995);
 //  ---------------------------------------------------------------------------
 
 
@@ -78690,17 +78854,17 @@ class bitmex extends _abstract_bitmex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 2753:
+/***/ 72753:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitopro)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitopro_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7202);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_bitopro_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87202);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -80597,7 +80761,7 @@ class bitopro extends _abstract_bitopro_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitpin)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitpin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6607);
+/* harmony import */ var _abstract_bitpin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(76607);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -81083,17 +81247,17 @@ class bitpin extends _abstract_bitpin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 9061:
+/***/ 99061:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitrue)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitrue_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8800);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_bitrue_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(28800);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -84474,17 +84638,17 @@ class bitrue extends _abstract_bitrue_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 3019:
+/***/ 93019:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitso)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitso_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9656);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_bitso_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(59656);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -86370,11 +86534,11 @@ class bitso extends _abstract_bitso_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitstamp)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitstamp_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5223);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_bitstamp_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(85223);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -88818,16 +88982,16 @@ class bitstamp extends _abstract_bitstamp_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 112:
+/***/ 60112:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitteam)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitteam_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8535);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
+/* harmony import */ var _abstract_bitteam_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48535);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -91246,17 +91410,17 @@ class bitteam extends _abstract_bitteam_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 2263:
+/***/ 92263:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bittrade)
 /* harmony export */ });
-/* harmony import */ var _abstract_bittrade_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7754);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_bittrade_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87754);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ---------------------------------------------------------------------------
 
 
@@ -93305,13 +93469,13 @@ class bittrade extends _abstract_bittrade_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 587:
+/***/ 60587:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitunix)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitunix_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7584);
+/* harmony import */ var _abstract_bitunix_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87584);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -93636,17 +93800,17 @@ class bitunix extends _abstract_bitunix_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 3727:
+/***/ 83727:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitvavo)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitvavo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8716);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_bitvavo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(98716);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ----------------------------------------------------------------------------
 
 
@@ -95849,13 +96013,13 @@ class bitvavo extends _abstract_bitvavo_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 7420:
+/***/ 37420:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitwana)
 /* harmony export */ });
-/* harmony import */ var _abstract_bitwana_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8291);
+/* harmony import */ var _abstract_bitwana_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(38291);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -96273,16 +96437,16 @@ class bitwana extends _abstract_bitwana_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 3205:
+/***/ 73205:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ blockchaincom)
 /* harmony export */ });
-/* harmony import */ var _abstract_blockchaincom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5254);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
+/* harmony import */ var _abstract_blockchaincom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(45254);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
 //  ---------------------------------------------------------------------------
 
 
@@ -97540,17 +97704,17 @@ class blockchaincom extends _abstract_blockchaincom_js__WEBPACK_IMPORTED_MODULE_
 
 /***/ }),
 
-/***/ 2520:
+/***/ 42520:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ blofin)
 /* harmony export */ });
-/* harmony import */ var _abstract_blofin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1769);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_blofin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81769);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -100125,17 +100289,17 @@ class blofin extends _abstract_blofin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 3413:
+/***/ 53413:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ btcalpha)
 /* harmony export */ });
-/* harmony import */ var _abstract_btcalpha_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9644);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_btcalpha_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(99644);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -101190,18 +101354,18 @@ class btcalpha extends _abstract_btcalpha_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 5376:
+/***/ 75376:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ btcbox)
 /* harmony export */ });
-/* harmony import */ var _abstract_btcbox_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3829);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4852);
-/* harmony import */ var _static_dependencies_noble_hashes_md5_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4035);
+/* harmony import */ var _abstract_btcbox_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73829);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54852);
+/* harmony import */ var _static_dependencies_noble_hashes_md5_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54035);
 //  ---------------------------------------------------------------------------
 
 
@@ -102034,17 +102198,17 @@ class btcbox extends _abstract_btcbox_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 4936:
+/***/ 34936:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ btcmarkets)
 /* harmony export */ });
 /* harmony import */ var _abstract_btcmarkets_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2317);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -103461,17 +103625,17 @@ class btcmarkets extends _abstract_btcmarkets_js__WEBPACK_IMPORTED_MODULE_0__/* 
 
 /***/ }),
 
-/***/ 9265:
+/***/ 59265:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ btcturk)
 /* harmony export */ });
-/* harmony import */ var _abstract_btcturk_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8430);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_btcturk_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(38430);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -104528,18 +104692,18 @@ class btcturk extends _abstract_btcturk_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 5462:
+/***/ 45462:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bybit)
 /* harmony export */ });
-/* harmony import */ var _abstract_bybit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1293);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5354);
+/* harmony import */ var _abstract_bybit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(61293);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(75354);
 //  ---------------------------------------------------------------------------
 
 
@@ -113926,7 +114090,7 @@ class bybit extends _abstract_bybit_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bydfi)
 /* harmony export */ });
-/* harmony import */ var _abstract_bydfi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5439);
+/* harmony import */ var _abstract_bydfi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25439);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -114359,13 +114523,13 @@ class bydfi extends _abstract_bydfi_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 5226:
+/***/ 25226:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ cafearz)
 /* harmony export */ });
-/* harmony import */ var _abstract_cafearz_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5925);
+/* harmony import */ var _abstract_cafearz_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(85925);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -114710,17 +114874,17 @@ class cafearz extends _abstract_cafearz_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 8846:
+/***/ 78846:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ cex)
 /* harmony export */ });
-/* harmony import */ var _abstract_cex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5465);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_cex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(65465);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -116518,13 +116682,13 @@ class cex extends _abstract_cex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */
 
 /***/ }),
 
-/***/ 6257:
+/***/ 86257:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ changefa)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -116864,18 +117028,18 @@ class changefa extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 7504:
+/***/ 17504:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinbase)
 /* harmony export */ });
-/* harmony import */ var _abstract_coinbase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5661);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5354);
+/* harmony import */ var _abstract_coinbase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(65661);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(75354);
 // ----------------------------------------------------------------------------
 
 
@@ -122094,13 +122258,13 @@ class coinbase extends _abstract_coinbase_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 3278:
+/***/ 63278:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinbaseadvanced)
 /* harmony export */ });
-/* harmony import */ var _coinbase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7504);
+/* harmony import */ var _coinbase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17504);
 // ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
@@ -122123,11 +122287,11 @@ class coinbaseadvanced extends _coinbase_js__WEBPACK_IMPORTED_MODULE_0__/* ["def
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinbaseexchange)
 /* harmony export */ });
-/* harmony import */ var _abstract_coinbaseexchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1552);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_coinbaseexchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11552);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ----------------------------------------------------------------------------
 
 
@@ -124259,11 +124423,11 @@ class coinbaseexchange extends _abstract_coinbaseexchange_js__WEBPACK_IMPORTED_M
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinbaseinternational)
 /* harmony export */ });
-/* harmony import */ var _abstract_coinbaseinternational_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2609);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_coinbaseinternational_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(92609);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ----------------------------------------------------------------------------
 
 
@@ -126598,17 +126762,17 @@ class coinbaseinternational extends _abstract_coinbaseinternational_js__WEBPACK_
 
 /***/ }),
 
-/***/ 570:
+/***/ 20570:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coincatch)
 /* harmony export */ });
-/* harmony import */ var _abstract_coincatch_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5769);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_coincatch_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(45769);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ---------------------------------------------------------------------------
 
 
@@ -132099,16 +132263,16 @@ class coincatch extends _abstract_coincatch_js__WEBPACK_IMPORTED_MODULE_0__/* ["
 
 /***/ }),
 
-/***/ 2741:
+/***/ 22741:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coincheck)
 /* harmony export */ });
-/* harmony import */ var _abstract_coincheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2938);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_coincheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52938);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -133069,18 +133233,18 @@ class coincheck extends _abstract_coincheck_js__WEBPACK_IMPORTED_MODULE_0__/* ["
 
 /***/ }),
 
-/***/ 9344:
+/***/ 39344:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinex)
 /* harmony export */ });
-/* harmony import */ var _abstract_coinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5277);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _static_dependencies_noble_hashes_md5_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4035);
+/* harmony import */ var _abstract_coinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15277);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _static_dependencies_noble_hashes_md5_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54035);
 //  ---------------------------------------------------------------------------
 
 
@@ -139251,11 +139415,11 @@ class coinex extends _abstract_coinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinmate)
 /* harmony export */ });
-/* harmony import */ var _abstract_coinmate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8109);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_coinmate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(88109);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -140469,16 +140633,16 @@ class coinmate extends _abstract_coinmate_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 8692:
+/***/ 18692:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinmetro)
 /* harmony export */ });
-/* harmony import */ var _abstract_coinmetro_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1671);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
+/* harmony import */ var _abstract_coinmetro_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71671);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -142501,17 +142665,17 @@ class coinmetro extends _abstract_coinmetro_js__WEBPACK_IMPORTED_MODULE_0__/* ["
 
 /***/ }),
 
-/***/ 5377:
+/***/ 65377:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinone)
 /* harmony export */ });
-/* harmony import */ var _abstract_coinone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6658);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_coinone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(86658);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -143788,17 +143952,17 @@ class coinone extends _abstract_coinone_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 2692:
+/***/ 52692:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinsph)
 /* harmony export */ });
-/* harmony import */ var _abstract_coinsph_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4935);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_coinsph_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14935);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 
 
 
@@ -146000,17 +146164,17 @@ class coinsph extends _abstract_coinsph_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 1669:
+/***/ 51669:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinspot)
 /* harmony export */ });
-/* harmony import */ var _abstract_coinspot_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9360);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5147);
+/* harmony import */ var _abstract_coinspot_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(99360);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -146662,17 +146826,17 @@ class coinspot extends _abstract_coinspot_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 6068:
+/***/ 56068:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ cryptocom)
 /* harmony export */ });
-/* harmony import */ var _abstract_cryptocom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4295);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_cryptocom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74295);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -150220,17 +150384,17 @@ class cryptocom extends _abstract_cryptocom_js__WEBPACK_IMPORTED_MODULE_0__/* ["
 
 /***/ }),
 
-/***/ 870:
+/***/ 30870:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ cryptomus)
 /* harmony export */ });
-/* harmony import */ var _abstract_cryptomus_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3037);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_md5_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4035);
+/* harmony import */ var _abstract_cryptomus_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13037);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_md5_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54035);
 // ---------------------------------------------------------------------------
 
 
@@ -151398,17 +151562,202 @@ class cryptomus extends _abstract_cryptomus_js__WEBPACK_IMPORTED_MODULE_0__/* ["
 
 /***/ }),
 
-/***/ 8458:
+/***/ 55557:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ daric)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class daric
+ * @augments Exchange
+ */
+class daric extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'daric',
+            'name': 'Daric',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': '1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://apie.daric.gold',
+                },
+                'www': 'https://daric.gold',
+                'doc': 'https://apie.daric.gold/public/general/PairList?src=TMN',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'public/general/PairList': 1,
+                    },
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.fetchPairList(params);
+        return this.parseMarkets(response);
+    }
+    fetchPairList(params = {}) {
+        return this.publicGetPublicGeneralPairList(this.extend({ 'src': 'TMN' }, params));
+    }
+    parseMarkets(response) {
+        let markets = [];
+        if (Array.isArray(response)) {
+            markets = response;
+        }
+        const result = [];
+        for (let i = 0; i < markets.length; i++) {
+            const market = markets[i];
+            const baseId = this.safeString(market, 'destinationCoinSymbol');
+            if (baseId === 'GOLD18' || baseId === 'SILVER') {
+                result.push(this.parseMarket(market));
+            }
+        }
+        return result;
+    }
+    parseMarket(market) {
+        const baseId = this.safeString(market, 'destinationCoinSymbol');
+        let base = 'XAG';
+        if (baseId === 'GOLD18') {
+            base = 'XAU18';
+        }
+        const quote = 'IRT';
+        return {
+            'id': this.safeString(market, 'id'),
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': baseId,
+            'quoteId': this.safeString(market, 'sourceCoinSymbol'),
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': true,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': this.safeInteger(market, 'decimalLength'),
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': market,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.fetchPairList(params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.fetchPairList(params);
+        const result = {};
+        const markets = this.parseMarkets(response);
+        for (let i = 0; i < markets.length; i++) {
+            const ticker = this.parseTicker(response, markets[i]);
+            result[ticker['symbol']] = ticker;
+        }
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        let markets = [];
+        if (Array.isArray(response)) {
+            markets = response;
+        }
+        const ticker = this.filterBy(markets, 'destinationCoinSymbol', market['baseId'])[0];
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': this.safeNumber(ticker, 'highestRecentOrder'),
+            'low': this.safeNumber(ticker, 'lowestRecentOrder'),
+            'bid': this.safeNumber(ticker, 'bestBuy'),
+            'bidVolume': undefined,
+            'ask': this.safeNumber(ticker, 'bestSell'),
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': this.safeNumber(ticker, 'lastOrderPrice'),
+            'last': this.safeNumber(ticker, 'lastOrderPrice'),
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': this.safeNumber(ticker, 'change'),
+            'average': undefined,
+            'baseVolume': this.safeNumber(ticker, 'todayTradeAmount'),
+            'quoteVolume': this.safeNumber(ticker, 'todayTradeTotal'),
+            'info': ticker,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
+/***/ 26077:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ defx)
 /* harmony export */ });
 /* harmony import */ var _abstract_defx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9872);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
 // ---------------------------------------------------------------------------
 
 
@@ -153546,17 +153895,17 @@ class defx extends _abstract_defx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 1080:
+/***/ 41080:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ delta)
 /* harmony export */ });
-/* harmony import */ var _abstract_delta_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7227);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_delta_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27227);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -157209,18 +157558,18 @@ class delta extends _abstract_delta_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 2591:
+/***/ 72591:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ deribit)
 /* harmony export */ });
-/* harmony import */ var _abstract_deribit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4012);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_totp_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8995);
+/* harmony import */ var _abstract_deribit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14012);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_totp_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(68995);
 //  ---------------------------------------------------------------------------
 
 
@@ -161009,19 +161358,19 @@ class deribit extends _abstract_deribit_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 1839:
+/***/ 71839:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ derive)
 /* harmony export */ });
-/* harmony import */ var _abstract_derive_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(970);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8283);
-/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8432);
-/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(987);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
+/* harmony import */ var _abstract_derive_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90970);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(88283);
+/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38432);
+/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40987);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
 //  ---------------------------------------------------------------------------
 
 
@@ -163675,17 +164024,17 @@ class derive extends _abstract_derive_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 779:
+/***/ 30779:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ digifinex)
 /* harmony export */ });
 /* harmony import */ var _abstract_digifinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9420);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -168137,19 +168486,202 @@ class digifinex extends _abstract_digifinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["
 
 /***/ }),
 
-/***/ 1962:
+/***/ 3062:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ digikalagold)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+//  ---------------------------------------------------------------------------
+
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class digikalagold
+ * @augments Exchange
+ */
+class digikalagold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'digikalagold',
+            'name': 'Digikala Gold',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': 'v1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://api.digikala.com',
+                },
+                'www': 'https://www.digikala.com',
+                'doc': 'https://api.digikala.com/non-inventory/v1/prices/',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'non-inventory/v1/prices/': 1,
+                    },
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.fetchPrice(params);
+        return [
+            this.parseMarketEntry(response, 'gold18'),
+            this.parseMarketEntry(response, 'silver999'),
+        ];
+    }
+    async fetchPrice(params = {}) {
+        const response = await this.publicGetNonInventoryV1Prices(params);
+        const gold = this.safeDict(response, 'gold18', {});
+        if (this.safeNumber(gold, 'price') !== undefined) {
+            return response;
+        }
+        throw new _base_errors_js__WEBPACK_IMPORTED_MODULE_1__.ExchangeError(this.id + ' returned an invalid response');
+    }
+    parseMarketEntry(response, id) {
+        const isGold = id === 'gold18';
+        let base = 'XAG';
+        if (isGold) {
+            base = 'XAU18';
+        }
+        const quote = 'IRT';
+        const info = this.safeDict(response, id, {});
+        return {
+            'id': base + quote,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': id,
+            'quoteId': quote,
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': true,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': info,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.fetchPrice(params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.fetchPrice(params);
+        const result = {};
+        const marketSymbols = ['XAU18/IRT', 'XAG/IRT'];
+        for (let i = 0; i < marketSymbols.length; i++) {
+            const symbol = marketSymbols[i];
+            const market = this.market(symbol);
+            const ticker = this.parseTicker(response, market);
+            result[ticker['symbol']] = ticker;
+        }
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        const data = this.safeDict(response, market['baseId'], {});
+        let price = this.safeNumber(data, 'price');
+        if (price !== undefined) {
+            price = price * 100;
+        }
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': price,
+            'bidVolume': undefined,
+            'ask': price,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': price,
+            'last': price,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': undefined,
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': data,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
+/***/ 71962:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ ellipx)
 /* harmony export */ });
-/* harmony import */ var _abstract_ellipx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6351);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
+/* harmony import */ var _abstract_ellipx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96351);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
 /* harmony import */ var _static_dependencies_noble_curves_ed25519_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6414);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8283);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(88283);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
 // ---------------------------------------------------------------------------
 
 
@@ -170219,13 +170751,13 @@ class ellipx extends _abstract_ellipx_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 6415:
+/***/ 36415:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ eterex)
 /* harmony export */ });
-/* harmony import */ var _abstract_eterex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6042);
+/* harmony import */ var _abstract_eterex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(56042);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -170523,13 +171055,13 @@ class eterex extends _abstract_eterex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 9335:
+/***/ 89335:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ excoino)
 /* harmony export */ });
-/* harmony import */ var _abstract_excoino_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9884);
+/* harmony import */ var _abstract_excoino_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(69884);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -170960,7 +171492,7 @@ class excoino extends _abstract_excoino_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ exir)
 /* harmony export */ });
-/* harmony import */ var _abstract_exir_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5079);
+/* harmony import */ var _abstract_exir_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(45079);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -171362,17 +171894,17 @@ class exir extends _abstract_exir_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 7057:
+/***/ 57057:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ exmo)
 /* harmony export */ });
-/* harmony import */ var _abstract_exmo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1352);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_exmo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81352);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -174196,13 +174728,13 @@ class exmo extends _abstract_exmo_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 9169:
+/***/ 99169:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ exnovin)
 /* harmony export */ });
-/* harmony import */ var _abstract_exnovin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2278);
+/* harmony import */ var _abstract_exnovin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32278);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -174864,13 +175396,13 @@ class farhadexchange extends _abstract_farhadexchange_js__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
-/***/ 3042:
+/***/ 63042:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ fmfwio)
 /* harmony export */ });
-/* harmony import */ var _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7996);
+/* harmony import */ var _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37996);
 //  ----------------------------------------------------------------------------
 
 //  ----------------------------------------------------------------------------
@@ -174904,17 +175436,17 @@ class fmfwio extends _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 448:
+/***/ 60448:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ foxbit)
 /* harmony export */ });
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _abstract_foxbit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2597);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _abstract_foxbit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32597);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -176929,17 +177461,17 @@ class foxbit extends _abstract_foxbit_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 9403:
+/***/ 99403:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ gate)
 /* harmony export */ });
-/* harmony import */ var _abstract_gate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7418);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_gate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17418);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -185220,13 +185752,13 @@ class gate extends _abstract_gate_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 784:
+/***/ 28403:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ gateio)
 /* harmony export */ });
-/* harmony import */ var _gate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9403);
+/* harmony import */ var _gate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(99403);
 // ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
@@ -185242,17 +185774,17 @@ class gateio extends _gate_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 8823:
+/***/ 58823:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ gemini)
 /* harmony export */ });
-/* harmony import */ var _abstract_gemini_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3434);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_gemini_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(53434);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -187257,13 +187789,516 @@ class gemini extends _abstract_gemini_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
+/***/ 52067:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ goldika)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class goldika
+ * @augments Exchange
+ */
+class goldika extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'goldika',
+            'name': 'Goldika',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': 'v2',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://api.goldika.ir',
+                },
+                'www': 'https://goldika.ir',
+                'doc': 'https://api.goldika.ir/api/v2/public/price',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'api/v2/public/price': 1,
+                    },
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.publicGetApiV2PublicPrice(params);
+        return [this.parseMarket(response)];
+    }
+    parseMarket(response) {
+        const data = this.safeDict(response, 'data', {});
+        const oldPrice = this.safeDict(data, 'old_price', {});
+        return {
+            'id': 'XAU18IRT',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'XAU18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': true,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': oldPrice,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.publicGetApiV2PublicPrice(params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.publicGetApiV2PublicPrice(params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(response, market);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        const data = this.safeDict(response, 'data', {});
+        const oldPrice = this.safeDict(data, 'old_price', {});
+        const timestamp = this.parse8601(this.safeString(oldPrice, 'created_at'));
+        let bid = this.safeNumber(oldPrice, 'buy');
+        let ask = this.safeNumber(oldPrice, 'sell');
+        if (bid !== undefined) {
+            bid = bid / 10;
+        }
+        if (ask !== undefined) {
+            ask = ask / 10;
+        }
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': timestamp,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': ask,
+            'last': ask,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': this.safeNumber(data, 'daily_change_percent'),
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': oldPrice,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
+/***/ 32814:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ goldis)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class goldis
+ * @augments Exchange
+ */
+class goldis extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'goldis',
+            'name': 'Goldis',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': 'v1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://goldis.ir',
+                },
+                'www': 'https://goldis.ir',
+                'doc': 'https://goldis.ir/backend/api/v1/pricing/spot?metal=gold',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'backend/api/v1/pricing/spot': 1,
+                    },
+                },
+            },
+        });
+    }
+    fetchPrice(params = {}) {
+        return this.publicGetBackendApiV1PricingSpot(this.extend({ 'metal': 'gold' }, params));
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.fetchPrice(params);
+        return [this.parseMarket(response)];
+    }
+    parseMarket(response) {
+        return {
+            'id': 'XAU18IRT',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'XAU18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': this.safeNumber(response, 'price_per_gram_rial') !== undefined,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': response,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.fetchPrice(params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.fetchPrice(params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(response, market);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        let price = this.safeNumber(response, 'price_per_gram_rial');
+        if (price !== undefined) {
+            price = price / 10;
+        }
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': this.parse8601(this.safeString(response, 'as_of')),
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': price,
+            'bidVolume': undefined,
+            'ask': price,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': price,
+            'last': price,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': undefined,
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': response,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
+/***/ 38499:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ hamrahgold)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class hamrahgold
+ * @augments Exchange
+ */
+class hamrahgold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'hamrahgold',
+            'name': 'HamrahGold',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': 'v1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://pwa.hamrahgold.com',
+                },
+                'www': 'https://hamrahgold.com',
+                'doc': 'https://pwa.hamrahgold.com/api/v1/market/price/xau/changes?type=sell',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'api/v1/market/price/xau/changes': 1,
+                    },
+                },
+            },
+        });
+    }
+    fetchPrice(type, params = {}) {
+        return this.publicGetApiV1MarketPriceXauChanges(this.extend({ 'type': type }, params));
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.fetchPrice('sell', params);
+        return [this.parseMarket(response)];
+    }
+    parseMarket(response) {
+        return {
+            'id': 'XAU18IRT',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'XAU18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': this.safeBool(response, 'success', false),
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': response,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const buyResponse = await this.fetchPrice('buy', params);
+        const sellResponse = await this.fetchPrice('sell', params);
+        return this.parseTicker(buyResponse, market, sellResponse);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const buyResponse = await this.fetchPrice('buy', params);
+        const sellResponse = await this.fetchPrice('sell', params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(buyResponse, market, sellResponse);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(buyResponse, market = undefined, sellResponse = undefined) {
+        const buy = this.safeDict(buyResponse, 'data', {});
+        const sell = this.safeDict(sellResponse, 'data', {});
+        const changes = this.safeDict(sell, 'changes', {});
+        const dailyChange = this.safeDict(changes, '1d', {});
+        let bid = this.safeNumber(buy, 'current');
+        let ask = this.safeNumber(sell, 'current');
+        let previousClose = this.safeNumber(dailyChange, 'price');
+        if (bid !== undefined) {
+            bid = bid / 10;
+        }
+        if (ask !== undefined) {
+            ask = ask / 10;
+        }
+        if (previousClose !== undefined) {
+            previousClose = previousClose / 10;
+        }
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': ask,
+            'last': ask,
+            'previousClose': previousClose,
+            'change': undefined,
+            'percentage': this.safeNumber(dailyChange, 'percent'),
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': { 'buy': buyResponse, 'sell': sellResponse },
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
 /***/ 9369:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ hamtapay)
 /* harmony export */ });
-/* harmony import */ var _abstract_hamtapay_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7648);
+/* harmony import */ var _abstract_hamtapay_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27648);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -187554,17 +188589,17 @@ class hamtapay extends _abstract_hamtapay_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 2937:
+/***/ 62937:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ hashkey)
 /* harmony export */ });
-/* harmony import */ var _abstract_hashkey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9722);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_hashkey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(79722);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ---------------------------------------------------------------------------
 
 
@@ -191926,19 +192961,19 @@ class hashkey extends _abstract_hashkey_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 5106:
+/***/ 95106:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ hibachi)
 /* harmony export */ });
-/* harmony import */ var _abstract_hibachi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5825);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8283);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(987);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
+/* harmony import */ var _abstract_hibachi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(95825);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(88283);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40987);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
 // ---------------------------------------------------------------------------
 
 
@@ -194074,17 +195109,17 @@ class hibachi extends _abstract_hibachi_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 7996:
+/***/ 37996:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ hitbtc)
 /* harmony export */ });
-/* harmony import */ var _abstract_hitbtc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(706);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_hitbtc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8325);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 
 
 
@@ -198347,17 +199382,17 @@ class hitobit extends _abstract_hitobit_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 4455:
+/***/ 24455:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ hollaex)
 /* harmony export */ });
-/* harmony import */ var _abstract_hollaex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1180);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_hollaex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31180);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -200402,17 +201437,17 @@ class hollaex extends _abstract_hollaex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 9946:
+/***/ 59946:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ htx)
 /* harmony export */ });
-/* harmony import */ var _abstract_htx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8617);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_htx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(88617);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -210079,13 +211114,13 @@ class htx extends _abstract_htx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */
 
 /***/ }),
 
-/***/ 63:
+/***/ 70063:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ huobi)
 /* harmony export */ });
-/* harmony import */ var _htx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9946);
+/* harmony import */ var _htx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(59946);
 // ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
@@ -210107,13 +211142,13 @@ class huobi extends _htx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ hyperliquid)
 /* harmony export */ });
-/* harmony import */ var _abstract_hyperliquid_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9023);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8432);
-/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(987);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8283);
+/* harmony import */ var _abstract_hyperliquid_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19023);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38432);
+/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40987);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(88283);
 //  ---------------------------------------------------------------------------
 
 
@@ -214049,17 +215084,17 @@ class hyperliquid extends _abstract_hyperliquid_js__WEBPACK_IMPORTED_MODULE_0__/
 
 /***/ }),
 
-/***/ 4162:
+/***/ 44162:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ independentreserve)
 /* harmony export */ });
-/* harmony import */ var _abstract_independentreserve_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(359);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
+/* harmony import */ var _abstract_independentreserve_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30359);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
 //  ---------------------------------------------------------------------------
 
 
@@ -215173,17 +216208,17 @@ class independentreserve extends _abstract_independentreserve_js__WEBPACK_IMPORT
 
 /***/ }),
 
-/***/ 7325:
+/***/ 17325:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ indodax)
 /* harmony export */ });
-/* harmony import */ var _abstract_indodax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4558);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_indodax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74558);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -216636,13 +217671,13 @@ class indodax extends _abstract_indodax_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 5073:
+/***/ 15073:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ iranexchange)
 /* harmony export */ });
-/* harmony import */ var _abstract_iranexchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6320);
+/* harmony import */ var _abstract_iranexchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(66320);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -217040,7 +218075,7 @@ class iranexchange extends _abstract_iranexchange_js__WEBPACK_IMPORTED_MODULE_0_
 
 /***/ }),
 
-/***/ 835:
+/***/ 60835:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -217461,13 +218496,13 @@ class jibitex extends _abstract_jibitex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 1199:
+/***/ 71199:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ kcex)
 /* harmony export */ });
-/* harmony import */ var _abstract_kcex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7478);
+/* harmony import */ var _abstract_kcex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67478);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -217801,13 +218836,13 @@ class kcex extends _abstract_kcex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 3644:
+/***/ 93644:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ kifpoolme)
 /* harmony export */ });
-/* harmony import */ var _abstract_kifpoolme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8931);
+/* harmony import */ var _abstract_kifpoolme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48931);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -218216,18 +219251,18 @@ class kifpoolme extends _abstract_kifpoolme_js__WEBPACK_IMPORTED_MODULE_0__/* ["
 
 /***/ }),
 
-/***/ 8042:
+/***/ 18042:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ kraken)
 /* harmony export */ });
-/* harmony import */ var _abstract_kraken_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2459);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_kraken_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72459);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -221744,18 +222779,18 @@ class kraken extends _abstract_kraken_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 2300:
+/***/ 32300:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ krakenfutures)
 /* harmony export */ });
 /* harmony import */ var _abstract_krakenfutures_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1359);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7481);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -224639,17 +225674,17 @@ class krakenfutures extends _abstract_krakenfutures_js__WEBPACK_IMPORTED_MODULE_
 
 /***/ }),
 
-/***/ 1397:
+/***/ 41397:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ kucoin)
 /* harmony export */ });
-/* harmony import */ var _abstract_kucoin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3548);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_kucoin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(93548);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ---------------------------------------------------------------------------
 
 
@@ -229801,16 +230836,16 @@ class kucoin extends _abstract_kucoin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 6217:
+/***/ 86217:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ kucoinfutures)
 /* harmony export */ });
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _abstract_kucoinfutures_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3942);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _abstract_kucoinfutures_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33942);
 //  ---------------------------------------------------------------------------
 
 
@@ -233196,10 +234231,10 @@ class kucoinfutures extends _abstract_kucoinfutures_js__WEBPACK_IMPORTED_MODULE_
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ latoken)
 /* harmony export */ });
-/* harmony import */ var _abstract_latoken_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(121);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_latoken_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(50121);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -235022,19 +236057,19 @@ class latoken extends _abstract_latoken_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 3144:
+/***/ 13144:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ lbank)
 /* harmony export */ });
-/* harmony import */ var _abstract_lbank_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(575);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_md5_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4035);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5354);
+/* harmony import */ var _abstract_lbank_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40575);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_md5_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54035);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(75354);
 //  ---------------------------------------------------------------------------
 
 
@@ -238179,16 +239214,16 @@ class lbank extends _abstract_lbank_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 9248:
+/***/ 59248:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ luno)
 /* harmony export */ });
 /* harmony import */ var _abstract_luno_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7533);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
 //  ---------------------------------------------------------------------------
 
 
@@ -239666,13 +240701,13 @@ class luno extends _abstract_luno_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 509:
+/***/ 70509:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ mazdax)
 /* harmony export */ });
-/* harmony import */ var _abstract_mazdax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2208);
+/* harmony import */ var _abstract_mazdax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52208);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -240205,14 +241240,14 @@ class mazdax extends _abstract_mazdax_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 361:
+/***/ 10361:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ melligold)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
 //  ---------------------------------------------------------------------------
 
 
@@ -240431,17 +241466,17 @@ class melligold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defau
 
 /***/ }),
 
-/***/ 6419:
+/***/ 46419:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ mercado)
 /* harmony export */ });
-/* harmony import */ var _abstract_mercado_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6928);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
+/* harmony import */ var _abstract_mercado_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16928);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -241451,17 +242486,17 @@ class mercado extends _abstract_mercado_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 2403:
+/***/ 92403:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ mexc)
 /* harmony export */ });
-/* harmony import */ var _abstract_mexc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9174);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_mexc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(89174);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ---------------------------------------------------------------------------
 
 
@@ -247562,13 +248597,13 @@ class mexc extends _abstract_mexc_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 8301:
+/***/ 98301:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ milligold)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -247722,20 +248757,20 @@ class milligold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defau
 
 /***/ }),
 
-/***/ 5345:
+/***/ 85345:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ modetrade)
 /* harmony export */ });
-/* harmony import */ var _abstract_modetrade_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5362);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8283);
+/* harmony import */ var _abstract_modetrade_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75362);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(88283);
 /* harmony import */ var _static_dependencies_noble_curves_ed25519_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6414);
-/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8432);
-/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(987);
+/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38432);
+/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40987);
 // ---------------------------------------------------------------------------
 
 
@@ -250670,13 +251705,13 @@ class modetrade extends _abstract_modetrade_js__WEBPACK_IMPORTED_MODULE_0__/* ["
 
 /***/ }),
 
-/***/ 8982:
+/***/ 78982:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ myokx)
 /* harmony export */ });
-/* harmony import */ var _okx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3660);
+/* harmony import */ var _okx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(93660);
 // ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
@@ -250729,18 +251764,18 @@ class myokx extends _okx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 4460:
+/***/ 82079:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ ndax)
 /* harmony export */ });
-/* harmony import */ var _abstract_ndax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3414);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_totp_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8995);
+/* harmony import */ var _abstract_ndax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13414);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_totp_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(68995);
 // ---------------------------------------------------------------------------
 
 
@@ -253337,13 +254372,13 @@ class ndax extends _abstract_ndax_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 1561:
+/***/ 51561:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ nobitex)
 /* harmony export */ });
-/* harmony import */ var _abstract_nobitex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2994);
+/* harmony import */ var _abstract_nobitex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(92994);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -253796,18 +254831,18 @@ class nobitex extends _abstract_nobitex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 8473:
+/***/ 38473:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ novadax)
 /* harmony export */ });
-/* harmony import */ var _abstract_novadax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1426);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4852);
-/* harmony import */ var _static_dependencies_noble_hashes_md5_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4035);
+/* harmony import */ var _abstract_novadax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71426);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54852);
+/* harmony import */ var _static_dependencies_noble_hashes_md5_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54035);
 //  ---------------------------------------------------------------------------
 
 
@@ -255482,17 +256517,17 @@ class novadax extends _abstract_novadax_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 3805:
+/***/ 13805:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ oceanex)
 /* harmony export */ });
-/* harmony import */ var _abstract_oceanex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7774);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5354);
+/* harmony import */ var _abstract_oceanex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27774);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(75354);
 //  ---------------------------------------------------------------------------
 
 
@@ -256614,17 +257649,17 @@ class oceanex extends _abstract_oceanex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 7915:
+/***/ 87915:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ okcoin)
 /* harmony export */ });
-/* harmony import */ var _abstract_okcoin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9886);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_okcoin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(29886);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -259840,7 +260875,7 @@ class okcoin extends _abstract_okcoin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ okexchange)
 /* harmony export */ });
-/* harmony import */ var _abstract_okexchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3142);
+/* harmony import */ var _abstract_okexchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33142);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -260212,17 +261247,17 @@ class okexchange extends _abstract_okexchange_js__WEBPACK_IMPORTED_MODULE_0__/* 
 
 /***/ }),
 
-/***/ 3660:
+/***/ 93660:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ okx)
 /* harmony export */ });
-/* harmony import */ var _abstract_okx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5531);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_okx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75531);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -269230,13 +270265,13 @@ class okx extends _abstract_okx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */
 
 /***/ }),
 
-/***/ 3536:
+/***/ 63536:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ okxus)
 /* harmony export */ });
-/* harmony import */ var _okx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3660);
+/* harmony import */ var _okx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(93660);
 // ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
@@ -269295,7 +270330,7 @@ class okxus extends _okx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ ompfinex)
 /* harmony export */ });
-/* harmony import */ var _abstract_ompfinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9341);
+/* harmony import */ var _abstract_ompfinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(79341);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -269804,16 +270839,16 @@ class ompfinex extends _abstract_ompfinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 3573:
+/***/ 43573:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ onetrading)
 /* harmony export */ });
-/* harmony import */ var _abstract_onetrading_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3800);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
+/* harmony import */ var _abstract_onetrading_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43800);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
 //  ---------------------------------------------------------------------------
 
 
@@ -271581,13 +272616,13 @@ class onetrading extends _abstract_onetrading_js__WEBPACK_IMPORTED_MODULE_0__/* 
 
 /***/ }),
 
-/***/ 6469:
+/***/ 16469:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ ourbit)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -272030,16 +273065,16 @@ class ourbit extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 6358:
+/***/ 66358:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ oxfun)
 /* harmony export */ });
-/* harmony import */ var _abstract_oxfun_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9401);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_oxfun_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(59401);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -274958,16 +275993,16 @@ class oxfun extends _abstract_oxfun_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 4998:
+/***/ 94998:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ p2b)
 /* harmony export */ });
 /* harmony import */ var _abstract_p2b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7849);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7481);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37481);
 // ---------------------------------------------------------------------------
 
 
@@ -276310,19 +277345,19 @@ class p2b extends _abstract_p2b_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */
 
 /***/ }),
 
-/***/ 6993:
+/***/ 76993:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ paradex)
 /* harmony export */ });
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _abstract_paradex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2134);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8283);
-/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8432);
-/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(987);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _abstract_paradex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32134);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(88283);
+/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38432);
+/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40987);
 //  ---------------------------------------------------------------------------
 
 
@@ -278928,17 +279963,17 @@ class paradex extends _abstract_paradex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 3280:
+/***/ 43280:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ paymium)
 /* harmony export */ });
 /* harmony import */ var _abstract_paymium_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8563);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -279581,17 +280616,17 @@ class paymium extends _abstract_paymium_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 9075:
+/***/ 29075:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ phemex)
 /* harmony export */ });
-/* harmony import */ var _abstract_phemex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4158);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_phemex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84158);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ----------------------------------------------------------------------------
 
 
@@ -284923,13 +285958,13 @@ class phemex extends _abstract_phemex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 8785:
+/***/ 88785:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ pingi)
 /* harmony export */ });
-/* harmony import */ var _abstract_pingi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8310);
+/* harmony import */ var _abstract_pingi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(68310);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -285374,17 +286409,17 @@ class pingi extends _abstract_pingi_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 288:
+/***/ 30288:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ poloniex)
 /* harmony export */ });
-/* harmony import */ var _abstract_poloniex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7733);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_poloniex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87733);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -289064,7 +290099,7 @@ class poloniex extends _abstract_poloniex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 8920:
+/***/ 28920:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -289416,15 +290451,15 @@ class pooleno extends _abstract_pooleno_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 6810:
+/***/ 46810:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ alpaca)
 /* harmony export */ });
-/* harmony import */ var _alpaca_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7930);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _alpaca_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(77930);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -290147,16 +291182,16 @@ class alpaca extends _alpaca_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 136:
+/***/ 40136:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ apex)
 /* harmony export */ });
-/* harmony import */ var _apex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4920);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _apex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(64920);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -291199,16 +292234,16 @@ class apex extends _apex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 1657:
+/***/ 36419:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ ascendex)
 /* harmony export */ });
-/* harmony import */ var _ascendex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1411);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _ascendex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71411);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -292219,15 +293254,15 @@ class ascendex extends _ascendex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 
 /***/ }),
 
-/***/ 9338:
+/***/ 29338:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bequant)
 /* harmony export */ });
-/* harmony import */ var _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4524);
-/* harmony import */ var _hitbtc_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7996);
-/* harmony import */ var _bequant_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9002);
+/* harmony import */ var _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(54524);
+/* harmony import */ var _hitbtc_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37996);
+/* harmony import */ var _bequant_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49002);
 //  ---------------------------------------------------------------------------
 
 
@@ -292268,19 +293303,19 @@ class bequant extends _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .
 
 /***/ }),
 
-/***/ 9544:
+/***/ 19544:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ binance)
 /* harmony export */ });
-/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3192);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5354);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8283);
+/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13192);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(75354);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(88283);
 /* harmony import */ var _static_dependencies_noble_curves_ed25519_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6414);
 // ----------------------------------------------------------------------------
 
@@ -296653,14 +297688,14 @@ class binance extends _binance_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 902:
+/***/ 40902:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ binancecoinm)
 /* harmony export */ });
-/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9544);
-/* harmony import */ var _binancecoinm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1510);
+/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19544);
+/* harmony import */ var _binancecoinm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51510);
 //  ---------------------------------------------------------------------------
 
 
@@ -296691,14 +297726,14 @@ class binancecoinm extends _binance_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 8788:
+/***/ 88788:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ binanceus)
 /* harmony export */ });
-/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9544);
-/* harmony import */ var _binanceus_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8228);
+/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19544);
+/* harmony import */ var _binanceus_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(68228);
 //  ---------------------------------------------------------------------------
 
 
@@ -296749,14 +297784,14 @@ class binanceus extends _binance_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 
 /***/ }),
 
-/***/ 8251:
+/***/ 68251:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ binanceusdm)
 /* harmony export */ });
-/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9544);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
+/* harmony import */ var _binance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19544);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
 //  ---------------------------------------------------------------------------
 
 
@@ -296792,15 +297827,15 @@ class binanceusdm extends _binance_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
 
 /***/ }),
 
-/***/ 9456:
+/***/ 89456:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bingx)
 /* harmony export */ });
-/* harmony import */ var _bingx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2480);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _bingx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72480);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -298367,17 +299402,17 @@ class bingx extends _bingx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 1038:
+/***/ 98657:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitfinex)
 /* harmony export */ });
-/* harmony import */ var _bitfinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8657);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5147);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _bitfinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(88657);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85147);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -299541,17 +300576,17 @@ class bitfinex extends _bitfinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 
 /***/ }),
 
-/***/ 205:
+/***/ 90205:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitget)
 /* harmony export */ });
-/* harmony import */ var _bitget_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7757);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5147);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _bitget_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67757);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85147);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -301877,15 +302912,15 @@ class bitget extends _bitget_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 6181:
+/***/ 96181:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bithumb)
 /* harmony export */ });
-/* harmony import */ var _bithumb_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(357);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
+/* harmony import */ var _bithumb_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(60357);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
 //  ---------------------------------------------------------------------------
 
 
@@ -302279,17 +303314,17 @@ class bithumb extends _bithumb_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 3069:
+/***/ 53069:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitmart)
 /* harmony export */ });
-/* harmony import */ var _bitmart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1837);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_ws_OrderBookSide_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(975);
+/* harmony import */ var _bitmart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31837);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_ws_OrderBookSide_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(30975);
 //  ---------------------------------------------------------------------------
 
 
@@ -303974,16 +305009,16 @@ class bitmart extends _bitmart_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 3731:
+/***/ 43731:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitmex)
 /* harmony export */ });
-/* harmony import */ var _bitmex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9523);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _bitmex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(99523);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -305742,16 +306777,16 @@ class bitmex extends _bitmex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 4401:
+/***/ 54401:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitopro)
 /* harmony export */ });
-/* harmony import */ var _bitopro_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2753);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7481);
+/* harmony import */ var _bitopro_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72753);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37481);
 // ----------------------------------------------------------------------------
 
 
@@ -306227,14 +307262,14 @@ class bitopro extends _bitopro_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 3333:
+/***/ 43333:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitrue)
 /* harmony export */ });
-/* harmony import */ var _bitrue_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9061);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _bitrue_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(99061);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -306694,16 +307729,16 @@ class bitrue extends _bitrue_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 3326:
+/***/ 73326:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitstamp)
 /* harmony export */ });
 /* harmony import */ var _bitstamp_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(382);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -307289,15 +308324,15 @@ class bitstamp extends _bitstamp_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 
 /***/ }),
 
-/***/ 2391:
+/***/ 82391:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bittrade)
 /* harmony export */ });
-/* harmony import */ var _bittrade_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2263);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _bittrade_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(92263);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 // ----------------------------------------------------------------------------
 
 
@@ -307902,16 +308937,16 @@ class bittrade extends _bittrade_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 
 /***/ }),
 
-/***/ 1327:
+/***/ 11327:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bitvavo)
 /* harmony export */ });
-/* harmony import */ var _bitvavo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3727);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _bitvavo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(83727);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -309361,15 +310396,15 @@ class bitvavo extends _bitvavo_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 8693:
+/***/ 78693:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ blockchaincom)
 /* harmony export */ });
-/* harmony import */ var _blockchaincom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3205);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _blockchaincom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73205);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -310145,16 +311180,16 @@ class blockchaincom extends _blockchaincom_js__WEBPACK_IMPORTED_MODULE_0__/* ["d
 
 /***/ }),
 
-/***/ 1672:
+/***/ 61672:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ blofin)
 /* harmony export */ });
-/* harmony import */ var _blofin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2520);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _blofin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42520);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -310902,10 +311937,10 @@ class blofin extends _blofin_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ bybit)
 /* harmony export */ });
-/* harmony import */ var _bybit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5462);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _bybit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(45462);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -313423,17 +314458,17 @@ class bybit extends _bybit_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 3774:
+/***/ 93774:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ cex)
 /* harmony export */ });
-/* harmony import */ var _cex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8846);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _cex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(78846);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -314967,16 +316002,16 @@ class cex extends _cex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 8160:
+/***/ 98160:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinbase)
 /* harmony export */ });
-/* harmony import */ var _coinbase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7504);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4852);
+/* harmony import */ var _coinbase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17504);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -315711,13 +316746,13 @@ class coinbase extends _coinbase_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 
 /***/ }),
 
-/***/ 5918:
+/***/ 45918:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinbaseadvanced)
 /* harmony export */ });
-/* harmony import */ var _coinbase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8160);
+/* harmony import */ var _coinbase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(98160);
 // ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
@@ -315734,16 +316769,16 @@ class coinbaseadvanced extends _coinbase_js__WEBPACK_IMPORTED_MODULE_0__/* ["def
 
 /***/ }),
 
-/***/ 1925:
+/***/ 11925:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinbaseexchange)
 /* harmony export */ });
 /* harmony import */ var _coinbaseexchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4293);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4852);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -316718,9 +317753,9 @@ class coinbaseexchange extends _coinbaseexchange_js__WEBPACK_IMPORTED_MODULE_0__
 /* harmony export */   A: () => (/* binding */ coinbaseinternational)
 /* harmony export */ });
 /* harmony import */ var _coinbaseinternational_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1558);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4852);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2931);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(54852);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -317529,11 +318564,11 @@ class coinbaseinternational extends _coinbaseinternational_js__WEBPACK_IMPORTED_
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coincatch)
 /* harmony export */ });
-/* harmony import */ var _coincatch_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(570);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4852);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2931);
+/* harmony import */ var _coincatch_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20570);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(54852);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -319094,15 +320129,15 @@ class coincatch extends _coincatch_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
 
 /***/ }),
 
-/***/ 5317:
+/***/ 85317:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coincheck)
 /* harmony export */ });
-/* harmony import */ var _coincheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2741);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _coincheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22741);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -319311,16 +320346,16 @@ class coincheck extends _coincheck_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
 
 /***/ }),
 
-/***/ 9088:
+/***/ 49088:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinex)
 /* harmony export */ });
-/* harmony import */ var _coinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9344);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _coinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39344);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -320745,15 +321780,15 @@ class coinex extends _coinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 8673:
+/***/ 58673:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ coinone)
 /* harmony export */ });
-/* harmony import */ var _coinone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5377);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _coinone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(65377);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -321171,10 +322206,10 @@ class coinone extends _coinone_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ cryptocom)
 /* harmony export */ });
-/* harmony import */ var _cryptocom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6068);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _cryptocom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(56068);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -322587,15 +323622,15 @@ class cryptocom extends _cryptocom_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
 
 /***/ }),
 
-/***/ 8717:
+/***/ 28717:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ defx)
 /* harmony export */ });
-/* harmony import */ var _defx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8458);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _defx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26077);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -323459,16 +324494,16 @@ class defx extends _defx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 7791:
+/***/ 77791:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ deribit)
 /* harmony export */ });
-/* harmony import */ var _deribit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2591);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _deribit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72591);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -324533,15 +325568,15 @@ class deribit extends _deribit_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 2127:
+/***/ 82127:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ derive)
 /* harmony export */ });
-/* harmony import */ var _derive_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1839);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _derive_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71839);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 // ----------------------------------------------------------------------------
 
 
@@ -325293,16 +326328,16 @@ class derive extends _derive_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 5233:
+/***/ 65233:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ exmo)
 /* harmony export */ });
-/* harmony import */ var _exmo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7057);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7481);
+/* harmony import */ var _exmo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(57057);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -326204,17 +327239,17 @@ class exmo extends _exmo_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 9195:
+/***/ 19195:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ gate)
 /* harmony export */ });
-/* harmony import */ var _gate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9403);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
+/* harmony import */ var _gate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(99403);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -328332,13 +329367,13 @@ class gate extends _gate_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 5843:
+/***/ 75843:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ gateio)
 /* harmony export */ });
-/* harmony import */ var _gate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9195);
+/* harmony import */ var _gate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19195);
 //  ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
@@ -328354,17 +329389,17 @@ class gateio extends _gate_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 375:
+/***/ 40375:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ gemini)
 /* harmony export */ });
-/* harmony import */ var _gemini_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8823);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5147);
+/* harmony import */ var _gemini_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(58823);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -329295,14 +330330,14 @@ class gemini extends _gemini_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 1481:
+/***/ 21481:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ hashkey)
 /* harmony export */ });
-/* harmony import */ var _hashkey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2937);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _hashkey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(62937);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -330144,16 +331179,16 @@ class hashkey extends _hashkey_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 4524:
+/***/ 54524:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ hitbtc)
 /* harmony export */ });
-/* harmony import */ var _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7996);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4852);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
+/* harmony import */ var _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37996);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54852);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
 //  ---------------------------------------------------------------------------
 
 
@@ -331552,16 +332587,16 @@ class hitbtc extends _hitbtc_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 8247:
+/***/ 48247:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ hollaex)
 /* harmony export */ });
-/* harmony import */ var _hollaex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4455);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _hollaex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24455);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -332164,16 +333199,16 @@ class hollaex extends _hollaex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 3898:
+/***/ 63898:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ htx)
 /* harmony export */ });
-/* harmony import */ var _htx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9946);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _htx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(59946);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -334587,13 +335622,13 @@ class htx extends _htx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 6335:
+/***/ 86335:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ huobi)
 /* harmony export */ });
-/* harmony import */ var _htx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3898);
+/* harmony import */ var _htx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63898);
 //  ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
@@ -334609,14 +335644,14 @@ class huobi extends _htx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 3984:
+/***/ 53984:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ hyperliquid)
 /* harmony export */ });
 /* harmony import */ var _hyperliquid_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1936);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -335741,15 +336776,15 @@ class hyperliquid extends _hyperliquid_js__WEBPACK_IMPORTED_MODULE_0__/* ["defau
 
 /***/ }),
 
-/***/ 98:
+/***/ 70098:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ independentreserve)
 /* harmony export */ });
-/* harmony import */ var _independentreserve_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4162);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _independentreserve_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44162);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -336035,16 +337070,16 @@ class independentreserve extends _independentreserve_js__WEBPACK_IMPORTED_MODULE
 
 /***/ }),
 
-/***/ 9050:
+/***/ 99050:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ kraken)
 /* harmony export */ });
-/* harmony import */ var _kraken_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8042);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2931);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5147);
+/* harmony import */ var _kraken_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18042);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52931);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -337828,18 +338863,18 @@ class kraken extends _kraken_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 6396:
+/***/ 46396:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ krakenfutures)
 /* harmony export */ });
-/* harmony import */ var _krakenfutures_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2300);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7481);
+/* harmony import */ var _krakenfutures_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32300);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -339430,15 +340465,15 @@ class krakenfutures extends _krakenfutures_js__WEBPACK_IMPORTED_MODULE_0__/* ["d
 
 /***/ }),
 
-/***/ 4965:
+/***/ 84965:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ kucoin)
 /* harmony export */ });
-/* harmony import */ var _kucoin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1397);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _kucoin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41397);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -340867,15 +341902,15 @@ class kucoin extends _kucoin_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 905:
+/***/ 90905:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ kucoinfutures)
 /* harmony export */ });
-/* harmony import */ var _kucoinfutures_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6217);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _kucoinfutures_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(86217);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -342169,15 +343204,15 @@ class kucoinfutures extends _kucoinfutures_js__WEBPACK_IMPORTED_MODULE_0__/* ["d
 
 /***/ }),
 
-/***/ 1736:
+/***/ 21736:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ lbank)
 /* harmony export */ });
-/* harmony import */ var _lbank_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3144);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _lbank_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13144);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 
 
 
@@ -343126,14 +344161,14 @@ class lbank extends _lbank_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 9827:
+/***/ 22208:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ luno)
 /* harmony export */ });
-/* harmony import */ var _luno_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9248);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _luno_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(59248);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -343454,16 +344489,16 @@ class luno extends _luno_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 9219:
+/***/ 89219:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ mexc)
 /* harmony export */ });
-/* harmony import */ var _mexc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2403);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4852);
+/* harmony import */ var _mexc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(92403);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -345471,17 +346506,17 @@ class mexc extends _mexc_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 49:
+/***/ 80049:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ modetrade)
 /* harmony export */ });
-/* harmony import */ var _modetrade_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5345);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8283);
+/* harmony import */ var _modetrade_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(85345);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(88283);
 /* harmony import */ var _static_dependencies_noble_curves_ed25519_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6414);
 // ----------------------------------------------------------------------------
 
@@ -346816,7 +347851,7 @@ class modetrade extends _modetrade_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
 
 /***/ }),
 
-/***/ 3062:
+/***/ 23062:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -346860,14 +347895,14 @@ class myokx extends _okx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 3887:
+/***/ 63887:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ ndax)
 /* harmony export */ });
-/* harmony import */ var _ndax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4460);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _ndax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(82079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -347411,16 +348446,16 @@ class ndax extends _ndax_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 6187:
+/***/ 16187:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ okcoin)
 /* harmony export */ });
-/* harmony import */ var _okcoin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7915);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4852);
+/* harmony import */ var _okcoin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87915);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -348188,10 +349223,10 @@ class okcoin extends _okcoin_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ okx)
 /* harmony export */ });
-/* harmony import */ var _okx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3660);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
+/* harmony import */ var _okx_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(93660);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -350669,7 +351704,7 @@ class okx extends _okx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 3296:
+/***/ 83296:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -350713,16 +351748,16 @@ class okxus extends _okx_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 4357:
+/***/ 64357:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ onetrading)
 /* harmony export */ });
-/* harmony import */ var _onetrading_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3573);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
+/* harmony import */ var _onetrading_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43573);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
 
 
@@ -352070,10 +353105,10 @@ class onetrading extends _onetrading_js__WEBPACK_IMPORTED_MODULE_0__/* ["default
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ oxfun)
 /* harmony export */ });
-/* harmony import */ var _oxfun_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6358);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _oxfun_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(66358);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -353184,15 +354219,15 @@ class oxfun extends _oxfun_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 4934:
+/***/ 44934:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ p2b)
 /* harmony export */ });
-/* harmony import */ var _p2b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4998);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _p2b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(94998);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -353697,14 +354732,14 @@ class p2b extends _p2b_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 1057:
+/***/ 51057:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ paradex)
 /* harmony export */ });
-/* harmony import */ var _paradex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6993);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _paradex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(76993);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -354073,17 +355108,17 @@ class paradex extends _paradex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 1619:
+/***/ 51619:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ phemex)
 /* harmony export */ });
-/* harmony import */ var _phemex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9075);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5147);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2079);
+/* harmony import */ var _phemex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(29075);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85147);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62079);
 //  ---------------------------------------------------------------------------
 
 
@@ -355651,17 +356686,17 @@ class phemex extends _phemex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 3456:
+/***/ 83456:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ poloniex)
 /* harmony export */ });
-/* harmony import */ var _poloniex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(288);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2931);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4852);
+/* harmony import */ var _poloniex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30288);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52931);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -356978,15 +358013,15 @@ class poloniex extends _poloniex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 
 /***/ }),
 
-/***/ 5738:
+/***/ 25738:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ probit)
 /* harmony export */ });
-/* harmony import */ var _probit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5037);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _probit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27418);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -357578,14 +358613,14 @@ class probit extends _probit_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 8719:
+/***/ 28719:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ tradeogre)
 /* harmony export */ });
-/* harmony import */ var _tradeogre_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5887);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _tradeogre_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(45887);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -357868,17 +358903,17 @@ class tradeogre extends _tradeogre_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
 
 /***/ }),
 
-/***/ 5794:
+/***/ 65794:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ upbit)
 /* harmony export */ });
-/* harmony import */ var _upbit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(930);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5354);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
+/* harmony import */ var _upbit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90930);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(75354);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
 //  ---------------------------------------------------------------------------
 
 
@@ -358566,16 +359601,16 @@ class upbit extends _upbit_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 910:
+/***/ 10910:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ vertex)
 /* harmony export */ });
-/* harmony import */ var _vertex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4910);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
+/* harmony import */ var _vertex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84910);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
 // ----------------------------------------------------------------------------
 
 
@@ -359573,16 +360608,16 @@ class vertex extends _vertex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A
 
 /***/ }),
 
-/***/ 4712:
+/***/ 14712:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ whitebit)
 /* harmony export */ });
-/* harmony import */ var _whitebit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5336);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
+/* harmony import */ var _whitebit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75336);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -360552,17 +361587,17 @@ class whitebit extends _whitebit_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 
 /***/ }),
 
-/***/ 5869:
+/***/ 65869:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ woo)
 /* harmony export */ });
-/* harmony import */ var _woo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(669);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _woo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40669);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ----------------------------------------------------------------------------
 
 
@@ -361912,17 +362947,17 @@ class woo extends _woo_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 8713:
+/***/ 28713:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ woofipro)
 /* harmony export */ });
-/* harmony import */ var _woofipro_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9641);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2931);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8283);
+/* harmony import */ var _woofipro_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(99641);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52931);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(88283);
 /* harmony import */ var _static_dependencies_noble_curves_ed25519_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6414);
 // ----------------------------------------------------------------------------
 
@@ -363257,14 +364292,14 @@ class woofipro extends _woofipro_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] *
 
 /***/ }),
 
-/***/ 2368:
+/***/ 22368:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ xt)
 /* harmony export */ });
-/* harmony import */ var _xt_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5344);
-/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2931);
+/* harmony import */ var _xt_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(55344);
+/* harmony import */ var _base_ws_Cache_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52931);
 //  ---------------------------------------------------------------------------
 
 
@@ -364493,16 +365528,16 @@ class xt extends _xt_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
 
 /***/ }),
 
-/***/ 5037:
+/***/ 27418:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ probit)
 /* harmony export */ });
-/* harmony import */ var _abstract_probit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(995);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
+/* harmony import */ var _abstract_probit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10995);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
 //  ---------------------------------------------------------------------------
 
 
@@ -366436,13 +367471,13 @@ class probit extends _abstract_probit_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 9614:
+/***/ 79614:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ raastin)
 /* harmony export */ });
-/* harmony import */ var _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5893);
+/* harmony import */ var _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75893);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -366969,13 +368004,13 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 676:
+/***/ 30676:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ ramzinex)
 /* harmony export */ });
-/* harmony import */ var _abstract_ramzinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9089);
+/* harmony import */ var _abstract_ramzinex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39089);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -367484,13 +368519,13 @@ class ramzinex extends _abstract_ramzinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 9451:
+/***/ 99451:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ saraf)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -367798,13 +368833,13 @@ class saraf extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"]
 
 /***/ }),
 
-/***/ 5822:
+/***/ 55822:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ sarmayex)
 /* harmony export */ });
-/* harmony import */ var _abstract_sarmayex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(907);
+/* harmony import */ var _abstract_sarmayex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(70907);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -368179,13 +369214,13 @@ class sarmayex extends _abstract_sarmayex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 9702:
+/***/ 59702:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ sarrafex)
 /* harmony export */ });
-/* harmony import */ var _abstract_sarrafex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7539);
+/* harmony import */ var _abstract_sarrafex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(57539);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -368685,24 +369720,24 @@ class sarrafex extends _abstract_sarrafex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 8595:
+/***/ 38595:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   y: () => (/* binding */ AbiCoder)
 /* harmony export */ });
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1420);
-/* harmony import */ var _coders_abstract_coder_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4176);
-/* harmony import */ var _coders_address_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6768);
-/* harmony import */ var _coders_array_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9489);
-/* harmony import */ var _coders_boolean_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3168);
-/* harmony import */ var _coders_bytes_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3287);
-/* harmony import */ var _coders_fixed_bytes_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(300);
-/* harmony import */ var _coders_null_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9671);
-/* harmony import */ var _coders_number_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(1475);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71420);
+/* harmony import */ var _coders_abstract_coder_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(74176);
+/* harmony import */ var _coders_address_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(36768);
+/* harmony import */ var _coders_array_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(19489);
+/* harmony import */ var _coders_boolean_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(93168);
+/* harmony import */ var _coders_bytes_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(93287);
+/* harmony import */ var _coders_fixed_bytes_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(50300);
+/* harmony import */ var _coders_null_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(39671);
+/* harmony import */ var _coders_number_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(61475);
 /* harmony import */ var _coders_string_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4599);
-/* harmony import */ var _coders_tuple_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9426);
-/* harmony import */ var _fragments_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9428);
+/* harmony import */ var _coders_tuple_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59426);
+/* harmony import */ var _fragments_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(49428);
 /**
  *  When sending values to or receiving values from a [[Contract]], the
  *  data is generally encoded using the [ABI standard](link-solc-abi).
@@ -368856,8 +369891,8 @@ _AbiCoder_instances = new WeakSet(), _AbiCoder_getCoder = function _AbiCoder_get
 /* harmony export */   b: () => (/* binding */ getAddress)
 /* harmony export */ });
 /* unused harmony export getIcapAddress */
-/* harmony import */ var _noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8432);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1420);
+/* harmony import */ var _noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(38432);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71420);
 // TODO: unify address functions in other language? or remove it?
 
 
@@ -369018,7 +370053,7 @@ function getIcapAddress(address) {
 
 /***/ }),
 
-/***/ 4176:
+/***/ 74176:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -369029,10 +370064,10 @@ function getIcapAddress(address) {
 /* harmony export */   mP: () => (/* binding */ Reader)
 /* harmony export */ });
 /* unused harmony export checkResultErrors */
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1768);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1420);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3867);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9654);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41768);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71420);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33867);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(39654);
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -369455,16 +370490,16 @@ _Reader_data = new WeakMap(), _Reader_offset = new WeakMap(), _Reader_bytesRead 
 
 /***/ }),
 
-/***/ 6768:
+/***/ 36768:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   S: () => (/* binding */ AddressCoder)
 /* harmony export */ });
 /* harmony import */ var _address_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2014);
-/* harmony import */ var _utils_maths_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1768);
-/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9073);
-/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4176);
+/* harmony import */ var _utils_maths_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41768);
+/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49073);
+/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74176);
 
 
 
@@ -369497,13 +370532,13 @@ class AddressCoder extends _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__/* .Co
 
 /***/ }),
 
-/***/ 1677:
+/***/ 81677:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   j: () => (/* binding */ AnonymousCoder)
 /* harmony export */ });
-/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4176);
+/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74176);
 
 /**
  *  Clones the functionality of an existing Coder, but without a localName
@@ -369529,7 +370564,7 @@ class AnonymousCoder extends _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__/* .
 
 /***/ }),
 
-/***/ 9489:
+/***/ 19489:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -369537,11 +370572,11 @@ class AnonymousCoder extends _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__/* .
 /* harmony export */   l1: () => (/* binding */ unpack),
 /* harmony export */   qq: () => (/* binding */ pack)
 /* harmony export */ });
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1420);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9654);
-/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9073);
-/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4176);
-/* harmony import */ var _anonymous_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1677);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71420);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39654);
+/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(49073);
+/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74176);
+/* harmony import */ var _anonymous_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81677);
 
 
 
@@ -369702,14 +370737,14 @@ class ArrayCoder extends _abstract_coder_js__WEBPACK_IMPORTED_MODULE_1__/* .Code
 
 /***/ }),
 
-/***/ 3168:
+/***/ 93168:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   k: () => (/* binding */ BooleanCoder)
 /* harmony export */ });
-/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9073);
-/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4176);
+/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49073);
+/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74176);
 
 
 /**
@@ -369734,15 +370769,15 @@ class BooleanCoder extends _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__/* .Co
 
 /***/ }),
 
-/***/ 3287:
+/***/ 93287:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   i: () => (/* binding */ DynamicBytesCoder),
 /* harmony export */   z: () => (/* binding */ BytesCoder)
 /* harmony export */ });
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3867);
-/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4176);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33867);
+/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74176);
 
 
 /**
@@ -369780,16 +370815,16 @@ class BytesCoder extends DynamicBytesCoder {
 
 /***/ }),
 
-/***/ 300:
+/***/ 50300:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   J: () => (/* binding */ FixedBytesCoder)
 /* harmony export */ });
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9654);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3867);
-/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9073);
-/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4176);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39654);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33867);
+/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(49073);
+/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74176);
 
 
 
@@ -369820,13 +370855,13 @@ class FixedBytesCoder extends _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__/* 
 
 /***/ }),
 
-/***/ 9671:
+/***/ 39671:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   h: () => (/* binding */ NullCoder)
 /* harmony export */ });
-/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4176);
+/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74176);
 
 const Empty = new Uint8Array([]);
 /**
@@ -369854,16 +370889,16 @@ class NullCoder extends _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__/* .Coder
 
 /***/ }),
 
-/***/ 1475:
+/***/ 61475:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   p: () => (/* binding */ NumberCoder)
 /* harmony export */ });
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9654);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1768);
-/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9073);
-/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4176);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39654);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(41768);
+/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(49073);
+/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74176);
 
 
 
@@ -369916,9 +370951,9 @@ class NumberCoder extends _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__/* .Cod
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   v: () => (/* binding */ StringCoder)
 /* harmony export */ });
-/* harmony import */ var _utils_utf8_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9436);
-/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9073);
-/* harmony import */ var _bytes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3287);
+/* harmony import */ var _utils_utf8_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(89436);
+/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(49073);
+/* harmony import */ var _bytes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(93287);
 
 
 
@@ -369943,16 +370978,16 @@ class StringCoder extends _bytes_js__WEBPACK_IMPORTED_MODULE_0__/* .DynamicBytes
 
 /***/ }),
 
-/***/ 9426:
+/***/ 59426:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   y: () => (/* binding */ TupleCoder)
 /* harmony export */ });
-/* harmony import */ var _utils_properties_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9654);
-/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9073);
-/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4176);
-/* harmony import */ var _array_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9489);
+/* harmony import */ var _utils_properties_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39654);
+/* harmony import */ var _typed_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(49073);
+/* harmony import */ var _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74176);
+/* harmony import */ var _array_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19489);
 
 
 
@@ -370018,17 +371053,17 @@ class TupleCoder extends _abstract_coder_js__WEBPACK_IMPORTED_MODULE_0__/* .Code
 
 /***/ }),
 
-/***/ 9428:
+/***/ 49428:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   aX: () => (/* binding */ ParamType)
 /* harmony export */ });
 /* unused harmony exports Fragment, NamedFragment, ErrorFragment, EventFragment, ConstructorFragment, FallbackFragment, FunctionFragment, StructFragment */
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1768);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1420);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9654);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4815);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41768);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71420);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39654);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(94815);
 /**
  *  A fragment is a single item from an ABI, which may represent any of:
  *
@@ -371279,19 +372314,19 @@ class StructFragment extends NamedFragment {
 
 /***/ }),
 
-/***/ 4380:
+/***/ 81999:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   z: () => (/* binding */ TypedDataEncoder)
 /* harmony export */ });
 /* harmony import */ var _address_index_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2014);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3867);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1768);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1420);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4815);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9654);
-/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5095);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33867);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(41768);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(71420);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(94815);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(39654);
+/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15095);
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -371780,13 +372815,13 @@ _TypedDataEncoder_types = new WeakMap(), _TypedDataEncoder_fullTypes = new WeakM
 
 /***/ }),
 
-/***/ 5897:
+/***/ 25897:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Ay: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _abi_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8595);
+/* harmony import */ var _abi_coder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(38595);
 /**
  *  The Application Binary Interface (ABI) describes how method input
  *  parameters should be encoded, their results decoded, and how to
@@ -371807,13 +372842,13 @@ _TypedDataEncoder_types = new WeakMap(), _TypedDataEncoder_fullTypes = new WeakM
 
 /***/ }),
 
-/***/ 9073:
+/***/ 49073:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   V: () => (/* binding */ Typed)
 /* harmony export */ });
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9654);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39654);
 /**
  *  A Typed object allows a value to have its type explicitly
  *  specified.
@@ -372420,7 +373455,7 @@ _Typed_options = new WeakMap();
 
 /***/ }),
 
-/***/ 3867:
+/***/ 33867:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -372433,7 +373468,7 @@ _Typed_options = new WeakMap();
 /* harmony export */   xW: () => (/* binding */ concat)
 /* harmony export */ });
 /* unused harmony exports dataLength, dataSlice, stripZerosLeft, zeroPadBytes */
-/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1420);
+/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71420);
 /**
  *  Some data helpers.
  *
@@ -372607,7 +373642,7 @@ function zeroPadBytes(data, length) {
 
 /***/ }),
 
-/***/ 1420:
+/***/ 71420:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -372619,7 +373654,7 @@ function zeroPadBytes(data, length) {
 /* harmony export */   vA: () => (/* binding */ assert)
 /* harmony export */ });
 /* unused harmony exports isCallException, makeError */
-/* harmony import */ var _properties_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9654);
+/* harmony import */ var _properties_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39654);
 /**
  *  All errors in ethers include properties to ensure they are both
  *  human-readable (i.e. ``.message``) and machine-readable (i.e. ``.code``).
@@ -372845,7 +373880,7 @@ function assertPrivate(givenGuard, guard, className) {
 
 /***/ }),
 
-/***/ 4815:
+/***/ 94815:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -372853,8 +373888,8 @@ function assertPrivate(givenGuard, guard, className) {
 /* harmony export */   id: () => (/* binding */ id)
 /* harmony export */ });
 /* unused harmony export sha256 */
-/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8283);
-/* harmony import */ var _noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8432);
+/* harmony import */ var _base_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(88283);
+/* harmony import */ var _noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38432);
 /**
  *  There are many simple utilities required to interact with
  *  Ethereum and to simplify the library, without increasing
@@ -372891,7 +373926,7 @@ function sha256(value) {
 
 /***/ }),
 
-/***/ 1768:
+/***/ 41768:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -372907,8 +373942,8 @@ function sha256(value) {
 /* harmony export */   up: () => (/* binding */ toBeHex)
 /* harmony export */ });
 /* unused harmony export getUint */
-/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3867);
-/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1420);
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33867);
+/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71420);
 /**
  *  Some mathematic operations.
  *
@@ -373127,7 +374162,7 @@ function toQuantity(value) {
 
 /***/ }),
 
-/***/ 9654:
+/***/ 39654:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -373191,7 +374226,7 @@ function defineProperties(target, values, types) {
 
 /***/ }),
 
-/***/ 9436:
+/***/ 89436:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -373199,8 +374234,8 @@ function defineProperties(target, values, types) {
 /* harmony export */   _v: () => (/* binding */ toUtf8String)
 /* harmony export */ });
 /* unused harmony exports Utf8ErrorFuncs, toUtf8CodePoints */
-/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3867);
-/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1420);
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33867);
+/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71420);
 /**
  *  Using strings in Ethereum (or any security-basd system) requires
  *  additional care. These utilities attempt to mitigate some of the
@@ -373424,14 +374459,14 @@ function toUtf8CodePoints(str, form) {
 
 /***/ }),
 
-/***/ 5944:
+/***/ 85944:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   v: () => (/* binding */ JSEncrypt)
 /* harmony export */ });
-/* harmony import */ var _lib_jsbn_base64_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6279);
-/* harmony import */ var _JSEncryptRSAKey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2501);
+/* harmony import */ var _lib_jsbn_base64_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56279);
+/* harmony import */ var _JSEncryptRSAKey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(62501);
 
 
 const version = typeof process !== 'undefined'
@@ -373624,19 +374659,19 @@ JSEncrypt.version = version;
 
 /***/ }),
 
-/***/ 2501:
+/***/ 62501:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Y: () => (/* binding */ JSEncryptRSAKey)
 /* harmony export */ });
-/* harmony import */ var _lib_jsbn_base64_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6279);
-/* harmony import */ var _lib_asn1js_hex_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1170);
-/* harmony import */ var _lib_asn1js_base64_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5268);
+/* harmony import */ var _lib_jsbn_base64_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(56279);
+/* harmony import */ var _lib_asn1js_hex_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21170);
+/* harmony import */ var _lib_asn1js_base64_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(45268);
 /* harmony import */ var _lib_asn1js_asn1_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(890);
-/* harmony import */ var _lib_jsbn_rsa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9476);
-/* harmony import */ var _lib_jsbn_jsbn_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1279);
-/* harmony import */ var _lib_jsrsasign_asn1_1_0_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7196);
+/* harmony import */ var _lib_jsbn_rsa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(69476);
+/* harmony import */ var _lib_jsbn_jsbn_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(41279);
+/* harmony import */ var _lib_jsrsasign_asn1_1_0_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(67196);
 
 
 
@@ -373949,7 +374984,7 @@ class JSEncryptRSAKey extends _lib_jsbn_rsa_js__WEBPACK_IMPORTED_MODULE_0__/* .R
 /* harmony export */   Ge: () => (/* binding */ ASN1)
 /* harmony export */ });
 /* unused harmony exports Stream, ASN1Tag */
-/* harmony import */ var _int10_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8483);
+/* harmony import */ var _int10_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(28483);
 // ASN.1 JavaScript decoder
 // Copyright (c) 2008-2014 Lapo Luchini <lapo@lapo.it>
 // Permission to use, copy, modify, and/or distribute this software for any
@@ -374513,7 +375548,7 @@ class ASN1Tag {
 
 /***/ }),
 
-/***/ 5268:
+/***/ 45268:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -374611,7 +375646,7 @@ const Base64 = {
 
 /***/ }),
 
-/***/ 1170:
+/***/ 21170:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -374685,7 +375720,7 @@ const Hex = {
 
 /***/ }),
 
-/***/ 8483:
+/***/ 28483:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -374780,7 +375815,7 @@ class Int10 {
 
 /***/ }),
 
-/***/ 6279:
+/***/ 56279:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -374812,7 +375847,7 @@ function b64toBA(s) {
 
 /***/ }),
 
-/***/ 1279:
+/***/ 41279:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -374821,7 +375856,7 @@ function b64toBA(s) {
 /* harmony export */   jZ: () => (/* binding */ BigInteger)
 /* harmony export */ });
 /* unused harmony exports intAt, nbv, nbits */
-/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2628);
+/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22628);
 // Copyright (c) 2005  Tom Wu
 // All Rights Reserved.
 // See "LICENSE" for details.
@@ -376577,7 +377612,7 @@ BigInteger.ONE = nbv(1);
 
 /***/ }),
 
-/***/ 9898:
+/***/ 27517:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -376633,13 +377668,13 @@ let rng_psize = 256;
 
 /***/ }),
 
-/***/ 447:
+/***/ 80447:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   D: () => (/* binding */ SecureRandom)
 /* harmony export */ });
-/* harmony import */ var _prng4_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9898);
+/* harmony import */ var _prng4_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27517);
 // Random number generator - requires a PRNG backend, e.g. prng4.js
 
 let rng_state;
@@ -376718,14 +377753,14 @@ class SecureRandom {
 
 /***/ }),
 
-/***/ 9476:
+/***/ 69476:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   s: () => (/* binding */ RSAKey)
 /* harmony export */ });
-/* harmony import */ var _jsbn_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1279);
-/* harmony import */ var _rng_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(447);
+/* harmony import */ var _jsbn_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41279);
+/* harmony import */ var _rng_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(80447);
 // Depends on jsbn.js and rng.js
 // Version 1.1: support utf-8 encoding in pkcs1pad2
 // convert a (hex) string to a bignum object
@@ -377101,7 +378136,7 @@ function removeDigestHeader(str) {
 
 /***/ }),
 
-/***/ 2628:
+/***/ 22628:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -377175,14 +378210,14 @@ function cbit(x) {
 
 /***/ }),
 
-/***/ 7196:
+/***/ 67196:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   p: () => (/* binding */ KJUR)
 /* harmony export */ });
-/* harmony import */ var _jsbn_jsbn_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1279);
-/* harmony import */ var _yahoo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6378);
+/* harmony import */ var _jsbn_jsbn_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41279);
+/* harmony import */ var _yahoo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(56378);
 // @ts-nocheck
 /* asn1-1.0.13.js (c) 2013-2017 Kenji Urushima | kjur.github.com/jsrsasign/license
  */
@@ -378808,16 +379843,16 @@ _yahoo_js__WEBPACK_IMPORTED_MODULE_0__/* .YAHOO */ .b.lang.extend(KJUR.asn1.DERT
 
 /***/ }),
 
-/***/ 1999:
+/***/ 31999:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Z: () => (/* binding */ getHash),
 /* harmony export */   s: () => (/* binding */ createCurve)
 /* harmony export */ });
-/* harmony import */ var _noble_hashes_hmac_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(712);
-/* harmony import */ var _noble_hashes_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1094);
-/* harmony import */ var _abstract_weierstrass_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2442);
+/* harmony import */ var _noble_hashes_hmac_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30712);
+/* harmony import */ var _noble_hashes_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41094);
+/* harmony import */ var _abstract_weierstrass_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(92442);
 /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 
 
@@ -378838,15 +379873,15 @@ function createCurve(curveDef, defHash) {
 
 /***/ }),
 
-/***/ 7517:
+/***/ 57517:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ wNAF),
 /* harmony export */   h: () => (/* binding */ validateBasic)
 /* harmony export */ });
-/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1064);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(191);
+/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71064);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(30191);
 /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 // Abelian group utilities
 
@@ -379002,15 +380037,15 @@ function validateBasic(curve) {
 
 /***/ }),
 
-/***/ 4782:
+/***/ 74782:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   n: () => (/* binding */ twistedEdwards)
 /* harmony export */ });
-/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1064);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(191);
-/* harmony import */ var _curve_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7517);
+/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71064);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(30191);
+/* harmony import */ var _curve_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(57517);
 /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 // Twisted Edwards curve. The formula is: ax² + y² = 1 + dx²y²
 
@@ -379441,7 +380476,7 @@ function twistedEdwards(curveDef) {
 
 /***/ }),
 
-/***/ 4506:
+/***/ 14506:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -379449,8 +380484,8 @@ function twistedEdwards(curveDef) {
 /* harmony export */   qj: () => (/* binding */ createHasher)
 /* harmony export */ });
 /* unused harmony exports expand_message_xmd, expand_message_xof, hash_to_field */
-/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1064);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(191);
+/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71064);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30191);
 
 
 function validateDST(dst) {
@@ -379620,7 +380655,7 @@ function createHasher(Point, mapToCurve, def) {
 
 /***/ }),
 
-/***/ 1064:
+/***/ 71064:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -379637,7 +380672,7 @@ function createHasher(Point, mapToCurve, def) {
 /* harmony export */   zi: () => (/* binding */ mod)
 /* harmony export */ });
 /* unused harmony exports tonelliShanks, FpSqrt, FpInvertBatch, FpDiv, FpIsSquare, FpSqrtOdd */
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(191);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30191);
 /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 // Utilities for modular arithmetics and finite fields
 
@@ -379987,14 +381022,14 @@ function hashToPrivateScalar(hash, groupOrder, isLE = false) {
 
 /***/ }),
 
-/***/ 6451:
+/***/ 56451:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   E: () => (/* binding */ montgomery)
 /* harmony export */ });
-/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1064);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(191);
+/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71064);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30191);
 /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 
 
@@ -380155,14 +381190,14 @@ function montgomery(curveDef) {
 
 /***/ }),
 
-/***/ 1357:
+/***/ 71357:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   sN: () => (/* binding */ poseidon)
 /* harmony export */ });
 /* unused harmony exports validateOpts, splitConstants */
-/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1064);
+/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71064);
 /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 // Poseidon Hash: https://eprint.iacr.org/2019/458.pdf, https://www.poseidon-hash.info
 
@@ -380276,7 +381311,7 @@ function poseidon(opts) {
 
 /***/ }),
 
-/***/ 191:
+/***/ 30191:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -380521,7 +381556,7 @@ function validateObject(object, validators, optValidators = {}) {
 
 /***/ }),
 
-/***/ 2442:
+/***/ 92442:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -380529,9 +381564,9 @@ function validateObject(object, validators, optValidators = {}) {
 /* harmony export */   x3: () => (/* binding */ weierstrass)
 /* harmony export */ });
 /* unused harmony exports DER, weierstrassPoints, SWUFpSqrtRatio */
-/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1064);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(191);
-/* harmony import */ var _curve_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7517);
+/* harmony import */ var _modular_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71064);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(30191);
+/* harmony import */ var _curve_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(57517);
 /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 // Short Weierstrass curve. The formula is: y² = x³ + ax + b
 
@@ -381553,13 +382588,13 @@ function mapToCurveSimpleSWU(Fp, opts) {
 /* harmony export */   ev: () => (/* binding */ ed25519)
 /* harmony export */ });
 /* unused harmony exports ED25519_TORSION_SUBGROUP, ed25519ctx, ed25519ph, x25519, hashToCurve, encodeToCurve, RistrettoPoint, hash_to_ristretto255 */
-/* harmony import */ var _noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7481);
-/* harmony import */ var _noble_hashes_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1094);
-/* harmony import */ var _abstract_edwards_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4782);
-/* harmony import */ var _abstract_montgomery_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6451);
-/* harmony import */ var _abstract_modular_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1064);
-/* harmony import */ var _abstract_utils_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(191);
-/* harmony import */ var _abstract_hash_to_curve_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4506);
+/* harmony import */ var _noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37481);
+/* harmony import */ var _noble_hashes_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(41094);
+/* harmony import */ var _abstract_edwards_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(74782);
+/* harmony import */ var _abstract_montgomery_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(56451);
+/* harmony import */ var _abstract_modular_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71064);
+/* harmony import */ var _abstract_utils_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(30191);
+/* harmony import */ var _abstract_hash_to_curve_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14506);
 /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 
 
@@ -381960,18 +382995,18 @@ const hash_to_ristretto255 = (msg, options) => {
 
 /***/ }),
 
-/***/ 8342:
+/***/ 68342:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Qj: () => (/* binding */ P256)
 /* harmony export */ });
 /* unused harmony exports secp256r1, hashToCurve, encodeToCurve */
-/* harmony import */ var _shortw_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1999);
-/* harmony import */ var _noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4852);
-/* harmony import */ var _abstract_modular_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1064);
-/* harmony import */ var _abstract_weierstrass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2442);
-/* harmony import */ var _abstract_hash_to_curve_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4506);
+/* harmony import */ var _shortw_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(31999);
+/* harmony import */ var _noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54852);
+/* harmony import */ var _abstract_modular_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71064);
+/* harmony import */ var _abstract_weierstrass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92442);
+/* harmony import */ var _abstract_hash_to_curve_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(14506);
 /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 
 
@@ -382017,20 +383052,20 @@ const { hashToCurve, encodeToCurve } = _abstract_hash_to_curve_js__WEBPACK_IMPOR
 
 /***/ }),
 
-/***/ 987:
+/***/ 40987:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   bI: () => (/* binding */ secp256k1)
 /* harmony export */ });
 /* unused harmony exports schnorr, hashToCurve, encodeToCurve */
-/* harmony import */ var _noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4852);
-/* harmony import */ var _noble_hashes_utils_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1094);
-/* harmony import */ var _abstract_modular_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1064);
-/* harmony import */ var _abstract_weierstrass_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2442);
-/* harmony import */ var _abstract_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(191);
-/* harmony import */ var _abstract_hash_to_curve_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4506);
-/* harmony import */ var _shortw_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1999);
+/* harmony import */ var _noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(54852);
+/* harmony import */ var _noble_hashes_utils_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(41094);
+/* harmony import */ var _abstract_modular_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71064);
+/* harmony import */ var _abstract_weierstrass_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(92442);
+/* harmony import */ var _abstract_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(30191);
+/* harmony import */ var _abstract_hash_to_curve_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14506);
+/* harmony import */ var _shortw_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31999);
 /*! noble-curves - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 
 
@@ -382286,7 +383321,7 @@ const { hashToCurve, encodeToCurve } = _abstract_hash_to_curve_js__WEBPACK_IMPOR
 
 /***/ }),
 
-/***/ 9024:
+/***/ 69024:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -382339,14 +383374,14 @@ const assert = {
 
 /***/ }),
 
-/***/ 230:
+/***/ 60230:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   D: () => (/* binding */ SHA2)
 /* harmony export */ });
-/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9024);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1094);
+/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(69024);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41094);
 
 
 // Polyfill for Safari 14
@@ -382464,7 +383499,7 @@ class SHA2 extends _utils_js__WEBPACK_IMPORTED_MODULE_0__/* .Hash */ .Vw {
 
 /***/ }),
 
-/***/ 6157:
+/***/ 96157:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -382535,7 +383570,7 @@ const u64 = {
 
 /***/ }),
 
-/***/ 806:
+/***/ 20806:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -382546,14 +383581,14 @@ const crypto = typeof globalThis === 'object' && 'crypto' in globalThis ? global
 
 /***/ }),
 
-/***/ 712:
+/***/ 30712:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   w: () => (/* binding */ hmac)
 /* harmony export */ });
-/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9024);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1094);
+/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(69024);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41094);
 
 
 // HMAC (RFC 2104)
@@ -382634,13 +383669,13 @@ hmac.create = (hash, key) => new HMAC(hash, key);
 
 /***/ }),
 
-/***/ 4035:
+/***/ 54035:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   F: () => (/* binding */ md5)
 /* harmony export */ });
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1094);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41094);
 
 
 /*
@@ -382881,14 +383916,14 @@ md5 = (0,_utils_js__WEBPACK_IMPORTED_MODULE_0__/* .wrapConstructor */ .ld)(() =>
 
 /***/ }),
 
-/***/ 3466:
+/***/ 43466:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ sha1)
 /* harmony export */ });
-/* harmony import */ var _sha2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(230);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1094);
+/* harmony import */ var _sha2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(60230);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41094);
 
 
 // SHA1 was cryptographically broken.
@@ -382977,15 +384012,15 @@ const sha1 = (0,_utils_js__WEBPACK_IMPORTED_MODULE_1__/* .wrapConstructor */ .ld
 
 /***/ }),
 
-/***/ 4852:
+/***/ 54852:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   s: () => (/* binding */ sha256)
 /* harmony export */ });
 /* unused harmony export sha224 */
-/* harmony import */ var _sha2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(230);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1094);
+/* harmony import */ var _sha2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(60230);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41094);
 
 
 // Choice: a ? b : c
@@ -383113,16 +384148,16 @@ const sha224 = (0,_utils_js__WEBPACK_IMPORTED_MODULE_1__/* .wrapConstructor */ .
 
 /***/ }),
 
-/***/ 8432:
+/***/ 38432:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   lY: () => (/* binding */ keccak_256)
 /* harmony export */ });
 /* unused harmony exports keccakP, Keccak, sha3_224, sha3_256, sha3_384, sha3_512, keccak_224, keccak_384, keccak_512, shake128, shake256 */
-/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9024);
-/* harmony import */ var _u64_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6157);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1094);
+/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(69024);
+/* harmony import */ var _u64_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96157);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41094);
 
 
 
@@ -383332,7 +384367,7 @@ const shake256 = genShake(0x1f, 136, 256 / 8);
 
 /***/ }),
 
-/***/ 7481:
+/***/ 37481:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -383340,9 +384375,9 @@ const shake256 = genShake(0x1f, 136, 256 / 8);
 /* harmony export */   qt: () => (/* binding */ sha384)
 /* harmony export */ });
 /* unused harmony exports SHA512, sha512_224, sha512_256 */
-/* harmony import */ var _sha2_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(230);
-/* harmony import */ var _u64_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6157);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1094);
+/* harmony import */ var _sha2_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(60230);
+/* harmony import */ var _u64_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96157);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(41094);
 
 
 
@@ -383577,7 +384612,7 @@ const sha384 = (0,_utils_js__WEBPACK_IMPORTED_MODULE_2__/* .wrapConstructor */ .
 
 /***/ }),
 
-/***/ 1094:
+/***/ 41094:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -383593,7 +384628,7 @@ const sha384 = (0,_utils_js__WEBPACK_IMPORTED_MODULE_2__/* .wrapConstructor */ .
 /* harmony export */   t6: () => (/* binding */ wrapConstructorWithOpts)
 /* harmony export */ });
 /* unused harmony exports u8, isLE, bytesToHex, hexToBytes, nextTick, asyncLoop, checkOpts */
-/* harmony import */ var _crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(806);
+/* harmony import */ var _crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20806);
 /*! noble-hashes - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 // We use `globalThis.crypto`, but node.js versions earlier than v19 don't
 // declare it in global scope. For node.js, package.json#exports field mapping
@@ -384168,7 +385203,7 @@ const bytes = (/* unused pure expression or super */ null && (stringToBytes));
 
 /***/ }),
 
-/***/ 3187:
+/***/ 33187:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -384181,14 +385216,14 @@ const bytes = (/* unused pure expression or super */ null && (stringToBytes));
 /* harmony export */   pd: () => (/* binding */ poseidonHashMany)
 /* harmony export */ });
 /* unused harmony exports MAX_VALUE, _starkCurve, getPublicKey, getSharedSecret, verify, CURVE, ProjectivePoint, Signature, utils, grindKey, getAccountPath, computeHashOnElements, Fp251, _poseidonMDS, poseidonBasic, poseidonCreate, poseidonSmall, poseidonHashFunc, poseidonHashSingle */
-/* harmony import */ var _noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8432);
-/* harmony import */ var _noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
-/* harmony import */ var _noble_hashes_utils_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1094);
-/* harmony import */ var _noble_curves_abstract_modular_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1064);
-/* harmony import */ var _noble_curves_abstract_poseidon_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1357);
-/* harmony import */ var _noble_curves_abstract_weierstrass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2442);
-/* harmony import */ var _noble_curves_abstract_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(191);
-/* harmony import */ var _noble_curves_shortw_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1999);
+/* harmony import */ var _noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(38432);
+/* harmony import */ var _noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
+/* harmony import */ var _noble_hashes_utils_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(41094);
+/* harmony import */ var _noble_curves_abstract_modular_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71064);
+/* harmony import */ var _noble_curves_abstract_poseidon_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(71357);
+/* harmony import */ var _noble_curves_abstract_weierstrass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92442);
+/* harmony import */ var _noble_curves_abstract_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30191);
+/* harmony import */ var _noble_curves_shortw_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(31999);
 /*! scure-starknet - MIT License (c) 2022 Paul Miller (paulmillr.com) */
 
 
@@ -384510,7 +385545,7 @@ function poseidonHashMany(values, fn = poseidonSmall) {
 
 /***/ }),
 
-/***/ 8325:
+/***/ 58325:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -384588,7 +385623,7 @@ const RPC_NODES = {
 
 /***/ }),
 
-/***/ 40:
+/***/ 20040:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -384622,7 +385657,7 @@ var Literal;
 
 /***/ }),
 
-/***/ 162:
+/***/ 30162:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -384645,7 +385680,7 @@ const TypedDataRevision = {
 
 /***/ }),
 
-/***/ 9550:
+/***/ 79550:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -384666,14 +385701,14 @@ function assert(condition, message) {
 
 /***/ }),
 
-/***/ 4921:
+/***/ 54921:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ CairoFelt)
 /* harmony export */ });
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1686);
-/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7925);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11686);
+/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67925);
 // TODO Convert to CairoFelt base on CairoUint256 and implement it in the codebase in the backward compatible manner
 
 
@@ -384715,7 +385750,7 @@ function CairoFelt(it) {
 
 /***/ }),
 
-/***/ 3283:
+/***/ 13283:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -384723,8 +385758,8 @@ function CairoFelt(it) {
 /* harmony export */   wO: () => (/* binding */ UINT_128_MAX)
 /* harmony export */ });
 /* unused harmony exports UINT_256_MAX, UINT_256_MIN, UINT_256_LOW_MAX, UINT_256_HIGH_MAX, UINT_256_LOW_MIN, UINT_256_HIGH_MIN */
-/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(178);
-/* harmony import */ var _felt_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4921);
+/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90178);
+/* harmony import */ var _felt_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54921);
 /* eslint-disable no-bitwise */
 /**
  * Singular class handling cairo u256 data type
@@ -384840,16 +385875,16 @@ CairoUint256.abiSelector = 'core::integer::u256';
 
 /***/ }),
 
-/***/ 274:
+/***/ 40274:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Ns: () => (/* binding */ CairoUint512)
 /* harmony export */ });
 /* unused harmony exports UINT_512_MAX, UINT_512_MIN, UINT_128_MIN */
-/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(178);
-/* harmony import */ var _felt_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4921);
-/* harmony import */ var _uint256_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3283);
+/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(90178);
+/* harmony import */ var _felt_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(54921);
+/* harmony import */ var _uint256_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13283);
 /* eslint-disable no-bitwise */
 /**
  * Singular class handling cairo u512 data type
@@ -384984,15 +386019,15 @@ CairoUint512.abiSelector = 'core::integer::u512';
 
 /***/ }),
 
-/***/ 2256:
+/***/ 62256:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   f: () => (/* binding */ stringFromByteArray),
 /* harmony export */   p: () => (/* binding */ byteArrayFromString)
 /* harmony export */ });
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1686);
-/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7925);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11686);
+/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67925);
 
 
 /**
@@ -385050,7 +386085,7 @@ function byteArrayFromString(targetString) {
 
 /***/ }),
 
-/***/ 5307:
+/***/ 15307:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -385077,9 +386112,9 @@ function byteArrayFromString(targetString) {
 /* harmony export */   wJ: () => (/* binding */ isTypeStruct)
 /* harmony export */ });
 /* unused harmony exports isTypeUint256, isTypeContractAddress, getAbiContractVersion, uint512, tuple */
-/* harmony import */ var _types_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
-/* harmony import */ var _cairoDataTypes_felt_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4921);
-/* harmony import */ var _cairoDataTypes_uint256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3283);
+/* harmony import */ var _types_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20040);
+/* harmony import */ var _cairoDataTypes_felt_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(54921);
+/* harmony import */ var _cairoDataTypes_uint256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13283);
 
 
 
@@ -385307,7 +386342,7 @@ function felt(it) {
 
 /***/ }),
 
-/***/ 6863:
+/***/ 36863:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -385368,7 +386403,7 @@ class CairoCustomEnum {
 
 /***/ }),
 
-/***/ 9620:
+/***/ 49620:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -385437,7 +386472,7 @@ class CairoOption {
 
 /***/ }),
 
-/***/ 1668:
+/***/ 41668:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -385505,14 +386540,14 @@ class CairoResult {
 
 /***/ }),
 
-/***/ 9161:
+/***/ 79161:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ formatter)
 /* harmony export */ });
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1686);
-/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7925);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11686);
+/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67925);
 
 
 const guard = {
@@ -385578,27 +386613,27 @@ function formatter(data, type, sameType) {
 
 /***/ }),
 
-/***/ 6907:
+/***/ 46907:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   fP: () => (/* binding */ CallData)
 /* harmony export */ });
-/* harmony import */ var _types_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(40);
-/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9550);
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(1686);
-/* harmony import */ var _selector_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9793);
-/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7925);
-/* harmony import */ var _byteArray_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(2256);
-/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5307);
-/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(9620);
-/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(1668);
-/* harmony import */ var _formatter_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(9161);
+/* harmony import */ var _types_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20040);
+/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(79550);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(11686);
+/* harmony import */ var _selector_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(69793);
+/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(67925);
+/* harmony import */ var _byteArray_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(62256);
+/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(15307);
+/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(49620);
+/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(41668);
+/* harmony import */ var _formatter_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(79161);
 /* harmony import */ var _parser_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(591);
-/* harmony import */ var _propertyOrder_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(916);
-/* harmony import */ var _requestParser_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4365);
-/* harmony import */ var _responseParser_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(3463);
-/* harmony import */ var _validate_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9873);
+/* harmony import */ var _propertyOrder_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(90916);
+/* harmony import */ var _requestParser_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(14365);
+/* harmony import */ var _responseParser_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(43463);
+/* harmony import */ var _validate_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(39873);
 /* eslint-disable no-plusplus */
 
 
@@ -385885,9 +386920,9 @@ class CallData {
 /* harmony export */   k: () => (/* binding */ createAbiParser)
 /* harmony export */ });
 /* unused harmony export getAbiVersion */
-/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5307);
-/* harmony import */ var _parser_0_1_1_0_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(568);
-/* harmony import */ var _parser_2_0_0_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7799);
+/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15307);
+/* harmony import */ var _parser_0_1_1_0_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30568);
+/* harmony import */ var _parser_2_0_0_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17799);
 
 
 
@@ -385916,13 +386951,13 @@ function isNoConstructorValid(method, argsCalldata, abiMethod) {
 
 /***/ }),
 
-/***/ 568:
+/***/ 30568:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   V: () => (/* binding */ AbiParser1)
 /* harmony export */ });
-/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5307);
+/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15307);
 
 class AbiParser1 {
     constructor(abi) {
@@ -385957,7 +386992,7 @@ class AbiParser1 {
 
 /***/ }),
 
-/***/ 7799:
+/***/ 17799:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -386001,20 +387036,20 @@ class AbiParser2 {
 
 /***/ }),
 
-/***/ 916:
+/***/ 90916:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ orderPropsByAbi)
 /* harmony export */ });
-/* harmony import */ var _cairoDataTypes_uint256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3283);
-/* harmony import */ var _cairoDataTypes_uint512_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(274);
-/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5307);
-/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1668);
-/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9620);
-/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6863);
-/* harmony import */ var _tuple_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7593);
-/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7925);
+/* harmony import */ var _cairoDataTypes_uint256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13283);
+/* harmony import */ var _cairoDataTypes_uint512_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(40274);
+/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15307);
+/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(41668);
+/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(49620);
+/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(36863);
+/* harmony import */ var _tuple_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37593);
+/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(67925);
 
 
 
@@ -386168,22 +387203,22 @@ function orderPropsByAbi(unorderedObject, abiOfObject, structs, enums) {
 
 /***/ }),
 
-/***/ 4365:
+/***/ 14365:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ parseCalldataField)
 /* harmony export */ });
-/* harmony import */ var _cairoDataTypes_uint256_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3283);
-/* harmony import */ var _cairoDataTypes_uint512_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(274);
-/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(178);
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1686);
-/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7925);
-/* harmony import */ var _byteArray_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(2256);
-/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5307);
-/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9620);
-/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1668);
-/* harmony import */ var _tuple_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7593);
+/* harmony import */ var _cairoDataTypes_uint256_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13283);
+/* harmony import */ var _cairoDataTypes_uint512_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(40274);
+/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(90178);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(11686);
+/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(67925);
+/* harmony import */ var _byteArray_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(62256);
+/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15307);
+/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(49620);
+/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(41668);
+/* harmony import */ var _tuple_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(37593);
 
 
 
@@ -386430,23 +387465,23 @@ function parseCalldataField(argsIterator, input, structs, enums) {
 
 /***/ }),
 
-/***/ 3463:
+/***/ 43463:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ responseParser)
 /* harmony export */ });
-/* harmony import */ var _cairoDataTypes_uint256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3283);
-/* harmony import */ var _cairoDataTypes_uint512_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(274);
-/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(178);
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1686);
-/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7925);
-/* harmony import */ var _byteArray_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2256);
-/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5307);
-/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9620);
-/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1668);
-/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(6863);
-/* harmony import */ var _tuple_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7593);
+/* harmony import */ var _cairoDataTypes_uint256_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13283);
+/* harmony import */ var _cairoDataTypes_uint512_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(40274);
+/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(90178);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(11686);
+/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(67925);
+/* harmony import */ var _byteArray_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(62256);
+/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15307);
+/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(49620);
+/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(41668);
+/* harmony import */ var _enum_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(36863);
+/* harmony import */ var _tuple_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(37593);
 
 
 
@@ -386659,13 +387694,13 @@ function responseParser(responseIterator, output, structs, enums, parsedResult) 
 
 /***/ }),
 
-/***/ 7593:
+/***/ 37593:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ extractTupleMemberTypes)
 /* harmony export */ });
-/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5307);
+/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15307);
 /* eslint-disable no-plusplus */
 
 function parseNamedTuple(namedTuple) {
@@ -386777,19 +387812,19 @@ function extractTupleMemberTypes(type) {
 
 /***/ }),
 
-/***/ 9873:
+/***/ 39873:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ validateFields)
 /* harmony export */ });
-/* harmony import */ var _types_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
-/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9550);
-/* harmony import */ var _cairoDataTypes_uint256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3283);
-/* harmony import */ var _cairoDataTypes_uint512_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(274);
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1686);
-/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7925);
-/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5307);
+/* harmony import */ var _types_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20040);
+/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(79550);
+/* harmony import */ var _cairoDataTypes_uint256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(13283);
+/* harmony import */ var _cairoDataTypes_uint512_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(40274);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11686);
+/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67925);
+/* harmony import */ var _cairo_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(15307);
 /**
  * Validate cairo contract method arguments
  * Flow: Determine type from abi and than validate against parameter
@@ -386996,7 +388031,7 @@ function validateFields(abiMethod, args, structs, enums) {
 
 /***/ }),
 
-/***/ 178:
+/***/ 90178:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -387285,7 +388320,7 @@ const pascalToSnake = (text) => /[a-z]/.test(text)
 
 /***/ }),
 
-/***/ 9491:
+/***/ 69491:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -387296,11 +388331,11 @@ const pascalToSnake = (text) => /[a-z]/.test(text)
 /* harmony export */   r4: () => (/* binding */ calculateContractAddressFromHash)
 /* harmony export */ });
 /* unused harmony exports computeHashOnElements, formatSpaces, default, computeLegacyContractClassHash, hashByteCodeSegments, computeCompiledClassHash, computeSierraContractClassHash, computeContractClassHash */
-/* harmony import */ var _scure_starknet_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3187);
-/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8325);
-/* harmony import */ var _calldata_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6907);
-/* harmony import */ var _calldata_cairo_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5307);
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1686);
+/* harmony import */ var _scure_starknet_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33187);
+/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(58325);
+/* harmony import */ var _calldata_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46907);
+/* harmony import */ var _calldata_cairo_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(15307);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11686);
 /**
  * Class Hash
  */
@@ -387522,14 +388557,14 @@ function computeContractClassHash(contract) {
 
 /***/ }),
 
-/***/ 8354:
+/***/ 38354:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   v: () => (/* binding */ MerkleTree)
 /* harmony export */ });
 /* unused harmony export proofMerklePath */
-/* harmony import */ var _hash_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9491);
+/* harmony import */ var _hash_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(69491);
 
 class MerkleTree {
     constructor(leafHashes, hashMethod = _hash_index_js__WEBPACK_IMPORTED_MODULE_0__/* .computePedersenHash */ .CL) {
@@ -387612,7 +388647,7 @@ function proofMerklePath(root, leaf, path, hashMethod = computePedersenHash) {
 
 /***/ }),
 
-/***/ 1686:
+/***/ 11686:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -387625,7 +388660,7 @@ function proofMerklePath(root, leaf, path, hashMethod = computePedersenHash) {
 /* harmony export */   sI: () => (/* binding */ isBigInt)
 /* harmony export */ });
 /* unused harmony exports toHexString, toStorageKey, hexToDecimalString, cleanHex, assertInRange, bigNumberishArrayToDecimalStringArray, bigNumberishArrayToHexadecimalStringArray, getDecimalString, getHexString, getHexStringArray, toCairoBool, hexToBytes, addPercent */
-/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(178);
+/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90178);
 
 
 
@@ -387868,17 +388903,17 @@ function isBoolean(value) {
 
 /***/ }),
 
-/***/ 9793:
+/***/ 69793:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BK: () => (/* binding */ getSelectorFromName)
 /* harmony export */ });
 /* unused harmony exports keccakBn, starknetKeccak, getSelector */
-/* harmony import */ var _scure_starknet_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3187);
-/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8325);
-/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(178);
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1686);
+/* harmony import */ var _scure_starknet_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33187);
+/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(58325);
+/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90178);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11686);
 
 
 
@@ -387962,7 +388997,7 @@ function getSelector(value) {
 
 /***/ }),
 
-/***/ 7925:
+/***/ 67925:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -387975,9 +389010,9 @@ function getSelector(value) {
 /* harmony export */   mE: () => (/* binding */ splitLongString)
 /* harmony export */ });
 /* unused harmony exports isASCII, isDecimalString, isShortText */
-/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8325);
-/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(178);
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1686);
+/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(58325);
+/* harmony import */ var _encode_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(90178);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11686);
 
 
 
@@ -388072,22 +389107,22 @@ function decodeShortString(str) {
 
 /***/ }),
 
-/***/ 1878:
+/***/ 21878:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   E: () => (/* binding */ getMessageHash)
 /* harmony export */ });
 /* unused harmony exports prepareSelector, isMerkleTreeType, getDependencies, encodeType, getTypeHash, encodeValue, encodeData, getStructHash */
-/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(8325);
-/* harmony import */ var _types_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(162);
-/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9550);
-/* harmony import */ var _calldata_byteArray_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(2256);
-/* harmony import */ var _hash_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9491);
-/* harmony import */ var _hash_index_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9793);
-/* harmony import */ var _merkle_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8354);
-/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1686);
-/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7925);
+/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(58325);
+/* harmony import */ var _types_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30162);
+/* harmony import */ var _assert_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(79550);
+/* harmony import */ var _calldata_byteArray_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(62256);
+/* harmony import */ var _hash_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(69491);
+/* harmony import */ var _hash_index_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(69793);
+/* harmony import */ var _merkle_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(38354);
+/* harmony import */ var _num_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11686);
+/* harmony import */ var _shortString_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(67925);
 /* eslint-disable no-param-reassign */
 
 
@@ -388407,7 +389442,7 @@ function getMessageHash(typedData, account) {
 
 /***/ }),
 
-/***/ 2634:
+/***/ 22634:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -388709,7 +389744,7 @@ function listWithoutMember(arr, member) {
 
 /***/ }),
 
-/***/ 5619:
+/***/ 35619:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -389101,13 +390136,332 @@ class tabdeal extends _abstract_tabdeal_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 6210:
+/***/ 90200:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ talaavan)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class talaavan
+ * @augments Exchange
+ */
+class talaavan extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'talaavan',
+            'name': 'Talaavan',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': 'v1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://goldcore.talaavan.com',
+                },
+                'www': 'https://goldcore.talaavan.com',
+                'doc': 'https://goldcore.talaavan.com/v1/price',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'v1/price': 1,
+                    },
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.publicGetV1Price(params);
+        return [this.parseMarket(response)];
+    }
+    parseMarket(response) {
+        return {
+            'id': 'XAU18IRT',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'XAU18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': this.safeBool(response, 'status', false),
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': response,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.publicGetV1Price(params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.publicGetV1Price(params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(response, market);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        const data = this.safeDict(response, 'data', {});
+        let price = this.safeNumber(data, 'rate');
+        if (price !== undefined) {
+            price = price / 10;
+        }
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': this.parse8601(this.safeString(data, 'date')),
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': price,
+            'bidVolume': undefined,
+            'ask': price,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': price,
+            'last': price,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': undefined,
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': data,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
+/***/ 30236:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ talapp)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class talapp
+ * @augments Exchange
+ */
+class talapp extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'talapp',
+            'name': 'Talapp',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': 'v1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://talapp.ir',
+                },
+                'www': 'https://talapp.ir',
+                'doc': 'https://talapp.ir/wp-json/talapp/v1/gold-prices',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'wp-json/talapp/v1/gold-prices': 1,
+                    },
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.publicGetWpJsonTalappV1GoldPrices(params);
+        return [this.parseMarket(response)];
+    }
+    parseMarket(response) {
+        const stale = this.safeBool(response, 'stale', false);
+        return {
+            'id': 'XAU18IRT',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'XAU18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': !stale,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': response,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.publicGetWpJsonTalappV1GoldPrices(params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.publicGetWpJsonTalappV1GoldPrices(params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(response, market);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        const fetchedAt = this.safeString(response, 'fetched_at');
+        let timestamp = undefined;
+        if (fetchedAt !== undefined) {
+            timestamp = this.parse8601(fetchedAt.replace(' ', 'T') + '+03:30');
+        }
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': timestamp,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': this.safeNumber(response, 'buy_gold'),
+            'bidVolume': undefined,
+            'ask': this.safeNumber(response, 'sell_gold'),
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': this.safeNumber(response, 'sell_gold'),
+            'last': this.safeNumber(response, 'sell_gold'),
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': this.safeNumber(response, 'sell_diff'),
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': response,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
+/***/ 43829:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ talasea)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -389365,13 +390719,13 @@ class talasea extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default
 
 /***/ }),
 
-/***/ 501:
+/***/ 80501:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ technogold)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -389522,13 +390876,13 @@ class technogold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 /***/ }),
 
-/***/ 7496:
+/***/ 67496:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ tehran_exchange)
 /* harmony export */ });
-/* harmony import */ var _abstract_tehran_exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3835);
+/* harmony import */ var _abstract_tehran_exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73835);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -389860,13 +391214,13 @@ class tehran_exchange extends _abstract_tehran_exchange_js__WEBPACK_IMPORTED_MOD
 
 /***/ }),
 
-/***/ 7497:
+/***/ 77497:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ tetherland)
 /* harmony export */ });
-/* harmony import */ var _abstract_tetherland_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9012);
+/* harmony import */ var _abstract_tetherland_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(29012);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -390232,16 +391586,16 @@ class tetherland extends _abstract_tetherland_js__WEBPACK_IMPORTED_MODULE_0__/* 
 
 /***/ }),
 
-/***/ 6213:
+/***/ 66213:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ timex)
 /* harmony export */ });
-/* harmony import */ var _abstract_timex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(334);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
+/* harmony import */ var _abstract_timex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90334);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
 
 
 
@@ -392032,17 +393386,17 @@ class timex extends _abstract_timex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 2490:
+/***/ 42490:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ tokocrypto)
 /* harmony export */ });
-/* harmony import */ var _abstract_tokocrypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7999);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_tokocrypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47999);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -394682,13 +396036,13 @@ class tokocrypto extends _abstract_tokocrypto_js__WEBPACK_IMPORTED_MODULE_0__/* 
 
 /***/ }),
 
-/***/ 237:
+/***/ 90237:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ toobit)
 /* harmony export */ });
-/* harmony import */ var _abstract_toobit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3016);
+/* harmony import */ var _abstract_toobit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(53016);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -395132,15 +396486,15 @@ class toobit extends _abstract_toobit_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 5887:
+/***/ 45887:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ tradeogre)
 /* harmony export */ });
-/* harmony import */ var _abstract_tradeogre_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4352);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
+/* harmony import */ var _abstract_tradeogre_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(94352);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
 // ---------------------------------------------------------------------------
 
 
@@ -396017,13 +397371,13 @@ class tradeogre extends _abstract_tradeogre_js__WEBPACK_IMPORTED_MODULE_0__/* ["
 
 /***/ }),
 
-/***/ 8586:
+/***/ 58586:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ twox)
 /* harmony export */ });
-/* harmony import */ var _abstract_twox_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1419);
+/* harmony import */ var _abstract_twox_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(51419);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -396393,13 +397747,13 @@ class twox extends _abstract_twox_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 3551:
+/***/ 73551:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ ubitex)
 /* harmony export */ });
-/* harmony import */ var _abstract_ubitex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(786);
+/* harmony import */ var _abstract_ubitex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(70786);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -396831,19 +398185,19 @@ class ubitex extends _abstract_ubitex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 930:
+/***/ 90930:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ upbit)
 /* harmony export */ });
-/* harmony import */ var _abstract_upbit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6405);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4852);
-/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5354);
+/* harmony import */ var _abstract_upbit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(76405);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(54852);
+/* harmony import */ var _base_functions_rsa_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(75354);
 //  ---------------------------------------------------------------------------
 
 
@@ -399182,19 +400536,19 @@ class upbit extends _abstract_upbit_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 4910:
+/***/ 84910:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ vertex)
 /* harmony export */ });
-/* harmony import */ var _abstract_vertex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8139);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8432);
-/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(987);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8283);
+/* harmony import */ var _abstract_vertex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(38139);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38432);
+/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40987);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(88283);
 //  ---------------------------------------------------------------------------
 
 
@@ -402339,13 +403693,13 @@ class vertex extends _abstract_vertex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 8633:
+/***/ 88633:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ wallex)
 /* harmony export */ });
-/* harmony import */ var _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6140);
+/* harmony import */ var _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16140);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -402811,13 +404165,13 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 6314:
+/***/ 56314:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ wallgold)
 /* harmony export */ });
-/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2961);
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
 //  ---------------------------------------------------------------------------
 
 //  ---------------------------------------------------------------------------
@@ -402979,17 +404333,17 @@ class wallgold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 
 /***/ }),
 
-/***/ 7073:
+/***/ 57073:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ wavesexchange)
 /* harmony export */ });
-/* harmony import */ var _abstract_wavesexchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7698);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
+/* harmony import */ var _abstract_wavesexchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47698);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
 /* harmony import */ var _static_dependencies_noble_curves_ed25519_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6414);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
 //  ---------------------------------------------------------------------------
 
 
@@ -405735,17 +407089,17 @@ class wavesexchange extends _abstract_wavesexchange_js__WEBPACK_IMPORTED_MODULE_
 
 /***/ }),
 
-/***/ 5336:
+/***/ 75336:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ whitebit)
 /* harmony export */ });
-/* harmony import */ var _abstract_whitebit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3965);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_whitebit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33965);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -409181,17 +410535,17 @@ class whitebit extends _abstract_whitebit_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 669:
+/***/ 40669:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ woo)
 /* harmony export */ });
-/* harmony import */ var _abstract_woo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7246);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_woo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17246);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 // ---------------------------------------------------------------------------
 
 
@@ -413373,20 +414727,20 @@ class woo extends _abstract_woo_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */
 
 /***/ }),
 
-/***/ 9641:
+/***/ 99641:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ woofipro)
 /* harmony export */ });
-/* harmony import */ var _abstract_woofipro_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5308);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8283);
+/* harmony import */ var _abstract_woofipro_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(55308);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_crypto_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(88283);
 /* harmony import */ var _static_dependencies_noble_curves_ed25519_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6414);
-/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8432);
-/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(987);
+/* harmony import */ var _static_dependencies_noble_hashes_sha3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38432);
+/* harmony import */ var _static_dependencies_noble_curves_secp256k1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40987);
 // ---------------------------------------------------------------------------
 
 
@@ -416326,17 +417680,17 @@ class woofipro extends _abstract_woofipro_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 /***/ }),
 
-/***/ 5344:
+/***/ 55344:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ xt)
 /* harmony export */ });
-/* harmony import */ var _abstract_xt_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3521);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4852);
+/* harmony import */ var _abstract_xt_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43521);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _static_dependencies_noble_hashes_sha256_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(54852);
 //  ---------------------------------------------------------------------------
 
 
@@ -421519,17 +422873,17 @@ class xt extends _abstract_xt_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .
 
 /***/ }),
 
-/***/ 7469:
+/***/ 87469:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ yobit)
 /* harmony export */ });
-/* harmony import */ var _abstract_yobit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3578);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_yobit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13578);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 // ---------------------------------------------------------------------------
 
 
@@ -422987,11 +424341,11 @@ class yobit extends _abstract_yobit_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ zaif)
 /* harmony export */ });
-/* harmony import */ var _abstract_zaif_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(672);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_zaif_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(58291);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -423811,17 +425165,528 @@ class zaif extends _abstract_zaif_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 /***/ }),
 
-/***/ 6022:
+/***/ 20285:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ zarafza)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class zarafza
+ * @augments Exchange
+ */
+class zarafza extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'zarafza',
+            'name': 'Zarafza',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': 'v2',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://api.zarafza.com',
+                },
+                'www': 'https://zarafza.com',
+                'doc': 'https://api.zarafza.com/v2/prices',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'v2/prices': 1,
+                    },
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.publicGetV2Prices(params);
+        return [this.parseMarket(response)];
+    }
+    parseMarket(response) {
+        const data = this.safeDict(response, 'data', {});
+        const gold = this.safeDict(data, 'G18', {});
+        const sell = this.safeDict(gold, 'sell', {});
+        return {
+            'id': 'G18',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'G18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': this.safeNumber(sell, 'price') !== undefined,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': gold,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.publicGetV2Prices(params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.publicGetV2Prices(params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(response, market);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        const data = this.safeDict(response, 'data', {});
+        const gold = this.safeDict(data, 'G18', {});
+        const buy = this.safeDict(gold, 'buy', {});
+        const sell = this.safeDict(gold, 'sell', {});
+        const bid = this.safeNumber(buy, 'price');
+        const ask = this.safeNumber(sell, 'price');
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': ask,
+            'last': ask,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': this.safeNumber(sell, 'change'),
+            'average': undefined,
+            'baseVolume': this.safeNumber(gold, 'volume'),
+            'quoteVolume': undefined,
+            'info': gold,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
+/***/ 57562:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ zarminex)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class zarminex
+ * @augments Exchange
+ */
+class zarminex extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'zarminex',
+            'name': 'Zarminex',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': '1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://api.zarminex.ir',
+                },
+                'www': 'https://zarminex.ir',
+                'doc': 'https://api.zarminex.ir/function_url/',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'function_url': 1,
+                    },
+                },
+            },
+        });
+    }
+    async fetchMarkets(params = {}) {
+        const response = await this.publicGetFunctionUrl(params);
+        return [this.parseMarket(response)];
+    }
+    parseMarket(response) {
+        return {
+            'id': 'XAU18IRT',
+            'symbol': 'XAU18/IRT',
+            'base': 'XAU18',
+            'quote': 'IRT',
+            'settle': undefined,
+            'baseId': 'XAU18',
+            'quoteId': 'IRT',
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': this.safeNumber(response, 'cached_price') !== undefined,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': response,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.publicGetFunctionUrl(params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const response = await this.publicGetFunctionUrl(params);
+        const market = this.market('XAU18/IRT');
+        const ticker = this.parseTicker(response, market);
+        const result = {};
+        result[ticker['symbol']] = ticker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        let bid = this.safeNumber(response, 'sell');
+        let ask = this.safeNumber(response, 'buy');
+        let last = this.safeNumber(response, 'cached_price');
+        if (bid !== undefined) {
+            bid = bid / 10;
+        }
+        if (ask !== undefined) {
+            ask = ask / 10;
+        }
+        if (last !== undefined) {
+            last = last / 10;
+        }
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': undefined,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': last,
+            'last': last,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': undefined,
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': response,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
+/***/ 93290:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ zarniv)
+/* harmony export */ });
+/* harmony import */ var _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(72961);
+//  ---------------------------------------------------------------------------
+
+//  ---------------------------------------------------------------------------
+/**
+ * @class zarniv
+ * @augments Exchange
+ */
+class zarniv extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A {
+    describe() {
+        return this.deepExtend(super.describe(), {
+            'id': 'zarniv',
+            'name': 'Zarniv',
+            'countries': ['IR'],
+            'rateLimit': 1000,
+            'version': '1',
+            'certified': false,
+            'pro': false,
+            'has': {
+                'CORS': undefined,
+                'spot': false,
+                'margin': false,
+                'swap': false,
+                'future': false,
+                'option': false,
+                'fetchMarkets': true,
+                'fetchTicker': true,
+                'fetchTickers': true,
+                'otc': true,
+            },
+            'options': {
+                'defaultType': 'otc',
+            },
+            'urls': {
+                'api': {
+                    'public': 'https://zarniv.ir',
+                },
+                'www': 'https://zarniv.ir',
+                'doc': 'https://zarniv.ir/user/get_gold_price/',
+            },
+            'api': {
+                'public': {
+                    'get': {
+                        'user/get_gold_price': 1,
+                        'user/get_silver_price': 1,
+                    },
+                },
+            },
+        });
+    }
+    fetchPrice(metal, params = {}) {
+        if (metal === 'gold') {
+            return this.publicGetUserGetGoldPrice(params);
+        }
+        return this.publicGetUserGetSilverPrice(params);
+    }
+    async fetchMarkets(params = {}) {
+        const goldResponse = await this.fetchPrice('gold', params);
+        const silverResponse = await this.fetchPrice('silver', params);
+        return [
+            this.parseMarketEntry(goldResponse, 'gold'),
+            this.parseMarketEntry(silverResponse, 'silver'),
+        ];
+    }
+    parseMarketEntry(response, metal) {
+        let base = 'XAG';
+        if (metal === 'gold') {
+            base = 'XAU18';
+        }
+        const quote = 'IRT';
+        return {
+            'id': base + quote,
+            'symbol': base + '/' + quote,
+            'base': base,
+            'quote': quote,
+            'settle': undefined,
+            'baseId': metal,
+            'quoteId': quote,
+            'settleId': undefined,
+            'type': 'otc',
+            'spot': false,
+            'margin': false,
+            'swap': false,
+            'future': false,
+            'option': false,
+            'active': this.safeNumber(response, 'base_price_per_gram') !== undefined,
+            'contract': false,
+            'linear': undefined,
+            'inverse': undefined,
+            'contractSize': undefined,
+            'expiry': undefined,
+            'expiryDatetime': undefined,
+            'strike': undefined,
+            'optionType': undefined,
+            'precision': {
+                'amount': undefined,
+                'price': undefined,
+            },
+            'limits': {
+                'leverage': { 'min': undefined, 'max': undefined },
+                'amount': { 'min': undefined, 'max': undefined },
+                'price': { 'min': undefined, 'max': undefined },
+                'cost': { 'min': undefined, 'max': undefined },
+            },
+            'created': undefined,
+            'info': response,
+        };
+    }
+    async fetchTicker(symbol, params = {}) {
+        await this.loadMarkets();
+        const market = this.market(symbol);
+        const response = await this.fetchPrice(market['baseId'], params);
+        return this.parseTicker(response, market);
+    }
+    async fetchTickers(symbols = undefined, params = {}) {
+        await this.loadMarkets();
+        if (symbols !== undefined) {
+            symbols = this.marketSymbols(symbols);
+        }
+        const goldResponse = await this.fetchPrice('gold', params);
+        const silverResponse = await this.fetchPrice('silver', params);
+        const goldMarket = this.market('XAU18/IRT');
+        const silverMarket = this.market('XAG/IRT');
+        const goldTicker = this.parseTicker(goldResponse, goldMarket);
+        const silverTicker = this.parseTicker(silverResponse, silverMarket);
+        const result = {};
+        result[goldTicker['symbol']] = goldTicker;
+        result[silverTicker['symbol']] = silverTicker;
+        return this.filterByArrayTickers(result, 'symbol', symbols);
+    }
+    parseTicker(response, market = undefined) {
+        const serverTime = this.safeString(response, 'server_time');
+        let timestamp = undefined;
+        if (serverTime !== undefined) {
+            timestamp = this.parse8601(serverTime + '+03:30');
+        }
+        const bid = this.safeNumber(response, 'sell_price_per_gram');
+        const ask = this.safeNumber(response, 'buy_price_per_gram');
+        const last = this.safeNumber(response, 'base_price_per_gram');
+        return this.safeTicker({
+            'symbol': market['symbol'],
+            'timestamp': timestamp,
+            'datetime': undefined,
+            'high': undefined,
+            'low': undefined,
+            'bid': bid,
+            'bidVolume': undefined,
+            'ask': ask,
+            'askVolume': undefined,
+            'vwap': undefined,
+            'open': undefined,
+            'close': last,
+            'last': last,
+            'previousClose': undefined,
+            'change': undefined,
+            'percentage': undefined,
+            'average': undefined,
+            'baseVolume': undefined,
+            'quoteVolume': undefined,
+            'info': response,
+        }, market);
+    }
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+        let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
+        const query = this.omit(params, this.extractParams(path));
+        if (Object.keys(query).length) {
+            url += '?' + this.urlencode(query);
+        }
+        headers = { 'Accept': 'application/json' };
+        return { 'url': url, 'method': method, 'body': body, 'headers': headers };
+    }
+}
+
+
+/***/ }),
+
+/***/ 46022:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (/* binding */ zonda)
 /* harmony export */ });
-/* harmony import */ var _abstract_zonda_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5517);
-/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2079);
-/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1579);
-/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5147);
-/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7481);
+/* harmony import */ var _abstract_zonda_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(65517);
+/* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(62079);
+/* harmony import */ var _base_functions_number_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51579);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85147);
+/* harmony import */ var _static_dependencies_noble_hashes_sha512_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37481);
 //  ---------------------------------------------------------------------------
 
 
@@ -425804,7 +427669,7 @@ class zonda extends _abstract_zonda_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
 
 /***/ }),
 
-/***/ 1591:
+/***/ 51591:
 /***/ ((module) => {
 
 
@@ -425819,7 +427684,7 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ 3544:
+/***/ 43544:
 /***/ ((module) => {
 
 
@@ -425844,14 +427709,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4580:
+/***/ 64580:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
 
-var stringify = __webpack_require__(1603);
-var parse = __webpack_require__(3437);
-var formats = __webpack_require__(3544);
+var stringify = __webpack_require__(71603);
+var parse = __webpack_require__(43437);
+var formats = __webpack_require__(43544);
 
 module.exports = {
     formats: formats,
@@ -425862,12 +427727,12 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3437:
+/***/ 43437:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
 
-var utils = __webpack_require__(3247);
+var utils = __webpack_require__(83247);
 
 var has = Object.prototype.hasOwnProperty;
 
@@ -426111,13 +427976,13 @@ module.exports = function (str, opts) {
 
 /***/ }),
 
-/***/ 1603:
+/***/ 71603:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
 
-var utils = __webpack_require__(3247);
-var formats = __webpack_require__(3544);
+var utils = __webpack_require__(83247);
+var formats = __webpack_require__(43544);
 var has = Object.prototype.hasOwnProperty;
 
 var arrayPrefixGenerators = {
@@ -426387,7 +428252,7 @@ module.exports = function (object, opts) {
 
 /***/ }),
 
-/***/ 3247:
+/***/ 83247:
 /***/ ((module) => {
 
 
@@ -426624,7 +428489,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4350:
+/***/ 64350:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -429209,7 +431074,7 @@ function unzipSync(data, opts) {
 
 /***/ }),
 
-/***/ 6378:
+/***/ 56378:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -429290,7 +431155,7 @@ YAHOO.lang = {
 
 /***/ }),
 
-/***/ 917:
+/***/ 40917:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -429860,7 +431725,7 @@ YAHOO.lang = {
 
 /***/ }),
 
-/***/ 7661:
+/***/ 47661:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -434874,49 +436739,49 @@ async function __wbg_init(input) {
 var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AccountNotEnabled: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.AccountNotEnabled),
-/* harmony export */   AccountSuspended: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.AccountSuspended),
-/* harmony export */   AddressPending: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.AddressPending),
-/* harmony export */   ArgumentsRequired: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.ArgumentsRequired),
-/* harmony export */   AuthenticationError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.AuthenticationError),
-/* harmony export */   BadRequest: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.BadRequest),
-/* harmony export */   BadResponse: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.BadResponse),
-/* harmony export */   BadSymbol: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.BadSymbol),
-/* harmony export */   BaseError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.BaseError),
-/* harmony export */   CancelPending: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.CancelPending),
-/* harmony export */   ChecksumError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.ChecksumError),
-/* harmony export */   ContractUnavailable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.ContractUnavailable),
-/* harmony export */   DDoSProtection: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.DDoSProtection),
-/* harmony export */   DuplicateOrderId: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.DuplicateOrderId),
+/* harmony export */   AccountNotEnabled: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.AccountNotEnabled),
+/* harmony export */   AccountSuspended: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.AccountSuspended),
+/* harmony export */   AddressPending: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.AddressPending),
+/* harmony export */   ArgumentsRequired: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.ArgumentsRequired),
+/* harmony export */   AuthenticationError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.AuthenticationError),
+/* harmony export */   BadRequest: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.BadRequest),
+/* harmony export */   BadResponse: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.BadResponse),
+/* harmony export */   BadSymbol: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.BadSymbol),
+/* harmony export */   BaseError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.BaseError),
+/* harmony export */   CancelPending: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.CancelPending),
+/* harmony export */   ChecksumError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.ChecksumError),
+/* harmony export */   ContractUnavailable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.ContractUnavailable),
+/* harmony export */   DDoSProtection: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.DDoSProtection),
+/* harmony export */   DuplicateOrderId: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.DuplicateOrderId),
 /* harmony export */   Exchange: () => (/* reexport safe */ ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_.k),
-/* harmony export */   ExchangeClosedByUser: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.ExchangeClosedByUser),
-/* harmony export */   ExchangeError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.ExchangeError),
-/* harmony export */   ExchangeNotAvailable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.ExchangeNotAvailable),
-/* harmony export */   InsufficientFunds: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.InsufficientFunds),
-/* harmony export */   InvalidAddress: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.InvalidAddress),
-/* harmony export */   InvalidNonce: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.InvalidNonce),
-/* harmony export */   InvalidOrder: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.InvalidOrder),
-/* harmony export */   InvalidProxySettings: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.InvalidProxySettings),
-/* harmony export */   ManualInteractionNeeded: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.ManualInteractionNeeded),
-/* harmony export */   MarginModeAlreadySet: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.MarginModeAlreadySet),
-/* harmony export */   MarketClosed: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.MarketClosed),
-/* harmony export */   NetworkError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.NetworkError),
-/* harmony export */   NoChange: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.NoChange),
-/* harmony export */   NotSupported: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.NotSupported),
-/* harmony export */   NullResponse: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.NullResponse),
-/* harmony export */   OnMaintenance: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.OnMaintenance),
-/* harmony export */   OperationFailed: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.OperationFailed),
-/* harmony export */   OperationRejected: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.OperationRejected),
-/* harmony export */   OrderImmediatelyFillable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.OrderImmediatelyFillable),
-/* harmony export */   OrderNotCached: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.OrderNotCached),
-/* harmony export */   OrderNotFillable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.OrderNotFillable),
-/* harmony export */   OrderNotFound: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.OrderNotFound),
-/* harmony export */   PermissionDenied: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.PermissionDenied),
-/* harmony export */   Precise: () => (/* reexport safe */ ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_233_.Y),
-/* harmony export */   RateLimitExceeded: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.RateLimitExceeded),
-/* harmony export */   RequestTimeout: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.RequestTimeout),
-/* harmony export */   RestrictedLocation: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.RestrictedLocation),
-/* harmony export */   UnsubscribeError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_.UnsubscribeError),
+/* harmony export */   ExchangeClosedByUser: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.ExchangeClosedByUser),
+/* harmony export */   ExchangeError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.ExchangeError),
+/* harmony export */   ExchangeNotAvailable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.ExchangeNotAvailable),
+/* harmony export */   InsufficientFunds: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.InsufficientFunds),
+/* harmony export */   InvalidAddress: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.InvalidAddress),
+/* harmony export */   InvalidNonce: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.InvalidNonce),
+/* harmony export */   InvalidOrder: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.InvalidOrder),
+/* harmony export */   InvalidProxySettings: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.InvalidProxySettings),
+/* harmony export */   ManualInteractionNeeded: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.ManualInteractionNeeded),
+/* harmony export */   MarginModeAlreadySet: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.MarginModeAlreadySet),
+/* harmony export */   MarketClosed: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.MarketClosed),
+/* harmony export */   NetworkError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.NetworkError),
+/* harmony export */   NoChange: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.NoChange),
+/* harmony export */   NotSupported: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.NotSupported),
+/* harmony export */   NullResponse: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.NullResponse),
+/* harmony export */   OnMaintenance: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.OnMaintenance),
+/* harmony export */   OperationFailed: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.OperationFailed),
+/* harmony export */   OperationRejected: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.OperationRejected),
+/* harmony export */   OrderImmediatelyFillable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.OrderImmediatelyFillable),
+/* harmony export */   OrderNotCached: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.OrderNotCached),
+/* harmony export */   OrderNotFillable: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.OrderNotFillable),
+/* harmony export */   OrderNotFound: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.OrderNotFound),
+/* harmony export */   PermissionDenied: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.PermissionDenied),
+/* harmony export */   Precise: () => (/* reexport safe */ ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_244_.Y),
+/* harmony export */   RateLimitExceeded: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.RateLimitExceeded),
+/* harmony export */   RequestTimeout: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.RequestTimeout),
+/* harmony export */   RestrictedLocation: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.RestrictedLocation),
+/* harmony export */   UnsubscribeError: () => (/* reexport safe */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_.UnsubscribeError),
 /* harmony export */   abantether: () => (/* reexport safe */ ccxt_src_abantether_js_WEBPACK_IMPORTED_MODULE_1_.A),
 /* harmony export */   afratether: () => (/* reexport safe */ ccxt_src_afratether_js_WEBPACK_IMPORTED_MODULE_2_.A),
 /* harmony export */   alpaca: () => (/* reexport safe */ ccxt_src_alpaca_js_WEBPACK_IMPORTED_MODULE_3_.A),
@@ -434926,399 +436791,421 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   asacoine: () => (/* reexport safe */ ccxt_src_asacoine_js_WEBPACK_IMPORTED_MODULE_7_.A),
 /* harmony export */   ascendex: () => (/* reexport safe */ ccxt_src_ascendex_js_WEBPACK_IMPORTED_MODULE_8_.A),
 /* harmony export */   asretether: () => (/* reexport safe */ ccxt_src_asretether_js_WEBPACK_IMPORTED_MODULE_9_.A),
-/* harmony export */   bequant: () => (/* reexport safe */ ccxt_src_bequant_js_WEBPACK_IMPORTED_MODULE_10_.A),
-/* harmony export */   bidarz: () => (/* reexport safe */ ccxt_src_bidarz_js_WEBPACK_IMPORTED_MODULE_11_.A),
-/* harmony export */   bigone: () => (/* reexport safe */ ccxt_src_bigone_js_WEBPACK_IMPORTED_MODULE_12_.A),
-/* harmony export */   binance: () => (/* reexport safe */ ccxt_src_binance_js_WEBPACK_IMPORTED_MODULE_13_.A),
-/* harmony export */   binancecoinm: () => (/* reexport safe */ ccxt_src_binancecoinm_js_WEBPACK_IMPORTED_MODULE_14_.A),
-/* harmony export */   binanceus: () => (/* reexport safe */ ccxt_src_binanceus_js_WEBPACK_IMPORTED_MODULE_15_.A),
-/* harmony export */   binanceusdm: () => (/* reexport safe */ ccxt_src_binanceusdm_js_WEBPACK_IMPORTED_MODULE_16_.A),
-/* harmony export */   bingx: () => (/* reexport safe */ ccxt_src_bingx_js_WEBPACK_IMPORTED_MODULE_17_.A),
-/* harmony export */   bit24: () => (/* reexport safe */ ccxt_src_bit24_js_WEBPACK_IMPORTED_MODULE_18_.A),
-/* harmony export */   bit2c: () => (/* reexport safe */ ccxt_src_bit2c_js_WEBPACK_IMPORTED_MODULE_19_.A),
-/* harmony export */   bitbank: () => (/* reexport safe */ ccxt_src_bitbank_js_WEBPACK_IMPORTED_MODULE_20_.A),
-/* harmony export */   bitbarg: () => (/* reexport safe */ ccxt_src_bitbarg_js_WEBPACK_IMPORTED_MODULE_21_.A),
-/* harmony export */   bitbns: () => (/* reexport safe */ ccxt_src_bitbns_js_WEBPACK_IMPORTED_MODULE_22_.A),
-/* harmony export */   bitfinex: () => (/* reexport safe */ ccxt_src_bitfinex_js_WEBPACK_IMPORTED_MODULE_23_.A),
-/* harmony export */   bitflyer: () => (/* reexport safe */ ccxt_src_bitflyer_js_WEBPACK_IMPORTED_MODULE_24_.A),
-/* harmony export */   bitget: () => (/* reexport safe */ ccxt_src_bitget_js_WEBPACK_IMPORTED_MODULE_25_.A),
-/* harmony export */   bithumb: () => (/* reexport safe */ ccxt_src_bithumb_js_WEBPACK_IMPORTED_MODULE_26_.A),
-/* harmony export */   bitimen: () => (/* reexport safe */ ccxt_src_bitimen_js_WEBPACK_IMPORTED_MODULE_27_.A),
-/* harmony export */   bitir: () => (/* reexport safe */ ccxt_src_bitir_js_WEBPACK_IMPORTED_MODULE_28_.A),
-/* harmony export */   bitmart: () => (/* reexport safe */ ccxt_src_bitmart_js_WEBPACK_IMPORTED_MODULE_29_.A),
-/* harmony export */   bitmex: () => (/* reexport safe */ ccxt_src_bitmex_js_WEBPACK_IMPORTED_MODULE_30_.A),
-/* harmony export */   bitopro: () => (/* reexport safe */ ccxt_src_bitopro_js_WEBPACK_IMPORTED_MODULE_31_.A),
-/* harmony export */   bitpin: () => (/* reexport safe */ ccxt_src_bitpin_js_WEBPACK_IMPORTED_MODULE_32_.A),
-/* harmony export */   bitrue: () => (/* reexport safe */ ccxt_src_bitrue_js_WEBPACK_IMPORTED_MODULE_33_.A),
-/* harmony export */   bitso: () => (/* reexport safe */ ccxt_src_bitso_js_WEBPACK_IMPORTED_MODULE_34_.A),
-/* harmony export */   bitstamp: () => (/* reexport safe */ ccxt_src_bitstamp_js_WEBPACK_IMPORTED_MODULE_35_.A),
-/* harmony export */   bitteam: () => (/* reexport safe */ ccxt_src_bitteam_js_WEBPACK_IMPORTED_MODULE_36_.A),
-/* harmony export */   bittrade: () => (/* reexport safe */ ccxt_src_bittrade_js_WEBPACK_IMPORTED_MODULE_37_.A),
-/* harmony export */   bitunix: () => (/* reexport safe */ ccxt_src_bitunix_js_WEBPACK_IMPORTED_MODULE_38_.A),
-/* harmony export */   bitvavo: () => (/* reexport safe */ ccxt_src_bitvavo_js_WEBPACK_IMPORTED_MODULE_39_.A),
-/* harmony export */   bitwana: () => (/* reexport safe */ ccxt_src_bitwana_js_WEBPACK_IMPORTED_MODULE_40_.A),
-/* harmony export */   blockchaincom: () => (/* reexport safe */ ccxt_src_blockchaincom_js_WEBPACK_IMPORTED_MODULE_41_.A),
-/* harmony export */   blofin: () => (/* reexport safe */ ccxt_src_blofin_js_WEBPACK_IMPORTED_MODULE_42_.A),
-/* harmony export */   btcalpha: () => (/* reexport safe */ ccxt_src_btcalpha_js_WEBPACK_IMPORTED_MODULE_43_.A),
-/* harmony export */   btcbox: () => (/* reexport safe */ ccxt_src_btcbox_js_WEBPACK_IMPORTED_MODULE_44_.A),
-/* harmony export */   btcmarkets: () => (/* reexport safe */ ccxt_src_btcmarkets_js_WEBPACK_IMPORTED_MODULE_45_.A),
-/* harmony export */   btcturk: () => (/* reexport safe */ ccxt_src_btcturk_js_WEBPACK_IMPORTED_MODULE_46_.A),
-/* harmony export */   bybit: () => (/* reexport safe */ ccxt_src_bybit_js_WEBPACK_IMPORTED_MODULE_47_.A),
-/* harmony export */   bydfi: () => (/* reexport safe */ ccxt_src_bydfi_js_WEBPACK_IMPORTED_MODULE_48_.A),
-/* harmony export */   cafearz: () => (/* reexport safe */ ccxt_src_cafearz_js_WEBPACK_IMPORTED_MODULE_49_.A),
-/* harmony export */   cex: () => (/* reexport safe */ ccxt_src_cex_js_WEBPACK_IMPORTED_MODULE_50_.A),
-/* harmony export */   changefa: () => (/* reexport safe */ ccxt_src_changefa_js_WEBPACK_IMPORTED_MODULE_51_.A),
-/* harmony export */   coinbase: () => (/* reexport safe */ ccxt_src_coinbase_js_WEBPACK_IMPORTED_MODULE_52_.A),
-/* harmony export */   coinbaseadvanced: () => (/* reexport safe */ ccxt_src_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_53_.A),
-/* harmony export */   coinbaseexchange: () => (/* reexport safe */ ccxt_src_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_54_.A),
-/* harmony export */   coinbaseinternational: () => (/* reexport safe */ ccxt_src_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_55_.A),
-/* harmony export */   coincatch: () => (/* reexport safe */ ccxt_src_coincatch_js_WEBPACK_IMPORTED_MODULE_56_.A),
-/* harmony export */   coincheck: () => (/* reexport safe */ ccxt_src_coincheck_js_WEBPACK_IMPORTED_MODULE_57_.A),
-/* harmony export */   coinex: () => (/* reexport safe */ ccxt_src_coinex_js_WEBPACK_IMPORTED_MODULE_58_.A),
-/* harmony export */   coinmate: () => (/* reexport safe */ ccxt_src_coinmate_js_WEBPACK_IMPORTED_MODULE_59_.A),
-/* harmony export */   coinmetro: () => (/* reexport safe */ ccxt_src_coinmetro_js_WEBPACK_IMPORTED_MODULE_60_.A),
-/* harmony export */   coinone: () => (/* reexport safe */ ccxt_src_coinone_js_WEBPACK_IMPORTED_MODULE_61_.A),
-/* harmony export */   coinsph: () => (/* reexport safe */ ccxt_src_coinsph_js_WEBPACK_IMPORTED_MODULE_62_.A),
-/* harmony export */   coinspot: () => (/* reexport safe */ ccxt_src_coinspot_js_WEBPACK_IMPORTED_MODULE_63_.A),
-/* harmony export */   cryptocom: () => (/* reexport safe */ ccxt_src_cryptocom_js_WEBPACK_IMPORTED_MODULE_64_.A),
-/* harmony export */   cryptomus: () => (/* reexport safe */ ccxt_src_cryptomus_js_WEBPACK_IMPORTED_MODULE_65_.A),
+/* harmony export */   baazar: () => (/* reexport safe */ ccxt_src_baazar_js_WEBPACK_IMPORTED_MODULE_10_.A),
+/* harmony export */   bequant: () => (/* reexport safe */ ccxt_src_bequant_js_WEBPACK_IMPORTED_MODULE_11_.A),
+/* harmony export */   bidarz: () => (/* reexport safe */ ccxt_src_bidarz_js_WEBPACK_IMPORTED_MODULE_12_.A),
+/* harmony export */   bigone: () => (/* reexport safe */ ccxt_src_bigone_js_WEBPACK_IMPORTED_MODULE_13_.A),
+/* harmony export */   binance: () => (/* reexport safe */ ccxt_src_binance_js_WEBPACK_IMPORTED_MODULE_14_.A),
+/* harmony export */   binancecoinm: () => (/* reexport safe */ ccxt_src_binancecoinm_js_WEBPACK_IMPORTED_MODULE_15_.A),
+/* harmony export */   binanceus: () => (/* reexport safe */ ccxt_src_binanceus_js_WEBPACK_IMPORTED_MODULE_16_.A),
+/* harmony export */   binanceusdm: () => (/* reexport safe */ ccxt_src_binanceusdm_js_WEBPACK_IMPORTED_MODULE_17_.A),
+/* harmony export */   bingx: () => (/* reexport safe */ ccxt_src_bingx_js_WEBPACK_IMPORTED_MODULE_18_.A),
+/* harmony export */   bit24: () => (/* reexport safe */ ccxt_src_bit24_js_WEBPACK_IMPORTED_MODULE_19_.A),
+/* harmony export */   bit2c: () => (/* reexport safe */ ccxt_src_bit2c_js_WEBPACK_IMPORTED_MODULE_20_.A),
+/* harmony export */   bitbank: () => (/* reexport safe */ ccxt_src_bitbank_js_WEBPACK_IMPORTED_MODULE_21_.A),
+/* harmony export */   bitbarg: () => (/* reexport safe */ ccxt_src_bitbarg_js_WEBPACK_IMPORTED_MODULE_22_.A),
+/* harmony export */   bitbns: () => (/* reexport safe */ ccxt_src_bitbns_js_WEBPACK_IMPORTED_MODULE_23_.A),
+/* harmony export */   bitfinex: () => (/* reexport safe */ ccxt_src_bitfinex_js_WEBPACK_IMPORTED_MODULE_24_.A),
+/* harmony export */   bitflyer: () => (/* reexport safe */ ccxt_src_bitflyer_js_WEBPACK_IMPORTED_MODULE_25_.A),
+/* harmony export */   bitget: () => (/* reexport safe */ ccxt_src_bitget_js_WEBPACK_IMPORTED_MODULE_26_.A),
+/* harmony export */   bithumb: () => (/* reexport safe */ ccxt_src_bithumb_js_WEBPACK_IMPORTED_MODULE_27_.A),
+/* harmony export */   bitimen: () => (/* reexport safe */ ccxt_src_bitimen_js_WEBPACK_IMPORTED_MODULE_28_.A),
+/* harmony export */   bitir: () => (/* reexport safe */ ccxt_src_bitir_js_WEBPACK_IMPORTED_MODULE_29_.A),
+/* harmony export */   bitmart: () => (/* reexport safe */ ccxt_src_bitmart_js_WEBPACK_IMPORTED_MODULE_30_.A),
+/* harmony export */   bitmex: () => (/* reexport safe */ ccxt_src_bitmex_js_WEBPACK_IMPORTED_MODULE_31_.A),
+/* harmony export */   bitopro: () => (/* reexport safe */ ccxt_src_bitopro_js_WEBPACK_IMPORTED_MODULE_32_.A),
+/* harmony export */   bitpin: () => (/* reexport safe */ ccxt_src_bitpin_js_WEBPACK_IMPORTED_MODULE_33_.A),
+/* harmony export */   bitrue: () => (/* reexport safe */ ccxt_src_bitrue_js_WEBPACK_IMPORTED_MODULE_34_.A),
+/* harmony export */   bitso: () => (/* reexport safe */ ccxt_src_bitso_js_WEBPACK_IMPORTED_MODULE_35_.A),
+/* harmony export */   bitstamp: () => (/* reexport safe */ ccxt_src_bitstamp_js_WEBPACK_IMPORTED_MODULE_36_.A),
+/* harmony export */   bitteam: () => (/* reexport safe */ ccxt_src_bitteam_js_WEBPACK_IMPORTED_MODULE_37_.A),
+/* harmony export */   bittrade: () => (/* reexport safe */ ccxt_src_bittrade_js_WEBPACK_IMPORTED_MODULE_38_.A),
+/* harmony export */   bitunix: () => (/* reexport safe */ ccxt_src_bitunix_js_WEBPACK_IMPORTED_MODULE_39_.A),
+/* harmony export */   bitvavo: () => (/* reexport safe */ ccxt_src_bitvavo_js_WEBPACK_IMPORTED_MODULE_40_.A),
+/* harmony export */   bitwana: () => (/* reexport safe */ ccxt_src_bitwana_js_WEBPACK_IMPORTED_MODULE_41_.A),
+/* harmony export */   blockchaincom: () => (/* reexport safe */ ccxt_src_blockchaincom_js_WEBPACK_IMPORTED_MODULE_42_.A),
+/* harmony export */   blofin: () => (/* reexport safe */ ccxt_src_blofin_js_WEBPACK_IMPORTED_MODULE_43_.A),
+/* harmony export */   btcalpha: () => (/* reexport safe */ ccxt_src_btcalpha_js_WEBPACK_IMPORTED_MODULE_44_.A),
+/* harmony export */   btcbox: () => (/* reexport safe */ ccxt_src_btcbox_js_WEBPACK_IMPORTED_MODULE_45_.A),
+/* harmony export */   btcmarkets: () => (/* reexport safe */ ccxt_src_btcmarkets_js_WEBPACK_IMPORTED_MODULE_46_.A),
+/* harmony export */   btcturk: () => (/* reexport safe */ ccxt_src_btcturk_js_WEBPACK_IMPORTED_MODULE_47_.A),
+/* harmony export */   bybit: () => (/* reexport safe */ ccxt_src_bybit_js_WEBPACK_IMPORTED_MODULE_48_.A),
+/* harmony export */   bydfi: () => (/* reexport safe */ ccxt_src_bydfi_js_WEBPACK_IMPORTED_MODULE_49_.A),
+/* harmony export */   cafearz: () => (/* reexport safe */ ccxt_src_cafearz_js_WEBPACK_IMPORTED_MODULE_50_.A),
+/* harmony export */   cex: () => (/* reexport safe */ ccxt_src_cex_js_WEBPACK_IMPORTED_MODULE_51_.A),
+/* harmony export */   changefa: () => (/* reexport safe */ ccxt_src_changefa_js_WEBPACK_IMPORTED_MODULE_52_.A),
+/* harmony export */   coinbase: () => (/* reexport safe */ ccxt_src_coinbase_js_WEBPACK_IMPORTED_MODULE_53_.A),
+/* harmony export */   coinbaseadvanced: () => (/* reexport safe */ ccxt_src_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_54_.A),
+/* harmony export */   coinbaseexchange: () => (/* reexport safe */ ccxt_src_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_55_.A),
+/* harmony export */   coinbaseinternational: () => (/* reexport safe */ ccxt_src_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_56_.A),
+/* harmony export */   coincatch: () => (/* reexport safe */ ccxt_src_coincatch_js_WEBPACK_IMPORTED_MODULE_57_.A),
+/* harmony export */   coincheck: () => (/* reexport safe */ ccxt_src_coincheck_js_WEBPACK_IMPORTED_MODULE_58_.A),
+/* harmony export */   coinex: () => (/* reexport safe */ ccxt_src_coinex_js_WEBPACK_IMPORTED_MODULE_59_.A),
+/* harmony export */   coinmate: () => (/* reexport safe */ ccxt_src_coinmate_js_WEBPACK_IMPORTED_MODULE_60_.A),
+/* harmony export */   coinmetro: () => (/* reexport safe */ ccxt_src_coinmetro_js_WEBPACK_IMPORTED_MODULE_61_.A),
+/* harmony export */   coinone: () => (/* reexport safe */ ccxt_src_coinone_js_WEBPACK_IMPORTED_MODULE_62_.A),
+/* harmony export */   coinsph: () => (/* reexport safe */ ccxt_src_coinsph_js_WEBPACK_IMPORTED_MODULE_63_.A),
+/* harmony export */   coinspot: () => (/* reexport safe */ ccxt_src_coinspot_js_WEBPACK_IMPORTED_MODULE_64_.A),
+/* harmony export */   cryptocom: () => (/* reexport safe */ ccxt_src_cryptocom_js_WEBPACK_IMPORTED_MODULE_65_.A),
+/* harmony export */   cryptomus: () => (/* reexport safe */ ccxt_src_cryptomus_js_WEBPACK_IMPORTED_MODULE_66_.A),
+/* harmony export */   daric: () => (/* reexport safe */ ccxt_src_daric_js_WEBPACK_IMPORTED_MODULE_67_.A),
 /* harmony export */   "default": () => (ts_ccxt),
-/* harmony export */   defx: () => (/* reexport safe */ ccxt_src_defx_js_WEBPACK_IMPORTED_MODULE_66_.A),
-/* harmony export */   delta: () => (/* reexport safe */ ccxt_src_delta_js_WEBPACK_IMPORTED_MODULE_67_.A),
-/* harmony export */   deribit: () => (/* reexport safe */ ccxt_src_deribit_js_WEBPACK_IMPORTED_MODULE_68_.A),
-/* harmony export */   derive: () => (/* reexport safe */ ccxt_src_derive_js_WEBPACK_IMPORTED_MODULE_69_.A),
-/* harmony export */   digifinex: () => (/* reexport safe */ ccxt_src_digifinex_js_WEBPACK_IMPORTED_MODULE_70_.A),
-/* harmony export */   ellipx: () => (/* reexport safe */ ccxt_src_ellipx_js_WEBPACK_IMPORTED_MODULE_71_.A),
-/* harmony export */   errors: () => (/* reexport module object */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_),
-/* harmony export */   eterex: () => (/* reexport safe */ ccxt_src_eterex_js_WEBPACK_IMPORTED_MODULE_72_.A),
+/* harmony export */   defx: () => (/* reexport safe */ ccxt_src_defx_js_WEBPACK_IMPORTED_MODULE_68_.A),
+/* harmony export */   delta: () => (/* reexport safe */ ccxt_src_delta_js_WEBPACK_IMPORTED_MODULE_69_.A),
+/* harmony export */   deribit: () => (/* reexport safe */ ccxt_src_deribit_js_WEBPACK_IMPORTED_MODULE_70_.A),
+/* harmony export */   derive: () => (/* reexport safe */ ccxt_src_derive_js_WEBPACK_IMPORTED_MODULE_71_.A),
+/* harmony export */   digifinex: () => (/* reexport safe */ ccxt_src_digifinex_js_WEBPACK_IMPORTED_MODULE_72_.A),
+/* harmony export */   digikalagold: () => (/* reexport safe */ ccxt_src_digikalagold_js_WEBPACK_IMPORTED_MODULE_73_.A),
+/* harmony export */   ellipx: () => (/* reexport safe */ ccxt_src_ellipx_js_WEBPACK_IMPORTED_MODULE_74_.A),
+/* harmony export */   errors: () => (/* reexport module object */ ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_),
+/* harmony export */   eterex: () => (/* reexport safe */ ccxt_src_eterex_js_WEBPACK_IMPORTED_MODULE_75_.A),
 /* harmony export */   exchanges: () => (/* binding */ ccxt_exchanges),
-/* harmony export */   excoino: () => (/* reexport safe */ ccxt_src_excoino_js_WEBPACK_IMPORTED_MODULE_73_.A),
-/* harmony export */   exir: () => (/* reexport safe */ ccxt_src_exir_js_WEBPACK_IMPORTED_MODULE_74_.A),
-/* harmony export */   exmo: () => (/* reexport safe */ ccxt_src_exmo_js_WEBPACK_IMPORTED_MODULE_75_.A),
-/* harmony export */   exnovin: () => (/* reexport safe */ ccxt_src_exnovin_js_WEBPACK_IMPORTED_MODULE_76_.A),
-/* harmony export */   farhadexchange: () => (/* reexport safe */ ccxt_src_farhadexchange_js_WEBPACK_IMPORTED_MODULE_77_.A),
-/* harmony export */   fmfwio: () => (/* reexport safe */ ccxt_src_fmfwio_js_WEBPACK_IMPORTED_MODULE_78_.A),
-/* harmony export */   foxbit: () => (/* reexport safe */ ccxt_src_foxbit_js_WEBPACK_IMPORTED_MODULE_79_.A),
-/* harmony export */   functions: () => (/* reexport module object */ ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_234_),
-/* harmony export */   gate: () => (/* reexport safe */ ccxt_src_gate_js_WEBPACK_IMPORTED_MODULE_80_.A),
-/* harmony export */   gateio: () => (/* reexport safe */ ccxt_src_gateio_js_WEBPACK_IMPORTED_MODULE_81_.A),
-/* harmony export */   gemini: () => (/* reexport safe */ ccxt_src_gemini_js_WEBPACK_IMPORTED_MODULE_82_.A),
-/* harmony export */   hamtapay: () => (/* reexport safe */ ccxt_src_hamtapay_js_WEBPACK_IMPORTED_MODULE_83_.A),
-/* harmony export */   hashkey: () => (/* reexport safe */ ccxt_src_hashkey_js_WEBPACK_IMPORTED_MODULE_84_.A),
-/* harmony export */   hibachi: () => (/* reexport safe */ ccxt_src_hibachi_js_WEBPACK_IMPORTED_MODULE_85_.A),
-/* harmony export */   hitbtc: () => (/* reexport safe */ ccxt_src_hitbtc_js_WEBPACK_IMPORTED_MODULE_86_.A),
-/* harmony export */   hitobit: () => (/* reexport safe */ ccxt_src_hitobit_js_WEBPACK_IMPORTED_MODULE_87_.A),
-/* harmony export */   hollaex: () => (/* reexport safe */ ccxt_src_hollaex_js_WEBPACK_IMPORTED_MODULE_88_.A),
-/* harmony export */   htx: () => (/* reexport safe */ ccxt_src_htx_js_WEBPACK_IMPORTED_MODULE_89_.A),
-/* harmony export */   huobi: () => (/* reexport safe */ ccxt_src_huobi_js_WEBPACK_IMPORTED_MODULE_90_.A),
-/* harmony export */   hyperliquid: () => (/* reexport safe */ ccxt_src_hyperliquid_js_WEBPACK_IMPORTED_MODULE_91_.A),
-/* harmony export */   independentreserve: () => (/* reexport safe */ ccxt_src_independentreserve_js_WEBPACK_IMPORTED_MODULE_92_.A),
-/* harmony export */   indodax: () => (/* reexport safe */ ccxt_src_indodax_js_WEBPACK_IMPORTED_MODULE_93_.A),
-/* harmony export */   iranexchange: () => (/* reexport safe */ ccxt_src_iranexchange_js_WEBPACK_IMPORTED_MODULE_94_.A),
-/* harmony export */   jibitex: () => (/* reexport safe */ ccxt_src_jibitex_js_WEBPACK_IMPORTED_MODULE_95_.A),
-/* harmony export */   kcex: () => (/* reexport safe */ ccxt_src_kcex_js_WEBPACK_IMPORTED_MODULE_96_.A),
-/* harmony export */   kifpoolme: () => (/* reexport safe */ ccxt_src_kifpoolme_js_WEBPACK_IMPORTED_MODULE_97_.A),
-/* harmony export */   kraken: () => (/* reexport safe */ ccxt_src_kraken_js_WEBPACK_IMPORTED_MODULE_98_.A),
-/* harmony export */   krakenfutures: () => (/* reexport safe */ ccxt_src_krakenfutures_js_WEBPACK_IMPORTED_MODULE_99_.A),
-/* harmony export */   kucoin: () => (/* reexport safe */ ccxt_src_kucoin_js_WEBPACK_IMPORTED_MODULE_100_.A),
-/* harmony export */   kucoinfutures: () => (/* reexport safe */ ccxt_src_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_101_.A),
-/* harmony export */   latoken: () => (/* reexport safe */ ccxt_src_latoken_js_WEBPACK_IMPORTED_MODULE_102_.A),
-/* harmony export */   lbank: () => (/* reexport safe */ ccxt_src_lbank_js_WEBPACK_IMPORTED_MODULE_103_.A),
-/* harmony export */   luno: () => (/* reexport safe */ ccxt_src_luno_js_WEBPACK_IMPORTED_MODULE_104_.A),
-/* harmony export */   mazdax: () => (/* reexport safe */ ccxt_src_mazdax_js_WEBPACK_IMPORTED_MODULE_105_.A),
-/* harmony export */   melligold: () => (/* reexport safe */ ccxt_src_melligold_js_WEBPACK_IMPORTED_MODULE_106_.A),
-/* harmony export */   mercado: () => (/* reexport safe */ ccxt_src_mercado_js_WEBPACK_IMPORTED_MODULE_107_.A),
-/* harmony export */   mexc: () => (/* reexport safe */ ccxt_src_mexc_js_WEBPACK_IMPORTED_MODULE_108_.A),
-/* harmony export */   milligold: () => (/* reexport safe */ ccxt_src_milligold_js_WEBPACK_IMPORTED_MODULE_109_.A),
-/* harmony export */   modetrade: () => (/* reexport safe */ ccxt_src_modetrade_js_WEBPACK_IMPORTED_MODULE_110_.A),
-/* harmony export */   myokx: () => (/* reexport safe */ ccxt_src_myokx_js_WEBPACK_IMPORTED_MODULE_111_.A),
-/* harmony export */   ndax: () => (/* reexport safe */ ccxt_src_ndax_js_WEBPACK_IMPORTED_MODULE_112_.A),
-/* harmony export */   nobitex: () => (/* reexport safe */ ccxt_src_nobitex_js_WEBPACK_IMPORTED_MODULE_113_.A),
-/* harmony export */   novadax: () => (/* reexport safe */ ccxt_src_novadax_js_WEBPACK_IMPORTED_MODULE_114_.A),
-/* harmony export */   oceanex: () => (/* reexport safe */ ccxt_src_oceanex_js_WEBPACK_IMPORTED_MODULE_115_.A),
-/* harmony export */   okcoin: () => (/* reexport safe */ ccxt_src_okcoin_js_WEBPACK_IMPORTED_MODULE_116_.A),
-/* harmony export */   okexchange: () => (/* reexport safe */ ccxt_src_okexchange_js_WEBPACK_IMPORTED_MODULE_117_.A),
-/* harmony export */   okx: () => (/* reexport safe */ ccxt_src_okx_js_WEBPACK_IMPORTED_MODULE_118_.A),
-/* harmony export */   okxus: () => (/* reexport safe */ ccxt_src_okxus_js_WEBPACK_IMPORTED_MODULE_119_.A),
-/* harmony export */   ompfinex: () => (/* reexport safe */ ccxt_src_ompfinex_js_WEBPACK_IMPORTED_MODULE_120_.A),
-/* harmony export */   onetrading: () => (/* reexport safe */ ccxt_src_onetrading_js_WEBPACK_IMPORTED_MODULE_121_.A),
-/* harmony export */   ourbit: () => (/* reexport safe */ ccxt_src_ourbit_js_WEBPACK_IMPORTED_MODULE_122_.A),
-/* harmony export */   oxfun: () => (/* reexport safe */ ccxt_src_oxfun_js_WEBPACK_IMPORTED_MODULE_123_.A),
-/* harmony export */   p2b: () => (/* reexport safe */ ccxt_src_p2b_js_WEBPACK_IMPORTED_MODULE_124_.A),
-/* harmony export */   paradex: () => (/* reexport safe */ ccxt_src_paradex_js_WEBPACK_IMPORTED_MODULE_125_.A),
-/* harmony export */   paymium: () => (/* reexport safe */ ccxt_src_paymium_js_WEBPACK_IMPORTED_MODULE_126_.A),
-/* harmony export */   phemex: () => (/* reexport safe */ ccxt_src_phemex_js_WEBPACK_IMPORTED_MODULE_127_.A),
-/* harmony export */   pingi: () => (/* reexport safe */ ccxt_src_pingi_js_WEBPACK_IMPORTED_MODULE_128_.A),
-/* harmony export */   poloniex: () => (/* reexport safe */ ccxt_src_poloniex_js_WEBPACK_IMPORTED_MODULE_129_.A),
-/* harmony export */   pooleno: () => (/* reexport safe */ ccxt_src_pooleno_js_WEBPACK_IMPORTED_MODULE_130_.A),
+/* harmony export */   excoino: () => (/* reexport safe */ ccxt_src_excoino_js_WEBPACK_IMPORTED_MODULE_76_.A),
+/* harmony export */   exir: () => (/* reexport safe */ ccxt_src_exir_js_WEBPACK_IMPORTED_MODULE_77_.A),
+/* harmony export */   exmo: () => (/* reexport safe */ ccxt_src_exmo_js_WEBPACK_IMPORTED_MODULE_78_.A),
+/* harmony export */   exnovin: () => (/* reexport safe */ ccxt_src_exnovin_js_WEBPACK_IMPORTED_MODULE_79_.A),
+/* harmony export */   farhadexchange: () => (/* reexport safe */ ccxt_src_farhadexchange_js_WEBPACK_IMPORTED_MODULE_80_.A),
+/* harmony export */   fmfwio: () => (/* reexport safe */ ccxt_src_fmfwio_js_WEBPACK_IMPORTED_MODULE_81_.A),
+/* harmony export */   foxbit: () => (/* reexport safe */ ccxt_src_foxbit_js_WEBPACK_IMPORTED_MODULE_82_.A),
+/* harmony export */   functions: () => (/* reexport module object */ ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_245_),
+/* harmony export */   gate: () => (/* reexport safe */ ccxt_src_gate_js_WEBPACK_IMPORTED_MODULE_83_.A),
+/* harmony export */   gateio: () => (/* reexport safe */ ccxt_src_gateio_js_WEBPACK_IMPORTED_MODULE_84_.A),
+/* harmony export */   gemini: () => (/* reexport safe */ ccxt_src_gemini_js_WEBPACK_IMPORTED_MODULE_85_.A),
+/* harmony export */   goldika: () => (/* reexport safe */ ccxt_src_goldika_js_WEBPACK_IMPORTED_MODULE_86_.A),
+/* harmony export */   goldis: () => (/* reexport safe */ ccxt_src_goldis_js_WEBPACK_IMPORTED_MODULE_87_.A),
+/* harmony export */   hamrahgold: () => (/* reexport safe */ ccxt_src_hamrahgold_js_WEBPACK_IMPORTED_MODULE_88_.A),
+/* harmony export */   hamtapay: () => (/* reexport safe */ ccxt_src_hamtapay_js_WEBPACK_IMPORTED_MODULE_89_.A),
+/* harmony export */   hashkey: () => (/* reexport safe */ ccxt_src_hashkey_js_WEBPACK_IMPORTED_MODULE_90_.A),
+/* harmony export */   hibachi: () => (/* reexport safe */ ccxt_src_hibachi_js_WEBPACK_IMPORTED_MODULE_91_.A),
+/* harmony export */   hitbtc: () => (/* reexport safe */ ccxt_src_hitbtc_js_WEBPACK_IMPORTED_MODULE_92_.A),
+/* harmony export */   hitobit: () => (/* reexport safe */ ccxt_src_hitobit_js_WEBPACK_IMPORTED_MODULE_93_.A),
+/* harmony export */   hollaex: () => (/* reexport safe */ ccxt_src_hollaex_js_WEBPACK_IMPORTED_MODULE_94_.A),
+/* harmony export */   htx: () => (/* reexport safe */ ccxt_src_htx_js_WEBPACK_IMPORTED_MODULE_95_.A),
+/* harmony export */   huobi: () => (/* reexport safe */ ccxt_src_huobi_js_WEBPACK_IMPORTED_MODULE_96_.A),
+/* harmony export */   hyperliquid: () => (/* reexport safe */ ccxt_src_hyperliquid_js_WEBPACK_IMPORTED_MODULE_97_.A),
+/* harmony export */   independentreserve: () => (/* reexport safe */ ccxt_src_independentreserve_js_WEBPACK_IMPORTED_MODULE_98_.A),
+/* harmony export */   indodax: () => (/* reexport safe */ ccxt_src_indodax_js_WEBPACK_IMPORTED_MODULE_99_.A),
+/* harmony export */   iranexchange: () => (/* reexport safe */ ccxt_src_iranexchange_js_WEBPACK_IMPORTED_MODULE_100_.A),
+/* harmony export */   jibitex: () => (/* reexport safe */ ccxt_src_jibitex_js_WEBPACK_IMPORTED_MODULE_101_.A),
+/* harmony export */   kcex: () => (/* reexport safe */ ccxt_src_kcex_js_WEBPACK_IMPORTED_MODULE_102_.A),
+/* harmony export */   kifpoolme: () => (/* reexport safe */ ccxt_src_kifpoolme_js_WEBPACK_IMPORTED_MODULE_103_.A),
+/* harmony export */   kraken: () => (/* reexport safe */ ccxt_src_kraken_js_WEBPACK_IMPORTED_MODULE_104_.A),
+/* harmony export */   krakenfutures: () => (/* reexport safe */ ccxt_src_krakenfutures_js_WEBPACK_IMPORTED_MODULE_105_.A),
+/* harmony export */   kucoin: () => (/* reexport safe */ ccxt_src_kucoin_js_WEBPACK_IMPORTED_MODULE_106_.A),
+/* harmony export */   kucoinfutures: () => (/* reexport safe */ ccxt_src_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_107_.A),
+/* harmony export */   latoken: () => (/* reexport safe */ ccxt_src_latoken_js_WEBPACK_IMPORTED_MODULE_108_.A),
+/* harmony export */   lbank: () => (/* reexport safe */ ccxt_src_lbank_js_WEBPACK_IMPORTED_MODULE_109_.A),
+/* harmony export */   luno: () => (/* reexport safe */ ccxt_src_luno_js_WEBPACK_IMPORTED_MODULE_110_.A),
+/* harmony export */   mazdax: () => (/* reexport safe */ ccxt_src_mazdax_js_WEBPACK_IMPORTED_MODULE_111_.A),
+/* harmony export */   melligold: () => (/* reexport safe */ ccxt_src_melligold_js_WEBPACK_IMPORTED_MODULE_112_.A),
+/* harmony export */   mercado: () => (/* reexport safe */ ccxt_src_mercado_js_WEBPACK_IMPORTED_MODULE_113_.A),
+/* harmony export */   mexc: () => (/* reexport safe */ ccxt_src_mexc_js_WEBPACK_IMPORTED_MODULE_114_.A),
+/* harmony export */   milligold: () => (/* reexport safe */ ccxt_src_milligold_js_WEBPACK_IMPORTED_MODULE_115_.A),
+/* harmony export */   modetrade: () => (/* reexport safe */ ccxt_src_modetrade_js_WEBPACK_IMPORTED_MODULE_116_.A),
+/* harmony export */   myokx: () => (/* reexport safe */ ccxt_src_myokx_js_WEBPACK_IMPORTED_MODULE_117_.A),
+/* harmony export */   ndax: () => (/* reexport safe */ ccxt_src_ndax_js_WEBPACK_IMPORTED_MODULE_118_.A),
+/* harmony export */   nobitex: () => (/* reexport safe */ ccxt_src_nobitex_js_WEBPACK_IMPORTED_MODULE_119_.A),
+/* harmony export */   novadax: () => (/* reexport safe */ ccxt_src_novadax_js_WEBPACK_IMPORTED_MODULE_120_.A),
+/* harmony export */   oceanex: () => (/* reexport safe */ ccxt_src_oceanex_js_WEBPACK_IMPORTED_MODULE_121_.A),
+/* harmony export */   okcoin: () => (/* reexport safe */ ccxt_src_okcoin_js_WEBPACK_IMPORTED_MODULE_122_.A),
+/* harmony export */   okexchange: () => (/* reexport safe */ ccxt_src_okexchange_js_WEBPACK_IMPORTED_MODULE_123_.A),
+/* harmony export */   okx: () => (/* reexport safe */ ccxt_src_okx_js_WEBPACK_IMPORTED_MODULE_124_.A),
+/* harmony export */   okxus: () => (/* reexport safe */ ccxt_src_okxus_js_WEBPACK_IMPORTED_MODULE_125_.A),
+/* harmony export */   ompfinex: () => (/* reexport safe */ ccxt_src_ompfinex_js_WEBPACK_IMPORTED_MODULE_126_.A),
+/* harmony export */   onetrading: () => (/* reexport safe */ ccxt_src_onetrading_js_WEBPACK_IMPORTED_MODULE_127_.A),
+/* harmony export */   ourbit: () => (/* reexport safe */ ccxt_src_ourbit_js_WEBPACK_IMPORTED_MODULE_128_.A),
+/* harmony export */   oxfun: () => (/* reexport safe */ ccxt_src_oxfun_js_WEBPACK_IMPORTED_MODULE_129_.A),
+/* harmony export */   p2b: () => (/* reexport safe */ ccxt_src_p2b_js_WEBPACK_IMPORTED_MODULE_130_.A),
+/* harmony export */   paradex: () => (/* reexport safe */ ccxt_src_paradex_js_WEBPACK_IMPORTED_MODULE_131_.A),
+/* harmony export */   paymium: () => (/* reexport safe */ ccxt_src_paymium_js_WEBPACK_IMPORTED_MODULE_132_.A),
+/* harmony export */   phemex: () => (/* reexport safe */ ccxt_src_phemex_js_WEBPACK_IMPORTED_MODULE_133_.A),
+/* harmony export */   pingi: () => (/* reexport safe */ ccxt_src_pingi_js_WEBPACK_IMPORTED_MODULE_134_.A),
+/* harmony export */   poloniex: () => (/* reexport safe */ ccxt_src_poloniex_js_WEBPACK_IMPORTED_MODULE_135_.A),
+/* harmony export */   pooleno: () => (/* reexport safe */ ccxt_src_pooleno_js_WEBPACK_IMPORTED_MODULE_136_.A),
 /* harmony export */   pro: () => (/* binding */ ccxt_pro),
-/* harmony export */   probit: () => (/* reexport safe */ ccxt_src_probit_js_WEBPACK_IMPORTED_MODULE_131_.A),
-/* harmony export */   raastin: () => (/* reexport safe */ ccxt_src_raastin_js_WEBPACK_IMPORTED_MODULE_132_.A),
-/* harmony export */   ramzinex: () => (/* reexport safe */ ccxt_src_ramzinex_js_WEBPACK_IMPORTED_MODULE_133_.A),
-/* harmony export */   saraf: () => (/* reexport safe */ ccxt_src_saraf_js_WEBPACK_IMPORTED_MODULE_134_.A),
-/* harmony export */   sarmayex: () => (/* reexport safe */ ccxt_src_sarmayex_js_WEBPACK_IMPORTED_MODULE_135_.A),
-/* harmony export */   sarrafex: () => (/* reexport safe */ ccxt_src_sarrafex_js_WEBPACK_IMPORTED_MODULE_136_.A),
-/* harmony export */   tabdeal: () => (/* reexport safe */ ccxt_src_tabdeal_js_WEBPACK_IMPORTED_MODULE_137_.A),
-/* harmony export */   talasea: () => (/* reexport safe */ ccxt_src_talasea_js_WEBPACK_IMPORTED_MODULE_138_.A),
-/* harmony export */   technogold: () => (/* reexport safe */ ccxt_src_technogold_js_WEBPACK_IMPORTED_MODULE_139_.A),
-/* harmony export */   tehran_exchange: () => (/* reexport safe */ ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_140_.A),
-/* harmony export */   tetherland: () => (/* reexport safe */ ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_141_.A),
-/* harmony export */   timex: () => (/* reexport safe */ ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_142_.A),
-/* harmony export */   tokocrypto: () => (/* reexport safe */ ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_143_.A),
-/* harmony export */   toobit: () => (/* reexport safe */ ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_144_.A),
-/* harmony export */   tradeogre: () => (/* reexport safe */ ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_145_.A),
-/* harmony export */   twox: () => (/* reexport safe */ ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_146_.A),
-/* harmony export */   ubitex: () => (/* reexport safe */ ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_147_.A),
-/* harmony export */   upbit: () => (/* reexport safe */ ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_148_.A),
+/* harmony export */   probit: () => (/* reexport safe */ ccxt_src_probit_js_WEBPACK_IMPORTED_MODULE_137_.A),
+/* harmony export */   raastin: () => (/* reexport safe */ ccxt_src_raastin_js_WEBPACK_IMPORTED_MODULE_138_.A),
+/* harmony export */   ramzinex: () => (/* reexport safe */ ccxt_src_ramzinex_js_WEBPACK_IMPORTED_MODULE_139_.A),
+/* harmony export */   saraf: () => (/* reexport safe */ ccxt_src_saraf_js_WEBPACK_IMPORTED_MODULE_140_.A),
+/* harmony export */   sarmayex: () => (/* reexport safe */ ccxt_src_sarmayex_js_WEBPACK_IMPORTED_MODULE_141_.A),
+/* harmony export */   sarrafex: () => (/* reexport safe */ ccxt_src_sarrafex_js_WEBPACK_IMPORTED_MODULE_142_.A),
+/* harmony export */   tabdeal: () => (/* reexport safe */ ccxt_src_tabdeal_js_WEBPACK_IMPORTED_MODULE_143_.A),
+/* harmony export */   talaavan: () => (/* reexport safe */ ccxt_src_talaavan_js_WEBPACK_IMPORTED_MODULE_144_.A),
+/* harmony export */   talapp: () => (/* reexport safe */ ccxt_src_talapp_js_WEBPACK_IMPORTED_MODULE_145_.A),
+/* harmony export */   talasea: () => (/* reexport safe */ ccxt_src_talasea_js_WEBPACK_IMPORTED_MODULE_146_.A),
+/* harmony export */   technogold: () => (/* reexport safe */ ccxt_src_technogold_js_WEBPACK_IMPORTED_MODULE_147_.A),
+/* harmony export */   tehran_exchange: () => (/* reexport safe */ ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_148_.A),
+/* harmony export */   tetherland: () => (/* reexport safe */ ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_149_.A),
+/* harmony export */   timex: () => (/* reexport safe */ ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_150_.A),
+/* harmony export */   tokocrypto: () => (/* reexport safe */ ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_151_.A),
+/* harmony export */   toobit: () => (/* reexport safe */ ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_152_.A),
+/* harmony export */   tradeogre: () => (/* reexport safe */ ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_153_.A),
+/* harmony export */   twox: () => (/* reexport safe */ ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_154_.A),
+/* harmony export */   ubitex: () => (/* reexport safe */ ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_155_.A),
+/* harmony export */   upbit: () => (/* reexport safe */ ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_156_.A),
 /* harmony export */   version: () => (/* binding */ ccxt_version),
-/* harmony export */   vertex: () => (/* reexport safe */ ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_149_.A),
-/* harmony export */   wallex: () => (/* reexport safe */ ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_150_.A),
-/* harmony export */   wallgold: () => (/* reexport safe */ ccxt_src_wallgold_js_WEBPACK_IMPORTED_MODULE_151_.A),
-/* harmony export */   wavesexchange: () => (/* reexport safe */ ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_152_.A),
-/* harmony export */   whitebit: () => (/* reexport safe */ ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_153_.A),
-/* harmony export */   woo: () => (/* reexport safe */ ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_154_.A),
-/* harmony export */   woofipro: () => (/* reexport safe */ ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_155_.A),
-/* harmony export */   xt: () => (/* reexport safe */ ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_156_.A),
-/* harmony export */   yobit: () => (/* reexport safe */ ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_157_.A),
-/* harmony export */   zaif: () => (/* reexport safe */ ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_158_.A),
-/* harmony export */   zonda: () => (/* reexport safe */ ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_159_.A)
+/* harmony export */   vertex: () => (/* reexport safe */ ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_157_.A),
+/* harmony export */   wallex: () => (/* reexport safe */ ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_158_.A),
+/* harmony export */   wallgold: () => (/* reexport safe */ ccxt_src_wallgold_js_WEBPACK_IMPORTED_MODULE_159_.A),
+/* harmony export */   wavesexchange: () => (/* reexport safe */ ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_160_.A),
+/* harmony export */   whitebit: () => (/* reexport safe */ ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_161_.A),
+/* harmony export */   woo: () => (/* reexport safe */ ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_162_.A),
+/* harmony export */   woofipro: () => (/* reexport safe */ ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_163_.A),
+/* harmony export */   xt: () => (/* reexport safe */ ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_164_.A),
+/* harmony export */   yobit: () => (/* reexport safe */ ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_165_.A),
+/* harmony export */   zaif: () => (/* reexport safe */ ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_166_.A),
+/* harmony export */   zarafza: () => (/* reexport safe */ ccxt_src_zarafza_js_WEBPACK_IMPORTED_MODULE_167_.A),
+/* harmony export */   zarminex: () => (/* reexport safe */ ccxt_src_zarminex_js_WEBPACK_IMPORTED_MODULE_168_.A),
+/* harmony export */   zarniv: () => (/* reexport safe */ ccxt_src_zarniv_js_WEBPACK_IMPORTED_MODULE_169_.A),
+/* harmony export */   zonda: () => (/* reexport safe */ ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_170_.A)
 /* harmony export */ });
-/* harmony import */ var ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_ = __webpack_require__(2961);
-/* harmony import */ var ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_233_ = __webpack_require__(5147);
-/* harmony import */ var ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_234_ = __webpack_require__(5095);
-/* harmony import */ var ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_ = __webpack_require__(2079);
-/* harmony import */ var ccxt_src_abantether_js_WEBPACK_IMPORTED_MODULE_1_ = __webpack_require__(1656);
-/* harmony import */ var ccxt_src_afratether_js_WEBPACK_IMPORTED_MODULE_2_ = __webpack_require__(5566);
-/* harmony import */ var ccxt_src_alpaca_js_WEBPACK_IMPORTED_MODULE_3_ = __webpack_require__(7930);
-/* harmony import */ var ccxt_src_apex_js_WEBPACK_IMPORTED_MODULE_4_ = __webpack_require__(4920);
-/* harmony import */ var ccxt_src_arzinja_js_WEBPACK_IMPORTED_MODULE_5_ = __webpack_require__(6371);
+/* harmony import */ var ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_ = __webpack_require__(72961);
+/* harmony import */ var ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_244_ = __webpack_require__(85147);
+/* harmony import */ var ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_245_ = __webpack_require__(15095);
+/* harmony import */ var ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_ = __webpack_require__(62079);
+/* harmony import */ var ccxt_src_abantether_js_WEBPACK_IMPORTED_MODULE_1_ = __webpack_require__(51656);
+/* harmony import */ var ccxt_src_afratether_js_WEBPACK_IMPORTED_MODULE_2_ = __webpack_require__(95566);
+/* harmony import */ var ccxt_src_alpaca_js_WEBPACK_IMPORTED_MODULE_3_ = __webpack_require__(77930);
+/* harmony import */ var ccxt_src_apex_js_WEBPACK_IMPORTED_MODULE_4_ = __webpack_require__(64920);
+/* harmony import */ var ccxt_src_arzinja_js_WEBPACK_IMPORTED_MODULE_5_ = __webpack_require__(16371);
 /* harmony import */ var ccxt_src_arzplus_js_WEBPACK_IMPORTED_MODULE_6_ = __webpack_require__(2065);
-/* harmony import */ var ccxt_src_asacoine_js_WEBPACK_IMPORTED_MODULE_7_ = __webpack_require__(1421);
-/* harmony import */ var ccxt_src_ascendex_js_WEBPACK_IMPORTED_MODULE_8_ = __webpack_require__(1411);
-/* harmony import */ var ccxt_src_asretether_js_WEBPACK_IMPORTED_MODULE_9_ = __webpack_require__(6077);
-/* harmony import */ var ccxt_src_bequant_js_WEBPACK_IMPORTED_MODULE_10_ = __webpack_require__(9002);
-/* harmony import */ var ccxt_src_bidarz_js_WEBPACK_IMPORTED_MODULE_11_ = __webpack_require__(6882);
-/* harmony import */ var ccxt_src_bigone_js_WEBPACK_IMPORTED_MODULE_12_ = __webpack_require__(8698);
-/* harmony import */ var ccxt_src_binance_js_WEBPACK_IMPORTED_MODULE_13_ = __webpack_require__(3192);
-/* harmony import */ var ccxt_src_binancecoinm_js_WEBPACK_IMPORTED_MODULE_14_ = __webpack_require__(1510);
-/* harmony import */ var ccxt_src_binanceus_js_WEBPACK_IMPORTED_MODULE_15_ = __webpack_require__(8228);
-/* harmony import */ var ccxt_src_binanceusdm_js_WEBPACK_IMPORTED_MODULE_16_ = __webpack_require__(2171);
-/* harmony import */ var ccxt_src_bingx_js_WEBPACK_IMPORTED_MODULE_17_ = __webpack_require__(2480);
-/* harmony import */ var ccxt_src_bit24_js_WEBPACK_IMPORTED_MODULE_18_ = __webpack_require__(1183);
-/* harmony import */ var ccxt_src_bit2c_js_WEBPACK_IMPORTED_MODULE_19_ = __webpack_require__(2342);
-/* harmony import */ var ccxt_src_bitbank_js_WEBPACK_IMPORTED_MODULE_20_ = __webpack_require__(7399);
-/* harmony import */ var ccxt_src_bitbarg_js_WEBPACK_IMPORTED_MODULE_21_ = __webpack_require__(2799);
-/* harmony import */ var ccxt_src_bitbns_js_WEBPACK_IMPORTED_MODULE_22_ = __webpack_require__(6328);
-/* harmony import */ var ccxt_src_bitfinex_js_WEBPACK_IMPORTED_MODULE_23_ = __webpack_require__(8657);
-/* harmony import */ var ccxt_src_bitflyer_js_WEBPACK_IMPORTED_MODULE_24_ = __webpack_require__(1787);
-/* harmony import */ var ccxt_src_bitget_js_WEBPACK_IMPORTED_MODULE_25_ = __webpack_require__(7757);
-/* harmony import */ var ccxt_src_bithumb_js_WEBPACK_IMPORTED_MODULE_26_ = __webpack_require__(357);
-/* harmony import */ var ccxt_src_bitimen_js_WEBPACK_IMPORTED_MODULE_27_ = __webpack_require__(4456);
-/* harmony import */ var ccxt_src_bitir_js_WEBPACK_IMPORTED_MODULE_28_ = __webpack_require__(9314);
-/* harmony import */ var ccxt_src_bitmart_js_WEBPACK_IMPORTED_MODULE_29_ = __webpack_require__(1837);
-/* harmony import */ var ccxt_src_bitmex_js_WEBPACK_IMPORTED_MODULE_30_ = __webpack_require__(9523);
-/* harmony import */ var ccxt_src_bitopro_js_WEBPACK_IMPORTED_MODULE_31_ = __webpack_require__(2753);
-/* harmony import */ var ccxt_src_bitpin_js_WEBPACK_IMPORTED_MODULE_32_ = __webpack_require__(9558);
-/* harmony import */ var ccxt_src_bitrue_js_WEBPACK_IMPORTED_MODULE_33_ = __webpack_require__(9061);
-/* harmony import */ var ccxt_src_bitso_js_WEBPACK_IMPORTED_MODULE_34_ = __webpack_require__(3019);
-/* harmony import */ var ccxt_src_bitstamp_js_WEBPACK_IMPORTED_MODULE_35_ = __webpack_require__(382);
-/* harmony import */ var ccxt_src_bitteam_js_WEBPACK_IMPORTED_MODULE_36_ = __webpack_require__(112);
-/* harmony import */ var ccxt_src_bittrade_js_WEBPACK_IMPORTED_MODULE_37_ = __webpack_require__(2263);
-/* harmony import */ var ccxt_src_bitunix_js_WEBPACK_IMPORTED_MODULE_38_ = __webpack_require__(587);
-/* harmony import */ var ccxt_src_bitvavo_js_WEBPACK_IMPORTED_MODULE_39_ = __webpack_require__(3727);
-/* harmony import */ var ccxt_src_bitwana_js_WEBPACK_IMPORTED_MODULE_40_ = __webpack_require__(7420);
-/* harmony import */ var ccxt_src_blockchaincom_js_WEBPACK_IMPORTED_MODULE_41_ = __webpack_require__(3205);
-/* harmony import */ var ccxt_src_blofin_js_WEBPACK_IMPORTED_MODULE_42_ = __webpack_require__(2520);
-/* harmony import */ var ccxt_src_btcalpha_js_WEBPACK_IMPORTED_MODULE_43_ = __webpack_require__(3413);
-/* harmony import */ var ccxt_src_btcbox_js_WEBPACK_IMPORTED_MODULE_44_ = __webpack_require__(5376);
-/* harmony import */ var ccxt_src_btcmarkets_js_WEBPACK_IMPORTED_MODULE_45_ = __webpack_require__(4936);
-/* harmony import */ var ccxt_src_btcturk_js_WEBPACK_IMPORTED_MODULE_46_ = __webpack_require__(9265);
-/* harmony import */ var ccxt_src_bybit_js_WEBPACK_IMPORTED_MODULE_47_ = __webpack_require__(5462);
-/* harmony import */ var ccxt_src_bydfi_js_WEBPACK_IMPORTED_MODULE_48_ = __webpack_require__(5000);
-/* harmony import */ var ccxt_src_cafearz_js_WEBPACK_IMPORTED_MODULE_49_ = __webpack_require__(5226);
-/* harmony import */ var ccxt_src_cex_js_WEBPACK_IMPORTED_MODULE_50_ = __webpack_require__(8846);
-/* harmony import */ var ccxt_src_changefa_js_WEBPACK_IMPORTED_MODULE_51_ = __webpack_require__(6257);
-/* harmony import */ var ccxt_src_coinbase_js_WEBPACK_IMPORTED_MODULE_52_ = __webpack_require__(7504);
-/* harmony import */ var ccxt_src_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_53_ = __webpack_require__(3278);
-/* harmony import */ var ccxt_src_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_54_ = __webpack_require__(4293);
-/* harmony import */ var ccxt_src_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_55_ = __webpack_require__(1558);
-/* harmony import */ var ccxt_src_coincatch_js_WEBPACK_IMPORTED_MODULE_56_ = __webpack_require__(570);
-/* harmony import */ var ccxt_src_coincheck_js_WEBPACK_IMPORTED_MODULE_57_ = __webpack_require__(2741);
-/* harmony import */ var ccxt_src_coinex_js_WEBPACK_IMPORTED_MODULE_58_ = __webpack_require__(9344);
-/* harmony import */ var ccxt_src_coinmate_js_WEBPACK_IMPORTED_MODULE_59_ = __webpack_require__(6016);
-/* harmony import */ var ccxt_src_coinmetro_js_WEBPACK_IMPORTED_MODULE_60_ = __webpack_require__(8692);
-/* harmony import */ var ccxt_src_coinone_js_WEBPACK_IMPORTED_MODULE_61_ = __webpack_require__(5377);
-/* harmony import */ var ccxt_src_coinsph_js_WEBPACK_IMPORTED_MODULE_62_ = __webpack_require__(2692);
-/* harmony import */ var ccxt_src_coinspot_js_WEBPACK_IMPORTED_MODULE_63_ = __webpack_require__(1669);
-/* harmony import */ var ccxt_src_cryptocom_js_WEBPACK_IMPORTED_MODULE_64_ = __webpack_require__(6068);
-/* harmony import */ var ccxt_src_cryptomus_js_WEBPACK_IMPORTED_MODULE_65_ = __webpack_require__(870);
-/* harmony import */ var ccxt_src_defx_js_WEBPACK_IMPORTED_MODULE_66_ = __webpack_require__(8458);
-/* harmony import */ var ccxt_src_delta_js_WEBPACK_IMPORTED_MODULE_67_ = __webpack_require__(1080);
-/* harmony import */ var ccxt_src_deribit_js_WEBPACK_IMPORTED_MODULE_68_ = __webpack_require__(2591);
-/* harmony import */ var ccxt_src_derive_js_WEBPACK_IMPORTED_MODULE_69_ = __webpack_require__(1839);
-/* harmony import */ var ccxt_src_digifinex_js_WEBPACK_IMPORTED_MODULE_70_ = __webpack_require__(779);
-/* harmony import */ var ccxt_src_ellipx_js_WEBPACK_IMPORTED_MODULE_71_ = __webpack_require__(1962);
-/* harmony import */ var ccxt_src_eterex_js_WEBPACK_IMPORTED_MODULE_72_ = __webpack_require__(6415);
-/* harmony import */ var ccxt_src_excoino_js_WEBPACK_IMPORTED_MODULE_73_ = __webpack_require__(9335);
-/* harmony import */ var ccxt_src_exir_js_WEBPACK_IMPORTED_MODULE_74_ = __webpack_require__(9098);
-/* harmony import */ var ccxt_src_exmo_js_WEBPACK_IMPORTED_MODULE_75_ = __webpack_require__(7057);
-/* harmony import */ var ccxt_src_exnovin_js_WEBPACK_IMPORTED_MODULE_76_ = __webpack_require__(9169);
-/* harmony import */ var ccxt_src_farhadexchange_js_WEBPACK_IMPORTED_MODULE_77_ = __webpack_require__(6711);
-/* harmony import */ var ccxt_src_fmfwio_js_WEBPACK_IMPORTED_MODULE_78_ = __webpack_require__(3042);
-/* harmony import */ var ccxt_src_foxbit_js_WEBPACK_IMPORTED_MODULE_79_ = __webpack_require__(448);
-/* harmony import */ var ccxt_src_gate_js_WEBPACK_IMPORTED_MODULE_80_ = __webpack_require__(9403);
-/* harmony import */ var ccxt_src_gateio_js_WEBPACK_IMPORTED_MODULE_81_ = __webpack_require__(784);
-/* harmony import */ var ccxt_src_gemini_js_WEBPACK_IMPORTED_MODULE_82_ = __webpack_require__(8823);
-/* harmony import */ var ccxt_src_hamtapay_js_WEBPACK_IMPORTED_MODULE_83_ = __webpack_require__(9369);
-/* harmony import */ var ccxt_src_hashkey_js_WEBPACK_IMPORTED_MODULE_84_ = __webpack_require__(2937);
-/* harmony import */ var ccxt_src_hibachi_js_WEBPACK_IMPORTED_MODULE_85_ = __webpack_require__(5106);
-/* harmony import */ var ccxt_src_hitbtc_js_WEBPACK_IMPORTED_MODULE_86_ = __webpack_require__(7996);
-/* harmony import */ var ccxt_src_hitobit_js_WEBPACK_IMPORTED_MODULE_87_ = __webpack_require__(675);
-/* harmony import */ var ccxt_src_hollaex_js_WEBPACK_IMPORTED_MODULE_88_ = __webpack_require__(4455);
-/* harmony import */ var ccxt_src_htx_js_WEBPACK_IMPORTED_MODULE_89_ = __webpack_require__(9946);
-/* harmony import */ var ccxt_src_huobi_js_WEBPACK_IMPORTED_MODULE_90_ = __webpack_require__(63);
-/* harmony import */ var ccxt_src_hyperliquid_js_WEBPACK_IMPORTED_MODULE_91_ = __webpack_require__(1936);
-/* harmony import */ var ccxt_src_independentreserve_js_WEBPACK_IMPORTED_MODULE_92_ = __webpack_require__(4162);
-/* harmony import */ var ccxt_src_indodax_js_WEBPACK_IMPORTED_MODULE_93_ = __webpack_require__(7325);
-/* harmony import */ var ccxt_src_iranexchange_js_WEBPACK_IMPORTED_MODULE_94_ = __webpack_require__(5073);
-/* harmony import */ var ccxt_src_jibitex_js_WEBPACK_IMPORTED_MODULE_95_ = __webpack_require__(835);
-/* harmony import */ var ccxt_src_kcex_js_WEBPACK_IMPORTED_MODULE_96_ = __webpack_require__(1199);
-/* harmony import */ var ccxt_src_kifpoolme_js_WEBPACK_IMPORTED_MODULE_97_ = __webpack_require__(3644);
-/* harmony import */ var ccxt_src_kraken_js_WEBPACK_IMPORTED_MODULE_98_ = __webpack_require__(8042);
-/* harmony import */ var ccxt_src_krakenfutures_js_WEBPACK_IMPORTED_MODULE_99_ = __webpack_require__(2300);
-/* harmony import */ var ccxt_src_kucoin_js_WEBPACK_IMPORTED_MODULE_100_ = __webpack_require__(1397);
-/* harmony import */ var ccxt_src_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_101_ = __webpack_require__(6217);
-/* harmony import */ var ccxt_src_latoken_js_WEBPACK_IMPORTED_MODULE_102_ = __webpack_require__(8146);
-/* harmony import */ var ccxt_src_lbank_js_WEBPACK_IMPORTED_MODULE_103_ = __webpack_require__(3144);
-/* harmony import */ var ccxt_src_luno_js_WEBPACK_IMPORTED_MODULE_104_ = __webpack_require__(9248);
-/* harmony import */ var ccxt_src_mazdax_js_WEBPACK_IMPORTED_MODULE_105_ = __webpack_require__(509);
-/* harmony import */ var ccxt_src_melligold_js_WEBPACK_IMPORTED_MODULE_106_ = __webpack_require__(361);
-/* harmony import */ var ccxt_src_mercado_js_WEBPACK_IMPORTED_MODULE_107_ = __webpack_require__(6419);
-/* harmony import */ var ccxt_src_mexc_js_WEBPACK_IMPORTED_MODULE_108_ = __webpack_require__(2403);
-/* harmony import */ var ccxt_src_milligold_js_WEBPACK_IMPORTED_MODULE_109_ = __webpack_require__(8301);
-/* harmony import */ var ccxt_src_modetrade_js_WEBPACK_IMPORTED_MODULE_110_ = __webpack_require__(5345);
-/* harmony import */ var ccxt_src_myokx_js_WEBPACK_IMPORTED_MODULE_111_ = __webpack_require__(8982);
-/* harmony import */ var ccxt_src_ndax_js_WEBPACK_IMPORTED_MODULE_112_ = __webpack_require__(4460);
-/* harmony import */ var ccxt_src_nobitex_js_WEBPACK_IMPORTED_MODULE_113_ = __webpack_require__(1561);
-/* harmony import */ var ccxt_src_novadax_js_WEBPACK_IMPORTED_MODULE_114_ = __webpack_require__(8473);
-/* harmony import */ var ccxt_src_oceanex_js_WEBPACK_IMPORTED_MODULE_115_ = __webpack_require__(3805);
-/* harmony import */ var ccxt_src_okcoin_js_WEBPACK_IMPORTED_MODULE_116_ = __webpack_require__(7915);
-/* harmony import */ var ccxt_src_okexchange_js_WEBPACK_IMPORTED_MODULE_117_ = __webpack_require__(79);
-/* harmony import */ var ccxt_src_okx_js_WEBPACK_IMPORTED_MODULE_118_ = __webpack_require__(3660);
-/* harmony import */ var ccxt_src_okxus_js_WEBPACK_IMPORTED_MODULE_119_ = __webpack_require__(3536);
-/* harmony import */ var ccxt_src_ompfinex_js_WEBPACK_IMPORTED_MODULE_120_ = __webpack_require__(848);
-/* harmony import */ var ccxt_src_onetrading_js_WEBPACK_IMPORTED_MODULE_121_ = __webpack_require__(3573);
-/* harmony import */ var ccxt_src_ourbit_js_WEBPACK_IMPORTED_MODULE_122_ = __webpack_require__(6469);
-/* harmony import */ var ccxt_src_oxfun_js_WEBPACK_IMPORTED_MODULE_123_ = __webpack_require__(6358);
-/* harmony import */ var ccxt_src_p2b_js_WEBPACK_IMPORTED_MODULE_124_ = __webpack_require__(4998);
-/* harmony import */ var ccxt_src_paradex_js_WEBPACK_IMPORTED_MODULE_125_ = __webpack_require__(6993);
-/* harmony import */ var ccxt_src_paymium_js_WEBPACK_IMPORTED_MODULE_126_ = __webpack_require__(3280);
-/* harmony import */ var ccxt_src_phemex_js_WEBPACK_IMPORTED_MODULE_127_ = __webpack_require__(9075);
-/* harmony import */ var ccxt_src_pingi_js_WEBPACK_IMPORTED_MODULE_128_ = __webpack_require__(8785);
-/* harmony import */ var ccxt_src_poloniex_js_WEBPACK_IMPORTED_MODULE_129_ = __webpack_require__(288);
-/* harmony import */ var ccxt_src_pooleno_js_WEBPACK_IMPORTED_MODULE_130_ = __webpack_require__(8920);
-/* harmony import */ var ccxt_src_probit_js_WEBPACK_IMPORTED_MODULE_131_ = __webpack_require__(5037);
-/* harmony import */ var ccxt_src_raastin_js_WEBPACK_IMPORTED_MODULE_132_ = __webpack_require__(9614);
-/* harmony import */ var ccxt_src_ramzinex_js_WEBPACK_IMPORTED_MODULE_133_ = __webpack_require__(676);
-/* harmony import */ var ccxt_src_saraf_js_WEBPACK_IMPORTED_MODULE_134_ = __webpack_require__(9451);
-/* harmony import */ var ccxt_src_sarmayex_js_WEBPACK_IMPORTED_MODULE_135_ = __webpack_require__(5822);
-/* harmony import */ var ccxt_src_sarrafex_js_WEBPACK_IMPORTED_MODULE_136_ = __webpack_require__(9702);
-/* harmony import */ var ccxt_src_tabdeal_js_WEBPACK_IMPORTED_MODULE_137_ = __webpack_require__(5619);
-/* harmony import */ var ccxt_src_talasea_js_WEBPACK_IMPORTED_MODULE_138_ = __webpack_require__(6210);
-/* harmony import */ var ccxt_src_technogold_js_WEBPACK_IMPORTED_MODULE_139_ = __webpack_require__(501);
-/* harmony import */ var ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_140_ = __webpack_require__(7496);
-/* harmony import */ var ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_141_ = __webpack_require__(7497);
-/* harmony import */ var ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_142_ = __webpack_require__(6213);
-/* harmony import */ var ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_143_ = __webpack_require__(2490);
-/* harmony import */ var ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_144_ = __webpack_require__(237);
-/* harmony import */ var ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_145_ = __webpack_require__(5887);
-/* harmony import */ var ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_146_ = __webpack_require__(8586);
-/* harmony import */ var ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_147_ = __webpack_require__(3551);
-/* harmony import */ var ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_148_ = __webpack_require__(930);
-/* harmony import */ var ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_149_ = __webpack_require__(4910);
-/* harmony import */ var ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_150_ = __webpack_require__(8633);
-/* harmony import */ var ccxt_src_wallgold_js_WEBPACK_IMPORTED_MODULE_151_ = __webpack_require__(6314);
-/* harmony import */ var ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_152_ = __webpack_require__(7073);
-/* harmony import */ var ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_153_ = __webpack_require__(5336);
-/* harmony import */ var ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_154_ = __webpack_require__(669);
-/* harmony import */ var ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_155_ = __webpack_require__(9641);
-/* harmony import */ var ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_156_ = __webpack_require__(5344);
-/* harmony import */ var ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_157_ = __webpack_require__(7469);
-/* harmony import */ var ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_158_ = __webpack_require__(1530);
-/* harmony import */ var ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_159_ = __webpack_require__(6022);
-/* harmony import */ var ccxt_src_pro_alpaca_js_WEBPACK_IMPORTED_MODULE_160_ = __webpack_require__(6810);
-/* harmony import */ var ccxt_src_pro_apex_js_WEBPACK_IMPORTED_MODULE_161_ = __webpack_require__(136);
-/* harmony import */ var ccxt_src_pro_ascendex_js_WEBPACK_IMPORTED_MODULE_162_ = __webpack_require__(1657);
-/* harmony import */ var ccxt_src_pro_bequant_js_WEBPACK_IMPORTED_MODULE_163_ = __webpack_require__(9338);
-/* harmony import */ var ccxt_src_pro_binance_js_WEBPACK_IMPORTED_MODULE_164_ = __webpack_require__(9544);
-/* harmony import */ var ccxt_src_pro_binancecoinm_js_WEBPACK_IMPORTED_MODULE_165_ = __webpack_require__(902);
-/* harmony import */ var ccxt_src_pro_binanceus_js_WEBPACK_IMPORTED_MODULE_166_ = __webpack_require__(8788);
-/* harmony import */ var ccxt_src_pro_binanceusdm_js_WEBPACK_IMPORTED_MODULE_167_ = __webpack_require__(8251);
-/* harmony import */ var ccxt_src_pro_bingx_js_WEBPACK_IMPORTED_MODULE_168_ = __webpack_require__(9456);
-/* harmony import */ var ccxt_src_pro_bitfinex_js_WEBPACK_IMPORTED_MODULE_169_ = __webpack_require__(1038);
-/* harmony import */ var ccxt_src_pro_bitget_js_WEBPACK_IMPORTED_MODULE_170_ = __webpack_require__(205);
-/* harmony import */ var ccxt_src_pro_bithumb_js_WEBPACK_IMPORTED_MODULE_171_ = __webpack_require__(6181);
-/* harmony import */ var ccxt_src_pro_bitmart_js_WEBPACK_IMPORTED_MODULE_172_ = __webpack_require__(3069);
-/* harmony import */ var ccxt_src_pro_bitmex_js_WEBPACK_IMPORTED_MODULE_173_ = __webpack_require__(3731);
-/* harmony import */ var ccxt_src_pro_bitopro_js_WEBPACK_IMPORTED_MODULE_174_ = __webpack_require__(4401);
-/* harmony import */ var ccxt_src_pro_bitrue_js_WEBPACK_IMPORTED_MODULE_175_ = __webpack_require__(3333);
-/* harmony import */ var ccxt_src_pro_bitstamp_js_WEBPACK_IMPORTED_MODULE_176_ = __webpack_require__(3326);
-/* harmony import */ var ccxt_src_pro_bittrade_js_WEBPACK_IMPORTED_MODULE_177_ = __webpack_require__(2391);
-/* harmony import */ var ccxt_src_pro_bitvavo_js_WEBPACK_IMPORTED_MODULE_178_ = __webpack_require__(1327);
-/* harmony import */ var ccxt_src_pro_blockchaincom_js_WEBPACK_IMPORTED_MODULE_179_ = __webpack_require__(8693);
-/* harmony import */ var ccxt_src_pro_blofin_js_WEBPACK_IMPORTED_MODULE_180_ = __webpack_require__(1672);
-/* harmony import */ var ccxt_src_pro_bybit_js_WEBPACK_IMPORTED_MODULE_181_ = __webpack_require__(8518);
-/* harmony import */ var ccxt_src_pro_cex_js_WEBPACK_IMPORTED_MODULE_182_ = __webpack_require__(3774);
-/* harmony import */ var ccxt_src_pro_coinbase_js_WEBPACK_IMPORTED_MODULE_183_ = __webpack_require__(8160);
-/* harmony import */ var ccxt_src_pro_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_184_ = __webpack_require__(5918);
-/* harmony import */ var ccxt_src_pro_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_185_ = __webpack_require__(1925);
-/* harmony import */ var ccxt_src_pro_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_186_ = __webpack_require__(998);
-/* harmony import */ var ccxt_src_pro_coincatch_js_WEBPACK_IMPORTED_MODULE_187_ = __webpack_require__(3242);
-/* harmony import */ var ccxt_src_pro_coincheck_js_WEBPACK_IMPORTED_MODULE_188_ = __webpack_require__(5317);
-/* harmony import */ var ccxt_src_pro_coinex_js_WEBPACK_IMPORTED_MODULE_189_ = __webpack_require__(9088);
-/* harmony import */ var ccxt_src_pro_coinone_js_WEBPACK_IMPORTED_MODULE_190_ = __webpack_require__(8673);
-/* harmony import */ var ccxt_src_pro_cryptocom_js_WEBPACK_IMPORTED_MODULE_191_ = __webpack_require__(6292);
-/* harmony import */ var ccxt_src_pro_defx_js_WEBPACK_IMPORTED_MODULE_192_ = __webpack_require__(8717);
-/* harmony import */ var ccxt_src_pro_deribit_js_WEBPACK_IMPORTED_MODULE_193_ = __webpack_require__(7791);
-/* harmony import */ var ccxt_src_pro_derive_js_WEBPACK_IMPORTED_MODULE_194_ = __webpack_require__(2127);
-/* harmony import */ var ccxt_src_pro_exmo_js_WEBPACK_IMPORTED_MODULE_195_ = __webpack_require__(5233);
-/* harmony import */ var ccxt_src_pro_gate_js_WEBPACK_IMPORTED_MODULE_196_ = __webpack_require__(9195);
-/* harmony import */ var ccxt_src_pro_gateio_js_WEBPACK_IMPORTED_MODULE_197_ = __webpack_require__(5843);
-/* harmony import */ var ccxt_src_pro_gemini_js_WEBPACK_IMPORTED_MODULE_198_ = __webpack_require__(375);
-/* harmony import */ var ccxt_src_pro_hashkey_js_WEBPACK_IMPORTED_MODULE_199_ = __webpack_require__(1481);
-/* harmony import */ var ccxt_src_pro_hitbtc_js_WEBPACK_IMPORTED_MODULE_200_ = __webpack_require__(4524);
-/* harmony import */ var ccxt_src_pro_hollaex_js_WEBPACK_IMPORTED_MODULE_201_ = __webpack_require__(8247);
-/* harmony import */ var ccxt_src_pro_htx_js_WEBPACK_IMPORTED_MODULE_202_ = __webpack_require__(3898);
-/* harmony import */ var ccxt_src_pro_huobi_js_WEBPACK_IMPORTED_MODULE_203_ = __webpack_require__(6335);
-/* harmony import */ var ccxt_src_pro_hyperliquid_js_WEBPACK_IMPORTED_MODULE_204_ = __webpack_require__(3984);
-/* harmony import */ var ccxt_src_pro_independentreserve_js_WEBPACK_IMPORTED_MODULE_205_ = __webpack_require__(98);
-/* harmony import */ var ccxt_src_pro_kraken_js_WEBPACK_IMPORTED_MODULE_206_ = __webpack_require__(9050);
-/* harmony import */ var ccxt_src_pro_krakenfutures_js_WEBPACK_IMPORTED_MODULE_207_ = __webpack_require__(6396);
-/* harmony import */ var ccxt_src_pro_kucoin_js_WEBPACK_IMPORTED_MODULE_208_ = __webpack_require__(4965);
-/* harmony import */ var ccxt_src_pro_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_209_ = __webpack_require__(905);
-/* harmony import */ var ccxt_src_pro_lbank_js_WEBPACK_IMPORTED_MODULE_210_ = __webpack_require__(1736);
-/* harmony import */ var ccxt_src_pro_luno_js_WEBPACK_IMPORTED_MODULE_211_ = __webpack_require__(9827);
-/* harmony import */ var ccxt_src_pro_mexc_js_WEBPACK_IMPORTED_MODULE_212_ = __webpack_require__(9219);
-/* harmony import */ var ccxt_src_pro_modetrade_js_WEBPACK_IMPORTED_MODULE_213_ = __webpack_require__(49);
-/* harmony import */ var ccxt_src_pro_myokx_js_WEBPACK_IMPORTED_MODULE_214_ = __webpack_require__(3062);
-/* harmony import */ var ccxt_src_pro_ndax_js_WEBPACK_IMPORTED_MODULE_215_ = __webpack_require__(3887);
-/* harmony import */ var ccxt_src_pro_okcoin_js_WEBPACK_IMPORTED_MODULE_216_ = __webpack_require__(6187);
-/* harmony import */ var ccxt_src_pro_okx_js_WEBPACK_IMPORTED_MODULE_217_ = __webpack_require__(8588);
-/* harmony import */ var ccxt_src_pro_okxus_js_WEBPACK_IMPORTED_MODULE_218_ = __webpack_require__(3296);
-/* harmony import */ var ccxt_src_pro_onetrading_js_WEBPACK_IMPORTED_MODULE_219_ = __webpack_require__(4357);
-/* harmony import */ var ccxt_src_pro_oxfun_js_WEBPACK_IMPORTED_MODULE_220_ = __webpack_require__(550);
-/* harmony import */ var ccxt_src_pro_p2b_js_WEBPACK_IMPORTED_MODULE_221_ = __webpack_require__(4934);
-/* harmony import */ var ccxt_src_pro_paradex_js_WEBPACK_IMPORTED_MODULE_222_ = __webpack_require__(1057);
-/* harmony import */ var ccxt_src_pro_phemex_js_WEBPACK_IMPORTED_MODULE_223_ = __webpack_require__(1619);
-/* harmony import */ var ccxt_src_pro_poloniex_js_WEBPACK_IMPORTED_MODULE_224_ = __webpack_require__(3456);
-/* harmony import */ var ccxt_src_pro_probit_js_WEBPACK_IMPORTED_MODULE_225_ = __webpack_require__(5738);
-/* harmony import */ var ccxt_src_pro_tradeogre_js_WEBPACK_IMPORTED_MODULE_226_ = __webpack_require__(8719);
-/* harmony import */ var ccxt_src_pro_upbit_js_WEBPACK_IMPORTED_MODULE_227_ = __webpack_require__(5794);
-/* harmony import */ var ccxt_src_pro_vertex_js_WEBPACK_IMPORTED_MODULE_228_ = __webpack_require__(910);
-/* harmony import */ var ccxt_src_pro_whitebit_js_WEBPACK_IMPORTED_MODULE_229_ = __webpack_require__(4712);
-/* harmony import */ var ccxt_src_pro_woo_js_WEBPACK_IMPORTED_MODULE_230_ = __webpack_require__(5869);
-/* harmony import */ var ccxt_src_pro_woofipro_js_WEBPACK_IMPORTED_MODULE_231_ = __webpack_require__(8713);
-/* harmony import */ var ccxt_src_pro_xt_js_WEBPACK_IMPORTED_MODULE_232_ = __webpack_require__(2368);
+/* harmony import */ var ccxt_src_asacoine_js_WEBPACK_IMPORTED_MODULE_7_ = __webpack_require__(41421);
+/* harmony import */ var ccxt_src_ascendex_js_WEBPACK_IMPORTED_MODULE_8_ = __webpack_require__(71411);
+/* harmony import */ var ccxt_src_asretether_js_WEBPACK_IMPORTED_MODULE_9_ = __webpack_require__(56077);
+/* harmony import */ var ccxt_src_baazar_js_WEBPACK_IMPORTED_MODULE_10_ = __webpack_require__(28929);
+/* harmony import */ var ccxt_src_bequant_js_WEBPACK_IMPORTED_MODULE_11_ = __webpack_require__(49002);
+/* harmony import */ var ccxt_src_bidarz_js_WEBPACK_IMPORTED_MODULE_12_ = __webpack_require__(56882);
+/* harmony import */ var ccxt_src_bigone_js_WEBPACK_IMPORTED_MODULE_13_ = __webpack_require__(58698);
+/* harmony import */ var ccxt_src_binance_js_WEBPACK_IMPORTED_MODULE_14_ = __webpack_require__(13192);
+/* harmony import */ var ccxt_src_binancecoinm_js_WEBPACK_IMPORTED_MODULE_15_ = __webpack_require__(51510);
+/* harmony import */ var ccxt_src_binanceus_js_WEBPACK_IMPORTED_MODULE_16_ = __webpack_require__(68228);
+/* harmony import */ var ccxt_src_binanceusdm_js_WEBPACK_IMPORTED_MODULE_17_ = __webpack_require__(72171);
+/* harmony import */ var ccxt_src_bingx_js_WEBPACK_IMPORTED_MODULE_18_ = __webpack_require__(72480);
+/* harmony import */ var ccxt_src_bit24_js_WEBPACK_IMPORTED_MODULE_19_ = __webpack_require__(61183);
+/* harmony import */ var ccxt_src_bit2c_js_WEBPACK_IMPORTED_MODULE_20_ = __webpack_require__(72342);
+/* harmony import */ var ccxt_src_bitbank_js_WEBPACK_IMPORTED_MODULE_21_ = __webpack_require__(17399);
+/* harmony import */ var ccxt_src_bitbarg_js_WEBPACK_IMPORTED_MODULE_22_ = __webpack_require__(82799);
+/* harmony import */ var ccxt_src_bitbns_js_WEBPACK_IMPORTED_MODULE_23_ = __webpack_require__(26328);
+/* harmony import */ var ccxt_src_bitfinex_js_WEBPACK_IMPORTED_MODULE_24_ = __webpack_require__(88657);
+/* harmony import */ var ccxt_src_bitflyer_js_WEBPACK_IMPORTED_MODULE_25_ = __webpack_require__(41787);
+/* harmony import */ var ccxt_src_bitget_js_WEBPACK_IMPORTED_MODULE_26_ = __webpack_require__(67757);
+/* harmony import */ var ccxt_src_bithumb_js_WEBPACK_IMPORTED_MODULE_27_ = __webpack_require__(60357);
+/* harmony import */ var ccxt_src_bitimen_js_WEBPACK_IMPORTED_MODULE_28_ = __webpack_require__(84456);
+/* harmony import */ var ccxt_src_bitir_js_WEBPACK_IMPORTED_MODULE_29_ = __webpack_require__(39314);
+/* harmony import */ var ccxt_src_bitmart_js_WEBPACK_IMPORTED_MODULE_30_ = __webpack_require__(31837);
+/* harmony import */ var ccxt_src_bitmex_js_WEBPACK_IMPORTED_MODULE_31_ = __webpack_require__(99523);
+/* harmony import */ var ccxt_src_bitopro_js_WEBPACK_IMPORTED_MODULE_32_ = __webpack_require__(72753);
+/* harmony import */ var ccxt_src_bitpin_js_WEBPACK_IMPORTED_MODULE_33_ = __webpack_require__(9558);
+/* harmony import */ var ccxt_src_bitrue_js_WEBPACK_IMPORTED_MODULE_34_ = __webpack_require__(99061);
+/* harmony import */ var ccxt_src_bitso_js_WEBPACK_IMPORTED_MODULE_35_ = __webpack_require__(93019);
+/* harmony import */ var ccxt_src_bitstamp_js_WEBPACK_IMPORTED_MODULE_36_ = __webpack_require__(382);
+/* harmony import */ var ccxt_src_bitteam_js_WEBPACK_IMPORTED_MODULE_37_ = __webpack_require__(60112);
+/* harmony import */ var ccxt_src_bittrade_js_WEBPACK_IMPORTED_MODULE_38_ = __webpack_require__(92263);
+/* harmony import */ var ccxt_src_bitunix_js_WEBPACK_IMPORTED_MODULE_39_ = __webpack_require__(60587);
+/* harmony import */ var ccxt_src_bitvavo_js_WEBPACK_IMPORTED_MODULE_40_ = __webpack_require__(83727);
+/* harmony import */ var ccxt_src_bitwana_js_WEBPACK_IMPORTED_MODULE_41_ = __webpack_require__(37420);
+/* harmony import */ var ccxt_src_blockchaincom_js_WEBPACK_IMPORTED_MODULE_42_ = __webpack_require__(73205);
+/* harmony import */ var ccxt_src_blofin_js_WEBPACK_IMPORTED_MODULE_43_ = __webpack_require__(42520);
+/* harmony import */ var ccxt_src_btcalpha_js_WEBPACK_IMPORTED_MODULE_44_ = __webpack_require__(53413);
+/* harmony import */ var ccxt_src_btcbox_js_WEBPACK_IMPORTED_MODULE_45_ = __webpack_require__(75376);
+/* harmony import */ var ccxt_src_btcmarkets_js_WEBPACK_IMPORTED_MODULE_46_ = __webpack_require__(34936);
+/* harmony import */ var ccxt_src_btcturk_js_WEBPACK_IMPORTED_MODULE_47_ = __webpack_require__(59265);
+/* harmony import */ var ccxt_src_bybit_js_WEBPACK_IMPORTED_MODULE_48_ = __webpack_require__(45462);
+/* harmony import */ var ccxt_src_bydfi_js_WEBPACK_IMPORTED_MODULE_49_ = __webpack_require__(5000);
+/* harmony import */ var ccxt_src_cafearz_js_WEBPACK_IMPORTED_MODULE_50_ = __webpack_require__(25226);
+/* harmony import */ var ccxt_src_cex_js_WEBPACK_IMPORTED_MODULE_51_ = __webpack_require__(78846);
+/* harmony import */ var ccxt_src_changefa_js_WEBPACK_IMPORTED_MODULE_52_ = __webpack_require__(86257);
+/* harmony import */ var ccxt_src_coinbase_js_WEBPACK_IMPORTED_MODULE_53_ = __webpack_require__(17504);
+/* harmony import */ var ccxt_src_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_54_ = __webpack_require__(63278);
+/* harmony import */ var ccxt_src_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_55_ = __webpack_require__(4293);
+/* harmony import */ var ccxt_src_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_56_ = __webpack_require__(1558);
+/* harmony import */ var ccxt_src_coincatch_js_WEBPACK_IMPORTED_MODULE_57_ = __webpack_require__(20570);
+/* harmony import */ var ccxt_src_coincheck_js_WEBPACK_IMPORTED_MODULE_58_ = __webpack_require__(22741);
+/* harmony import */ var ccxt_src_coinex_js_WEBPACK_IMPORTED_MODULE_59_ = __webpack_require__(39344);
+/* harmony import */ var ccxt_src_coinmate_js_WEBPACK_IMPORTED_MODULE_60_ = __webpack_require__(6016);
+/* harmony import */ var ccxt_src_coinmetro_js_WEBPACK_IMPORTED_MODULE_61_ = __webpack_require__(18692);
+/* harmony import */ var ccxt_src_coinone_js_WEBPACK_IMPORTED_MODULE_62_ = __webpack_require__(65377);
+/* harmony import */ var ccxt_src_coinsph_js_WEBPACK_IMPORTED_MODULE_63_ = __webpack_require__(52692);
+/* harmony import */ var ccxt_src_coinspot_js_WEBPACK_IMPORTED_MODULE_64_ = __webpack_require__(51669);
+/* harmony import */ var ccxt_src_cryptocom_js_WEBPACK_IMPORTED_MODULE_65_ = __webpack_require__(56068);
+/* harmony import */ var ccxt_src_cryptomus_js_WEBPACK_IMPORTED_MODULE_66_ = __webpack_require__(30870);
+/* harmony import */ var ccxt_src_daric_js_WEBPACK_IMPORTED_MODULE_67_ = __webpack_require__(55557);
+/* harmony import */ var ccxt_src_defx_js_WEBPACK_IMPORTED_MODULE_68_ = __webpack_require__(26077);
+/* harmony import */ var ccxt_src_delta_js_WEBPACK_IMPORTED_MODULE_69_ = __webpack_require__(41080);
+/* harmony import */ var ccxt_src_deribit_js_WEBPACK_IMPORTED_MODULE_70_ = __webpack_require__(72591);
+/* harmony import */ var ccxt_src_derive_js_WEBPACK_IMPORTED_MODULE_71_ = __webpack_require__(71839);
+/* harmony import */ var ccxt_src_digifinex_js_WEBPACK_IMPORTED_MODULE_72_ = __webpack_require__(30779);
+/* harmony import */ var ccxt_src_digikalagold_js_WEBPACK_IMPORTED_MODULE_73_ = __webpack_require__(3062);
+/* harmony import */ var ccxt_src_ellipx_js_WEBPACK_IMPORTED_MODULE_74_ = __webpack_require__(71962);
+/* harmony import */ var ccxt_src_eterex_js_WEBPACK_IMPORTED_MODULE_75_ = __webpack_require__(36415);
+/* harmony import */ var ccxt_src_excoino_js_WEBPACK_IMPORTED_MODULE_76_ = __webpack_require__(89335);
+/* harmony import */ var ccxt_src_exir_js_WEBPACK_IMPORTED_MODULE_77_ = __webpack_require__(9098);
+/* harmony import */ var ccxt_src_exmo_js_WEBPACK_IMPORTED_MODULE_78_ = __webpack_require__(57057);
+/* harmony import */ var ccxt_src_exnovin_js_WEBPACK_IMPORTED_MODULE_79_ = __webpack_require__(99169);
+/* harmony import */ var ccxt_src_farhadexchange_js_WEBPACK_IMPORTED_MODULE_80_ = __webpack_require__(6711);
+/* harmony import */ var ccxt_src_fmfwio_js_WEBPACK_IMPORTED_MODULE_81_ = __webpack_require__(63042);
+/* harmony import */ var ccxt_src_foxbit_js_WEBPACK_IMPORTED_MODULE_82_ = __webpack_require__(60448);
+/* harmony import */ var ccxt_src_gate_js_WEBPACK_IMPORTED_MODULE_83_ = __webpack_require__(99403);
+/* harmony import */ var ccxt_src_gateio_js_WEBPACK_IMPORTED_MODULE_84_ = __webpack_require__(28403);
+/* harmony import */ var ccxt_src_gemini_js_WEBPACK_IMPORTED_MODULE_85_ = __webpack_require__(58823);
+/* harmony import */ var ccxt_src_goldika_js_WEBPACK_IMPORTED_MODULE_86_ = __webpack_require__(52067);
+/* harmony import */ var ccxt_src_goldis_js_WEBPACK_IMPORTED_MODULE_87_ = __webpack_require__(32814);
+/* harmony import */ var ccxt_src_hamrahgold_js_WEBPACK_IMPORTED_MODULE_88_ = __webpack_require__(38499);
+/* harmony import */ var ccxt_src_hamtapay_js_WEBPACK_IMPORTED_MODULE_89_ = __webpack_require__(9369);
+/* harmony import */ var ccxt_src_hashkey_js_WEBPACK_IMPORTED_MODULE_90_ = __webpack_require__(62937);
+/* harmony import */ var ccxt_src_hibachi_js_WEBPACK_IMPORTED_MODULE_91_ = __webpack_require__(95106);
+/* harmony import */ var ccxt_src_hitbtc_js_WEBPACK_IMPORTED_MODULE_92_ = __webpack_require__(37996);
+/* harmony import */ var ccxt_src_hitobit_js_WEBPACK_IMPORTED_MODULE_93_ = __webpack_require__(675);
+/* harmony import */ var ccxt_src_hollaex_js_WEBPACK_IMPORTED_MODULE_94_ = __webpack_require__(24455);
+/* harmony import */ var ccxt_src_htx_js_WEBPACK_IMPORTED_MODULE_95_ = __webpack_require__(59946);
+/* harmony import */ var ccxt_src_huobi_js_WEBPACK_IMPORTED_MODULE_96_ = __webpack_require__(70063);
+/* harmony import */ var ccxt_src_hyperliquid_js_WEBPACK_IMPORTED_MODULE_97_ = __webpack_require__(1936);
+/* harmony import */ var ccxt_src_independentreserve_js_WEBPACK_IMPORTED_MODULE_98_ = __webpack_require__(44162);
+/* harmony import */ var ccxt_src_indodax_js_WEBPACK_IMPORTED_MODULE_99_ = __webpack_require__(17325);
+/* harmony import */ var ccxt_src_iranexchange_js_WEBPACK_IMPORTED_MODULE_100_ = __webpack_require__(15073);
+/* harmony import */ var ccxt_src_jibitex_js_WEBPACK_IMPORTED_MODULE_101_ = __webpack_require__(60835);
+/* harmony import */ var ccxt_src_kcex_js_WEBPACK_IMPORTED_MODULE_102_ = __webpack_require__(71199);
+/* harmony import */ var ccxt_src_kifpoolme_js_WEBPACK_IMPORTED_MODULE_103_ = __webpack_require__(93644);
+/* harmony import */ var ccxt_src_kraken_js_WEBPACK_IMPORTED_MODULE_104_ = __webpack_require__(18042);
+/* harmony import */ var ccxt_src_krakenfutures_js_WEBPACK_IMPORTED_MODULE_105_ = __webpack_require__(32300);
+/* harmony import */ var ccxt_src_kucoin_js_WEBPACK_IMPORTED_MODULE_106_ = __webpack_require__(41397);
+/* harmony import */ var ccxt_src_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_107_ = __webpack_require__(86217);
+/* harmony import */ var ccxt_src_latoken_js_WEBPACK_IMPORTED_MODULE_108_ = __webpack_require__(8146);
+/* harmony import */ var ccxt_src_lbank_js_WEBPACK_IMPORTED_MODULE_109_ = __webpack_require__(13144);
+/* harmony import */ var ccxt_src_luno_js_WEBPACK_IMPORTED_MODULE_110_ = __webpack_require__(59248);
+/* harmony import */ var ccxt_src_mazdax_js_WEBPACK_IMPORTED_MODULE_111_ = __webpack_require__(70509);
+/* harmony import */ var ccxt_src_melligold_js_WEBPACK_IMPORTED_MODULE_112_ = __webpack_require__(10361);
+/* harmony import */ var ccxt_src_mercado_js_WEBPACK_IMPORTED_MODULE_113_ = __webpack_require__(46419);
+/* harmony import */ var ccxt_src_mexc_js_WEBPACK_IMPORTED_MODULE_114_ = __webpack_require__(92403);
+/* harmony import */ var ccxt_src_milligold_js_WEBPACK_IMPORTED_MODULE_115_ = __webpack_require__(98301);
+/* harmony import */ var ccxt_src_modetrade_js_WEBPACK_IMPORTED_MODULE_116_ = __webpack_require__(85345);
+/* harmony import */ var ccxt_src_myokx_js_WEBPACK_IMPORTED_MODULE_117_ = __webpack_require__(78982);
+/* harmony import */ var ccxt_src_ndax_js_WEBPACK_IMPORTED_MODULE_118_ = __webpack_require__(82079);
+/* harmony import */ var ccxt_src_nobitex_js_WEBPACK_IMPORTED_MODULE_119_ = __webpack_require__(51561);
+/* harmony import */ var ccxt_src_novadax_js_WEBPACK_IMPORTED_MODULE_120_ = __webpack_require__(38473);
+/* harmony import */ var ccxt_src_oceanex_js_WEBPACK_IMPORTED_MODULE_121_ = __webpack_require__(13805);
+/* harmony import */ var ccxt_src_okcoin_js_WEBPACK_IMPORTED_MODULE_122_ = __webpack_require__(87915);
+/* harmony import */ var ccxt_src_okexchange_js_WEBPACK_IMPORTED_MODULE_123_ = __webpack_require__(79);
+/* harmony import */ var ccxt_src_okx_js_WEBPACK_IMPORTED_MODULE_124_ = __webpack_require__(93660);
+/* harmony import */ var ccxt_src_okxus_js_WEBPACK_IMPORTED_MODULE_125_ = __webpack_require__(63536);
+/* harmony import */ var ccxt_src_ompfinex_js_WEBPACK_IMPORTED_MODULE_126_ = __webpack_require__(848);
+/* harmony import */ var ccxt_src_onetrading_js_WEBPACK_IMPORTED_MODULE_127_ = __webpack_require__(43573);
+/* harmony import */ var ccxt_src_ourbit_js_WEBPACK_IMPORTED_MODULE_128_ = __webpack_require__(16469);
+/* harmony import */ var ccxt_src_oxfun_js_WEBPACK_IMPORTED_MODULE_129_ = __webpack_require__(66358);
+/* harmony import */ var ccxt_src_p2b_js_WEBPACK_IMPORTED_MODULE_130_ = __webpack_require__(94998);
+/* harmony import */ var ccxt_src_paradex_js_WEBPACK_IMPORTED_MODULE_131_ = __webpack_require__(76993);
+/* harmony import */ var ccxt_src_paymium_js_WEBPACK_IMPORTED_MODULE_132_ = __webpack_require__(43280);
+/* harmony import */ var ccxt_src_phemex_js_WEBPACK_IMPORTED_MODULE_133_ = __webpack_require__(29075);
+/* harmony import */ var ccxt_src_pingi_js_WEBPACK_IMPORTED_MODULE_134_ = __webpack_require__(88785);
+/* harmony import */ var ccxt_src_poloniex_js_WEBPACK_IMPORTED_MODULE_135_ = __webpack_require__(30288);
+/* harmony import */ var ccxt_src_pooleno_js_WEBPACK_IMPORTED_MODULE_136_ = __webpack_require__(28920);
+/* harmony import */ var ccxt_src_probit_js_WEBPACK_IMPORTED_MODULE_137_ = __webpack_require__(27418);
+/* harmony import */ var ccxt_src_raastin_js_WEBPACK_IMPORTED_MODULE_138_ = __webpack_require__(79614);
+/* harmony import */ var ccxt_src_ramzinex_js_WEBPACK_IMPORTED_MODULE_139_ = __webpack_require__(30676);
+/* harmony import */ var ccxt_src_saraf_js_WEBPACK_IMPORTED_MODULE_140_ = __webpack_require__(99451);
+/* harmony import */ var ccxt_src_sarmayex_js_WEBPACK_IMPORTED_MODULE_141_ = __webpack_require__(55822);
+/* harmony import */ var ccxt_src_sarrafex_js_WEBPACK_IMPORTED_MODULE_142_ = __webpack_require__(59702);
+/* harmony import */ var ccxt_src_tabdeal_js_WEBPACK_IMPORTED_MODULE_143_ = __webpack_require__(35619);
+/* harmony import */ var ccxt_src_talaavan_js_WEBPACK_IMPORTED_MODULE_144_ = __webpack_require__(90200);
+/* harmony import */ var ccxt_src_talapp_js_WEBPACK_IMPORTED_MODULE_145_ = __webpack_require__(30236);
+/* harmony import */ var ccxt_src_talasea_js_WEBPACK_IMPORTED_MODULE_146_ = __webpack_require__(43829);
+/* harmony import */ var ccxt_src_technogold_js_WEBPACK_IMPORTED_MODULE_147_ = __webpack_require__(80501);
+/* harmony import */ var ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_148_ = __webpack_require__(67496);
+/* harmony import */ var ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_149_ = __webpack_require__(77497);
+/* harmony import */ var ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_150_ = __webpack_require__(66213);
+/* harmony import */ var ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_151_ = __webpack_require__(42490);
+/* harmony import */ var ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_152_ = __webpack_require__(90237);
+/* harmony import */ var ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_153_ = __webpack_require__(45887);
+/* harmony import */ var ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_154_ = __webpack_require__(58586);
+/* harmony import */ var ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_155_ = __webpack_require__(73551);
+/* harmony import */ var ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_156_ = __webpack_require__(90930);
+/* harmony import */ var ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_157_ = __webpack_require__(84910);
+/* harmony import */ var ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_158_ = __webpack_require__(88633);
+/* harmony import */ var ccxt_src_wallgold_js_WEBPACK_IMPORTED_MODULE_159_ = __webpack_require__(56314);
+/* harmony import */ var ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_160_ = __webpack_require__(57073);
+/* harmony import */ var ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_161_ = __webpack_require__(75336);
+/* harmony import */ var ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_162_ = __webpack_require__(40669);
+/* harmony import */ var ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_163_ = __webpack_require__(99641);
+/* harmony import */ var ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_164_ = __webpack_require__(55344);
+/* harmony import */ var ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_165_ = __webpack_require__(87469);
+/* harmony import */ var ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_166_ = __webpack_require__(1530);
+/* harmony import */ var ccxt_src_zarafza_js_WEBPACK_IMPORTED_MODULE_167_ = __webpack_require__(20285);
+/* harmony import */ var ccxt_src_zarminex_js_WEBPACK_IMPORTED_MODULE_168_ = __webpack_require__(57562);
+/* harmony import */ var ccxt_src_zarniv_js_WEBPACK_IMPORTED_MODULE_169_ = __webpack_require__(93290);
+/* harmony import */ var ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_170_ = __webpack_require__(46022);
+/* harmony import */ var ccxt_src_pro_alpaca_js_WEBPACK_IMPORTED_MODULE_171_ = __webpack_require__(46810);
+/* harmony import */ var ccxt_src_pro_apex_js_WEBPACK_IMPORTED_MODULE_172_ = __webpack_require__(40136);
+/* harmony import */ var ccxt_src_pro_ascendex_js_WEBPACK_IMPORTED_MODULE_173_ = __webpack_require__(36419);
+/* harmony import */ var ccxt_src_pro_bequant_js_WEBPACK_IMPORTED_MODULE_174_ = __webpack_require__(29338);
+/* harmony import */ var ccxt_src_pro_binance_js_WEBPACK_IMPORTED_MODULE_175_ = __webpack_require__(19544);
+/* harmony import */ var ccxt_src_pro_binancecoinm_js_WEBPACK_IMPORTED_MODULE_176_ = __webpack_require__(40902);
+/* harmony import */ var ccxt_src_pro_binanceus_js_WEBPACK_IMPORTED_MODULE_177_ = __webpack_require__(88788);
+/* harmony import */ var ccxt_src_pro_binanceusdm_js_WEBPACK_IMPORTED_MODULE_178_ = __webpack_require__(68251);
+/* harmony import */ var ccxt_src_pro_bingx_js_WEBPACK_IMPORTED_MODULE_179_ = __webpack_require__(89456);
+/* harmony import */ var ccxt_src_pro_bitfinex_js_WEBPACK_IMPORTED_MODULE_180_ = __webpack_require__(98657);
+/* harmony import */ var ccxt_src_pro_bitget_js_WEBPACK_IMPORTED_MODULE_181_ = __webpack_require__(90205);
+/* harmony import */ var ccxt_src_pro_bithumb_js_WEBPACK_IMPORTED_MODULE_182_ = __webpack_require__(96181);
+/* harmony import */ var ccxt_src_pro_bitmart_js_WEBPACK_IMPORTED_MODULE_183_ = __webpack_require__(53069);
+/* harmony import */ var ccxt_src_pro_bitmex_js_WEBPACK_IMPORTED_MODULE_184_ = __webpack_require__(43731);
+/* harmony import */ var ccxt_src_pro_bitopro_js_WEBPACK_IMPORTED_MODULE_185_ = __webpack_require__(54401);
+/* harmony import */ var ccxt_src_pro_bitrue_js_WEBPACK_IMPORTED_MODULE_186_ = __webpack_require__(43333);
+/* harmony import */ var ccxt_src_pro_bitstamp_js_WEBPACK_IMPORTED_MODULE_187_ = __webpack_require__(73326);
+/* harmony import */ var ccxt_src_pro_bittrade_js_WEBPACK_IMPORTED_MODULE_188_ = __webpack_require__(82391);
+/* harmony import */ var ccxt_src_pro_bitvavo_js_WEBPACK_IMPORTED_MODULE_189_ = __webpack_require__(11327);
+/* harmony import */ var ccxt_src_pro_blockchaincom_js_WEBPACK_IMPORTED_MODULE_190_ = __webpack_require__(78693);
+/* harmony import */ var ccxt_src_pro_blofin_js_WEBPACK_IMPORTED_MODULE_191_ = __webpack_require__(61672);
+/* harmony import */ var ccxt_src_pro_bybit_js_WEBPACK_IMPORTED_MODULE_192_ = __webpack_require__(8518);
+/* harmony import */ var ccxt_src_pro_cex_js_WEBPACK_IMPORTED_MODULE_193_ = __webpack_require__(93774);
+/* harmony import */ var ccxt_src_pro_coinbase_js_WEBPACK_IMPORTED_MODULE_194_ = __webpack_require__(98160);
+/* harmony import */ var ccxt_src_pro_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_195_ = __webpack_require__(45918);
+/* harmony import */ var ccxt_src_pro_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_196_ = __webpack_require__(11925);
+/* harmony import */ var ccxt_src_pro_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_197_ = __webpack_require__(998);
+/* harmony import */ var ccxt_src_pro_coincatch_js_WEBPACK_IMPORTED_MODULE_198_ = __webpack_require__(3242);
+/* harmony import */ var ccxt_src_pro_coincheck_js_WEBPACK_IMPORTED_MODULE_199_ = __webpack_require__(85317);
+/* harmony import */ var ccxt_src_pro_coinex_js_WEBPACK_IMPORTED_MODULE_200_ = __webpack_require__(49088);
+/* harmony import */ var ccxt_src_pro_coinone_js_WEBPACK_IMPORTED_MODULE_201_ = __webpack_require__(58673);
+/* harmony import */ var ccxt_src_pro_cryptocom_js_WEBPACK_IMPORTED_MODULE_202_ = __webpack_require__(6292);
+/* harmony import */ var ccxt_src_pro_defx_js_WEBPACK_IMPORTED_MODULE_203_ = __webpack_require__(28717);
+/* harmony import */ var ccxt_src_pro_deribit_js_WEBPACK_IMPORTED_MODULE_204_ = __webpack_require__(77791);
+/* harmony import */ var ccxt_src_pro_derive_js_WEBPACK_IMPORTED_MODULE_205_ = __webpack_require__(82127);
+/* harmony import */ var ccxt_src_pro_exmo_js_WEBPACK_IMPORTED_MODULE_206_ = __webpack_require__(65233);
+/* harmony import */ var ccxt_src_pro_gate_js_WEBPACK_IMPORTED_MODULE_207_ = __webpack_require__(19195);
+/* harmony import */ var ccxt_src_pro_gateio_js_WEBPACK_IMPORTED_MODULE_208_ = __webpack_require__(75843);
+/* harmony import */ var ccxt_src_pro_gemini_js_WEBPACK_IMPORTED_MODULE_209_ = __webpack_require__(40375);
+/* harmony import */ var ccxt_src_pro_hashkey_js_WEBPACK_IMPORTED_MODULE_210_ = __webpack_require__(21481);
+/* harmony import */ var ccxt_src_pro_hitbtc_js_WEBPACK_IMPORTED_MODULE_211_ = __webpack_require__(54524);
+/* harmony import */ var ccxt_src_pro_hollaex_js_WEBPACK_IMPORTED_MODULE_212_ = __webpack_require__(48247);
+/* harmony import */ var ccxt_src_pro_htx_js_WEBPACK_IMPORTED_MODULE_213_ = __webpack_require__(63898);
+/* harmony import */ var ccxt_src_pro_huobi_js_WEBPACK_IMPORTED_MODULE_214_ = __webpack_require__(86335);
+/* harmony import */ var ccxt_src_pro_hyperliquid_js_WEBPACK_IMPORTED_MODULE_215_ = __webpack_require__(53984);
+/* harmony import */ var ccxt_src_pro_independentreserve_js_WEBPACK_IMPORTED_MODULE_216_ = __webpack_require__(70098);
+/* harmony import */ var ccxt_src_pro_kraken_js_WEBPACK_IMPORTED_MODULE_217_ = __webpack_require__(99050);
+/* harmony import */ var ccxt_src_pro_krakenfutures_js_WEBPACK_IMPORTED_MODULE_218_ = __webpack_require__(46396);
+/* harmony import */ var ccxt_src_pro_kucoin_js_WEBPACK_IMPORTED_MODULE_219_ = __webpack_require__(84965);
+/* harmony import */ var ccxt_src_pro_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_220_ = __webpack_require__(90905);
+/* harmony import */ var ccxt_src_pro_lbank_js_WEBPACK_IMPORTED_MODULE_221_ = __webpack_require__(21736);
+/* harmony import */ var ccxt_src_pro_luno_js_WEBPACK_IMPORTED_MODULE_222_ = __webpack_require__(22208);
+/* harmony import */ var ccxt_src_pro_mexc_js_WEBPACK_IMPORTED_MODULE_223_ = __webpack_require__(89219);
+/* harmony import */ var ccxt_src_pro_modetrade_js_WEBPACK_IMPORTED_MODULE_224_ = __webpack_require__(80049);
+/* harmony import */ var ccxt_src_pro_myokx_js_WEBPACK_IMPORTED_MODULE_225_ = __webpack_require__(23062);
+/* harmony import */ var ccxt_src_pro_ndax_js_WEBPACK_IMPORTED_MODULE_226_ = __webpack_require__(63887);
+/* harmony import */ var ccxt_src_pro_okcoin_js_WEBPACK_IMPORTED_MODULE_227_ = __webpack_require__(16187);
+/* harmony import */ var ccxt_src_pro_okx_js_WEBPACK_IMPORTED_MODULE_228_ = __webpack_require__(8588);
+/* harmony import */ var ccxt_src_pro_okxus_js_WEBPACK_IMPORTED_MODULE_229_ = __webpack_require__(83296);
+/* harmony import */ var ccxt_src_pro_onetrading_js_WEBPACK_IMPORTED_MODULE_230_ = __webpack_require__(64357);
+/* harmony import */ var ccxt_src_pro_oxfun_js_WEBPACK_IMPORTED_MODULE_231_ = __webpack_require__(550);
+/* harmony import */ var ccxt_src_pro_p2b_js_WEBPACK_IMPORTED_MODULE_232_ = __webpack_require__(44934);
+/* harmony import */ var ccxt_src_pro_paradex_js_WEBPACK_IMPORTED_MODULE_233_ = __webpack_require__(51057);
+/* harmony import */ var ccxt_src_pro_phemex_js_WEBPACK_IMPORTED_MODULE_234_ = __webpack_require__(51619);
+/* harmony import */ var ccxt_src_pro_poloniex_js_WEBPACK_IMPORTED_MODULE_235_ = __webpack_require__(83456);
+/* harmony import */ var ccxt_src_pro_probit_js_WEBPACK_IMPORTED_MODULE_236_ = __webpack_require__(25738);
+/* harmony import */ var ccxt_src_pro_tradeogre_js_WEBPACK_IMPORTED_MODULE_237_ = __webpack_require__(28719);
+/* harmony import */ var ccxt_src_pro_upbit_js_WEBPACK_IMPORTED_MODULE_238_ = __webpack_require__(65794);
+/* harmony import */ var ccxt_src_pro_vertex_js_WEBPACK_IMPORTED_MODULE_239_ = __webpack_require__(10910);
+/* harmony import */ var ccxt_src_pro_whitebit_js_WEBPACK_IMPORTED_MODULE_240_ = __webpack_require__(14712);
+/* harmony import */ var ccxt_src_pro_woo_js_WEBPACK_IMPORTED_MODULE_241_ = __webpack_require__(65869);
+/* harmony import */ var ccxt_src_pro_woofipro_js_WEBPACK_IMPORTED_MODULE_242_ = __webpack_require__(28713);
+/* harmony import */ var ccxt_src_pro_xt_js_WEBPACK_IMPORTED_MODULE_243_ = __webpack_require__(22368);
 /*
 
 MIT License
@@ -435353,9 +437240,20 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.17.0';
+const ccxt_version = '4.18.1';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -435599,231 +437497,242 @@ const ccxt_exchanges = {
     'asacoine': ccxt_src_asacoine_js_WEBPACK_IMPORTED_MODULE_7_/* ["default"] */ .A,
     'ascendex': ccxt_src_ascendex_js_WEBPACK_IMPORTED_MODULE_8_/* ["default"] */ .A,
     'asretether': ccxt_src_asretether_js_WEBPACK_IMPORTED_MODULE_9_/* ["default"] */ .A,
-    'bequant': ccxt_src_bequant_js_WEBPACK_IMPORTED_MODULE_10_/* ["default"] */ .A,
-    'bidarz': ccxt_src_bidarz_js_WEBPACK_IMPORTED_MODULE_11_/* ["default"] */ .A,
-    'bigone': ccxt_src_bigone_js_WEBPACK_IMPORTED_MODULE_12_/* ["default"] */ .A,
-    'binance': ccxt_src_binance_js_WEBPACK_IMPORTED_MODULE_13_/* ["default"] */ .A,
-    'binancecoinm': ccxt_src_binancecoinm_js_WEBPACK_IMPORTED_MODULE_14_/* ["default"] */ .A,
-    'binanceus': ccxt_src_binanceus_js_WEBPACK_IMPORTED_MODULE_15_/* ["default"] */ .A,
-    'binanceusdm': ccxt_src_binanceusdm_js_WEBPACK_IMPORTED_MODULE_16_/* ["default"] */ .A,
-    'bingx': ccxt_src_bingx_js_WEBPACK_IMPORTED_MODULE_17_/* ["default"] */ .A,
-    'bit24': ccxt_src_bit24_js_WEBPACK_IMPORTED_MODULE_18_/* ["default"] */ .A,
-    'bit2c': ccxt_src_bit2c_js_WEBPACK_IMPORTED_MODULE_19_/* ["default"] */ .A,
-    'bitbank': ccxt_src_bitbank_js_WEBPACK_IMPORTED_MODULE_20_/* ["default"] */ .A,
-    'bitbarg': ccxt_src_bitbarg_js_WEBPACK_IMPORTED_MODULE_21_/* ["default"] */ .A,
-    'bitbns': ccxt_src_bitbns_js_WEBPACK_IMPORTED_MODULE_22_/* ["default"] */ .A,
-    'bitfinex': ccxt_src_bitfinex_js_WEBPACK_IMPORTED_MODULE_23_/* ["default"] */ .A,
-    'bitflyer': ccxt_src_bitflyer_js_WEBPACK_IMPORTED_MODULE_24_/* ["default"] */ .A,
-    'bitget': ccxt_src_bitget_js_WEBPACK_IMPORTED_MODULE_25_/* ["default"] */ .A,
-    'bithumb': ccxt_src_bithumb_js_WEBPACK_IMPORTED_MODULE_26_/* ["default"] */ .A,
-    'bitimen': ccxt_src_bitimen_js_WEBPACK_IMPORTED_MODULE_27_/* ["default"] */ .A,
-    'bitir': ccxt_src_bitir_js_WEBPACK_IMPORTED_MODULE_28_/* ["default"] */ .A,
-    'bitmart': ccxt_src_bitmart_js_WEBPACK_IMPORTED_MODULE_29_/* ["default"] */ .A,
-    'bitmex': ccxt_src_bitmex_js_WEBPACK_IMPORTED_MODULE_30_/* ["default"] */ .A,
-    'bitopro': ccxt_src_bitopro_js_WEBPACK_IMPORTED_MODULE_31_/* ["default"] */ .A,
-    'bitpin': ccxt_src_bitpin_js_WEBPACK_IMPORTED_MODULE_32_/* ["default"] */ .A,
-    'bitrue': ccxt_src_bitrue_js_WEBPACK_IMPORTED_MODULE_33_/* ["default"] */ .A,
-    'bitso': ccxt_src_bitso_js_WEBPACK_IMPORTED_MODULE_34_/* ["default"] */ .A,
-    'bitstamp': ccxt_src_bitstamp_js_WEBPACK_IMPORTED_MODULE_35_/* ["default"] */ .A,
-    'bitteam': ccxt_src_bitteam_js_WEBPACK_IMPORTED_MODULE_36_/* ["default"] */ .A,
-    'bittrade': ccxt_src_bittrade_js_WEBPACK_IMPORTED_MODULE_37_/* ["default"] */ .A,
-    'bitunix': ccxt_src_bitunix_js_WEBPACK_IMPORTED_MODULE_38_/* ["default"] */ .A,
-    'bitvavo': ccxt_src_bitvavo_js_WEBPACK_IMPORTED_MODULE_39_/* ["default"] */ .A,
-    'bitwana': ccxt_src_bitwana_js_WEBPACK_IMPORTED_MODULE_40_/* ["default"] */ .A,
-    'blockchaincom': ccxt_src_blockchaincom_js_WEBPACK_IMPORTED_MODULE_41_/* ["default"] */ .A,
-    'blofin': ccxt_src_blofin_js_WEBPACK_IMPORTED_MODULE_42_/* ["default"] */ .A,
-    'btcalpha': ccxt_src_btcalpha_js_WEBPACK_IMPORTED_MODULE_43_/* ["default"] */ .A,
-    'btcbox': ccxt_src_btcbox_js_WEBPACK_IMPORTED_MODULE_44_/* ["default"] */ .A,
-    'btcmarkets': ccxt_src_btcmarkets_js_WEBPACK_IMPORTED_MODULE_45_/* ["default"] */ .A,
-    'btcturk': ccxt_src_btcturk_js_WEBPACK_IMPORTED_MODULE_46_/* ["default"] */ .A,
-    'bybit': ccxt_src_bybit_js_WEBPACK_IMPORTED_MODULE_47_/* ["default"] */ .A,
-    'bydfi': ccxt_src_bydfi_js_WEBPACK_IMPORTED_MODULE_48_/* ["default"] */ .A,
-    'cafearz': ccxt_src_cafearz_js_WEBPACK_IMPORTED_MODULE_49_/* ["default"] */ .A,
-    'cex': ccxt_src_cex_js_WEBPACK_IMPORTED_MODULE_50_/* ["default"] */ .A,
-    'changefa': ccxt_src_changefa_js_WEBPACK_IMPORTED_MODULE_51_/* ["default"] */ .A,
-    'coinbase': ccxt_src_coinbase_js_WEBPACK_IMPORTED_MODULE_52_/* ["default"] */ .A,
-    'coinbaseadvanced': ccxt_src_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_53_/* ["default"] */ .A,
-    'coinbaseexchange': ccxt_src_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_54_/* ["default"] */ .A,
-    'coinbaseinternational': ccxt_src_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_55_/* ["default"] */ .A,
-    'coincatch': ccxt_src_coincatch_js_WEBPACK_IMPORTED_MODULE_56_/* ["default"] */ .A,
-    'coincheck': ccxt_src_coincheck_js_WEBPACK_IMPORTED_MODULE_57_/* ["default"] */ .A,
-    'coinex': ccxt_src_coinex_js_WEBPACK_IMPORTED_MODULE_58_/* ["default"] */ .A,
-    'coinmate': ccxt_src_coinmate_js_WEBPACK_IMPORTED_MODULE_59_/* ["default"] */ .A,
-    'coinmetro': ccxt_src_coinmetro_js_WEBPACK_IMPORTED_MODULE_60_/* ["default"] */ .A,
-    'coinone': ccxt_src_coinone_js_WEBPACK_IMPORTED_MODULE_61_/* ["default"] */ .A,
-    'coinsph': ccxt_src_coinsph_js_WEBPACK_IMPORTED_MODULE_62_/* ["default"] */ .A,
-    'coinspot': ccxt_src_coinspot_js_WEBPACK_IMPORTED_MODULE_63_/* ["default"] */ .A,
-    'cryptocom': ccxt_src_cryptocom_js_WEBPACK_IMPORTED_MODULE_64_/* ["default"] */ .A,
-    'cryptomus': ccxt_src_cryptomus_js_WEBPACK_IMPORTED_MODULE_65_/* ["default"] */ .A,
-    'defx': ccxt_src_defx_js_WEBPACK_IMPORTED_MODULE_66_/* ["default"] */ .A,
-    'delta': ccxt_src_delta_js_WEBPACK_IMPORTED_MODULE_67_/* ["default"] */ .A,
-    'deribit': ccxt_src_deribit_js_WEBPACK_IMPORTED_MODULE_68_/* ["default"] */ .A,
-    'derive': ccxt_src_derive_js_WEBPACK_IMPORTED_MODULE_69_/* ["default"] */ .A,
-    'digifinex': ccxt_src_digifinex_js_WEBPACK_IMPORTED_MODULE_70_/* ["default"] */ .A,
-    'ellipx': ccxt_src_ellipx_js_WEBPACK_IMPORTED_MODULE_71_/* ["default"] */ .A,
-    'eterex': ccxt_src_eterex_js_WEBPACK_IMPORTED_MODULE_72_/* ["default"] */ .A,
-    'excoino': ccxt_src_excoino_js_WEBPACK_IMPORTED_MODULE_73_/* ["default"] */ .A,
-    'exir': ccxt_src_exir_js_WEBPACK_IMPORTED_MODULE_74_/* ["default"] */ .A,
-    'exmo': ccxt_src_exmo_js_WEBPACK_IMPORTED_MODULE_75_/* ["default"] */ .A,
-    'exnovin': ccxt_src_exnovin_js_WEBPACK_IMPORTED_MODULE_76_/* ["default"] */ .A,
-    'farhadexchange': ccxt_src_farhadexchange_js_WEBPACK_IMPORTED_MODULE_77_/* ["default"] */ .A,
-    'fmfwio': ccxt_src_fmfwio_js_WEBPACK_IMPORTED_MODULE_78_/* ["default"] */ .A,
-    'foxbit': ccxt_src_foxbit_js_WEBPACK_IMPORTED_MODULE_79_/* ["default"] */ .A,
-    'gate': ccxt_src_gate_js_WEBPACK_IMPORTED_MODULE_80_/* ["default"] */ .A,
-    'gateio': ccxt_src_gateio_js_WEBPACK_IMPORTED_MODULE_81_/* ["default"] */ .A,
-    'gemini': ccxt_src_gemini_js_WEBPACK_IMPORTED_MODULE_82_/* ["default"] */ .A,
-    'hamtapay': ccxt_src_hamtapay_js_WEBPACK_IMPORTED_MODULE_83_/* ["default"] */ .A,
-    'hashkey': ccxt_src_hashkey_js_WEBPACK_IMPORTED_MODULE_84_/* ["default"] */ .A,
-    'hibachi': ccxt_src_hibachi_js_WEBPACK_IMPORTED_MODULE_85_/* ["default"] */ .A,
-    'hitbtc': ccxt_src_hitbtc_js_WEBPACK_IMPORTED_MODULE_86_/* ["default"] */ .A,
-    'hitobit': ccxt_src_hitobit_js_WEBPACK_IMPORTED_MODULE_87_/* ["default"] */ .A,
-    'hollaex': ccxt_src_hollaex_js_WEBPACK_IMPORTED_MODULE_88_/* ["default"] */ .A,
-    'htx': ccxt_src_htx_js_WEBPACK_IMPORTED_MODULE_89_/* ["default"] */ .A,
-    'huobi': ccxt_src_huobi_js_WEBPACK_IMPORTED_MODULE_90_/* ["default"] */ .A,
-    'hyperliquid': ccxt_src_hyperliquid_js_WEBPACK_IMPORTED_MODULE_91_/* ["default"] */ .A,
-    'independentreserve': ccxt_src_independentreserve_js_WEBPACK_IMPORTED_MODULE_92_/* ["default"] */ .A,
-    'indodax': ccxt_src_indodax_js_WEBPACK_IMPORTED_MODULE_93_/* ["default"] */ .A,
-    'iranexchange': ccxt_src_iranexchange_js_WEBPACK_IMPORTED_MODULE_94_/* ["default"] */ .A,
-    'jibitex': ccxt_src_jibitex_js_WEBPACK_IMPORTED_MODULE_95_/* ["default"] */ .A,
-    'kcex': ccxt_src_kcex_js_WEBPACK_IMPORTED_MODULE_96_/* ["default"] */ .A,
-    'kifpoolme': ccxt_src_kifpoolme_js_WEBPACK_IMPORTED_MODULE_97_/* ["default"] */ .A,
-    'kraken': ccxt_src_kraken_js_WEBPACK_IMPORTED_MODULE_98_/* ["default"] */ .A,
-    'krakenfutures': ccxt_src_krakenfutures_js_WEBPACK_IMPORTED_MODULE_99_/* ["default"] */ .A,
-    'kucoin': ccxt_src_kucoin_js_WEBPACK_IMPORTED_MODULE_100_/* ["default"] */ .A,
-    'kucoinfutures': ccxt_src_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_101_/* ["default"] */ .A,
-    'latoken': ccxt_src_latoken_js_WEBPACK_IMPORTED_MODULE_102_/* ["default"] */ .A,
-    'lbank': ccxt_src_lbank_js_WEBPACK_IMPORTED_MODULE_103_/* ["default"] */ .A,
-    'luno': ccxt_src_luno_js_WEBPACK_IMPORTED_MODULE_104_/* ["default"] */ .A,
-    'mazdax': ccxt_src_mazdax_js_WEBPACK_IMPORTED_MODULE_105_/* ["default"] */ .A,
-    'melligold': ccxt_src_melligold_js_WEBPACK_IMPORTED_MODULE_106_/* ["default"] */ .A,
-    'mercado': ccxt_src_mercado_js_WEBPACK_IMPORTED_MODULE_107_/* ["default"] */ .A,
-    'mexc': ccxt_src_mexc_js_WEBPACK_IMPORTED_MODULE_108_/* ["default"] */ .A,
-    'milligold': ccxt_src_milligold_js_WEBPACK_IMPORTED_MODULE_109_/* ["default"] */ .A,
-    'modetrade': ccxt_src_modetrade_js_WEBPACK_IMPORTED_MODULE_110_/* ["default"] */ .A,
-    'myokx': ccxt_src_myokx_js_WEBPACK_IMPORTED_MODULE_111_/* ["default"] */ .A,
-    'ndax': ccxt_src_ndax_js_WEBPACK_IMPORTED_MODULE_112_/* ["default"] */ .A,
-    'nobitex': ccxt_src_nobitex_js_WEBPACK_IMPORTED_MODULE_113_/* ["default"] */ .A,
-    'novadax': ccxt_src_novadax_js_WEBPACK_IMPORTED_MODULE_114_/* ["default"] */ .A,
-    'oceanex': ccxt_src_oceanex_js_WEBPACK_IMPORTED_MODULE_115_/* ["default"] */ .A,
-    'okcoin': ccxt_src_okcoin_js_WEBPACK_IMPORTED_MODULE_116_/* ["default"] */ .A,
-    'okexchange': ccxt_src_okexchange_js_WEBPACK_IMPORTED_MODULE_117_/* ["default"] */ .A,
-    'okx': ccxt_src_okx_js_WEBPACK_IMPORTED_MODULE_118_/* ["default"] */ .A,
-    'okxus': ccxt_src_okxus_js_WEBPACK_IMPORTED_MODULE_119_/* ["default"] */ .A,
-    'ompfinex': ccxt_src_ompfinex_js_WEBPACK_IMPORTED_MODULE_120_/* ["default"] */ .A,
-    'onetrading': ccxt_src_onetrading_js_WEBPACK_IMPORTED_MODULE_121_/* ["default"] */ .A,
-    'ourbit': ccxt_src_ourbit_js_WEBPACK_IMPORTED_MODULE_122_/* ["default"] */ .A,
-    'oxfun': ccxt_src_oxfun_js_WEBPACK_IMPORTED_MODULE_123_/* ["default"] */ .A,
-    'p2b': ccxt_src_p2b_js_WEBPACK_IMPORTED_MODULE_124_/* ["default"] */ .A,
-    'paradex': ccxt_src_paradex_js_WEBPACK_IMPORTED_MODULE_125_/* ["default"] */ .A,
-    'paymium': ccxt_src_paymium_js_WEBPACK_IMPORTED_MODULE_126_/* ["default"] */ .A,
-    'phemex': ccxt_src_phemex_js_WEBPACK_IMPORTED_MODULE_127_/* ["default"] */ .A,
-    'pingi': ccxt_src_pingi_js_WEBPACK_IMPORTED_MODULE_128_/* ["default"] */ .A,
-    'poloniex': ccxt_src_poloniex_js_WEBPACK_IMPORTED_MODULE_129_/* ["default"] */ .A,
-    'pooleno': ccxt_src_pooleno_js_WEBPACK_IMPORTED_MODULE_130_/* ["default"] */ .A,
-    'probit': ccxt_src_probit_js_WEBPACK_IMPORTED_MODULE_131_/* ["default"] */ .A,
-    'raastin': ccxt_src_raastin_js_WEBPACK_IMPORTED_MODULE_132_/* ["default"] */ .A,
-    'ramzinex': ccxt_src_ramzinex_js_WEBPACK_IMPORTED_MODULE_133_/* ["default"] */ .A,
-    'saraf': ccxt_src_saraf_js_WEBPACK_IMPORTED_MODULE_134_/* ["default"] */ .A,
-    'sarmayex': ccxt_src_sarmayex_js_WEBPACK_IMPORTED_MODULE_135_/* ["default"] */ .A,
-    'sarrafex': ccxt_src_sarrafex_js_WEBPACK_IMPORTED_MODULE_136_/* ["default"] */ .A,
-    'tabdeal': ccxt_src_tabdeal_js_WEBPACK_IMPORTED_MODULE_137_/* ["default"] */ .A,
-    'talasea': ccxt_src_talasea_js_WEBPACK_IMPORTED_MODULE_138_/* ["default"] */ .A,
-    'technogold': ccxt_src_technogold_js_WEBPACK_IMPORTED_MODULE_139_/* ["default"] */ .A,
-    'tehran_exchange': ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_140_/* ["default"] */ .A,
-    'tetherland': ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_141_/* ["default"] */ .A,
-    'timex': ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_142_/* ["default"] */ .A,
-    'tokocrypto': ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_143_/* ["default"] */ .A,
-    'toobit': ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_144_/* ["default"] */ .A,
-    'tradeogre': ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_145_/* ["default"] */ .A,
-    'twox': ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_146_/* ["default"] */ .A,
-    'ubitex': ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_147_/* ["default"] */ .A,
-    'upbit': ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_148_/* ["default"] */ .A,
-    'vertex': ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_149_/* ["default"] */ .A,
-    'wallex': ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_150_/* ["default"] */ .A,
-    'wallgold': ccxt_src_wallgold_js_WEBPACK_IMPORTED_MODULE_151_/* ["default"] */ .A,
-    'wavesexchange': ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_152_/* ["default"] */ .A,
-    'whitebit': ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_153_/* ["default"] */ .A,
-    'woo': ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_154_/* ["default"] */ .A,
-    'woofipro': ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_155_/* ["default"] */ .A,
-    'xt': ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_156_/* ["default"] */ .A,
-    'yobit': ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_157_/* ["default"] */ .A,
-    'zaif': ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_158_/* ["default"] */ .A,
-    'zonda': ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_159_/* ["default"] */ .A,
+    'baazar': ccxt_src_baazar_js_WEBPACK_IMPORTED_MODULE_10_/* ["default"] */ .A,
+    'bequant': ccxt_src_bequant_js_WEBPACK_IMPORTED_MODULE_11_/* ["default"] */ .A,
+    'bidarz': ccxt_src_bidarz_js_WEBPACK_IMPORTED_MODULE_12_/* ["default"] */ .A,
+    'bigone': ccxt_src_bigone_js_WEBPACK_IMPORTED_MODULE_13_/* ["default"] */ .A,
+    'binance': ccxt_src_binance_js_WEBPACK_IMPORTED_MODULE_14_/* ["default"] */ .A,
+    'binancecoinm': ccxt_src_binancecoinm_js_WEBPACK_IMPORTED_MODULE_15_/* ["default"] */ .A,
+    'binanceus': ccxt_src_binanceus_js_WEBPACK_IMPORTED_MODULE_16_/* ["default"] */ .A,
+    'binanceusdm': ccxt_src_binanceusdm_js_WEBPACK_IMPORTED_MODULE_17_/* ["default"] */ .A,
+    'bingx': ccxt_src_bingx_js_WEBPACK_IMPORTED_MODULE_18_/* ["default"] */ .A,
+    'bit24': ccxt_src_bit24_js_WEBPACK_IMPORTED_MODULE_19_/* ["default"] */ .A,
+    'bit2c': ccxt_src_bit2c_js_WEBPACK_IMPORTED_MODULE_20_/* ["default"] */ .A,
+    'bitbank': ccxt_src_bitbank_js_WEBPACK_IMPORTED_MODULE_21_/* ["default"] */ .A,
+    'bitbarg': ccxt_src_bitbarg_js_WEBPACK_IMPORTED_MODULE_22_/* ["default"] */ .A,
+    'bitbns': ccxt_src_bitbns_js_WEBPACK_IMPORTED_MODULE_23_/* ["default"] */ .A,
+    'bitfinex': ccxt_src_bitfinex_js_WEBPACK_IMPORTED_MODULE_24_/* ["default"] */ .A,
+    'bitflyer': ccxt_src_bitflyer_js_WEBPACK_IMPORTED_MODULE_25_/* ["default"] */ .A,
+    'bitget': ccxt_src_bitget_js_WEBPACK_IMPORTED_MODULE_26_/* ["default"] */ .A,
+    'bithumb': ccxt_src_bithumb_js_WEBPACK_IMPORTED_MODULE_27_/* ["default"] */ .A,
+    'bitimen': ccxt_src_bitimen_js_WEBPACK_IMPORTED_MODULE_28_/* ["default"] */ .A,
+    'bitir': ccxt_src_bitir_js_WEBPACK_IMPORTED_MODULE_29_/* ["default"] */ .A,
+    'bitmart': ccxt_src_bitmart_js_WEBPACK_IMPORTED_MODULE_30_/* ["default"] */ .A,
+    'bitmex': ccxt_src_bitmex_js_WEBPACK_IMPORTED_MODULE_31_/* ["default"] */ .A,
+    'bitopro': ccxt_src_bitopro_js_WEBPACK_IMPORTED_MODULE_32_/* ["default"] */ .A,
+    'bitpin': ccxt_src_bitpin_js_WEBPACK_IMPORTED_MODULE_33_/* ["default"] */ .A,
+    'bitrue': ccxt_src_bitrue_js_WEBPACK_IMPORTED_MODULE_34_/* ["default"] */ .A,
+    'bitso': ccxt_src_bitso_js_WEBPACK_IMPORTED_MODULE_35_/* ["default"] */ .A,
+    'bitstamp': ccxt_src_bitstamp_js_WEBPACK_IMPORTED_MODULE_36_/* ["default"] */ .A,
+    'bitteam': ccxt_src_bitteam_js_WEBPACK_IMPORTED_MODULE_37_/* ["default"] */ .A,
+    'bittrade': ccxt_src_bittrade_js_WEBPACK_IMPORTED_MODULE_38_/* ["default"] */ .A,
+    'bitunix': ccxt_src_bitunix_js_WEBPACK_IMPORTED_MODULE_39_/* ["default"] */ .A,
+    'bitvavo': ccxt_src_bitvavo_js_WEBPACK_IMPORTED_MODULE_40_/* ["default"] */ .A,
+    'bitwana': ccxt_src_bitwana_js_WEBPACK_IMPORTED_MODULE_41_/* ["default"] */ .A,
+    'blockchaincom': ccxt_src_blockchaincom_js_WEBPACK_IMPORTED_MODULE_42_/* ["default"] */ .A,
+    'blofin': ccxt_src_blofin_js_WEBPACK_IMPORTED_MODULE_43_/* ["default"] */ .A,
+    'btcalpha': ccxt_src_btcalpha_js_WEBPACK_IMPORTED_MODULE_44_/* ["default"] */ .A,
+    'btcbox': ccxt_src_btcbox_js_WEBPACK_IMPORTED_MODULE_45_/* ["default"] */ .A,
+    'btcmarkets': ccxt_src_btcmarkets_js_WEBPACK_IMPORTED_MODULE_46_/* ["default"] */ .A,
+    'btcturk': ccxt_src_btcturk_js_WEBPACK_IMPORTED_MODULE_47_/* ["default"] */ .A,
+    'bybit': ccxt_src_bybit_js_WEBPACK_IMPORTED_MODULE_48_/* ["default"] */ .A,
+    'bydfi': ccxt_src_bydfi_js_WEBPACK_IMPORTED_MODULE_49_/* ["default"] */ .A,
+    'cafearz': ccxt_src_cafearz_js_WEBPACK_IMPORTED_MODULE_50_/* ["default"] */ .A,
+    'cex': ccxt_src_cex_js_WEBPACK_IMPORTED_MODULE_51_/* ["default"] */ .A,
+    'changefa': ccxt_src_changefa_js_WEBPACK_IMPORTED_MODULE_52_/* ["default"] */ .A,
+    'coinbase': ccxt_src_coinbase_js_WEBPACK_IMPORTED_MODULE_53_/* ["default"] */ .A,
+    'coinbaseadvanced': ccxt_src_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_54_/* ["default"] */ .A,
+    'coinbaseexchange': ccxt_src_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_55_/* ["default"] */ .A,
+    'coinbaseinternational': ccxt_src_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_56_/* ["default"] */ .A,
+    'coincatch': ccxt_src_coincatch_js_WEBPACK_IMPORTED_MODULE_57_/* ["default"] */ .A,
+    'coincheck': ccxt_src_coincheck_js_WEBPACK_IMPORTED_MODULE_58_/* ["default"] */ .A,
+    'coinex': ccxt_src_coinex_js_WEBPACK_IMPORTED_MODULE_59_/* ["default"] */ .A,
+    'coinmate': ccxt_src_coinmate_js_WEBPACK_IMPORTED_MODULE_60_/* ["default"] */ .A,
+    'coinmetro': ccxt_src_coinmetro_js_WEBPACK_IMPORTED_MODULE_61_/* ["default"] */ .A,
+    'coinone': ccxt_src_coinone_js_WEBPACK_IMPORTED_MODULE_62_/* ["default"] */ .A,
+    'coinsph': ccxt_src_coinsph_js_WEBPACK_IMPORTED_MODULE_63_/* ["default"] */ .A,
+    'coinspot': ccxt_src_coinspot_js_WEBPACK_IMPORTED_MODULE_64_/* ["default"] */ .A,
+    'cryptocom': ccxt_src_cryptocom_js_WEBPACK_IMPORTED_MODULE_65_/* ["default"] */ .A,
+    'cryptomus': ccxt_src_cryptomus_js_WEBPACK_IMPORTED_MODULE_66_/* ["default"] */ .A,
+    'daric': ccxt_src_daric_js_WEBPACK_IMPORTED_MODULE_67_/* ["default"] */ .A,
+    'defx': ccxt_src_defx_js_WEBPACK_IMPORTED_MODULE_68_/* ["default"] */ .A,
+    'delta': ccxt_src_delta_js_WEBPACK_IMPORTED_MODULE_69_/* ["default"] */ .A,
+    'deribit': ccxt_src_deribit_js_WEBPACK_IMPORTED_MODULE_70_/* ["default"] */ .A,
+    'derive': ccxt_src_derive_js_WEBPACK_IMPORTED_MODULE_71_/* ["default"] */ .A,
+    'digifinex': ccxt_src_digifinex_js_WEBPACK_IMPORTED_MODULE_72_/* ["default"] */ .A,
+    'digikalagold': ccxt_src_digikalagold_js_WEBPACK_IMPORTED_MODULE_73_/* ["default"] */ .A,
+    'ellipx': ccxt_src_ellipx_js_WEBPACK_IMPORTED_MODULE_74_/* ["default"] */ .A,
+    'eterex': ccxt_src_eterex_js_WEBPACK_IMPORTED_MODULE_75_/* ["default"] */ .A,
+    'excoino': ccxt_src_excoino_js_WEBPACK_IMPORTED_MODULE_76_/* ["default"] */ .A,
+    'exir': ccxt_src_exir_js_WEBPACK_IMPORTED_MODULE_77_/* ["default"] */ .A,
+    'exmo': ccxt_src_exmo_js_WEBPACK_IMPORTED_MODULE_78_/* ["default"] */ .A,
+    'exnovin': ccxt_src_exnovin_js_WEBPACK_IMPORTED_MODULE_79_/* ["default"] */ .A,
+    'farhadexchange': ccxt_src_farhadexchange_js_WEBPACK_IMPORTED_MODULE_80_/* ["default"] */ .A,
+    'fmfwio': ccxt_src_fmfwio_js_WEBPACK_IMPORTED_MODULE_81_/* ["default"] */ .A,
+    'foxbit': ccxt_src_foxbit_js_WEBPACK_IMPORTED_MODULE_82_/* ["default"] */ .A,
+    'gate': ccxt_src_gate_js_WEBPACK_IMPORTED_MODULE_83_/* ["default"] */ .A,
+    'gateio': ccxt_src_gateio_js_WEBPACK_IMPORTED_MODULE_84_/* ["default"] */ .A,
+    'gemini': ccxt_src_gemini_js_WEBPACK_IMPORTED_MODULE_85_/* ["default"] */ .A,
+    'goldika': ccxt_src_goldika_js_WEBPACK_IMPORTED_MODULE_86_/* ["default"] */ .A,
+    'goldis': ccxt_src_goldis_js_WEBPACK_IMPORTED_MODULE_87_/* ["default"] */ .A,
+    'hamrahgold': ccxt_src_hamrahgold_js_WEBPACK_IMPORTED_MODULE_88_/* ["default"] */ .A,
+    'hamtapay': ccxt_src_hamtapay_js_WEBPACK_IMPORTED_MODULE_89_/* ["default"] */ .A,
+    'hashkey': ccxt_src_hashkey_js_WEBPACK_IMPORTED_MODULE_90_/* ["default"] */ .A,
+    'hibachi': ccxt_src_hibachi_js_WEBPACK_IMPORTED_MODULE_91_/* ["default"] */ .A,
+    'hitbtc': ccxt_src_hitbtc_js_WEBPACK_IMPORTED_MODULE_92_/* ["default"] */ .A,
+    'hitobit': ccxt_src_hitobit_js_WEBPACK_IMPORTED_MODULE_93_/* ["default"] */ .A,
+    'hollaex': ccxt_src_hollaex_js_WEBPACK_IMPORTED_MODULE_94_/* ["default"] */ .A,
+    'htx': ccxt_src_htx_js_WEBPACK_IMPORTED_MODULE_95_/* ["default"] */ .A,
+    'huobi': ccxt_src_huobi_js_WEBPACK_IMPORTED_MODULE_96_/* ["default"] */ .A,
+    'hyperliquid': ccxt_src_hyperliquid_js_WEBPACK_IMPORTED_MODULE_97_/* ["default"] */ .A,
+    'independentreserve': ccxt_src_independentreserve_js_WEBPACK_IMPORTED_MODULE_98_/* ["default"] */ .A,
+    'indodax': ccxt_src_indodax_js_WEBPACK_IMPORTED_MODULE_99_/* ["default"] */ .A,
+    'iranexchange': ccxt_src_iranexchange_js_WEBPACK_IMPORTED_MODULE_100_/* ["default"] */ .A,
+    'jibitex': ccxt_src_jibitex_js_WEBPACK_IMPORTED_MODULE_101_/* ["default"] */ .A,
+    'kcex': ccxt_src_kcex_js_WEBPACK_IMPORTED_MODULE_102_/* ["default"] */ .A,
+    'kifpoolme': ccxt_src_kifpoolme_js_WEBPACK_IMPORTED_MODULE_103_/* ["default"] */ .A,
+    'kraken': ccxt_src_kraken_js_WEBPACK_IMPORTED_MODULE_104_/* ["default"] */ .A,
+    'krakenfutures': ccxt_src_krakenfutures_js_WEBPACK_IMPORTED_MODULE_105_/* ["default"] */ .A,
+    'kucoin': ccxt_src_kucoin_js_WEBPACK_IMPORTED_MODULE_106_/* ["default"] */ .A,
+    'kucoinfutures': ccxt_src_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_107_/* ["default"] */ .A,
+    'latoken': ccxt_src_latoken_js_WEBPACK_IMPORTED_MODULE_108_/* ["default"] */ .A,
+    'lbank': ccxt_src_lbank_js_WEBPACK_IMPORTED_MODULE_109_/* ["default"] */ .A,
+    'luno': ccxt_src_luno_js_WEBPACK_IMPORTED_MODULE_110_/* ["default"] */ .A,
+    'mazdax': ccxt_src_mazdax_js_WEBPACK_IMPORTED_MODULE_111_/* ["default"] */ .A,
+    'melligold': ccxt_src_melligold_js_WEBPACK_IMPORTED_MODULE_112_/* ["default"] */ .A,
+    'mercado': ccxt_src_mercado_js_WEBPACK_IMPORTED_MODULE_113_/* ["default"] */ .A,
+    'mexc': ccxt_src_mexc_js_WEBPACK_IMPORTED_MODULE_114_/* ["default"] */ .A,
+    'milligold': ccxt_src_milligold_js_WEBPACK_IMPORTED_MODULE_115_/* ["default"] */ .A,
+    'modetrade': ccxt_src_modetrade_js_WEBPACK_IMPORTED_MODULE_116_/* ["default"] */ .A,
+    'myokx': ccxt_src_myokx_js_WEBPACK_IMPORTED_MODULE_117_/* ["default"] */ .A,
+    'ndax': ccxt_src_ndax_js_WEBPACK_IMPORTED_MODULE_118_/* ["default"] */ .A,
+    'nobitex': ccxt_src_nobitex_js_WEBPACK_IMPORTED_MODULE_119_/* ["default"] */ .A,
+    'novadax': ccxt_src_novadax_js_WEBPACK_IMPORTED_MODULE_120_/* ["default"] */ .A,
+    'oceanex': ccxt_src_oceanex_js_WEBPACK_IMPORTED_MODULE_121_/* ["default"] */ .A,
+    'okcoin': ccxt_src_okcoin_js_WEBPACK_IMPORTED_MODULE_122_/* ["default"] */ .A,
+    'okexchange': ccxt_src_okexchange_js_WEBPACK_IMPORTED_MODULE_123_/* ["default"] */ .A,
+    'okx': ccxt_src_okx_js_WEBPACK_IMPORTED_MODULE_124_/* ["default"] */ .A,
+    'okxus': ccxt_src_okxus_js_WEBPACK_IMPORTED_MODULE_125_/* ["default"] */ .A,
+    'ompfinex': ccxt_src_ompfinex_js_WEBPACK_IMPORTED_MODULE_126_/* ["default"] */ .A,
+    'onetrading': ccxt_src_onetrading_js_WEBPACK_IMPORTED_MODULE_127_/* ["default"] */ .A,
+    'ourbit': ccxt_src_ourbit_js_WEBPACK_IMPORTED_MODULE_128_/* ["default"] */ .A,
+    'oxfun': ccxt_src_oxfun_js_WEBPACK_IMPORTED_MODULE_129_/* ["default"] */ .A,
+    'p2b': ccxt_src_p2b_js_WEBPACK_IMPORTED_MODULE_130_/* ["default"] */ .A,
+    'paradex': ccxt_src_paradex_js_WEBPACK_IMPORTED_MODULE_131_/* ["default"] */ .A,
+    'paymium': ccxt_src_paymium_js_WEBPACK_IMPORTED_MODULE_132_/* ["default"] */ .A,
+    'phemex': ccxt_src_phemex_js_WEBPACK_IMPORTED_MODULE_133_/* ["default"] */ .A,
+    'pingi': ccxt_src_pingi_js_WEBPACK_IMPORTED_MODULE_134_/* ["default"] */ .A,
+    'poloniex': ccxt_src_poloniex_js_WEBPACK_IMPORTED_MODULE_135_/* ["default"] */ .A,
+    'pooleno': ccxt_src_pooleno_js_WEBPACK_IMPORTED_MODULE_136_/* ["default"] */ .A,
+    'probit': ccxt_src_probit_js_WEBPACK_IMPORTED_MODULE_137_/* ["default"] */ .A,
+    'raastin': ccxt_src_raastin_js_WEBPACK_IMPORTED_MODULE_138_/* ["default"] */ .A,
+    'ramzinex': ccxt_src_ramzinex_js_WEBPACK_IMPORTED_MODULE_139_/* ["default"] */ .A,
+    'saraf': ccxt_src_saraf_js_WEBPACK_IMPORTED_MODULE_140_/* ["default"] */ .A,
+    'sarmayex': ccxt_src_sarmayex_js_WEBPACK_IMPORTED_MODULE_141_/* ["default"] */ .A,
+    'sarrafex': ccxt_src_sarrafex_js_WEBPACK_IMPORTED_MODULE_142_/* ["default"] */ .A,
+    'tabdeal': ccxt_src_tabdeal_js_WEBPACK_IMPORTED_MODULE_143_/* ["default"] */ .A,
+    'talaavan': ccxt_src_talaavan_js_WEBPACK_IMPORTED_MODULE_144_/* ["default"] */ .A,
+    'talapp': ccxt_src_talapp_js_WEBPACK_IMPORTED_MODULE_145_/* ["default"] */ .A,
+    'talasea': ccxt_src_talasea_js_WEBPACK_IMPORTED_MODULE_146_/* ["default"] */ .A,
+    'technogold': ccxt_src_technogold_js_WEBPACK_IMPORTED_MODULE_147_/* ["default"] */ .A,
+    'tehran_exchange': ccxt_src_tehran_exchange_js_WEBPACK_IMPORTED_MODULE_148_/* ["default"] */ .A,
+    'tetherland': ccxt_src_tetherland_js_WEBPACK_IMPORTED_MODULE_149_/* ["default"] */ .A,
+    'timex': ccxt_src_timex_js_WEBPACK_IMPORTED_MODULE_150_/* ["default"] */ .A,
+    'tokocrypto': ccxt_src_tokocrypto_js_WEBPACK_IMPORTED_MODULE_151_/* ["default"] */ .A,
+    'toobit': ccxt_src_toobit_js_WEBPACK_IMPORTED_MODULE_152_/* ["default"] */ .A,
+    'tradeogre': ccxt_src_tradeogre_js_WEBPACK_IMPORTED_MODULE_153_/* ["default"] */ .A,
+    'twox': ccxt_src_twox_js_WEBPACK_IMPORTED_MODULE_154_/* ["default"] */ .A,
+    'ubitex': ccxt_src_ubitex_js_WEBPACK_IMPORTED_MODULE_155_/* ["default"] */ .A,
+    'upbit': ccxt_src_upbit_js_WEBPACK_IMPORTED_MODULE_156_/* ["default"] */ .A,
+    'vertex': ccxt_src_vertex_js_WEBPACK_IMPORTED_MODULE_157_/* ["default"] */ .A,
+    'wallex': ccxt_src_wallex_js_WEBPACK_IMPORTED_MODULE_158_/* ["default"] */ .A,
+    'wallgold': ccxt_src_wallgold_js_WEBPACK_IMPORTED_MODULE_159_/* ["default"] */ .A,
+    'wavesexchange': ccxt_src_wavesexchange_js_WEBPACK_IMPORTED_MODULE_160_/* ["default"] */ .A,
+    'whitebit': ccxt_src_whitebit_js_WEBPACK_IMPORTED_MODULE_161_/* ["default"] */ .A,
+    'woo': ccxt_src_woo_js_WEBPACK_IMPORTED_MODULE_162_/* ["default"] */ .A,
+    'woofipro': ccxt_src_woofipro_js_WEBPACK_IMPORTED_MODULE_163_/* ["default"] */ .A,
+    'xt': ccxt_src_xt_js_WEBPACK_IMPORTED_MODULE_164_/* ["default"] */ .A,
+    'yobit': ccxt_src_yobit_js_WEBPACK_IMPORTED_MODULE_165_/* ["default"] */ .A,
+    'zaif': ccxt_src_zaif_js_WEBPACK_IMPORTED_MODULE_166_/* ["default"] */ .A,
+    'zarafza': ccxt_src_zarafza_js_WEBPACK_IMPORTED_MODULE_167_/* ["default"] */ .A,
+    'zarminex': ccxt_src_zarminex_js_WEBPACK_IMPORTED_MODULE_168_/* ["default"] */ .A,
+    'zarniv': ccxt_src_zarniv_js_WEBPACK_IMPORTED_MODULE_169_/* ["default"] */ .A,
+    'zonda': ccxt_src_zonda_js_WEBPACK_IMPORTED_MODULE_170_/* ["default"] */ .A,
 };
 const ccxt_pro = {
-    'alpaca': ccxt_src_pro_alpaca_js_WEBPACK_IMPORTED_MODULE_160_/* ["default"] */ .A,
-    'apex': ccxt_src_pro_apex_js_WEBPACK_IMPORTED_MODULE_161_/* ["default"] */ .A,
-    'ascendex': ccxt_src_pro_ascendex_js_WEBPACK_IMPORTED_MODULE_162_/* ["default"] */ .A,
-    'bequant': ccxt_src_pro_bequant_js_WEBPACK_IMPORTED_MODULE_163_/* ["default"] */ .A,
-    'binance': ccxt_src_pro_binance_js_WEBPACK_IMPORTED_MODULE_164_/* ["default"] */ .A,
-    'binancecoinm': ccxt_src_pro_binancecoinm_js_WEBPACK_IMPORTED_MODULE_165_/* ["default"] */ .A,
-    'binanceus': ccxt_src_pro_binanceus_js_WEBPACK_IMPORTED_MODULE_166_/* ["default"] */ .A,
-    'binanceusdm': ccxt_src_pro_binanceusdm_js_WEBPACK_IMPORTED_MODULE_167_/* ["default"] */ .A,
-    'bingx': ccxt_src_pro_bingx_js_WEBPACK_IMPORTED_MODULE_168_/* ["default"] */ .A,
-    'bitfinex': ccxt_src_pro_bitfinex_js_WEBPACK_IMPORTED_MODULE_169_/* ["default"] */ .A,
-    'bitget': ccxt_src_pro_bitget_js_WEBPACK_IMPORTED_MODULE_170_/* ["default"] */ .A,
-    'bithumb': ccxt_src_pro_bithumb_js_WEBPACK_IMPORTED_MODULE_171_/* ["default"] */ .A,
-    'bitmart': ccxt_src_pro_bitmart_js_WEBPACK_IMPORTED_MODULE_172_/* ["default"] */ .A,
-    'bitmex': ccxt_src_pro_bitmex_js_WEBPACK_IMPORTED_MODULE_173_/* ["default"] */ .A,
-    'bitopro': ccxt_src_pro_bitopro_js_WEBPACK_IMPORTED_MODULE_174_/* ["default"] */ .A,
-    'bitrue': ccxt_src_pro_bitrue_js_WEBPACK_IMPORTED_MODULE_175_/* ["default"] */ .A,
-    'bitstamp': ccxt_src_pro_bitstamp_js_WEBPACK_IMPORTED_MODULE_176_/* ["default"] */ .A,
-    'bittrade': ccxt_src_pro_bittrade_js_WEBPACK_IMPORTED_MODULE_177_/* ["default"] */ .A,
-    'bitvavo': ccxt_src_pro_bitvavo_js_WEBPACK_IMPORTED_MODULE_178_/* ["default"] */ .A,
-    'blockchaincom': ccxt_src_pro_blockchaincom_js_WEBPACK_IMPORTED_MODULE_179_/* ["default"] */ .A,
-    'blofin': ccxt_src_pro_blofin_js_WEBPACK_IMPORTED_MODULE_180_/* ["default"] */ .A,
-    'bybit': ccxt_src_pro_bybit_js_WEBPACK_IMPORTED_MODULE_181_/* ["default"] */ .A,
-    'cex': ccxt_src_pro_cex_js_WEBPACK_IMPORTED_MODULE_182_/* ["default"] */ .A,
-    'coinbase': ccxt_src_pro_coinbase_js_WEBPACK_IMPORTED_MODULE_183_/* ["default"] */ .A,
-    'coinbaseadvanced': ccxt_src_pro_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_184_/* ["default"] */ .A,
-    'coinbaseexchange': ccxt_src_pro_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_185_/* ["default"] */ .A,
-    'coinbaseinternational': ccxt_src_pro_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_186_/* ["default"] */ .A,
-    'coincatch': ccxt_src_pro_coincatch_js_WEBPACK_IMPORTED_MODULE_187_/* ["default"] */ .A,
-    'coincheck': ccxt_src_pro_coincheck_js_WEBPACK_IMPORTED_MODULE_188_/* ["default"] */ .A,
-    'coinex': ccxt_src_pro_coinex_js_WEBPACK_IMPORTED_MODULE_189_/* ["default"] */ .A,
-    'coinone': ccxt_src_pro_coinone_js_WEBPACK_IMPORTED_MODULE_190_/* ["default"] */ .A,
-    'cryptocom': ccxt_src_pro_cryptocom_js_WEBPACK_IMPORTED_MODULE_191_/* ["default"] */ .A,
-    'defx': ccxt_src_pro_defx_js_WEBPACK_IMPORTED_MODULE_192_/* ["default"] */ .A,
-    'deribit': ccxt_src_pro_deribit_js_WEBPACK_IMPORTED_MODULE_193_/* ["default"] */ .A,
-    'derive': ccxt_src_pro_derive_js_WEBPACK_IMPORTED_MODULE_194_/* ["default"] */ .A,
-    'exmo': ccxt_src_pro_exmo_js_WEBPACK_IMPORTED_MODULE_195_/* ["default"] */ .A,
-    'gate': ccxt_src_pro_gate_js_WEBPACK_IMPORTED_MODULE_196_/* ["default"] */ .A,
-    'gateio': ccxt_src_pro_gateio_js_WEBPACK_IMPORTED_MODULE_197_/* ["default"] */ .A,
-    'gemini': ccxt_src_pro_gemini_js_WEBPACK_IMPORTED_MODULE_198_/* ["default"] */ .A,
-    'hashkey': ccxt_src_pro_hashkey_js_WEBPACK_IMPORTED_MODULE_199_/* ["default"] */ .A,
-    'hitbtc': ccxt_src_pro_hitbtc_js_WEBPACK_IMPORTED_MODULE_200_/* ["default"] */ .A,
-    'hollaex': ccxt_src_pro_hollaex_js_WEBPACK_IMPORTED_MODULE_201_/* ["default"] */ .A,
-    'htx': ccxt_src_pro_htx_js_WEBPACK_IMPORTED_MODULE_202_/* ["default"] */ .A,
-    'huobi': ccxt_src_pro_huobi_js_WEBPACK_IMPORTED_MODULE_203_/* ["default"] */ .A,
-    'hyperliquid': ccxt_src_pro_hyperliquid_js_WEBPACK_IMPORTED_MODULE_204_/* ["default"] */ .A,
-    'independentreserve': ccxt_src_pro_independentreserve_js_WEBPACK_IMPORTED_MODULE_205_/* ["default"] */ .A,
-    'kraken': ccxt_src_pro_kraken_js_WEBPACK_IMPORTED_MODULE_206_/* ["default"] */ .A,
-    'krakenfutures': ccxt_src_pro_krakenfutures_js_WEBPACK_IMPORTED_MODULE_207_/* ["default"] */ .A,
-    'kucoin': ccxt_src_pro_kucoin_js_WEBPACK_IMPORTED_MODULE_208_/* ["default"] */ .A,
-    'kucoinfutures': ccxt_src_pro_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_209_/* ["default"] */ .A,
-    'lbank': ccxt_src_pro_lbank_js_WEBPACK_IMPORTED_MODULE_210_/* ["default"] */ .A,
-    'luno': ccxt_src_pro_luno_js_WEBPACK_IMPORTED_MODULE_211_/* ["default"] */ .A,
-    'mexc': ccxt_src_pro_mexc_js_WEBPACK_IMPORTED_MODULE_212_/* ["default"] */ .A,
-    'modetrade': ccxt_src_pro_modetrade_js_WEBPACK_IMPORTED_MODULE_213_/* ["default"] */ .A,
-    'myokx': ccxt_src_pro_myokx_js_WEBPACK_IMPORTED_MODULE_214_/* ["default"] */ .A,
-    'ndax': ccxt_src_pro_ndax_js_WEBPACK_IMPORTED_MODULE_215_/* ["default"] */ .A,
-    'okcoin': ccxt_src_pro_okcoin_js_WEBPACK_IMPORTED_MODULE_216_/* ["default"] */ .A,
-    'okx': ccxt_src_pro_okx_js_WEBPACK_IMPORTED_MODULE_217_/* ["default"] */ .A,
-    'okxus': ccxt_src_pro_okxus_js_WEBPACK_IMPORTED_MODULE_218_/* ["default"] */ .A,
-    'onetrading': ccxt_src_pro_onetrading_js_WEBPACK_IMPORTED_MODULE_219_/* ["default"] */ .A,
-    'oxfun': ccxt_src_pro_oxfun_js_WEBPACK_IMPORTED_MODULE_220_/* ["default"] */ .A,
-    'p2b': ccxt_src_pro_p2b_js_WEBPACK_IMPORTED_MODULE_221_/* ["default"] */ .A,
-    'paradex': ccxt_src_pro_paradex_js_WEBPACK_IMPORTED_MODULE_222_/* ["default"] */ .A,
-    'phemex': ccxt_src_pro_phemex_js_WEBPACK_IMPORTED_MODULE_223_/* ["default"] */ .A,
-    'poloniex': ccxt_src_pro_poloniex_js_WEBPACK_IMPORTED_MODULE_224_/* ["default"] */ .A,
-    'probit': ccxt_src_pro_probit_js_WEBPACK_IMPORTED_MODULE_225_/* ["default"] */ .A,
-    'tradeogre': ccxt_src_pro_tradeogre_js_WEBPACK_IMPORTED_MODULE_226_/* ["default"] */ .A,
-    'upbit': ccxt_src_pro_upbit_js_WEBPACK_IMPORTED_MODULE_227_/* ["default"] */ .A,
-    'vertex': ccxt_src_pro_vertex_js_WEBPACK_IMPORTED_MODULE_228_/* ["default"] */ .A,
-    'whitebit': ccxt_src_pro_whitebit_js_WEBPACK_IMPORTED_MODULE_229_/* ["default"] */ .A,
-    'woo': ccxt_src_pro_woo_js_WEBPACK_IMPORTED_MODULE_230_/* ["default"] */ .A,
-    'woofipro': ccxt_src_pro_woofipro_js_WEBPACK_IMPORTED_MODULE_231_/* ["default"] */ .A,
-    'xt': ccxt_src_pro_xt_js_WEBPACK_IMPORTED_MODULE_232_/* ["default"] */ .A,
+    'alpaca': ccxt_src_pro_alpaca_js_WEBPACK_IMPORTED_MODULE_171_/* ["default"] */ .A,
+    'apex': ccxt_src_pro_apex_js_WEBPACK_IMPORTED_MODULE_172_/* ["default"] */ .A,
+    'ascendex': ccxt_src_pro_ascendex_js_WEBPACK_IMPORTED_MODULE_173_/* ["default"] */ .A,
+    'bequant': ccxt_src_pro_bequant_js_WEBPACK_IMPORTED_MODULE_174_/* ["default"] */ .A,
+    'binance': ccxt_src_pro_binance_js_WEBPACK_IMPORTED_MODULE_175_/* ["default"] */ .A,
+    'binancecoinm': ccxt_src_pro_binancecoinm_js_WEBPACK_IMPORTED_MODULE_176_/* ["default"] */ .A,
+    'binanceus': ccxt_src_pro_binanceus_js_WEBPACK_IMPORTED_MODULE_177_/* ["default"] */ .A,
+    'binanceusdm': ccxt_src_pro_binanceusdm_js_WEBPACK_IMPORTED_MODULE_178_/* ["default"] */ .A,
+    'bingx': ccxt_src_pro_bingx_js_WEBPACK_IMPORTED_MODULE_179_/* ["default"] */ .A,
+    'bitfinex': ccxt_src_pro_bitfinex_js_WEBPACK_IMPORTED_MODULE_180_/* ["default"] */ .A,
+    'bitget': ccxt_src_pro_bitget_js_WEBPACK_IMPORTED_MODULE_181_/* ["default"] */ .A,
+    'bithumb': ccxt_src_pro_bithumb_js_WEBPACK_IMPORTED_MODULE_182_/* ["default"] */ .A,
+    'bitmart': ccxt_src_pro_bitmart_js_WEBPACK_IMPORTED_MODULE_183_/* ["default"] */ .A,
+    'bitmex': ccxt_src_pro_bitmex_js_WEBPACK_IMPORTED_MODULE_184_/* ["default"] */ .A,
+    'bitopro': ccxt_src_pro_bitopro_js_WEBPACK_IMPORTED_MODULE_185_/* ["default"] */ .A,
+    'bitrue': ccxt_src_pro_bitrue_js_WEBPACK_IMPORTED_MODULE_186_/* ["default"] */ .A,
+    'bitstamp': ccxt_src_pro_bitstamp_js_WEBPACK_IMPORTED_MODULE_187_/* ["default"] */ .A,
+    'bittrade': ccxt_src_pro_bittrade_js_WEBPACK_IMPORTED_MODULE_188_/* ["default"] */ .A,
+    'bitvavo': ccxt_src_pro_bitvavo_js_WEBPACK_IMPORTED_MODULE_189_/* ["default"] */ .A,
+    'blockchaincom': ccxt_src_pro_blockchaincom_js_WEBPACK_IMPORTED_MODULE_190_/* ["default"] */ .A,
+    'blofin': ccxt_src_pro_blofin_js_WEBPACK_IMPORTED_MODULE_191_/* ["default"] */ .A,
+    'bybit': ccxt_src_pro_bybit_js_WEBPACK_IMPORTED_MODULE_192_/* ["default"] */ .A,
+    'cex': ccxt_src_pro_cex_js_WEBPACK_IMPORTED_MODULE_193_/* ["default"] */ .A,
+    'coinbase': ccxt_src_pro_coinbase_js_WEBPACK_IMPORTED_MODULE_194_/* ["default"] */ .A,
+    'coinbaseadvanced': ccxt_src_pro_coinbaseadvanced_js_WEBPACK_IMPORTED_MODULE_195_/* ["default"] */ .A,
+    'coinbaseexchange': ccxt_src_pro_coinbaseexchange_js_WEBPACK_IMPORTED_MODULE_196_/* ["default"] */ .A,
+    'coinbaseinternational': ccxt_src_pro_coinbaseinternational_js_WEBPACK_IMPORTED_MODULE_197_/* ["default"] */ .A,
+    'coincatch': ccxt_src_pro_coincatch_js_WEBPACK_IMPORTED_MODULE_198_/* ["default"] */ .A,
+    'coincheck': ccxt_src_pro_coincheck_js_WEBPACK_IMPORTED_MODULE_199_/* ["default"] */ .A,
+    'coinex': ccxt_src_pro_coinex_js_WEBPACK_IMPORTED_MODULE_200_/* ["default"] */ .A,
+    'coinone': ccxt_src_pro_coinone_js_WEBPACK_IMPORTED_MODULE_201_/* ["default"] */ .A,
+    'cryptocom': ccxt_src_pro_cryptocom_js_WEBPACK_IMPORTED_MODULE_202_/* ["default"] */ .A,
+    'defx': ccxt_src_pro_defx_js_WEBPACK_IMPORTED_MODULE_203_/* ["default"] */ .A,
+    'deribit': ccxt_src_pro_deribit_js_WEBPACK_IMPORTED_MODULE_204_/* ["default"] */ .A,
+    'derive': ccxt_src_pro_derive_js_WEBPACK_IMPORTED_MODULE_205_/* ["default"] */ .A,
+    'exmo': ccxt_src_pro_exmo_js_WEBPACK_IMPORTED_MODULE_206_/* ["default"] */ .A,
+    'gate': ccxt_src_pro_gate_js_WEBPACK_IMPORTED_MODULE_207_/* ["default"] */ .A,
+    'gateio': ccxt_src_pro_gateio_js_WEBPACK_IMPORTED_MODULE_208_/* ["default"] */ .A,
+    'gemini': ccxt_src_pro_gemini_js_WEBPACK_IMPORTED_MODULE_209_/* ["default"] */ .A,
+    'hashkey': ccxt_src_pro_hashkey_js_WEBPACK_IMPORTED_MODULE_210_/* ["default"] */ .A,
+    'hitbtc': ccxt_src_pro_hitbtc_js_WEBPACK_IMPORTED_MODULE_211_/* ["default"] */ .A,
+    'hollaex': ccxt_src_pro_hollaex_js_WEBPACK_IMPORTED_MODULE_212_/* ["default"] */ .A,
+    'htx': ccxt_src_pro_htx_js_WEBPACK_IMPORTED_MODULE_213_/* ["default"] */ .A,
+    'huobi': ccxt_src_pro_huobi_js_WEBPACK_IMPORTED_MODULE_214_/* ["default"] */ .A,
+    'hyperliquid': ccxt_src_pro_hyperliquid_js_WEBPACK_IMPORTED_MODULE_215_/* ["default"] */ .A,
+    'independentreserve': ccxt_src_pro_independentreserve_js_WEBPACK_IMPORTED_MODULE_216_/* ["default"] */ .A,
+    'kraken': ccxt_src_pro_kraken_js_WEBPACK_IMPORTED_MODULE_217_/* ["default"] */ .A,
+    'krakenfutures': ccxt_src_pro_krakenfutures_js_WEBPACK_IMPORTED_MODULE_218_/* ["default"] */ .A,
+    'kucoin': ccxt_src_pro_kucoin_js_WEBPACK_IMPORTED_MODULE_219_/* ["default"] */ .A,
+    'kucoinfutures': ccxt_src_pro_kucoinfutures_js_WEBPACK_IMPORTED_MODULE_220_/* ["default"] */ .A,
+    'lbank': ccxt_src_pro_lbank_js_WEBPACK_IMPORTED_MODULE_221_/* ["default"] */ .A,
+    'luno': ccxt_src_pro_luno_js_WEBPACK_IMPORTED_MODULE_222_/* ["default"] */ .A,
+    'mexc': ccxt_src_pro_mexc_js_WEBPACK_IMPORTED_MODULE_223_/* ["default"] */ .A,
+    'modetrade': ccxt_src_pro_modetrade_js_WEBPACK_IMPORTED_MODULE_224_/* ["default"] */ .A,
+    'myokx': ccxt_src_pro_myokx_js_WEBPACK_IMPORTED_MODULE_225_/* ["default"] */ .A,
+    'ndax': ccxt_src_pro_ndax_js_WEBPACK_IMPORTED_MODULE_226_/* ["default"] */ .A,
+    'okcoin': ccxt_src_pro_okcoin_js_WEBPACK_IMPORTED_MODULE_227_/* ["default"] */ .A,
+    'okx': ccxt_src_pro_okx_js_WEBPACK_IMPORTED_MODULE_228_/* ["default"] */ .A,
+    'okxus': ccxt_src_pro_okxus_js_WEBPACK_IMPORTED_MODULE_229_/* ["default"] */ .A,
+    'onetrading': ccxt_src_pro_onetrading_js_WEBPACK_IMPORTED_MODULE_230_/* ["default"] */ .A,
+    'oxfun': ccxt_src_pro_oxfun_js_WEBPACK_IMPORTED_MODULE_231_/* ["default"] */ .A,
+    'p2b': ccxt_src_pro_p2b_js_WEBPACK_IMPORTED_MODULE_232_/* ["default"] */ .A,
+    'paradex': ccxt_src_pro_paradex_js_WEBPACK_IMPORTED_MODULE_233_/* ["default"] */ .A,
+    'phemex': ccxt_src_pro_phemex_js_WEBPACK_IMPORTED_MODULE_234_/* ["default"] */ .A,
+    'poloniex': ccxt_src_pro_poloniex_js_WEBPACK_IMPORTED_MODULE_235_/* ["default"] */ .A,
+    'probit': ccxt_src_pro_probit_js_WEBPACK_IMPORTED_MODULE_236_/* ["default"] */ .A,
+    'tradeogre': ccxt_src_pro_tradeogre_js_WEBPACK_IMPORTED_MODULE_237_/* ["default"] */ .A,
+    'upbit': ccxt_src_pro_upbit_js_WEBPACK_IMPORTED_MODULE_238_/* ["default"] */ .A,
+    'vertex': ccxt_src_pro_vertex_js_WEBPACK_IMPORTED_MODULE_239_/* ["default"] */ .A,
+    'whitebit': ccxt_src_pro_whitebit_js_WEBPACK_IMPORTED_MODULE_240_/* ["default"] */ .A,
+    'woo': ccxt_src_pro_woo_js_WEBPACK_IMPORTED_MODULE_241_/* ["default"] */ .A,
+    'woofipro': ccxt_src_pro_woofipro_js_WEBPACK_IMPORTED_MODULE_242_/* ["default"] */ .A,
+    'xt': ccxt_src_pro_xt_js_WEBPACK_IMPORTED_MODULE_243_/* ["default"] */ .A,
 };
 for (const exchange in ccxt_pro) {
     // const ccxtExchange = exchanges[exchange]
@@ -435836,7 +437745,7 @@ for (const exchange in ccxt_pro) {
 ccxt_pro.exchanges = Object.keys(ccxt_pro);
 ccxt_pro['Exchange'] = ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k; // now the same for rest and ts
 //-----------------------------------------------------------------------------
-const ccxt_ccxt = Object.assign({ version: ccxt_version, Exchange: ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k, Precise: ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_233_/* .Precise */ .Y, 'exchanges': Object.keys(ccxt_exchanges), 'pro': ccxt_pro }, ccxt_exchanges, ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_234_, ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_235_);
+const ccxt_ccxt = Object.assign({ version: ccxt_version, Exchange: ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k, Precise: ccxt_src_base_Precise_js_WEBPACK_IMPORTED_MODULE_244_/* .Precise */ .Y, 'exchanges': Object.keys(ccxt_exchanges), 'pro': ccxt_pro }, ccxt_exchanges, ccxt_src_base_functions_js_WEBPACK_IMPORTED_MODULE_245_, ccxt_src_base_errors_js_WEBPACK_IMPORTED_MODULE_246_);
 
 /* harmony default export */ const ts_ccxt = (ccxt_ccxt);
 //-----------------------------------------------------------------------------
