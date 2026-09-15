@@ -78,7 +78,7 @@ class daric extends Exchange {
 
     public function parse_market($market): array {
         $baseId = $this->safe_string($market, 'destinationCoinSymbol');
-        $base = 'XAG';
+        $base = 'XAG-1G';
         if ($baseId === 'GOLD18') {
             $base = 'XAU18';
         }

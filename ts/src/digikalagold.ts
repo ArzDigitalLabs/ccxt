@@ -71,7 +71,7 @@ export default class digikalagold extends Exchange {
 
     parseMarketEntry (response, id: string): Market {
         const isGold = id === 'gold18';
-        let base = 'XAG';
+        let base = 'XAG-1G';
         if (isGold) {
             base = 'XAU18';
         }
@@ -130,7 +130,7 @@ export default class digikalagold extends Exchange {
         }
         const response = await this.fetchPrice (params);
         const result = {};
-        const marketSymbols = [ 'XAU18/IRT', 'XAG/IRT' ];
+        const marketSymbols = [ 'XAU18/IRT', 'XAG-1G/IRT' ];
         for (let i = 0; i < marketSymbols.length; i++) {
             const symbol = marketSymbols[i];
             const market = this.market (symbol);

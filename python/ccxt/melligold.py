@@ -95,6 +95,8 @@ class melligold(Exchange, ImplicitAPI):
         data = self.safe_dict(response, 'data', {})
         lowerAmounts = self.safe_dict(data, 'lower_amounts', {})
         base = self.safe_currency_code(baseId)
+        if base == 'XAG':
+            base = 'XAG-1G'
         quote = 'IRT'
         return {
             'id': base + quote,
@@ -151,7 +153,7 @@ class melligold(Exchange, ImplicitAPI):
         if symbols is not None:
             symbols = self.market_symbols(symbols)
         result = {}
-        marketSymbols = ['XAU18/IRT', 'XAG/IRT']
+        marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT']
         for i in range(0, len(marketSymbols)):
             market = self.market(marketSymbols[i])
             response = self.request_with_cookie(self.extend({

@@ -72,7 +72,7 @@ class daric(Exchange, ImplicitAPI):
 
     def parse_market(self, market) -> Market:
         baseId = self.safe_string(market, 'destinationCoinSymbol')
-        base = 'XAG'
+        base = 'XAG-1G'
         if baseId == 'GOLD18':
             base = 'XAU18'
         quote = 'IRT'

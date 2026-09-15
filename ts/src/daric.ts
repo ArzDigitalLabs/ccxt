@@ -78,7 +78,7 @@ export default class daric extends Exchange {
 
     parseMarket (market): Market {
         const baseId = this.safeString (market, 'destinationCoinSymbol');
-        let base = 'XAG';
+        let base = 'XAG-1G';
         if (baseId === 'GOLD18') {
             base = 'XAU18';
         }

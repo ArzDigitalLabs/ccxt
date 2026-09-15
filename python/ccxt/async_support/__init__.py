@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.18.1'
+__version__ = '4.19.0'
 
 # -----------------------------------------------------------------------------
 
@@ -233,6 +233,7 @@ from ccxt.async_support.zaif import zaif                                        
 from ccxt.async_support.zarafza import zarafza                                  # noqa: F401
 from ccxt.async_support.zarminex import zarminex                                # noqa: F401
 from ccxt.async_support.zarniv import zarniv                                    # noqa: F401
+from ccxt.async_support.zarpin import zarpin                                    # noqa: F401
 from ccxt.async_support.zonda import zonda                                      # noqa: F401
 
 exchanges = [
@@ -405,6 +406,7 @@ exchanges = [
     'zarafza',
     'zarminex',
     'zarniv',
+    'zarpin',
     'zonda',
 ]
 

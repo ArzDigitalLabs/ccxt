@@ -69,7 +69,7 @@ class zarniv extends Exchange {
     }
 
     public function parse_market_entry($response, string $metal): array {
-        $base = 'XAG';
+        $base = 'XAG-1G';
         if ($metal === 'gold') {
             $base = 'XAU18';
         }
@@ -128,7 +128,7 @@ class zarniv extends Exchange {
         $goldResponse = $this->fetch_price('gold', $params);
         $silverResponse = $this->fetch_price('silver', $params);
         $goldMarket = $this->market('XAU18/IRT');
-        $silverMarket = $this->market('XAG/IRT');
+        $silverMarket = $this->market('XAG-1G/IRT');
         $goldTicker = $this->parse_ticker($goldResponse, $goldMarket);
         $silverTicker = $this->parse_ticker($silverResponse, $silverMarket);
         $result = array();

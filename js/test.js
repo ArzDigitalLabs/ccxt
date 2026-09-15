@@ -4,64 +4,30 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import talasea from './src/talasea.js';
-import melligold from './src/melligold.js';
-import technogold from './src/technogold.js';
-import wallgold from './src/wallgold.js';
-import milligold from './src/milligold.js';
-const exchanges = [
-    { id: 'talasea', create: () => new talasea({ enableRateLimit: true, timeout: 30000 }) },
-    { id: 'melligold', create: () => new melligold({ enableRateLimit: true, timeout: 30000 }) },
-    { id: 'technogold', create: () => new technogold({ enableRateLimit: true, timeout: 30000 }) },
-    { id: 'wallgold', create: () => new wallgold({ enableRateLimit: true, timeout: 30000 }) },
-    { id: 'milligold', create: () => new milligold({ enableRateLimit: true, timeout: 30000 }) },
-];
-async function testExchange(id, create) {
-    const exchange = create();
+import zarpin from './src/zarpin.js';
+async function main() {
+    const exchange = new zarpin({
+        'enableRateLimit': true,
+        'timeout': 20000,
+    });
     try {
-        const markets = await exchange.loadMarkets();
-        const symbols = Object.keys(markets);
-        if (symbols.length === 0) {
-            throw new Error('No OTC markets returned');
+        const tickers = await exchange.fetchTickers();
+        const gold = tickers['XAU18/IRT'];
+        const silver = tickers['XAG-1G/IRT'];
+        if (gold === undefined || gold.last === undefined) {
+            throw new Error('XAU18/IRT has no valid last price');
         }
-        const symbol = symbols[0];
-        const ticker = await exchange.fetchTicker(symbol, { 'type': 'otc' });
-        const tickers = await exchange.fetchTickers(symbols, { 'type': 'otc' });
-        if (ticker['symbol'] !== symbol) {
-            throw new Error(`fetchTicker returned ${ticker['symbol']} instead of ${symbol}`);
+        if (silver === undefined || silver.last === undefined) {
+            throw new Error('XAG-1G/IRT has no valid last price');
         }
-        if (!(symbol in tickers)) {
-            throw new Error(`fetchTickers did not return ${symbol}`);
-        }
-        console.log(id, {
-            markets: symbols,
-            ticker: {
-                symbol: ticker['symbol'],
-                bid: ticker['bid'],
-                ask: ticker['ask'],
-                last: ticker['last'],
-                timestamp: ticker['timestamp'],
-            },
-        });
+        console.log('Zarpin gold last price: ' + gold.last + ' IRT');
+        console.log('Zarpin silver last price: ' + silver.last + ' IRT');
     }
     finally {
         await exchange.close();
     }
 }
-async function main() {
-    let failed = false;
-    for (let i = 0; i < exchanges.length; i++) {
-        const exchange = exchanges[i];
-        try {
-            await testExchange(exchange.id, exchange.create);
-        }
-        catch (error) {
-            failed = true;
-            console.error(`${exchange.id} test failed:`, error);
-        }
-    }
-    if (failed) {
-        process.exitCode = 1;
-    }
-}
-void main();
+main().catch((error) => {
+    console.error('Zarpin ticker test failed:', error);
+    process.exitCode = 1;
+});
