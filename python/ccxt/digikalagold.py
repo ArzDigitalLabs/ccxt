@@ -68,7 +68,7 @@ class digikalagold(Exchange, ImplicitAPI):
 
     def parse_market_entry(self, response, id: str) -> Market:
         isGold = id == 'gold18'
-        base = 'XAG'
+        base = 'XAG-1G'
         if isGold:
             base = 'XAU18'
         quote = 'IRT'
@@ -123,7 +123,7 @@ class digikalagold(Exchange, ImplicitAPI):
             symbols = self.market_symbols(symbols)
         response = self.fetch_price(params)
         result = {}
-        marketSymbols = ['XAU18/IRT', 'XAG/IRT']
+        marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT']
         for i in range(0, len(marketSymbols)):
             symbol = marketSymbols[i]
             market = self.market(symbol)

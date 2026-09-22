@@ -4,20 +4,20 @@
 # https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 
 from ccxt.base.exchange import Exchange
-from ccxt.abstract.daric import ImplicitAPI
+from ccxt.abstract.zarpin import ImplicitAPI
 from ccxt.base.types import Any, Market, Strings, Ticker, Tickers
 from typing import List
 
 
-class daric(Exchange, ImplicitAPI):
+class zarpin(Exchange, ImplicitAPI):
 
     def describe(self) -> Any:
-        return self.deep_extend(super(daric, self).describe(), {
-            'id': 'daric',
-            'name': 'Daric',
+        return self.deep_extend(super(zarpin, self).describe(), {
+            'id': 'zarpin',
+            'name': 'Zarpin',
             'countries': ['IR'],
             'rateLimit': 1000,
-            'version': '1',
+            'version': 'v1',
             'certified': False,
             'pro': False,
             'has': {
@@ -37,53 +37,50 @@ class daric(Exchange, ImplicitAPI):
             },
             'urls': {
                 'api': {
-                    'public': 'https://apie.daric.gold',
+                    'public': 'https://api-khazaneh.zarpin.com',
                 },
-                'www': 'https://daric.gold',
-                'doc': 'https://apie.daric.gold/public/general/PairList?src=TMN',
+                'www': 'https://zarpin.com',
+                'doc': 'https://api-khazaneh.zarpin.com/v1/prc/prices',
             },
             'api': {
                 'public': {
                     'get': {
-                        'public/general/PairList': 1,
+                        'v1/prc/prices': 1,
                     },
                 },
             },
         })
 
     def fetch_markets(self, params={}) -> List[Market]:
-        response = self.fetch_pair_list(params)
+        response = self.publicGetV1PrcPrices(params)
         return self.parse_markets(response)
 
-    def fetch_pair_list(self, params={}):
-        return self.publicGetPublicGeneralPairList(self.extend({'src': 'TMN'}, params))
-
     def parse_markets(self, response) -> List[Market]:
-        markets = []
+        prices = []
         if isinstance(response, list):
-            markets = response
+            prices = response
         result = []
-        for i in range(0, len(markets)):
-            market = markets[i]
-            baseId = self.safe_string(market, 'destinationCoinSymbol')
-            if baseId == 'GOLD18' or baseId == 'SILVER':
-                result.append(self.parse_market(market))
+        for i in range(0, len(prices)):
+            price = prices[i]
+            code = self.safe_string(price, 'code')
+            if code == 'GOLD_IRT' or code == 'SILVER_IRT':
+                result.append(self.parse_market(price))
         return result
 
     def parse_market(self, market) -> Market:
-        baseId = self.safe_string(market, 'destinationCoinSymbol')
+        code = self.safe_string(market, 'code')
         base = 'XAG-1G'
-        if baseId == 'GOLD18':
+        if code == 'GOLD_IRT':
             base = 'XAU18'
         quote = 'IRT'
         return {
-            'id': self.safe_string(market, 'id'),
+            'id': code,
             'symbol': base + '/' + quote,
             'base': base,
             'quote': quote,
             'settle': None,
-            'baseId': baseId,
-            'quoteId': self.safe_string(market, 'sourceCoinSymbol'),
+            'baseId': code,
+            'quoteId': quote,
             'settleId': None,
             'type': 'otc',
             'spot': False,
@@ -91,7 +88,7 @@ class daric(Exchange, ImplicitAPI):
             'swap': False,
             'future': False,
             'option': False,
-            'active': True,
+            'active': self.safe_number(market, 'price') is not None,
             'contract': False,
             'linear': None,
             'inverse': None,
@@ -102,7 +99,7 @@ class daric(Exchange, ImplicitAPI):
             'optionType': None,
             'precision': {
                 'amount': None,
-                'price': self.safe_integer(market, 'decimalLength'),
+                'price': None,
             },
             'limits': {
                 'leverage': {'min': None, 'max': None},
@@ -117,47 +114,52 @@ class daric(Exchange, ImplicitAPI):
     def fetch_ticker(self, symbol: str, params={}) -> Ticker:
         self.load_markets()
         market = self.market(symbol)
-        response = self.fetch_pair_list(params)
+        response = self.publicGetV1PrcPrices(params)
         return self.parse_ticker(response, market)
 
     def fetch_tickers(self, symbols: Strings = None, params={}) -> Tickers:
         self.load_markets()
         if symbols is not None:
             symbols = self.market_symbols(symbols)
-        response = self.fetch_pair_list(params)
-        result = {}
+        response = self.publicGetV1PrcPrices(params)
         markets = self.parse_markets(response)
+        result = {}
         for i in range(0, len(markets)):
             ticker = self.parse_ticker(response, markets[i])
             result[ticker['symbol']] = ticker
         return self.filter_by_array_tickers(result, 'symbol', symbols)
 
     def parse_ticker(self, response, market: Market = None) -> Ticker:
-        markets = []
+        prices = []
         if isinstance(response, list):
-            markets = response
-        ticker = self.filter_by(markets, 'destinationCoinSymbol', market['baseId'])[0]
+            prices = response
+        price = {}
+        for i in range(0, len(prices)):
+            entry = prices[i]
+            if self.safe_string(entry, 'code') == market['baseId']:
+                price = entry
+                break
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': None,
             'datetime': None,
-            'high': self.safe_number(ticker, 'highestRecentOrder'),
-            'low': self.safe_number(ticker, 'lowestRecentOrder'),
-            'bid': self.safe_number(ticker, 'bestBuy'),
+            'high': self.safe_number(price, 'max_24h_price'),
+            'low': self.safe_number(price, 'min_24h_price'),
+            'bid': self.safe_number(price, 'price'),
             'bidVolume': None,
-            'ask': self.safe_number(ticker, 'bestSell'),
+            'ask': self.safe_number(price, 'price'),
             'askVolume': None,
             'vwap': None,
-            'open': None,
-            'close': self.safe_number(ticker, 'lastOrderPrice'),
-            'last': self.safe_number(ticker, 'lastOrderPrice'),
-            'previousClose': None,
+            'open': self.safe_number(price, 'price_at_in_last_24h'),
+            'close': self.safe_number(price, 'price'),
+            'last': self.safe_number(price, 'price'),
+            'previousClose': self.safe_number(price, 'price_at_in_last_24h'),
             'change': None,
-            'percentage': self.safe_number(ticker, 'change'),
+            'percentage': self.safe_number(price, 'price_change_24h'),
             'average': None,
-            'baseVolume': self.safe_number(ticker, 'todayTradeAmount'),
-            'quoteVolume': self.safe_number(ticker, 'todayTradeTotal'),
-            'info': ticker,
+            'baseVolume': None,
+            'quoteVolume': None,
+            'info': price,
         }, market)
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

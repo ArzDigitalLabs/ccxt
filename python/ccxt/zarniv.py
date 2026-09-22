@@ -66,7 +66,7 @@ class zarniv(Exchange, ImplicitAPI):
         ]
 
     def parse_market_entry(self, response, metal: str) -> Market:
-        base = 'XAG'
+        base = 'XAG-1G'
         if metal == 'gold':
             base = 'XAU18'
         quote = 'IRT'
@@ -121,7 +121,7 @@ class zarniv(Exchange, ImplicitAPI):
         goldResponse = self.fetch_price('gold', params)
         silverResponse = self.fetch_price('silver', params)
         goldMarket = self.market('XAU18/IRT')
-        silverMarket = self.market('XAG/IRT')
+        silverMarket = self.market('XAG-1G/IRT')
         goldTicker = self.parse_ticker(goldResponse, goldMarket)
         silverTicker = self.parse_ticker(silverResponse, silverMarket)
         result = {}

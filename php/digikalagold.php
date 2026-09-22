@@ -70,7 +70,7 @@ class digikalagold extends Exchange {
 
     public function parse_market_entry($response, string $id): array {
         $isGold = $id === 'gold18';
-        $base = 'XAG';
+        $base = 'XAG-1G';
         if ($isGold) {
             $base = 'XAU18';
         }
@@ -129,7 +129,7 @@ class digikalagold extends Exchange {
         }
         $response = $this->fetch_price($params);
         $result = array();
-        $marketSymbols = array( 'XAU18/IRT', 'XAG/IRT' );
+        $marketSymbols = array( 'XAU18/IRT', 'XAG-1G/IRT' );
         for ($i = 0; $i < count($marketSymbols); $i++) {
             $symbol = $marketSymbols[$i];
             $market = $this->market($symbol);

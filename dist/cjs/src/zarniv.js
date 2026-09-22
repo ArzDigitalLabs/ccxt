@@ -67,7 +67,7 @@ class zarniv extends Exchange["default"] {
         ];
     }
     parseMarketEntry(response, metal) {
-        let base = 'XAG';
+        let base = 'XAG-1G';
         if (metal === 'gold') {
             base = 'XAU18';
         }
@@ -124,7 +124,7 @@ class zarniv extends Exchange["default"] {
         const goldResponse = await this.fetchPrice('gold', params);
         const silverResponse = await this.fetchPrice('silver', params);
         const goldMarket = this.market('XAU18/IRT');
-        const silverMarket = this.market('XAG/IRT');
+        const silverMarket = this.market('XAG-1G/IRT');
         const goldTicker = this.parseTicker(goldResponse, goldMarket);
         const silverTicker = this.parseTicker(silverResponse, silverMarket);
         const result = {};

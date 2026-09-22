@@ -104,7 +104,10 @@ export default class melligold extends Exchange {
     parseMarket(response, baseId = undefined) {
         const data = this.safeDict(response, 'data', {});
         const lowerAmounts = this.safeDict(data, 'lower_amounts', {});
-        const base = this.safeCurrencyCode(baseId);
+        let base = this.safeCurrencyCode(baseId);
+        if (base === 'XAG') {
+            base = 'XAG-1G';
+        }
         const quote = 'IRT';
         return {
             'id': base + quote,
@@ -162,7 +165,7 @@ export default class melligold extends Exchange {
             symbols = this.marketSymbols(symbols);
         }
         const result = {};
-        const marketSymbols = ['XAU18/IRT', 'XAG/IRT'];
+        const marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT'];
         for (let i = 0; i < marketSymbols.length; i++) {
             const market = this.market(marketSymbols[i]);
             const response = await this.requestWithCookie(this.extend({

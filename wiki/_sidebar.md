@@ -170,4 +170,5 @@
 	- [zarafza](exchanges/zarafza.md)
 	- [zarminex](exchanges/zarminex.md)
 	- [zarniv](exchanges/zarniv.md)
+	- [zarpin](exchanges/zarpin.md)
 	- [zonda](exchanges/zonda.md)

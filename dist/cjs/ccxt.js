@@ -181,6 +181,7 @@ var zaif = require('./src/zaif.js');
 var zarafza = require('./src/zarafza.js');
 var zarminex = require('./src/zarminex.js');
 var zarniv = require('./src/zarniv.js');
+var zarpin = require('./src/zarpin.js');
 var zonda = require('./src/zonda.js');
 var alpaca$1 = require('./src/pro/alpaca.js');
 var apex$1 = require('./src/pro/apex.js');
@@ -258,7 +259,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.18.1';
+const version = '4.19.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -430,6 +431,7 @@ const exchanges = {
     'zarafza': zarafza["default"],
     'zarminex': zarminex["default"],
     'zarniv': zarniv["default"],
+    'zarpin': zarpin["default"],
     'zonda': zonda["default"],
 };
 const pro = {
@@ -727,6 +729,7 @@ exports.zaif = zaif["default"];
 exports.zarafza = zarafza["default"];
 exports.zarminex = zarminex["default"];
 exports.zarniv = zarniv["default"];
+exports.zarpin = zarpin["default"];
 exports.zonda = zonda["default"];
 exports["default"] = ccxt;
 exports.exchanges = exchanges;

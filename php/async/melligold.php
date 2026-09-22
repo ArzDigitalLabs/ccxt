@@ -111,6 +111,9 @@ class melligold extends Exchange {
         $data = $this->safe_dict($response, 'data', array());
         $lowerAmounts = $this->safe_dict($data, 'lower_amounts', array());
         $base = $this->safe_currency_code($baseId);
+        if ($base === 'XAG') {
+            $base = 'XAG-1G';
+        }
         $quote = 'IRT';
         return array(
             'id' => $base . $quote,
@@ -173,7 +176,7 @@ class melligold extends Exchange {
                 $symbols = $this->market_symbols($symbols);
             }
             $result = array();
-            $marketSymbols = array( 'XAU18/IRT', 'XAG/IRT' );
+            $marketSymbols = array( 'XAU18/IRT', 'XAG-1G/IRT' );
             for ($i = 0; $i < count($marketSymbols); $i++) {
                 $market = $this->market($marketSymbols[$i]);
                 $response = Async\await($this->request_with_cookie($this->extend(array(

@@ -6,19 +6,19 @@ namespace ccxt\async;
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 
 use Exception; // a common import
-use ccxt\async\abstract\zarniv as Exchange;
+use ccxt\async\abstract\zarpin as Exchange;
 use \React\Async;
 use \React\Promise\PromiseInterface;
 
-class zarniv extends Exchange {
+class zarpin extends Exchange {
 
     public function describe(): mixed {
         return $this->deep_extend(parent::describe(), array(
-            'id' => 'zarniv',
-            'name' => 'Zarniv',
+            'id' => 'zarpin',
+            'name' => 'Zarpin',
             'countries' => array( 'IR' ),
             'rateLimit' => 1000,
-            'version' => '1',
+            'version' => 'v1',
             'certified' => false,
             'pro' => false,
             'has' => array(
@@ -38,53 +38,58 @@ class zarniv extends Exchange {
             ),
             'urls' => array(
                 'api' => array(
-                    'public' => 'https://zarniv.ir',
+                    'public' => 'https://api-khazaneh.zarpin.com',
                 ),
-                'www' => 'https://zarniv.ir',
-                'doc' => 'https://zarniv.ir/user/get_gold_price/',
+                'www' => 'https://zarpin.com',
+                'doc' => 'https://api-khazaneh.zarpin.com/v1/prc/prices',
             ),
             'api' => array(
                 'public' => array(
                     'get' => array(
-                        'user/get_gold_price' => 1,
-                        'user/get_silver_price' => 1,
+                        'v1/prc/prices' => 1,
                     ),
                 ),
             ),
         ));
     }
 
-    public function fetch_price(string $metal, $params = array ()) {
-        if ($metal === 'gold') {
-            return $this->publicGetUserGetGoldPrice ($params);
-        }
-        return $this->publicGetUserGetSilverPrice ($params);
-    }
-
     public function fetch_markets($params = array ()): PromiseInterface {
         return Async\async(function () use ($params) {
-            $goldResponse = Async\await($this->fetch_price('gold', $params));
-            $silverResponse = Async\await($this->fetch_price('silver', $params));
-            return array(
-                $this->parse_market_entry($goldResponse, 'gold'),
-                $this->parse_market_entry($silverResponse, 'silver'),
-            );
+            $response = Async\await($this->publicGetV1PrcPrices ($params));
+            return $this->parse_markets($response);
         }) ();
     }
 
-    public function parse_market_entry($response, string $metal): array {
+    public function parse_markets($response): array {
+        $prices = array();
+        if (gettype($response) === 'array' && array_keys($response) === array_keys(array_keys($response))) {
+            $prices = $response;
+        }
+        $result = array();
+        for ($i = 0; $i < count($prices); $i++) {
+            $price = $prices[$i];
+            $code = $this->safe_string($price, 'code');
+            if ($code === 'GOLD_IRT' || $code === 'SILVER_IRT') {
+                $result[] = $this->parse_market($price);
+            }
+        }
+        return $result;
+    }
+
+    public function parse_market($market): array {
+        $code = $this->safe_string($market, 'code');
         $base = 'XAG-1G';
-        if ($metal === 'gold') {
+        if ($code === 'GOLD_IRT') {
             $base = 'XAU18';
         }
         $quote = 'IRT';
         return array(
-            'id' => $base . $quote,
+            'id' => $code,
             'symbol' => $base . '/' . $quote,
             'base' => $base,
             'quote' => $quote,
             'settle' => null,
-            'baseId' => $metal,
+            'baseId' => $code,
             'quoteId' => $quote,
             'settleId' => null,
             'type' => 'otc',
@@ -93,7 +98,7 @@ class zarniv extends Exchange {
             'swap' => false,
             'future' => false,
             'option' => false,
-            'active' => $this->safe_number($response, 'base_price_per_gram') !== null,
+            'active' => $this->safe_number($market, 'price') !== null,
             'contract' => false,
             'linear' => null,
             'inverse' => null,
@@ -113,7 +118,7 @@ class zarniv extends Exchange {
                 'cost' => array( 'min' => null, 'max' => null ),
             ),
             'created' => null,
-            'info' => $response,
+            'info' => $market,
         );
     }
 
@@ -121,7 +126,7 @@ class zarniv extends Exchange {
         return Async\async(function () use ($symbol, $params) {
             Async\await($this->load_markets());
             $market = $this->market($symbol);
-            $response = Async\await($this->fetch_price($market['baseId'], $params));
+            $response = Async\await($this->publicGetV1PrcPrices ($params));
             return $this->parse_ticker($response, $market);
         }) ();
     }
@@ -132,49 +137,51 @@ class zarniv extends Exchange {
             if ($symbols !== null) {
                 $symbols = $this->market_symbols($symbols);
             }
-            $goldResponse = Async\await($this->fetch_price('gold', $params));
-            $silverResponse = Async\await($this->fetch_price('silver', $params));
-            $goldMarket = $this->market('XAU18/IRT');
-            $silverMarket = $this->market('XAG-1G/IRT');
-            $goldTicker = $this->parse_ticker($goldResponse, $goldMarket);
-            $silverTicker = $this->parse_ticker($silverResponse, $silverMarket);
+            $response = Async\await($this->publicGetV1PrcPrices ($params));
+            $markets = $this->parse_markets($response);
             $result = array();
-            $result[$goldTicker['symbol']] = $goldTicker;
-            $result[$silverTicker['symbol']] = $silverTicker;
+            for ($i = 0; $i < count($markets); $i++) {
+                $ticker = $this->parse_ticker($response, $markets[$i]);
+                $result[$ticker['symbol']] = $ticker;
+            }
             return $this->filter_by_array_tickers($result, 'symbol', $symbols);
         }) ();
     }
 
     public function parse_ticker($response, ?array $market = null): array {
-        $serverTime = $this->safe_string($response, 'server_time');
-        $timestamp = null;
-        if ($serverTime !== null) {
-            $timestamp = $this->parse8601($serverTime . '+03:30');
+        $prices = array();
+        if (gettype($response) === 'array' && array_keys($response) === array_keys(array_keys($response))) {
+            $prices = $response;
         }
-        $bid = $this->safe_number($response, 'sell_price_per_gram');
-        $ask = $this->safe_number($response, 'buy_price_per_gram');
-        $last = $this->safe_number($response, 'base_price_per_gram');
+        $price = array();
+        for ($i = 0; $i < count($prices); $i++) {
+            $entry = $prices[$i];
+            if ($this->safe_string($entry, 'code') === $market['baseId']) {
+                $price = $entry;
+                break;
+            }
+        }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],
-            'timestamp' => $timestamp,
+            'timestamp' => null,
             'datetime' => null,
-            'high' => null,
-            'low' => null,
-            'bid' => $bid,
+            'high' => $this->safe_number($price, 'max_24h_price'),
+            'low' => $this->safe_number($price, 'min_24h_price'),
+            'bid' => $this->safe_number($price, 'price'),
             'bidVolume' => null,
-            'ask' => $ask,
+            'ask' => $this->safe_number($price, 'price'),
             'askVolume' => null,
             'vwap' => null,
-            'open' => null,
-            'close' => $last,
-            'last' => $last,
-            'previousClose' => null,
+            'open' => $this->safe_number($price, 'price_at_in_last_24h'),
+            'close' => $this->safe_number($price, 'price'),
+            'last' => $this->safe_number($price, 'price'),
+            'previousClose' => $this->safe_number($price, 'price_at_in_last_24h'),
             'change' => null,
-            'percentage' => null,
+            'percentage' => $this->safe_number($price, 'price_change_24h'),
             'average' => null,
             'baseVolume' => null,
             'quoteVolume' => null,
-            'info' => $response,
+            'info' => $price,
         ), $market);
     }
 

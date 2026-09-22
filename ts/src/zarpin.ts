@@ -6,17 +6,17 @@ import { Market, Strings, Ticker, Tickers } from './base/types.js';
 //  ---------------------------------------------------------------------------
 
 /**
- * @class zarniv
+ * @class zarpin
  * @augments Exchange
  */
-export default class zarniv extends Exchange {
+export default class zarpin extends Exchange {
     describe (): any {
         return this.deepExtend (super.describe (), {
-            'id': 'zarniv',
-            'name': 'Zarniv',
+            'id': 'zarpin',
+            'name': 'Zarpin',
             'countries': [ 'IR' ],
             'rateLimit': 1000,
-            'version': '1',
+            'version': 'v1',
             'certified': false,
             'pro': false,
             'has': {
@@ -36,51 +36,56 @@ export default class zarniv extends Exchange {
             },
             'urls': {
                 'api': {
-                    'public': 'https://zarniv.ir',
+                    'public': 'https://api-khazaneh.zarpin.com',
                 },
-                'www': 'https://zarniv.ir',
-                'doc': 'https://zarniv.ir/user/get_gold_price/',
+                'www': 'https://zarpin.com',
+                'doc': 'https://api-khazaneh.zarpin.com/v1/prc/prices',
             },
             'api': {
                 'public': {
                     'get': {
-                        'user/get_gold_price': 1,
-                        'user/get_silver_price': 1,
+                        'v1/prc/prices': 1,
                     },
                 },
             },
         });
     }
 
-    fetchPrice (metal: string, params = {}) {
-        if (metal === 'gold') {
-            return (this as any).publicGetUserGetGoldPrice (params);
-        }
-        return (this as any).publicGetUserGetSilverPrice (params);
-    }
-
     async fetchMarkets (params = {}): Promise<Market[]> {
-        const goldResponse = await this.fetchPrice ('gold', params);
-        const silverResponse = await this.fetchPrice ('silver', params);
-        return [
-            this.parseMarketEntry (goldResponse, 'gold'),
-            this.parseMarketEntry (silverResponse, 'silver'),
-        ];
+        const response = await (this as any).publicGetV1PrcPrices (params);
+        return this.parseMarkets (response);
     }
 
-    parseMarketEntry (response, metal: string): Market {
+    parseMarkets (response): Market[] {
+        let prices = [];
+        if (Array.isArray (response)) {
+            prices = response;
+        }
+        const result = [];
+        for (let i = 0; i < prices.length; i++) {
+            const price = prices[i];
+            const code = this.safeString (price, 'code');
+            if (code === 'GOLD_IRT' || code === 'SILVER_IRT') {
+                result.push (this.parseMarket (price));
+            }
+        }
+        return result;
+    }
+
+    parseMarket (market): Market {
+        const code = this.safeString (market, 'code');
         let base = 'XAG-1G';
-        if (metal === 'gold') {
+        if (code === 'GOLD_IRT') {
             base = 'XAU18';
         }
         const quote = 'IRT';
         return {
-            'id': base + quote,
+            'id': code,
             'symbol': base + '/' + quote,
             'base': base,
             'quote': quote,
             'settle': undefined,
-            'baseId': metal,
+            'baseId': code,
             'quoteId': quote,
             'settleId': undefined,
             'type': 'otc',
@@ -89,7 +94,7 @@ export default class zarniv extends Exchange {
             'swap': false,
             'future': false,
             'option': false,
-            'active': this.safeNumber (response, 'base_price_per_gram') !== undefined,
+            'active': this.safeNumber (market, 'price') !== undefined,
             'contract': false,
             'linear': undefined,
             'inverse': undefined,
@@ -109,14 +114,14 @@ export default class zarniv extends Exchange {
                 'cost': { 'min': undefined, 'max': undefined },
             },
             'created': undefined,
-            'info': response,
+            'info': market,
         };
     }
 
     async fetchTicker (symbol: string, params = {}): Promise<Ticker> {
         await this.loadMarkets ();
         const market = this.market (symbol);
-        const response = await this.fetchPrice (market['baseId'], params);
+        const response = await (this as any).publicGetV1PrcPrices (params);
         return this.parseTicker (response, market);
     }
 
@@ -125,48 +130,50 @@ export default class zarniv extends Exchange {
         if (symbols !== undefined) {
             symbols = this.marketSymbols (symbols);
         }
-        const goldResponse = await this.fetchPrice ('gold', params);
-        const silverResponse = await this.fetchPrice ('silver', params);
-        const goldMarket = this.market ('XAU18/IRT');
-        const silverMarket = this.market ('XAG-1G/IRT');
-        const goldTicker = this.parseTicker (goldResponse, goldMarket);
-        const silverTicker = this.parseTicker (silverResponse, silverMarket);
+        const response = await (this as any).publicGetV1PrcPrices (params);
+        const markets = this.parseMarkets (response);
         const result = {};
-        result[goldTicker['symbol']] = goldTicker;
-        result[silverTicker['symbol']] = silverTicker;
+        for (let i = 0; i < markets.length; i++) {
+            const ticker = this.parseTicker (response, markets[i]);
+            result[ticker['symbol']] = ticker;
+        }
         return this.filterByArrayTickers (result, 'symbol', symbols);
     }
 
     parseTicker (response, market: Market = undefined): Ticker {
-        const serverTime = this.safeString (response, 'server_time');
-        let timestamp = undefined;
-        if (serverTime !== undefined) {
-            timestamp = this.parse8601 (serverTime + '+03:30');
+        let prices = [];
+        if (Array.isArray (response)) {
+            prices = response;
         }
-        const bid = this.safeNumber (response, 'sell_price_per_gram');
-        const ask = this.safeNumber (response, 'buy_price_per_gram');
-        const last = this.safeNumber (response, 'base_price_per_gram');
+        let price = {};
+        for (let i = 0; i < prices.length; i++) {
+            const entry = prices[i];
+            if (this.safeString (entry, 'code') === market['baseId']) {
+                price = entry;
+                break;
+            }
+        }
         return this.safeTicker ({
             'symbol': market['symbol'],
-            'timestamp': timestamp,
+            'timestamp': undefined,
             'datetime': undefined,
-            'high': undefined,
-            'low': undefined,
-            'bid': bid,
+            'high': this.safeNumber (price, 'max_24h_price'),
+            'low': this.safeNumber (price, 'min_24h_price'),
+            'bid': this.safeNumber (price, 'price'),
             'bidVolume': undefined,
-            'ask': ask,
+            'ask': this.safeNumber (price, 'price'),
             'askVolume': undefined,
             'vwap': undefined,
-            'open': undefined,
-            'close': last,
-            'last': last,
-            'previousClose': undefined,
+            'open': this.safeNumber (price, 'price_at_in_last_24h'),
+            'close': this.safeNumber (price, 'price'),
+            'last': this.safeNumber (price, 'price'),
+            'previousClose': this.safeNumber (price, 'price_at_in_last_24h'),
             'change': undefined,
-            'percentage': undefined,
+            'percentage': this.safeNumber (price, 'price_change_24h'),
             'average': undefined,
             'baseVolume': undefined,
             'quoteVolume': undefined,
-            'info': response,
+            'info': price,
         }, market);
     }
 

@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.18.1';
+const version = '4.19.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -215,6 +215,7 @@ import zaif from  './src/zaif.js'
 import zarafza from  './src/zarafza.js'
 import zarminex from  './src/zarminex.js'
 import zarniv from  './src/zarniv.js'
+import zarpin from  './src/zarpin.js'
 import zonda from  './src/zonda.js'
 
 // pro exchanges
@@ -462,6 +463,7 @@ const exchanges = {
     'zarafza':                zarafza,
     'zarminex':               zarminex,
     'zarniv':                 zarniv,
+    'zarpin':                 zarpin,
     'zonda':                  zonda,
 }
 
@@ -852,6 +854,7 @@ export {
     zarafza,
     zarminex,
     zarniv,
+    zarpin,
     zonda,    
 }
 
