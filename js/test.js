@@ -4,7 +4,8 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import ramzinex from './src/ramzinex.js';
+import gerami from './src/gerami.js';
+import melligold from './src/melligold.js';
 const exchanges = [
     // { 'id': 'technogold', 'Exchange': technogold },
     // { 'id': 'baazar', 'Exchange': baazar },
@@ -14,12 +15,12 @@ const exchanges = [
     // { 'id': 'zarafza', 'Exchange': zarafza },
     // { 'id': 'daric', 'Exchange': daric },
     // { 'id': 'digikalagold', 'Exchange': digikalagold },
-    // { 'id': 'gerami', 'Exchange': gerami },
+    { 'id': 'gerami', 'Exchange': gerami },
     // { 'id': 'goldika', 'Exchange': goldika },
     // { 'id': 'goldis', 'Exchange': goldis },
-    // { 'id': 'melligold', 'Exchange': melligold },
+    { 'id': 'melligold', 'Exchange': melligold },
     // { 'id': 'milligold', 'Exchange': milligold },
-    { 'id': 'ramzinex', 'Exchange': ramzinex },
+    // { 'id': 'ramzinex', 'Exchange': ramzinex },
     // { 'id': 'wallgold', 'Exchange': wallgold },
     // { 'id': 'talapp', 'Exchange': talapp },
     // { 'id': 'talaavan', 'Exchange': talaavan },

@@ -55,7 +55,7 @@ class melligold(Exchange, ImplicitAPI):
         })
 
     def fetch_markets(self, params={}) -> List[Market]:
-        symbols = ['XAU18', 'XAG']
+        symbols = ['XAU18', 'XAG', 'XCU']
         result = []
         for i in range(0, len(symbols)):
             response = self.request_with_cookie(self.extend({
@@ -97,6 +97,8 @@ class melligold(Exchange, ImplicitAPI):
         base = self.safe_currency_code(baseId)
         if base == 'XAG':
             base = 'XAG-1G'
+        if base == 'XCU':
+            base = 'XCU-1G'
         quote = 'IRT'
         return {
             'id': base + quote,
@@ -153,7 +155,7 @@ class melligold(Exchange, ImplicitAPI):
         if symbols is not None:
             symbols = self.market_symbols(symbols)
         result = {}
-        marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT']
+        marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT', 'XCU-1G/IRT']
         for i in range(0, len(marketSymbols)):
             market = self.market(marketSymbols[i])
             response = self.request_with_cookie(self.extend({

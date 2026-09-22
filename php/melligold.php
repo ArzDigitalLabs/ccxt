@@ -54,7 +54,7 @@ class melligold extends Exchange {
     }
 
     public function fetch_markets($params = array ()): array {
-        $symbols = array( 'XAU18', 'XAG' );
+        $symbols = array( 'XAU18', 'XAG', 'XCU' );
         $result = array();
         for ($i = 0; $i < count($symbols); $i++) {
             $response = $this->request_with_cookie($this->extend(array(
@@ -106,6 +106,9 @@ class melligold extends Exchange {
         $base = $this->safe_currency_code($baseId);
         if ($base === 'XAG') {
             $base = 'XAG-1G';
+        }
+        if ($base === 'XCU') {
+            $base = 'XCU-1G';
         }
         $quote = 'IRT';
         return array(
@@ -166,7 +169,7 @@ class melligold extends Exchange {
             $symbols = $this->market_symbols($symbols);
         }
         $result = array();
-        $marketSymbols = array( 'XAU18/IRT', 'XAG-1G/IRT' );
+        $marketSymbols = array( 'XAU18/IRT', 'XAG-1G/IRT', 'XCU-1G/IRT' );
         for ($i = 0; $i < count($marketSymbols); $i++) {
             $market = $this->market($marketSymbols[$i]);
             $response = $this->request_with_cookie($this->extend(array(

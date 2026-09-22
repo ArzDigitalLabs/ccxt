@@ -91,7 +91,7 @@ ccxt/foxbit.py
 ccxt/gate.py
 ccxt/gateio.py
 ccxt/gemini.py
-ccxt/goldcore.py
+ccxt/gerami.py
 ccxt/goldika.py
 ccxt/goldis.py
 ccxt/hamrahgold.py
@@ -150,6 +150,7 @@ ccxt/saraf.py
 ccxt/sarmayex.py
 ccxt/sarrafex.py
 ccxt/tabdeal.py
+ccxt/talaavan.py
 ccxt/talapp.py
 ccxt/talasea.py
 ccxt/technogold.py
@@ -175,6 +176,7 @@ ccxt/zaif.py
 ccxt/zarafza.py
 ccxt/zarminex.py
 ccxt/zarniv.py
+ccxt/zarpin.py
 ccxt/zonda.py
 ccxt/abstract/__init__.py
 ccxt/abstract/abantether.py
@@ -262,7 +264,7 @@ ccxt/abstract/foxbit.py
 ccxt/abstract/gate.py
 ccxt/abstract/gateio.py
 ccxt/abstract/gemini.py
-ccxt/abstract/goldcore.py
+ccxt/abstract/gerami.py
 ccxt/abstract/goldika.py
 ccxt/abstract/goldis.py
 ccxt/abstract/hamrahgold.py
@@ -321,6 +323,7 @@ ccxt/abstract/saraf.py
 ccxt/abstract/sarmayex.py
 ccxt/abstract/sarrafex.py
 ccxt/abstract/tabdeal.py
+ccxt/abstract/talaavan.py
 ccxt/abstract/talapp.py
 ccxt/abstract/talasea.py
 ccxt/abstract/technogold.py
@@ -346,6 +349,7 @@ ccxt/abstract/zaif.py
 ccxt/abstract/zarafza.py
 ccxt/abstract/zarminex.py
 ccxt/abstract/zarniv.py
+ccxt/abstract/zarpin.py
 ccxt/abstract/zonda.py
 ccxt/async_support/__init__.py
 ccxt/async_support/abantether.py
@@ -433,7 +437,7 @@ ccxt/async_support/foxbit.py
 ccxt/async_support/gate.py
 ccxt/async_support/gateio.py
 ccxt/async_support/gemini.py
-ccxt/async_support/goldcore.py
+ccxt/async_support/gerami.py
 ccxt/async_support/goldika.py
 ccxt/async_support/goldis.py
 ccxt/async_support/hamrahgold.py
@@ -492,6 +496,7 @@ ccxt/async_support/saraf.py
 ccxt/async_support/sarmayex.py
 ccxt/async_support/sarrafex.py
 ccxt/async_support/tabdeal.py
+ccxt/async_support/talaavan.py
 ccxt/async_support/talapp.py
 ccxt/async_support/talasea.py
 ccxt/async_support/technogold.py
@@ -517,6 +522,7 @@ ccxt/async_support/zaif.py
 ccxt/async_support/zarafza.py
 ccxt/async_support/zarminex.py
 ccxt/async_support/zarniv.py
+ccxt/async_support/zarpin.py
 ccxt/async_support/zonda.py
 ccxt/async_support/base/__init__.py
 ccxt/async_support/base/exchange.py

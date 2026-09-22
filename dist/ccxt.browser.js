@@ -187854,7 +187854,7 @@ class gerami extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
         });
     }
     async fetchMarkets(params = {}) {
-        const marketIds = ['XAU750g_IRT', 'XAG999g_IRT'];
+        const marketIds = ['XAU750g_IRT', 'XAG999g_IRT', 'XCU9999g_IRT'];
         const result = [];
         for (let i = 0; i < marketIds.length; i++) {
             const response = await this.publicGetPairsPair(this.extend({
@@ -187871,6 +187871,9 @@ class gerami extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
         let base = 'XAG-1G';
         if (baseId === 'XAU750g') {
             base = 'XAU18';
+        }
+        if (baseId === 'XCU9999g') {
+            base = 'XCU-1G';
         }
         return {
             'id': this.safeString(data, 'market'),
@@ -187926,7 +187929,7 @@ class gerami extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
         if (symbols !== undefined) {
             symbols = this.marketSymbols(symbols);
         }
-        const marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT'];
+        const marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT', 'XCU-1G/IRT'];
         const result = {};
         for (let i = 0; i < marketSymbols.length; i++) {
             const market = this.market(marketSymbols[i]);
@@ -241502,7 +241505,7 @@ class melligold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defau
         });
     }
     async fetchMarkets(params = {}) {
-        const symbols = ['XAU18', 'XAG'];
+        const symbols = ['XAU18', 'XAG', 'XCU'];
         const result = [];
         for (let i = 0; i < symbols.length; i++) {
             const response = await this.requestWithCookie(this.extend({
@@ -241553,6 +241556,9 @@ class melligold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defau
         let base = this.safeCurrencyCode(baseId);
         if (base === 'XAG') {
             base = 'XAG-1G';
+        }
+        if (base === 'XCU') {
+            base = 'XCU-1G';
         }
         const quote = 'IRT';
         return {
@@ -241611,7 +241617,7 @@ class melligold extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defau
             symbols = this.marketSymbols(symbols);
         }
         const result = {};
-        const marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT'];
+        const marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT', 'XCU-1G/IRT'];
         for (let i = 0; i < marketSymbols.length; i++) {
             const market = this.market(marketSymbols[i]);
             const response = await this.requestWithCookie(this.extend({
@@ -437666,7 +437672,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.20.0';
+const ccxt_version = '4.20.1';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 
