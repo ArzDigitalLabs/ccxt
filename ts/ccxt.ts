@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.19.0';
+const version = '4.20.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -131,6 +131,7 @@ import foxbit from  './src/foxbit.js'
 import gate from  './src/gate.js'
 import gateio from  './src/gateio.js'
 import gemini from  './src/gemini.js'
+import gerami from  './src/gerami.js'
 import goldika from  './src/goldika.js'
 import goldis from  './src/goldis.js'
 import hamrahgold from  './src/hamrahgold.js'
@@ -379,6 +380,7 @@ const exchanges = {
     'gate':                   gate,
     'gateio':                 gateio,
     'gemini':                 gemini,
+    'gerami':                 gerami,
     'goldika':                goldika,
     'goldis':                 goldis,
     'hamrahgold':             hamrahgold,
@@ -770,6 +772,7 @@ export {
     gate,
     gateio,
     gemini,
+    gerami,
     goldika,
     goldis,
     hamrahgold,

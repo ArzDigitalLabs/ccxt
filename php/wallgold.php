@@ -130,6 +130,10 @@ class wallgold extends Exchange {
         $sellResult = $this->safe_dict($sellResponse, 'result', $buyResult);
         $bid = $this->safe_number($buyResult, 'price');
         $ask = $this->safe_number($sellResult, 'price');
+        $last = $bid;
+        if ($ask !== null && ($last === null || $ask > $last)) {
+            $last = $ask;
+        }
         $currentTime = $this->safe_string($buyResult, 'currentTime');
         $timestamp = $currentTime ? $this->parse8601($currentTime) : null;
         return $this->safe_ticker(array(
@@ -144,8 +148,8 @@ class wallgold extends Exchange {
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
-            'close' => $ask,
-            'last' => $ask,
+            'close' => $last,
+            'last' => $last,
             'previousClose' => null,
             'change' => null,
             'percentage' => null,

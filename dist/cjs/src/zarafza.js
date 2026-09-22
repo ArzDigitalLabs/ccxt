@@ -120,8 +120,12 @@ class zarafza extends Exchange["default"] {
         const gold = this.safeDict(data, 'G18', {});
         const buy = this.safeDict(gold, 'buy', {});
         const sell = this.safeDict(gold, 'sell', {});
-        const bid = this.safeNumber(buy, 'price');
-        const ask = this.safeNumber(sell, 'price');
+        const bid = this.safeNumber(sell, 'price');
+        const ask = this.safeNumber(buy, 'price');
+        let last = bid;
+        if (ask !== undefined && (last === undefined || ask > last)) {
+            last = ask;
+        }
         return this.safeTicker({
             'symbol': market['symbol'],
             'timestamp': undefined,
@@ -134,8 +138,8 @@ class zarafza extends Exchange["default"] {
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
-            'close': ask,
-            'last': ask,
+            'close': last,
+            'last': last,
             'previousClose': undefined,
             'change': undefined,
             'percentage': this.safeNumber(sell, 'change'),

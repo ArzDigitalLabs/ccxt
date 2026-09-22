@@ -137,20 +137,25 @@ class daric(Exchange, ImplicitAPI):
         if isinstance(response, list):
             markets = response
         ticker = self.filter_by(markets, 'destinationCoinSymbol', market['baseId'])[0]
+        bid = self.safe_number(ticker, 'bestSell')
+        ask = self.safe_number(ticker, 'bestBuy')
+        last = bid
+        if ask is not None and (last is None or ask > last):
+            last = ask
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': None,
             'datetime': None,
             'high': self.safe_number(ticker, 'highestRecentOrder'),
             'low': self.safe_number(ticker, 'lowestRecentOrder'),
-            'bid': self.safe_number(ticker, 'bestBuy'),
+            'bid': bid,
             'bidVolume': None,
-            'ask': self.safe_number(ticker, 'bestSell'),
+            'ask': ask,
             'askVolume': None,
             'vwap': None,
             'open': None,
-            'close': self.safe_number(ticker, 'lastOrderPrice'),
-            'last': self.safe_number(ticker, 'lastOrderPrice'),
+            'close': last,
+            'last': last,
             'previousClose': None,
             'change': None,
             'percentage': self.safe_number(ticker, 'change'),

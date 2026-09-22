@@ -115,20 +115,23 @@ class technogold(Exchange, ImplicitAPI):
         prices = self.safe_dict(response, 'results', {})
         buy = self.safe_number(prices, 'buy_price')
         sell = self.safe_number(prices, 'sell_price')
+        last = buy
+        if sell is not None and (last is None or sell > last):
+            last = sell
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': None,
             'datetime': None,
             'high': None,
             'low': None,
-            'bid': sell,
+            'bid': buy,
             'bidVolume': None,
-            'ask': buy,
+            'ask': sell,
             'askVolume': None,
             'vwap': None,
             'open': None,
-            'close': buy,
-            'last': buy,
+            'close': last,
+            'last': last,
             'previousClose': None,
             'change': None,
             'percentage': None,

@@ -97,6 +97,7 @@ var foxbit = require('./src/foxbit.js');
 var gate = require('./src/gate.js');
 var gateio = require('./src/gateio.js');
 var gemini = require('./src/gemini.js');
+var gerami = require('./src/gerami.js');
 var goldika = require('./src/goldika.js');
 var goldis = require('./src/goldis.js');
 var hamrahgold = require('./src/hamrahgold.js');
@@ -259,7 +260,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.19.0';
+const version = '4.20.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -347,6 +348,7 @@ const exchanges = {
     'gate': gate["default"],
     'gateio': gateio["default"],
     'gemini': gemini["default"],
+    'gerami': gerami["default"],
     'goldika': goldika["default"],
     'goldis': goldis["default"],
     'hamrahgold': hamrahgold["default"],
@@ -645,6 +647,7 @@ exports.foxbit = foxbit["default"];
 exports.gate = gate["default"];
 exports.gateio = gateio["default"];
 exports.gemini = gemini["default"];
+exports.gerami = gerami["default"];
 exports.goldika = goldika["default"];
 exports.goldis = goldis["default"];
 exports.hamrahgold = hamrahgold["default"];

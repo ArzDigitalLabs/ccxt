@@ -122,8 +122,8 @@ class hamrahgold extends Exchange["default"] {
         const sell = this.safeDict(sellResponse, 'data', {});
         const changes = this.safeDict(sell, 'changes', {});
         const dailyChange = this.safeDict(changes, '1d', {});
-        let bid = this.safeNumber(buy, 'current');
-        let ask = this.safeNumber(sell, 'current');
+        let bid = this.safeNumber(sell, 'current');
+        let ask = this.safeNumber(buy, 'current');
         let previousClose = this.safeNumber(dailyChange, 'price');
         if (bid !== undefined) {
             bid = bid / 10;
@@ -133,6 +133,10 @@ class hamrahgold extends Exchange["default"] {
         }
         if (previousClose !== undefined) {
             previousClose = previousClose / 10;
+        }
+        let last = bid;
+        if (ask !== undefined && (last === undefined || ask > last)) {
+            last = ask;
         }
         return this.safeTicker({
             'symbol': market['symbol'],
@@ -146,8 +150,8 @@ class hamrahgold extends Exchange["default"] {
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
-            'close': ask,
-            'last': ask,
+            'close': last,
+            'last': last,
             'previousClose': previousClose,
             'change': undefined,
             'percentage': this.safeNumber(dailyChange, 'percent'),

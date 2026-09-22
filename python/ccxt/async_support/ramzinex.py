@@ -349,7 +349,6 @@ class ramzinex(Exchange, ImplicitAPI):
         open = self.safe_float(tickerinfo, 'open')
         close = self.safe_float(tickerinfo, 'close')
         change = self.safe_float(tickerinfo, 'change_percent')
-        last = self.safe_float(ticker, 'buy')
         quoteVolume = self.safe_float(tickerinfo, 'quote_volume')
         baseVolume = self.safe_float(tickerinfo, 'base_volume')
         if marketinfo['quote'] == 'IRT':
@@ -359,8 +358,11 @@ class ramzinex(Exchange, ImplicitAPI):
             ask = ask / 10 if ask else 0
             open = open / 10 if open else 0
             close = close / 10 if close else 0
-            last = last / 10 if last else 0
             quoteVolume = quoteVolume / 10 if quoteVolume else 0
+        last = bid
+        if ask is not None and (last is None or ask > last):
+            last = ask
+        close = last
         return self.safe_ticker({
             'symbol': symbol,
             'timestamp': None,

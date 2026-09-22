@@ -138,6 +138,10 @@ class goldika extends Exchange {
         if ($ask !== null) {
             $ask = $ask / 10;
         }
+        $last = $bid;
+        if ($ask !== null && ($last === null || $ask > $last)) {
+            $last = $ask;
+        }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],
             'timestamp' => $timestamp,
@@ -150,8 +154,8 @@ class goldika extends Exchange {
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
-            'close' => $ask,
-            'last' => $ask,
+            'close' => $last,
+            'last' => $last,
             'previousClose' => null,
             'change' => null,
             'percentage' => $this->safe_number($data, 'daily_change_percent'),

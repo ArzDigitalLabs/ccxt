@@ -120,20 +120,24 @@ export default class technogold extends Exchange {
         const prices = this.safeDict (response, 'results', {});
         const buy = this.safeNumber (prices, 'buy_price');
         const sell = this.safeNumber (prices, 'sell_price');
+        let last = buy;
+        if (sell !== undefined && (last === undefined || sell > last)) {
+            last = sell;
+        }
         return this.safeTicker ({
             'symbol': market['symbol'],
             'timestamp': undefined,
             'datetime': undefined,
             'high': undefined,
             'low': undefined,
-            'bid': sell,
+            'bid': buy,
             'bidVolume': undefined,
-            'ask': buy,
+            'ask': sell,
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
-            'close': buy,
-            'last': buy,
+            'close': last,
+            'last': last,
             'previousClose': undefined,
             'change': undefined,
             'percentage': undefined,

@@ -126,6 +126,10 @@ class goldika extends Exchange["default"] {
         if (ask !== undefined) {
             ask = ask / 10;
         }
+        let last = bid;
+        if (ask !== undefined && (last === undefined || ask > last)) {
+            last = ask;
+        }
         return this.safeTicker({
             'symbol': market['symbol'],
             'timestamp': timestamp,
@@ -138,8 +142,8 @@ class goldika extends Exchange["default"] {
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
-            'close': ask,
-            'last': ask,
+            'close': last,
+            'last': last,
             'previousClose': undefined,
             'change': undefined,
             'percentage': this.safeNumber(data, 'daily_change_percent'),

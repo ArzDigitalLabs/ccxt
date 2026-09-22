@@ -124,6 +124,9 @@ class wallgold(Exchange, ImplicitAPI):
         sellResult = self.safe_dict(sellResponse, 'result', buyResult)
         bid = self.safe_number(buyResult, 'price')
         ask = self.safe_number(sellResult, 'price')
+        last = bid
+        if ask is not None and (last is None or ask > last):
+            last = ask
         currentTime = self.safe_string(buyResult, 'currentTime')
         timestamp = self.parse8601(currentTime) if currentTime else None
         return self.safe_ticker({
@@ -138,8 +141,8 @@ class wallgold(Exchange, ImplicitAPI):
             'askVolume': None,
             'vwap': None,
             'open': None,
-            'close': ask,
-            'last': ask,
+            'close': last,
+            'last': last,
             'previousClose': None,
             'change': None,
             'percentage': None,

@@ -357,7 +357,6 @@ class ramzinex extends Exchange {
         $open = $this->safe_float($tickerinfo, 'open');
         $close = $this->safe_float($tickerinfo, 'close');
         $change = $this->safe_float($tickerinfo, 'change_percent');
-        $last = $this->safe_float($ticker, 'buy');
         $quoteVolume = $this->safe_float($tickerinfo, 'quote_volume');
         $baseVolume = $this->safe_float($tickerinfo, 'base_volume');
         if ($marketinfo['quote'] === 'IRT') {
@@ -367,9 +366,13 @@ class ramzinex extends Exchange {
             $ask = $ask ? $ask / 10 : 0;
             $open = $open ? $open / 10 : 0;
             $close = $close ? $close / 10 : 0;
-            $last = $last ? $last / 10 : 0;
             $quoteVolume = $quoteVolume ? $quoteVolume / 10 : 0;
         }
+        $last = $bid;
+        if ($ask !== null && ($last === null || $ask > $last)) {
+            $last = $ask;
+        }
+        $close = $last;
         return $this->safe_ticker(array(
             'symbol' => $symbol,
             'timestamp' => null,

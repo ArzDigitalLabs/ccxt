@@ -89,6 +89,7 @@
 	- [foxbit](exchanges/foxbit.md)
 	- [gate](exchanges/gate.md)
 	- [gemini](exchanges/gemini.md)
+	- [gerami](exchanges/gerami.md)
 	- [goldika](exchanges/goldika.md)
 	- [goldis](exchanges/goldis.md)
 	- [hamrahgold](exchanges/hamrahgold.md)

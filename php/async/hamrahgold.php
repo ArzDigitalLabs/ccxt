@@ -135,8 +135,8 @@ class hamrahgold extends Exchange {
         $sell = $this->safe_dict($sellResponse, 'data', array());
         $changes = $this->safe_dict($sell, 'changes', array());
         $dailyChange = $this->safe_dict($changes, '1d', array());
-        $bid = $this->safe_number($buy, 'current');
-        $ask = $this->safe_number($sell, 'current');
+        $bid = $this->safe_number($sell, 'current');
+        $ask = $this->safe_number($buy, 'current');
         $previousClose = $this->safe_number($dailyChange, 'price');
         if ($bid !== null) {
             $bid = $bid / 10;
@@ -146,6 +146,10 @@ class hamrahgold extends Exchange {
         }
         if ($previousClose !== null) {
             $previousClose = $previousClose / 10;
+        }
+        $last = $bid;
+        if ($ask !== null && ($last === null || $ask > $last)) {
+            $last = $ask;
         }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],
@@ -159,8 +163,8 @@ class hamrahgold extends Exchange {
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
-            'close' => $ask,
-            'last' => $ask,
+            'close' => $last,
+            'last' => $last,
             'previousClose' => $previousClose,
             'change' => null,
             'percentage' => $this->safe_number($dailyChange, 'percent'),

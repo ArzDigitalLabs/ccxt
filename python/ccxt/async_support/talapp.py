@@ -117,20 +117,25 @@ class talapp(Exchange, ImplicitAPI):
         timestamp = None
         if fetchedAt is not None:
             timestamp = self.parse8601(fetchedAt.replace(' ', 'T') + '+03:30')
+        bid = self.safe_number(response, 'buy_gold')
+        ask = self.safe_number(response, 'sell_gold')
+        last = bid
+        if ask is not None and (last is None or ask > last):
+            last = ask
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': timestamp,
             'datetime': None,
             'high': None,
             'low': None,
-            'bid': self.safe_number(response, 'buy_gold'),
+            'bid': bid,
             'bidVolume': None,
-            'ask': self.safe_number(response, 'sell_gold'),
+            'ask': ask,
             'askVolume': None,
             'vwap': None,
             'open': None,
-            'close': self.safe_number(response, 'sell_gold'),
-            'last': self.safe_number(response, 'sell_gold'),
+            'close': last,
+            'last': last,
             'previousClose': None,
             'change': None,
             'percentage': self.safe_number(response, 'sell_diff'),
