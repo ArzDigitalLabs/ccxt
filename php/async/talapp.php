@@ -131,20 +131,26 @@ class talapp extends Exchange {
         if ($fetchedAt !== null) {
             $timestamp = $this->parse8601(str_replace(' ', 'T', $fetchedAt) . '+03:30');
         }
+        $bid = $this->safe_number($response, 'buy_gold');
+        $ask = $this->safe_number($response, 'sell_gold');
+        $last = $bid;
+        if ($ask !== null && ($last === null || $ask > $last)) {
+            $last = $ask;
+        }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],
             'timestamp' => $timestamp,
             'datetime' => null,
             'high' => null,
             'low' => null,
-            'bid' => $this->safe_number($response, 'buy_gold'),
+            'bid' => $bid,
             'bidVolume' => null,
-            'ask' => $this->safe_number($response, 'sell_gold'),
+            'ask' => $ask,
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
-            'close' => $this->safe_number($response, 'sell_gold'),
-            'last' => $this->safe_number($response, 'sell_gold'),
+            'close' => $last,
+            'last' => $last,
             'previousClose' => null,
             'change' => null,
             'percentage' => $this->safe_number($response, 'sell_diff'),

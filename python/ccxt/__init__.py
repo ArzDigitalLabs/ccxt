@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.19.0'
+__version__ = '4.20.0'
 
 # ----------------------------------------------------------------------------
 
@@ -169,6 +169,7 @@ from ccxt.foxbit import foxbit                                        # noqa: F4
 from ccxt.gate import gate                                            # noqa: F401
 from ccxt.gateio import gateio                                        # noqa: F401
 from ccxt.gemini import gemini                                        # noqa: F401
+from ccxt.gerami import gerami                                        # noqa: F401
 from ccxt.goldika import goldika                                      # noqa: F401
 from ccxt.goldis import goldis                                        # noqa: F401
 from ccxt.hamrahgold import hamrahgold                                # noqa: F401
@@ -342,6 +343,7 @@ exchanges = [
     'gate',
     'gateio',
     'gemini',
+    'gerami',
     'goldika',
     'goldis',
     'hamrahgold',

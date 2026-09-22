@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.19.0'
+__version__ = '4.20.0'
 
 # -----------------------------------------------------------------------------
 
@@ -149,6 +149,7 @@ from ccxt.async_support.foxbit import foxbit                                    
 from ccxt.async_support.gate import gate                                        # noqa: F401
 from ccxt.async_support.gateio import gateio                                    # noqa: F401
 from ccxt.async_support.gemini import gemini                                    # noqa: F401
+from ccxt.async_support.gerami import gerami                                    # noqa: F401
 from ccxt.async_support.goldika import goldika                                  # noqa: F401
 from ccxt.async_support.goldis import goldis                                    # noqa: F401
 from ccxt.async_support.hamrahgold import hamrahgold                            # noqa: F401
@@ -322,6 +323,7 @@ exchanges = [
     'gate',
     'gateio',
     'gemini',
+    'gerami',
     'goldika',
     'goldis',
     'hamrahgold',

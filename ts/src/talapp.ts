@@ -123,20 +123,26 @@ export default class talapp extends Exchange {
         if (fetchedAt !== undefined) {
             timestamp = this.parse8601 (fetchedAt.replace (' ', 'T') + '+03:30');
         }
+        const bid = this.safeNumber (response, 'buy_gold');
+        const ask = this.safeNumber (response, 'sell_gold');
+        let last = bid;
+        if (ask !== undefined && (last === undefined || ask > last)) {
+            last = ask;
+        }
         return this.safeTicker ({
             'symbol': market['symbol'],
             'timestamp': timestamp,
             'datetime': undefined,
             'high': undefined,
             'low': undefined,
-            'bid': this.safeNumber (response, 'buy_gold'),
+            'bid': bid,
             'bidVolume': undefined,
-            'ask': this.safeNumber (response, 'sell_gold'),
+            'ask': ask,
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
-            'close': this.safeNumber (response, 'sell_gold'),
-            'last': this.safeNumber (response, 'sell_gold'),
+            'close': last,
+            'last': last,
             'previousClose': undefined,
             'change': undefined,
             'percentage': this.safeNumber (response, 'sell_diff'),

@@ -112,15 +112,15 @@ class zarminex(Exchange, ImplicitAPI):
         return self.filter_by_array_tickers(result, 'symbol', symbols)
 
     def parse_ticker(self, response, market: Market = None) -> Ticker:
-        bid = self.safe_number(response, 'sell')
-        ask = self.safe_number(response, 'buy')
-        last = self.safe_number(response, 'cached_price')
+        bid = self.safe_number(response, 'buy')
+        ask = self.safe_number(response, 'sell')
         if bid is not None:
             bid = bid / 10
         if ask is not None:
             ask = ask / 10
-        if last is not None:
-            last = last / 10
+        last = bid
+        if ask is not None and (last is None or ask > last):
+            last = ask
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': None,

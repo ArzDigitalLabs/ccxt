@@ -143,9 +143,12 @@ export default class zarniv extends Exchange {
         if (serverTime !== undefined) {
             timestamp = this.parse8601 (serverTime + '+03:30');
         }
-        const bid = this.safeNumber (response, 'sell_price_per_gram');
-        const ask = this.safeNumber (response, 'buy_price_per_gram');
-        const last = this.safeNumber (response, 'base_price_per_gram');
+        const bid = this.safeNumber (response, 'buy_price_per_gram');
+        const ask = this.safeNumber (response, 'sell_price_per_gram');
+        let last = bid;
+        if (ask !== undefined && (last === undefined || ask > last)) {
+            last = ask;
+        }
         return this.safeTicker ({
             'symbol': market['symbol'],
             'timestamp': timestamp,

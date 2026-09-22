@@ -121,8 +121,8 @@ class hamrahgold(Exchange, ImplicitAPI):
         sell = self.safe_dict(sellResponse, 'data', {})
         changes = self.safe_dict(sell, 'changes', {})
         dailyChange = self.safe_dict(changes, '1d', {})
-        bid = self.safe_number(buy, 'current')
-        ask = self.safe_number(sell, 'current')
+        bid = self.safe_number(sell, 'current')
+        ask = self.safe_number(buy, 'current')
         previousClose = self.safe_number(dailyChange, 'price')
         if bid is not None:
             bid = bid / 10
@@ -130,6 +130,9 @@ class hamrahgold(Exchange, ImplicitAPI):
             ask = ask / 10
         if previousClose is not None:
             previousClose = previousClose / 10
+        last = bid
+        if ask is not None and (last is None or ask > last):
+            last = ask
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': None,
@@ -142,8 +145,8 @@ class hamrahgold(Exchange, ImplicitAPI):
             'askVolume': None,
             'vwap': None,
             'open': None,
-            'close': ask,
-            'last': ask,
+            'close': last,
+            'last': last,
             'previousClose': previousClose,
             'change': None,
             'percentage': self.safe_number(dailyChange, 'percent'),

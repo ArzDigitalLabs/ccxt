@@ -132,8 +132,12 @@ class zarafza extends Exchange {
         $gold = $this->safe_dict($data, 'G18', array());
         $buy = $this->safe_dict($gold, 'buy', array());
         $sell = $this->safe_dict($gold, 'sell', array());
-        $bid = $this->safe_number($buy, 'price');
-        $ask = $this->safe_number($sell, 'price');
+        $bid = $this->safe_number($sell, 'price');
+        $ask = $this->safe_number($buy, 'price');
+        $last = $bid;
+        if ($ask !== null && ($last === null || $ask > $last)) {
+            $last = $ask;
+        }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],
             'timestamp' => null,
@@ -146,8 +150,8 @@ class zarafza extends Exchange {
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
-            'close' => $ask,
-            'last' => $ask,
+            'close' => $last,
+            'last' => $last,
             'previousClose' => null,
             'change' => null,
             'percentage' => $this->safe_number($sell, 'change'),

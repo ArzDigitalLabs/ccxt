@@ -158,20 +158,26 @@ class daric extends Exchange {
             $markets = $response;
         }
         $ticker = $this->filter_by($markets, 'destinationCoinSymbol', $market['baseId'])[0];
+        $bid = $this->safe_number($ticker, 'bestSell');
+        $ask = $this->safe_number($ticker, 'bestBuy');
+        $last = $bid;
+        if ($ask !== null && ($last === null || $ask > $last)) {
+            $last = $ask;
+        }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],
             'timestamp' => null,
             'datetime' => null,
             'high' => $this->safe_number($ticker, 'highestRecentOrder'),
             'low' => $this->safe_number($ticker, 'lowestRecentOrder'),
-            'bid' => $this->safe_number($ticker, 'bestBuy'),
+            'bid' => $bid,
             'bidVolume' => null,
-            'ask' => $this->safe_number($ticker, 'bestSell'),
+            'ask' => $ask,
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
-            'close' => $this->safe_number($ticker, 'lastOrderPrice'),
-            'last' => $this->safe_number($ticker, 'lastOrderPrice'),
+            'close' => $last,
+            'last' => $last,
             'previousClose' => null,
             'change' => null,
             'percentage' => $this->safe_number($ticker, 'change'),

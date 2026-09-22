@@ -114,12 +114,15 @@ class baazar(Exchange, ImplicitAPI):
 
     def parse_ticker(self, response, market: Market = None) -> Ticker:
         data = self.safe_dict(response, 'data', {})
-        bid = self.safe_number(data, 'sellPrice')
-        ask = self.safe_number(data, 'buyPrice')
+        bid = self.safe_number(data, 'buyPrice')
+        ask = self.safe_number(data, 'sellPrice')
         if bid is not None:
             bid = bid / 10
         if ask is not None:
             ask = ask / 10
+        last = bid
+        if ask is not None and (last is None or ask > last):
+            last = ask
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': self.safe_integer(data, 'currentTime'),
@@ -132,8 +135,8 @@ class baazar(Exchange, ImplicitAPI):
             'askVolume': None,
             'vwap': None,
             'open': None,
-            'close': ask,
-            'last': ask,
+            'close': last,
+            'last': last,
             'previousClose': None,
             'change': None,
             'percentage': None,

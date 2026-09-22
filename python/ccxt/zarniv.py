@@ -134,9 +134,11 @@ class zarniv(Exchange, ImplicitAPI):
         timestamp = None
         if serverTime is not None:
             timestamp = self.parse8601(serverTime + '+03:30')
-        bid = self.safe_number(response, 'sell_price_per_gram')
-        ask = self.safe_number(response, 'buy_price_per_gram')
-        last = self.safe_number(response, 'base_price_per_gram')
+        bid = self.safe_number(response, 'buy_price_per_gram')
+        ask = self.safe_number(response, 'sell_price_per_gram')
+        last = bid
+        if ask is not None and (last is None or ask > last):
+            last = ask
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': timestamp,

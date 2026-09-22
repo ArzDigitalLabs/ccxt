@@ -113,17 +113,17 @@ class zarminex extends Exchange["default"] {
         return this.filterByArrayTickers(result, 'symbol', symbols);
     }
     parseTicker(response, market = undefined) {
-        let bid = this.safeNumber(response, 'sell');
-        let ask = this.safeNumber(response, 'buy');
-        let last = this.safeNumber(response, 'cached_price');
+        let bid = this.safeNumber(response, 'buy');
+        let ask = this.safeNumber(response, 'sell');
         if (bid !== undefined) {
             bid = bid / 10;
         }
         if (ask !== undefined) {
             ask = ask / 10;
         }
-        if (last !== undefined) {
-            last = last / 10;
+        let last = bid;
+        if (ask !== undefined && (last === undefined || ask > last)) {
+            last = ask;
         }
         return this.safeTicker({
             'symbol': market['symbol'],

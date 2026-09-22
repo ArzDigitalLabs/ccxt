@@ -183,6 +183,10 @@ class melligold extends Exchange {
         $data = $this->safe_dict($response, 'data', array());
         $buy = $this->safe_number($data, 'price_buy');
         $sell = $this->safe_number($data, 'price_sell');
+        $last = $buy;
+        if ($sell !== null && ($last === null || $sell > $last)) {
+            $last = $sell;
+        }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],
             'timestamp' => $this->safe_timestamp($data, 'timestamp'),
@@ -195,8 +199,8 @@ class melligold extends Exchange {
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
-            'close' => $buy,
-            'last' => $buy,
+            'close' => $last,
+            'last' => $last,
             'previousClose' => null,
             'change' => null,
             'percentage' => null,

@@ -117,17 +117,17 @@ class zarminex extends Exchange {
     }
 
     public function parse_ticker($response, ?array $market = null): array {
-        $bid = $this->safe_number($response, 'sell');
-        $ask = $this->safe_number($response, 'buy');
-        $last = $this->safe_number($response, 'cached_price');
+        $bid = $this->safe_number($response, 'buy');
+        $ask = $this->safe_number($response, 'sell');
         if ($bid !== null) {
             $bid = $bid / 10;
         }
         if ($ask !== null) {
             $ask = $ask / 10;
         }
-        if ($last !== null) {
-            $last = $last / 10;
+        $last = $bid;
+        if ($ask !== null && ($last === null || $ask > $last)) {
+            $last = $ask;
         }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],

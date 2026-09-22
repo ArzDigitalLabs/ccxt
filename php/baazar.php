@@ -119,13 +119,17 @@ class baazar extends Exchange {
 
     public function parse_ticker($response, ?array $market = null): array {
         $data = $this->safe_dict($response, 'data', array());
-        $bid = $this->safe_number($data, 'sellPrice');
-        $ask = $this->safe_number($data, 'buyPrice');
+        $bid = $this->safe_number($data, 'buyPrice');
+        $ask = $this->safe_number($data, 'sellPrice');
         if ($bid !== null) {
             $bid = $bid / 10;
         }
         if ($ask !== null) {
             $ask = $ask / 10;
+        }
+        $last = $bid;
+        if ($ask !== null && ($last === null || $ask > $last)) {
+            $last = $ask;
         }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],
@@ -139,8 +143,8 @@ class baazar extends Exchange {
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
-            'close' => $ask,
-            'last' => $ask,
+            'close' => $last,
+            'last' => $last,
             'previousClose' => null,
             'change' => null,
             'percentage' => null,

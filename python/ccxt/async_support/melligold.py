@@ -168,6 +168,9 @@ class melligold(Exchange, ImplicitAPI):
         data = self.safe_dict(response, 'data', {})
         buy = self.safe_number(data, 'price_buy')
         sell = self.safe_number(data, 'price_sell')
+        last = buy
+        if sell is not None and (last is None or sell > last):
+            last = sell
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': self.safe_timestamp(data, 'timestamp'),
@@ -180,8 +183,8 @@ class melligold(Exchange, ImplicitAPI):
             'askVolume': None,
             'vwap': None,
             'open': None,
-            'close': buy,
-            'last': buy,
+            'close': last,
+            'last': last,
             'previousClose': None,
             'change': None,
             'percentage': None,

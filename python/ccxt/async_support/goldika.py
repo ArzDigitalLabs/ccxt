@@ -123,6 +123,9 @@ class goldika(Exchange, ImplicitAPI):
             bid = bid / 10
         if ask is not None:
             ask = ask / 10
+        last = bid
+        if ask is not None and (last is None or ask > last):
+            last = ask
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': timestamp,
@@ -135,8 +138,8 @@ class goldika(Exchange, ImplicitAPI):
             'askVolume': None,
             'vwap': None,
             'open': None,
-            'close': ask,
-            'last': ask,
+            'close': last,
+            'last': last,
             'previousClose': None,
             'change': None,
             'percentage': self.safe_number(data, 'daily_change_percent'),

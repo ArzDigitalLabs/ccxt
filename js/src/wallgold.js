@@ -126,6 +126,10 @@ export default class wallgold extends Exchange {
         const sellResult = this.safeDict(sellResponse, 'result', buyResult);
         const bid = this.safeNumber(buyResult, 'price');
         const ask = this.safeNumber(sellResult, 'price');
+        let last = bid;
+        if (ask !== undefined && (last === undefined || ask > last)) {
+            last = ask;
+        }
         const currentTime = this.safeString(buyResult, 'currentTime');
         const timestamp = currentTime ? this.parse8601(currentTime) : undefined;
         return this.safeTicker({
@@ -140,8 +144,8 @@ export default class wallgold extends Exchange {
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
-            'close': ask,
-            'last': ask,
+            'close': last,
+            'last': last,
             'previousClose': undefined,
             'change': undefined,
             'percentage': undefined,

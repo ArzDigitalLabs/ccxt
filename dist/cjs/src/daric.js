@@ -144,20 +144,26 @@ class daric extends Exchange["default"] {
             markets = response;
         }
         const ticker = this.filterBy(markets, 'destinationCoinSymbol', market['baseId'])[0];
+        const bid = this.safeNumber(ticker, 'bestSell');
+        const ask = this.safeNumber(ticker, 'bestBuy');
+        let last = bid;
+        if (ask !== undefined && (last === undefined || ask > last)) {
+            last = ask;
+        }
         return this.safeTicker({
             'symbol': market['symbol'],
             'timestamp': undefined,
             'datetime': undefined,
             'high': this.safeNumber(ticker, 'highestRecentOrder'),
             'low': this.safeNumber(ticker, 'lowestRecentOrder'),
-            'bid': this.safeNumber(ticker, 'bestBuy'),
+            'bid': bid,
             'bidVolume': undefined,
-            'ask': this.safeNumber(ticker, 'bestSell'),
+            'ask': ask,
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
-            'close': this.safeNumber(ticker, 'lastOrderPrice'),
-            'last': this.safeNumber(ticker, 'lastOrderPrice'),
+            'close': last,
+            'last': last,
             'previousClose': undefined,
             'change': undefined,
             'percentage': this.safeNumber(ticker, 'change'),

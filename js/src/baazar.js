@@ -116,13 +116,17 @@ export default class baazar extends Exchange {
     }
     parseTicker(response, market = undefined) {
         const data = this.safeDict(response, 'data', {});
-        let bid = this.safeNumber(data, 'sellPrice');
-        let ask = this.safeNumber(data, 'buyPrice');
+        let bid = this.safeNumber(data, 'buyPrice');
+        let ask = this.safeNumber(data, 'sellPrice');
         if (bid !== undefined) {
             bid = bid / 10;
         }
         if (ask !== undefined) {
             ask = ask / 10;
+        }
+        let last = bid;
+        if (ask !== undefined && (last === undefined || ask > last)) {
+            last = ask;
         }
         return this.safeTicker({
             'symbol': market['symbol'],
@@ -136,8 +140,8 @@ export default class baazar extends Exchange {
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
-            'close': ask,
-            'last': ask,
+            'close': last,
+            'last': last,
             'previousClose': undefined,
             'change': undefined,
             'percentage': undefined,

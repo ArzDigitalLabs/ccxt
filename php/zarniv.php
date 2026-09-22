@@ -143,9 +143,12 @@ class zarniv extends Exchange {
         if ($serverTime !== null) {
             $timestamp = $this->parse8601($serverTime . '+03:30');
         }
-        $bid = $this->safe_number($response, 'sell_price_per_gram');
-        $ask = $this->safe_number($response, 'buy_price_per_gram');
-        $last = $this->safe_number($response, 'base_price_per_gram');
+        $bid = $this->safe_number($response, 'buy_price_per_gram');
+        $ask = $this->safe_number($response, 'sell_price_per_gram');
+        $last = $bid;
+        if ($ask !== null && ($last === null || $ask > $last)) {
+            $last = $ask;
+        }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],
             'timestamp' => $timestamp,

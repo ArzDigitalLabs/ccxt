@@ -119,8 +119,11 @@ class zarafza(Exchange, ImplicitAPI):
         gold = self.safe_dict(data, 'G18', {})
         buy = self.safe_dict(gold, 'buy', {})
         sell = self.safe_dict(gold, 'sell', {})
-        bid = self.safe_number(buy, 'price')
-        ask = self.safe_number(sell, 'price')
+        bid = self.safe_number(sell, 'price')
+        ask = self.safe_number(buy, 'price')
+        last = bid
+        if ask is not None and (last is None or ask > last):
+            last = ask
         return self.safe_ticker({
             'symbol': market['symbol'],
             'timestamp': None,
@@ -133,8 +136,8 @@ class zarafza(Exchange, ImplicitAPI):
             'askVolume': None,
             'vwap': None,
             'open': None,
-            'close': ask,
-            'last': ask,
+            'close': last,
+            'last': last,
             'previousClose': None,
             'change': None,
             'percentage': self.safe_number(sell, 'change'),

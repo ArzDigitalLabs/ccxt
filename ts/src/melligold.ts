@@ -184,6 +184,10 @@ export default class melligold extends Exchange {
         const data = this.safeDict (response, 'data', {});
         const buy = this.safeNumber (data, 'price_buy');
         const sell = this.safeNumber (data, 'price_sell');
+        let last = buy;
+        if (sell !== undefined && (last === undefined || sell > last)) {
+            last = sell;
+        }
         return this.safeTicker ({
             'symbol': market['symbol'],
             'timestamp': this.safeTimestamp (data, 'timestamp'),
@@ -196,8 +200,8 @@ export default class melligold extends Exchange {
             'askVolume': undefined,
             'vwap': undefined,
             'open': undefined,
-            'close': buy,
-            'last': buy,
+            'close': last,
+            'last': last,
             'previousClose': undefined,
             'change': undefined,
             'percentage': undefined,

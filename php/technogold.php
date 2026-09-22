@@ -120,20 +120,24 @@ class technogold extends Exchange {
         $prices = $this->safe_dict($response, 'results', array());
         $buy = $this->safe_number($prices, 'buy_price');
         $sell = $this->safe_number($prices, 'sell_price');
+        $last = $buy;
+        if ($sell !== null && ($last === null || $sell > $last)) {
+            $last = $sell;
+        }
         return $this->safe_ticker(array(
             'symbol' => $market['symbol'],
             'timestamp' => null,
             'datetime' => null,
             'high' => null,
             'low' => null,
-            'bid' => $sell,
+            'bid' => $buy,
             'bidVolume' => null,
-            'ask' => $buy,
+            'ask' => $sell,
             'askVolume' => null,
             'vwap' => null,
             'open' => null,
-            'close' => $buy,
-            'last' => $buy,
+            'close' => $last,
+            'last' => $last,
             'previousClose' => null,
             'change' => null,
             'percentage' => null,

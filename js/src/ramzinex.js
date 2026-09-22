@@ -361,7 +361,6 @@ export default class ramzinex extends Exchange {
         let open = this.safeFloat(tickerinfo, 'open');
         let close = this.safeFloat(tickerinfo, 'close');
         const change = this.safeFloat(tickerinfo, 'change_percent');
-        let last = this.safeFloat(ticker, 'buy');
         let quoteVolume = this.safeFloat(tickerinfo, 'quote_volume');
         const baseVolume = this.safeFloat(tickerinfo, 'base_volume');
         if (marketinfo['quote'] === 'IRT') {
@@ -371,9 +370,13 @@ export default class ramzinex extends Exchange {
             ask = ask ? ask / 10 : 0;
             open = open ? open / 10 : 0;
             close = close ? close / 10 : 0;
-            last = last ? last / 10 : 0;
             quoteVolume = quoteVolume ? quoteVolume / 10 : 0;
         }
+        let last = bid;
+        if (ask !== undefined && (last === undefined || ask > last)) {
+            last = ask;
+        }
+        close = last;
         return this.safeTicker({
             'symbol': symbol,
             'timestamp': undefined,
