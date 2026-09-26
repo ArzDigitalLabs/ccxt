@@ -355,7 +355,7 @@ class ubitex extends ubitex$1["default"] {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['base'] + market['quote'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -411,7 +411,7 @@ class ubitex extends ubitex$1["default"] {
             'id': market['id'],
         };
         const orderBook = await this.publicGetApiDashboard(request);
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'buyers', 'sellers', 'price', 'totalAmount');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {

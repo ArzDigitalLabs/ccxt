@@ -488,7 +488,7 @@ class arzplus(Exchange, ImplicitAPI):
         """
         await self.load_markets(False, {'type': 'otc'})
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -532,7 +532,7 @@ class arzplus(Exchange, ImplicitAPI):
             'symbol': market['id'],
         }
         orderBook = await self.publicGetApiV1MarketDepth(request)
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'amount')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

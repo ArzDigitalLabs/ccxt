@@ -395,7 +395,7 @@ class bitpin(Exchange, ImplicitAPI):
         """
         await self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['symbol'].replace('/', '_'),
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -448,7 +448,7 @@ class bitpin(Exchange, ImplicitAPI):
             ask = asks[j]
             askslist.append({'price': self.safe_float(ask, 0), 'amount': self.safe_float(ask, 1)})
         orderBook = {'bid': bidlist, 'ask': askslist}
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderBook, symbol, timestamp, 'bid', 'ask', 'price', 'amount')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):
@@ -457,6 +457,6 @@ class bitpin(Exchange, ImplicitAPI):
         if path == 'v1/mkt/tv/get_bars/':
             url = self.urls['api']['OHLCV'] + '/' + path + '?' + self.urlencode(query)
         if path == 'v4/mth/orderbook/':
-            url = url + params['symbol'] + '/?limit=' + params['limit']
+            url = url + params['symbol'] + '/?limit=' + self.number_to_string(params['limit'])
         headers = {'Content-Type': 'application/json'}
         return {'url': url, 'method': method, 'body': body, 'headers': headers}

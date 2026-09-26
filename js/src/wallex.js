@@ -395,7 +395,7 @@ export default class wallex extends Exchange {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -449,7 +449,7 @@ export default class wallex extends Exchange {
         };
         const response = await this.publicGetV1Depth(request);
         const orderBook = this.safeDict(response, 'result', {});
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bid', 'ask', 'price', 'quantity');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {

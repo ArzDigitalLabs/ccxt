@@ -346,7 +346,7 @@ class bitimen(Exchange, ImplicitAPI):
         """
         await self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -387,7 +387,7 @@ class bitimen(Exchange, ImplicitAPI):
             'symbol': market['id'],
         }
         response = await self.publicGetApiOrderbookDepth(request)
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(response, symbol, timestamp, 'bids', 'asks')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

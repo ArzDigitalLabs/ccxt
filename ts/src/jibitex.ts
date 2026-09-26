@@ -358,7 +358,7 @@ export default class jibitex extends Exchange {
          */
         await this.loadMarkets ();
         const market = this.market (symbol);
-        const endTime = Date.now ();
+        const endTime = this.milliseconds ();
         const request = {
             'market': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -407,7 +407,7 @@ export default class jibitex extends Exchange {
         };
         const response = await this.publicGetApi1OrdersOrderBookMarket (request);
         const orderBook = this.safeDict (response, 'content');
-        const timestamp = Date.now ();
+        const timestamp = this.milliseconds ();
         return this.parseOrderBook (orderBook, symbol, timestamp, 'buys', 'sells', 'unitPrice', 'size');
     }
 

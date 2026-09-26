@@ -341,7 +341,7 @@ class nobitex(Exchange, ImplicitAPI):
         """
         await self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         if market['quote'] == 'IRT':
             market['id'] = market['symbol'].replace('/', '')
         request = {
@@ -401,9 +401,9 @@ class nobitex(Exchange, ImplicitAPI):
             bids = self.safe_list(response, 'bids')
             asks = self.safe_list(response, 'asks')
             for i in range(0, len(bids)):
-                bids[i][0] = bids[i][0] / 10 if bids[i][0] else 0
+                bids[i][0] = self.parse_to_numeric(bids[i][0]) / 10 if bids[i][0] else 0
             for i in range(0, len(asks)):
-                asks[i][0] = asks[i][0] / 10 if asks[i][0] else 0
+                asks[i][0] = self.parse_to_numeric(asks[i][0]) / 10 if asks[i][0] else 0
             response['bids'] = bids
             response['asks'] = asks
         timestamp = self.safe_integer(response, 'lastUpdate')

@@ -366,7 +366,7 @@ class kifpoolme extends Exchange {
              */
             Async\await($this->load_markets());
             $market = $this->market($symbol);
-            $endTime = Date.now ();
+            $endTime = $this->milliseconds();
             $request = array(
                 'symbol' => $market['baseId'],
                 'currency' => $market['quoteId'],

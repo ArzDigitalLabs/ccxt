@@ -418,7 +418,7 @@ export default class ompfinex extends Exchange {
         if (market['quote'] === 'IRT') {
             symbol = market['base'] + 'IRR';
         }
-        const endTime = Date.now ();
+        const endTime = this.milliseconds ();
         const request = {
             'symbol': symbol.replace ('/', ''),
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -492,7 +492,7 @@ export default class ompfinex extends Exchange {
         } else {
             orderbook = this.safeDict (orderbook, market['base'] + market['quote']);
         }
-        const timestamp = Date.now ();
+        const timestamp = this.milliseconds ();
         return this.parseOrderBook (orderbook, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
     }
 

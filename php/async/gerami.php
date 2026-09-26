@@ -54,7 +54,7 @@ class gerami extends Exchange {
 
     public function fetch_markets($params = array ()): PromiseInterface {
         return Async\async(function () use ($params) {
-            $marketIds = array( 'XAU750g_IRT', 'XAG999g_IRT' );
+            $marketIds = array( 'XAU750g_IRT', 'XAG999g_IRT', 'XCU9999g_IRT' );
             $result = array();
             for ($i = 0; $i < count($marketIds); $i++) {
                 $response = Async\await($this->publicGetPairsPair ($this->extend(array(
@@ -73,6 +73,9 @@ class gerami extends Exchange {
         $base = 'XAG-1G';
         if ($baseId === 'XAU750g') {
             $base = 'XAU18';
+        }
+        if ($baseId === 'XCU9999g') {
+            $base = 'XCU-1G';
         }
         return array(
             'id' => $this->safe_string($data, 'market'),
@@ -133,7 +136,7 @@ class gerami extends Exchange {
             if ($symbols !== null) {
                 $symbols = $this->market_symbols($symbols);
             }
-            $marketSymbols = array( 'XAU18/IRT', 'XAG-1G/IRT' );
+            $marketSymbols = array( 'XAU18/IRT', 'XAG-1G/IRT', 'XCU-1G/IRT' );
             $result = array();
             for ($i = 0; $i < count($marketSymbols); $i++) {
                 $market = $this->market($marketSymbols[$i]);

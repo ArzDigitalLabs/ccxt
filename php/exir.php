@@ -324,7 +324,7 @@ class exir extends Exchange {
          */
         $this->load_markets();
         $market = $this->market($symbol);
-        $endTime = Date.now ();
+        $endTime = $this->milliseconds();
         $request = array(
             'symbol' => $market['id'],
             'from' => ($endTime / 1000) - (24 * 60 * 60),
@@ -376,7 +376,7 @@ class exir extends Exchange {
             'symbol' => $market['id'],
         );
         $response = $this->publicGetV2Orderbook ($request);
-        $timestamp = $this->safe_timestamp($response[$market['id']], 'timestamp') / 1000;
+        $timestamp = $this->safe_timestamp($response[$market['id']], 'timestamp', 0) / 1000;
         return $this->parse_order_book($response[$market['id']], $symbol, $timestamp);
     }
 

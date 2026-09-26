@@ -407,7 +407,7 @@ class bitir(Exchange, ImplicitAPI):
         symbol = market['base'] + market['quote']
         if market['quote'] == 'IRT':
             symbol = market['base'] + 'IRR'
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': symbol,
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -474,7 +474,7 @@ class bitir(Exchange, ImplicitAPI):
                 if market['quote'] == 'IRT':
                     price = price / 10
                 orberbook['bids'].append([price, amount])
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orberbook, symbol, timestamp)
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

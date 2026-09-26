@@ -503,7 +503,7 @@ export default class raastin extends Exchange {
         //   "bids": [{ "price": "164003", "amount": "19.99", "depth": "1", "total": "3278419" }],
         //   "asks": [{ "price": "166000", "amount": "47.79", "depth": "2", "total": "7933140" }]
         // }
-        const timestamp = Date.now ();
+        const timestamp = this.milliseconds ();
         return this.parseOrderBook (response, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
     }
 

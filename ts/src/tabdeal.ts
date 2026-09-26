@@ -320,7 +320,7 @@ export default class tabdeal extends Exchange {
          */
         await this.loadMarkets ();
         const market = this.market (symbol);
-        const endTime = Date.now ();
+        const endTime = this.milliseconds ();
         const request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -375,7 +375,7 @@ export default class tabdeal extends Exchange {
             'tabdealSymbol': market['id'],
         };
         const response = await this.publicGetRApiV1Depth (request);
-        const timestamp = Date.now ();
+        const timestamp = this.milliseconds ();
         return this.parseOrderBook (response, symbol, timestamp);
     }
 

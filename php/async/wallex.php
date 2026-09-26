@@ -399,7 +399,7 @@ class wallex extends Exchange {
              */
             Async\await($this->load_markets());
             $market = $this->market($symbol);
-            $endTime = Date.now ();
+            $endTime = $this->milliseconds();
             $request = array(
                 'symbol' => $market['id'],
                 'from' => ($endTime / 1000) - (24 * 60 * 60),
@@ -454,7 +454,7 @@ class wallex extends Exchange {
             );
             $response = Async\await($this->publicGetV1Depth ($request));
             $orderBook = $this->safe_dict($response, 'result', array());
-            $timestamp = Date.now ();
+            $timestamp = $this->milliseconds();
             return $this->parse_order_book($orderBook, $symbol, $timestamp, 'bid', 'ask', 'price', 'quantity');
         }) ();
     }
