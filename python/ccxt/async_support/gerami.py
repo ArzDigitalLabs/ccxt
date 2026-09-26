@@ -51,7 +51,7 @@ class gerami(Exchange, ImplicitAPI):
         })
 
     async def fetch_markets(self, params={}) -> List[Market]:
-        marketIds = ['XAU750g_IRT', 'XAG999g_IRT']
+        marketIds = ['XAU750g_IRT', 'XAG999g_IRT', 'XCU9999g_IRT']
         result = []
         for i in range(0, len(marketIds)):
             response = await self.publicGetPairsPair(self.extend({
@@ -67,6 +67,8 @@ class gerami(Exchange, ImplicitAPI):
         base = 'XAG-1G'
         if baseId == 'XAU750g':
             base = 'XAU18'
+        if baseId == 'XCU9999g':
+            base = 'XCU-1G'
         return {
             'id': self.safe_string(data, 'market'),
             'symbol': base + '/' + quoteId,
@@ -120,7 +122,7 @@ class gerami(Exchange, ImplicitAPI):
         await self.load_markets()
         if symbols is not None:
             symbols = self.market_symbols(symbols)
-        marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT']
+        marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT', 'XCU-1G/IRT']
         result = {}
         for i in range(0, len(marketSymbols)):
             market = self.market(marketSymbols[i])
