@@ -426,7 +426,7 @@ class bitir extends Exchange {
             if ($market['quote'] === 'IRT') {
                 $symbol = $market['base'] . 'IRR';
             }
-            $endTime = Date.now ();
+            $endTime = $this->milliseconds();
             $request = array(
                 'symbol' => $symbol,
                 'from' => ($endTime / 1000) - (24 * 60 * 60),
@@ -505,7 +505,7 @@ class bitir extends Exchange {
                     $orberbook['bids'][] = array( $price, $amount );
                 }
             }
-            $timestamp = Date.now ();
+            $timestamp = $this->milliseconds();
             return $this->parse_order_book($orberbook, $symbol, $timestamp);
         }) ();
     }

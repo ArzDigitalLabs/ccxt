@@ -309,7 +309,7 @@ class okexchange extends Exchange {
          */
         $this->load_markets();
         $market = $this->market($symbol);
-        $endTime = Date.now ();
+        $endTime = $this->milliseconds();
         $request = array(
             'symbol' => str_replace('/', '', $symbol),
             'startTime' => $endTime - 24 * 60 * 60 * 1000,
@@ -348,7 +348,7 @@ class okexchange extends Exchange {
         );
         $response = $this->publicGetOapiV1MarketOrderbook ($request);
         $orderBook = $this->safe_dict($response, 'books', array());
-        $timestamp = Date.now ();
+        $timestamp = $this->milliseconds();
         return $this->parse_order_book($orderBook, $symbol, $timestamp);
     }
 

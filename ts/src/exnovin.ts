@@ -370,7 +370,7 @@ export default class exnovin extends Exchange {
             }
         }
         orderBook = { 'bids': bids, 'asks': asks };
-        const timestamp = Date.now ();
+        const timestamp = this.milliseconds ();
         return this.parseOrderBook (orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
     }
 

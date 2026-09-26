@@ -362,7 +362,7 @@ class nobitex extends Exchange {
              */
             Async\await($this->load_markets());
             $market = $this->market($symbol);
-            $endTime = Date.now ();
+            $endTime = $this->milliseconds();
             if ($market['quote'] === 'IRT') {
                 $market['id'] = str_replace('/', '', $market['symbol']);
             }
@@ -430,10 +430,10 @@ class nobitex extends Exchange {
                 $bids = $this->safe_list($response, 'bids');
                 $asks = $this->safe_list($response, 'asks');
                 for ($i = 0; $i < count($bids); $i++) {
-                    $bids[$i][0] = $bids[$i][0] ? $bids[$i][0] / 10 : 0;
+                    $bids[$i][0] = $bids[$i][0] ? $this->parse_to_numeric($bids[$i][0]) / 10 : 0;
                 }
                 for ($i = 0; $i < count($asks); $i++) {
-                    $asks[$i][0] = $asks[$i][0] ? $asks[$i][0] / 10 : 0;
+                    $asks[$i][0] = $asks[$i][0] ? $this->parse_to_numeric($asks[$i][0]) / 10 : 0;
                 }
                 $response['bids'] = $bids;
                 $response['asks'] = $asks;

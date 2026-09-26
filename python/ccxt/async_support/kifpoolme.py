@@ -343,7 +343,7 @@ class kifpoolme(Exchange, ImplicitAPI):
         """
         await self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['baseId'],
             'currency': market['quoteId'],

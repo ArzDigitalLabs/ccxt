@@ -7642,7 +7642,7 @@ class arzplus extends _abstract_arzplus_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
          */
         await this.loadMarkets(false, { 'type': 'otc' });
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -7692,7 +7692,7 @@ class arzplus extends _abstract_arzplus_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             'symbol': market['id'],
         };
         const orderBook = await this.publicGetApiV1MarketDepth(request);
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -69520,7 +69520,7 @@ class bitimen extends _abstract_bitimen_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -69566,7 +69566,7 @@ class bitimen extends _abstract_bitimen_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             'symbol': market['id'],
         };
         const response = await this.publicGetApiOrderbookDepth(request);
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(response, symbol, timestamp, 'bids', 'asks');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -70011,7 +70011,7 @@ class bitir extends _abstract_bitir_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
         if (market['quote'] === 'IRT') {
             symbol = market['base'] + 'IRR';
         }
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': symbol,
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -70089,7 +70089,7 @@ class bitir extends _abstract_bitir_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
                 orberbook['bids'].push([price, amount]);
             }
         }
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orberbook, symbol, timestamp);
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -81171,7 +81171,7 @@ class bitpin extends _abstract_bitpin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['symbol'].replace('/', '_'),
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -81231,7 +81231,7 @@ class bitpin extends _abstract_bitpin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
             askslist.push({ 'price': this.safeFloat(ask, 0), 'amount': this.safeFloat(ask, 1) });
         }
         const orderBook = { 'bid': bidlist, 'ask': askslist };
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bid', 'ask', 'price', 'amount');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -81241,7 +81241,7 @@ class bitpin extends _abstract_bitpin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
             url = this.urls['api']['OHLCV'] + '/' + path + '?' + this.urlencode(query);
         }
         if (path === 'v4/mth/orderbook/') {
-            url = url + params['symbol'] + '/?limit=' + params['limit'];
+            url = url + params['symbol'] + '/?limit=' + this.numberToString(params['limit']);
         }
         headers = { 'Content-Type': 'application/json' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
@@ -171413,7 +171413,7 @@ class excoino extends _abstract_excoino_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': endTime - (24 * 60 * 60 * 1000),
@@ -171479,7 +171479,7 @@ class excoino extends _abstract_excoino_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             orderBook['bids'] = bids;
             orderBook['asks'] = asks;
         }
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -171828,7 +171828,7 @@ class exir extends _abstract_exir_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -171881,7 +171881,7 @@ class exir extends _abstract_exir_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
             'symbol': market['id'],
         };
         const response = await this.publicGetV2Orderbook(request);
-        const timestamp = this.safeTimestamp(response[market['id']], 'timestamp') / 1000;
+        const timestamp = this.safeTimestamp(response[market['id']], 'timestamp', 0) / 1000;
         return this.parseOrderBook(response[market['id']], symbol, timestamp);
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -175107,7 +175107,7 @@ class exnovin extends _abstract_exnovin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             }
         }
         orderBook = { 'bids': bids, 'asks': asks };
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -199521,7 +199521,7 @@ class hitobit extends _abstract_hitobit_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': this.iso8601((endTime) - (24 * 60 * 60)),
@@ -199570,7 +199570,7 @@ class hitobit extends _abstract_hitobit_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             'limit': 30,
         };
         const orderBook = await this.publicGetHapiExchangeV1PublicDepth(request);
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bids', 'asks');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -218633,7 +218633,7 @@ class jibitex extends _abstract_jibitex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'market': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -218681,7 +218681,7 @@ class jibitex extends _abstract_jibitex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
         };
         const response = await this.publicGetApi1OrdersOrderBookMarket(request);
         const orderBook = this.safeDict(response, 'content');
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'buys', 'sells', 'unitPrice', 'size');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -219404,7 +219404,7 @@ class kifpoolme extends _abstract_kifpoolme_js__WEBPACK_IMPORTED_MODULE_0__/* ["
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['baseId'],
             'currency': market['quoteId'],
@@ -254942,7 +254942,7 @@ class nobitex extends _abstract_nobitex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         if (market['quote'] === 'IRT') {
             market['id'] = market['symbol'].replace('/', '');
         }
@@ -255009,10 +255009,10 @@ class nobitex extends _abstract_nobitex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             const bids = this.safeList(response, 'bids');
             const asks = this.safeList(response, 'asks');
             for (let i = 0; i < bids.length; i++) {
-                bids[i][0] = bids[i][0] ? bids[i][0] / 10 : 0;
+                bids[i][0] = bids[i][0] ? this.parseToNumeric(bids[i][0]) / 10 : 0;
             }
             for (let i = 0; i < asks.length; i++) {
-                asks[i][0] = asks[i][0] ? asks[i][0] / 10 : 0;
+                asks[i][0] = asks[i][0] ? this.parseToNumeric(asks[i][0]) / 10 : 0;
             }
             response['bids'] = bids;
             response['asks'] = asks;
@@ -261396,7 +261396,7 @@ class okexchange extends _abstract_okexchange_js__WEBPACK_IMPORTED_MODULE_0__/* 
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': symbol.replace('/', ''),
             'startTime': endTime - 24 * 60 * 60 * 1000,
@@ -261436,7 +261436,7 @@ class okexchange extends _abstract_okexchange_js__WEBPACK_IMPORTED_MODULE_0__/* 
         };
         const response = await this.publicGetOapiV1MarketOrderbook(request);
         const orderBook = this.safeDict(response, 'books', {});
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp);
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -270949,7 +270949,7 @@ class ompfinex extends _abstract_ompfinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
         if (market['quote'] === 'IRT') {
             symbol = market['base'] + 'IRR';
         }
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': symbol.replace('/', ''),
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -271023,7 +271023,7 @@ class ompfinex extends _abstract_ompfinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
         else {
             orderbook = this.safeDict(orderbook, market['base'] + market['quote']);
         }
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderbook, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -286560,7 +286560,7 @@ class pingi extends _abstract_pingi_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['base'] + '/' + market['quote'],
             'resolution': this.safeString(this.timeframes, timeframe, timeframe),
@@ -368181,7 +368181,7 @@ class raastin extends _abstract_raastin_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
         //   "bids": [{ "price": "164003", "amount": "19.99", "depth": "1", "total": "3278419" }],
         //   "asks": [{ "price": "166000", "amount": "47.79", "depth": "2", "total": "7933140" }]
         // }
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(response, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -368634,7 +368634,7 @@ class ramzinex extends _abstract_ramzinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
         if (market['quote'] === 'IRT') {
             symbol = market['base'] + 'IRR';
         }
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': symbol.replace('/', ''),
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -368660,11 +368660,11 @@ class ramzinex extends _abstract_ramzinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
         const ohlcvs = [];
         for (let i = 0; i < openList.length; i++) {
             if (market['quote'] === 'IRT') {
-                openList[i] = openList[i] ? openList[i] / 10 : 0;
-                highList[i] = highList[i] ? highList[i] / 10 : 0;
-                lastList[i] = lastList[i] ? lastList[i] / 10 : 0;
-                closeList[i] = closeList[i] ? closeList[i] / 10 : 0;
-                volumeList[i] = volumeList[i] ? volumeList[i] / 10 : 0;
+                openList[i] = openList[i] ? this.parseToNumeric(openList[i]) / 10 : 0;
+                highList[i] = highList[i] ? this.parseToNumeric(highList[i]) / 10 : 0;
+                lastList[i] = lastList[i] ? this.parseToNumeric(lastList[i]) / 10 : 0;
+                closeList[i] = closeList[i] ? this.parseToNumeric(closeList[i]) / 10 : 0;
+                volumeList[i] = volumeList[i] ? this.parseToNumeric(volumeList[i]) / 10 : 0;
             }
             ohlcvs.push([
                 timestampList[i],
@@ -368699,15 +368699,15 @@ class ramzinex extends _abstract_ramzinex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
             const bids = this.safeList(orderbook, 'sells');
             const asks = this.safeList(orderbook, 'buys');
             for (let i = 0; i < bids.length; i++) {
-                bids[i][0] = bids[i][0] ? bids[i][0] / 10 : 0;
+                bids[i][0] = bids[i][0] ? this.parseToNumeric(bids[i][0]) / 10 : 0;
             }
             for (let i = 0; i < asks.length; i++) {
-                asks[i][0] = asks[i][0] ? asks[i][0] / 10 : 0;
+                asks[i][0] = asks[i][0] ? this.parseToNumeric(asks[i][0]) / 10 : 0;
             }
             orderbook['buys'] = asks;
             orderbook['sells'] = bids;
         }
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderbook, symbol, timestamp, 'sells', 'buys');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -369856,7 +369856,7 @@ class sarrafex extends _abstract_sarrafex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['base'] + market['quote'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -369912,7 +369912,7 @@ class sarrafex extends _abstract_sarrafex_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
         };
         let orderBook = await this.publicGetApiGatewayExchangerOrderbook(request);
         orderBook = this.safeDict(orderBook, 0);
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'quantity');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -390274,7 +390274,7 @@ class tabdeal extends _abstract_tabdeal_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -390328,7 +390328,7 @@ class tabdeal extends _abstract_tabdeal_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             'tabdealSymbol': market['id'],
         };
         const response = await this.publicGetRApiV1Depth(request);
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(response, symbol, timestamp);
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -398328,7 +398328,7 @@ class ubitex extends _abstract_ubitex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['base'] + market['quote'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -398384,7 +398384,7 @@ class ubitex extends _abstract_ubitex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
             'id': market['id'],
         };
         const orderBook = await this.publicGetApiDashboard(request);
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'buyers', 'sellers', 'price', 'totalAmount');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -404313,7 +404313,7 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -404367,7 +404367,7 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
         };
         const response = await this.publicGetV1Depth(request);
         const orderBook = this.safeDict(response, 'result', {});
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bid', 'ask', 'price', 'quantity');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -437666,7 +437666,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.20.0';
+const ccxt_version = '4.20.1';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 

@@ -422,7 +422,7 @@ class sarrafex extends Exchange {
          */
         $this->load_markets();
         $market = $this->market($symbol);
-        $endTime = Date.now ();
+        $endTime = $this->milliseconds();
         $request = array(
             'symbol' => $market['base'] . $market['quote'],
             'from' => ($endTime / 1000) - (24 * 60 * 60),
@@ -477,7 +477,7 @@ class sarrafex extends Exchange {
         );
         $orderBook = $this->publicGetApiGatewayExchangerOrderbook ($request);
         $orderBook = $this->safe_dict($orderBook, 0);
-        $timestamp = Date.now ();
+        $timestamp = $this->milliseconds();
         return $this->parse_order_book($orderBook, $symbol, $timestamp, 'bids', 'asks', 'price', 'quantity');
     }
 

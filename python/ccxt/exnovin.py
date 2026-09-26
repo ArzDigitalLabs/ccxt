@@ -350,7 +350,7 @@ class exnovin(Exchange, ImplicitAPI):
             else:
                 asks.append(orderBook[index])
         orderBook = {'bids': bids, 'asks': asks}
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'amount')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):
