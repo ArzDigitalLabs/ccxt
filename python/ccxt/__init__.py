@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.20.2'
+__version__ = '4.21.0'
 
 # ----------------------------------------------------------------------------
 
@@ -88,6 +88,7 @@ from ccxt.abantether import abantether                                # noqa: F4
 from ccxt.afratether import afratether                                # noqa: F401
 from ccxt.alpaca import alpaca                                        # noqa: F401
 from ccxt.apex import apex                                            # noqa: F401
+from ccxt.ariomex import ariomex                                      # noqa: F401
 from ccxt.arzinja import arzinja                                      # noqa: F401
 from ccxt.arzplus import arzplus                                      # noqa: F401
 from ccxt.asacoine import asacoine                                    # noqa: F401
@@ -221,6 +222,7 @@ from ccxt.phemex import phemex                                        # noqa: F4
 from ccxt.pingi import pingi                                          # noqa: F401
 from ccxt.poloniex import poloniex                                    # noqa: F401
 from ccxt.pooleno import pooleno                                      # noqa: F401
+from ccxt.poulyar import poulyar                                      # noqa: F401
 from ccxt.probit import probit                                        # noqa: F401
 from ccxt.raastin import raastin                                      # noqa: F401
 from ccxt.ramzinex import ramzinex                                    # noqa: F401
@@ -262,6 +264,7 @@ exchanges = [
     'afratether',
     'alpaca',
     'apex',
+    'ariomex',
     'arzinja',
     'arzplus',
     'asacoine',
@@ -395,6 +398,7 @@ exchanges = [
     'pingi',
     'poloniex',
     'pooleno',
+    'poulyar',
     'probit',
     'raastin',
     'ramzinex',

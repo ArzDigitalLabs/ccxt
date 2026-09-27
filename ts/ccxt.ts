@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.20.2';
+const version = '4.21.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -50,6 +50,7 @@ import abantether from  './src/abantether.js'
 import afratether from  './src/afratether.js'
 import alpaca from  './src/alpaca.js'
 import apex from  './src/apex.js'
+import ariomex from  './src/ariomex.js'
 import arzinja from  './src/arzinja.js'
 import arzplus from  './src/arzplus.js'
 import asacoine from  './src/asacoine.js'
@@ -183,6 +184,7 @@ import phemex from  './src/phemex.js'
 import pingi from  './src/pingi.js'
 import poloniex from  './src/poloniex.js'
 import pooleno from  './src/pooleno.js'
+import poulyar from  './src/poulyar.js'
 import probit from  './src/probit.js'
 import raastin from  './src/raastin.js'
 import ramzinex from  './src/ramzinex.js'
@@ -299,6 +301,7 @@ const exchanges = {
     'afratether':             afratether,
     'alpaca':                 alpaca,
     'apex':                   apex,
+    'ariomex':                ariomex,
     'arzinja':                arzinja,
     'arzplus':                arzplus,
     'asacoine':               asacoine,
@@ -432,6 +435,7 @@ const exchanges = {
     'pingi':                  pingi,
     'poloniex':               poloniex,
     'pooleno':                pooleno,
+    'poulyar':                poulyar,
     'probit':                 probit,
     'raastin':                raastin,
     'ramzinex':               ramzinex,
@@ -691,6 +695,7 @@ export {
     afratether,
     alpaca,
     apex,
+    ariomex,
     arzinja,
     arzplus,
     asacoine,
@@ -824,6 +829,7 @@ export {
     pingi,
     poloniex,
     pooleno,
+    poulyar,
     probit,
     raastin,
     ramzinex,

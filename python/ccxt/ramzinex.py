@@ -376,7 +376,7 @@ class ramzinex(Exchange, ImplicitAPI):
             'vwap': None,
             'open': open,
             'close': close,
-            'last': last,
+            'last': high,
             'previousClose': None,
             'change': change,
             'percentage': None,

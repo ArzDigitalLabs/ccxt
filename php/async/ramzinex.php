@@ -394,7 +394,7 @@ class ramzinex extends Exchange {
             'vwap' => null,
             'open' => $open,
             'close' => $close,
-            'last' => $last,
+            'last' => $high,
             'previousClose' => null,
             'change' => $change,
             'percentage' => null,

@@ -1,6 +1,6 @@
 import ccxt from './ts/ccxt.js';
 
-const exchange = new ccxt.asacoine ({
+const exchange = new ccxt.poulyar ({
     'enableRateLimit': true,
 });
 
@@ -28,16 +28,10 @@ function printTickers (label, tickers) {
 }
 
 async function main () {
-    const spotMarkets = await exchange.fetchMarkets ({ 'type': 'spot' });
-    printMarkets ('spot', spotMarkets);
-
-    const spotTickers = await exchange.fetchTickers (undefined, { 'type': 'spot' });
-    printTickers ('spot', spotTickers);
-
-    const otcMarkets = await exchange.fetchMarkets ({ 'type': 'otc' });
+    const otcMarkets = await exchange.fetchMarkets ();
     printMarkets ('otc', otcMarkets);
 
-    const otcTickers = await exchange.fetchTickers (undefined, { 'type': 'otc' });
+    const otcTickers = await exchange.fetchTickers ();
     printTickers ('otc', otcTickers);
 }
 

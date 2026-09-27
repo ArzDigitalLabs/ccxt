@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.20.2'
+__version__ = '4.21.0'
 
 # -----------------------------------------------------------------------------
 
@@ -68,6 +68,7 @@ from ccxt.async_support.abantether import abantether                            
 from ccxt.async_support.afratether import afratether                            # noqa: F401
 from ccxt.async_support.alpaca import alpaca                                    # noqa: F401
 from ccxt.async_support.apex import apex                                        # noqa: F401
+from ccxt.async_support.ariomex import ariomex                                  # noqa: F401
 from ccxt.async_support.arzinja import arzinja                                  # noqa: F401
 from ccxt.async_support.arzplus import arzplus                                  # noqa: F401
 from ccxt.async_support.asacoine import asacoine                                # noqa: F401
@@ -201,6 +202,7 @@ from ccxt.async_support.phemex import phemex                                    
 from ccxt.async_support.pingi import pingi                                      # noqa: F401
 from ccxt.async_support.poloniex import poloniex                                # noqa: F401
 from ccxt.async_support.pooleno import pooleno                                  # noqa: F401
+from ccxt.async_support.poulyar import poulyar                                  # noqa: F401
 from ccxt.async_support.probit import probit                                    # noqa: F401
 from ccxt.async_support.raastin import raastin                                  # noqa: F401
 from ccxt.async_support.ramzinex import ramzinex                                # noqa: F401
@@ -242,6 +244,7 @@ exchanges = [
     'afratether',
     'alpaca',
     'apex',
+    'ariomex',
     'arzinja',
     'arzplus',
     'asacoine',
@@ -375,6 +378,7 @@ exchanges = [
     'pingi',
     'poloniex',
     'pooleno',
+    'poulyar',
     'probit',
     'raastin',
     'ramzinex',

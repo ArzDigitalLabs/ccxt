@@ -16,6 +16,7 @@ var abantether = require('./src/abantether.js');
 var afratether = require('./src/afratether.js');
 var alpaca = require('./src/alpaca.js');
 var apex = require('./src/apex.js');
+var ariomex = require('./src/ariomex.js');
 var arzinja = require('./src/arzinja.js');
 var arzplus = require('./src/arzplus.js');
 var asacoine = require('./src/asacoine.js');
@@ -149,6 +150,7 @@ var phemex = require('./src/phemex.js');
 var pingi = require('./src/pingi.js');
 var poloniex = require('./src/poloniex.js');
 var pooleno = require('./src/pooleno.js');
+var poulyar = require('./src/poulyar.js');
 var probit = require('./src/probit.js');
 var raastin = require('./src/raastin.js');
 var ramzinex = require('./src/ramzinex.js');
@@ -260,13 +262,14 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.20.2';
+const version = '4.21.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
     'afratether': afratether["default"],
     'alpaca': alpaca["default"],
     'apex': apex["default"],
+    'ariomex': ariomex["default"],
     'arzinja': arzinja["default"],
     'arzplus': arzplus["default"],
     'asacoine': asacoine["default"],
@@ -400,6 +403,7 @@ const exchanges = {
     'pingi': pingi["default"],
     'poloniex': poloniex["default"],
     'pooleno': pooleno["default"],
+    'poulyar': poulyar["default"],
     'probit': probit["default"],
     'raastin': raastin["default"],
     'ramzinex': ramzinex["default"],
@@ -566,6 +570,7 @@ exports.abantether = abantether["default"];
 exports.afratether = afratether["default"];
 exports.alpaca = alpaca["default"];
 exports.apex = apex["default"];
+exports.ariomex = ariomex["default"];
 exports.arzinja = arzinja["default"];
 exports.arzplus = arzplus["default"];
 exports.asacoine = asacoine["default"];
@@ -699,6 +704,7 @@ exports.phemex = phemex["default"];
 exports.pingi = pingi["default"];
 exports.poloniex = poloniex["default"];
 exports.pooleno = pooleno["default"];
+exports.poulyar = poulyar["default"];
 exports.probit = probit["default"];
 exports.raastin = raastin["default"];
 exports.ramzinex = ramzinex["default"];

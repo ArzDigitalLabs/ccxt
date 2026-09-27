@@ -390,7 +390,7 @@ export default class ramzinex extends Exchange {
             'vwap': undefined,
             'open': open,
             'close': close,
-            'last': last,
+            'last': high,
             'previousClose': undefined,
             'change': change,
             'percentage': undefined,

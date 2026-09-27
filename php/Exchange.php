@@ -43,7 +43,7 @@ use BN\BN;
 use Sop\ASN1\Type\UnspecifiedType;
 use Exception;
 
-$version = '4.20.2';
+$version = '4.21.0';
 
 // rounding mode
 const TRUNCATE = 0;
@@ -62,7 +62,7 @@ const PAD_WITH_ZERO = 6;
 
 class Exchange {
 
-    const VERSION = '4.20.2';
+    const VERSION = '4.21.0';
 
     private static $base58_alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
     private static $base58_encoder = null;
@@ -342,6 +342,7 @@ class Exchange {
         'afratether',
         'alpaca',
         'apex',
+        'ariomex',
         'arzinja',
         'arzplus',
         'asacoine',
@@ -475,6 +476,7 @@ class Exchange {
         'pingi',
         'poloniex',
         'pooleno',
+        'poulyar',
         'probit',
         'raastin',
         'ramzinex',
