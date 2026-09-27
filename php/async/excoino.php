@@ -349,7 +349,7 @@ class excoino extends Exchange {
              */
             Async\await($this->load_markets());
             $market = $this->market($symbol);
-            $endTime = Date.now ();
+            $endTime = $this->milliseconds();
             $request = array(
                 'symbol' => $market['id'],
                 'from' => $endTime - (24 * 60 * 60 * 1000),
@@ -415,7 +415,7 @@ class excoino extends Exchange {
                 $orderBook['bids'] = $bids;
                 $orderBook['asks'] = $asks;
             }
-            $timestamp = Date.now ();
+            $timestamp = $this->milliseconds();
             return $this->parse_order_book($orderBook, $symbol, $timestamp, 'bids', 'asks', 'price', 'amount');
         }) ();
     }

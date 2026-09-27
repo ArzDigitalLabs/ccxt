@@ -331,7 +331,7 @@ class excoino(Exchange, ImplicitAPI):
         """
         self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['id'],
             'from': endTime - (24 * 60 * 60 * 1000),
@@ -387,7 +387,7 @@ class excoino(Exchange, ImplicitAPI):
             asks = self.safe_dict(asks, 'items')
             orderBook['bids'] = bids
             orderBook['asks'] = asks
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'amount')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

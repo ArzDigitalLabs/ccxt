@@ -515,7 +515,7 @@ export default class arzplus extends Exchange {
          */
         await this.loadMarkets (false, { 'type': 'otc' });
         const market = this.market (symbol);
-        const endTime = Date.now ();
+        const endTime = this.milliseconds ();
         const request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -566,7 +566,7 @@ export default class arzplus extends Exchange {
             'symbol': market['id'],
         };
         const orderBook = await this.publicGetApiV1MarketDepth (request);
-        const timestamp = Date.now ();
+        const timestamp = this.milliseconds ();
         return this.parseOrderBook (orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
     }
 

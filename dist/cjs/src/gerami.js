@@ -51,7 +51,7 @@ class gerami extends Exchange["default"] {
         });
     }
     async fetchMarkets(params = {}) {
-        const marketIds = ['XAU750g_IRT', 'XAG999g_IRT'];
+        const marketIds = ['XAU750g_IRT', 'XAG999g_IRT', 'XCU9999g_IRT'];
         const result = [];
         for (let i = 0; i < marketIds.length; i++) {
             const response = await this.publicGetPairsPair(this.extend({
@@ -68,6 +68,9 @@ class gerami extends Exchange["default"] {
         let base = 'XAG-1G';
         if (baseId === 'XAU750g') {
             base = 'XAU18';
+        }
+        if (baseId === 'XCU9999g') {
+            base = 'XCU-1G';
         }
         return {
             'id': this.safeString(data, 'market'),
@@ -123,7 +126,7 @@ class gerami extends Exchange["default"] {
         if (symbols !== undefined) {
             symbols = this.marketSymbols(symbols);
         }
-        const marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT'];
+        const marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT', 'XCU-1G/IRT'];
         const result = {};
         for (let i = 0; i < marketSymbols.length; i++) {
             const market = this.market(marketSymbols[i]);

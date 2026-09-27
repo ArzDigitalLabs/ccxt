@@ -382,7 +382,7 @@ class wallex(Exchange, ImplicitAPI):
         """
         await self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -431,7 +431,7 @@ class wallex(Exchange, ImplicitAPI):
         }
         response = await self.publicGetV1Depth(request)
         orderBook = self.safe_dict(response, 'result', {})
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderBook, symbol, timestamp, 'bid', 'ask', 'price', 'quantity')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

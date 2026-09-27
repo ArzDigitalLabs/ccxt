@@ -417,7 +417,7 @@ class ompfinex extends Exchange {
             if ($market['quote'] === 'IRT') {
                 $symbol = $market['base'] . 'IRR';
             }
-            $endTime = Date.now ();
+            $endTime = $this->milliseconds();
             $request = array(
                 'symbol' => str_replace('/', '', $symbol),
                 'from' => ($endTime / 1000) - (24 * 60 * 60),
@@ -491,7 +491,7 @@ class ompfinex extends Exchange {
             } else {
                 $orderbook = $this->safe_dict($orderbook, $market['base'] . $market['quote']);
             }
-            $timestamp = Date.now ();
+            $timestamp = $this->milliseconds();
             return $this->parse_order_book($orderbook, $symbol, $timestamp, 'bids', 'asks', 'price', 'amount');
         }) ();
     }

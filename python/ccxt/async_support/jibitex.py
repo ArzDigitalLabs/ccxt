@@ -340,7 +340,7 @@ class jibitex(Exchange, ImplicitAPI):
         """
         await self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'market': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -383,7 +383,7 @@ class jibitex(Exchange, ImplicitAPI):
         }
         response = await self.publicGetApi1OrdersOrderBookMarket(request)
         orderBook = self.safe_dict(response, 'content')
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderBook, symbol, timestamp, 'buys', 'sells', 'unitPrice', 'size')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

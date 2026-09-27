@@ -422,7 +422,7 @@ class ramzinex extends Exchange {
             if ($market['quote'] === 'IRT') {
                 $symbol = $market['base'] . 'IRR';
             }
-            $endTime = Date.now ();
+            $endTime = $this->milliseconds();
             $request = array(
                 'symbol' => str_replace('/', '', $symbol),
                 'from' => ($endTime / 1000) - (24 * 60 * 60),
@@ -448,11 +448,11 @@ class ramzinex extends Exchange {
             $ohlcvs = array();
             for ($i = 0; $i < count($openList); $i++) {
                 if ($market['quote'] === 'IRT') {
-                    $openList[$i] = $openList[$i] ? $openList[$i] / 10 : 0;
-                    $highList[$i] = $highList[$i] ? $highList[$i] / 10 : 0;
-                    $lastList[$i] = $lastList[$i] ? $lastList[$i] / 10 : 0;
-                    $closeList[$i] = $closeList[$i] ? $closeList[$i] / 10 : 0;
-                    $volumeList[$i] = $volumeList[$i] ? $volumeList[$i] / 10 : 0;
+                    $openList[$i] = $openList[$i] ? $this->parse_to_numeric($openList[$i]) / 10 : 0;
+                    $highList[$i] = $highList[$i] ? $this->parse_to_numeric($highList[$i]) / 10 : 0;
+                    $lastList[$i] = $lastList[$i] ? $this->parse_to_numeric($lastList[$i]) / 10 : 0;
+                    $closeList[$i] = $closeList[$i] ? $this->parse_to_numeric($closeList[$i]) / 10 : 0;
+                    $volumeList[$i] = $volumeList[$i] ? $this->parse_to_numeric($volumeList[$i]) / 10 : 0;
                 }
                 $ohlcvs[] = [
                     $timestampList[$i],
@@ -488,15 +488,15 @@ class ramzinex extends Exchange {
                 $bids = $this->safe_list($orderbook, 'sells');
                 $asks = $this->safe_list($orderbook, 'buys');
                 for ($i = 0; $i < count($bids); $i++) {
-                    $bids[$i][0] = $bids[$i][0] ? $bids[$i][0] / 10 : 0;
+                    $bids[$i][0] = $bids[$i][0] ? $this->parse_to_numeric($bids[$i][0]) / 10 : 0;
                 }
                 for ($i = 0; $i < count($asks); $i++) {
-                    $asks[$i][0] = $asks[$i][0] ? $asks[$i][0] / 10 : 0;
+                    $asks[$i][0] = $asks[$i][0] ? $this->parse_to_numeric($asks[$i][0]) / 10 : 0;
                 }
                 $orderbook['buys'] = $asks;
                 $orderbook['sells'] = $bids;
             }
-            $timestamp = Date.now ();
+            $timestamp = $this->milliseconds();
             return $this->parse_order_book($orderbook, $symbol, $timestamp, 'sells', 'buys');
         }) ();
     }

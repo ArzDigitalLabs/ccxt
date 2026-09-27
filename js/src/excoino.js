@@ -345,7 +345,7 @@ export default class excoino extends Exchange {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': endTime - (24 * 60 * 60 * 1000),
@@ -411,7 +411,7 @@ export default class excoino extends Exchange {
             orderBook['bids'] = bids;
             orderBook['asks'] = asks;
         }
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'amount');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {

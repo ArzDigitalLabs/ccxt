@@ -404,7 +404,7 @@ class bitpin extends Exchange {
          */
         $this->load_markets();
         $market = $this->market($symbol);
-        $endTime = Date.now ();
+        $endTime = $this->milliseconds();
         $request = array(
             'symbol' => str_replace('/', '_', $market['symbol']),
             'from' => ($endTime / 1000) - (24 * 60 * 60),
@@ -463,7 +463,7 @@ class bitpin extends Exchange {
             $askslist[] = array( 'price' => $this->safe_float($ask, 0), 'amount' => $this->safe_float($ask, 1) );
         }
         $orderBook = array( 'bid' => $bidlist, 'ask' => $askslist );
-        $timestamp = Date.now ();
+        $timestamp = $this->milliseconds();
         return $this->parse_order_book($orderBook, $symbol, $timestamp, 'bid', 'ask', 'price', 'amount');
     }
 
@@ -474,7 +474,7 @@ class bitpin extends Exchange {
             $url = $this->urls['api']['OHLCV'] . '/' . $path . '?' . $this->urlencode($query);
         }
         if ($path === 'v4/mth/orderbook/') {
-            $url = $url . $params['symbol'] . '/?limit=' . $params['limit'];
+            $url = $url . $params['symbol'] . '/?limit=' . $this->number_to_string($params['limit']);
         }
         $headers = array( 'Content-Type' => 'application/json' );
         return array( 'url' => $url, 'method' => $method, 'body' => $body, 'headers' => $headers );

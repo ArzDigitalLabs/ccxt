@@ -346,7 +346,7 @@ class hitobit extends Exchange {
          */
         $this->load_markets();
         $market = $this->market($symbol);
-        $endTime = Date.now ();
+        $endTime = $this->milliseconds();
         $request = array(
             'symbol' => $market['id'],
             'from' => $this->iso8601(($endTime) - (24 * 60 * 60)),
@@ -394,7 +394,7 @@ class hitobit extends Exchange {
             'limit' => 30,
         );
         $orderBook = $this->publicGetHapiExchangeV1PublicDepth ($request);
-        $timestamp = Date.now ();
+        $timestamp = $this->milliseconds();
         return $this->parse_order_book($orderBook, $symbol, $timestamp, 'bids', 'asks');
     }
 

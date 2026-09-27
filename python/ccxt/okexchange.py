@@ -300,7 +300,7 @@ class okexchange(Exchange, ImplicitAPI):
         """
         self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': symbol.replace('/', ''),
             'startTime': endTime - 24 * 60 * 60 * 1000,
@@ -335,7 +335,7 @@ class okexchange(Exchange, ImplicitAPI):
         }
         response = self.publicGetOapiV1MarketOrderbook(request)
         orderBook = self.safe_dict(response, 'books', {})
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderBook, symbol, timestamp)
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

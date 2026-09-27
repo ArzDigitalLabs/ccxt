@@ -414,7 +414,7 @@ class sarrafex(Exchange, ImplicitAPI):
         """
         await self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['base'] + market['quote'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -464,7 +464,7 @@ class sarrafex(Exchange, ImplicitAPI):
         }
         orderBook = await self.publicGetApiGatewayExchangerOrderbook(request)
         orderBook = self.safe_dict(orderBook, 0)
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'quantity')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

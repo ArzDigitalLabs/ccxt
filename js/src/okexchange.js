@@ -315,7 +315,7 @@ export default class okexchange extends Exchange {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': symbol.replace('/', ''),
             'startTime': endTime - 24 * 60 * 60 * 1000,
@@ -355,7 +355,7 @@ export default class okexchange extends Exchange {
         };
         const response = await this.publicGetOapiV1MarketOrderbook(request);
         const orderBook = this.safeDict(response, 'books', {});
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp);
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {

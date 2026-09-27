@@ -385,7 +385,7 @@ class pingi extends Exchange {
          */
         $this->load_markets();
         $market = $this->market($symbol);
-        $endTime = Date.now ();
+        $endTime = $this->milliseconds();
         $request = array(
             'symbol' => $market['base'] . '/' . $market['quote'],
             'resolution' => $this->safe_string($this->timeframes, $timeframe, $timeframe),

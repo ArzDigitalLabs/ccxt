@@ -314,7 +314,7 @@ class exir(Exchange, ImplicitAPI):
         """
         await self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -362,7 +362,7 @@ class exir(Exchange, ImplicitAPI):
             'symbol': market['id'],
         }
         response = await self.publicGetV2Orderbook(request)
-        timestamp = self.safe_timestamp(response[market['id']], 'timestamp') / 1000
+        timestamp = self.safe_timestamp(response[market['id']], 'timestamp', 0) / 1000
         return self.parse_order_book(response[market['id']], symbol, timestamp)
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

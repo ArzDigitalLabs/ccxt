@@ -56,7 +56,7 @@ export default class melligold extends Exchange {
         });
     }
     async fetchMarkets(params = {}) {
-        const symbols = ['XAU18', 'XAG'];
+        const symbols = ['XAU18', 'XAG', 'XCU'];
         const result = [];
         for (let i = 0; i < symbols.length; i++) {
             const response = await this.requestWithCookie(this.extend({
@@ -107,6 +107,9 @@ export default class melligold extends Exchange {
         let base = this.safeCurrencyCode(baseId);
         if (base === 'XAG') {
             base = 'XAG-1G';
+        }
+        if (base === 'XCU') {
+            base = 'XCU-1G';
         }
         const quote = 'IRT';
         return {
@@ -165,7 +168,7 @@ export default class melligold extends Exchange {
             symbols = this.marketSymbols(symbols);
         }
         const result = {};
-        const marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT'];
+        const marketSymbols = ['XAU18/IRT', 'XAG-1G/IRT', 'XCU-1G/IRT'];
         for (let i = 0; i < marketSymbols.length; i++) {
             const market = this.market(marketSymbols[i]);
             const response = await this.requestWithCookie(this.extend({

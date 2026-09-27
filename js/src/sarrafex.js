@@ -427,7 +427,7 @@ export default class sarrafex extends Exchange {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['base'] + market['quote'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -483,7 +483,7 @@ export default class sarrafex extends Exchange {
         };
         let orderBook = await this.publicGetApiGatewayExchangerOrderbook(request);
         orderBook = this.safeDict(orderBook, 0);
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bids', 'asks', 'price', 'quantity');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {

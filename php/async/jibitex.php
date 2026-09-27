@@ -357,7 +357,7 @@ class jibitex extends Exchange {
              */
             Async\await($this->load_markets());
             $market = $this->market($symbol);
-            $endTime = Date.now ();
+            $endTime = $this->milliseconds();
             $request = array(
                 'market' => $market['id'],
                 'from' => ($endTime / 1000) - (24 * 60 * 60),
@@ -406,7 +406,7 @@ class jibitex extends Exchange {
             );
             $response = Async\await($this->publicGetApi1OrdersOrderBookMarket ($request));
             $orderBook = $this->safe_dict($response, 'content');
-            $timestamp = Date.now ();
+            $timestamp = $this->milliseconds();
             return $this->parse_order_book($orderBook, $symbol, $timestamp, 'buys', 'sells', 'unitPrice', 'size');
         }) ();
     }

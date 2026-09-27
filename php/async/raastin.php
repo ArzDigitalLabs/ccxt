@@ -502,7 +502,7 @@ class raastin extends Exchange {
             //   "bids" => [array( "price" => "164003", "amount" => "19.99", "depth" => "1", "total" => "3278419" )],
             //   "asks" => [array( "price" => "166000", "amount" => "47.79", "depth" => "2", "total" => "7933140" )]
             // }
-            $timestamp = Date.now ();
+            $timestamp = $this->milliseconds();
             return $this->parse_order_book($response, $symbol, $timestamp, 'bids', 'asks', 'price', 'amount');
         }) ();
     }

@@ -319,7 +319,7 @@ class tabdeal extends Exchange {
              */
             Async\await($this->load_markets());
             $market = $this->market($symbol);
-            $endTime = Date.now ();
+            $endTime = $this->milliseconds();
             $request = array(
                 'symbol' => $market['id'],
                 'from' => ($endTime / 1000) - (24 * 60 * 60),
@@ -374,7 +374,7 @@ class tabdeal extends Exchange {
                 'tabdealSymbol' => $market['id'],
             );
             $response = Async\await($this->publicGetRApiV1Depth ($request));
-            $timestamp = Date.now ();
+            $timestamp = $this->milliseconds();
             return $this->parse_order_book($response, $symbol, $timestamp);
         }) ();
     }

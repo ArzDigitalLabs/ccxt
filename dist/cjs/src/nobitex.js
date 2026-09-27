@@ -357,7 +357,7 @@ class nobitex extends nobitex$1["default"] {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         if (market['quote'] === 'IRT') {
             market['id'] = market['symbol'].replace('/', '');
         }
@@ -424,10 +424,10 @@ class nobitex extends nobitex$1["default"] {
             const bids = this.safeList(response, 'bids');
             const asks = this.safeList(response, 'asks');
             for (let i = 0; i < bids.length; i++) {
-                bids[i][0] = bids[i][0] ? bids[i][0] / 10 : 0;
+                bids[i][0] = bids[i][0] ? this.parseToNumeric(bids[i][0]) / 10 : 0;
             }
             for (let i = 0; i < asks.length; i++) {
-                asks[i][0] = asks[i][0] ? asks[i][0] / 10 : 0;
+                asks[i][0] = asks[i][0] ? this.parseToNumeric(asks[i][0]) / 10 : 0;
             }
             response['bids'] = bids;
             response['asks'] = asks;

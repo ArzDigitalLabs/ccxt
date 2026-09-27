@@ -328,7 +328,7 @@ class exir extends exir$1["default"] {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -381,7 +381,7 @@ class exir extends exir$1["default"] {
             'symbol': market['id'],
         };
         const response = await this.publicGetV2Orderbook(request);
-        const timestamp = this.safeTimestamp(response[market['id']], 'timestamp') / 1000;
+        const timestamp = this.safeTimestamp(response[market['id']], 'timestamp', 0) / 1000;
         return this.parseOrderBook(response[market['id']], symbol, timestamp);
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {

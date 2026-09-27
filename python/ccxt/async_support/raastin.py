@@ -470,7 +470,7 @@ class raastin(Exchange, ImplicitAPI):
         #   "bids": [{"price": "164003", "amount": "19.99", "depth": "1", "total": "3278419"}],
         #   "asks": [{"price": "166000", "amount": "47.79", "depth": "2", "total": "7933140"}]
         # }
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(response, symbol, timestamp, 'bids', 'asks', 'price', 'amount')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

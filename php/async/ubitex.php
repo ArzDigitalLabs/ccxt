@@ -360,7 +360,7 @@ class ubitex extends Exchange {
              */
             Async\await($this->load_markets());
             $market = $this->market($symbol);
-            $endTime = Date.now ();
+            $endTime = $this->milliseconds();
             $request = array(
                 'symbol' => $market['base'] . $market['quote'],
                 'from' => ($endTime / 1000) - (24 * 60 * 60),
@@ -417,7 +417,7 @@ class ubitex extends Exchange {
                 'id' => $market['id'],
             );
             $orderBook = Async\await($this->publicGetApiDashboard ($request));
-            $timestamp = Date.now ();
+            $timestamp = $this->milliseconds();
             return $this->parse_order_book($orderBook, $symbol, $timestamp, 'buyers', 'sellers', 'price', 'totalAmount');
         }) ();
     }

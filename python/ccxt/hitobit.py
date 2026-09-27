@@ -338,7 +338,7 @@ class hitobit(Exchange, ImplicitAPI):
         """
         self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['id'],
             'from': self.iso8601((endTime) - (24 * 60 * 60)),
@@ -381,7 +381,7 @@ class hitobit(Exchange, ImplicitAPI):
             'limit': 30,
         }
         orderBook = self.publicGetHapiExchangeV1PublicDepth(request)
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderBook, symbol, timestamp, 'bids', 'asks')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

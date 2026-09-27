@@ -375,7 +375,7 @@ class pingi(Exchange, ImplicitAPI):
         """
         self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['base'] + '/' + market['quote'],
             'resolution': self.safe_string(self.timeframes, timeframe, timeframe),

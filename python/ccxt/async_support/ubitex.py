@@ -343,7 +343,7 @@ class ubitex(Exchange, ImplicitAPI):
         """
         await self.load_markets()
         market = self.market(symbol)
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': market['base'] + market['quote'],
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -393,7 +393,7 @@ class ubitex(Exchange, ImplicitAPI):
             'id': market['id'],
         }
         orderBook = await self.publicGetApiDashboard(request)
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderBook, symbol, timestamp, 'buyers', 'sellers', 'price', 'totalAmount')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

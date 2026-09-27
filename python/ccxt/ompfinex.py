@@ -397,7 +397,7 @@ class ompfinex(Exchange, ImplicitAPI):
         market = self.market(symbol)
         if market['quote'] == 'IRT':
             symbol = market['base'] + 'IRR'
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': symbol.replace('/', ''),
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -461,7 +461,7 @@ class ompfinex(Exchange, ImplicitAPI):
             orderbook['asks'] = bids
         else:
             orderbook = self.safe_dict(orderbook, market['base'] + market['quote'])
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderbook, symbol, timestamp, 'bids', 'asks', 'price', 'amount')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):

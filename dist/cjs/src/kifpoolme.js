@@ -362,7 +362,7 @@ class kifpoolme extends kifpoolme$1["default"] {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['baseId'],
             'currency': market['quoteId'],

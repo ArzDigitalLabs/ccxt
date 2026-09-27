@@ -409,7 +409,7 @@ export default class bitpin extends Exchange {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['symbol'].replace('/', '_'),
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -469,7 +469,7 @@ export default class bitpin extends Exchange {
             askslist.push({ 'price': this.safeFloat(ask, 0), 'amount': this.safeFloat(ask, 1) });
         }
         const orderBook = { 'bid': bidlist, 'ask': askslist };
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bid', 'ask', 'price', 'amount');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
@@ -479,7 +479,7 @@ export default class bitpin extends Exchange {
             url = this.urls['api']['OHLCV'] + '/' + path + '?' + this.urlencode(query);
         }
         if (path === 'v4/mth/orderbook/') {
-            url = url + params['symbol'] + '/?limit=' + params['limit'];
+            url = url + params['symbol'] + '/?limit=' + this.numberToString(params['limit']);
         }
         headers = { 'Content-Type': 'application/json' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };

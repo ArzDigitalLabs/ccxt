@@ -350,7 +350,7 @@ class hitobit extends hitobit$1["default"] {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['id'],
             'from': this.iso8601((endTime) - (24 * 60 * 60)),
@@ -399,7 +399,7 @@ class hitobit extends hitobit$1["default"] {
             'limit': 30,
         };
         const orderBook = await this.publicGetHapiExchangeV1PublicDepth(request);
-        const timestamp = Date.now();
+        const timestamp = this.milliseconds();
         return this.parseOrderBook(orderBook, symbol, timestamp, 'bids', 'asks');
     }
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {

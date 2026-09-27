@@ -360,7 +360,7 @@ class exnovin extends Exchange {
             }
         }
         $orderBook = array( 'bids' => $bids, 'asks' => $asks );
-        $timestamp = Date.now ();
+        $timestamp = $this->milliseconds();
         return $this->parse_order_book($orderBook, $symbol, $timestamp, 'bids', 'asks', 'price', 'amount');
     }
 

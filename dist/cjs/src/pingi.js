@@ -389,7 +389,7 @@ class pingi extends pingi$1["default"] {
          */
         await this.loadMarkets();
         const market = this.market(symbol);
-        const endTime = Date.now();
+        const endTime = this.milliseconds();
         const request = {
             'symbol': market['base'] + '/' + market['quote'],
             'resolution': this.safeString(this.timeframes, timeframe, timeframe),

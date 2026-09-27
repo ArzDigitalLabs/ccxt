@@ -401,7 +401,7 @@ class ramzinex(Exchange, ImplicitAPI):
         market = self.market(symbol)
         if market['quote'] == 'IRT':
             symbol = market['base'] + 'IRR'
-        endTime = Date.now()
+        endTime = self.milliseconds()
         request = {
             'symbol': symbol.replace('/', ''),
             'from': (endTime / 1000) - (24 * 60 * 60),
@@ -425,11 +425,11 @@ class ramzinex(Exchange, ImplicitAPI):
         ohlcvs = []
         for i in range(0, len(openList)):
             if market['quote'] == 'IRT':
-                openList[i] = openList[i] / 10 if openList[i] else 0
-                highList[i] = highList[i] / 10 if highList[i] else 0
-                lastList[i] = lastList[i] / 10 if lastList[i] else 0
-                closeList[i] = closeList[i] / 10 if closeList[i] else 0
-                volumeList[i] = volumeList[i] / 10 if volumeList[i] else 0
+                openList[i] = self.parse_to_numeric(openList[i]) / 10 if openList[i] else 0
+                highList[i] = self.parse_to_numeric(highList[i]) / 10 if highList[i] else 0
+                lastList[i] = self.parse_to_numeric(lastList[i]) / 10 if lastList[i] else 0
+                closeList[i] = self.parse_to_numeric(closeList[i]) / 10 if closeList[i] else 0
+                volumeList[i] = self.parse_to_numeric(volumeList[i]) / 10 if volumeList[i] else 0
             ohlcvs.append([
                 timestampList[i],
                 openList[i],
@@ -460,12 +460,12 @@ class ramzinex(Exchange, ImplicitAPI):
             bids = self.safe_list(orderbook, 'sells')
             asks = self.safe_list(orderbook, 'buys')
             for i in range(0, len(bids)):
-                bids[i][0] = bids[i][0] / 10 if bids[i][0] else 0
+                bids[i][0] = self.parse_to_numeric(bids[i][0]) / 10 if bids[i][0] else 0
             for i in range(0, len(asks)):
-                asks[i][0] = asks[i][0] / 10 if asks[i][0] else 0
+                asks[i][0] = self.parse_to_numeric(asks[i][0]) / 10 if asks[i][0] else 0
             orderbook['buys'] = asks
             orderbook['sells'] = bids
-        timestamp = Date.now()
+        timestamp = self.milliseconds()
         return self.parse_order_book(orderbook, symbol, timestamp, 'sells', 'buys')
 
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):
