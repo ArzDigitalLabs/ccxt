@@ -418,7 +418,7 @@ export default class ubitex extends Exchange {
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api']['public'] + '/' + path;
-        if (params['src'] !== undefined && params['dest'] !== undefined) {
+        if (this.safeString(params, 'src') !== undefined && this.safeString(params, 'dest') !== undefined) {
             url = url + '?' + this.urlencode(query);
         }
         if (path === 'api/dashboard') {

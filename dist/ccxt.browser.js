@@ -398792,7 +398792,7 @@ class ubitex extends _abstract_ubitex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api']['public'] + '/' + path;
-        if (params['src'] !== undefined && params['dest'] !== undefined) {
+        if (this.safeString(params, 'src') !== undefined && this.safeString(params, 'dest') !== undefined) {
             url = url + '?' + this.urlencode(query);
         }
         if (path === 'api/dashboard') {
@@ -438072,7 +438072,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.21.0';
+const ccxt_version = '4.21.1';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 

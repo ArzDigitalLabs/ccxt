@@ -4,66 +4,38 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import gerami from './src/gerami.js';
-import melligold from './src/melligold.js';
-const exchanges = [
-    // { 'id': 'technogold', 'Exchange': technogold },
-    // { 'id': 'baazar', 'Exchange': baazar },
-    // { 'id': 'hamrahgold', 'Exchange': hamrahgold },
-    // { 'id': 'zarniv', 'Exchange': zarniv },
-    // { 'id': 'zarminex', 'Exchange': zarminex },
-    // { 'id': 'zarafza', 'Exchange': zarafza },
-    // { 'id': 'daric', 'Exchange': daric },
-    // { 'id': 'digikalagold', 'Exchange': digikalagold },
-    { 'id': 'gerami', 'Exchange': gerami },
-    // { 'id': 'goldika', 'Exchange': goldika },
-    // { 'id': 'goldis', 'Exchange': goldis },
-    { 'id': 'melligold', 'Exchange': melligold },
-    // { 'id': 'milligold', 'Exchange': milligold },
-    // { 'id': 'ramzinex', 'Exchange': ramzinex },
-    // { 'id': 'wallgold', 'Exchange': wallgold },
-    // { 'id': 'talapp', 'Exchange': talapp },
-    // { 'id': 'talaavan', 'Exchange': talaavan },
-    // { 'id': 'talasea', 'Exchange': talasea },
-    // { 'id': 'zarpin', 'Exchange': zarpin },
-];
-async function testExchange(id, ExchangeClass) {
-    const exchange = new ExchangeClass({
-        'enableRateLimit': true,
-        'timeout': 20000,
-    });
+import ariomex from './src/ariomex.js';
+import poulyar from './src/poulyar.js';
+import ourbit from './src/ourbit.js';
+import ubitex from './src/ubitex.js';
+async function testTicker(exchange, name, params = {}) {
     try {
-        const tickers = await exchange.fetchTickers();
-        const symbols = Object.keys(tickers);
-        for (let i = 0; i < symbols.length; i++) {
-            const symbol = symbols[i];
-            const ticker = tickers[symbol];
-            const bid = ticker['bid'];
-            const ask = ticker['ask'];
-            const last = ticker['last'];
-            if (bid !== undefined || ask !== undefined) {
-                let expectedLast = bid;
-                if (ask !== undefined && (expectedLast === undefined || ask > expectedLast)) {
-                    expectedLast = ask;
-                }
-                if (last !== expectedLast) {
-                    throw new Error(symbol + ' last=' + last + ', expected=' + expectedLast);
-                }
-            }
-            console.log(id + ' ' + symbol + ' bid=' + bid + ' ask=' + ask + ' last=' + last + ' OK');
+        await exchange.loadMarkets(false, params);
+        const symbol = exchange.markets['BTC/USDT'] ? 'BTC/USDT' : exchange.symbols[0];
+        if (symbol === undefined) {
+            throw new Error(`${name} returned no markets`);
         }
+        const ticker = await exchange.fetchTicker(symbol);
+        if (ticker.symbol !== symbol) {
+            throw new Error(`${name} returned ticker for ${ticker.symbol} instead of ${symbol}`);
+        }
+        console.log(`${name} ${symbol} ticker:`, {
+            symbol: ticker.symbol,
+            timestamp: ticker.timestamp,
+            datetime: ticker.datetime,
+            last: ticker.last,
+            bid: ticker.bid,
+            ask: ticker.ask,
+        });
     }
     finally {
         await exchange.close();
     }
 }
-async function main() {
-    for (let i = 0; i < exchanges.length; i++) {
-        const entry = exchanges[i];
-        await testExchange(entry['id'], entry['Exchange']);
-    }
+async function run() {
+    await testTicker(new ariomex({ enableRateLimit: true, timeout: 30000 }), 'Ariomex');
+    await testTicker(new poulyar({ enableRateLimit: true, timeout: 30000 }), 'Poulyar');
+    await testTicker(new ourbit({ enableRateLimit: true, timeout: 30000 }), 'Ourbit', { type: 'spot' });
+    await testTicker(new ubitex({ enableRateLimit: true, timeout: 30000 }), 'Ubitex');
 }
-main().catch((error) => {
-    console.error('Gold platform price test failed:', error);
-    process.exitCode = 1;
-});
+void run();

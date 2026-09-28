@@ -413,7 +413,7 @@ class ubitex extends Exchange {
     public function sign($path, $api = 'public', $method = 'GET', $params = array (), $headers = null, $body = null) {
         $query = $this->omit($params, $this->extract_params($path));
         $url = $this->urls['api']['public'] . '/' . $path;
-        if ($params['src'] !== null && $params['dest'] !== null) {
+        if ($this->safe_string($params, 'src') !== null && $this->safe_string($params, 'dest') !== null) {
             $url = $url . '?' . $this->urlencode($query);
         }
         if ($path === 'api/dashboard') {
