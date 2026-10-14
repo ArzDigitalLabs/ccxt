@@ -10,6 +10,7 @@ ccxt/abantether.py
 ccxt/afratether.py
 ccxt/alpaca.py
 ccxt/apex.py
+ccxt/ariomex.py
 ccxt/arzinja.py
 ccxt/arzplus.py
 ccxt/asacoine.py
@@ -143,6 +144,7 @@ ccxt/phemex.py
 ccxt/pingi.py
 ccxt/poloniex.py
 ccxt/pooleno.py
+ccxt/poulyar.py
 ccxt/probit.py
 ccxt/raastin.py
 ccxt/ramzinex.py
@@ -183,6 +185,7 @@ ccxt/abstract/abantether.py
 ccxt/abstract/afratether.py
 ccxt/abstract/alpaca.py
 ccxt/abstract/apex.py
+ccxt/abstract/ariomex.py
 ccxt/abstract/arzinja.py
 ccxt/abstract/arzplus.py
 ccxt/abstract/asacoine.py
@@ -316,6 +319,7 @@ ccxt/abstract/phemex.py
 ccxt/abstract/pingi.py
 ccxt/abstract/poloniex.py
 ccxt/abstract/pooleno.py
+ccxt/abstract/poulyar.py
 ccxt/abstract/probit.py
 ccxt/abstract/raastin.py
 ccxt/abstract/ramzinex.py
@@ -356,6 +360,7 @@ ccxt/async_support/abantether.py
 ccxt/async_support/afratether.py
 ccxt/async_support/alpaca.py
 ccxt/async_support/apex.py
+ccxt/async_support/ariomex.py
 ccxt/async_support/arzinja.py
 ccxt/async_support/arzplus.py
 ccxt/async_support/asacoine.py
@@ -489,6 +494,7 @@ ccxt/async_support/phemex.py
 ccxt/async_support/pingi.py
 ccxt/async_support/poloniex.py
 ccxt/async_support/pooleno.py
+ccxt/async_support/poulyar.py
 ccxt/async_support/probit.py
 ccxt/async_support/raastin.py
 ccxt/async_support/ramzinex.py

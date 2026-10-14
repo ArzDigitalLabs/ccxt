@@ -399,7 +399,7 @@ class ubitex(Exchange, ImplicitAPI):
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):
         query = self.omit(params, self.extract_params(path))
         url = self.urls['api']['public'] + '/' + path
-        if params['src'] is not None and params['dest'] is not None:
+        if self.safe_string(params, 'src') is not None and self.safe_string(params, 'dest') is not None:
             url = url + '?' + self.urlencode(query)
         if path == 'api/dashboard':
             url = url + '/' + params['id'] + '/market'

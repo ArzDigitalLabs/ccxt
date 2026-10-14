@@ -389,7 +389,7 @@ class ramzinex extends ramzinex$1["default"] {
             'vwap': undefined,
             'open': open,
             'close': close,
-            'last': last,
+            'last': high,
             'previousClose': undefined,
             'change': change,
             'percentage': undefined,

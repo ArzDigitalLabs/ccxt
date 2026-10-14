@@ -4,172 +4,28 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import wallex from './src/wallex.js';
-import nobitex from './src/nobitex.js';
-import bitpin from './src/bitpin.js';
-import tabdeal from './src/tabdeal.js';
-import ramzinex from './src/ramzinex.js';
-async function testRamzinexOrderBook() {
-    const exchange = new ramzinex({ enableRateLimit: true, timeout: 30000 });
+import ariomex from './src/ariomex.js';
+import poulyar from './src/poulyar.js';
+import ourbit from './src/ourbit.js';
+import ubitex from './src/ubitex.js';
+async function testTicker(exchange, name, params = {}) {
     try {
-        await exchange.loadMarkets();
-        const symbol = 'BTC/IRT';
-        if (!(symbol in exchange.markets)) {
-            throw new Error(`Ramzinex market ${symbol} was not found`);
+        await exchange.loadMarkets(false, params);
+        const symbol = exchange.markets['BTC/USDT'] ? 'BTC/USDT' : exchange.symbols[0];
+        if (symbol === undefined) {
+            throw new Error(`${name} returned no markets`);
         }
-        const orderBook = await exchange.fetchOrderBook(symbol);
-        if (!Array.isArray(orderBook.bids) || !Array.isArray(orderBook.asks)) {
-            throw new Error(`Ramzinex returned an invalid order book for ${symbol}`);
+        const ticker = await exchange.fetchTicker(symbol);
+        if (ticker.symbol !== symbol) {
+            throw new Error(`${name} returned ticker for ${ticker.symbol} instead of ${symbol}`);
         }
-        if (typeof orderBook.timestamp !== 'number') {
-            throw new Error(`Ramzinex returned an invalid order book timestamp for ${symbol}`);
-        }
-        if (orderBook.bids.length > 0 && typeof orderBook.bids[0][0] !== 'number') {
-            throw new Error(`Ramzinex returned a non-numeric bid price for ${symbol}`);
-        }
-        if (orderBook.asks.length > 0 && typeof orderBook.asks[0][0] !== 'number') {
-            throw new Error(`Ramzinex returned a non-numeric ask price for ${symbol}`);
-        }
-        console.log(`Ramzinex ${symbol} order book:`, {
-            symbol: orderBook.symbol,
-            timestamp: orderBook.timestamp,
-            datetime: orderBook.datetime,
-            bids: orderBook.bids.length,
-            asks: orderBook.asks.length,
-            bestBid: orderBook.bids[0],
-            bestAsk: orderBook.asks[0],
-            topBids: orderBook.bids.slice(0, 5),
-            topAsks: orderBook.asks.slice(0, 5),
-        });
-    }
-    finally {
-        await exchange.close();
-    }
-}
-async function testTabdealOrderBook() {
-    const exchange = new tabdeal({ enableRateLimit: true, timeout: 30000 });
-    try {
-        await exchange.loadMarkets();
-        const symbol = 'BTC/IRT';
-        if (!(symbol in exchange.markets)) {
-            throw new Error(`Tabdeal market ${symbol} was not found`);
-        }
-        const orderBook = await exchange.fetchOrderBook(symbol);
-        if (!Array.isArray(orderBook.bids) || !Array.isArray(orderBook.asks)) {
-            throw new Error(`Tabdeal returned an invalid order book for ${symbol}`);
-        }
-        if (typeof orderBook.timestamp !== 'number') {
-            throw new Error(`Tabdeal returned an invalid order book timestamp for ${symbol}`);
-        }
-        console.log(`Tabdeal ${symbol} order book:`, {
-            symbol: orderBook.symbol,
-            timestamp: orderBook.timestamp,
-            datetime: orderBook.datetime,
-            bids: orderBook.bids.length,
-            asks: orderBook.asks.length,
-            bestBid: orderBook.bids[0],
-            bestAsk: orderBook.asks[0],
-            topBids: orderBook.bids.slice(0, 5),
-            topAsks: orderBook.asks.slice(0, 5),
-        });
-    }
-    finally {
-        await exchange.close();
-    }
-}
-async function testBitpinOrderBook() {
-    const exchange = new bitpin({ enableRateLimit: true, timeout: 30000 });
-    try {
-        await exchange.loadMarkets();
-        const symbol = 'BTC/IRT';
-        if (!(symbol in exchange.markets)) {
-            throw new Error(`Bitpin market ${symbol} was not found`);
-        }
-        const orderBook = await exchange.fetchOrderBook(symbol);
-        if (!Array.isArray(orderBook.bids) || !Array.isArray(orderBook.asks)) {
-            throw new Error(`Bitpin returned an invalid order book for ${symbol}`);
-        }
-        if (typeof orderBook.timestamp !== 'number') {
-            throw new Error(`Bitpin returned an invalid order book timestamp for ${symbol}`);
-        }
-        console.log(`Bitpin ${symbol} order book:`, {
-            symbol: orderBook.symbol,
-            timestamp: orderBook.timestamp,
-            datetime: orderBook.datetime,
-            bids: orderBook.bids.length,
-            asks: orderBook.asks.length,
-            bestBid: orderBook.bids[0],
-            bestAsk: orderBook.asks[0],
-            topBids: orderBook.bids.slice(0, 5),
-            topAsks: orderBook.asks.slice(0, 5),
-        });
-    }
-    finally {
-        await exchange.close();
-    }
-}
-async function testNobitexOrderBook() {
-    const exchange = new nobitex({ enableRateLimit: true, timeout: 30000 });
-    try {
-        await exchange.loadMarkets();
-        const symbol = 'BTC/IRT';
-        if (!(symbol in exchange.markets)) {
-            throw new Error(`Nobitex market ${symbol} was not found`);
-        }
-        const orderBook = await exchange.fetchOrderBook(symbol);
-        if (!Array.isArray(orderBook.bids) || !Array.isArray(orderBook.asks)) {
-            throw new Error(`Nobitex returned an invalid order book for ${symbol}`);
-        }
-        if (typeof orderBook.timestamp !== 'number') {
-            throw new Error(`Nobitex returned an invalid order book timestamp for ${symbol}`);
-        }
-        if (orderBook.bids.length > 0 && typeof orderBook.bids[0][0] !== 'number') {
-            throw new Error(`Nobitex returned a non-numeric bid price for ${symbol}`);
-        }
-        if (orderBook.asks.length > 0 && typeof orderBook.asks[0][0] !== 'number') {
-            throw new Error(`Nobitex returned a non-numeric ask price for ${symbol}`);
-        }
-        console.log(`Nobitex ${symbol} order book:`, {
-            symbol: orderBook.symbol,
-            timestamp: orderBook.timestamp,
-            datetime: orderBook.datetime,
-            bids: orderBook.bids.length,
-            asks: orderBook.asks.length,
-            bestBid: orderBook.bids[0],
-            bestAsk: orderBook.asks[0],
-            topBids: orderBook.bids.slice(0, 5),
-            topAsks: orderBook.asks.slice(0, 5),
-        });
-    }
-    finally {
-        await exchange.close();
-    }
-}
-async function main() {
-    const exchange = new wallex({ enableRateLimit: true, timeout: 30000 });
-    try {
-        await exchange.loadMarkets();
-        const symbol = 'BTC/IRT';
-        if (!(symbol in exchange.markets)) {
-            throw new Error(`Wallex market ${symbol} was not found`);
-        }
-        const orderBook = await exchange.fetchOrderBook(symbol);
-        if (!Array.isArray(orderBook.bids) || !Array.isArray(orderBook.asks)) {
-            throw new Error(`Wallex returned an invalid order book for ${symbol}`);
-        }
-        if (typeof orderBook.timestamp !== 'number') {
-            throw new Error(`Wallex returned an invalid order book timestamp for ${symbol}`);
-        }
-        console.log(`Wallex ${symbol} order book:`, {
-            symbol: orderBook.symbol,
-            timestamp: orderBook.timestamp,
-            datetime: orderBook.datetime,
-            bids: orderBook.bids.length,
-            asks: orderBook.asks.length,
-            bestBid: orderBook.bids[0],
-            bestAsk: orderBook.asks[0],
-            topBids: orderBook.bids.slice(0, 5),
-            topAsks: orderBook.asks.slice(0, 5),
+        console.log(`${name} ${symbol} ticker:`, {
+            symbol: ticker.symbol,
+            timestamp: ticker.timestamp,
+            datetime: ticker.datetime,
+            last: ticker.last,
+            bid: ticker.bid,
+            ask: ticker.ask,
         });
     }
     finally {
@@ -177,10 +33,9 @@ async function main() {
     }
 }
 async function run() {
-    await main();
-    await testNobitexOrderBook();
-    await testBitpinOrderBook();
-    await testTabdealOrderBook();
-    await testRamzinexOrderBook();
+    await testTicker(new ariomex({ enableRateLimit: true, timeout: 30000 }), 'Ariomex');
+    await testTicker(new poulyar({ enableRateLimit: true, timeout: 30000 }), 'Poulyar');
+    await testTicker(new ourbit({ enableRateLimit: true, timeout: 30000 }), 'Ourbit', { type: 'spot' });
+    await testTicker(new ubitex({ enableRateLimit: true, timeout: 30000 }), 'Ubitex');
 }
 void run();
