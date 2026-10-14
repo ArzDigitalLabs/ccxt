@@ -89,6 +89,7 @@ var digikalagold = require('./src/digikalagold.js');
 var ellipx = require('./src/ellipx.js');
 var eterex = require('./src/eterex.js');
 var excoino = require('./src/excoino.js');
+var exino = require('./src/exino.js');
 var exir = require('./src/exir.js');
 var exmo = require('./src/exmo.js');
 var exnovin = require('./src/exnovin.js');
@@ -262,7 +263,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.21.1';
+const version = '4.22.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -342,6 +343,7 @@ const exchanges = {
     'ellipx': ellipx["default"],
     'eterex': eterex["default"],
     'excoino': excoino["default"],
+    'exino': exino["default"],
     'exir': exir["default"],
     'exmo': exmo["default"],
     'exnovin': exnovin["default"],
@@ -643,6 +645,7 @@ exports.digikalagold = digikalagold["default"];
 exports.ellipx = ellipx["default"];
 exports.eterex = eterex["default"];
 exports.excoino = excoino["default"];
+exports.exino = exino["default"];
 exports.exir = exir["default"];
 exports.exmo = exmo["default"];
 exports.exnovin = exnovin["default"];

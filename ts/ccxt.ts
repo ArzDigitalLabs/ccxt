@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.21.1';
+const version = '4.22.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -123,6 +123,7 @@ import digikalagold from  './src/digikalagold.js'
 import ellipx from  './src/ellipx.js'
 import eterex from  './src/eterex.js'
 import excoino from  './src/excoino.js'
+import exino from  './src/exino.js'
 import exir from  './src/exir.js'
 import exmo from  './src/exmo.js'
 import exnovin from  './src/exnovin.js'
@@ -374,6 +375,7 @@ const exchanges = {
     'ellipx':                 ellipx,
     'eterex':                 eterex,
     'excoino':                excoino,
+    'exino':                  exino,
     'exir':                   exir,
     'exmo':                   exmo,
     'exnovin':                exnovin,
@@ -768,6 +770,7 @@ export {
     ellipx,
     eterex,
     excoino,
+    exino,
     exir,
     exmo,
     exnovin,

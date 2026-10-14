@@ -83,6 +83,7 @@
 	- [ellipx](exchanges/ellipx.md)
 	- [eterex()](exchanges/eterex().md)
 	- [excoino()](exchanges/excoino().md)
+	- [exino#fetchMarkets](exchanges/exino#fetchMarkets.md)
 	- [exir()](exchanges/exir().md)
 	- [exmo](exchanges/exmo.md)
 	- [exnovin()](exchanges/exnovin().md)
