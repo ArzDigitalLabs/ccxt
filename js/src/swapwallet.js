@@ -206,7 +206,7 @@ export default class swapwallet extends Exchange {
             'info': ticker,
         }, market);
     }
-    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+    sign(path, api = 'public', method = 'GET', params = {}, headers = {}, body = undefined) {
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
         if (Object.keys(query).length) {

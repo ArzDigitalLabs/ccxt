@@ -11,10 +11,10 @@ export default class swapwallet extends Exchange {
     fetchTickers(symbols?: Strings, params?: {}): Promise<Tickers>;
     fetchTicker(symbol: string, params?: {}): Promise<Ticker>;
     parseTicker(ticker: any, market?: Market): Ticker;
-    sign(path: any, api?: string, method?: string, params?: {}, headers?: any, body?: any): {
+    sign(path: any, api?: string, method?: string, params?: {}, headers?: {}, body?: any): {
         url: string;
         method: string;
         body: any;
-        headers: any;
+        headers: {};
     };
 }

@@ -390802,7 +390802,7 @@ class swapwallet extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             'info': ticker,
         }, market);
     }
-    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
+    sign(path, api = 'public', method = 'GET', params = {}, headers = {}, body = undefined) {
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
         if (Object.keys(query).length) {
@@ -438534,7 +438534,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.23.0';
+const ccxt_version = '4.23.1';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 
