@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.21.1'
+__version__ = '4.22.0'
 
 # -----------------------------------------------------------------------------
 
@@ -141,6 +141,7 @@ from ccxt.async_support.digikalagold import digikalagold                        
 from ccxt.async_support.ellipx import ellipx                                    # noqa: F401
 from ccxt.async_support.eterex import eterex                                    # noqa: F401
 from ccxt.async_support.excoino import excoino                                  # noqa: F401
+from ccxt.async_support.exino import exino                                      # noqa: F401
 from ccxt.async_support.exir import exir                                        # noqa: F401
 from ccxt.async_support.exmo import exmo                                        # noqa: F401
 from ccxt.async_support.exnovin import exnovin                                  # noqa: F401
@@ -317,6 +318,7 @@ exchanges = [
     'ellipx',
     'eterex',
     'excoino',
+    'exino',
     'exir',
     'exmo',
     'exnovin',

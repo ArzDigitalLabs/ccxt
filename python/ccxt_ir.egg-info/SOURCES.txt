@@ -83,6 +83,7 @@ ccxt/digikalagold.py
 ccxt/ellipx.py
 ccxt/eterex.py
 ccxt/excoino.py
+ccxt/exino.py
 ccxt/exir.py
 ccxt/exmo.py
 ccxt/exnovin.py
@@ -258,6 +259,7 @@ ccxt/abstract/digikalagold.py
 ccxt/abstract/ellipx.py
 ccxt/abstract/eterex.py
 ccxt/abstract/excoino.py
+ccxt/abstract/exino.py
 ccxt/abstract/exir.py
 ccxt/abstract/exmo.py
 ccxt/abstract/exnovin.py
@@ -433,6 +435,7 @@ ccxt/async_support/digikalagold.py
 ccxt/async_support/ellipx.py
 ccxt/async_support/eterex.py
 ccxt/async_support/excoino.py
+ccxt/async_support/exino.py
 ccxt/async_support/exir.py
 ccxt/async_support/exmo.py
 ccxt/async_support/exnovin.py

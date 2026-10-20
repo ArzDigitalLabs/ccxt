@@ -22,7 +22,7 @@
 
 # ----------------------------------------------------------------------------
 
-__version__ = '4.21.1'
+__version__ = '4.22.0'
 
 # ----------------------------------------------------------------------------
 
@@ -161,6 +161,7 @@ from ccxt.digikalagold import digikalagold                            # noqa: F4
 from ccxt.ellipx import ellipx                                        # noqa: F401
 from ccxt.eterex import eterex                                        # noqa: F401
 from ccxt.excoino import excoino                                      # noqa: F401
+from ccxt.exino import exino                                          # noqa: F401
 from ccxt.exir import exir                                            # noqa: F401
 from ccxt.exmo import exmo                                            # noqa: F401
 from ccxt.exnovin import exnovin                                      # noqa: F401
@@ -337,6 +338,7 @@ exchanges = [
     'ellipx',
     'eterex',
     'excoino',
+    'exino',
     'exir',
     'exmo',
     'exnovin',
