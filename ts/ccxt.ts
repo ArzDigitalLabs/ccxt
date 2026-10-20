@@ -40,7 +40,7 @@ import {BaseError, ExchangeError, AuthenticationError, PermissionDenied, Account
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
 
-const version = '4.22.0';
+const version = '4.23.0';
 
 (Exchange as any).ccxtVersion = version
 
@@ -192,6 +192,7 @@ import ramzinex from  './src/ramzinex.js'
 import saraf from  './src/saraf.js'
 import sarmayex from  './src/sarmayex.js'
 import sarrafex from  './src/sarrafex.js'
+import swapwallet from  './src/swapwallet.js'
 import tabdeal from  './src/tabdeal.js'
 import talaavan from  './src/talaavan.js'
 import talapp from  './src/talapp.js'
@@ -444,6 +445,7 @@ const exchanges = {
     'saraf':                  saraf,
     'sarmayex':               sarmayex,
     'sarrafex':               sarrafex,
+    'swapwallet':             swapwallet,
     'tabdeal':                tabdeal,
     'talaavan':               talaavan,
     'talapp':                 talapp,
@@ -839,6 +841,7 @@ export {
     saraf,
     sarmayex,
     sarrafex,
+    swapwallet,
     tabdeal,
     talaavan,
     talapp,

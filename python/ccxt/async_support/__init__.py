@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.22.0'
+__version__ = '4.23.0'
 
 # -----------------------------------------------------------------------------
 
@@ -210,6 +210,7 @@ from ccxt.async_support.ramzinex import ramzinex                                
 from ccxt.async_support.saraf import saraf                                      # noqa: F401
 from ccxt.async_support.sarmayex import sarmayex                                # noqa: F401
 from ccxt.async_support.sarrafex import sarrafex                                # noqa: F401
+from ccxt.async_support.swapwallet import swapwallet                            # noqa: F401
 from ccxt.async_support.tabdeal import tabdeal                                  # noqa: F401
 from ccxt.async_support.talaavan import talaavan                                # noqa: F401
 from ccxt.async_support.talapp import talapp                                    # noqa: F401
@@ -387,6 +388,7 @@ exchanges = [
     'saraf',
     'sarmayex',
     'sarrafex',
+    'swapwallet',
     'tabdeal',
     'talaavan',
     'talapp',

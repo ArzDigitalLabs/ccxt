@@ -152,6 +152,7 @@ ccxt/ramzinex.py
 ccxt/saraf.py
 ccxt/sarmayex.py
 ccxt/sarrafex.py
+ccxt/swapwallet.py
 ccxt/tabdeal.py
 ccxt/talaavan.py
 ccxt/talapp.py
@@ -328,6 +329,7 @@ ccxt/abstract/ramzinex.py
 ccxt/abstract/saraf.py
 ccxt/abstract/sarmayex.py
 ccxt/abstract/sarrafex.py
+ccxt/abstract/swapwallet.py
 ccxt/abstract/tabdeal.py
 ccxt/abstract/talaavan.py
 ccxt/abstract/talapp.py
@@ -504,6 +506,7 @@ ccxt/async_support/ramzinex.py
 ccxt/async_support/saraf.py
 ccxt/async_support/sarmayex.py
 ccxt/async_support/sarrafex.py
+ccxt/async_support/swapwallet.py
 ccxt/async_support/tabdeal.py
 ccxt/async_support/talaavan.py
 ccxt/async_support/talapp.py
