@@ -147,6 +147,7 @@
 	- [saraf()](exchanges/saraf().md)
 	- [sarmayex()](exchanges/sarmayex().md)
 	- [sarrafex()](exchanges/sarrafex().md)
+	- [swapwallet](exchanges/swapwallet.md)
 	- [tabdeal()](exchanges/tabdeal().md)
 	- [talaavan](exchanges/talaavan.md)
 	- [talapp](exchanges/talapp.md)

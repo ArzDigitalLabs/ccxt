@@ -158,6 +158,7 @@ var ramzinex = require('./src/ramzinex.js');
 var saraf = require('./src/saraf.js');
 var sarmayex = require('./src/sarmayex.js');
 var sarrafex = require('./src/sarrafex.js');
+var swapwallet = require('./src/swapwallet.js');
 var tabdeal = require('./src/tabdeal.js');
 var talaavan = require('./src/talaavan.js');
 var talapp = require('./src/talapp.js');
@@ -263,7 +264,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.22.0';
+const version = '4.23.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -412,6 +413,7 @@ const exchanges = {
     'saraf': saraf["default"],
     'sarmayex': sarmayex["default"],
     'sarrafex': sarrafex["default"],
+    'swapwallet': swapwallet["default"],
     'tabdeal': tabdeal["default"],
     'talaavan': talaavan["default"],
     'talapp': talapp["default"],
@@ -714,6 +716,7 @@ exports.ramzinex = ramzinex["default"];
 exports.saraf = saraf["default"];
 exports.sarmayex = sarmayex["default"];
 exports.sarrafex = sarrafex["default"];
+exports.swapwallet = swapwallet["default"];
 exports.tabdeal = tabdeal["default"];
 exports.talaavan = talaavan["default"];
 exports.talapp = talapp["default"];
