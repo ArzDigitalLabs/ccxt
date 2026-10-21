@@ -216,7 +216,7 @@ export default class swapwallet extends Exchange {
         if (Object.keys (query).length) {
             url += '?' + this.urlencode (query);
         }
-        headers = this.extend ({ 'Content-Type': 'application/json' }, headers);
+        headers = { 'Content-Type': 'application/json' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
     }
 }

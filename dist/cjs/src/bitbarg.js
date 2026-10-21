@@ -126,7 +126,12 @@ class bitbarg extends bitbarg$1["default"] {
         // "decimal": 8,
         // "isFavorite": false,
         const baseId = this.safeString(market, 'coin');
-        const quoteId = 'USDT';
+        // Bitbarg reports USDT's price in IRT; all other currencies are
+        // quoted in USDT.
+        let quoteId = 'USDT';
+        if (baseId === 'USDT') {
+            quoteId = 'IRT';
+        }
         const base = this.safeCurrencyCode(baseId);
         const quote = this.safeCurrencyCode(quoteId);
         const id = baseId + '/' + quoteId;
@@ -222,13 +227,19 @@ class bitbarg extends bitbarg$1["default"] {
         };
         const response = await this.publicGetApiV1Currencies(request);
         const data = this.safeDict(response, 'result', {});
+        const meta = this.safeDict(data, 'meta', {});
+        const usdtPrice = this.safeFloat(meta, 'usdtPrice');
         const items = this.safeList(data, 'items', []);
         const result = {};
         for (let i = 0; i < items.length; i++) {
             const coinData = items[i];
             const baseId = this.safeString(coinData, 'coin');
-            // Create ticker for USDT quote
-            const quoteId = 'USDT';
+            // All currencies are quoted in USDT except USDT itself, which is
+            // quoted in IRT by the API.
+            let quoteId = 'USDT';
+            if (baseId === 'USDT') {
+                quoteId = 'IRT';
+            }
             const base = this.safeCurrencyCode(baseId);
             const quote = this.safeCurrencyCode(quoteId);
             const symbol = base + '/' + quote;
@@ -238,6 +249,9 @@ class bitbarg extends bitbarg$1["default"] {
                 'quoteId': quoteId,
                 'id': baseId + '/' + quoteId,
             }, coinData);
+            if (baseId === 'USDT' && usdtPrice !== undefined) {
+                ticker['price'] = usdtPrice;
+            }
             result[symbol] = this.parseTicker(ticker);
         }
         return this.filterByArrayTickers(result, 'symbol', symbols);
@@ -272,7 +286,12 @@ class bitbarg extends bitbarg$1["default"] {
         //     "chart": [...]
         // }
         const marketType = 'spot';
-        const marketId = this.safeString(ticker, 'coin') + '/' + 'USDT';
+        const baseId = this.safeString(ticker, 'coin');
+        let quoteId = 'USDT';
+        if (baseId === 'USDT') {
+            quoteId = 'IRT';
+        }
+        const marketId = baseId + '/' + quoteId;
         const symbol = this.safeSymbol(marketId, market, undefined, marketType);
         const last = this.safeFloat(ticker, 'price', 0);
         const percentage = this.safeFloat(ticker, 'percent', 0);
