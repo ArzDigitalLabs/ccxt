@@ -4,65 +4,18 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import bit24 from './src/bit24.js';
-const exchanges = [
-    // { 'id': 'technogold', 'Exchange': technogold },
-    // { 'id': 'baazar', 'Exchange': baazar },
-    // { 'id': 'hamrahgold', 'Exchange': hamrahgold },
-    // { 'id': 'zarniv', 'Exchange': zarniv },
-    // { 'id': 'zarminex', 'Exchange': zarminex },
-    // { 'id': 'zarafza', 'Exchange': zarafza },
-    // { 'id': 'daric', 'Exchange': daric },
-    // { 'id': 'digikalagold', 'Exchange': digikalagold },
-    // { 'id': 'gerami', 'Exchange': gerami },
-    // { 'id': 'goldika', 'Exchange': goldika },
-    // { 'id': 'goldis', 'Exchange': goldis },
-    { 'id': 'bit24', 'Exchange': bit24 },
-    // { 'id': 'milligold', 'Exchange': milligold },
-    // { 'id': 'ramzinex', 'Exchange': ramzinex },
-    // { 'id': 'wallgold', 'Exchange': wallgold },
-    // { 'id': 'talapp', 'Exchange': talapp },
-    // { 'id': 'talaavan', 'Exchange': talaavan },
-    // { 'id': 'talasea', 'Exchange': talasea },
-    // { 'id': 'zarpin', 'Exchange': zarpin },
-];
-async function testExchange(id, ExchangeClass) {
-    const exchange = new ExchangeClass({
-        'enableRateLimit': true,
-        'timeout': 20000,
-    });
+import ccxt from './ccxt.js';
+async function main() {
+    const exchange = new ccxt.bitbarg();
     try {
-        const tickers = await exchange.fetchTickers();
-        const symbols = Object.keys(tickers);
-        for (let i = 0; i < symbols.length; i++) {
-            const symbol = symbols[i];
-            const ticker = tickers[symbol];
-            const bid = ticker['bid'];
-            const ask = ticker['ask'];
-            const last = ticker['last'];
-            if (bid !== undefined || ask !== undefined) {
-                let expectedLast = bid;
-                if (ask !== undefined && (expectedLast === undefined || ask > expectedLast)) {
-                    expectedLast = ask;
-                }
-                if (last !== expectedLast) {
-                    throw new Error(symbol + ' last=' + last + ', expected=' + expectedLast);
-                }
-            }
-            console.log(id + ' ' + symbol + ' bid=' + bid + ' ask=' + ask + ' last=' + last + ' OK');
-        }
+        const ticker = await exchange.fetchTicker('USDT/IRT');
+        console.log(ticker);
     }
     finally {
-        await exchange.close();
-    }
-}
-async function main() {
-    for (let i = 0; i < exchanges.length; i++) {
-        const entry = exchanges[i];
-        await testExchange(entry['id'], entry['Exchange']);
+        exchange.close();
     }
 }
 main().catch((error) => {
-    console.error('Gold platform price test failed:', error);
+    console.error(error);
     process.exitCode = 1;
 });

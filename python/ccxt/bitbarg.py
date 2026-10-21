@@ -125,7 +125,11 @@ class bitbarg(Exchange, ImplicitAPI):
         # "decimal": 8,
         # "isFavorite": False,
         baseId = self.safe_string(market, 'coin')
+        # Bitbarg reports USDT's price in IRT; all other currencies are
+        # quoted in USDT.
         quoteId = 'USDT'
+        if baseId == 'USDT':
+            quoteId = 'IRT'
         base = self.safe_currency_code(baseId)
         quote = self.safe_currency_code(quoteId)
         id = baseId + '/' + quoteId
@@ -215,13 +219,18 @@ class bitbarg(Exchange, ImplicitAPI):
         }
         response = self.publicGetApiV1Currencies(request)
         data = self.safe_dict(response, 'result', {})
+        meta = self.safe_dict(data, 'meta', {})
+        usdtPrice = self.safe_float(meta, 'usdtPrice')
         items = self.safe_list(data, 'items', [])
         result = {}
         for i in range(0, len(items)):
             coinData = items[i]
             baseId = self.safe_string(coinData, 'coin')
-            # Create ticker for USDT quote
+            # All currencies are quoted in USDT except USDT itself, which is
+            # quoted in IRT by the API.
             quoteId = 'USDT'
+            if baseId == 'USDT':
+                quoteId = 'IRT'
             base = self.safe_currency_code(baseId)
             quote = self.safe_currency_code(quoteId)
             symbol = base + '/' + quote
@@ -231,6 +240,8 @@ class bitbarg(Exchange, ImplicitAPI):
                 'quoteId': quoteId,
                 'id': baseId + '/' + quoteId,
             }, coinData)
+            if baseId == 'USDT' and usdtPrice is not None:
+                ticker['price'] = usdtPrice
             result[symbol] = self.parse_ticker(ticker)
         return self.filter_by_array_tickers(result, 'symbol', symbols)
 
@@ -262,7 +273,11 @@ class bitbarg(Exchange, ImplicitAPI):
         #     "chart": [...]
         # }
         marketType = 'spot'
-        marketId = self.safe_string(ticker, 'coin') + '/' + 'USDT'
+        baseId = self.safe_string(ticker, 'coin')
+        quoteId = 'USDT'
+        if baseId == 'USDT':
+            quoteId = 'IRT'
+        marketId = baseId + '/' + quoteId
         symbol = self.safe_symbol(marketId, market, None, marketType)
         last = self.safe_float(ticker, 'price', 0)
         percentage = self.safe_float(ticker, 'percent', 0)

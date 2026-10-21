@@ -125,7 +125,12 @@ class bitbarg extends Exchange {
         // "decimal" => 8,
         // "isFavorite" => false,
         $baseId = $this->safe_string($market, 'coin');
+        // Bitbarg reports USDT's price in IRT; all other currencies are
+        // quoted in USDT.
         $quoteId = 'USDT';
+        if ($baseId === 'USDT') {
+            $quoteId = 'IRT';
+        }
         $base = $this->safe_currency_code($baseId);
         $quote = $this->safe_currency_code($quoteId);
         $id = $baseId . '/' . $quoteId;
@@ -219,13 +224,19 @@ class bitbarg extends Exchange {
         );
         $response = $this->publicGetApiV1Currencies ($request);
         $data = $this->safe_dict($response, 'result', array());
+        $meta = $this->safe_dict($data, 'meta', array());
+        $usdtPrice = $this->safe_float($meta, 'usdtPrice');
         $items = $this->safe_list($data, 'items', array());
         $result = array();
         for ($i = 0; $i < count($items); $i++) {
             $coinData = $items[$i];
             $baseId = $this->safe_string($coinData, 'coin');
-            // Create $ticker for USDT $quote
+            // All currencies are quoted in USDT except USDT itself, which is
+            // quoted in IRT by the API.
             $quoteId = 'USDT';
+            if ($baseId === 'USDT') {
+                $quoteId = 'IRT';
+            }
             $base = $this->safe_currency_code($baseId);
             $quote = $this->safe_currency_code($quoteId);
             $symbol = $base . '/' . $quote;
@@ -235,6 +246,9 @@ class bitbarg extends Exchange {
                 'quoteId' => $quoteId,
                 'id' => $baseId . '/' . $quoteId,
             ), $coinData);
+            if ($baseId === 'USDT' && $usdtPrice !== null) {
+                $ticker['price'] = $usdtPrice;
+            }
             $result[$symbol] = $this->parse_ticker($ticker);
         }
         return $this->filter_by_array_tickers($result, 'symbol', $symbols);
@@ -269,7 +283,12 @@ class bitbarg extends Exchange {
         //     "chart" => [...]
         // }
         $marketType = 'spot';
-        $marketId = $this->safe_string($ticker, 'coin') . '/' . 'USDT';
+        $baseId = $this->safe_string($ticker, 'coin');
+        $quoteId = 'USDT';
+        if ($baseId === 'USDT') {
+            $quoteId = 'IRT';
+        }
+        $marketId = $baseId . '/' . $quoteId;
         $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
         $last = $this->safe_float($ticker, 'price', 0);
         $percentage = $this->safe_float($ticker, 'percent', 0);

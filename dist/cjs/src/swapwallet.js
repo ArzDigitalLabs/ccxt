@@ -205,13 +205,13 @@ class swapwallet extends Exchange["default"] {
             'info': ticker,
         }, market);
     }
-    sign(path, api = 'public', method = 'GET', params = {}, headers = {}, body = undefined) {
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
         if (Object.keys(query).length) {
             url += '?' + this.urlencode(query);
         }
-        headers = this.extend({ 'Content-Type': 'application/json' }, headers);
+        headers = { 'Content-Type': 'application/json' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
     }
 }

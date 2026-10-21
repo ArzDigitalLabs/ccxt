@@ -50405,7 +50405,12 @@ class bitbarg extends _abstract_bitbarg_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
         // "decimal": 8,
         // "isFavorite": false,
         const baseId = this.safeString(market, 'coin');
-        const quoteId = 'USDT';
+        // Bitbarg reports USDT's price in IRT; all other currencies are
+        // quoted in USDT.
+        let quoteId = 'USDT';
+        if (baseId === 'USDT') {
+            quoteId = 'IRT';
+        }
         const base = this.safeCurrencyCode(baseId);
         const quote = this.safeCurrencyCode(quoteId);
         const id = baseId + '/' + quoteId;
@@ -50501,13 +50506,19 @@ class bitbarg extends _abstract_bitbarg_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
         };
         const response = await this.publicGetApiV1Currencies(request);
         const data = this.safeDict(response, 'result', {});
+        const meta = this.safeDict(data, 'meta', {});
+        const usdtPrice = this.safeFloat(meta, 'usdtPrice');
         const items = this.safeList(data, 'items', []);
         const result = {};
         for (let i = 0; i < items.length; i++) {
             const coinData = items[i];
             const baseId = this.safeString(coinData, 'coin');
-            // Create ticker for USDT quote
-            const quoteId = 'USDT';
+            // All currencies are quoted in USDT except USDT itself, which is
+            // quoted in IRT by the API.
+            let quoteId = 'USDT';
+            if (baseId === 'USDT') {
+                quoteId = 'IRT';
+            }
             const base = this.safeCurrencyCode(baseId);
             const quote = this.safeCurrencyCode(quoteId);
             const symbol = base + '/' + quote;
@@ -50517,6 +50528,9 @@ class bitbarg extends _abstract_bitbarg_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
                 'quoteId': quoteId,
                 'id': baseId + '/' + quoteId,
             }, coinData);
+            if (baseId === 'USDT' && usdtPrice !== undefined) {
+                ticker['price'] = usdtPrice;
+            }
             result[symbol] = this.parseTicker(ticker);
         }
         return this.filterByArrayTickers(result, 'symbol', symbols);
@@ -50551,7 +50565,12 @@ class bitbarg extends _abstract_bitbarg_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
         //     "chart": [...]
         // }
         const marketType = 'spot';
-        const marketId = this.safeString(ticker, 'coin') + '/' + 'USDT';
+        const baseId = this.safeString(ticker, 'coin');
+        let quoteId = 'USDT';
+        if (baseId === 'USDT') {
+            quoteId = 'IRT';
+        }
+        const marketId = baseId + '/' + quoteId;
         const symbol = this.safeSymbol(marketId, market, undefined, marketType);
         const last = this.safeFloat(ticker, 'price', 0);
         const percentage = this.safeFloat(ticker, 'percent', 0);
@@ -390802,13 +390821,13 @@ class swapwallet extends _base_Exchange_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
             'info': ticker,
         }, market);
     }
-    sign(path, api = 'public', method = 'GET', params = {}, headers = {}, body = undefined) {
+    sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api'][api] + '/' + this.implodeParams(path, params);
         if (Object.keys(query).length) {
             url += '?' + this.urlencode(query);
         }
-        headers = this.extend({ 'Content-Type': 'application/json' }, headers);
+        headers = { 'Content-Type': 'application/json' };
         return { 'url': url, 'method': method, 'body': body, 'headers': headers };
     }
 }
@@ -438534,7 +438553,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.23.1';
+const ccxt_version = '4.23.2';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 
