@@ -4,7 +4,7 @@
 
 # -----------------------------------------------------------------------------
 
-__version__ = '4.23.3'
+__version__ = '4.24.0'
 
 # -----------------------------------------------------------------------------
 
@@ -75,6 +75,7 @@ from ccxt.async_support.asacoine import asacoine                                
 from ccxt.async_support.ascendex import ascendex                                # noqa: F401
 from ccxt.async_support.asretether import asretether                            # noqa: F401
 from ccxt.async_support.baazar import baazar                                    # noqa: F401
+from ccxt.async_support.balinex import balinex                                  # noqa: F401
 from ccxt.async_support.bequant import bequant                                  # noqa: F401
 from ccxt.async_support.bidarz import bidarz                                    # noqa: F401
 from ccxt.async_support.bigone import bigone                                    # noqa: F401
@@ -253,6 +254,7 @@ exchanges = [
     'ascendex',
     'asretether',
     'baazar',
+    'balinex',
     'bequant',
     'bidarz',
     'bigone',
