@@ -23,6 +23,7 @@ var asacoine = require('./src/asacoine.js');
 var ascendex = require('./src/ascendex.js');
 var asretether = require('./src/asretether.js');
 var baazar = require('./src/baazar.js');
+var balinex = require('./src/balinex.js');
 var bequant = require('./src/bequant.js');
 var bidarz = require('./src/bidarz.js');
 var bigone = require('./src/bigone.js');
@@ -264,7 +265,7 @@ var xt$1 = require('./src/pro/xt.js');
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const version = '4.23.3';
+const version = '4.24.0';
 Exchange["default"].ccxtVersion = version;
 const exchanges = {
     'abantether': abantether["default"],
@@ -278,6 +279,7 @@ const exchanges = {
     'ascendex': ascendex["default"],
     'asretether': asretether["default"],
     'baazar': baazar["default"],
+    'balinex': balinex["default"],
     'bequant': bequant["default"],
     'bidarz': bidarz["default"],
     'bigone': bigone["default"],
@@ -581,6 +583,7 @@ exports.asacoine = asacoine["default"];
 exports.ascendex = ascendex["default"];
 exports.asretether = asretether["default"];
 exports.baazar = baazar["default"];
+exports.balinex = balinex["default"];
 exports.bequant = bequant["default"];
 exports.bidarz = bidarz["default"];
 exports.bigone = bigone["default"];

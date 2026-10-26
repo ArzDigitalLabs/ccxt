@@ -22,6 +22,7 @@
 	- [ascendex](exchanges/ascendex.md)
 	- [asretether()](exchanges/asretether().md)
 	- [baazar](exchanges/baazar.md)
+	- [balinex](exchanges/balinex.md)
 	- [bidarz()](exchanges/bidarz().md)
 	- [bigone](exchanges/bigone.md)
 	- [binance](exchanges/binance.md)
