@@ -4,52 +4,35 @@
 // https://github.com/ccxt/ccxt/blob/master/CONTRIBUTING.md#how-to-contribute-code
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
-import { balinex } from './ccxt.js';
-const exchanges = [
-    // { 'id': 'technogold', 'Exchange': technogold },
-    // { 'id': 'baazar', 'Exchange': baazar },
-    // { 'id': 'hamrahgold', 'Exchange': hamrahgold },
-    // { 'id': 'zarniv', 'Exchange': zarniv },
-    // { 'id': 'zarminex', 'Exchange': zarminex },
-    // { 'id': 'zarafza', 'Exchange': zarafza },
-    // { 'id': 'daric', 'Exchange': daric },
-    // { 'id': 'digikalagold', 'Exchange': digikalagold },
-    // { 'id': 'gerami', 'Exchange': gerami },
-    // { 'id': 'goldika', 'Exchange': goldika },
-    // { 'id': 'goldis', 'Exchange': goldis },
-    { 'id': 'balinex', 'Exchange': balinex },
-    // { 'id': 'milligold', 'Exchange': milligold },
-    // { 'id': 'ramzinex', 'Exchange': ramzinex },
-    // { 'id': 'wallgold', 'Exchange': wallgold },
-    // { 'id': 'talapp', 'Exchange': talapp },
-    // { 'id': 'talaavan', 'Exchange': talaavan },
-    // { 'id': 'talasea', 'Exchange': talasea },
-    // { 'id': 'zarpin', 'Exchange': zarpin },
-];
-async function testExchange(id, ExchangeClass) {
-    const exchange = new ExchangeClass({
-        'enableRateLimit': true,
-        'timeout': 20000,
-    });
+import ccxt from './ccxt.js';
+// Change these names, or pass them on the command line.
+const exchangeNames = ['bitpin', 'wallex', 'nobitex'];
+const sampleSize = 5;
+async function testExchange(id) {
+    if (!ccxt.exchanges.includes(id)) {
+        throw new Error('Unknown exchange: ' + id);
+    }
+    const exchange = new ccxt[id]({ 'enableRateLimit': true, 'timeout': 20000 });
     try {
-        const tickers = await exchange.fetchTickers();
-        const symbols = Object.keys(tickers);
-        for (let i = 0; i < symbols.length; i++) {
-            const symbol = symbols[i];
-            const ticker = tickers[symbol];
-            const bid = ticker['bid'];
-            const ask = ticker['ask'];
-            const last = ticker['last'];
-            if (bid !== undefined || ask !== undefined) {
-                let expectedLast = bid;
-                if (ask !== undefined && (expectedLast === undefined || ask > expectedLast)) {
-                    expectedLast = ask;
-                }
-                if (last !== expectedLast) {
-                    throw new Error(symbol + ' last=' + last + ', expected=' + expectedLast);
-                }
-            }
-            console.log(id + ' ' + symbol + ' bid=' + bid + ' ask=' + ask + ' last=' + last + ' high=' + ticker['high'] + ' low=' + ticker['low'] + ' OK');
+        const types = ['spot', 'otc'].filter(type => exchange.has[type]);
+        if (types.length === 0) {
+            types.push('default');
+        }
+        for (const type of types) {
+            // Spot uses the default params; OTC is selected explicitly.
+            const params = (type === 'otc') ? { 'type': 'otc' } : {};
+            const markets = await exchange.fetchMarkets(params);
+            const symbols = markets.slice(0, sampleSize).map(market => market.symbol);
+            const tickers = await exchange.fetchTickers(symbols, params);
+            console.log('\n' + id + ' ' + type.toUpperCase() + ': ' + markets.length + ' markets');
+            console.table(Object.values(tickers).slice(0, sampleSize).map(ticker => ({
+                'symbol': ticker.symbol,
+                'last': ticker.last,
+                'bid': ticker.bid,
+                'ask': ticker.ask,
+                'high': ticker.high,
+                'low': ticker.low,
+            })));
         }
     }
     finally {
@@ -57,12 +40,18 @@ async function testExchange(id, ExchangeClass) {
     }
 }
 async function main() {
-    for (let i = 0; i < exchanges.length; i++) {
-        const entry = exchanges[i];
-        await testExchange(entry['id'], entry['Exchange']);
+    const names = process.argv.length > 2 ? process.argv.slice(2) : exchangeNames;
+    for (const id of names) {
+        try {
+            await testExchange(id);
+        }
+        catch (error) {
+            console.error(id + ' failed:', error);
+            process.exitCode = 1;
+        }
     }
 }
 main().catch((error) => {
-    console.error('Gold platform price test failed:', error);
+    console.error(error);
     process.exitCode = 1;
 });

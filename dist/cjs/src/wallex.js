@@ -3,6 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var wallex$1 = require('./abstract/wallex.js');
+var errors = require('./base/errors.js');
 
 // ----------------------------------------------------------------------------
 //  ---------------------------------------------------------------------------
@@ -79,6 +80,7 @@ class wallex extends wallex$1["default"] {
                 'fetchTradingFee': false,
                 'fetchTradingFees': false,
                 'fetchWithdrawals': false,
+                'otc': true,
                 'setLeverage': false,
                 'setMarginMode': false,
                 'transfer': false,
@@ -107,6 +109,8 @@ class wallex extends wallex$1["default"] {
                 'public': {
                     'get': {
                         'v1/markets': 1,
+                        'v1/currencies': 1,
+                        'v1/otc/price': 1,
                         'v1/currencies/stats': 1,
                         'v1/depth': 1,
                         'v1/udf/history': 1,
@@ -133,9 +137,39 @@ class wallex extends wallex$1["default"] {
          * @description retrieves data on all markets for wallex
          * @see https://api-docs.wallex.ir/#be8d9c51a2
          * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'
          * @returns {object[]} an array of objects representing market data
          */
-        const response = await this.publicGetV1Markets(params);
+        const type = this.safeString(params, 'type', 'spot');
+        const request = this.omit(params, ['type']);
+        if (type === 'otc') {
+            const otcResponse = await this.publicGetV1Currencies(request);
+            const currencies = this.safeDict(otcResponse, 'result', {});
+            const baseIds = Object.keys(currencies);
+            const quoteIds = ['TMN', 'USDT'];
+            const otcMarkets = [];
+            for (let i = 0; i < baseIds.length; i++) {
+                const baseId = baseIds[i];
+                // TMN is a quote currency; the OTC API does not support TMNUSDT.
+                if (baseId === 'TMN') {
+                    continue;
+                }
+                for (let j = 0; j < quoteIds.length; j++) {
+                    const quoteId = quoteIds[j];
+                    if (baseId === quoteId) {
+                        continue;
+                    }
+                    otcMarkets.push(this.parseMarket({
+                        'symbol': baseId + quoteId,
+                        'baseAsset': baseId,
+                        'quoteAsset': quoteId,
+                        'info': currencies[baseId],
+                    }, type));
+                }
+            }
+            return otcMarkets;
+        }
+        const response = await this.publicGetV1Markets(request);
         const markets = this.safeDict(response, 'result');
         const marketList = this.safeDict(markets, 'symbols');
         const marketKeys = Object.keys(marketList);
@@ -147,7 +181,7 @@ class wallex extends wallex$1["default"] {
         }
         return result;
     }
-    parseMarket(market) {
+    parseMarket(market, type = 'spot') {
         //  {
         // symbol: "PEPETMN",
         // baseAsset: "PEPE",
@@ -211,8 +245,8 @@ class wallex extends wallex$1["default"] {
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': undefined,
-            'type': 'spot',
-            'spot': true,
+            'type': type,
+            'spot': type === 'spot',
             'margin': false,
             'swap': false,
             'future': false,
@@ -249,7 +283,7 @@ class wallex extends wallex$1["default"] {
                 },
             },
             'created': undefined,
-            'info': market,
+            'info': this.safeDict(market, 'info', market),
         };
     }
     async fetchTickers(symbols = undefined, params = {}) {
@@ -260,8 +294,40 @@ class wallex extends wallex$1["default"] {
          * @see https://api-docs.wallex.ir/#be8d9c51a2
          * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
          * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'; OTC requests one BUY quote per symbol
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
+        const type = this.safeString(params, 'type', 'spot');
+        params = this.omit(params, ['type']);
+        if (type === 'otc') {
+            let otcMarkets = await this.fetchMarkets(this.extend(params, { 'type': type }));
+            if (symbols !== undefined) {
+                const marketsBySymbol = this.indexBy(otcMarkets, 'symbol');
+                const marketsById = this.indexBy(otcMarkets, 'id');
+                const selectedMarkets = [];
+                for (let i = 0; i < symbols.length; i++) {
+                    const symbol = symbols[i];
+                    const market = this.safeDict(marketsBySymbol, symbol, this.safeDict(marketsById, symbol));
+                    if (market === undefined) {
+                        throw new errors.BadSymbol(this.id + ' does not have OTC market symbol ' + symbol);
+                    }
+                    selectedMarkets.push(market);
+                }
+                otcMarkets = selectedMarkets;
+            }
+            const otcTickers = {};
+            for (let i = 0; i < otcMarkets.length; i++) {
+                const market = otcMarkets[i];
+                const request = this.extend(params, { 'side': 'BUY', 'symbol': market['id'] });
+                const otcResponse = await this.publicGetV1OtcPrice(request);
+                const data = this.safeDict(otcResponse, 'result', {});
+                if (this.safeString(data, 'price') === undefined) {
+                    throw new errors.ExchangeError(this.id + ' OTC quote unavailable for ' + market['symbol'] + ': ' + this.json(otcResponse));
+                }
+                otcTickers[market['symbol']] = this.parseTicker(data, market);
+            }
+            return otcTickers;
+        }
         await this.loadMarkets();
         if (symbols !== undefined) {
             symbols = this.marketSymbols(symbols);
@@ -273,7 +339,8 @@ class wallex extends wallex$1["default"] {
         const result = {};
         for (let i = 0; i < marketKeys.length; i++) {
             const index = marketKeys[i];
-            const ticker = this.parseTicker(marketList[index]);
+            const market = this.parseMarket(marketList[index]);
+            const ticker = this.parseTicker(marketList[index], market);
             const symbol = ticker['symbol'];
             result[symbol] = ticker;
         }
@@ -287,15 +354,12 @@ class wallex extends wallex$1["default"] {
          * @see https://api-docs.wallex.ir/#be8d9c51a2
          * @param {string} symbol unified symbol of the market to fetch the ticker for
          * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'
          * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
-        await this.loadMarkets();
-        const market = this.market(symbol);
-        const response = await this.publicGetV1Markets(params);
-        const markets = this.safeDict(response, 'result');
-        const marketList = this.safeDict(markets, 'symbols');
-        const ticker = this.parseTicker(marketList[market['id']]);
-        return ticker;
+        const tickers = await this.fetchTickers([symbol], params);
+        const values = Object.values(tickers);
+        return this.safeValue(values, 0);
     }
     parseTicker(ticker, market = undefined) {
         // {
@@ -345,7 +409,33 @@ class wallex extends wallex$1["default"] {
         // isNew: false,
         // isZeroFee: false
         // },
-        const marketType = 'spot';
+        const marketType = this.safeString(market, 'type', 'spot');
+        if (marketType === 'otc') {
+            const timestamp = this.parse8601(this.safeString(ticker, 'current_time'));
+            const price = this.safeNumber(ticker, 'price');
+            return this.safeTicker({
+                'symbol': market['symbol'],
+                'timestamp': timestamp,
+                'datetime': this.iso8601(timestamp),
+                'high': undefined,
+                'low': undefined,
+                'bid': undefined,
+                'bidVolume': undefined,
+                'ask': price,
+                'askVolume': undefined,
+                'vwap': undefined,
+                'open': undefined,
+                'close': price,
+                'last': price,
+                'previousClose': undefined,
+                'change': undefined,
+                'percentage': undefined,
+                'average': undefined,
+                'baseVolume': undefined,
+                'quoteVolume': undefined,
+                'info': ticker,
+            }, market);
+        }
         const stats = this.safeValue(ticker, 'stats');
         const marketId = this.safeString(ticker, 'symbol');
         const symbol = this.safeSymbol(marketId, market, undefined, marketType);
@@ -454,10 +544,7 @@ class wallex extends wallex$1["default"] {
     sign(path, api = 'public', method = 'GET', params = {}, headers = undefined, body = undefined) {
         const query = this.omit(params, this.extractParams(path));
         let url = this.urls['api']['public'] + '/' + path;
-        if (path === 'v1/udf/history') {
-            url = url + '?' + this.urlencode(query);
-        }
-        if (path === 'v1/depth') {
+        if (!this.isEmpty(query)) {
             url = url + '?' + this.urlencode(query);
         }
         headers = { 'Content-Type': 'application/json' };

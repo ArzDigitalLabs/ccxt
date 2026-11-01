@@ -36,6 +36,7 @@ retrieves data on all markets for nobitex
 | Param | Type | Required | Description |
 | --- | --- | --- | --- |
 | params | <code>object</code> | No | extra parameters specific to the exchange API endpoint |
+| params.type | <code>string</code> | No | market type, 'spot' (default) or 'otc'; both use market/stats |
 
 
 ```javascript
@@ -57,6 +58,7 @@ fetches price tickers for multiple markets, statistical information calculated o
 | --- | --- | --- | --- |
 | symbols | <code>Array&lt;string&gt;</code>, <code>undefined</code> | Yes | unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned |
 | params | <code>object</code> | No | extra parameters specific to the exchange API endpoint |
+| params.type | <code>string</code> | No | market type, 'spot' (default) or 'otc'; both use market/stats |
 
 
 ```javascript
@@ -78,6 +80,7 @@ fetches a price ticker, a statistical calculation with the information calculate
 | --- | --- | --- | --- |
 | symbol | <code>string</code> | Yes | unified symbol of the market to fetch the ticker for |
 | params | <code>object</code> | No | extra parameters specific to the exchange API endpoint |
+| params.type | <code>string</code> | No | market type, 'spot' (default) or 'otc'; both use market/stats |
 
 
 ```javascript

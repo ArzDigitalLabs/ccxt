@@ -11,6 +11,14 @@ func (this *wallex) PublicGetV1Markets (args ...interface{}) <-chan interface{} 
    return this.callEndpointAsync("publicGetV1Markets", args...)
 }
 
+func (this *wallex) PublicGetV1Currencies (args ...interface{}) <-chan interface{} {
+   return this.callEndpointAsync("publicGetV1Currencies", args...)
+}
+
+func (this *wallex) PublicGetV1OtcPrice (args ...interface{}) <-chan interface{} {
+   return this.callEndpointAsync("publicGetV1OtcPrice", args...)
+}
+
 func (this *wallex) PublicGetV1CurrenciesStats (args ...interface{}) <-chan interface{} {
    return this.callEndpointAsync("publicGetV1CurrenciesStats", args...)
 }

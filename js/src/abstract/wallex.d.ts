@@ -2,6 +2,8 @@ import { implicitReturnType } from '../base/types.js';
 import { Exchange as _Exchange } from '../base/Exchange.js';
 interface Exchange {
     publicGetV1Markets(params?: {}): Promise<implicitReturnType>;
+    publicGetV1Currencies(params?: {}): Promise<implicitReturnType>;
+    publicGetV1OtcPrice(params?: {}): Promise<implicitReturnType>;
     publicGetV1CurrenciesStats(params?: {}): Promise<implicitReturnType>;
     publicGetV1Depth(params?: {}): Promise<implicitReturnType>;
     publicGetV1UdfHistory(params?: {}): Promise<implicitReturnType>;

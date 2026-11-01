@@ -5,8 +5,10 @@
 
 from ccxt.base.exchange import Exchange
 from ccxt.abstract.wallex import ImplicitAPI
-from ccxt.base.types import Any, Int, Market, OrderBook, Strings, Ticker, Tickers
+from ccxt.base.types import Any, Int, Market, MarketType, OrderBook, Strings, Ticker, Tickers
 from typing import List
+from ccxt.base.errors import ExchangeError
+from ccxt.base.errors import BadSymbol
 
 
 class wallex(Exchange, ImplicitAPI):
@@ -78,6 +80,7 @@ class wallex(Exchange, ImplicitAPI):
                 'fetchTradingFee': False,
                 'fetchTradingFees': False,
                 'fetchWithdrawals': False,
+                'otc': True,
                 'setLeverage': False,
                 'setMarginMode': False,
                 'transfer': False,
@@ -106,6 +109,8 @@ class wallex(Exchange, ImplicitAPI):
                 'public': {
                     'get': {
                         'v1/markets': 1,
+                        'v1/currencies': 1,
+                        'v1/otc/price': 1,
                         'v1/currencies/stats': 1,
                         'v1/depth': 1,
                         'v1/udf/history': 1,
@@ -130,9 +135,34 @@ class wallex(Exchange, ImplicitAPI):
         retrieves data on all markets for wallex
         https://api-docs.wallex.ir/#be8d9c51a2
         :param dict [params]: extra parameters specific to the exchange API endpoint
+        :param str [params.type]: market type, 'spot'(default) or 'otc'
         :returns dict[]: an array of objects representing market data
         """
-        response = self.publicGetV1Markets(params)
+        type = self.safe_string(params, 'type', 'spot')
+        request = self.omit(params, ['type'])
+        if type == 'otc':
+            otcResponse = self.publicGetV1Currencies(request)
+            currencies = self.safe_dict(otcResponse, 'result', {})
+            baseIds = list(currencies.keys())
+            quoteIds = ['TMN', 'USDT']
+            otcMarkets = []
+            for i in range(0, len(baseIds)):
+                baseId = baseIds[i]
+                # TMN is a quote currency; the OTC API does not support TMNUSDT.
+                if baseId == 'TMN':
+                    continue
+                for j in range(0, len(quoteIds)):
+                    quoteId = quoteIds[j]
+                    if baseId == quoteId:
+                        continue
+                    otcMarkets.append(self.parse_market({
+                        'symbol': baseId + quoteId,
+                        'baseAsset': baseId,
+                        'quoteAsset': quoteId,
+                        'info': currencies[baseId],
+                    }, type))
+            return otcMarkets
+        response = self.publicGetV1Markets(request)
         markets = self.safe_dict(response, 'result')
         marketList = self.safe_dict(markets, 'symbols')
         marketKeys = list(marketList.keys())
@@ -143,7 +173,7 @@ class wallex(Exchange, ImplicitAPI):
             result.append(market)
         return result
 
-    def parse_market(self, market) -> Market:
+    def parse_market(self, market, type: MarketType = 'spot') -> Market:
         #  {
         # symbol: "PEPETMN",
         # baseAsset: "PEPE",
@@ -207,8 +237,8 @@ class wallex(Exchange, ImplicitAPI):
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': None,
-            'type': 'spot',
-            'spot': True,
+            'type': type,
+            'spot': type == 'spot',
             'margin': False,
             'swap': False,
             'future': False,
@@ -245,7 +275,7 @@ class wallex(Exchange, ImplicitAPI):
                 },
             },
             'created': None,
-            'info': market,
+            'info': self.safe_dict(market, 'info', market),
         }
 
     def fetch_tickers(self, symbols: Strings = None, params={}) -> Tickers:
@@ -254,8 +284,34 @@ class wallex(Exchange, ImplicitAPI):
         https://api-docs.wallex.ir/#be8d9c51a2
         :param str[]|None symbols: unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
         :param dict [params]: extra parameters specific to the exchange API endpoint
+        :param str [params.type]: market type, 'spot'(default) or 'otc'; OTC requests one BUY quote per symbol
         :returns dict: a dictionary of `ticker structures <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
+        type = self.safe_string(params, 'type', 'spot')
+        params = self.omit(params, ['type'])
+        if type == 'otc':
+            otcMarkets = self.fetch_markets(self.extend(params, {'type': type}))
+            if symbols is not None:
+                marketsBySymbol = self.index_by(otcMarkets, 'symbol')
+                marketsById = self.index_by(otcMarkets, 'id')
+                selectedMarkets = []
+                for i in range(0, len(symbols)):
+                    symbol = symbols[i]
+                    market = self.safe_dict(marketsBySymbol, symbol, self.safe_dict(marketsById, symbol))
+                    if market is None:
+                        raise BadSymbol(self.id + ' does not have OTC market symbol ' + symbol)
+                    selectedMarkets.append(market)
+                otcMarkets = selectedMarkets
+            otcTickers = {}
+            for i in range(0, len(otcMarkets)):
+                market = otcMarkets[i]
+                request = self.extend(params, {'side': 'BUY', 'symbol': market['id']})
+                otcResponse = self.publicGetV1OtcPrice(request)
+                data = self.safe_dict(otcResponse, 'result', {})
+                if self.safe_string(data, 'price') is None:
+                    raise ExchangeError(self.id + ' OTC quote unavailable for ' + market['symbol'] + ': ' + self.json(otcResponse))
+                otcTickers[market['symbol']] = self.parse_ticker(data, market)
+            return otcTickers
         self.load_markets()
         if symbols is not None:
             symbols = self.market_symbols(symbols)
@@ -266,7 +322,8 @@ class wallex(Exchange, ImplicitAPI):
         result = {}
         for i in range(0, len(marketKeys)):
             index = marketKeys[i]
-            ticker = self.parse_ticker(marketList[index])
+            market = self.parse_market(marketList[index])
+            ticker = self.parse_ticker(marketList[index], market)
             symbol = ticker['symbol']
             result[symbol] = ticker
         return self.filter_by_array_tickers(result, 'symbol', symbols)
@@ -277,15 +334,12 @@ class wallex(Exchange, ImplicitAPI):
         https://api-docs.wallex.ir/#be8d9c51a2
         :param str symbol: unified symbol of the market to fetch the ticker for
         :param dict [params]: extra parameters specific to the exchange API endpoint
+        :param str [params.type]: market type, 'spot'(default) or 'otc'
         :returns dict: a `ticker structure <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
-        self.load_markets()
-        market = self.market(symbol)
-        response = self.publicGetV1Markets(params)
-        markets = self.safe_dict(response, 'result')
-        marketList = self.safe_dict(markets, 'symbols')
-        ticker = self.parse_ticker(marketList[market['id']])
-        return ticker
+        tickers = self.fetch_tickers([symbol], params)
+        values = list(tickers.values())
+        return self.safe_value(values, 0)
 
     def parse_ticker(self, ticker, market: Market = None) -> Ticker:
         # {
@@ -335,7 +389,32 @@ class wallex(Exchange, ImplicitAPI):
         # isNew: False,
         # isZeroFee: False
         # },
-        marketType = 'spot'
+        marketType = self.safe_string(market, 'type', 'spot')
+        if marketType == 'otc':
+            timestamp = self.parse8601(self.safe_string(ticker, 'current_time'))
+            price = self.safe_number(ticker, 'price')
+            return self.safe_ticker({
+                'symbol': market['symbol'],
+                'timestamp': timestamp,
+                'datetime': self.iso8601(timestamp),
+                'high': None,
+                'low': None,
+                'bid': None,
+                'bidVolume': None,
+                'ask': price,
+                'askVolume': None,
+                'vwap': None,
+                'open': None,
+                'close': price,
+                'last': price,
+                'previousClose': None,
+                'change': None,
+                'percentage': None,
+                'average': None,
+                'baseVolume': None,
+                'quoteVolume': None,
+                'info': ticker,
+            }, market)
         stats = self.safe_value(ticker, 'stats')
         marketId = self.safe_string(ticker, 'symbol')
         symbol = self.safe_symbol(marketId, market, None, marketType)
@@ -437,9 +516,7 @@ class wallex(Exchange, ImplicitAPI):
     def sign(self, path, api='public', method='GET', params={}, headers=None, body=None):
         query = self.omit(params, self.extract_params(path))
         url = self.urls['api']['public'] + '/' + path
-        if path == 'v1/udf/history':
-            url = url + '?' + self.urlencode(query)
-        if path == 'v1/depth':
+        if not self.is_empty(query):
             url = url + '?' + self.urlencode(query)
         headers = {'Content-Type': 'application/json'}
         return {'url': url, 'method': method, 'body': body, 'headers': headers}

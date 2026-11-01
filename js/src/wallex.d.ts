@@ -1,5 +1,5 @@
 import Exchange from './abstract/wallex.js';
-import { Int, Market, OHLCV, OrderBook, Strings, Ticker, Tickers } from './base/types.js';
+import { Int, Market, MarketType, OHLCV, OrderBook, Strings, Ticker, Tickers } from './base/types.js';
 /**
  * @class wallex
  * @augments Exchange
@@ -8,7 +8,7 @@ import { Int, Market, OHLCV, OrderBook, Strings, Ticker, Tickers } from './base/
 export default class wallex extends Exchange {
     describe(): any;
     fetchMarkets(params?: {}): Promise<Market[]>;
-    parseMarket(market: any): Market;
+    parseMarket(market: any, type?: MarketType): Market;
     fetchTickers(symbols?: Strings, params?: {}): Promise<Tickers>;
     fetchTicker(symbol: string, params?: {}): Promise<Ticker>;
     parseTicker(ticker: any, market?: Market): Ticker;
