@@ -294,7 +294,7 @@ class wallex extends wallex$1["default"] {
          * @see https://api-docs.wallex.ir/#be8d9c51a2
          * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
          * @param {object} [params] extra parameters specific to the exchange API endpoint
-         * @param {string} [params.type] market type, 'spot' (default) or 'otc'; OTC requests one BUY quote per symbol
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'; OTC requests one BUY quote per symbol and skips failed or unavailable quotes
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
         const type = this.safeString(params, 'type', 'spot');
@@ -319,10 +319,17 @@ class wallex extends wallex$1["default"] {
             for (let i = 0; i < otcMarkets.length; i++) {
                 const market = otcMarkets[i];
                 const request = this.extend(params, { 'side': 'BUY', 'symbol': market['id'] });
-                const otcResponse = await this.publicGetV1OtcPrice(request);
+                let otcResponse = undefined;
+                try {
+                    otcResponse = await this.publicGetV1OtcPrice(request);
+                }
+                catch (e) {
+                    // A failed quote must not prevent fetching the remaining OTC tickers.
+                    continue;
+                }
                 const data = this.safeDict(otcResponse, 'result', {});
                 if (this.safeString(data, 'price') === undefined) {
-                    throw new errors.ExchangeError(this.id + ' OTC quote unavailable for ' + market['symbol'] + ': ' + this.json(otcResponse));
+                    continue;
                 }
                 otcTickers[market['symbol']] = this.parseTicker(data, market);
             }

@@ -290,7 +290,7 @@ class wallex extends Exchange {
          * @see https://api-docs.wallex.ir/#be8d9c51a2
          * @param {string[]|null} $symbols unified $symbols of the $markets to fetch the $ticker for, all $market tickers are returned if not assigned
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
-         * @param {string} [$params->type] $market $type, 'spot' (default) or 'otc'; OTC requests one BUY quote per $symbol
+         * @param {string} [$params->type] $market $type, 'spot' (default) or 'otc'; OTC requests one BUY quote per $symbol and skips failed or unavailable quotes
          * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structures~
          */
         $type = $this->safe_string($params, 'type', 'spot');
@@ -315,10 +315,16 @@ class wallex extends Exchange {
             for ($i = 0; $i < count($otcMarkets); $i++) {
                 $market = $otcMarkets[$i];
                 $request = $this->extend($params, array( 'side' => 'BUY', 'symbol' => $market['id'] ));
-                $otcResponse = $this->publicGetV1OtcPrice ($request);
+                $otcResponse = null;
+                try {
+                    $otcResponse = $this->publicGetV1OtcPrice ($request);
+                } catch (Exception $e) {
+                    // A failed quote must not prevent fetching the remaining OTC tickers.
+                    continue;
+                }
                 $data = $this->safe_dict($otcResponse, 'result', array());
                 if ($this->safe_string($data, 'price') === null) {
-                    throw new ExchangeError($this->id . ' OTC quote unavailable for ' . $market['symbol'] . ' => ' . $this->json($otcResponse));
+                    continue;
                 }
                 $otcTickers[$market['symbol']] = $this->parse_ticker($data, $market);
             }

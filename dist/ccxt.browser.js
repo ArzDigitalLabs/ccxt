@@ -405349,7 +405349,7 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
          * @see https://api-docs.wallex.ir/#be8d9c51a2
          * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
          * @param {object} [params] extra parameters specific to the exchange API endpoint
-         * @param {string} [params.type] market type, 'spot' (default) or 'otc'; OTC requests one BUY quote per symbol
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'; OTC requests one BUY quote per symbol and skips failed or unavailable quotes
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
         const type = this.safeString(params, 'type', 'spot');
@@ -405374,10 +405374,17 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
             for (let i = 0; i < otcMarkets.length; i++) {
                 const market = otcMarkets[i];
                 const request = this.extend(params, { 'side': 'BUY', 'symbol': market['id'] });
-                const otcResponse = await this.publicGetV1OtcPrice(request);
+                let otcResponse = undefined;
+                try {
+                    otcResponse = await this.publicGetV1OtcPrice(request);
+                }
+                catch (e) {
+                    // A failed quote must not prevent fetching the remaining OTC tickers.
+                    continue;
+                }
                 const data = this.safeDict(otcResponse, 'result', {});
                 if (this.safeString(data, 'price') === undefined) {
-                    throw new _base_errors_js__WEBPACK_IMPORTED_MODULE_1__.ExchangeError(this.id + ' OTC quote unavailable for ' + market['symbol'] + ': ' + this.json(otcResponse));
+                    continue;
                 }
                 otcTickers[market['symbol']] = this.parseTicker(data, market);
             }
@@ -438899,7 +438906,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.24.1';
+const ccxt_version = '4.24.2';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 

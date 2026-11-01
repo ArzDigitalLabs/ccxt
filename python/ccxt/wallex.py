@@ -7,7 +7,6 @@ from ccxt.base.exchange import Exchange
 from ccxt.abstract.wallex import ImplicitAPI
 from ccxt.base.types import Any, Int, Market, MarketType, OrderBook, Strings, Ticker, Tickers
 from typing import List
-from ccxt.base.errors import ExchangeError
 from ccxt.base.errors import BadSymbol
 
 
@@ -284,7 +283,7 @@ class wallex(Exchange, ImplicitAPI):
         https://api-docs.wallex.ir/#be8d9c51a2
         :param str[]|None symbols: unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
         :param dict [params]: extra parameters specific to the exchange API endpoint
-        :param str [params.type]: market type, 'spot'(default) or 'otc'; OTC requests one BUY quote per symbol
+        :param str [params.type]: market type, 'spot'(default) or 'otc'; OTC requests one BUY quote per symbol and skips failed or unavailable quotes
         :returns dict: a dictionary of `ticker structures <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
         type = self.safe_string(params, 'type', 'spot')
@@ -306,10 +305,15 @@ class wallex(Exchange, ImplicitAPI):
             for i in range(0, len(otcMarkets)):
                 market = otcMarkets[i]
                 request = self.extend(params, {'side': 'BUY', 'symbol': market['id']})
-                otcResponse = self.publicGetV1OtcPrice(request)
+                otcResponse = None
+                try:
+                    otcResponse = self.publicGetV1OtcPrice(request)
+                except Exception as e:
+                    # A failed quote must not prevent fetching the remaining OTC tickers.
+                    continue
                 data = self.safe_dict(otcResponse, 'result', {})
                 if self.safe_string(data, 'price') is None:
-                    raise ExchangeError(self.id + ' OTC quote unavailable for ' + market['symbol'] + ': ' + self.json(otcResponse))
+                    continue
                 otcTickers[market['symbol']] = self.parse_ticker(data, market)
             return otcTickers
         self.load_markets()
