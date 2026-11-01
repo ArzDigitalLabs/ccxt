@@ -77,6 +77,7 @@ class bitpin extends Exchange {
                 'fetchTradingFee' => false,
                 'fetchTradingFees' => false,
                 'fetchWithdrawals' => false,
+                'otc' => true,
                 'setLeverage' => false,
                 'setMarginMode' => false,
                 'transfer' => false,
@@ -132,19 +133,24 @@ class bitpin extends Exchange {
          * retrieves data on all $markets for bitpin
          * @see https://api-docs.bitpin.ir/#be8d9c51a2
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
-         * @return {array[]} an array of objects representing $market data
+         * @param {string} [$params->type] market $type, 'spot' (default) or 'otc'
+         * @return {array[]} an array of objects representing market data
          */
-        $response = $this->publicGetV1MktMarkets ($params);
+        $type = $this->safe_string($params, 'type', 'spot');
+        $request = $this->omit($params, array( 'type' ));
+        $response = $this->publicGetV1MktMarkets ($request);
         $markets = $this->safe_list($response, 'results');
+        $tradableKey = ($type === 'otc') ? 'otc_tradable' : 'tradable';
         $result = array();
         for ($i = 0; $i < count($markets); $i++) {
-            $market = $this->parse_market($markets[$i]);
-            $result[] = $market;
+            if ($this->safe_bool($markets[$i], $tradableKey, false)) {
+                $result[] = $this->parse_market($markets[$i], $type);
+            }
         }
         return $result;
     }
 
-    public function parse_market($market): array {
+    public function parse_market($market, string $type = 'spot'): array {
         $id = $this->safe_string($market, 'id');
         $baseCurrency = $this->safe_dict($market, 'currency1');
         $quoteCurrency = $this->safe_dict($market, 'currency2');
@@ -154,6 +160,7 @@ class bitpin extends Exchange {
         $quote = $this->safe_currency_code($quoteId);
         $baseId = strtolower($baseId);
         $quoteId = strtolower($quoteId);
+        $tradableKey = ($type === 'otc') ? 'otc_tradable' : 'tradable';
         return array(
             'id' => $id,
             'symbol' => $base . '/' . $quote,
@@ -163,13 +170,13 @@ class bitpin extends Exchange {
             'baseId' => $baseId,
             'quoteId' => $quoteId,
             'settleId' => null,
-            'type' => 'spot',
-            'spot' => true,
+            'type' => $type,
+            'spot' => $type === 'spot',
             'margin' => false,
             'swap' => false,
             'future' => false,
             'option' => false,
-            'active' => true,
+            'active' => $this->safe_bool($market, $tradableKey, false),
             'contract' => false,
             'linear' => null,
             'inverse' => null,
@@ -207,23 +214,24 @@ class bitpin extends Exchange {
 
     public function fetch_tickers(?array $symbols = null, $params = array ()): array {
         /**
-         * fetches price tickers for multiple $markets, statistical information calculated over the past 24 hours for each market
+         * fetches price tickers for multiple $markets, statistical information calculated over the past 24 hours for each $market
          * @see https://api-docs.bitpin.ir/#be8d9c51a2
-         * @param {string[]|null} $symbols unified $symbols of the $markets to fetch the $ticker for, all market tickers are returned if not assigned
+         * @param {string[]|null} $symbols unified $symbols of the $markets to fetch the $ticker for, all $market tickers are returned if not assigned
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
+         * @param {string} [$params->type] $market $type, 'spot' (default) or 'otc'
          * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structures~
          */
-        $this->load_markets();
-        if ($symbols !== null) {
-            $symbols = $this->market_symbols($symbols);
-        }
-        $response = $this->publicGetV1MktMarkets ($params);
+        $type = $this->safe_string($params, 'type', 'spot');
+        $request = $this->omit($params, array( 'type' ));
+        $this->load_markets(false, array( 'type' => $type ));
+        $response = $this->publicGetV1MktMarkets ($request);
         $markets = $this->safe_list($response, 'results');
+        $tradableKey = ($type === 'otc') ? 'otc_tradable' : 'tradable';
         $result = array();
         for ($i = 0; $i < count($markets); $i++) {
-            $is_active = $this->safe_bool($markets[$i], 'tradable');
-            if ($is_active === true) {
-                $ticker = $this->parse_ticker($markets[$i]);
+            if ($this->safe_bool($markets[$i], $tradableKey, false)) {
+                $market = $this->parse_market($markets[$i], $type);
+                $ticker = $this->parse_ticker($markets[$i], $market);
                 $symbol = $ticker['symbol'];
                 $result[$symbol] = $ticker;
             }
@@ -237,9 +245,10 @@ class bitpin extends Exchange {
          * @see https://api-docs.bitpin.ir/#be8d9c51a2
          * @param {string} $symbol unified $symbol of the market to fetch the $ticker for
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
+         * @param {string} [$params->type] market type, 'spot' (default) or 'otc'
          * @return {array} a ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structure~
          */
-        $ticker = $this->fetch_tickers(array( $symbol ));
+        $ticker = $this->fetch_tickers(array( $symbol ), $params);
         return $ticker[$symbol];
     }
 
@@ -357,16 +366,17 @@ class bitpin extends Exchange {
         //     'popularity_weight' => 0,
         //     'freshness_weight' => 0,
         // }
-        $marketType = 'spot';
-        $priceInfo = $this->safe_value($ticker, 'order_book_info');
+        $marketType = $this->safe_string($market, 'type', 'spot');
+        $priceInfoKey = ($marketType === 'otc') ? 'price_info' : 'order_book_info';
+        $priceInfo = $this->safe_dict($ticker, $priceInfoKey, array());
         $marketId = $this->safe_string($ticker, 'id');
         $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
-        $high = $this->safe_float($priceInfo, 'max', 0);
-        $low = $this->safe_float($priceInfo, 'min', 0);
-        $last = $this->safe_float($priceInfo, 'price', 0);
-        $change = $this->safe_float($priceInfo, 'change', 0);
-        $baseVolume = $this->safe_float($priceInfo, 'amount', 0);
-        $quoteVolume = $this->safe_float($priceInfo, 'value', 0);
+        $high = $this->safe_float($priceInfo, 'max');
+        $low = $this->safe_float($priceInfo, 'min');
+        $last = $this->safe_float($priceInfo, 'price');
+        $change = $this->safe_float($priceInfo, 'change');
+        $baseVolume = $this->safe_float($priceInfo, 'amount');
+        $quoteVolume = $this->safe_float($priceInfo, 'value');
         return $this->safe_ticker(array(
             'symbol' => $symbol,
             'timestamp' => null,

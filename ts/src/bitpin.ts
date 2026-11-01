@@ -2,7 +2,7 @@
 //  ---------------------------------------------------------------------------
 
 import Exchange from './abstract/bitpin.js';
-import { Int, Market, OHLCV, OrderBook, Strings, Ticker, Tickers } from './base/types.js';
+import { Int, Market, MarketType, OHLCV, OrderBook, Strings, Ticker, Tickers } from './base/types.js';
 
 //  ---------------------------------------------------------------------------
 
@@ -79,6 +79,7 @@ export default class bitpin extends Exchange {
                 'fetchTradingFee': false,
                 'fetchTradingFees': false,
                 'fetchWithdrawals': false,
+                'otc': true,
                 'setLeverage': false,
                 'setMarginMode': false,
                 'transfer': false,
@@ -136,19 +137,24 @@ export default class bitpin extends Exchange {
          * @description retrieves data on all markets for bitpin
          * @see https://api-docs.bitpin.ir/#be8d9c51a2
          * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'
          * @returns {object[]} an array of objects representing market data
          */
-        const response = await this.publicGetV1MktMarkets (params);
+        const type = this.safeString (params, 'type', 'spot') as MarketType;
+        const request = this.omit (params, [ 'type' ]);
+        const response = await this.publicGetV1MktMarkets (request);
         const markets = this.safeList (response, 'results');
+        const tradableKey = (type === 'otc') ? 'otc_tradable' : 'tradable';
         const result = [];
         for (let i = 0; i < markets.length; i++) {
-            const market = this.parseMarket (markets[i]);
-            result.push (market);
+            if (this.safeBool (markets[i], tradableKey, false)) {
+                result.push (this.parseMarket (markets[i], type));
+            }
         }
         return result;
     }
 
-    parseMarket (market): Market {
+    parseMarket (market, type: MarketType = 'spot'): Market {
         const id = this.safeString (market, 'id');
         const baseCurrency = this.safeDict (market, 'currency1');
         const quoteCurrency = this.safeDict (market, 'currency2');
@@ -158,6 +164,7 @@ export default class bitpin extends Exchange {
         const quote = this.safeCurrencyCode (quoteId);
         baseId = baseId.toLowerCase ();
         quoteId = quoteId.toLowerCase ();
+        const tradableKey = (type === 'otc') ? 'otc_tradable' : 'tradable';
         return {
             'id': id,
             'symbol': base + '/' + quote,
@@ -167,13 +174,13 @@ export default class bitpin extends Exchange {
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': undefined,
-            'type': 'spot',
-            'spot': true,
+            'type': type,
+            'spot': type === 'spot',
             'margin': false,
             'swap': false,
             'future': false,
             'option': false,
-            'active': true,
+            'active': this.safeBool (market, tradableKey, false),
             'contract': false,
             'linear': undefined,
             'inverse': undefined,
@@ -217,19 +224,20 @@ export default class bitpin extends Exchange {
          * @see https://api-docs.bitpin.ir/#be8d9c51a2
          * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
          * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
-        await this.loadMarkets ();
-        if (symbols !== undefined) {
-            symbols = this.marketSymbols (symbols);
-        }
-        const response = await this.publicGetV1MktMarkets (params);
+        const type = this.safeString (params, 'type', 'spot') as MarketType;
+        const request = this.omit (params, [ 'type' ]);
+        await this.loadMarkets (false, { 'type': type });
+        const response = await this.publicGetV1MktMarkets (request);
         const markets = this.safeList (response, 'results');
+        const tradableKey = (type === 'otc') ? 'otc_tradable' : 'tradable';
         const result = {};
         for (let i = 0; i < markets.length; i++) {
-            const is_active = this.safeBool (markets[i], 'tradable');
-            if (is_active === true) {
-                const ticker = this.parseTicker (markets[i]);
+            if (this.safeBool (markets[i], tradableKey, false)) {
+                const market = this.parseMarket (markets[i], type);
+                const ticker = this.parseTicker (markets[i], market);
                 const symbol = ticker['symbol'];
                 result[symbol] = ticker;
             }
@@ -245,9 +253,10 @@ export default class bitpin extends Exchange {
          * @see https://api-docs.bitpin.ir/#be8d9c51a2
          * @param {string} symbol unified symbol of the market to fetch the ticker for
          * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'
          * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
-        const ticker = await this.fetchTickers ([ symbol ]);
+        const ticker = await this.fetchTickers ([ symbol ], params);
         return ticker[symbol];
     }
 
@@ -365,16 +374,17 @@ export default class bitpin extends Exchange {
         //     'popularity_weight': 0,
         //     'freshness_weight': 0,
         // }
-        const marketType = 'spot';
-        const priceInfo = this.safeValue (ticker, 'order_book_info');
+        const marketType = this.safeString (market, 'type', 'spot');
+        const priceInfoKey = (marketType === 'otc') ? 'price_info' : 'order_book_info';
+        const priceInfo = this.safeDict (ticker, priceInfoKey, {});
         const marketId = this.safeString (ticker, 'id');
         const symbol = this.safeSymbol (marketId, market, undefined, marketType);
-        const high = this.safeFloat (priceInfo, 'max', 0);
-        const low = this.safeFloat (priceInfo, 'min', 0);
-        const last = this.safeFloat (priceInfo, 'price', 0);
-        const change = this.safeFloat (priceInfo, 'change', 0);
-        const baseVolume = this.safeFloat (priceInfo, 'amount', 0);
-        const quoteVolume = this.safeFloat (priceInfo, 'value', 0);
+        const high = this.safeFloat (priceInfo, 'max');
+        const low = this.safeFloat (priceInfo, 'min');
+        const last = this.safeFloat (priceInfo, 'price');
+        const change = this.safeFloat (priceInfo, 'change');
+        const baseVolume = this.safeFloat (priceInfo, 'amount');
+        const quoteVolume = this.safeFloat (priceInfo, 'value');
         return this.safeTicker ({
             'symbol': symbol,
             'timestamp': undefined,

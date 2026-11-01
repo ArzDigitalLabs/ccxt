@@ -5,7 +5,7 @@
 
 from ccxt.async_support.base.exchange import Exchange
 from ccxt.abstract.nobitex import ImplicitAPI
-from ccxt.base.types import Any, Int, Market, OrderBook, Strings, Ticker, Tickers
+from ccxt.base.types import Any, Int, Market, MarketType, OrderBook, Strings, Ticker, Tickers
 from typing import List
 
 
@@ -77,6 +77,7 @@ class nobitex(Exchange, ImplicitAPI):
                 'fetchTradingFee': False,
                 'fetchTradingFees': False,
                 'fetchWithdrawals': False,
+                'otc': True,
                 'setLeverage': False,
                 'setMarginMode': False,
                 'transfer': False,
@@ -134,9 +135,12 @@ class nobitex(Exchange, ImplicitAPI):
         retrieves data on all markets for nobitex
         https://apidocs.nobitex.ir/#6ae2dae4a2
         :param dict [params]: extra parameters specific to the exchange API endpoint
+        :param str [params.type]: market type, 'spot'(default) or 'otc'; both use market/stats
         :returns dict[]: an array of objects representing market data
         """
-        response = await self.publicGetMarketStats()
+        type = self.safe_string(params, 'type', 'spot')
+        request = self.omit(params, ['type'])
+        response = await self.publicGetMarketStats(request)
         markets = self.safe_dict(response, 'stats')
         marketKeys = list(markets.keys())
         result = []
@@ -144,12 +148,12 @@ class nobitex(Exchange, ImplicitAPI):
             symbol = marketKeys[i]
             if markets[symbol]['isClosed']:
                 continue
-            markets[symbol]['symbol'] = symbol
-            market = self.parse_market(markets[symbol])
+            data = self.extend(markets[symbol], {'symbol': symbol})
+            market = self.parse_market(data, type)
             result.append(market)
         return result
 
-    def parse_market(self, market) -> Market:
+    def parse_market(self, market, type: MarketType = 'spot') -> Market:
         #        btc-rls: {
         # isClosed: False,
         # bestSell: "38820000000",
@@ -180,8 +184,8 @@ class nobitex(Exchange, ImplicitAPI):
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': None,
-            'type': 'spot',
-            'spot': True,
+            'type': type,
+            'spot': type == 'spot',
             'margin': False,
             'swap': False,
             'future': False,
@@ -227,12 +231,15 @@ class nobitex(Exchange, ImplicitAPI):
         https://apidocs.nobitex.ir/#6ae2dae4a2
         :param str[]|None symbols: unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
         :param dict [params]: extra parameters specific to the exchange API endpoint
+        :param str [params.type]: market type, 'spot'(default) or 'otc'; both use market/stats
         :returns dict: a dictionary of `ticker structures <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
-        await self.load_markets()
+        type = self.safe_string(params, 'type', 'spot')
+        request = self.omit(params, ['type'])
+        await self.load_markets(False, {'type': type})
         if symbols is not None:
             symbols = self.market_symbols(symbols)
-        response = await self.publicGetMarketStats()
+        response = await self.publicGetMarketStats(request)
         markets = self.safe_dict(response, 'stats')
         marketKeys = list(markets.keys())
         result = {}
@@ -240,8 +247,9 @@ class nobitex(Exchange, ImplicitAPI):
             symbol = marketKeys[i]
             if markets[symbol]['isClosed']:
                 continue
-            markets[symbol]['symbol'] = symbol
-            ticker = self.parse_ticker(markets[symbol])
+            data = self.extend(markets[symbol], {'symbol': symbol})
+            market = self.parse_market(data, type)
+            ticker = self.parse_ticker(data, market)
             symbol = ticker['symbol']
             result[symbol] = ticker
         return self.filter_by_array_tickers(result, 'symbol', symbols)
@@ -252,10 +260,12 @@ class nobitex(Exchange, ImplicitAPI):
         https://apidocs.nobitex.ir/#6ae2dae4a2
         :param str symbol: unified symbol of the market to fetch the ticker for
         :param dict [params]: extra parameters specific to the exchange API endpoint
+        :param str [params.type]: market type, 'spot'(default) or 'otc'; both use market/stats
         :returns dict: a `ticker structure <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
-        ticker = await self.fetch_tickers([symbol])
-        return ticker[symbol]
+        tickers = await self.fetch_tickers([symbol], params)
+        values = list(tickers.values())
+        return self.safe_value(values, 0)
 
     def parse_ticker(self, ticker, market: Market = None) -> Ticker:
         #        {
@@ -273,18 +283,8 @@ class nobitex(Exchange, ImplicitAPI):
         # dayClose: "112800000000",
         # dayChange: "0.01"
         # }
-        marketType = 'spot'
-        rawSymbol = self.safe_string_lower(ticker, 'symbol')
-        parts = rawSymbol.split('-')
-        baseId = parts[0]
-        quoteId = parts[1]
-        if quoteId == 'rls':
-            quoteId = 'irt'
-        base = self.safe_currency_code(baseId.upper())
-        quote = self.safe_currency_code(quoteId.upper())
-        marketId = base + '/' + quote
-        marketinfo = self.market(marketId)
-        symbol = self.safe_symbol(marketId, market, None, marketType)
+        market = self.parse_market(ticker) if (market is None) else market
+        symbol = market['symbol']
         high = self.safe_float(ticker, 'dayHigh')
         low = self.safe_float(ticker, 'dayLow')
         bid = self.safe_float(ticker, 'bestBuy')
@@ -296,7 +296,7 @@ class nobitex(Exchange, ImplicitAPI):
         quoteVolume = self.safe_float(ticker, 'volumeDst')
         baseVolume = self.safe_float(ticker, 'volumeSrc')
         # adjust Nobitex IRT scaling
-        if marketinfo['quote'] == 'IRT':
+        if market['quote'] == 'IRT':
             high = high / 10 if high else 0
             low = low / 10 if low else 0
             bid = bid / 10 if bid else 0

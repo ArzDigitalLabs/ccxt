@@ -16,6 +16,16 @@ public partial class wallex : Exchange
         return await this.callAsync ("publicGetV1Markets",parameters);
     }
 
+    public async Task<object> publicGetV1Currencies (object parameters = null)
+    {
+        return await this.callAsync ("publicGetV1Currencies",parameters);
+    }
+
+    public async Task<object> publicGetV1OtcPrice (object parameters = null)
+    {
+        return await this.callAsync ("publicGetV1OtcPrice",parameters);
+    }
+
     public async Task<object> publicGetV1CurrenciesStats (object parameters = null)
     {
         return await this.callAsync ("publicGetV1CurrenciesStats",parameters);

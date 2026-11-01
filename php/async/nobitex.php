@@ -78,6 +78,7 @@ class nobitex extends Exchange {
                 'fetchTradingFee' => false,
                 'fetchTradingFees' => false,
                 'fetchWithdrawals' => false,
+                'otc' => true,
                 'setLeverage' => false,
                 'setMarginMode' => false,
                 'transfer' => false,
@@ -134,12 +135,15 @@ class nobitex extends Exchange {
     public function fetch_markets($params = array ()): PromiseInterface {
         return Async\async(function () use ($params) {
             /**
-             * retrieves data on all $markets for nobitex
+             * retrieves $data on all $markets for nobitex
              * @see https://apidocs.nobitex.ir/#6ae2dae4a2
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
-             * @return {array[]} an array of objects representing $market data
+             * @param {string} [$params->type] $market $type, 'spot' (default) or 'otc'; both use market/stats
+             * @return {array[]} an array of objects representing $market $data
              */
-            $response = Async\await($this->publicGetMarketStats ());
+            $type = $this->safe_string($params, 'type', 'spot');
+            $request = $this->omit($params, array( 'type' ));
+            $response = Async\await($this->publicGetMarketStats ($request));
             $markets = $this->safe_dict($response, 'stats');
             $marketKeys = is_array($markets) ? array_keys($markets) : array();
             $result = array();
@@ -148,15 +152,15 @@ class nobitex extends Exchange {
                 if ($markets[$symbol]['isClosed']) {
                     continue;
                 }
-                $markets[$symbol]['symbol'] = $symbol;
-                $market = $this->parse_market($markets[$symbol]);
+                $data = $this->extend($markets[$symbol], array( 'symbol' => $symbol ));
+                $market = $this->parse_market($data, $type);
                 $result[] = $market;
             }
             return $result;
         }) ();
     }
 
-    public function parse_market($market): array {
+    public function parse_market($market, string $type = 'spot'): array {
         //        btc-rls => array(
         // isClosed => false,
         // bestSell => "38820000000",
@@ -187,8 +191,8 @@ class nobitex extends Exchange {
             'baseId' => $baseId,
             'quoteId' => $quoteId,
             'settleId' => null,
-            'type' => 'spot',
-            'spot' => true,
+            'type' => $type,
+            'spot' => $type === 'spot',
             'margin' => false,
             'swap' => false,
             'future' => false,
@@ -232,17 +236,20 @@ class nobitex extends Exchange {
     public function fetch_tickers(?array $symbols = null, $params = array ()): PromiseInterface {
         return Async\async(function () use ($symbols, $params) {
             /**
-             * fetches price tickers for multiple $markets, statistical information calculated over the past 24 hours for each market
+             * fetches price tickers for multiple $markets, statistical information calculated over the past 24 hours for each $market
              * @see https://apidocs.nobitex.ir/#6ae2dae4a2
-             * @param {string[]|null} $symbols unified $symbols of the $markets to fetch the $ticker for, all market tickers are returned if not assigned
+             * @param {string[]|null} $symbols unified $symbols of the $markets to fetch the $ticker for, all $market tickers are returned if not assigned
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
+             * @param {string} [$params->type] $market $type, 'spot' (default) or 'otc'; both use market/stats
              * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structures~
              */
-            Async\await($this->load_markets());
+            $type = $this->safe_string($params, 'type', 'spot');
+            $request = $this->omit($params, array( 'type' ));
+            Async\await($this->load_markets(false, array( 'type' => $type )));
             if ($symbols !== null) {
                 $symbols = $this->market_symbols($symbols);
             }
-            $response = Async\await($this->publicGetMarketStats ());
+            $response = Async\await($this->publicGetMarketStats ($request));
             $markets = $this->safe_dict($response, 'stats');
             $marketKeys = is_array($markets) ? array_keys($markets) : array();
             $result = array();
@@ -251,8 +258,9 @@ class nobitex extends Exchange {
                 if ($markets[$symbol]['isClosed']) {
                     continue;
                 }
-                $markets[$symbol]['symbol'] = $symbol;
-                $ticker = $this->parse_ticker($markets[$symbol]);
+                $data = $this->extend($markets[$symbol], array( 'symbol' => $symbol ));
+                $market = $this->parse_market($data, $type);
+                $ticker = $this->parse_ticker($data, $market);
                 $symbol = $ticker['symbol'];
                 $result[$symbol] = $ticker;
             }
@@ -263,14 +271,16 @@ class nobitex extends Exchange {
     public function fetch_ticker(string $symbol, $params = array ()): PromiseInterface {
         return Async\async(function () use ($symbol, $params) {
             /**
-             * fetches a price $ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
+             * fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
              * @see https://apidocs.nobitex.ir/#6ae2dae4a2
-             * @param {string} $symbol unified $symbol of the market to fetch the $ticker for
+             * @param {string} $symbol unified $symbol of the market to fetch the ticker for
              * @param {array} [$params] extra parameters specific to the exchange API endpoint
-             * @return {array} a ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structure~
+             * @param {string} [$params->type] market type, 'spot' (default) or 'otc'; both use market/stats
+             * @return {array} a ~@link https://docs.ccxt.com/#/?id=ticker-structure ticker structure~
              */
-            $ticker = Async\await($this->fetch_tickers(array( $symbol )));
-            return $ticker[$symbol];
+            $tickers = Async\await($this->fetch_tickers(array( $symbol ), $params));
+            $values = is_array($tickers) ? array_values($tickers) : array();
+            return $this->safe_value($values, 0);
         }) ();
     }
 
@@ -290,19 +300,8 @@ class nobitex extends Exchange {
         // dayClose => "112800000000",
         // dayChange => "0.01"
         // }
-        $marketType = 'spot';
-        $rawSymbol = $this->safe_string_lower($ticker, 'symbol');
-        $parts = explode('-', $rawSymbol);
-        $baseId = $parts[0];
-        $quoteId = $parts[1];
-        if ($quoteId === 'rls') {
-            $quoteId = 'irt';
-        }
-        $base = $this->safe_currency_code(strtoupper($baseId));
-        $quote = $this->safe_currency_code(strtoupper($quoteId));
-        $marketId = $base . '/' . $quote;
-        $marketinfo = $this->market($marketId);
-        $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
+        $market = ($market === null) ? $this->parse_market($ticker) : $market;
+        $symbol = $market['symbol'];
         $high = $this->safe_float($ticker, 'dayHigh');
         $low = $this->safe_float($ticker, 'dayLow');
         $bid = $this->safe_float($ticker, 'bestBuy');
@@ -314,7 +313,7 @@ class nobitex extends Exchange {
         $quoteVolume = $this->safe_float($ticker, 'volumeDst');
         $baseVolume = $this->safe_float($ticker, 'volumeSrc');
         // adjust Nobitex IRT scaling
-        if ($marketinfo['quote'] === 'IRT') {
+        if ($market['quote'] === 'IRT') {
             $high = $high ? $high / 10 : 0;
             $low = $low ? $low / 10 : 0;
             $bid = $bid ? $bid / 10 : 0;

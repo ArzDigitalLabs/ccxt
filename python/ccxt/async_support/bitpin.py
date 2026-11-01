@@ -5,7 +5,7 @@
 
 from ccxt.async_support.base.exchange import Exchange
 from ccxt.abstract.bitpin import ImplicitAPI
-from ccxt.base.types import Any, Int, Market, OrderBook, Strings, Ticker, Tickers
+from ccxt.base.types import Any, Int, Market, MarketType, OrderBook, Strings, Ticker, Tickers
 from typing import List
 
 
@@ -78,6 +78,7 @@ class bitpin(Exchange, ImplicitAPI):
                 'fetchTradingFee': False,
                 'fetchTradingFees': False,
                 'fetchWithdrawals': False,
+                'otc': True,
                 'setLeverage': False,
                 'setMarginMode': False,
                 'transfer': False,
@@ -132,17 +133,21 @@ class bitpin(Exchange, ImplicitAPI):
         retrieves data on all markets for bitpin
         https://api-docs.bitpin.ir/#be8d9c51a2
         :param dict [params]: extra parameters specific to the exchange API endpoint
+        :param str [params.type]: market type, 'spot'(default) or 'otc'
         :returns dict[]: an array of objects representing market data
         """
-        response = await self.publicGetV1MktMarkets(params)
+        type = self.safe_string(params, 'type', 'spot')
+        request = self.omit(params, ['type'])
+        response = await self.publicGetV1MktMarkets(request)
         markets = self.safe_list(response, 'results')
+        tradableKey = 'otc_tradable' if (type == 'otc') else 'tradable'
         result = []
         for i in range(0, len(markets)):
-            market = self.parse_market(markets[i])
-            result.append(market)
+            if self.safe_bool(markets[i], tradableKey, False):
+                result.append(self.parse_market(markets[i], type))
         return result
 
-    def parse_market(self, market) -> Market:
+    def parse_market(self, market, type: MarketType = 'spot') -> Market:
         id = self.safe_string(market, 'id')
         baseCurrency = self.safe_dict(market, 'currency1')
         quoteCurrency = self.safe_dict(market, 'currency2')
@@ -152,6 +157,7 @@ class bitpin(Exchange, ImplicitAPI):
         quote = self.safe_currency_code(quoteId)
         baseId = baseId.lower()
         quoteId = quoteId.lower()
+        tradableKey = 'otc_tradable' if (type == 'otc') else 'tradable'
         return {
             'id': id,
             'symbol': base + '/' + quote,
@@ -161,13 +167,13 @@ class bitpin(Exchange, ImplicitAPI):
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': None,
-            'type': 'spot',
-            'spot': True,
+            'type': type,
+            'spot': type == 'spot',
             'margin': False,
             'swap': False,
             'future': False,
             'option': False,
-            'active': True,
+            'active': self.safe_bool(market, tradableKey, False),
             'contract': False,
             'linear': None,
             'inverse': None,
@@ -208,18 +214,20 @@ class bitpin(Exchange, ImplicitAPI):
         https://api-docs.bitpin.ir/#be8d9c51a2
         :param str[]|None symbols: unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
         :param dict [params]: extra parameters specific to the exchange API endpoint
+        :param str [params.type]: market type, 'spot'(default) or 'otc'
         :returns dict: a dictionary of `ticker structures <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
-        await self.load_markets()
-        if symbols is not None:
-            symbols = self.market_symbols(symbols)
-        response = await self.publicGetV1MktMarkets(params)
+        type = self.safe_string(params, 'type', 'spot')
+        request = self.omit(params, ['type'])
+        await self.load_markets(False, {'type': type})
+        response = await self.publicGetV1MktMarkets(request)
         markets = self.safe_list(response, 'results')
+        tradableKey = 'otc_tradable' if (type == 'otc') else 'tradable'
         result = {}
         for i in range(0, len(markets)):
-            is_active = self.safe_bool(markets[i], 'tradable')
-            if is_active is True:
-                ticker = self.parse_ticker(markets[i])
+            if self.safe_bool(markets[i], tradableKey, False):
+                market = self.parse_market(markets[i], type)
+                ticker = self.parse_ticker(markets[i], market)
                 symbol = ticker['symbol']
                 result[symbol] = ticker
         return self.filter_by_array_tickers(result, 'symbol', symbols)
@@ -230,9 +238,10 @@ class bitpin(Exchange, ImplicitAPI):
         https://api-docs.bitpin.ir/#be8d9c51a2
         :param str symbol: unified symbol of the market to fetch the ticker for
         :param dict [params]: extra parameters specific to the exchange API endpoint
+        :param str [params.type]: market type, 'spot'(default) or 'otc'
         :returns dict: a `ticker structure <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
-        ticker = await self.fetch_tickers([symbol])
+        ticker = await self.fetch_tickers([symbol], params)
         return ticker[symbol]
 
     def parse_ticker(self, ticker, market: Market = None) -> Ticker:
@@ -349,16 +358,17 @@ class bitpin(Exchange, ImplicitAPI):
         #     'popularity_weight': 0,
         #     'freshness_weight': 0,
         # }
-        marketType = 'spot'
-        priceInfo = self.safe_value(ticker, 'order_book_info')
+        marketType = self.safe_string(market, 'type', 'spot')
+        priceInfoKey = 'price_info' if (marketType == 'otc') else 'order_book_info'
+        priceInfo = self.safe_dict(ticker, priceInfoKey, {})
         marketId = self.safe_string(ticker, 'id')
         symbol = self.safe_symbol(marketId, market, None, marketType)
-        high = self.safe_float(priceInfo, 'max', 0)
-        low = self.safe_float(priceInfo, 'min', 0)
-        last = self.safe_float(priceInfo, 'price', 0)
-        change = self.safe_float(priceInfo, 'change', 0)
-        baseVolume = self.safe_float(priceInfo, 'amount', 0)
-        quoteVolume = self.safe_float(priceInfo, 'value', 0)
+        high = self.safe_float(priceInfo, 'max')
+        low = self.safe_float(priceInfo, 'min')
+        last = self.safe_float(priceInfo, 'price')
+        change = self.safe_float(priceInfo, 'change')
+        baseVolume = self.safe_float(priceInfo, 'amount')
+        quoteVolume = self.safe_float(priceInfo, 'value')
         return self.safe_ticker({
             'symbol': symbol,
             'timestamp': None,

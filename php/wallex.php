@@ -77,6 +77,7 @@ class wallex extends Exchange {
                 'fetchTradingFee' => false,
                 'fetchTradingFees' => false,
                 'fetchWithdrawals' => false,
+                'otc' => true,
                 'setLeverage' => false,
                 'setMarginMode' => false,
                 'transfer' => false,
@@ -105,6 +106,8 @@ class wallex extends Exchange {
                 'public' => array(
                     'get' => array(
                         'v1/markets' => 1,
+                        'v1/currencies' => 1,
+                        'v1/otc/price' => 1,
                         'v1/currencies/stats' => 1,
                         'v1/depth' => 1,
                         'v1/udf/history' => 1,
@@ -130,9 +133,39 @@ class wallex extends Exchange {
          * retrieves data on all $markets for wallex
          * @see https://api-docs.wallex.ir/#be8d9c51a2
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
+         * @param {string} [$params->type] $market $type, 'spot' (default) or 'otc'
          * @return {array[]} an array of objects representing $market data
          */
-        $response = $this->publicGetV1Markets ($params);
+        $type = $this->safe_string($params, 'type', 'spot');
+        $request = $this->omit($params, array( 'type' ));
+        if ($type === 'otc') {
+            $otcResponse = $this->publicGetV1Currencies ($request);
+            $currencies = $this->safe_dict($otcResponse, 'result', array());
+            $baseIds = is_array($currencies) ? array_keys($currencies) : array();
+            $quoteIds = array( 'TMN', 'USDT' );
+            $otcMarkets = array();
+            for ($i = 0; $i < count($baseIds); $i++) {
+                $baseId = $baseIds[$i];
+                // TMN is a quote currency; the OTC API does not support TMNUSDT.
+                if ($baseId === 'TMN') {
+                    continue;
+                }
+                for ($j = 0; $j < count($quoteIds); $j++) {
+                    $quoteId = $quoteIds[$j];
+                    if ($baseId === $quoteId) {
+                        continue;
+                    }
+                    $otcMarkets[] = $this->parse_market(array(
+                        'symbol' => $baseId . $quoteId,
+                        'baseAsset' => $baseId,
+                        'quoteAsset' => $quoteId,
+                        'info' => $currencies[$baseId],
+                    ), $type);
+                }
+            }
+            return $otcMarkets;
+        }
+        $response = $this->publicGetV1Markets ($request);
         $markets = $this->safe_dict($response, 'result');
         $marketList = $this->safe_dict($markets, 'symbols');
         $marketKeys = is_array($marketList) ? array_keys($marketList) : array();
@@ -145,7 +178,7 @@ class wallex extends Exchange {
         return $result;
     }
 
-    public function parse_market($market): array {
+    public function parse_market($market, string $type = 'spot'): array {
         //  array(
         // symbol => "PEPETMN",
         // baseAsset => "PEPE",
@@ -209,8 +242,8 @@ class wallex extends Exchange {
             'baseId' => $baseId,
             'quoteId' => $quoteId,
             'settleId' => null,
-            'type' => 'spot',
-            'spot' => true,
+            'type' => $type,
+            'spot' => $type === 'spot',
             'margin' => false,
             'swap' => false,
             'future' => false,
@@ -247,18 +280,50 @@ class wallex extends Exchange {
                 ),
             ),
             'created' => null,
-            'info' => $market,
+            'info' => $this->safe_dict($market, 'info', $market),
         );
     }
 
     public function fetch_tickers(?array $symbols = null, $params = array ()): array {
         /**
-         * fetches price tickers for multiple $markets, statistical information calculated over the past 24 hours for each market
+         * fetches price tickers for multiple $markets, statistical information calculated over the past 24 hours for each $market
          * @see https://api-docs.wallex.ir/#be8d9c51a2
-         * @param {string[]|null} $symbols unified $symbols of the $markets to fetch the $ticker for, all market tickers are returned if not assigned
+         * @param {string[]|null} $symbols unified $symbols of the $markets to fetch the $ticker for, all $market tickers are returned if not assigned
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
+         * @param {string} [$params->type] $market $type, 'spot' (default) or 'otc'; OTC requests one BUY quote per $symbol
          * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structures~
          */
+        $type = $this->safe_string($params, 'type', 'spot');
+        $params = $this->omit($params, array( 'type' ));
+        if ($type === 'otc') {
+            $otcMarkets = $this->fetch_markets($this->extend($params, array( 'type' => $type )));
+            if ($symbols !== null) {
+                $marketsBySymbol = $this->index_by($otcMarkets, 'symbol');
+                $marketsById = $this->index_by($otcMarkets, 'id');
+                $selectedMarkets = array();
+                for ($i = 0; $i < count($symbols); $i++) {
+                    $symbol = $symbols[$i];
+                    $market = $this->safe_dict($marketsBySymbol, $symbol, $this->safe_dict($marketsById, $symbol));
+                    if ($market === null) {
+                        throw new BadSymbol($this->id . ' does not have OTC $market $symbol ' . $symbol);
+                    }
+                    $selectedMarkets[] = $market;
+                }
+                $otcMarkets = $selectedMarkets;
+            }
+            $otcTickers = array();
+            for ($i = 0; $i < count($otcMarkets); $i++) {
+                $market = $otcMarkets[$i];
+                $request = $this->extend($params, array( 'side' => 'BUY', 'symbol' => $market['id'] ));
+                $otcResponse = $this->publicGetV1OtcPrice ($request);
+                $data = $this->safe_dict($otcResponse, 'result', array());
+                if ($this->safe_string($data, 'price') === null) {
+                    throw new ExchangeError($this->id . ' OTC quote unavailable for ' . $market['symbol'] . ' => ' . $this->json($otcResponse));
+                }
+                $otcTickers[$market['symbol']] = $this->parse_ticker($data, $market);
+            }
+            return $otcTickers;
+        }
         $this->load_markets();
         if ($symbols !== null) {
             $symbols = $this->market_symbols($symbols);
@@ -270,7 +335,8 @@ class wallex extends Exchange {
         $result = array();
         for ($i = 0; $i < count($marketKeys); $i++) {
             $index = $marketKeys[$i];
-            $ticker = $this->parse_ticker($marketList[$index]);
+            $market = $this->parse_market($marketList[$index]);
+            $ticker = $this->parse_ticker($marketList[$index], $market);
             $symbol = $ticker['symbol'];
             $result[$symbol] = $ticker;
         }
@@ -279,19 +345,16 @@ class wallex extends Exchange {
 
     public function fetch_ticker(string $symbol, $params = array ()): array {
         /**
-         * fetches a price $ticker, a statistical calculation with the information calculated over the past 24 hours for a specific $market
+         * fetches a price ticker, a statistical calculation with the information calculated over the past 24 hours for a specific market
          * @see https://api-docs.wallex.ir/#be8d9c51a2
-         * @param {string} $symbol unified $symbol of the $market to fetch the $ticker for
+         * @param {string} $symbol unified $symbol of the market to fetch the ticker for
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
-         * @return {array} a ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structure~
+         * @param {string} [$params->type] market type, 'spot' (default) or 'otc'
+         * @return {array} a ~@link https://docs.ccxt.com/#/?id=ticker-structure ticker structure~
          */
-        $this->load_markets();
-        $market = $this->market($symbol);
-        $response = $this->publicGetV1Markets ($params);
-        $markets = $this->safe_dict($response, 'result');
-        $marketList = $this->safe_dict($markets, 'symbols');
-        $ticker = $this->parse_ticker($marketList[$market['id']]);
-        return $ticker;
+        $tickers = $this->fetch_tickers(array( $symbol ), $params);
+        $values = is_array($tickers) ? array_values($tickers) : array();
+        return $this->safe_value($values, 0);
     }
 
     public function parse_ticker($ticker, ?array $market = null): array {
@@ -342,7 +405,33 @@ class wallex extends Exchange {
         // isNew => false,
         // isZeroFee => false
         // ),
-        $marketType = 'spot';
+        $marketType = $this->safe_string($market, 'type', 'spot');
+        if ($marketType === 'otc') {
+            $timestamp = $this->parse8601($this->safe_string($ticker, 'current_time'));
+            $price = $this->safe_number($ticker, 'price');
+            return $this->safe_ticker(array(
+                'symbol' => $market['symbol'],
+                'timestamp' => $timestamp,
+                'datetime' => $this->iso8601($timestamp),
+                'high' => null,
+                'low' => null,
+                'bid' => null,
+                'bidVolume' => null,
+                'ask' => $price,
+                'askVolume' => null,
+                'vwap' => null,
+                'open' => null,
+                'close' => $price,
+                'last' => $price,
+                'previousClose' => null,
+                'change' => null,
+                'percentage' => null,
+                'average' => null,
+                'baseVolume' => null,
+                'quoteVolume' => null,
+                'info' => $ticker,
+            ), $market);
+        }
         $stats = $this->safe_value($ticker, 'stats');
         $marketId = $this->safe_string($ticker, 'symbol');
         $symbol = $this->safe_symbol($marketId, $market, null, $marketType);
@@ -450,10 +539,7 @@ class wallex extends Exchange {
     public function sign($path, $api = 'public', $method = 'GET', $params = array (), $headers = null, $body = null) {
         $query = $this->omit($params, $this->extract_params($path));
         $url = $this->urls['api']['public'] . '/' . $path;
-        if ($path === 'v1/udf/history') {
-            $url = $url . '?' . $this->urlencode($query);
-        }
-        if ($path === 'v1/depth') {
+        if (!$this->is_empty($query)) {
             $url = $url . '?' . $this->urlencode($query);
         }
         $headers = array( 'Content-Type' => 'application/json' );

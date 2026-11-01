@@ -1,7 +1,7 @@
 //  ---------------------------------------------------------------------------
 
 import Exchange from './abstract/nobitex.js';
-import { Int, Market, OHLCV, OrderBook, Strings, Ticker, Tickers } from './base/types.js';
+import { Int, Market, MarketType, OHLCV, OrderBook, Strings, Ticker, Tickers } from './base/types.js';
 
 //  ---------------------------------------------------------------------------
 
@@ -77,6 +77,7 @@ export default class nobitex extends Exchange {
                 'fetchTradingFee': false,
                 'fetchTradingFees': false,
                 'fetchWithdrawals': false,
+                'otc': true,
                 'setLeverage': false,
                 'setMarginMode': false,
                 'transfer': false,
@@ -137,9 +138,12 @@ export default class nobitex extends Exchange {
          * @description retrieves data on all markets for nobitex
          * @see https://apidocs.nobitex.ir/#6ae2dae4a2
          * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'; both use market/stats
          * @returns {object[]} an array of objects representing market data
          */
-        const response = await this.publicGetMarketStats ();
+        const type = this.safeString (params, 'type', 'spot') as MarketType;
+        const request = this.omit (params, [ 'type' ]);
+        const response = await this.publicGetMarketStats (request);
         const markets = this.safeDict (response, 'stats');
         const marketKeys = Object.keys (markets);
         const result = [];
@@ -148,14 +152,14 @@ export default class nobitex extends Exchange {
             if (markets[symbol]['isClosed']) {
                 continue;
             }
-            markets[symbol]['symbol'] = symbol;
-            const market = this.parseMarket (markets[symbol]);
+            const data = this.extend (markets[symbol], { 'symbol': symbol });
+            const market = this.parseMarket (data, type);
             result.push (market);
         }
         return result;
     }
 
-    parseMarket (market): Market {
+    parseMarket (market, type: MarketType = 'spot'): Market {
         //        btc-rls: {
         // isClosed: false,
         // bestSell: "38820000000",
@@ -186,8 +190,8 @@ export default class nobitex extends Exchange {
             'baseId': baseId,
             'quoteId': quoteId,
             'settleId': undefined,
-            'type': 'spot',
-            'spot': true,
+            'type': type,
+            'spot': type === 'spot',
             'margin': false,
             'swap': false,
             'future': false,
@@ -236,13 +240,16 @@ export default class nobitex extends Exchange {
          * @see https://apidocs.nobitex.ir/#6ae2dae4a2
          * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
          * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'; both use market/stats
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
-        await this.loadMarkets ();
+        const type = this.safeString (params, 'type', 'spot') as MarketType;
+        const request = this.omit (params, [ 'type' ]);
+        await this.loadMarkets (false, { 'type': type });
         if (symbols !== undefined) {
             symbols = this.marketSymbols (symbols);
         }
-        const response = await this.publicGetMarketStats ();
+        const response = await this.publicGetMarketStats (request);
         const markets = this.safeDict (response, 'stats');
         const marketKeys = Object.keys (markets);
         const result = {};
@@ -251,8 +258,9 @@ export default class nobitex extends Exchange {
             if (markets[symbol]['isClosed']) {
                 continue;
             }
-            markets[symbol]['symbol'] = symbol;
-            const ticker = this.parseTicker (markets[symbol]);
+            const data = this.extend (markets[symbol], { 'symbol': symbol });
+            const market = this.parseMarket (data, type);
+            const ticker = this.parseTicker (data, market);
             symbol = ticker['symbol'];
             result[symbol] = ticker;
         }
@@ -267,10 +275,12 @@ export default class nobitex extends Exchange {
          * @see https://apidocs.nobitex.ir/#6ae2dae4a2
          * @param {string} symbol unified symbol of the market to fetch the ticker for
          * @param {object} [params] extra parameters specific to the exchange API endpoint
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'; both use market/stats
          * @returns {object} a [ticker structure]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
-        const ticker = await this.fetchTickers ([ symbol ]);
-        return ticker[symbol];
+        const tickers = await this.fetchTickers ([ symbol ], params);
+        const values = Object.values (tickers);
+        return this.safeValue (values, 0);
     }
 
     parseTicker (ticker, market: Market = undefined): Ticker {
@@ -289,19 +299,8 @@ export default class nobitex extends Exchange {
         // dayClose: "112800000000",
         // dayChange: "0.01"
         // }
-        const marketType = 'spot';
-        const rawSymbol = this.safeStringLower (ticker, 'symbol');
-        const parts = rawSymbol.split ('-');
-        const baseId = parts[0];
-        let quoteId = parts[1];
-        if (quoteId === 'rls') {
-            quoteId = 'irt';
-        }
-        const base = this.safeCurrencyCode (baseId.toUpperCase ());
-        const quote = this.safeCurrencyCode (quoteId.toUpperCase ());
-        const marketId = base + '/' + quote;
-        const marketinfo = this.market (marketId);
-        const symbol = this.safeSymbol (marketId, market, undefined, marketType);
+        market = (market === undefined) ? this.parseMarket (ticker) : market;
+        const symbol = market['symbol'];
         let high = this.safeFloat (ticker, 'dayHigh');
         let low = this.safeFloat (ticker, 'dayLow');
         let bid = this.safeFloat (ticker, 'bestBuy');
@@ -313,7 +312,7 @@ export default class nobitex extends Exchange {
         let quoteVolume = this.safeFloat (ticker, 'volumeDst');
         const baseVolume = this.safeFloat (ticker, 'volumeSrc');
         // adjust Nobitex IRT scaling
-        if (marketinfo['quote'] === 'IRT') {
+        if (market['quote'] === 'IRT') {
             high = high ? high / 10 : 0;
             low = low ? low / 10 : 0;
             bid = bid ? bid / 10 : 0;
