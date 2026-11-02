@@ -210,7 +210,7 @@ class swapwallet extends Exchange {
         if ($query) {
             $url .= '?' . $this->urlencode($query);
         }
-        $headers = $this->extend(array( 'Content-Type' => 'application/json' ), $headers);
+        $headers = array( 'Content-Type' => 'application/json' );
         return array( 'url' => $url, 'method' => $method, 'body' => $body, 'headers' => $headers );
     }
 }

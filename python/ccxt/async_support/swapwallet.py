@@ -202,5 +202,5 @@ class swapwallet(Exchange, ImplicitAPI):
         url = self.urls['api'][api] + '/' + self.implode_params(path, params)
         if query:
             url += '?' + self.urlencode(query)
-        headers = self.extend({'Content-Type': 'application/json'}, headers)
+        headers = {'Content-Type': 'application/json'}
         return {'url': url, 'method': method, 'body': body, 'headers': headers}

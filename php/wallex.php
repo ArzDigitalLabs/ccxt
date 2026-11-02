@@ -107,7 +107,9 @@ class wallex extends Exchange {
                     'get' => array(
                         'v1/markets' => 1,
                         'v1/currencies' => 1,
-                        'v1/otc/price' => 1,
+                        'v1/otc/markets' => 1,
+                        // the OTC quote endpoint allows about 20 requests per minute
+                        'v1/otc/price' => 3,
                         'v1/currencies/stats' => 1,
                         'v1/depth' => 1,
                         'v1/udf/history' => 1,
@@ -139,29 +141,12 @@ class wallex extends Exchange {
         $type = $this->safe_string($params, 'type', 'spot');
         $request = $this->omit($params, array( 'type' ));
         if ($type === 'otc') {
-            $otcResponse = $this->publicGetV1Currencies ($request);
-            $currencies = $this->safe_dict($otcResponse, 'result', array());
-            $baseIds = is_array($currencies) ? array_keys($currencies) : array();
-            $quoteIds = array( 'TMN', 'USDT' );
+            $otcResponse = $this->publicGetV1OtcMarkets ($request);
+            $otcMarketList = $this->safe_dict($otcResponse, 'result', array());
+            $otcMarketIds = is_array($otcMarketList) ? array_keys($otcMarketList) : array();
             $otcMarkets = array();
-            for ($i = 0; $i < count($baseIds); $i++) {
-                $baseId = $baseIds[$i];
-                // TMN is a quote currency; the OTC API does not support TMNUSDT.
-                if ($baseId === 'TMN') {
-                    continue;
-                }
-                for ($j = 0; $j < count($quoteIds); $j++) {
-                    $quoteId = $quoteIds[$j];
-                    if ($baseId === $quoteId) {
-                        continue;
-                    }
-                    $otcMarkets[] = $this->parse_market(array(
-                        'symbol' => $baseId . $quoteId,
-                        'baseAsset' => $baseId,
-                        'quoteAsset' => $quoteId,
-                        'info' => $currencies[$baseId],
-                    ), $type);
-                }
+            for ($i = 0; $i < count($otcMarketIds); $i++) {
+                $otcMarkets[] = $this->parse_market($otcMarketList[$otcMarketIds[$i]], $type);
             }
             return $otcMarkets;
         }
@@ -233,6 +218,8 @@ class wallex extends Exchange {
         $quote = $this->safe_currency_code($quoteId);
         $baseId = strtolower($baseId);
         $quoteId = strtolower($quoteId);
+        // OTC markets report $buyStatus; spot markets do not
+        $buyStatus = $this->safe_string($market, 'buyStatus', 'ENABLE');
         return array(
             'id' => $id,
             'symbol' => $base . '/' . $quote,
@@ -248,7 +235,7 @@ class wallex extends Exchange {
             'swap' => false,
             'future' => false,
             'option' => false,
-            'active' => true,
+            'active' => $buyStatus === 'ENABLE',
             'contract' => false,
             'linear' => null,
             'inverse' => null,
@@ -290,7 +277,7 @@ class wallex extends Exchange {
          * @see https://api-docs.wallex.ir/#be8d9c51a2
          * @param {string[]|null} $symbols unified $symbols of the $markets to fetch the $ticker for, all $market tickers are returned if not assigned
          * @param {array} [$params] extra parameters specific to the exchange API endpoint
-         * @param {string} [$params->type] $market $type, 'spot' (default) or 'otc'; OTC requests one BUY quote per $symbol and skips failed or unavailable quotes
+         * @param {string} [$params->type] $market $type, 'spot' (default) or 'otc'; OTC tickers use the spot price of the same pair, falling back to the OTC 24h stats, the spot bid/ask $mid price, and finally an OTC $quote
          * @return {array} a dictionary of ~@link https://docs.ccxt.com/#/?id=$ticker-structure $ticker structures~
          */
         $type = $this->safe_string($params, 'type', 'spot');
@@ -311,22 +298,50 @@ class wallex extends Exchange {
                 }
                 $otcMarkets = $selectedMarkets;
             }
+            // OTC prices come from the spot tickers in one request instead of one rate-limited $quote per $symbol
+            $spotResponse = $this->publicGetV1Markets ($params);
+            $spotMarketList = $this->safe_dict($this->safe_dict($spotResponse, 'result', array()), 'symbols', array());
             $otcTickers = array();
             for ($i = 0; $i < count($otcMarkets); $i++) {
                 $market = $otcMarkets[$i];
-                $request = $this->extend($params, array( 'side' => 'BUY', 'symbol' => $market['id'] ));
-                $otcResponse = null;
-                try {
-                    $otcResponse = $this->publicGetV1OtcPrice ($request);
-                } catch (Exception $e) {
-                    // A failed quote must not prevent fetching the remaining OTC tickers.
+                if (!$market['active']) {
                     continue;
                 }
-                $data = $this->safe_dict($otcResponse, 'result', array());
-                if ($this->safe_string($data, 'price') === null) {
-                    continue;
+                $spotTicker = $this->safe_dict($spotMarketList, $market['id']);
+                $spotStats = $this->safe_dict($spotTicker, 'stats', array());
+                $spotLast = $this->safe_string($spotStats, 'lastPrice');
+                $tickerData = $spotTicker;
+                if (($spotLast === null) || ($spotLast === '-')) {
+                    // no spot trade for this pair, use the OTC market's own 24h stats
+                    $otcLast = $this->safe_string($this->safe_dict($market['info'], 'stats', array()), 'lastPrice');
+                    if (($otcLast !== null) && ($otcLast !== '-')) {
+                        $tickerData = $market['info'];
+                    } else {
+                        // never traded on spot or OTC, use the spot order book $mid price
+                        $bid = $this->safe_string($spotStats, 'bidPrice');
+                        $ask = $this->safe_string($spotStats, 'askPrice');
+                        if (($bid !== null) && ($bid !== '-') && ($ask !== null) && ($ask !== '-')) {
+                            $mid = Precise::string_div(Precise::string_add($bid, $ask), '2');
+                            $tickerData = $this->extend($spotTicker, array( 'stats' => array( 'bidPrice' => $bid, 'askPrice' => $ask, 'lastPrice' => $mid )));
+                        } else {
+                            // no price anywhere, $ask for an OTC $quote; only a few pairs reach here, so this stays under the $quote rate limit
+                            $quote = null;
+                            try {
+                                $quoteResponse = $this->publicGetV1OtcPrice ($this->extend($params, array( 'side' => 'BUY', 'symbol' => $market['id'] )));
+                                $quote = $this->safe_string($this->safe_dict($quoteResponse, 'result', array()), 'price');
+                            } catch (Exception $e) {
+                                if ($e instanceof DDoSProtection) {
+                                    throw $e;
+                                }
+                            }
+                            if ($quote === null) {
+                                continue;
+                            }
+                            $tickerData = $this->extend($market['info'], array( 'stats' => array( 'lastPrice' => $quote )));
+                        }
+                    }
                 }
-                $otcTickers[$market['symbol']] = $this->parse_ticker($data, $market);
+                $otcTickers[$market['symbol']] = $this->parse_ticker($tickerData, $market);
             }
             return $otcTickers;
         }
@@ -411,33 +426,8 @@ class wallex extends Exchange {
         // isNew => false,
         // isZeroFee => false
         // ),
+        // OTC tickers are parsed from spot or OTC $market entries, which share the $stats layout
         $marketType = $this->safe_string($market, 'type', 'spot');
-        if ($marketType === 'otc') {
-            $timestamp = $this->parse8601($this->safe_string($ticker, 'current_time'));
-            $price = $this->safe_number($ticker, 'price');
-            return $this->safe_ticker(array(
-                'symbol' => $market['symbol'],
-                'timestamp' => $timestamp,
-                'datetime' => $this->iso8601($timestamp),
-                'high' => null,
-                'low' => null,
-                'bid' => null,
-                'bidVolume' => null,
-                'ask' => $price,
-                'askVolume' => null,
-                'vwap' => null,
-                'open' => null,
-                'close' => $price,
-                'last' => $price,
-                'previousClose' => null,
-                'change' => null,
-                'percentage' => null,
-                'average' => null,
-                'baseVolume' => null,
-                'quoteVolume' => null,
-                'info' => $ticker,
-            ), $market);
-        }
         $stats = $this->safe_value($ticker, 'stats');
         $marketId = $this->safe_string($ticker, 'symbol');
         $symbol = $this->safe_symbol($marketId, $market, null, $marketType);

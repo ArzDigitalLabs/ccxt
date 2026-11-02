@@ -8,6 +8,8 @@ from ccxt.abstract.wallex import ImplicitAPI
 from ccxt.base.types import Any, Int, Market, MarketType, OrderBook, Strings, Ticker, Tickers
 from typing import List
 from ccxt.base.errors import BadSymbol
+from ccxt.base.errors import DDoSProtection
+from ccxt.base.precise import Precise
 
 
 class wallex(Exchange, ImplicitAPI):
@@ -109,7 +111,9 @@ class wallex(Exchange, ImplicitAPI):
                     'get': {
                         'v1/markets': 1,
                         'v1/currencies': 1,
-                        'v1/otc/price': 1,
+                        'v1/otc/markets': 1,
+                        # the OTC quote endpoint allows about 20 requests per minute
+                        'v1/otc/price': 3,
                         'v1/currencies/stats': 1,
                         'v1/depth': 1,
                         'v1/udf/history': 1,
@@ -140,26 +144,12 @@ class wallex(Exchange, ImplicitAPI):
         type = self.safe_string(params, 'type', 'spot')
         request = self.omit(params, ['type'])
         if type == 'otc':
-            otcResponse = self.publicGetV1Currencies(request)
-            currencies = self.safe_dict(otcResponse, 'result', {})
-            baseIds = list(currencies.keys())
-            quoteIds = ['TMN', 'USDT']
+            otcResponse = self.publicGetV1OtcMarkets(request)
+            otcMarketList = self.safe_dict(otcResponse, 'result', {})
+            otcMarketIds = list(otcMarketList.keys())
             otcMarkets = []
-            for i in range(0, len(baseIds)):
-                baseId = baseIds[i]
-                # TMN is a quote currency; the OTC API does not support TMNUSDT.
-                if baseId == 'TMN':
-                    continue
-                for j in range(0, len(quoteIds)):
-                    quoteId = quoteIds[j]
-                    if baseId == quoteId:
-                        continue
-                    otcMarkets.append(self.parse_market({
-                        'symbol': baseId + quoteId,
-                        'baseAsset': baseId,
-                        'quoteAsset': quoteId,
-                        'info': currencies[baseId],
-                    }, type))
+            for i in range(0, len(otcMarketIds)):
+                otcMarkets.append(self.parse_market(otcMarketList[otcMarketIds[i]], type))
             return otcMarkets
         response = self.publicGetV1Markets(request)
         markets = self.safe_dict(response, 'result')
@@ -227,6 +217,8 @@ class wallex(Exchange, ImplicitAPI):
         quote = self.safe_currency_code(quoteId)
         baseId = baseId.lower()
         quoteId = quoteId.lower()
+        # OTC markets report buyStatus; spot markets do not
+        buyStatus = self.safe_string(market, 'buyStatus', 'ENABLE')
         return {
             'id': id,
             'symbol': base + '/' + quote,
@@ -242,7 +234,7 @@ class wallex(Exchange, ImplicitAPI):
             'swap': False,
             'future': False,
             'option': False,
-            'active': True,
+            'active': buyStatus == 'ENABLE',
             'contract': False,
             'linear': None,
             'inverse': None,
@@ -283,7 +275,7 @@ class wallex(Exchange, ImplicitAPI):
         https://api-docs.wallex.ir/#be8d9c51a2
         :param str[]|None symbols: unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
         :param dict [params]: extra parameters specific to the exchange API endpoint
-        :param str [params.type]: market type, 'spot'(default) or 'otc'; OTC requests one BUY quote per symbol and skips failed or unavailable quotes
+        :param str [params.type]: market type, 'spot'(default) or 'otc'; OTC tickers use the spot price of the same pair, falling back to the OTC 24h stats, the spot bid/ask mid price, and finally an OTC quote
         :returns dict: a dictionary of `ticker structures <https://docs.ccxt.com/#/?id=ticker-structure>`
         """
         type = self.safe_string(params, 'type', 'spot')
@@ -301,20 +293,43 @@ class wallex(Exchange, ImplicitAPI):
                         raise BadSymbol(self.id + ' does not have OTC market symbol ' + symbol)
                     selectedMarkets.append(market)
                 otcMarkets = selectedMarkets
+            # OTC prices come from the spot tickers in one request instead of one rate-limited quote per symbol
+            spotResponse = self.publicGetV1Markets(params)
+            spotMarketList = self.safe_dict(self.safe_dict(spotResponse, 'result', {}), 'symbols', {})
             otcTickers = {}
             for i in range(0, len(otcMarkets)):
                 market = otcMarkets[i]
-                request = self.extend(params, {'side': 'BUY', 'symbol': market['id']})
-                otcResponse = None
-                try:
-                    otcResponse = self.publicGetV1OtcPrice(request)
-                except Exception as e:
-                    # A failed quote must not prevent fetching the remaining OTC tickers.
+                if not market['active']:
                     continue
-                data = self.safe_dict(otcResponse, 'result', {})
-                if self.safe_string(data, 'price') is None:
-                    continue
-                otcTickers[market['symbol']] = self.parse_ticker(data, market)
+                spotTicker = self.safe_dict(spotMarketList, market['id'])
+                spotStats = self.safe_dict(spotTicker, 'stats', {})
+                spotLast = self.safe_string(spotStats, 'lastPrice')
+                tickerData = spotTicker
+                if (spotLast is None) or (spotLast == '-'):
+                    # no spot trade for self pair, use the OTC market's own 24h stats
+                    otcLast = self.safe_string(self.safe_dict(market['info'], 'stats', {}), 'lastPrice')
+                    if (otcLast is not None) and (otcLast != '-'):
+                        tickerData = market['info']
+                    else:
+                        # never traded on spot or OTC, use the spot order book mid price
+                        bid = self.safe_string(spotStats, 'bidPrice')
+                        ask = self.safe_string(spotStats, 'askPrice')
+                        if (bid is not None) and (bid != '-') and (ask is not None) and (ask != '-'):
+                            mid = Precise.string_div(Precise.string_add(bid, ask), '2')
+                            tickerData = self.extend(spotTicker, {'stats': {'bidPrice': bid, 'askPrice': ask, 'lastPrice': mid}})
+                        else:
+                            # no price anywhere, ask for an OTC quote; only a few pairs reach here, so self stays under the quote rate limit
+                            quote = None
+                            try:
+                                quoteResponse = self.publicGetV1OtcPrice(self.extend(params, {'side': 'BUY', 'symbol': market['id']}))
+                                quote = self.safe_string(self.safe_dict(quoteResponse, 'result', {}), 'price')
+                            except Exception as e:
+                                if isinstance(e, DDoSProtection):
+                                    raise e
+                            if quote is None:
+                                continue
+                            tickerData = self.extend(market['info'], {'stats': {'lastPrice': quote}})
+                otcTickers[market['symbol']] = self.parse_ticker(tickerData, market)
             return otcTickers
         self.load_markets()
         if symbols is not None:
@@ -393,32 +408,8 @@ class wallex(Exchange, ImplicitAPI):
         # isNew: False,
         # isZeroFee: False
         # },
+        # OTC tickers are parsed from spot or OTC market entries, which share the stats layout
         marketType = self.safe_string(market, 'type', 'spot')
-        if marketType == 'otc':
-            timestamp = self.parse8601(self.safe_string(ticker, 'current_time'))
-            price = self.safe_number(ticker, 'price')
-            return self.safe_ticker({
-                'symbol': market['symbol'],
-                'timestamp': timestamp,
-                'datetime': self.iso8601(timestamp),
-                'high': None,
-                'low': None,
-                'bid': None,
-                'bidVolume': None,
-                'ask': price,
-                'askVolume': None,
-                'vwap': None,
-                'open': None,
-                'close': price,
-                'last': price,
-                'previousClose': None,
-                'change': None,
-                'percentage': None,
-                'average': None,
-                'baseVolume': None,
-                'quoteVolume': None,
-                'info': ticker,
-            }, market)
         stats = self.safe_value(ticker, 'stats')
         marketId = self.safe_string(ticker, 'symbol')
         symbol = self.safe_symbol(marketId, market, None, marketType)
