@@ -11,6 +11,7 @@ import { Exchange as _Exchange } from '../base/Exchange.js';
 interface Exchange {
     publicGetV1Markets (params?: {}): Promise<implicitReturnType>;
     publicGetV1Currencies (params?: {}): Promise<implicitReturnType>;
+    publicGetV1OtcMarkets (params?: {}): Promise<implicitReturnType>;
     publicGetV1OtcPrice (params?: {}): Promise<implicitReturnType>;
     publicGetV1CurrenciesStats (params?: {}): Promise<implicitReturnType>;
     publicGetV1Depth (params?: {}): Promise<implicitReturnType>;

@@ -17,6 +17,7 @@ ccxt/asacoine.py
 ccxt/ascendex.py
 ccxt/asretether.py
 ccxt/baazar.py
+ccxt/balinex.py
 ccxt/bequant.py
 ccxt/bidarz.py
 ccxt/bigone.py
@@ -194,6 +195,7 @@ ccxt/abstract/asacoine.py
 ccxt/abstract/ascendex.py
 ccxt/abstract/asretether.py
 ccxt/abstract/baazar.py
+ccxt/abstract/balinex.py
 ccxt/abstract/bequant.py
 ccxt/abstract/bidarz.py
 ccxt/abstract/bigone.py
@@ -371,6 +373,7 @@ ccxt/async_support/asacoine.py
 ccxt/async_support/ascendex.py
 ccxt/async_support/asretether.py
 ccxt/async_support/baazar.py
+ccxt/async_support/balinex.py
 ccxt/async_support/bequant.py
 ccxt/async_support/bidarz.py
 ccxt/async_support/bigone.py

@@ -13,8 +13,11 @@ abstract class wallex extends \ccxt\async\Exchange {
     public function public_get_v1_currencies($params = array()) {
         return $this->request('v1/currencies', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
+    public function public_get_v1_otc_markets($params = array()) {
+        return $this->request('v1/otc/markets', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
     public function public_get_v1_otc_price($params = array()) {
-        return $this->request('v1/otc/price', 'public', 'GET', $params, null, null, array("cost" => 1));
+        return $this->request('v1/otc/price', 'public', 'GET', $params, null, null, array("cost" => 3));
     }
     public function public_get_v1_currencies_stats($params = array()) {
         return $this->request('v1/currencies/stats', 'public', 'GET', $params, null, null, array("cost" => 1));
@@ -31,8 +34,11 @@ abstract class wallex extends \ccxt\async\Exchange {
     public function publicGetV1Currencies($params = array()) {
         return $this->request('v1/currencies', 'public', 'GET', $params, null, null, array("cost" => 1));
     }
+    public function publicGetV1OtcMarkets($params = array()) {
+        return $this->request('v1/otc/markets', 'public', 'GET', $params, null, null, array("cost" => 1));
+    }
     public function publicGetV1OtcPrice($params = array()) {
-        return $this->request('v1/otc/price', 'public', 'GET', $params, null, null, array("cost" => 1));
+        return $this->request('v1/otc/price', 'public', 'GET', $params, null, null, array("cost" => 3));
     }
     public function publicGetV1CurrenciesStats($params = array()) {
         return $this->request('v1/currencies/stats', 'public', 'GET', $params, null, null, array("cost" => 1));

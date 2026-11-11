@@ -5,50 +5,14 @@
 // EDIT THE CORRESPONDENT .ts FILE INSTEAD
 
 import ccxt from './ccxt.js';
-// Change these names, or pass them on the command line.
-const exchangeNames = ['bitpin', 'wallex', 'nobitex'];
-const sampleSize = 5;
-async function testExchange(id) {
-    if (!ccxt.exchanges.includes(id)) {
-        throw new Error('Unknown exchange: ' + id);
-    }
-    const exchange = new ccxt[id]({ 'enableRateLimit': true, 'timeout': 20000 });
+async function main() {
+    const exchange = new ccxt.bitbarg();
     try {
-        const types = ['spot', 'otc'].filter(type => exchange.has[type]);
-        if (types.length === 0) {
-            types.push('default');
-        }
-        for (const type of types) {
-            // Spot uses the default params; OTC is selected explicitly.
-            const params = (type === 'otc') ? { 'type': 'otc' } : {};
-            const markets = await exchange.fetchMarkets(params);
-            const symbols = markets.slice(0, sampleSize).map(market => market.symbol);
-            const tickers = await exchange.fetchTickers(symbols, params);
-            console.log('\n' + id + ' ' + type.toUpperCase() + ': ' + markets.length + ' markets');
-            console.table(Object.values(tickers).slice(0, sampleSize).map(ticker => ({
-                'symbol': ticker.symbol,
-                'last': ticker.last,
-                'bid': ticker.bid,
-                'ask': ticker.ask,
-                'high': ticker.high,
-                'low': ticker.low,
-            })));
-        }
+        const ticker = await exchange.fetchTicker('USDT/IRT');
+        console.log(ticker);
     }
     finally {
-        await exchange.close();
-    }
-}
-async function main() {
-    const names = process.argv.length > 2 ? process.argv.slice(2) : exchangeNames;
-    for (const id of names) {
-        try {
-            await testExchange(id);
-        }
-        catch (error) {
-            console.error(id + ' failed:', error);
-            process.exitCode = 1;
-        }
+        exchange.close();
     }
 }
 main().catch((error) => {

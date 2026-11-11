@@ -405058,7 +405058,9 @@ class vertex extends _abstract_vertex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
 /* harmony export */ });
 /* harmony import */ var _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16140);
 /* harmony import */ var _base_errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62079);
+/* harmony import */ var _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85147);
 //  ---------------------------------------------------------------------------
+
 
 
 //  ---------------------------------------------------------------------------
@@ -405165,7 +405167,9 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
                     'get': {
                         'v1/markets': 1,
                         'v1/currencies': 1,
-                        'v1/otc/price': 1,
+                        'v1/otc/markets': 1,
+                        // the OTC quote endpoint allows about 20 requests per minute
+                        'v1/otc/price': 3,
                         'v1/currencies/stats': 1,
                         'v1/depth': 1,
                         'v1/udf/history': 1,
@@ -405198,29 +405202,12 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
         const type = this.safeString(params, 'type', 'spot');
         const request = this.omit(params, ['type']);
         if (type === 'otc') {
-            const otcResponse = await this.publicGetV1Currencies(request);
-            const currencies = this.safeDict(otcResponse, 'result', {});
-            const baseIds = Object.keys(currencies);
-            const quoteIds = ['TMN', 'USDT'];
+            const otcResponse = await this.publicGetV1OtcMarkets(request);
+            const otcMarketList = this.safeDict(otcResponse, 'result', {});
+            const otcMarketIds = Object.keys(otcMarketList);
             const otcMarkets = [];
-            for (let i = 0; i < baseIds.length; i++) {
-                const baseId = baseIds[i];
-                // TMN is a quote currency; the OTC API does not support TMNUSDT.
-                if (baseId === 'TMN') {
-                    continue;
-                }
-                for (let j = 0; j < quoteIds.length; j++) {
-                    const quoteId = quoteIds[j];
-                    if (baseId === quoteId) {
-                        continue;
-                    }
-                    otcMarkets.push(this.parseMarket({
-                        'symbol': baseId + quoteId,
-                        'baseAsset': baseId,
-                        'quoteAsset': quoteId,
-                        'info': currencies[baseId],
-                    }, type));
-                }
+            for (let i = 0; i < otcMarketIds.length; i++) {
+                otcMarkets.push(this.parseMarket(otcMarketList[otcMarketIds[i]], type));
             }
             return otcMarkets;
         }
@@ -405291,6 +405278,8 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
         const quote = this.safeCurrencyCode(quoteId);
         baseId = baseId.toLowerCase();
         quoteId = quoteId.toLowerCase();
+        // OTC markets report buyStatus; spot markets do not
+        const buyStatus = this.safeString(market, 'buyStatus', 'ENABLE');
         return {
             'id': id,
             'symbol': base + '/' + quote,
@@ -405306,7 +405295,7 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
             'swap': false,
             'future': false,
             'option': false,
-            'active': true,
+            'active': buyStatus === 'ENABLE',
             'contract': false,
             'linear': undefined,
             'inverse': undefined,
@@ -405349,7 +405338,7 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
          * @see https://api-docs.wallex.ir/#be8d9c51a2
          * @param {string[]|undefined} symbols unified symbols of the markets to fetch the ticker for, all market tickers are returned if not assigned
          * @param {object} [params] extra parameters specific to the exchange API endpoint
-         * @param {string} [params.type] market type, 'spot' (default) or 'otc'; OTC requests one BUY quote per symbol
+         * @param {string} [params.type] market type, 'spot' (default) or 'otc'; OTC tickers use the spot price of the same pair, falling back to the OTC 24h stats, the spot bid/ask mid price, and finally an OTC quote
          * @returns {object} a dictionary of [ticker structures]{@link https://docs.ccxt.com/#/?id=ticker-structure}
          */
         const type = this.safeString(params, 'type', 'spot');
@@ -405370,16 +405359,53 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
                 }
                 otcMarkets = selectedMarkets;
             }
+            // OTC prices come from the spot tickers in one request instead of one rate-limited quote per symbol
+            const spotResponse = await this.publicGetV1Markets(params);
+            const spotMarketList = this.safeDict(this.safeDict(spotResponse, 'result', {}), 'symbols', {});
             const otcTickers = {};
             for (let i = 0; i < otcMarkets.length; i++) {
                 const market = otcMarkets[i];
-                const request = this.extend(params, { 'side': 'BUY', 'symbol': market['id'] });
-                const otcResponse = await this.publicGetV1OtcPrice(request);
-                const data = this.safeDict(otcResponse, 'result', {});
-                if (this.safeString(data, 'price') === undefined) {
-                    throw new _base_errors_js__WEBPACK_IMPORTED_MODULE_1__.ExchangeError(this.id + ' OTC quote unavailable for ' + market['symbol'] + ': ' + this.json(otcResponse));
+                if (!market['active']) {
+                    continue;
                 }
-                otcTickers[market['symbol']] = this.parseTicker(data, market);
+                const spotTicker = this.safeDict(spotMarketList, market['id']);
+                const spotStats = this.safeDict(spotTicker, 'stats', {});
+                const spotLast = this.safeString(spotStats, 'lastPrice');
+                let tickerData = spotTicker;
+                if ((spotLast === undefined) || (spotLast === '-')) {
+                    // no spot trade for this pair, use the OTC market's own 24h stats
+                    const otcLast = this.safeString(this.safeDict(market['info'], 'stats', {}), 'lastPrice');
+                    if ((otcLast !== undefined) && (otcLast !== '-')) {
+                        tickerData = market['info'];
+                    }
+                    else {
+                        // never traded on spot or OTC, use the spot order book mid price
+                        const bid = this.safeString(spotStats, 'bidPrice');
+                        const ask = this.safeString(spotStats, 'askPrice');
+                        if ((bid !== undefined) && (bid !== '-') && (ask !== undefined) && (ask !== '-')) {
+                            const mid = _base_Precise_js__WEBPACK_IMPORTED_MODULE_2__/* .Precise */ .Y.stringDiv(_base_Precise_js__WEBPACK_IMPORTED_MODULE_2__/* .Precise */ .Y.stringAdd(bid, ask), '2');
+                            tickerData = this.extend(spotTicker, { 'stats': { 'bidPrice': bid, 'askPrice': ask, 'lastPrice': mid } });
+                        }
+                        else {
+                            // no price anywhere, ask for an OTC quote; only a few pairs reach here, so this stays under the quote rate limit
+                            let quote = undefined;
+                            try {
+                                const quoteResponse = await this.publicGetV1OtcPrice(this.extend(params, { 'side': 'BUY', 'symbol': market['id'] }));
+                                quote = this.safeString(this.safeDict(quoteResponse, 'result', {}), 'price');
+                            }
+                            catch (e) {
+                                if (e instanceof _base_errors_js__WEBPACK_IMPORTED_MODULE_1__.DDoSProtection) {
+                                    throw e;
+                                }
+                            }
+                            if (quote === undefined) {
+                                continue;
+                            }
+                            tickerData = this.extend(market['info'], { 'stats': { 'lastPrice': quote } });
+                        }
+                    }
+                }
+                otcTickers[market['symbol']] = this.parseTicker(tickerData, market);
             }
             return otcTickers;
         }
@@ -405464,33 +405490,8 @@ class wallex extends _abstract_wallex_js__WEBPACK_IMPORTED_MODULE_0__/* ["defaul
         // isNew: false,
         // isZeroFee: false
         // },
+        // OTC tickers are parsed from spot or OTC market entries, which share the stats layout
         const marketType = this.safeString(market, 'type', 'spot');
-        if (marketType === 'otc') {
-            const timestamp = this.parse8601(this.safeString(ticker, 'current_time'));
-            const price = this.safeNumber(ticker, 'price');
-            return this.safeTicker({
-                'symbol': market['symbol'],
-                'timestamp': timestamp,
-                'datetime': this.iso8601(timestamp),
-                'high': undefined,
-                'low': undefined,
-                'bid': undefined,
-                'bidVolume': undefined,
-                'ask': price,
-                'askVolume': undefined,
-                'vwap': undefined,
-                'open': undefined,
-                'close': price,
-                'last': price,
-                'previousClose': undefined,
-                'change': undefined,
-                'percentage': undefined,
-                'average': undefined,
-                'baseVolume': undefined,
-                'quoteVolume': undefined,
-                'info': ticker,
-            }, market);
-        }
         const stats = this.safeValue(ticker, 'stats');
         const marketId = this.safeString(ticker, 'symbol');
         const symbol = this.safeSymbol(marketId, market, undefined, marketType);
@@ -438899,7 +438900,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.24.1';
+const ccxt_version = '4.24.3';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 
