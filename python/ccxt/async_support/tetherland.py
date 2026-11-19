@@ -87,7 +87,7 @@ class tetherland(Exchange, ImplicitAPI):
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/tetherland/64x64.png',
                 'api': {
-                    'public': 'https://service.tetherland.com',
+                    'public': 'https://service.tetherland.ir',
                 },
                 'www': 'https://tetherland.org',
                 'doc': [

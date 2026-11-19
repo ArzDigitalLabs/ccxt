@@ -86,7 +86,7 @@ class tetherland extends Exchange {
             'urls' => array(
                 'logo' => 'https://cdn.arz.digital/cr-odin/img/exchanges/tetherland/64x64.png',
                 'api' => array(
-                    'public' => 'https://service.tetherland.com',
+                    'public' => 'https://service.tetherland.ir',
                 ),
                 'www' => 'https://tetherland.org',
                 'doc' => array(

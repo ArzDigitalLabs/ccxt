@@ -1,6 +1,6 @@
 {
   "name": "ccxt-ir",
-  "version": "4.24.3",
+  "version": "4.24.4",
   "description": "A JavaScript / TypeScript / Python / C# / PHP cryptocurrency trading library with support for 100+ exchanges",
   "unpkg": "dist/ccxt.browser.min.js",
   "type": "module",
@@ -52,6 +52,7 @@
     "emitAPIGo": "tsx build/generateImplicitAPI.ts -- --go",
     "emitAPICs": "tsx build/generateImplicitAPI.ts -- --csharp",
     "build": "npm run pre-transpile && npm run transpile && npm run post-transpile && npm run update-badges && npm run build-docs",
+    "build:js-python": "npm run pre-transpile-js && npm run pre-transpile-py && npm run force-transpile-fast-py && npm run copy-python-files && npm run check-python-syntax",
     "force-build-slow": "npm run pre-transpile && npm run force-transpile && npm run post-transpile && npm run update-badges",
     "pre-transpile-js": "npm run export-exchanges && npm run vss && npm run emitAPITs && npm run tsBuild && npm run validate-types && npm run tsBuildExamples && npm run check-js-syntax && npm run bundle",
     "pre-transpile-py": "npm run export-exchanges && npm run emitAPIPy",

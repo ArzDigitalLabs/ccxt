@@ -1,0 +1,39 @@
+import ccxt from './ccxt.js';
+import assert from 'node:assert/strict';
+
+async function main () {
+    const exchange = new ccxt.tetherland ({ timeout: 20000, enableRateLimit: true });
+    try {
+        console.log ('API:', exchange.urls.api);
+        const markets = await exchange.fetchMarkets ();
+        assert (markets.length > 0, 'No markets returned');
+        console.log ('PASS fetchMarkets:', markets.length);
+
+        const symbols = [ 'BTC/USDT', 'BTC/IRT', 'USDT/IRT' ];
+        await exchange.loadMarkets ();
+        for (const symbol of symbols) {
+            assert (exchange.markets[symbol], 'Missing market: ' + symbol);
+            const ticker = await exchange.fetchTicker (symbol);
+            assert.equal (ticker.symbol, symbol);
+            assert (Number.isFinite (ticker.last) && ticker.last > 0, 'Invalid price: ' + symbol);
+            console.log ('PASS fetchTicker:', symbol, ticker.last);
+        }
+
+        const tickers = await exchange.fetchTickers ();
+        assert.deepEqual (Object.keys (tickers).sort (), Object.keys (exchange.markets).sort ());
+        console.log ('PASS fetchTickers:', Object.keys (tickers).length);
+        const missingPrices = Object.values (tickers).filter ((ticker) => !Number.isFinite (ticker.last) || ticker.last <= 0);
+        console.log ('Markets with missing/zero prices:', missingPrices.map ((ticker) => ticker.symbol));
+
+        const filtered = await exchange.fetchTickers (symbols);
+        assert.deepEqual (Object.keys (filtered).sort (), [ ...symbols ].sort ());
+        console.log ('PASS filtered fetchTickers:', Object.keys (filtered));
+    } finally {
+        await exchange.close ();
+    }
+}
+
+main ().catch ((error) => {
+    console.error (error);
+    process.exitCode = 1;
+});

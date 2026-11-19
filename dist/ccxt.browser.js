@@ -392663,7 +392663,7 @@ class tetherland extends _abstract_tetherland_js__WEBPACK_IMPORTED_MODULE_0__/* 
             'urls': {
                 'logo': 'https://cdn.arz.digital/cr-odin/img/exchanges/tetherland/64x64.png',
                 'api': {
-                    'public': 'https://service.tetherland.com',
+                    'public': 'https://service.tetherland.ir',
                 },
                 'www': 'https://tetherland.org',
                 'doc': [
@@ -438900,7 +438900,7 @@ SOFTWARE.
 
 //-----------------------------------------------------------------------------
 // this is updated by vss.js when building
-const ccxt_version = '4.24.3';
+const ccxt_version = '4.24.4';
 ccxt_src_base_Exchange_js_WEBPACK_IMPORTED_MODULE_0_/* .Exchange */ .k.ccxtVersion = ccxt_version;
 //-----------------------------------------------------------------------------
 
